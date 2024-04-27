@@ -8,6 +8,7 @@ public enum InputEvent {
 	TOUCH_DOWN(true), //
 	TOUCH_UP(false), // 
 	TOUCH_DRAGGED(false), //
+	TOUCH_CANCELLED(false), //
 	MOUSE_MOVED(false), //
 	SCROLLED(false), //
 	CONTROLLER_BUTTON_DOWN(true), //

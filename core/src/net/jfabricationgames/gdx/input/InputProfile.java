@@ -113,6 +113,14 @@ public class InputProfile implements InputProcessor, ControllerListener {
 	}
 	
 	@Override
+	public boolean touchCancelled(int screenX, int screenY, int pointer, int button) {
+		if (context != null) {
+			return context.touchCancelled(screenX, screenY, pointer, button);
+		}
+		return false;
+	}
+	
+	@Override
 	public boolean mouseMoved(int screenX, int screenY) {
 		if (context != null) {
 			return context.mouseMoved(screenX, screenY);

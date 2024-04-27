@@ -253,6 +253,13 @@ public class InputContext {
 		return false;
 	}
 	
+	protected boolean touchCancelled(int screenX, int screenY, int pointer, int button) {
+		if (isEventHandled(InputEvent.TOUCH_CANCELLED)) {
+			return invokeListeners(Type.MOUSE_CANCELLED, new Parameters().setScreenX(screenX).setScreenY(screenY).setPointer(pointer).setButton(button));
+		}
+		return false;
+	}
+	
 	protected boolean mouseMoved(int screenX, int screenY) {
 		if (isEventHandled(InputEvent.MOUSE_MOVED)) {
 			return invokeListeners(Type.MOUSE_MOVED, new Parameters().setScreenX(screenX).setScreenY(screenY));
@@ -340,6 +347,7 @@ public class InputContext {
 		}
 		return false;
 	}
+	
 	private boolean invokeListeners(Type type, Parameters parameters) {
 		for (InputActionListener listener : listeners) {
 			if (listener.onAction("", type, parameters)) {

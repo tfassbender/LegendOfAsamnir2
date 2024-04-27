@@ -10,6 +10,7 @@ public interface InputActionListener {
 		BUTTON_RELEASED, // 
 		MOUSE_DRAGGED, //
 		MOUSE_MOVED, //
+		MOUSE_CANCELLED, //
 		SCROLLED, //
 		CONTROLLER_BUTTON_PRESSED, //
 		CONTROLLER_BUTTON_RELEASED, //
@@ -98,9 +99,7 @@ public interface InputActionListener {
 		
 		@Override
 		public String toString() {
-			return "Parameters [keycode=" + keycode + ", button=" + button + ", screenX=" + screenX + ", screenY=" + screenY + ", pointer=" + pointer
-					+ ", scrollAmount=" + scrollAmount + ", character=" + character + ", player=" + player + ", axisValue=" + axisValue
-					+ ", axisThreshold=" + axisThreshold + "]";
+			return "Parameters [keycode=" + keycode + ", button=" + button + ", screenX=" + screenX + ", screenY=" + screenY + ", pointer=" + pointer + ", scrollAmount=" + scrollAmount + ", character=" + character + ", player=" + player + ", axisValue=" + axisValue + ", axisThreshold=" + axisThreshold + "]";
 		}
 	}
 	
