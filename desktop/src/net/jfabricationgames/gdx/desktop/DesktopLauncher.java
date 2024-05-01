@@ -16,11 +16,11 @@ public class DesktopLauncher {
 	
 	private static LwjglApplicationConfiguration createApplicationConfiguration() {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.title = "Legend of Asamnir";
+		config.title = "Legend of Asamnir 2 - Rise of the Chaos Wizard";
 		config.width = 1200;
 		config.height = 800;
 		config.vSyncEnabled = true;
-		config.fullscreen = true;
+		config.fullscreen = false;
 		return config;
 	}
 	
