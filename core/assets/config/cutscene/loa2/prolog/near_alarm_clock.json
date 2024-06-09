@@ -1,0 +1,57 @@
+{
+	id: loa2_prolog_near_alarm_clock,
+	controlledActions: {
+		
+		//******************************
+		//*** controlls
+		//******************************
+		
+		initial_wait: {
+			type: WAIT,
+			executionDurationInSeconds: 1.5f,
+			
+			startsWithCutscene: true,
+			
+			executes: [
+				thorin_thinking,
+			]
+		},
+		thorin_thinking: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Why is this thing so loud?\n\n... It's to loud to get near it.\n\nI should use my shield to block the sound. ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				narrator_explaining_shield_controls,
+			]
+		},
+		narrator_explaining_shield_controls: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				colorHeader: #000099,
+				displayText: "Press the right mouse button, the right shift key or the controller button A to use your shield. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				show_boss_health_bar,
+			]
+		},
+		show_boss_health_bar: {
+			type: EVENT,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+		}
+	}
+}

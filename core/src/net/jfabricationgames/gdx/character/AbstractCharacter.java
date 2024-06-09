@@ -88,8 +88,7 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 		ArtificialIntelligenceConfig chosenAiConfig = aiConfig.aiConfigurations.get(configuredAiName);
 		
 		if (chosenAiConfig == null) {
-			throw new IllegalStateException(
-					"The configured AI type '" + configuredAiName + "' is not available in the config file '" + aiConfigFile + "'.");
+			throw new IllegalStateException("The configured AI type '" + configuredAiName + "' is not available in the config file '" + aiConfigFile + "'.");
 		}
 		
 		ai = chosenAiConfig.buildAI(stateMachine, properties);
@@ -107,8 +106,7 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 		if (animation != null) {
 			animation.increaseStateTime(delta);
 			TextureRegion region = animation.getKeyFrame();
-			animation.getSpriteConfig().setX((body.getPosition().x - region.getRegionWidth() * 0.5f + imageOffsetX))
-					.setY((body.getPosition().y - region.getRegionHeight() * 0.5f + imageOffsetY));
+			animation.getSpriteConfig().setX((body.getPosition().x - region.getRegionWidth() * 0.5f + imageOffsetX)).setY((body.getPosition().y - region.getRegionHeight() * 0.5f + imageOffsetY));
 			updateTextureDirection(animation);
 			animation.draw(batch);
 		}
@@ -154,8 +152,7 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 	protected void initializeMovingState() {
 		movingState = stateMachine.getState(getMovingStateName());
 		if (movingState == null) {
-			throw new IllegalStateException("Moving state not found. If the moving state's name is not the convention name '" + STATE_NAME_MOVE
-					+ "' the getMovingStateName() method has to be overwritten.");
+			throw new IllegalStateException("Moving state not found. If the moving state's name is not the convention name '" + STATE_NAME_MOVE + "' the getMovingStateName() method has to be overwritten.");
 		}
 	}
 	
@@ -173,8 +170,7 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 	protected void initializeIdleState() {
 		idleState = stateMachine.getState(getIdleStateName());
 		if (idleState == null) {
-			throw new IllegalStateException("Idle state not found. If the moving state's name is not the convention name '" + STATE_NAME_IDLE
-					+ "' the getIdleStateName() method has to be overwritten.");
+			throw new IllegalStateException("Idle state not found. If the moving state's name is not the convention name '" + STATE_NAME_IDLE + "' the getIdleStateName() method has to be overwritten.");
 		}
 	}
 	
@@ -232,8 +228,7 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 	
 	@Override
 	public void preSolve(Contact contact, Manifold oldManifold) {
-		GameMapGroundType updatedGroundProperties = GameMapGroundType.handleGameMapGroundContact(contact, PhysicsCollisionType.ENEMY,
-				groundProperties);
+		GameMapGroundType updatedGroundProperties = GameMapGroundType.handleGameMapGroundContact(contact, PhysicsCollisionType.ENEMY, groundProperties);
 		if (updatedGroundProperties != null) {
 			groundProperties = updatedGroundProperties;
 		}

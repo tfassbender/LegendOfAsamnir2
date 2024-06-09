@@ -1,0 +1,299 @@
+{
+	id: loa2_prolog_opening,
+	controlledActions: {
+		
+		//******************************
+		//*** controlls
+		//******************************
+		
+		initial_wait: {
+			type: WAIT,
+			executionDurationInSeconds: 2f,
+			showBlackScreen: true,
+			
+			startsWithCutscene: true,
+			
+			executes: [
+				show_controlls_text,
+			]
+		},
+		show_controlls_text: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "",
+				displayText: "(press the E key on the keyboard or the Y button on the controller to continue)",
+				showNextPageIcon: true,
+				showOnBlackScreen: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				wait_before_beginning_story,
+			]
+		},
+		wait_before_beginning_story: {
+			type: WAIT,
+			executionDurationInSeconds: 2f,
+			showBlackScreen: true,
+			
+			executes: [
+				show_beginning_story_1,
+			]
+		},
+		
+		//******************************
+		//*** beginning story
+		//******************************
+		
+		show_beginning_story_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				displayText: "In the beginning there was a giant named Ymir...",
+				colorHeader: #000099,
+				showNextPageIcon: true,
+				showOnBlackScreen: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				show_beginning_story_2,
+			]
+		},
+		show_beginning_story_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				displayText: "Oh ... wait ... \nThat's the wrong chapter again...\nWhere should we start this time?...\n...\nAh, this seems fitting!",
+				colorHeader: #000099,
+				showNextPageIcon: true,
+				showOnBlackScreen: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				wait_before_alarm_sound,
+			]
+		},
+		
+		//******************************
+		//*** alarm sound
+		//******************************
+		
+		wait_before_alarm_sound: {
+			type: WAIT,
+			executionDurationInSeconds: 1f,
+			showBlackScreen: true,
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				alarm_sound,
+			]
+		},
+		alarm_sound: {
+			type: CHANGE_STATE, // change the state of the alarm clock, so the alarm sound is played
+			controlledUnitId: loa2_prolog_alarm_clock,
+			controlledUnitState: attack,
+			
+			executes: [
+				wait_for_second_alarm_clock_ringing,
+			],
+		},
+		wait_for_second_alarm_clock_ringing: {
+			type: WAIT,
+			executionDurationInSeconds: 3.5f,
+			showBlackScreen: true,
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				change_to_idle_state,
+			]
+		},
+		change_to_idle_state: {
+			type: CHANGE_STATE, // change to the idle state, so the alarm sound can be triggered again
+			controlledUnitId: loa2_prolog_alarm_clock,
+			controlledUnitState: idle,
+			
+			executes: [
+				alarm_sound_2,
+			],
+		},
+		alarm_sound_2: {
+			type: CHANGE_STATE, // change the state of the alarm clock, so the alarm sound is played
+			controlledUnitId: loa2_prolog_alarm_clock,
+			controlledUnitState: attack,
+			
+			executes: [
+				wait_for_third_alarm_clock_ringing,
+			],
+		},
+		wait_for_third_alarm_clock_ringing: {
+			type: WAIT,
+			executionDurationInSeconds: 3.5f,
+			showBlackScreen: true,
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				change_to_idle_state_2,
+			]
+		},
+		change_to_idle_state_2: {
+			type: CHANGE_STATE, // change to the idle state, so the alarm sound can be triggered again
+			controlledUnitId: loa2_prolog_alarm_clock,
+			controlledUnitState: idle,
+			
+			executes: [
+				alarm_sound_3,
+			],
+		},
+		alarm_sound_3: {
+			type: CHANGE_STATE, // change the state of the alarm clock, so the alarm sound is played
+			controlledUnitId: loa2_prolog_alarm_clock,
+			controlledUnitState: attack,
+			
+			executes: [
+				color_transition,
+			],
+		},
+		
+		//******************************
+		//*** color transition
+		//******************************
+		
+		color_transition: {
+			type: COLOR_TRANSITION,
+			fadeIntoColor: false,
+			colorTransitionDelayInSeconds: 0.5f,
+			colorTransitionDurationInSeconds: 3f,
+			delayAfterColorTransitionInSeconds: 2f,
+	
+			waitForEventToFinish: true,
+			
+			executes: [
+				change_to_idle_state_3,
+			],
+		},
+		change_to_idle_state_3: {
+			type: CHANGE_STATE, // change to the idle state, so the alarm sound can be triggered again
+			controlledUnitId: loa2_prolog_alarm_clock,
+			controlledUnitState: idle,
+			
+			executes: [
+				thorin_wakes_up,
+			],
+		},
+		
+		//******************************
+		//*** continue beginning story
+		//******************************
+		
+		thorin_wakes_up: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "What's this anoying sound?!\nWhere did that come from?!\n\n... why can't I ever sleep in peace?! ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_wakes_up_2,
+			]
+		},
+		thorin_wakes_up_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "It sounded like an alarm clock...\n\n... but I don't have an alarm clock... ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_wakes_up_3,
+			]
+		},
+		thorin_wakes_up_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Whatever...\nI need to silence that damn thing! ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				explain_controls,
+			]
+		},
+		explain_controls: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				displayText: "Use the left mouse button, the right control key, or the B button on the controller to hit things. ",
+				colorHeader: #000099,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				explain_controls_2,
+			]
+		},
+		explain_controls_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				displayText: "Use the E key on the keyboard or the Y button on the controller to interact with objects. ",
+				colorHeader: #000099,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_hears_the_narrator,
+			]
+		},
+		
+		thorin_hears_the_narrator: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Now where did that sound come from?\n\n... didn't sound like an alarm clock... ",
+				showNextPageIcon: false,
+			}
+			
+			executionDelayInSeconds: 1.5f,
+			waitForEventToFinish: true,
+			
+			executes: [
+				wait_after_cutscene,
+			]
+		},
+		wait_after_cutscene: {
+			type: WAIT,
+			executionDurationInSeconds: 1f,
+			waitForEventToFinish: true,
+		},
+	}
+}

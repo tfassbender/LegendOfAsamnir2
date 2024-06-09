@@ -359,7 +359,12 @@
 				goblin_king_die: {
 					path: "sound/enemy/taunt.wav",
 					volume: 0.4,
-				}
+				},
+				// alarm clock
+				alarm_clock_ringing: {
+					path: "sound/enemy/alarm_clock.wav",
+                    volume: 0.5,
+				},
 			}
 		}
 		menu: {

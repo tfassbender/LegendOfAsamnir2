@@ -74,6 +74,8 @@ public enum EventType {
 	AI_TEAM_CALL, //
 	ENEMY_DEFEATED, //
 	GOBLIN_KING_COMMAND, //
+	BOSS_ENEMY_SHOW, //
+	BOSS_ENEMY_APPEARED, //
 	//*******************************
 	//*** Conditions
 	//*******************************

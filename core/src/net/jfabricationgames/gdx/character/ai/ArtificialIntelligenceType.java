@@ -38,16 +38,14 @@ public enum ArtificialIntelligenceType {
 	BASE_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			return new BaseAI();
 		}
 	},
 	ACTION_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState actionState = stateMachine.getState(aiConfig.stateNameAction);
 			
@@ -57,8 +55,7 @@ public enum ArtificialIntelligenceType {
 	FOLLOW_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState movingState = stateMachine.getState(aiConfig.stateNameMove);
 			CharacterState idleState = stateMachine.getState(aiConfig.stateNameIdle);
@@ -73,8 +70,7 @@ public enum ArtificialIntelligenceType {
 	RAY_CAST_FOLLOW_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState movingState = stateMachine.getState(aiConfig.stateNameMove);
 			CharacterState idleState = stateMachine.getState(aiConfig.stateNameIdle);
@@ -88,16 +84,14 @@ public enum ArtificialIntelligenceType {
 	PRE_DEFINED_MOVEMENT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState movingState = stateMachine.getState(aiConfig.stateNameMove);
 			CharacterState idleState = stateMachine.getState(aiConfig.stateNameIdle);
 			Array<Vector2> positions = loadPositionsFromMapProperties(mapProperties);
 			float idleTimeBetweenMovements = Float.parseFloat(mapProperties.get(MAP_PROPERTIES_KEY_IDLE_TIME_BETWEEN_MOVEMENTS, "0f", String.class));
 			
-			PreDefinedMovementAI ai = new PreDefinedMovementAI(subAI, movingState, idleState, aiConfig.useRelativePositions, idleTimeBetweenMovements,
-					positions);
+			PreDefinedMovementAI ai = new PreDefinedMovementAI(subAI, movingState, idleState, aiConfig.useRelativePositions, idleTimeBetweenMovements, positions);
 			ai.setDistanceToKeepFromPlayer(aiConfig.distanceToKeepFromPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
 			return ai;
@@ -106,8 +100,7 @@ public enum ArtificialIntelligenceType {
 	RANDOM_MOVEMENT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState movingState = stateMachine.getState(aiConfig.stateNameMove);
 			CharacterState idleState = stateMachine.getState(aiConfig.stateNameIdle);
@@ -119,8 +112,7 @@ public enum ArtificialIntelligenceType {
 				maxDistance = Float.parseFloat(maxDistanceString);
 			}
 			
-			RandomMovementAI ai = new RandomMovementAI(subAI, movingState, idleState, maxDistance, idleTimeBetweenMovements,
-					aiConfig.changeTargetWhenStaticBodyHit);
+			RandomMovementAI ai = new RandomMovementAI(subAI, movingState, idleState, maxDistance, idleTimeBetweenMovements, aiConfig.changeTargetWhenStaticBodyHit);
 			ai.setDistanceToKeepFromPlayer(aiConfig.distanceToKeepFromPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
 			return ai;
@@ -129,8 +121,7 @@ public enum ArtificialIntelligenceType {
 	BACK_TO_STARTING_POSITION_MOVEMENT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState movingState = stateMachine.getState(aiConfig.stateNameMove);
 			CharacterState idleState = stateMachine.getState(aiConfig.stateNameIdle);
@@ -144,8 +135,7 @@ public enum ArtificialIntelligenceType {
 	RUN_AWAY_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState movingState = stateMachine.getState(aiConfig.stateNameMove);
 			CharacterState idleState = stateMachine.getState(aiConfig.stateNameIdle);
@@ -165,21 +155,18 @@ public enum ArtificialIntelligenceType {
 	FAST_ATTACK_FIGHT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState attackState = stateMachine.getState(aiConfig.stateNameAttack);
 			AttackTimer attackTimer = createAttackTimer(aiConfig.attackTimerConfig);
 			
-			return new FastAttackFightAI(subAI, attackState, attackTimer, aiConfig.attackDistance, aiConfig.attackSpeedFactor,
-					aiConfig.attackSpeedDelay);
+			return new FastAttackFightAI(subAI, attackState, attackTimer, aiConfig.attackDistance, aiConfig.attackSpeedFactor, aiConfig.attackSpeedDelay);
 		}
 	},
 	FIGHT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState attackState = stateMachine.getState(aiConfig.stateNameAttack);
 			AttackTimer attackTimer = createAttackTimer(aiConfig.attackTimerConfig);
@@ -192,8 +179,7 @@ public enum ArtificialIntelligenceType {
 	RAY_CAST_FIGHT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState attackState = stateMachine.getState(aiConfig.stateNameAttack);
 			AttackTimer attackTimer = createAttackTimer(aiConfig.attackTimerConfig);
@@ -206,8 +192,7 @@ public enum ArtificialIntelligenceType {
 	MIMIC_SUPRISE_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState waitingState = stateMachine.getState(aiConfig.stateNameWait);
 			CharacterState surpriseState = stateMachine.getState(aiConfig.stateNameSurprise);
@@ -218,8 +203,7 @@ public enum ArtificialIntelligenceType {
 	TEAM_MOVEMENT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState movingState = stateMachine.getState(aiConfig.stateNameMove);
 			CharacterState idleState = stateMachine.getState(aiConfig.stateNameIdle);
@@ -238,8 +222,7 @@ public enum ArtificialIntelligenceType {
 	RANDOM_IDLE_STATES_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			ObjectMap<CharacterState, ArtificialIntelligenceStateConfig> idleStates = new ObjectMap<>();
 			for (String stateName : aiConfig.idleStates.keys()) {
@@ -253,8 +236,7 @@ public enum ArtificialIntelligenceType {
 	RANDOM_IDLE_STATES_MOVEMENT_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			ObjectMap<CharacterState, ArtificialIntelligenceStateConfig> idleStates = new ObjectMap<>();
 			for (String stateName : aiConfig.idleStates.keys()) {
@@ -271,18 +253,17 @@ public enum ArtificialIntelligenceType {
 				maxDistance = Float.parseFloat(maxDistanceString);
 			}
 			
-			RandomMovementAI ai = new RandomIdleStatesMovementAI(subAI, idleStates, movementProbability, movingState, idleState, maxDistance,
-					aiConfig.changeTargetWhenStaticBodyHit);
+			RandomMovementAI ai = new RandomIdleStatesMovementAI(subAI, idleStates, movementProbability, movingState, idleState, maxDistance, aiConfig.changeTargetWhenStaticBodyHit);
 			ai.setDistanceToKeepFromPlayer(aiConfig.distanceToKeepFromPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
 			return ai;
 		}
+		
 	},
 	CHANGE_STATE_WHEN_PLAYER_NEAR_AI {
 		
 		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-				MapProperties mapProperties) {
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
 			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
 			CharacterState playerNearState = stateMachine.getState(aiConfig.stateNameAction);
 			CharacterState playerLeavingState = null;
@@ -308,8 +289,7 @@ public enum ArtificialIntelligenceType {
 				return json.fromJson(Array.class, Vector2.class, predefinedMovingPositions);
 			}
 			catch (SerializationException e) {
-				throw new IllegalStateException("A predefined movement string could not be parsed: \"" + predefinedMovingPositions
-						+ "\". Complete map properties: " + MapUtil.mapPropertiesToString(mapProperties, true), e);
+				throw new IllegalStateException("A predefined movement string could not be parsed: \"" + predefinedMovingPositions + "\". Complete map properties: " + MapUtil.mapPropertiesToString(mapProperties, true), e);
 			}
 		}
 		return null;
@@ -319,6 +299,5 @@ public enum ArtificialIntelligenceType {
 		return AttackTimerFactory.createAttackTimer(config);
 	}
 	
-	public abstract ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine,
-			MapProperties mapProperties);
+	public abstract ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties);
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="35" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="185">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="35" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="187">
  <properties>
   <property name="above_player_layers" value="[3, 4]"/>
   <property name="background_layers" value="[0, 1, 2]"/>
@@ -43,7 +43,7 @@
    eJztwyERAAAIBLAPQP9iFELiUYjtbgkAAABXXRsAAD4bHGgCng==
   </data>
  </layer>
- <objectgroup id="10" name="objects" locked="1">
+ <objectgroup id="10" name="objects">
   <object id="181" name="player.startingPosition" x="400" y="353.5">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -53,12 +53,18 @@
   <object id="182" name="enemy.alarm_clock" x="688" y="383.5">
    <properties>
     <property name="enemyDefeatedEventText" value="prolog_alarm_clock_destroyed"/>
+    <property name="unitId" value="loa2_prolog_alarm_clock"/>
    </properties>
    <point/>
   </object>
   <object id="183" name="object.eventObject" x="544" y="634" width="96.0455" height="6">
    <properties>
     <property name="eventParameter" value="loa2_prolog_goto_main_map"/>
+   </properties>
+  </object>
+  <object id="186" name="object.eventObject" x="544" y="320" width="4.66667" height="241">
+   <properties>
+    <property name="eventParameter" value="loa2_prolog_near_alarm_clock"/>
    </properties>
   </object>
  </objectgroup>

@@ -1,7 +1,7 @@
 [
 	{
 		id: idle,
-		animation: alarm_clock_ringing,
+		animation: alarm_clock_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -21,10 +21,13 @@
 	{
 		id: attack,
 		animation: alarm_clock_ringing,
-		attack: alarm_nova,
+		stateEnteringSound: alarm_clock_ringing,
+		abortSoundWhenStateInterrupted: true,
 		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 2f,
 		followingState: idle,
 		interruptingStates: [
+			idle, // idle is interrupting because this is needed for the cutscene to change to the attack state multiple times
 			damage, die
 		]
 	},

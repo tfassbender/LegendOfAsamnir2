@@ -31,7 +31,7 @@ public class AttackHandler implements CharacterStateAttackHandler {
 		loadAttackConfig(attackConfigFile);
 	}
 	
-	private void loadAttackConfig(String attackConfigFile) {
+	protected void loadAttackConfig(String attackConfigFile) {
 		configs = new ArrayMap<>();
 		FileHandle attackConfigFileHandle = Gdx.files.internal(attackConfigFile);
 		

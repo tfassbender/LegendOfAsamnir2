@@ -1,0 +1,169 @@
+{
+	//*******************************************
+	//*** new game started
+	//*******************************************
+	
+//	loa2_prolog_game_start__startCutscene: {
+//		event: {
+//			eventType: NEW_GAME_STARTED,
+//		},
+//		executionType: START_CUTSCENE,
+//		executionParameters: {
+//			cutsceneId: loa2_prolog_opening,
+//		}
+//	},
+	
+	demo_2_prolog_game_start__reduce_health: {
+		event: {
+			eventType: NEW_GAME_STARTED,
+		},
+		executionType: CHANGE_HEALTH,
+		executionParameters: {
+			amount: -20,
+		}
+	},
+	demo_2_prolog_game_start__reduce_armor: {
+		event: {
+			eventType: NEW_GAME_STARTED,
+		},
+		executionType: CHANGE_SHIELD,
+		executionParameters: {
+			amount: -30,
+		}
+	},
+	demo_2_prolog_game_start__reduce_mana: {
+		event: {
+			eventType: NEW_GAME_STARTED,
+		},
+		executionType: CHANGE_MANA,
+		executionParameters: {
+			amount: -80,
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_prolog_alarm_clock_cutscene: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_prolog_near_alarm_clock,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_prolog_alarm_clock_cutscene
+	}
+	loa2_prolog_alarm_clock_cutscene_execution__set_global_value: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: loa2_prolog_alarm_clock_cutscene_execution,
+		},
+		executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: loa2_prolog_alarm_clock_cutscene_started,
+			globalValue: true,
+		}
+	}
+	loa2_prolog_alarm_clock_cutscene_execution__start_cutscene: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: loa2_prolog_alarm_clock_cutscene_execution,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_prolog_near_alarm_clock,
+		}
+	}
+	
+	demo_2_prolog_tavern_cutscene: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: demo_2_prolog_tavern_cutscene,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: demo_2_prolog_tavern_cutscene
+	}
+	
+	demo_2_prolog_tavern_cutscene_execution__set_global_value: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: demo_2_prolog_tavern_cutscene_execution,
+		},
+		executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: demo_2_prolog_tavert_cutscene_started,
+			globalValue: true,
+		}
+	}
+	demo_2_prolog_tavern_cutscene_execution__start_cutscene: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: demo_2_prolog_tavern_cutscene_execution,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: demo_2_prolog_tavern,
+		}
+	}
+	
+	demo_2_prolog_signboard_cutscene: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: demo_2_prolog_signboard_cutscene,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: demo_2_prolog_signboard_cutscene,
+		}
+	}
+	
+	demo_2_prolog_signboard_2_cutscene: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: demo_2_prolog_signboard_2_cutscene,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: demo_2_prolog_signboard_2_cutscene,
+		}
+	}
+	
+	demo_2_prolog_enemy_defeated: {
+		event: {
+			eventType: ENEMY_DEFEATED,
+			stringValue: demo_2_prolog_enemy_defeated,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: demo_2_prolog_enemy_defeated_cutscene,
+		}
+	}
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	// TODO remove after the main map is ready
+	loa2_prolog_goto_main_map: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_prolog_goto_main_map,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_unfinished_end_cutscene,
+		}
+	}
+	
+//	loa2_prolog_goto_main_map: {
+//		event: {
+//			eventType: EVENT_OBJECT_TOUCHED,
+//			stringValue: loa2_prolog_goto_main_map,
+//		}
+//		executionType: CHANGE_MAP,
+//		executionParameters: {
+//			map: loa2_main,
+//			startingPointId: 0,
+//		}
+//	}
+}

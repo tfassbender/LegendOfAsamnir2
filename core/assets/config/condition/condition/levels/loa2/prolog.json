@@ -1,0 +1,13 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_prolog_alarm_clock_cutscene: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+			key: loa2_prolog_alarm_clock_cutscene_started,
+			expectedValue: true,
+		}
+	}
+}

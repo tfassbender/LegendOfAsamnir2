@@ -17,6 +17,7 @@ import net.jfabricationgames.gdx.character.AbstractCharacter;
 import net.jfabricationgames.gdx.character.CharacterTypeConfig;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.enemy.statsbar.EnemyHealthBarRenderer;
+import net.jfabricationgames.gdx.character.player.PlayableCharacter;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateMachine;
 import net.jfabricationgames.gdx.constants.Constants;
@@ -27,15 +28,17 @@ import net.jfabricationgames.gdx.data.state.MapObjectState;
 import net.jfabricationgames.gdx.data.state.StatefulMapObject;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.item.ItemDropUtil;
+import net.jfabricationgames.gdx.physics.CollisionUtil;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsUtil;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
 import net.jfabricationgames.gdx.util.MapUtil;
 
-public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObject, CutsceneControlledStatefullUnit {
+public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObject, CutsceneControlledStatefullUnit, EventListener {
 	
 	private static final String MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT = "enemyDefeatedEventText";
 	
@@ -57,6 +60,8 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	private EnemyCharacterMap gameMap;
 	private Runnable onRemoveFromMap;
 	
+	private PlayableCharacter playerToPushAway; // push away by the sensor force field (if configured)
+	
 	public Enemy(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(properties);
 		this.typeConfig = typeConfig;
@@ -75,6 +80,8 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		ai.setCharacter(this);
 		
 		setImageOffset(typeConfig.imageOffsetX, typeConfig.imageOffsetY);
+		
+		EventHandler.getInstance().registerEventListener(this);
 	}
 	
 	protected void readTypeConfig() {
@@ -99,7 +106,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		}
 	}
 	
-	private void initializeAttackHandler() {
+	protected void initializeAttackHandler() {
 		//the body is not yet created -> set a null body here and update it when it is created (see createPhysicsBody(...))
 		attackHandler = new AttackHandler(typeConfig.attackConfig, null, PhysicsCollisionType.ENEMY_ATTACK);
 	}
@@ -190,9 +197,13 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 				removeFromMap();
 			}
 		}
-		else if (!cutsceneHandler.isCutsceneActive()) {
-			ai.calculateMove(delta);
-			ai.executeMove(delta);
+		else {
+			if (!cutsceneHandler.isCutsceneActive()) {
+				ai.calculateMove(delta);
+				ai.executeMove(delta);
+			}
+			
+			pushAwayPlayer();
 		}
 	}
 	
@@ -225,7 +236,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		return typeConfig.usesHealthBar && getPercentualHealth() < 1 && isAlive();
 	}
 	
-	protected float getPercentualHealth() {
+	public float getPercentualHealth() {
 		return health / typeConfig.health;
 	}
 	
@@ -336,5 +347,48 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	public void beginContact(Contact contact) {
 		super.beginContact(contact);
 		attackHandler.handleAttackDamage(contact);
+		if (typeConfig.useSensorAsForceField) {
+			findPlayerToPushAway(contact);
+		}
+	}
+	
+	@Override
+	public void endContact(Contact contact) {
+		super.endContact(contact);
+		if (typeConfig.useSensorAsForceField) {
+			endPushingPlayer(contact);
+		}
+	}
+	
+	private void findPlayerToPushAway(Contact contact) {
+		PlayableCharacter player = CollisionUtil.getObjectCollidingWith(this, PhysicsCollisionType.ENEMY_SENSOR, contact, PlayableCharacter.class);
+		if (player != null) {
+			playerToPushAway = player;
+		}
+	}
+	
+	private void endPushingPlayer(Contact contact) {
+		PlayableCharacter player = CollisionUtil.getObjectCollidingWith(this, PhysicsCollisionType.ENEMY_SENSOR, contact, PlayableCharacter.class);
+		if (player == playerToPushAway) {
+			playerToPushAway = null;
+		}
+	}
+	
+	private void pushAwayPlayer() {
+		if (playerToPushAway != null) {
+			float force = 8f; // just enough to push the player away if he's running into the enemy
+			float forceWhenBlocked = typeConfig.ignoreForceFieldWhenBlocking ? 0 : force;
+			playerToPushAway.pushByHit(getPosition(), force, forceWhenBlocked, false);
+		}
+	}
+	
+	@Override
+	public void handleEvent(EventConfig event) {
+		if (event.eventType == EventType.BOSS_ENEMY_SHOW && typeConfig.isBoss) {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.BOSS_ENEMY_APPEARED) //
+					.setParameterObject(this) //
+					.setStringValue(typeConfig.bossName));
+		}
 	}
 }

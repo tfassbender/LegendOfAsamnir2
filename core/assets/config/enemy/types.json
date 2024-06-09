@@ -407,8 +407,6 @@
 		animationsConfig: config/animation/enemy/alarm_clock.json,
 		stateConfig: config/enemy/states/alarm_clock.json,
 		initialState: idle,
-		attackConfig: config/enemy/attack/alarm_clock.json,
-		aiConfig: config/enemy/ai/alarm_clock.json,
 		
 		health: 12,
 		movingSpeed: 0,
@@ -421,9 +419,14 @@
 		bodyRadius: 0.3f,
 		
 		addSensor: true,
-		sensorRadius: 6f,
+		sensorRadius: 4f,
+		useSensorAsForceField: true,
+		ignoreForceFieldWhenBlocking: true,
 		
 		pushForceDamage: 0,
 		pushForceHit: 0,
+		
+		isBoss: true
+		bossName: "Alarm Clock - Scourge of the sleeping",
 	}
 }

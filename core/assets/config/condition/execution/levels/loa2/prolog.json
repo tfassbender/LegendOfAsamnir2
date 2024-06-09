@@ -1,0 +1,21 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_prolog_alarm_clock_cutscene: {
+		conditionId: loa2_prolog_alarm_clock_cutscene,
+		thenCase: {
+			type: NO_EXECUTION,
+		},
+		elseCase: {
+			type: FIRE_EVENT,
+            eventConfig: {
+				event: {
+					eventType: CONFIG_GENERATED_EVENT,
+					stringValue: loa2_prolog_alarm_clock_cutscene_execution
+				}
+            }
+		}
+	}
+}

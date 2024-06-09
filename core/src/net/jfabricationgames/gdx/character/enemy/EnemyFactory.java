@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationManager;
+import net.jfabricationgames.gdx.character.enemy.implementation.AlarmClock;
 import net.jfabricationgames.gdx.character.enemy.implementation.Bat;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
@@ -76,7 +77,6 @@ public class EnemyFactory {
 			case ENEMY_NAME_FIRE_ELEMENTAL:
 			case ENEMY_NAME_ICE_ELEMENTAL:
 			case ENEMY_NAME_IMP:
-			case ENEMY_NAME_ALARM_CLOCK:
 				enemy = new Enemy(typeConfig, properties);
 				break;
 			case ENEMY_NAME_BAT:
@@ -93,6 +93,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_GOBLIN_KING:
 				enemy = new GoblinKing(typeConfig, properties);
+				break;
+			case ENEMY_NAME_ALARM_CLOCK:
+				enemy = new AlarmClock(typeConfig, properties);
 				break;
 			default:
 				throw new IllegalStateException("Unknown enemy type: " + type);
