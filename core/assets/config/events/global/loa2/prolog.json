@@ -3,15 +3,15 @@
 	//*** new game started
 	//*******************************************
 	
-//	loa2_prolog_game_start__startCutscene: {
-//		event: {
-//			eventType: NEW_GAME_STARTED,
-//		},
-//		executionType: START_CUTSCENE,
-//		executionParameters: {
-//			cutsceneId: loa2_prolog_opening,
-//		}
-//	},
+	loa2_prolog_game_start__startCutscene: {
+		event: {
+			eventType: NEW_GAME_STARTED,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_prolog_opening,
+		}
+	},
 	
 	demo_2_prolog_game_start__reduce_health: {
 		event: {
@@ -75,67 +75,14 @@
 		}
 	}
 	
-	demo_2_prolog_tavern_cutscene: {
-		event: {
-			eventType: EVENT_OBJECT_TOUCHED,
-			stringValue: demo_2_prolog_tavern_cutscene,
-		},
-		executionType: CONDITIONAL_EVENT,
-		conditionalExecutionId: demo_2_prolog_tavern_cutscene
-	}
-	
-	demo_2_prolog_tavern_cutscene_execution__set_global_value: {
-		event: {
-			eventType: CONFIG_GENERATED_EVENT,
-			stringValue: demo_2_prolog_tavern_cutscene_execution,
-		},
-		executionType: SET_GLOBAL_VALUE,
-		executionParameters: {
-			globalValueKey: demo_2_prolog_tavert_cutscene_started,
-			globalValue: true,
-		}
-	}
-	demo_2_prolog_tavern_cutscene_execution__start_cutscene: {
-		event: {
-			eventType: CONFIG_GENERATED_EVENT,
-			stringValue: demo_2_prolog_tavern_cutscene_execution,
-		},
-		executionType: START_CUTSCENE,
-		executionParameters: {
-			cutsceneId: demo_2_prolog_tavern,
-		}
-	}
-	
-	demo_2_prolog_signboard_cutscene: {
-		event: {
-			eventType: EVENT_OBJECT_TOUCHED,
-			stringValue: demo_2_prolog_signboard_cutscene,
-		},
-		executionType: START_CUTSCENE,
-		executionParameters: {
-			cutsceneId: demo_2_prolog_signboard_cutscene,
-		}
-	}
-	
-	demo_2_prolog_signboard_2_cutscene: {
-		event: {
-			eventType: EVENT_OBJECT_TOUCHED,
-			stringValue: demo_2_prolog_signboard_2_cutscene,
-		},
-		executionType: START_CUTSCENE,
-		executionParameters: {
-			cutsceneId: demo_2_prolog_signboard_2_cutscene,
-		}
-	}
-	
-	demo_2_prolog_enemy_defeated: {
+	loa2_prolog_alarm_clock_destroyed: {
 		event: {
 			eventType: ENEMY_DEFEATED,
-			stringValue: demo_2_prolog_enemy_defeated,
+			stringValue: loa2_prolog_alarm_clock_destroyed,
 		},
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: demo_2_prolog_enemy_defeated_cutscene,
+			cutsceneId: loa2_prolog_alarm_clock_defeated,
 		}
 	}
 	

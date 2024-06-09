@@ -221,10 +221,8 @@ public class GameMapImplementation implements GameMap {
 	}
 	
 	private void updateContinuousMapDamageProperties() {
-		continuousMapDamage = Float
-				.parseFloat(map.getProperties().get(GameMap.GlobalMapPropertyKeys.MAP_CONTINUOUSE_DAMAGE.getKey(), "0f", String.class));
-		continuousMapDamageInterval = Float
-				.parseFloat(map.getProperties().get(GameMap.GlobalMapPropertyKeys.MAP_CONTINUOUSE_DAMAGE_INTERVAL.getKey(), "0f", String.class));
+		continuousMapDamage = Float.parseFloat(map.getProperties().get(GameMap.GlobalMapPropertyKeys.MAP_CONTINUOUSE_DAMAGE.getKey(), "0f", String.class));
+		continuousMapDamageInterval = Float.parseFloat(map.getProperties().get(GameMap.GlobalMapPropertyKeys.MAP_CONTINUOUSE_DAMAGE_INTERVAL.getKey(), "0f", String.class));
 		continuousMapDamageTimeDelta = 0f;
 	}
 	
@@ -304,6 +302,10 @@ public class GameMapImplementation implements GameMap {
 		renderer.renderAbovePlayer();
 		renderer.renderShadows();
 		renderer.renderDarknessArroundPlayer();
+		
+		// process the cutscene last, otherwise the color transition won't work correctly 
+		// (because it can't be rendered within the GameMapRenderer batch)
+		processor.processCutscene(delta);
 	}
 	
 	private void processAndRenderGameObject(float delta) {
@@ -327,10 +329,6 @@ public class GameMapImplementation implements GameMap {
 		renderer.beginShapeRenderer();
 		renderer.renderEnemyHealthBars();
 		renderer.endShapeRenderer();
-		
-		// process the cutscene last, otherwise the color transition won't work correctly 
-		// (because it can't be rendered within the GameMapRenderer batch)
-		processor.processCutscene(delta);
 	}
 	
 	@Override
@@ -593,8 +591,7 @@ public class GameMapImplementation implements GameMap {
 			objectDescription = "";
 		}
 		
-		Gdx.app.debug(getClass().getSimpleName(),
-				"Adding " + object.getClass().getSimpleName() + objectDescription + " (count: " + count + "): " + object);
+		Gdx.app.debug(getClass().getSimpleName(), "Adding " + object.getClass().getSimpleName() + objectDescription + " (count: " + count + "): " + object);
 	}
 	
 	private void logRemoveObject(Object object, int count) {
@@ -609,8 +606,7 @@ public class GameMapImplementation implements GameMap {
 			objectDescription = "";
 		}
 		
-		Gdx.app.debug(getClass().getSimpleName(),
-				"Removing " + object.getClass().getSimpleName() + objectDescription + " (count: " + count + "): " + object);
+		Gdx.app.debug(getClass().getSimpleName(), "Removing " + object.getClass().getSimpleName() + objectDescription + " (count: " + count + "): " + object);
 	}
 	
 	@Override

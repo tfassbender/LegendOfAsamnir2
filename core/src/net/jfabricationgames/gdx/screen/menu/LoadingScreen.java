@@ -105,7 +105,10 @@ public class LoadingScreen extends MenuScreen<LoadingScreen> {
 	private void drawTexts() {
 		screenTextWriter.setColor(Color.RED);
 		screenTextWriter.setScale(2f);
-		screenTextWriter.drawText("Legend of Asamnir", 150, 700);
+		screenTextWriter.drawText("Legend of Asamnir 2", 110, 700);
+		
+		screenTextWriter.setScale(1.3f);
+		screenTextWriter.drawText("Rise of the Chaos Wizard", 210, 600);
 		
 		screenTextWriter.setColor(Color.BLACK);
 		screenTextWriter.setScale(1.5f);

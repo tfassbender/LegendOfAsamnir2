@@ -7,10 +7,9 @@
 			executionDelayInSeconds: 1.5f,
 			
 			executionParameters: {
-				displayTextHeader: "Strange Narrator Voice",
-				displayText: "After his glorious victory against his enmey, Thorin took his key and proceeded his quest.",
-				colorHeader: #000099,
-				showNextPageIcon: true,
+				displayTextHeader: "Tobias (Developer)",
+				displayText: "You've reached the end of this demo version of the game.\n\nMore content (and so many more bad jokes) are in development. ",
+				colorHeader: #FF00FF,
 			}
 			
 			waitForEventToFinish: true,
@@ -24,12 +23,55 @@
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "Thorin",
-				displayText: "That was the first time, anything this strange narrator voice said, made any sense.",
-				showNextPageIcon: true,
+				displayTextHeader: "Tobias (Developer)",
+				displayText: "Thanks for playing! ",
+				colorHeader: #FF00FF,
 			}
 			
 			waitForEventToFinish: true,
+			
+			executes: [
+				show_text_3,
+			]
 		},
+		show_text_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "What?! No please!\nNot more of this!!! ",
+				showNextPageIcon: true,
+			}
+			
+			executes: [
+				fade_out,
+			]
+		},
+		
+		fade_out: {
+			type: COLOR_TRANSITION,
+			fadeIntoColor: true,
+			executionDelayInSeconds: 2f,
+			colorTransitionDelayInSeconds: 0f,
+			colorTransitionDurationInSeconds: 3f,
+			delayAfterColorTransitionInSeconds: 2f,
+			
+			cameraFollowsTarget: false,
+	
+			waitForEventToFinish: true,
+			
+			executes: [
+				back_to_main_menu,
+			],
+		},
+		
+		back_to_main_menu: {
+			type: EVENT,
+			
+			event: {
+				eventType: BACK_TO_MAIN_MENU,
+				booleanValue: true
+			},
+		}
 	}
 }

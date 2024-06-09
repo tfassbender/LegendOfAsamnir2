@@ -46,4 +46,5 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	
 	public boolean isBoss = false;
 	public String bossName;
+	public boolean playBossAppearedSound = true;
 }

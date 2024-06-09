@@ -18,8 +18,7 @@ public class CutsceneColorTransitionAction extends AbstractCutsceneAction {
 	private OrthographicCamera hudCamera;
 	private ShapeRenderer shapeRenderer = new ShapeRenderer();
 	
-	public CutsceneColorTransitionAction(CutsceneUnitProvider unitProvider, CutsceneControlledActionConfig actionConfig,
-			OrthographicCamera hudCamera) {
+	public CutsceneColorTransitionAction(CutsceneUnitProvider unitProvider, CutsceneControlledActionConfig actionConfig, OrthographicCamera hudCamera) {
 		super(unitProvider, actionConfig);
 		
 		transitionColor = GameUtil.getColorFromRGB(actionConfig.rgbColor, Color.BLACK);
@@ -57,8 +56,7 @@ public class CutsceneColorTransitionAction extends AbstractCutsceneAction {
 	}
 	
 	private boolean isWithinTransition() {
-		return executionTime > actionConfig.colorTransitionDelayInSeconds
-				&& executionTime <= actionConfig.colorTransitionDelayInSeconds + actionConfig.colorTransitionDurationInSeconds;
+		return executionTime > actionConfig.colorTransitionDelayInSeconds && executionTime <= actionConfig.colorTransitionDelayInSeconds + actionConfig.colorTransitionDurationInSeconds;
 	}
 	
 	private boolean isAfterTransition() {
@@ -80,8 +78,7 @@ public class CutsceneColorTransitionAction extends AbstractCutsceneAction {
 	
 	@Override
 	public boolean isExecutionFinished() {
-		return executionTime > actionConfig.colorTransitionDelayInSeconds + actionConfig.colorTransitionDurationInSeconds
-				+ actionConfig.delayAfterColorTransitionInSeconds;
+		return executionTime > actionConfig.colorTransitionDelayInSeconds + actionConfig.colorTransitionDurationInSeconds + actionConfig.delayAfterColorTransitionInSeconds;
 	}
 	
 	@Override

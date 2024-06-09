@@ -254,22 +254,6 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				explain_controls_2,
-			]
-		},
-		explain_controls_2: {
-			type: SHOW_ON_SCREEN_TEXT,
-			
-			executionParameters: {
-				displayTextHeader: "???",
-				displayText: "Use the E key on the keyboard or the Y button on the controller to interact with objects. ",
-				colorHeader: #000099,
-				showNextPageIcon: true,
-			}
-			
-			waitForEventToFinish: true,
-			
-			executes: [
 				thorin_hears_the_narrator,
 			]
 		},

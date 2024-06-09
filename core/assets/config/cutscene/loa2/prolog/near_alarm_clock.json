@@ -49,9 +49,66 @@
 		show_boss_health_bar: {
 			type: EVENT,
 			
+            executionDelayInSeconds: 1.5f,
+			
 			event: {
 				eventType: BOSS_ENEMY_SHOW,
 			},
+			
+			executes: [
+				narrator_talking,
+			]
 		}
+		narrator_talking: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 6f,
+            
+            executionParameters: {
+                displayTextHeader: "???",
+                colorHeader: #000099,
+                displayText: "And so our glorious hero Thorin began his epic battle against his mighty arch enemy ... The Alarm Clock ... of unknown origin. ",
+			}
+            
+            waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answering,
+			]
+		},
+		thorin_answering: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "There was this voice again...\n\nSounded like ...\n\n...  ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_answering_2,
+			]
+		},
+		thorin_answering_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "... oh no! ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_after_cutscene,
+            ]
+		},
+		wait_after_cutscene: {
+            type: WAIT,
+            
+            executionDurationInSeconds: 0.5f,
+		},
 	}
 }

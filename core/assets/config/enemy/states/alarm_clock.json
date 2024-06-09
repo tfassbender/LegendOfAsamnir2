@@ -45,7 +45,7 @@
 		id: die,
 		animation: alarm_clock_idle,
 		endsWithAnimation: true,
-		changeStateAfterAnimationDelay: 1f,
+		changeStateAfterAnimationDelay: 5f,
 		followingState: END,
 		stateEnteringSound: glass_break,
 		interruptingStates: []

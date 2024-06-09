@@ -28,9 +28,7 @@ public class SoundManager implements Disposable {
 	
 	private ArrayMap<String, SoundSet> soundSets;
 	
-	private SoundManager() {
-		
-	}
+	private SoundManager() {}
 	
 	public void loadConfig(String soundConfigPath) {
 		soundSets = new ArrayMap<>();

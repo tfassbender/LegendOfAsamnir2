@@ -229,6 +229,12 @@
 				wood_break: {
 					path: "sound/object/wood_break_1.wav",
 				},
+				boss_appeared: {
+				    path: "sound/enemy/boss_appeared.wav",
+				},
+				boss_defeated: {
+					path: "sound/enemy/boss_defeated.wav",
+				},
 				//gladiator
 				attack_gladiator: {
 					path: "sound/enemy/attack/gladiator.wav",

@@ -36,11 +36,15 @@ import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyPropertie
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsUtil;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
+import net.jfabricationgames.gdx.sound.SoundManager;
+import net.jfabricationgames.gdx.sound.SoundSet;
 import net.jfabricationgames.gdx.util.MapUtil;
 
 public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObject, CutsceneControlledStatefullUnit, EventListener {
 	
 	private static final String MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT = "enemyDefeatedEventText";
+	
+	private static final SoundSet SOUND_SET = SoundManager.getInstance().loadSoundSet("enemy");
 	
 	private PhysicsBodyProperties physicsBodyProperties;
 	
@@ -389,6 +393,10 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 					.setEventType(EventType.BOSS_ENEMY_APPEARED) //
 					.setParameterObject(this) //
 					.setStringValue(typeConfig.bossName));
+			
+			if (typeConfig.playBossAppearedSound) {
+				SOUND_SET.playSound("boss_appeared");
+			}
 		}
 	}
 }

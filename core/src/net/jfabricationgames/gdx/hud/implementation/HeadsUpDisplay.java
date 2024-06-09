@@ -24,9 +24,9 @@ public class HeadsUpDisplay implements Disposable {
 	}
 	
 	public void render(float delta) {
-		onScreenText.render(delta);//render the screen text first, to not overdraw the status bar, when using a black background
-		statusBar.render(delta);
 		bossStatusBar.render(delta);
+		onScreenText.render(delta);//render the screen text before the player's status bar, to not overdraw the status bar, when using a black background
+		statusBar.render(delta);
 		onScreenInfoRenderer.render(delta);
 		onScreenRuneRenderer.render(delta);
 		worldEdge.render(delta);

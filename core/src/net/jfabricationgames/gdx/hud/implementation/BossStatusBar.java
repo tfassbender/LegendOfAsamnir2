@@ -15,9 +15,13 @@ import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.sound.SoundManager;
+import net.jfabricationgames.gdx.sound.SoundSet;
 import net.jfabricationgames.gdx.text.ScreenTextWriter;
 
 public class BossStatusBar implements Disposable, EventListener {
+	
+	private static final SoundSet SOUND_SET = SoundManager.getInstance().loadSoundSet("enemy");
 	
 	private static final float HEALTH_BAR_FULL_REDUCTION_TIME = 3f; // the time it takes for the health bar to go from full to empty (if the boss is defeated in one hit)
 	
@@ -75,6 +79,7 @@ public class BossStatusBar implements Disposable, EventListener {
 	private float drawnHealth; // slowly reduce the health bar to the actual health
 	
 	private float timeTillBossWasDefeated = 0f;
+	private boolean bossSoundPlayed = false;
 	
 	public BossStatusBar(OrthographicCamera camera, float sceneWidth, float sceneHeight) {
 		this.camera = camera;
@@ -91,6 +96,7 @@ public class BossStatusBar implements Disposable, EventListener {
 	public void setBoss(Enemy boss) {
 		this.boss = boss;
 		timeTillBossWasDefeated = 0f;
+		bossSoundPlayed = false;
 	}
 	
 	public void render(float delta) {
@@ -100,6 +106,7 @@ public class BossStatusBar implements Disposable, EventListener {
 			
 			shapeRenderer.setProjectionMatrix(camera.combined);
 			batch.setProjectionMatrix(camera.combined);
+			screenTextWriter.setBatchProjectionMatrix(camera.combined);
 			
 			// reduce the drawn health to the actual health
 			if (drawnHealth > health) {
@@ -118,6 +125,10 @@ public class BossStatusBar implements Disposable, EventListener {
 			// make the health bar disappear a view seconds after the boss was defeated
 			if (health <= 0) {
 				timeTillBossWasDefeated += delta;
+				if (timeTillBossWasDefeated > 2f && !bossSoundPlayed) {
+					bossSoundPlayed = true;
+					SOUND_SET.playSound("boss_defeated");
+				}
 				if (timeTillBossWasDefeated > 5f) {
 					boss = null;
 				}

@@ -1,0 +1,50 @@
+{
+	id: loa2_prolog_alarm_clock_defeated,
+	controlledActions: {
+		show_text_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 6f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Finally!\n\nSome silence! ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			startsWithCutscene: true,
+			
+			executes: [
+				show_text_2,
+			]
+		},
+		show_text_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Now that I'm awake, I should go and see what's happening in the village.\n\nMaybe the tavern is open already. ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				show_text_3,
+			]
+		},
+		show_text_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 2f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "... no strange narrator voices? ...\n\nMaybe I just imagined things... ",
+			}
+			
+			waitForEventToFinish: true,
+		},
+	}
+}

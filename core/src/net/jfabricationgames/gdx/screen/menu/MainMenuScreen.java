@@ -29,6 +29,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	private MenuBox background;
 	private MenuBox bannerMainMenu;
 	private MenuBox banner;
+	private MenuBox bannerSubTitle;
 	private FocusButton buttonContinueGame;
 	private FocusButton buttonLoadGame;
 	private FocusButton buttonStartNewGame;
@@ -58,6 +59,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	private void createComponents() {
 		background = new MenuBox(12, 15, MenuBox.TextureType.GREEN_BOARD);
 		banner = new MenuBox(10, 2, MenuBox.TextureType.BIG_BANNER);
+		bannerSubTitle = new MenuBox(10, 2, MenuBox.TextureType.BIG_BANNER);
 		bannerMainMenu = new MenuBox(6, 2, MenuBox.TextureType.BIG_BANNER_LOW);
 		
 		buttonContinueGame = createButton(4);
@@ -131,14 +133,19 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	}
 	
 	private void drawBanners() {
-		banner.draw(batch, -15, 550, 1200, 350);
+		banner.draw(batch, -15, 575, 1200, 350);
+		bannerSubTitle.draw(batch, 90, 565, 1000, 210);
 		bannerMainMenu.draw(batch, 310, 470, 550, 250);
 	}
 	
 	private void drawTexts() {
 		screenTextWriter.setColor(Color.BLACK);
 		screenTextWriter.setScale(2f);
-		screenTextWriter.drawText("Legend of Asamnir", 150, 750);
+		screenTextWriter.drawText("Legend of Asamnir 2", 110, 775);
+		
+		screenTextWriter.setColor(new Color(0.85f, 0f, 0f, 1f));
+		screenTextWriter.setScale(1.3f);
+		screenTextWriter.drawText("Rise of the Chaos Wizard", 200, 687);
 		
 		int buttonTextX = 370;
 		int buttonTextWidth = 430;
