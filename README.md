@@ -1,6 +1,6 @@
-# Legend of Asamnir (DwarfScrollerGDX)
+# Legend of Asamnir 2 - Rise of the Chaos Wizard
 
-A first test of a simple game using [libGDX](https://libgdx.badlogicgames.com/). 
+​The Legend of Asamnir is an adventure RPG, in which you play a dwarf named Thorin, who has to defeat the evil chaos wizard. On your way you find items, kill enemies, talk to NPCs and endure many bad jokes.
 
 The game can be played using a keyboard and a mouse or a game pad (it's optimized for game pad use).
 
