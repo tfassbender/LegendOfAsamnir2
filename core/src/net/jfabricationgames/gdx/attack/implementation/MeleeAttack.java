@@ -11,18 +11,17 @@ import net.jfabricationgames.gdx.attack.hit.AttackType;
 import net.jfabricationgames.gdx.attack.hit.Hittable;
 import net.jfabricationgames.gdx.physics.CollisionUtil;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
-import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
-import net.jfabricationgames.gdx.physics.PhysicsWorld;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
+import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
+import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
 public class MeleeAttack extends Attack {
 	
 	public MeleeAttack(AttackConfig config, Vector2 direction, Body body, PhysicsCollisionType collisionType) {
 		super(config, direction, body, collisionType);
 		
-		hitFixtureProperties = new PhysicsBodyProperties().setBody(body).setCollisionType(collisionType).setSensor(true)
-				.setPhysicsBodyShape(PhysicsBodyShape.CIRCLE).setRadius(config.hitFixtureRadius).setFixturePosition(getFixturePosition(direction));
+		hitFixtureProperties = new PhysicsBodyProperties().setBody(body).setCollisionType(collisionType).setSensor(true).setPhysicsBodyShape(PhysicsBodyShape.CIRCLE).setRadius(config.hitFixtureRadius).setFixturePosition(getFixturePosition(direction));
 	}
 	
 	private Vector2 getFixturePosition(Vector2 direction) {
@@ -51,10 +50,9 @@ public class MeleeAttack extends Attack {
 			Object attackUserData = CollisionUtil.getCollisionTypeUserData(collisionType, fixtureA, fixtureB);
 			Object attackedObjectUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);
 			
-			if (attackedObjectUserData != null && attackUserData == hitFixtureProperties.body.getUserData()
-					&& attackedObjectUserData instanceof Hittable) {
+			if (attackedObjectUserData != null && attackUserData == hitFixtureProperties.body.getUserData() && attackedObjectUserData instanceof Hittable) {
 				Hittable attackedObject = ((Hittable) attackedObjectUserData);
-				attackedObject.pushByHit(hitFixture.getBody().getPosition(), config.pushForce, config.pushForceAffectedByBlock);
+				attackedObject.pushByHit(hitFixture.getBody().getPosition(), config.pushForce, config.pushForceWhenBlocked, config.pushForceAffectedByBlock);
 				attackedObject.takeDamage(config.damage, AttackType.MELEE);
 			}
 		}

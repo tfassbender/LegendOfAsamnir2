@@ -401,4 +401,29 @@
 		healthBarOffsetY: -0.4,
 		healthBarWidthFactor: 1.0,
 	},
+	alarm_clock: {
+		typeName: alarm_clock,
+		
+		animationsConfig: config/animation/enemy/alarm_clock.json,
+		stateConfig: config/enemy/states/alarm_clock.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/alarm_clock.json,
+		aiConfig: config/enemy/ai/alarm_clock.json,
+		
+		health: 12,
+		movingSpeed: 0,
+		movable: false,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 6f,
+		
+		pushForceDamage: 0,
+		pushForceHit: 0,
+	}
 }

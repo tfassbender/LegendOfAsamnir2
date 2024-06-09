@@ -6,6 +6,7 @@ public enum CharacterAction implements DataCharacterAction {
 	
 	NONE("", null, 0f, false, true, false, null), // just stay still
 	BLOCK("", null, 0f, false, true, true, null), // hold a shield to block attacks
+	BLOCK_MOVE("dwarf_block_move_", null, 0f, true, true, false, null), // moving while blocking
 	IDLE("dwarf_idle_", null, 0f, true, true, false, null), // staying still for some time
 	RUN("dwarf_run_", null, 0f, true, true, false, null), // running in any direction
 	JUMP("dwarf_jump_", "jump", 0f, true, false, true, null), // jumping with or without direction
@@ -29,8 +30,7 @@ public enum CharacterAction implements DataCharacterAction {
 	private final boolean moveBlocking;
 	private final String attack;
 	
-	private CharacterAction(String animationPrefix, String sound, float enduranceCosts, boolean animated, boolean interruptable, boolean moveBlocking,
-			String attack) {
+	private CharacterAction(String animationPrefix, String sound, float enduranceCosts, boolean animated, boolean interruptable, boolean moveBlocking, String attack) {
 		this.animationPrefix = animationPrefix;
 		this.sound = sound;
 		this.enduranceCosts = enduranceCosts;
@@ -58,7 +58,7 @@ public enum CharacterAction implements DataCharacterAction {
 		if (this == CharacterAction.NONE || this == CharacterAction.IDLE) {
 			return ENDURANCE_RECHARGE_IDLE;
 		}
-		else if (this == CharacterAction.BLOCK) {
+		else if (this == CharacterAction.BLOCK || this == CharacterAction.BLOCK_MOVE) {
 			return ENDURANCE_RECHARGE_BLOCKING;
 		}
 		else {

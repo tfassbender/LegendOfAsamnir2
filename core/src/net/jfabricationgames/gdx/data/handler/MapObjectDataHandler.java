@@ -109,7 +109,7 @@ public class MapObjectDataHandler {
 		Array<Field> stateFields = getStateFields(mapObject);
 		
 		for (Field field : stateFields) {
-			boolean accessible = field.isAccessible();
+			boolean accessible = field.canAccess(mapObject);
 			field.setAccessible(true);
 			Object value = field.get(mapObject);
 			field.setAccessible(accessible);

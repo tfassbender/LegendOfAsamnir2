@@ -208,6 +208,9 @@
 				metal_hit_2: {
 					path: "sound/object/metal_hit_2.wav",
 				},
+				glass_break: {
+					path: "sound/object/glass_break_1.wav",
+				},
 				rock_hit: {
 					path: "sound/enemy/rock_hit.wav",
 				},

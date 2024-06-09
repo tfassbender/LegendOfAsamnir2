@@ -11,10 +11,15 @@ public class AnimationConfig implements Cloneable {
 	public String atlas;
 	public float frameDuration = 0.1f;
 	public PlayMode playMode = PlayMode.NORMAL;
+	public float scale = 1f;
 	
+	// growing animation
 	public float startScale;
 	public float maxScale;
 	public float duration;
+	
+	// shaking animation
+	public float shakingRandomMovementRange;
 	
 	public String getAlias() {
 		return alias != null ? alias : name;

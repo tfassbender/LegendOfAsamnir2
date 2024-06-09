@@ -39,12 +39,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	private static final String MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT = "enemyDefeatedEventText";
 	
-	private static PhysicsBodyProperties physicsBodyProperties = createDefaultPhysicsBodyProperties();
-	
-	private static PhysicsBodyProperties createDefaultPhysicsBodyProperties() {
-		return new PhysicsBodyProperties().setType(BodyType.DynamicBody).setSensor(false).setCollisionType(PhysicsCollisionType.ENEMY).setDensity(10f)
-				.setLinearDamping(10f);
-	}
+	private PhysicsBodyProperties physicsBodyProperties;
 	
 	protected EnemyHealthBarRenderer healthBarRenderer;
 	
@@ -70,6 +65,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		
 		readTypeConfig();
 		readMapProperties(properties);
+		createPhysicsBodyProperties();
 		initializeAttackHandler();
 		initializeStates();
 		initializeMovingState();
@@ -88,6 +84,19 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	private void readMapProperties(MapProperties mapProperties) {
 		dropTypes = ItemDropUtil.processMapProperties(mapProperties, typeConfig.drops);
+	}
+	
+	protected void createPhysicsBodyProperties() {
+		physicsBodyProperties = new PhysicsBodyProperties() //
+				.setType(BodyType.DynamicBody) //
+				.setSensor(false) //
+				.setCollisionType(PhysicsCollisionType.ENEMY) //
+				.setDensity(10f) //
+				.setLinearDamping(10f);
+		if (!typeConfig.movable) {
+			// increase the density to make the enemy immovable
+			physicsBodyProperties.setDensity(100_000f);
+		}
 	}
 	
 	private void initializeAttackHandler() {
@@ -121,8 +130,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	@Override
 	protected PhysicsBodyProperties definePhysicsBodyProperties() {
-		return physicsBodyProperties.setRadius(typeConfig.bodyRadius).setWidth(typeConfig.bodyWidth).setHeight(typeConfig.bodyHeight)
-				.setPhysicsBodyShape(typeConfig.bodyShape);
+		return physicsBodyProperties.setRadius(typeConfig.bodyRadius).setWidth(typeConfig.bodyWidth).setHeight(typeConfig.bodyHeight).setPhysicsBodyShape(typeConfig.bodyShape);
 	}
 	
 	@Override
@@ -247,7 +255,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	}
 	
 	@Override
-	public void pushByHit(Vector2 hitCenter, float force, boolean blockAffected) {
+	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected) {
 		if (hasBody() && isAlive()) {
 			Vector2 pushDirection = getPushDirection(getPosition(), hitCenter);
 			//enemies define the force to get pushed themselves (the player's attack is multiplied to this self defined force as a factor)

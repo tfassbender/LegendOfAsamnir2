@@ -16,7 +16,7 @@ buildscript {
 allprojects {
     apply plugin: "eclipse"
 
-    version = '1.0'
+    version = '0.1'
     ext {
         appName = "Legend of Asamnir 2 - Rise of the Chaos Wizard"
         gdxVersion = '1.12.1'
@@ -67,5 +67,9 @@ project(":core") {
         api "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"
         api "net.dermetfan.libgdx-utils:libgdx-utils:0.13.4"
         api "net.dermetfan.libgdx-utils:libgdx-utils-box2d:0.13.4"
+        
+        // cdi container dependencies
+        implementation 'org.reflections:reflections:0.10.2'
+        implementation fileTree(dir: 'lib', include: '*.jar')
     }
 }

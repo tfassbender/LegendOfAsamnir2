@@ -16,6 +16,7 @@
 				raw_images/dwarf/dwarf_idle_right, 
 				raw_images/dwarf/dwarf_jump_right, 
 				raw_images/dwarf/dwarf_run_right, 
+				raw_images/dwarf/dwarf_block_move_right,
 				raw_images/dwarf/dwarf_spin_right,
 				
 				//##############################################################
@@ -180,6 +181,10 @@
 				raw_images/enemy/goblin_king/goblin_king_panic,
 				raw_images/enemy/goblin_king/goblin_king_slam,
 				raw_images/enemy/goblin_king/goblin_king_throw,
+				
+				// alarm_clock
+				raw_images/enemy/alarm_clock/alarm_clock_idle,
+				raw_images/enemy/alarm_clock/alarm_clock_ringing,
 				
 				//##############################################################
 				//### NPCs

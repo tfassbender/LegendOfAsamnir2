@@ -5,11 +5,14 @@ import com.badlogic.gdx.graphics.g2d.Animation.PlayMode;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import net.jfabricationgames.gdx.constants.Constants;
+
 public class TextureAnimationDirector<T extends TextureRegion> extends AnimationDirector<T> {
 	
 	private Animation<T> animation;
 	
-	public TextureAnimationDirector(Animation<T> animation) {
+	public TextureAnimationDirector(Animation<T> animation, AnimationConfig animationConfig) {
+		super(animationConfig);
 		this.animation = animation;
 		initializeSpriteConfigWithoutPosition();
 	}
@@ -54,6 +57,16 @@ public class TextureAnimationDirector<T extends TextureRegion> extends Animation
 		for (TextureRegion region : animation.getKeyFrames()) {
 			region.flip(x, y);
 		}
+	}
+	
+	@Override
+	public float getXOffset() {
+		return Constants.WORLD_TO_SCREEN * (float) (Math.random() * animationConfig.shakingRandomMovementRange * 2 - animationConfig.shakingRandomMovementRange);
+	}
+	
+	@Override
+	public float getYOffset() {
+		return Constants.WORLD_TO_SCREEN * (float) (Math.random() * animationConfig.shakingRandomMovementRange * 2 - animationConfig.shakingRandomMovementRange);
 	}
 	
 	public void drawInMenu(SpriteBatch batch) {

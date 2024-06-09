@@ -1,15 +1,18 @@
 package net.jfabricationgames.gdx;
 
+import java.io.IOException;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 
+import net.jfabricationgames.cdi.CdiContainer;
+import net.jfabricationgames.cdi.exception.CdiException;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
 import net.jfabricationgames.gdx.data.GameDataService;
 import net.jfabricationgames.gdx.event.global.GlobalEventListener;
 import net.jfabricationgames.gdx.input.InputManager;
 import net.jfabricationgames.gdx.screen.ScreenManager;
 import net.jfabricationgames.gdx.screen.game.GameScreen;
-import net.jfabricationgames.gdx.screen.menu.MainMenuScreen;
 import net.jfabricationgames.gdx.sound.SoundManager;
 import net.jfabricationgames.gdx.text.FontManager;
 
@@ -43,6 +46,8 @@ public class Game extends com.badlogic.gdx.Game {
 	public void create() {
 		preGameConfigurator.run();
 		
+		initializeCdiContainer();
+		
 		AssetGroupManager.initialize(ASSET_GROUP_MANAGER_CONFIG_PATH);
 		SoundManager.getInstance().loadConfig(SOUND_CONFIG_PATH);
 		FontManager.getInstance().loadConfig(FONT_CONFIG_PATH);
@@ -54,9 +59,17 @@ public class Game extends com.badlogic.gdx.Game {
 		InputManager.getInstance().createInputProfile(Gdx.files.internal(INPUT_PROFILE_CONFIG_PATH), multiplexer);
 		
 		ScreenManager screenManager = ScreenManager.getInstance();
-		ScreenManager.setMainMenuScreenSupplier(MainMenuScreen::new);
 		screenManager.setGame(this);
 		screenManager.changeToMainMenuScreen();
+	}
+	
+	private void initializeCdiContainer() {
+		try {
+			CdiContainer.create("net.jfabricationgames.gdx");
+		}
+		catch (CdiException | IOException e) {
+			Gdx.app.error(Game.class.getSimpleName(), "Error while creating the CDI container", e);
+		}
 	}
 	
 	public GameScreen getGameScreen() {
@@ -72,5 +85,6 @@ public class Game extends com.badlogic.gdx.Game {
 		AssetGroupManager.getInstance().dispose();
 		SoundManager.getInstance().dispose();
 		FontManager.getInstance().dispose();
+		CdiContainer.destroy();
 	}
 }

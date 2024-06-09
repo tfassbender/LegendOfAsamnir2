@@ -74,8 +74,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	}
 	
 	private void createDialogs() {
-		loadGameDialog = new LoadGameDialog(camera, () -> {
-		}, this::playMenuSound);
+		loadGameDialog = new LoadGameDialog(camera, () -> {}, this::playMenuSound);
 		creditsDialog = new CreditsDialog(camera);
 	}
 	
@@ -148,11 +147,9 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 		screenTextWriter.drawText("Main Menu", buttonTextX + 10, 613, buttonTextWidth, Align.center, false);
 		
 		screenTextWriter.setScale(1.15f);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonContinueGame) + "Continue", buttonTextX, 517, buttonTextWidth, Align.center,
-				false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonContinueGame) + "Continue", buttonTextX, 517, buttonTextWidth, Align.center, false);
 		screenTextWriter.drawText(getButtonTextColorEncoding(buttonLoadGame) + "Load Game", buttonTextX, 411, buttonTextWidth, Align.center, false);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonStartNewGame) + "New Game", buttonTextX, 307, buttonTextWidth, Align.center,
-				false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonStartNewGame) + "New Game", buttonTextX, 307, buttonTextWidth, Align.center, false);
 		screenTextWriter.drawText(getButtonTextColorEncoding(buttonCredits) + "Credits", buttonTextX, 202, buttonTextWidth, Align.center, false);
 		screenTextWriter.drawText(getButtonTextColorEncoding(buttonQuit) + "Quit", buttonTextX, 98, buttonTextWidth, Align.center, false);
 	}
@@ -216,9 +213,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	public void continueGame() {
 		try {
 			new GameDataService().loadGameDataFromQuicksaveSlot();
-			createGameScreen(() -> {
-				EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
-			});
+			createGameScreen(() -> EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED)));
 		}
 		catch (IllegalStateException e) {
 			Gdx.app.log(getClass().getSimpleName(), "Continue Game not possible due to an exception. Starting new game instead: " + e.getMessage());

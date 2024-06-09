@@ -12,6 +12,8 @@ public interface StatsCharacter {
 	public int getNormalKeys();
 	public int getCoinsForHud();
 	
+	public boolean isEnduranceLow();
+	
 	public String getActiveAction();
 	public Array<String> getActionList();
 	

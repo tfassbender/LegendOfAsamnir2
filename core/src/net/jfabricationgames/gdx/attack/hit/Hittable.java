@@ -9,7 +9,7 @@ public interface Hittable {
 	
 	public void takeDamage(float damage, AttackType melee);
 	
-	public void pushByHit(Vector2 hitCenter, float force, boolean blockAffected);
+	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected);
 	
 	public default Vector2 getPushDirection(Vector2 position, Vector2 hitCenter) {
 		return position.cpy().sub(hitCenter).nor();

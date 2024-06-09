@@ -18,6 +18,11 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 	
 	protected float stateTime;
 	protected AnimationSpriteConfig spriteConfig;
+	protected AnimationConfig animationConfig;
+	
+	public AnimationDirector(AnimationConfig animationConfig) {
+		this.animationConfig = animationConfig;
+	}
 	
 	protected abstract void initializeSpriteConfigWithoutPosition();
 	
@@ -30,9 +35,11 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 			throw new IllegalStateException("No AnimationSpriteConfig. Please add an AnimationSpriteConfig in order to use the draw method");
 		}
 		T keyFrame = getKeyFrame();
-		float x = spriteConfig.x + ((spriteConfig.width - keyFrame.getRegionWidth()) * Constants.WORLD_TO_SCREEN * 0.5f);
-		float y = spriteConfig.y + ((spriteConfig.height - keyFrame.getRegionHeight()) * Constants.WORLD_TO_SCREEN * 0.5f);
-		batch.draw(keyFrame, x, y, spriteConfig.width * 0.5f, spriteConfig.height * 0.5f, keyFrame.getRegionWidth(), keyFrame.getRegionHeight(),
+		float x = spriteConfig.x + ((spriteConfig.width - keyFrame.getRegionWidth() * animationConfig.scale) * Constants.WORLD_TO_SCREEN * 0.5f);
+		float y = spriteConfig.y + ((spriteConfig.height - keyFrame.getRegionHeight() * animationConfig.scale) * Constants.WORLD_TO_SCREEN * 0.5f);
+		batch.draw(keyFrame, x + getXOffset(), y + getYOffset(), //
+				spriteConfig.width * 0.5f, spriteConfig.height * 0.5f, //
+				keyFrame.getRegionWidth() * animationConfig.scale, keyFrame.getRegionHeight() * animationConfig.scale, //
 				Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN, 0f);
 	}
 	
@@ -53,6 +60,14 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 	public abstract float getAnimationDuration();
 	
 	public abstract void flip(boolean x, boolean y);
+	
+	protected float getXOffset() {
+		return 0;
+	}
+	
+	protected float getYOffset() {
+		return 0;
+	}
 	
 	public float getStateTime() {
 		return stateTime;

@@ -50,6 +50,12 @@
 			playMode: LOOP
 		},
 		{
+			name: dwarf_block_move_right,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP
+		},
+		{
 			name: dwarf_spin_right
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

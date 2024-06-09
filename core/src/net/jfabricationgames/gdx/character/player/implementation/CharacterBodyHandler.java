@@ -36,14 +36,10 @@ class CharacterBodyHandler {
 	}
 	
 	public void createPhysicsBody() {
-		PhysicsBodyProperties bodyProperties = new PhysicsBodyProperties().setType(BodyType.DynamicBody)
-				.setWidth(player.renderer.idleDwarfSprite.getRegionWidth() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_X)
-				.setHeight(player.renderer.idleDwarfSprite.getRegionHeight() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_Y)
-				.setCollisionType(PhysicsCollisionType.PLAYER).setLinearDamping(10f);
+		PhysicsBodyProperties bodyProperties = new PhysicsBodyProperties().setType(BodyType.DynamicBody).setWidth(player.renderer.idleDwarfSprite.getRegionWidth() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_X).setHeight(player.renderer.idleDwarfSprite.getRegionHeight() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_Y).setCollisionType(PhysicsCollisionType.PLAYER).setLinearDamping(10f);
 		body = PhysicsBodyCreator.createOctagonBody(bodyProperties);
 		body.setSleepingAllowed(false);
-		PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties().setBody(body).setSensor(true).setRadius(PHYSICS_BODY_SENSOR_RADIUS)
-				.setCollisionType(PhysicsCollisionType.PLAYER_SENSOR);
+		PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties().setBody(body).setSensor(true).setRadius(PHYSICS_BODY_SENSOR_RADIUS).setCollisionType(PhysicsCollisionType.PLAYER_SENSOR);
 		PhysicsBodyCreator.addCircularFixture(sensorProperties);
 		body.setUserData(player);
 	}
@@ -74,22 +70,29 @@ class CharacterBodyHandler {
 	}
 	
 	public void preSolve(Contact contact) {
-		GameMapGroundType updatedGroundProperties = GameMapGroundType.handleGameMapGroundContact(contact, PhysicsCollisionType.PLAYER,
-				groundProperties);
+		GameMapGroundType updatedGroundProperties = GameMapGroundType.handleGameMapGroundContact(contact, PhysicsCollisionType.PLAYER, groundProperties);
 		if (updatedGroundProperties != null) {
 			groundProperties = updatedGroundProperties;
 		}
 	}
 	
-	public void pushByHit(Vector2 hitCenter, float force, boolean blockAffected) {
+	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected) {
 		if (player.isAlive()) {
 			Vector2 pushDirection = player.getPushDirection(body.getPosition(), hitCenter);
-			force *= 10f * body.getMass();
-			if (player.isBlocking() && blockAffected) {
-				force *= 0.33;
+			float pushForce = 10f * body.getMass();
+			if (player.isBlocking()) {
+				if (forceWhenBlocked >= 0) {
+					pushForce *= forceWhenBlocked;
+				}
+				else if (blockAffected) {
+					pushForce *= force * 0.33;
+				}
+			}
+			else {
+				pushForce *= force;
 			}
 			
-			body.applyForceToCenter(pushDirection.x * force, pushDirection.y * force, true);
+			body.applyForceToCenter(pushDirection.x * pushForce, pushDirection.y * pushForce, true);
 		}
 	}
 }

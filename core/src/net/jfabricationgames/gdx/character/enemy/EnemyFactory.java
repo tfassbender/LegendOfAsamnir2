@@ -26,6 +26,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_FIRE_ELEMENTAL = "fire_elemental";
 	private static final String ENEMY_NAME_ICE_ELEMENTAL = "ice_elemental";
 	private static final String ENEMY_NAME_IMP = "imp";
+	private static final String ENEMY_NAME_ALARM_CLOCK = "alarm_clock";
 	
 	private static final String ENEMY_NAME_BAT = "bat";
 	private static final String ENEMY_NAME_TOTEM = "totem";
@@ -61,8 +62,7 @@ public class EnemyFactory {
 	public static Enemy createEnemy(String type, float x, float y, MapProperties properties) {
 		EnemyTypeConfig typeConfig = typeConfigs.get(type);
 		if (typeConfig == null) {
-			throw new IllegalStateException("No type config known for type: '" + type
-					+ "'. Either the type name is wrong or you have to add it to the objectTypesConfig (see \"" + CONFIG_FILE + "\")");
+			throw new IllegalStateException("No type config known for type: '" + type + "'. Either the type name is wrong or you have to add it to the objectTypesConfig (see \"" + CONFIG_FILE + "\")");
 		}
 		
 		Enemy enemy;
@@ -76,6 +76,7 @@ public class EnemyFactory {
 			case ENEMY_NAME_FIRE_ELEMENTAL:
 			case ENEMY_NAME_ICE_ELEMENTAL:
 			case ENEMY_NAME_IMP:
+			case ENEMY_NAME_ALARM_CLOCK:
 				enemy = new Enemy(typeConfig, properties);
 				break;
 			case ENEMY_NAME_BAT:

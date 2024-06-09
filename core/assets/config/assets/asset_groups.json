@@ -276,5 +276,14 @@
 				"textureMagFilter": "Nearest"
 			}
 		},
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_prolog.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
 	]
 }

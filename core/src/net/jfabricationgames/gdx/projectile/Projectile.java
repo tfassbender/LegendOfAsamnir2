@@ -44,6 +44,7 @@ public abstract class Projectile implements ContactListener {
 	
 	protected float damage;
 	protected float pushForce;
+	protected float pushForceWhenBlocked;
 	protected boolean pushForceAffectedByBlock = true;
 	
 	protected float explosionDamage;
@@ -113,8 +114,7 @@ public abstract class Projectile implements ContactListener {
 	
 	protected void createPhysicsBody(Vector2 position, PhysicsCollisionType collisionType) {
 		this.collisionType = collisionType;
-		PhysicsBodyProperties bodyProperties = createShapePhysicsBodyProperties().setType(BodyType.DynamicBody).setX(position.x).setY(position.y)
-				.setCollisionType(collisionType).setLinearDamping(typeConfig.damping);
+		PhysicsBodyProperties bodyProperties = createShapePhysicsBodyProperties().setType(BodyType.DynamicBody).setX(position.x).setY(position.y).setCollisionType(collisionType).setLinearDamping(typeConfig.damping);
 		body = PhysicsBodyCreator.createBody(bodyProperties);
 		body.setUserData(this);
 		addAdditionalPhysicsParts();
@@ -157,6 +157,10 @@ public abstract class Projectile implements ContactListener {
 	
 	public void setPushForce(float pushForce) {
 		this.pushForce = pushForce;
+	}
+	
+	public void setPushForceWhenBlocked(float pushForceWhenBlocked) {
+		this.pushForceWhenBlocked = pushForceWhenBlocked;
 	}
 	
 	public void setPushForceAffectedByBlock(boolean pushForceAffectedByBlock) {
@@ -294,7 +298,7 @@ public abstract class Projectile implements ContactListener {
 			if (!reflected && attackedUserData instanceof Hittable) {
 				Hittable hittable = (Hittable) attackedUserData;
 				//enemies define the force themselves; the force parameter is a factor for this self defined force
-				hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceAffectedByBlock);
+				hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
 				hittable.takeDamage(damage, typeConfig.attackType);
 			}
 			

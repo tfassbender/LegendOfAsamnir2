@@ -58,8 +58,7 @@ public class AnimationManager {
 		for (String config : configurations) {
 			AnimationConfigList animationConfig = loadAnimationConfig(config);
 			
-			animationConfigurations
-					.putAll(animationConfig.getConfigList().stream().collect(Collectors.toMap(AnimationConfig::getAlias, Function.identity())));
+			animationConfigurations.putAll(animationConfig.getConfigList().stream().collect(Collectors.toMap(AnimationConfig::getAlias, Function.identity())));
 			
 			animationConfig.getConfigList().stream().filter(c -> c.type == AnimationType.MULTIPLE_TEXTURES).forEach(this::createAnimation);
 			animationConfig.getConfigList().stream().filter(c -> c.type == AnimationType.GROWING).forEach(this::createTextures);
@@ -76,8 +75,7 @@ public class AnimationManager {
 		TextureAtlas textureAtlas = assetManager.get(config.atlas, TextureAtlas.class);
 		Animation<TextureRegion> animation = new Animation<>(config.frameDuration, textureAtlas.findRegions(config.name), config.playMode);
 		if (animation.getKeyFrames().length == 0) {
-			Gdx.app.error(getClass().getSimpleName(), "Animation loaded, but with 0 key frames. Animation was '" + config.name
-					+ "'. Maybe the animation was configured, but the images were not packed into the atlas?");
+			Gdx.app.error(getClass().getSimpleName(), "Animation loaded, but with 0 key frames. Animation was '" + config.name + "'. Maybe the animation was configured, but the images were not packed into the atlas?");
 		}
 		animations.put(config.getAlias(), animation);
 	}
@@ -97,8 +95,7 @@ public class AnimationManager {
 	 */
 	public Animation<TextureRegion> getAnimation(String name) {
 		if (!animations.containsKey(name)) {
-			throw new IllegalArgumentException("The animation \"" + name + "\" doesn't exist in this asset manager. "
-					+ "Please add it to the animation configuration (see config files: " + configFiles + ")");
+			throw new IllegalArgumentException("The animation \"" + name + "\" doesn't exist in this asset manager. " + "Please add it to the animation configuration (see config files: " + configFiles + ")");
 		}
 		return animations.get(name);
 	}
@@ -123,7 +120,7 @@ public class AnimationManager {
 	 *        The name of the animation that was defined in the JSON configuration file from which the animations were loaded.
 	 */
 	public TextureAnimationDirector<TextureRegion> getTextureAnimationDirector(String name) {
-		return new TextureAnimationDirector<TextureRegion>(getAnimation(name));
+		return new TextureAnimationDirector<TextureRegion>(getAnimation(name), animationConfigurations.get(name).clone());
 	}
 	
 	/**
@@ -134,7 +131,7 @@ public class AnimationManager {
 	 *        The name of the animation that was defined in the JSON configuration file from which the animations were loaded.
 	 */
 	public TextureAnimationDirector<TextureRegion> getTextureAnimationDirectorCopy(String name) {
-		return new TextureAnimationDirector<TextureRegion>(getAnimationCopy(name));
+		return new TextureAnimationDirector<TextureRegion>(getAnimationCopy(name), animationConfigurations.get(name).clone());
 	}
 	
 	/**

@@ -1,4 +1,12 @@
 [
+	// legend of asamnir 2
+	{
+		name: loa2_prolog,
+		map: "map/loa2_prolog.tmx",
+		initial: true
+		initialStartingPointId: 0,
+	},
+	
 	// testing
 	{
 		name: test_map_1,
@@ -55,7 +63,7 @@
 		name: demo_2_prolog,
 		map: "map/demo_2_prolog.tmx",
 		initialStartingPointId: 0,
-		initial: true
+		//initial: true
 	},
 	{
 		name: demo_2_tutorial,

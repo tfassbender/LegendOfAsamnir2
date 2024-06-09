@@ -1,0 +1,50 @@
+[
+	{
+		id: idle,
+		animation: alarm_clock_ringing,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack, damage, die
+		]
+	},
+	// the default enemy implementation needs a moving state
+	{
+		id: move,
+		animation: alarm_clock_ringing,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack, damage, die
+		]
+	},
+	{
+		id: attack,
+		animation: alarm_clock_ringing,
+		attack: alarm_nova,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: alarm_clock_ringing,
+		endsWithAnimation: true,
+		followingState: idle,
+		stateEnteringSound: metal_hit_1,
+		interruptingStates: [
+            die
+		]
+	}
+	{
+		id: die,
+		animation: alarm_clock_idle,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: glass_break,
+		interruptingStates: []
+	},
+]

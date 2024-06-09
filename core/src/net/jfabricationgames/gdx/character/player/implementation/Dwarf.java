@@ -50,6 +50,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final float TIME_TILL_GAME_OVER_MENU = 3f;
 	private static final float LOW_MANA_LEVEL = 15f;
 	
+	public static final float MIN_ENDURANCE_TO_START_BLOCK = 15f;
+	
 	private static final String ATTACK_CONFIG_FILE_NAME = "config/dwarf/attacks.json";
 	
 	private static final String SOUND_AMMO_EMPTY = "ammo_empty";
@@ -142,8 +144,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 							if (propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost)) {
 								itemDataHandler.decreaseAmmo(ammoType.toDataType());
 								propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
-								attackHandler.startAttack(ammoType.name().toLowerCase(),
-										movementHandler.getMovingDirection().getNormalizedDirectionVector());
+								attackHandler.startAttack(ammoType.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
 								
 								if (!itemDataHandler.hasAmmo(ammoType.toDataType())) {
 									fireOutOfAmmoEvent(ammoType);
@@ -166,8 +167,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 							&& attackHandler.allAttacksExecuted()) {
 						useMana(activeSpecialAction.manaCost);
 						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
-						attackHandler.startAttack(activeSpecialAction.name().toLowerCase(),
-								movementHandler.getMovingDirection().getNormalizedDirectionVector());
+						attackHandler.startAttack(activeSpecialAction.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
 					}
 					break;
 				case LANTERN:
@@ -223,7 +223,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	protected boolean isBlocking() {
-		return action == CharacterAction.BLOCK || action == CharacterAction.SHIELD_HIT;
+		return action == CharacterAction.BLOCK || action == CharacterAction.BLOCK_MOVE || action == CharacterAction.SHIELD_HIT;
 	}
 	
 	@BeforeWorldStep
@@ -273,7 +273,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		renderer.animation.increaseStateTime(delta);
 		if (action != CharacterAction.BLOCK) { // ending the block is done in the CharacterInputProcessor
 			if (renderer.animation.isAnimationFinished()) {
-				if (action == CharacterAction.SHIELD_HIT) {
+				if (action == CharacterAction.SHIELD_HIT && hasEnoughEnduranceToBlock()) {
+					changeAction(CharacterAction.BLOCK);
+				}
+				else if (action == CharacterAction.BLOCK_MOVE) {
 					changeAction(CharacterAction.BLOCK);
 				}
 				else {
@@ -281,6 +284,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				}
 			}
 		}
+	}
+	
+	public boolean hasEnoughEnduranceToBlock() {
+		return propertiesDataHandler.hasEnoughEndurance(MIN_ENDURANCE_TO_START_BLOCK);
 	}
 	
 	@Override
@@ -345,6 +352,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public float getEndurance() {
 		return propertiesDataHandler.getEndurancePercentual();
+	}
+	
+	public boolean isEnduranceLow() {
+		return !propertiesDataHandler.hasEnoughEndurance(MIN_ENDURANCE_TO_START_BLOCK);
 	}
 	
 	@Override
@@ -482,8 +493,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	@Override
-	public void pushByHit(Vector2 hitCenter, float force, boolean blockAffected) {
-		bodyHandler.pushByHit(hitCenter, force, blockAffected);
+	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected) {
+		bodyHandler.pushByHit(hitCenter, force, forceWhenBlocked, blockAffected);
 	}
 	
 	@Override

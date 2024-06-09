@@ -39,4 +39,6 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	public float dropPositionOffsetX;
 	public float dropPositionOffsetY;
 	public boolean renderDropsAboveObject = false;
+	
+	public boolean movable = true;
 }

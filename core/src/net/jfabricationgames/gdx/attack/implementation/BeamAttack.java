@@ -48,9 +48,7 @@ public class BeamAttack extends Attack {
 		super(config, direction, body, collisionType);
 		
 		directionIsRight = direction.x > 0;
-		hitFixtureProperties = new PhysicsBodyProperties().setBody(body).setCollisionType(collisionType).setSensor(true)
-				.setPhysicsBodyShape(PhysicsBodyShape.RECTANGLE).setWidth(CYCLOPS_BEAM_WIDTH).setHeight(CYCLOPS_BEAM_HEIGHT)
-				.setFixturePosition(getFixturePosition(direction));
+		hitFixtureProperties = new PhysicsBodyProperties().setBody(body).setCollisionType(collisionType).setSensor(true).setPhysicsBodyShape(PhysicsBodyShape.RECTANGLE).setWidth(CYCLOPS_BEAM_WIDTH).setHeight(CYCLOPS_BEAM_HEIGHT).setFixturePosition(getFixturePosition(direction));
 		beamAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy(CYCLOPS_BEAM_ANIMATION_NAME);
 		updateTextureDirection(beamAnimation);
 	}
@@ -65,8 +63,7 @@ public class BeamAttack extends Attack {
 	}
 	
 	private void updateTextureDirection(AnimationDirector<TextureRegion> animation) {
-		if ((!directionIsRight && AnimationDirector.isTextureRight(true, animation))
-				|| (directionIsRight && AnimationDirector.isTextureLeft(true, animation))) {
+		if ((!directionIsRight && AnimationDirector.isTextureRight(true, animation)) || (directionIsRight && AnimationDirector.isTextureLeft(true, animation))) {
 			animation.flip(true, false);
 		}
 	}
@@ -109,9 +106,7 @@ public class BeamAttack extends Attack {
 	
 	private void drawBeam(SpriteBatch batch, TextureRegion region, float offsetX) {
 		float directionFactorX = directionIsRight ? 1 : -1;
-		beamAnimation.getSpriteConfig()
-				.setX((body.getPosition().x - region.getRegionWidth() * 0.5f + (CYCLOPS_EYE_OFFSET_X + 0.05f + offsetX) * directionFactorX))
-				.setY((body.getPosition().y - region.getRegionHeight() * 0.5f + CYCLOPS_EYE_OFFSET_Y));
+		beamAnimation.getSpriteConfig().setX((body.getPosition().x - region.getRegionWidth() * 0.5f + (CYCLOPS_EYE_OFFSET_X + 0.05f + offsetX) * directionFactorX)).setY((body.getPosition().y - region.getRegionHeight() * 0.5f + CYCLOPS_EYE_OFFSET_Y));
 		beamAnimation.draw(batch);
 	}
 	
@@ -137,10 +132,9 @@ public class BeamAttack extends Attack {
 			Object attackUserData = CollisionUtil.getCollisionTypeUserData(collisionType, fixtureA, fixtureB);
 			Object attackedObjectUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);
 			
-			if (attackedObjectUserData != null && attackUserData == hitFixtureProperties.body.getUserData()
-					&& attackedObjectUserData instanceof Hittable) {
+			if (attackedObjectUserData != null && attackUserData == hitFixtureProperties.body.getUserData() && attackedObjectUserData instanceof Hittable) {
 				Hittable attackedObject = ((Hittable) attackedObjectUserData);
-				attackedObject.pushByHit(hitFixture.getBody().getPosition(), config.pushForce, config.pushForceAffectedByBlock);
+				attackedObject.pushByHit(hitFixture.getBody().getPosition(), config.pushForce, config.pushForceWhenBlocked, config.pushForceAffectedByBlock);
 				attackedObject.takeDamage(config.damage, AttackType.BEAM);
 			}
 		}

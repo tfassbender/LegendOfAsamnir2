@@ -77,9 +77,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	}
 	
 	protected void readTypeConfig() {
-		physicsBodyProperties = new PhysicsBodyProperties().setType(typeConfig.bodyType).setSensor(typeConfig.isSensor).setDensity(typeConfig.density)
-				.setFriction(typeConfig.friction).setRestitution(typeConfig.restitution).setLinearDamping(typeConfig.linearDamping)
-				.setCollisionType(typeConfig.collisionType);
+		physicsBodyProperties = new PhysicsBodyProperties().setType(typeConfig.bodyType).setSensor(typeConfig.isSensor).setDensity(typeConfig.density).setFriction(typeConfig.friction).setRestitution(typeConfig.restitution).setLinearDamping(typeConfig.linearDamping).setCollisionType(typeConfig.collisionType);
 		physicsBodySizeFactor = new Vector2(typeConfig.physicsBodySizeFactorX, typeConfig.physicsBodySizeFactorY);
 		physicsBodyOffsetFactor = new Vector2(typeConfig.physicsBodyOffsetFactorX, typeConfig.physicsBodyOffsetFactorY);
 		
@@ -131,8 +129,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		body.setUserData(this);
 		
 		if (typeConfig.addSensor) {
-			PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties().setBody(body).setSensor(true).setRadius(typeConfig.sensorRadius)
-					.setCollisionType(PhysicsCollisionType.OBSTACLE_SENSOR);
+			PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties().setBody(body).setSensor(true).setRadius(typeConfig.sensorRadius).setCollisionType(PhysicsCollisionType.OBSTACLE_SENSOR);
 			PhysicsBodyCreator.addCircularFixture(sensorProperties);
 		}
 	}
@@ -170,7 +167,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	}
 	
 	@Override
-	public void pushByHit(Vector2 hitCenter, float force, boolean affectedByBlock) {
+	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean affectedByBlock) {
 		//objects don't get pushed by hits
 	}
 	

@@ -99,6 +99,12 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 			properties.endurance = 0;
 		}
 	}
+	public void reduceEnduranceForBlockMoving(float delta) {
+		properties.endurance -= properties.enduranceCostsBlockMoving * delta;
+		if (properties.endurance < 0) {
+			properties.endurance = 0;
+		}
+	}
 	public void reduceEnduranceForHitBlocking() {
 		properties.endurance -= properties.enduranceCostHitBlocking;
 		if (properties.endurance < 0) {

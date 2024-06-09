@@ -14,6 +14,7 @@ public class GrowingAnimationDirector<T extends TextureRegion> extends Animation
 	private AnimationSpriteConfig initialSpriteSize;
 	
 	public GrowingAnimationDirector(T texture, AnimationConfig animationConfig) {
+		super(animationConfig);
 		this.texture = texture;
 		this.animationConfig = animationConfig;
 		

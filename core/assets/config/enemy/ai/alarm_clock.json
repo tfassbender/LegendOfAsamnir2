@@ -1,0 +1,20 @@
+{
+	defaultAI: alarm_clock,
+	aiConfigurations: {
+		alarm_clock: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 1f,
+			},
+			attackDistance: 15f,
+			
+			subAI: {
+				type: BASE_AI,
+			}
+		}
+	}
+}

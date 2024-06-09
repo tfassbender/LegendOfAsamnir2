@@ -23,6 +23,7 @@ public class CharacterDataContainer {
 	
 	public float enduranceCostsSprint = 15f;
 	public float enduranceCostsBlock = 5f;
+	public float enduranceCostsBlockMoving = 7.5f;
 	public float enduranceCostHitBlocking = 10f;
 	
 	public float armor = 50f;

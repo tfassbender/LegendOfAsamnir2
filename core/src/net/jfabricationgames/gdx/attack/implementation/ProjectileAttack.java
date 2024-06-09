@@ -23,6 +23,7 @@ public class ProjectileAttack extends Attack {
 		projectile = ProjectileFactory.createProjectileAndAddToMap(config.projectileType, body.getPosition(), direction, collisionType);
 		projectile.setDamage(config.damage);
 		projectile.setPushForce(config.pushForce);
+		projectile.setPushForceWhenBlocked(config.pushForceWhenBlocked);
 		projectile.setPushForceAffectedByBlock(config.pushForceAffectedByBlock);
 		projectile.setExplosionDamage(config.explosionDamage);
 		projectile.setExplosionPushForce(config.explosionPushForce);

@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 public class DummyAnimationDirector<T extends TextureRegion> extends TextureAnimationDirector<T> {
 	
 	public DummyAnimationDirector() {
-		super(null);
+		super(null, new AnimationConfig());
 	}
 	
 	@Override

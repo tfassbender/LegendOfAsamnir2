@@ -19,6 +19,7 @@ class CharacterInputProcessor implements InputActionListener {
 	private static final float MOVING_SPEED_JUMP = 425f;
 	private static final float MOVING_SPEED_SPRINT = 425f;
 	private static final float MOVING_SPEED_ATTACK = 150f;
+	private static final float MOVING_SPEED_BLOCK = 100f;
 	
 	private static final float SPRINT_INPUT_ACTIONS_MAX_DELTA = 0.5f;
 	
@@ -128,7 +129,7 @@ class CharacterInputProcessor implements InputActionListener {
 				}
 			}
 			if (!characterActionSet && startBlock) {
-				if (player.action.isInterruptable()) {
+				if (player.action.isInterruptable() && player.hasEnoughEnduranceToBlock()) {
 					startBlock = false;
 					characterActionSet = player.changeAction(CharacterAction.BLOCK);
 				}
@@ -141,18 +142,37 @@ class CharacterInputProcessor implements InputActionListener {
 			}
 			if (!characterActionSet && move) {
 				lastMoveDirection = getDirectionFromInputs();
-				if (player.action.isInterruptable() && !player.action.isMoveBlocking() && player.action != CharacterAction.RUN) {
-					characterActionSet = player.changeAction(CharacterAction.RUN);
+				if (block && (player.hasEnoughEnduranceToBlock() && startBlock //
+						|| player.action == CharacterAction.BLOCK || player.action == CharacterAction.BLOCK_MOVE)) { // no endurance is needed to start moving while blocking
+					if (player.action.isInterruptable() && player.action != CharacterAction.BLOCK_MOVE) {
+						characterActionSet = player.changeAction(CharacterAction.BLOCK_MOVE);
+					}
+				}
+				else {
+					if (player.action.isInterruptable() && !player.action.isMoveBlocking() && player.action != CharacterAction.RUN) {
+						characterActionSet = player.changeAction(CharacterAction.RUN);
+					}
 				}
 			}
 			else {
-				if (player.action == CharacterAction.RUN) {
-					characterActionSet = player.changeAction(CharacterAction.NONE);
+				if (player.action == CharacterAction.RUN || player.action == CharacterAction.BLOCK_MOVE) {
+					if (block && (player.hasEnoughEnduranceToBlock() //
+							|| player.action == CharacterAction.BLOCK_MOVE)) { // no endurance is needed if the block was already started
+						characterActionSet = player.changeAction(CharacterAction.BLOCK);
+					}
+					else {
+						characterActionSet = player.changeAction(CharacterAction.NONE);
+					}
 				}
 			}
 			
 			if (player.isBlocking()) {
-				player.propertiesDataHandler.reduceEnduranceForBlocking(delta);
+				if (player.action == CharacterAction.BLOCK) {
+					player.propertiesDataHandler.reduceEnduranceForBlocking(delta);
+				}
+				else if (player.action == CharacterAction.BLOCK_MOVE) {
+					player.propertiesDataHandler.reduceEnduranceForBlockMoving(delta);
+				}
 				if (!block || player.propertiesDataHandler.isExhausted()) {
 					characterActionSet = player.changeAction(CharacterAction.NONE);
 				}
@@ -366,6 +386,9 @@ class CharacterInputProcessor implements InputActionListener {
 		if (player.action == CharacterAction.JUMP) {
 			speed = MOVING_SPEED_JUMP;
 		}
+		if (player.action == CharacterAction.BLOCK_MOVE) {
+			speed = MOVING_SPEED_BLOCK;
+		}
 		
 		return speed;
 	}
@@ -414,8 +437,7 @@ class CharacterInputProcessor implements InputActionListener {
 	
 	@Override
 	public boolean onAction(String action, Type type, Parameters parameters) {
-		if (type == Type.KEY_DOWN || type == Type.CONTROLLER_BUTTON_PRESSED || type == Type.BUTTON_PRESSED
-				|| type == Type.CONTROLLER_AXIS_THRESHOLD_PASSED) {
+		if (type == Type.KEY_DOWN || type == Type.CONTROLLER_BUTTON_PRESSED || type == Type.BUTTON_PRESSED || type == Type.CONTROLLER_AXIS_THRESHOLD_PASSED) {
 			if (action.equals(ACTION_INTERACT)) {
 				InteractionManager.getInstance().interact(player.getPosition());
 			}
