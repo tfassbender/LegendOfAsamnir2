@@ -23,11 +23,10 @@ public class RuneItem extends Item {
 	}
 	
 	@Override
-	public void pickUp() {
-		super.pickUp();
+	public void pickUp(boolean playSound) {
+		super.pickUp(playSound);
 		itemMap.processRunePickUp(type);
 		GlobalValuesDataHandler.getInstance().put(type.globalValueKeyCollected, true);
-		EventHandler.getInstance()
-				.fireEvent(new EventConfig().setEventType(EventType.RUNE_FOUND).setStringValue(type.name()).setParameterObject(type));
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RUNE_FOUND).setStringValue(type.name()).setParameterObject(type));
 	}
 }

@@ -300,6 +300,7 @@
 				
 				//mini maps
 				raw_images/map/mini_maps,
+				raw_images/map/mini_maps/loa2,
 				
 				//map texture
 				raw_images/objects/animated/map/idle,

@@ -519,8 +519,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				break;
 			case PLAYER_BUY_ITEM:
 				Item item = ItemFactory.createItem(event.stringValue, 0f, 0f, new MapProperties());
-				item.pickUp();
-				itemDataHandler.collectItem(item);
+				itemDataHandler.collectItem(item, true);
 				break;
 			case FAST_TRAVEL_TO_MAP_POSITION:
 				FastTravelPointProperties fastTravelTargetPoint = fastTravelDataHandler.getFastTravelPropertiesById(event.stringValue);
@@ -529,9 +528,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				}
 				break;
 			case GIVE_ITEM_TO_PLAYER:
-				Item createdItem = ItemFactory.createItem(event.stringValue, 0f, 0f, new MapProperties());
-				createdItem.pickUp();
-				itemDataHandler.collectItem(createdItem);
+				// coordinates of 0,0 would be directly on the player, so we use -100,-100 to avoid the items from being picked up by the player again
+				Item createdItem = ItemFactory.createItem(event.stringValue, -100f, -100f, new MapProperties());
+				// the boolean value might suppress the sound when picking up the item (see GlobalEventExecutionType.RECEIVE_ITEM)
+				itemDataHandler.collectItem(createdItem, !event.booleanValue);
 				break;
 			case SET_ITEM:
 				String itemId = event.stringValue;

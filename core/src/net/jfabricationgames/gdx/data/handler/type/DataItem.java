@@ -7,7 +7,7 @@ public interface DataItem {
 	public Object getItemName();
 	
 	public boolean canBePicked();
-	public void pickUp();
+	public void pickUp(boolean playSound);
 	
 	public boolean containsProperty(String propertyName);
 	public <T> T getProperty(String property, Class<T> clazz);

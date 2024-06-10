@@ -168,7 +168,7 @@ public class BossStatusBar implements Disposable, EventListener {
 		
 		screenTextWriter.setScale(1.1f);
 		screenTextWriter.setColor(Color.RED);
-		screenTextWriter.drawText(bossName, 90, 120, 1000, Align.center, false);
+		screenTextWriter.drawText(bossName, 60, 120, 1140, Align.center, false);
 	}
 	
 	@Override

@@ -1,0 +1,9 @@
+{
+	name: Thorin's House,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_prolog
+	},
+	textureWidth: 500,
+	textureHeight: 500,
+}

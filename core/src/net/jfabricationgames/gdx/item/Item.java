@@ -77,8 +77,7 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 	}
 	
 	protected void createPhysicsBody(float x, float y) {
-		PhysicsBodyProperties properties = new PhysicsBodyProperties().setType(BodyType.StaticBody).setX(x).setY(y).setSensor(false)
-				.setRadius(typeConfig.physicsObjectRadius).setCollisionType(PhysicsCollisionType.ITEM);
+		PhysicsBodyProperties properties = new PhysicsBodyProperties().setType(BodyType.StaticBody).setX(x).setY(y).setSensor(false).setRadius(typeConfig.physicsObjectRadius).setCollisionType(PhysicsCollisionType.ITEM);
 		body = PhysicsBodyCreator.createCircularBody(properties);
 		body.setUserData(this);
 	}
@@ -165,9 +164,11 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 	}
 	
 	@Override
-	public void pickUp() {
+	public void pickUp(boolean playSound) {
 		picked = true;
-		playPickUpSound();
+		if (playSound) {
+			playPickUpSound();
+		}
 		removeFromMap();
 		
 		MapObjectDataHandler.getInstance().addStatefulMapObject(this);

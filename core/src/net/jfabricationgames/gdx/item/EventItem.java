@@ -25,9 +25,11 @@ public class EventItem extends Item {
 	}
 	
 	@Override
-	public void pickUp() {
-		super.pickUp();
-		EventHandler.getInstance()
-				.fireEvent(new EventConfig().setEventType(EventType.EVENT_ITEM_PICKED_UP).setStringValue(eventParameter).setParameterObject(this));
+	public void pickUp(boolean playSound) {
+		super.pickUp(playSound);
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.EVENT_ITEM_PICKED_UP) //
+				.setStringValue(eventParameter) //
+				.setParameterObject(this));
 	}
 }

@@ -53,8 +53,7 @@ public class ItemFactory {
 		
 		Item.defaultTypeConfig = typeConfigs.get("__default");
 		if (Item.defaultTypeConfig == null) {
-			Gdx.app.error(ItemFactory.class.getSimpleName(),
-					"No default type config for items found. Add a type '__default' to 'config/items/types.json'.");
+			Gdx.app.error(ItemFactory.class.getSimpleName(), "No default type config for items found. Add a type '__default' to 'config/items/types.json'.");
 		}
 	}
 	
@@ -78,8 +77,7 @@ public class ItemFactory {
 		createAndDropItem(type, new MapProperties(), x, y, renderAboveGameObjects, addBodyDelay);
 	}
 	
-	public static void createAndDropItem(String type, MapProperties mapProperties, float x, float y, boolean renderAboveGameObjects,
-			float addBodyDelay) {
+	public static void createAndDropItem(String type, MapProperties mapProperties, float x, float y, boolean renderAboveGameObjects, float addBodyDelay) {
 		Item item = createItem(type, x, y, mapProperties, addBodyDelay);
 		if (renderAboveGameObjects) {
 			itemMap.addItemAboveGameObjects(item);
@@ -112,8 +110,7 @@ public class ItemFactory {
 	private static Item createItem(String name, float x, float y, MapProperties properties, float addBodyDelay) {
 		ItemTypeConfig typeConfig = typeConfigs.get(name);
 		if (typeConfig == null) {
-			throw new IllegalStateException("No type config known for type: '" + name
-					+ "'. Either the type name is wrong or you have to add it to the itemTypesConfig (see \"" + CONFIG_FILE + "\")");
+			throw new IllegalStateException("No type config known for type: '" + name + "'. Either the type name is wrong or you have to add it to the itemTypesConfig (see \"" + CONFIG_FILE + "\")");
 		}
 		
 		Sprite sprite = FactoryUtil.createSprite(atlas, x, y, typeConfig.texture);
@@ -149,8 +146,7 @@ public class ItemFactory {
 		item.setItemTextBox(itemTextBox);
 		
 		if (addBodyDelay > 0) {
-			PhysicsWorld.getInstance().runDelayedAfterWorldStep(
-					() -> item.createPhysicsBody(x * Constants.WORLD_TO_SCREEN, y * Constants.WORLD_TO_SCREEN), addBodyDelay);
+			PhysicsWorld.getInstance().runDelayedAfterWorldStep(() -> item.createPhysicsBody(x * Constants.WORLD_TO_SCREEN, y * Constants.WORLD_TO_SCREEN), addBodyDelay);
 		}
 		else {
 			item.createPhysicsBody(x * Constants.WORLD_TO_SCREEN, y * Constants.WORLD_TO_SCREEN);
@@ -176,8 +172,7 @@ public class ItemFactory {
 	public static class ItemFactoryInstance implements ItemSpawnFactory {
 		
 		@Override
-		public void createAndAddItem(String type, float x, float y, MapProperties mapProperties, boolean renderAboveGameObjects,
-				Runnable onRemoveFromMap) {
+		public void createAndAddItem(String type, float x, float y, MapProperties mapProperties, boolean renderAboveGameObjects, Runnable onRemoveFromMap) {
 			Item item = createItem(type, x, y, mapProperties);
 			item.setOnRemoveFromMap(onRemoveFromMap);
 			if (renderAboveGameObjects) {

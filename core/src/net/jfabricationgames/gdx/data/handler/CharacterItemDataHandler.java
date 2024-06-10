@@ -35,7 +35,7 @@ public class CharacterItemDataHandler implements DataHandler {
 		properties = dataContainer.itemDataContainer;
 	}
 	
-	public void collectItem(DataItem item) {
+	public void collectItem(DataItem item, boolean playSoundWhenPickingUpItem) {
 		if (item.canBePicked()) {
 			if (item.containsProperty(DataItemPropertyKeys.HEALTH.getPropertyName())) {
 				float itemHealth = item.getProperty(DataItemPropertyKeys.HEALTH.getPropertyName(), Float.class);
@@ -52,8 +52,7 @@ public class CharacterItemDataHandler implements DataHandler {
 			if (item.containsProperty(DataItemPropertyKeys.AMMO.getPropertyName())) {
 				int itemAmmo = item.getProperty(DataItemPropertyKeys.AMMO.getPropertyName(), Float.class).intValue();
 				if (item.containsProperty(DataItemPropertyKeys.AMMO_TYPE.getPropertyName())) {
-					DataItemAmmoType ammoType = DataItemAmmoType
-							.getByNameIgnoreCase(item.getProperty(DataItemPropertyKeys.AMMO_TYPE.getPropertyName(), String.class));
+					DataItemAmmoType ammoType = DataItemAmmoType.getByNameIgnoreCase(item.getProperty(DataItemPropertyKeys.AMMO_TYPE.getPropertyName(), String.class));
 					increaseAmmo(itemAmmo, ammoType);
 				}
 				else {
@@ -68,7 +67,7 @@ public class CharacterItemDataHandler implements DataHandler {
 				characterProperties.increaseCoins(itemValue);
 			}
 			
-			item.pickUp();
+			item.pickUp(playSoundWhenPickingUpItem);
 		}
 	}
 	

@@ -16,8 +16,7 @@ public class SpecialActionItem extends Item {
 	
 	private ItemSpecialAction action;
 	
-	public SpecialActionItem(String itemName, ItemTypeConfig typeConfig, Sprite sprite, AnimationDirector<TextureRegion> animation,
-			MapProperties properties, ItemSpecialAction itemSpecialAction) {
+	public SpecialActionItem(String itemName, ItemTypeConfig typeConfig, Sprite sprite, AnimationDirector<TextureRegion> animation, MapProperties properties, ItemSpecialAction itemSpecialAction) {
 		super(itemName, typeConfig, sprite, animation, properties);
 		this.action = itemSpecialAction;
 		
@@ -28,9 +27,9 @@ public class SpecialActionItem extends Item {
 	}
 	
 	@Override
-	public void pickUp() {
+	public void pickUp(boolean playSound) {
 		if (canUseSpecialActions()) {
-			super.pickUp();
+			super.pickUp(playSound);
 			GlobalValuesDataHandler.getInstance().put(action.getActionEnabledGlobalValueKey(), true);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.SPECIAL_ACTION_ITEM_PICKED_UP).setStringValue(itemName));
 		}

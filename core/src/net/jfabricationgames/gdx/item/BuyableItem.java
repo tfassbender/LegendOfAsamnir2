@@ -15,8 +15,7 @@ public class BuyableItem extends Item {
 	
 	private Supplier<Integer> playerCoinsSupplier;
 	
-	public BuyableItem(String itemName, ItemTypeConfig typeConfig, Sprite sprite, AnimationDirector<TextureRegion> animation,
-			MapProperties properties) {
+	public BuyableItem(String itemName, ItemTypeConfig typeConfig, Sprite sprite, AnimationDirector<TextureRegion> animation, MapProperties properties) {
 		super(itemName, typeConfig, sprite, animation, properties);
 	}
 	
@@ -33,8 +32,8 @@ public class BuyableItem extends Item {
 	}
 	
 	@Override
-	public void pickUp() {
+	public void pickUp(boolean playSound) {
 		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.TAKE_PLAYERS_COINS).setIntValue(typeConfig.costs));
-		super.pickUp();
+		super.pickUp(playSound);
 	}
 }

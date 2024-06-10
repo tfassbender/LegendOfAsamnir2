@@ -59,7 +59,7 @@ class CharacterBodyHandler {
 			
 			if (sensorCollidingUserData instanceof Item) {
 				Item item = (Item) sensorCollidingUserData;
-				player.itemDataHandler.collectItem(item);
+				player.itemDataHandler.collectItem(item, true);
 				if (item.isSpecialKey()) {
 					EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.SPECIAL_KEY_ITEM_PICKED_UP));
 				}

@@ -81,8 +81,7 @@ public enum GlobalEventExecutionType {
 		public void execute(GlobalEventConfig eventConfig) {
 			String targetMap = eventConfig.executionParameters.get(MAP_KEY_TARGET_MAP);
 			int targetPointId = Integer.parseInt(eventConfig.executionParameters.get(MAP_KEY_STARTING_POINT_ID, "0"));
-			EventHandler.getInstance()
-					.fireEvent(new EventConfig().setEventType(EventType.CHANGE_MAP).setStringValue(targetMap).setIntValue(targetPointId));
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CHANGE_MAP).setStringValue(targetMap).setIntValue(targetPointId));
 		}
 	},
 	CONDITIONAL_EVENT {
@@ -116,8 +115,7 @@ public enum GlobalEventExecutionType {
 			parameterObject.put("key", key);
 			parameterObject.put("value", value);
 			
-			EventHandler.getInstance()
-					.fireEvent(new EventConfig().setEventType(EventType.SET_GLOBAL_CONDITION_VALUE).setParameterObject(parameterObject));
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.SET_GLOBAL_CONDITION_VALUE).setParameterObject(parameterObject));
 		}
 	},
 	INCREASE_GLOBAL_VALUE {
@@ -131,8 +129,7 @@ public enum GlobalEventExecutionType {
 			ObjectMap<String, Object> parameterObject = new ObjectMap<>();
 			parameterObject.put("key", key);
 			
-			EventHandler.getInstance()
-					.fireEvent(new EventConfig().setEventType(EventType.INCREASE_GLOBAL_CONDITION_VALUE).setParameterObject(parameterObject));
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.INCREASE_GLOBAL_CONDITION_VALUE).setParameterObject(parameterObject));
 		}
 	},
 	CHANGE_HEALTH {
@@ -195,6 +192,21 @@ public enum GlobalEventExecutionType {
 		public void execute(GlobalEventConfig eventConfig) {
 			String lockId = eventConfig.executionParameters.get(MAP_KEY_LOCK_ID);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CLOSE_LOCK).setStringValue(lockId));
+		}
+	},
+	RECEIVE_ITEM {
+		
+		private static final String MAP_KEY_ITEM_NAME = "item";
+		private static final String MAP_KEY_SUPPRESS_SOUND = "suppressSound";
+		
+		@Override
+		public void execute(GlobalEventConfig eventConfig) {
+			String item = eventConfig.executionParameters.get(MAP_KEY_ITEM_NAME);
+			boolean suppressSound = Boolean.parseBoolean(eventConfig.executionParameters.get(MAP_KEY_SUPPRESS_SOUND));
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.GIVE_ITEM_TO_PLAYER) //
+					.setStringValue(item) //
+					.setBooleanValue(suppressSound));
 		}
 	};
 	
