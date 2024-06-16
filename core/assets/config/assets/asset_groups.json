@@ -12,12 +12,43 @@
 		}
 	],
 	"game" : [
-		// texture atlas (includes dwarf, item, objects, ...)
+		//***************************************************************
+		//*** texture atlas (includes dwarf, item, objects, ...)
+		//***************************************************************
+		
 		{	
 			"type": "com.badlogic.gdx.graphics.g2d.TextureAtlas",
 			"path": "packed/demo/demo.atlas"
 		},
-		// tileset maps
+		
+		//***************************************************************
+		//*** loa2 maps
+		//***************************************************************
+		
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_prolog.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
+		
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_main.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
+		
+		//***************************************************
+		//*** other maps
+		//***************************************************
+		
 		{
 			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
 			"path": "map/map.tmx",
@@ -270,15 +301,6 @@
 		{
 			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
 			"path": "map/demo_2_end.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/loa2_prolog.tmx",
 			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
 			"parameters": {
 				"textureMinFilter": "Nearest",

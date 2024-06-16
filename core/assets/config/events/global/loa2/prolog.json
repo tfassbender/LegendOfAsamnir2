@@ -3,15 +3,15 @@
 	//*** new game started
 	//*******************************************
 	
-//	loa2_prolog_game_start__startCutscene: {
-//		event: {
-//			eventType: NEW_GAME_STARTED,
-//		},
-//		executionType: START_CUTSCENE,
-//		executionParameters: {
-//			cutsceneId: loa2_prolog_opening,
-//		}
-//	},
+	loa2_prolog_game_start__startCutscene: {
+		event: {
+			eventType: NEW_GAME_STARTED,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_prolog_opening,
+		}
+	},
 	
 	loa2_prolog_game_start__reduce_health: {
 		event: {
@@ -219,6 +219,18 @@
 			cutsceneId: loa2_unfinished_end_cutscene,
 		}
 	}
+	
+	loa2_prolog_goto_main_after_cutscene: {
+		event: {
+			eventType: CUTSCENE_EVENT,
+			stringValue: loa2_prolog_goto_main_after_cutscene,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main,
+			startingPointId: 0,
+		}
+	},
 	
 //	loa2_prolog_goto_main_map: {
 //		event: {

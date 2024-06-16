@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="35" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="188">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="35" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="189">
  <properties>
   <property name="above_player_layers" value="[3, 4]"/>
   <property name="background_layers" value="[0, 1, 2]"/>
@@ -13,9 +13,9 @@
    eJztzrENgDAQBMFPcOAuqYkO6MBIboDKICRDHyCDmJEuvo0A+I9WI5bktjqut5/fa8mtD+7dS26je+cpN7169ep9Y++da+cX6AUAgGccyN5MkA==
   </data>
  </layer>
- <layer id="4" name="terrain" width="44" height="35" locked="1">
+ <layer id="4" name="terrain" width="44" height="35">
   <data encoding="base64" compression="zlib">
-   eJzt0kEKgCAQQNGB0FDoIAYepKiDBN2kDt0sAmlVLUKN/2BAhln8hSIAgFrE5tkuJ2/Sez7bnBcZdCafdqXotdfZ6y5o56Kz+rTr9C4aKUKw9zf43tbmLtB/+qJhL6B3rKwXAAAAAP7mACqEBhI=
+   eJzt1cEJgDAMheGAVGnBQRQcRNFBBDfRoc1BKJ6sB20K/weB8sjhHQoRAQCUYqjSspyCi+/l6uaDyKgzh5hZ0WtfX9+zTnuuOluIWat7gxMTuvp5B9/bm9wN9J++6HAY6DsV1hf/sXbLnli7ZQAAAECqE7HJBpI=
   </data>
  </layer>
  <layer id="8" name="terrain_2" width="44" height="35" locked="1">
@@ -28,7 +28,7 @@
    eJztzbENgDAMRNGrXHh8YAHIJMAEMBEpaBLZbQTSf9I1p5MtAQAAAPizy6U5yeLtdnr72+NbI6wmbUmKxdu+H2mvv48kp8XbvgcAAAC+4AE70xcN
   </data>
  </layer>
- <layer id="6" name="terrain_above_player" width="44" height="35" locked="1">
+ <layer id="6" name="terrain_above_player" width="44" height="35">
   <data encoding="base64" compression="zlib">
    eJztzkEJAEAIADDBPBfF/nV8GeBeImwJFgEAALDn5fbgTx37AgDAaJ9VAIE=
   </data>
@@ -43,7 +43,7 @@
    eJztwyERAAAIBLAPQP9iFELiUYjtbgkAAABXXRsAAD4bHGgCng==
   </data>
  </layer>
- <objectgroup id="10" name="objects">
+ <objectgroup id="10" name="objects" locked="1">
   <object id="181" name="player.startingPosition" x="400" y="353.5">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -72,6 +72,12 @@
     <property name="colorHeader" value="#0000ff"/>
     <property name="displayText" value="Use your shield to get near the alarm clock by pressing the right mouse button, the right shift key or the controller button A."/>
     <property name="displayTextHeader" value="Use your shield"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="188" name="player.startingPosition" x="589.333" y="591.333">
+   <properties>
+    <property name="startingPointId" value="1"/>
    </properties>
    <point/>
   </object>

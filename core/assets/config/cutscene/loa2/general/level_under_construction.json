@@ -1,0 +1,17 @@
+{
+	id: loa2_level_under_construction_cutscene,
+	controlledActions: {
+		show_text_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Tobias (Developer)",
+				displayText: "This level is still under construction.\n\nPlease come back later! ",
+				colorHeader: #FF00FF,
+			}
+			
+			waitForEventToFinish: true,
+			startsWithCutscene: true,
+		}
+	}
+}

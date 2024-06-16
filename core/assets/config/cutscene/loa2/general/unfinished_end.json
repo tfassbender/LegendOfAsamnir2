@@ -24,17 +24,45 @@
 			
 			executionParameters: {
 				displayTextHeader: "Tobias (Developer)",
-				displayText: "Thanks for playing! ",
+				displayText: "You can already explore the next map, though!\n\nAnyway, thanks for playing! ",
 				colorHeader: #FF00FF,
 			}
 			
 			waitForEventToFinish: true,
 			
 			executes: [
-				show_text_3,
+				continue_choice,
 			]
 		},
-		show_text_3: {
+		
+		
+		continue_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Continue to main map?",
+				options: [
+					"I want to to explore!!!",
+					"Hell no! I'm outa here!",
+				],
+			},
+			choiceOptionExecutions: [
+				continue_to_main_map,
+				leave_game,
+			],
+		},
+		
+		continue_to_main_map: {
+			type: EVENT,
+			
+			globalEvent: loa2_prolog_goto_main_after_cutscene,
+			
+			waitForEventToFinish: false,
+		},
+		
+		leave_game: {
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
@@ -56,8 +84,6 @@
 			colorTransitionDurationInSeconds: 3f,
 			delayAfterColorTransitionInSeconds: 2f,
 			
-			cameraFollowsTarget: false,
-	
 			waitForEventToFinish: true,
 			
 			executes: [

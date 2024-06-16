@@ -1,0 +1,116 @@
+{
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_main_goto_thorins_house: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_thorins_house,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_prolog,
+			startingPointId: 1,
+		}
+	},
+	
+	loa2_main_goto_castle: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_castle,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_blacksmith: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_blacksmith,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_tavern: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_tavern,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_shop: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_shop,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_mine: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_mine,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_niflheim: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_niflheim,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_muspelheim: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_muspelheim,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_helheim: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_helheim,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+	
+	loa2_main_goto_asgard: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_asgard,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_level_under_construction_cutscene,
+		}
+	},
+}
