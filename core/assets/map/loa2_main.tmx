@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="42" nextobjectid="10417">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="42" nextobjectid="10424">
  <properties>
   <property name="above_player_layers" value="[9, 12, 15]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14]"/>
@@ -77,7 +77,7 @@
    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
   </data>
  </layer>
- <layer id="35" name="terrain" width="100" height="100">
+ <layer id="35" name="terrain" width="100" height="100" locked="1">
   <data encoding="base64" compression="zlib">
    eJztXUlyHCEQlPT/T/jmb3j3N2z5IQ4OhIgKlqyiFqDJk0LTA921ZC0w9MvLRSReX6PvYB98b/z/vXLdlast3hjyRa79Mvi8pfuLD8zYfE1HXw3meQq+GY//13m+U9Gy5c+v2HUJP/Ru52IAaRzgxKsngtp7DckHvHkm6/tk/VEut0CK5TTHojKdies752eZv1v5Tgv/FOb+M/gc1UnPL0/N13p1XoQ90jkRudf05sGxaM7iwU0J6P30ZKph5y272ZnfTkNPz172imDU00AxiktafIHkgFzM1Eaj2MhFS46tebTnb8GSW9Cxy2ct7ZabE6FA7IL2dSlq/oX6P5WLRn0h8Z8Z+WropmXjo7G1ex49TkdsGIn9u9eQNXvn1CA/mfPN8lL6vne/AHnGiBzBikcTZvPe2e9r69jTZixjPMd/JL7Witk9bkbtkMpFK5fVglRv3usypwO1ix17UKNnQ3OgUUyi42jKysoetf0o8ZLXOhrlDomM8r1KedHiWXfzsdqaRO9aKaw52bo3uEJM8eqFrASpzWnm+ivoXgsz/DTLlyvv0Yi4t6heCCderqyzElIftaxFypzTgkNm6kGUH2tzaMYhy3zpifFyN1j25Djg8hx63xb8gqxxPGWtXBKfMqeV/HBSjjeDX2/YdRbyKuOlBy9o7qVcrTdrgV1yQQpPLlzJDiJ/j+AV17NuUdvU2C9qBcROd18/72Gkw1Y+T78XkVPu1veVwIr/tfaWnARvnjqZV2bx3vi7BJdz0vU0h0b7FVlX9/eGFysC4eqRv3D3yV08D8nOfoP9Cgok5+DWjbT2k8ZwtIZErqv5osVvDCyB9qSkWKlmH4GTB3PlNiNnLR1Fr9lo9op6Y63cn7f2hzLvjV7/ofHDmmu40Oyz79q/pZDGfGuUtjxTv2v730p1ogfvzdQOtbo8IfuORXy6vZcPzMiX2rmVrUnHjY75EtlqcYdW/zZahh6gPcYcV3aoU1biMiSXq+WfO8g5Ctz8eEV/ja4xo4Hkz5Svo+u0BO88NroWXI2HODFcKw70+MNaP5bc5aXb0VlKGs8oGQP5TrT/eWAmLy55fHdZnXDOzynYce11xXWRaFurza95T5x1xBXyxxEsa9dazv20PW0oRmeOJWivZbwFnKtsjU8L5wQoD0n3aYx8q/x81u+zLc7Im1MPzORKnPNwOee89vRUk2+eA9HvjvmIFaJzihG87k+jfm75EY0DKXbXfKGWF0atTUs5gStHujZK8zrpfgUNfUplr7kfbuY5Vo7XGS3e79VI2pwg0Ze3bD3OZngCWrLoyQipH7yhVet5r6+27HiltQntPkfWlcXZoVl/eQ6k5txl3170u2s055fwzujMdo7PaJ+vUPIGx/Z649TwhJ6WVDc1G9dYt0H5yqI2s673ONyX9NLysai6WcMfLPLBckxpfNG+L4SXRpy1en9EgpTPjuyoV/+P+mdcmb0J8iMUlvHj9LqqlB3aC7F4X8qJPlhDXjPiPi+nd17D6PpZO2/5oOUZaVr1JMofSXfRdmpdQ6e4nm0BXUPReG8FApR3qD4l/Q/uORvpc8+a++n7kbnre9IcYeRvtc89coZaDRjNTZaYkakVZ6LvuM66atUhWr/5zjLK8yB81PvNaRpvlmc0eYrmp7X+lAbyWJr7Yy1sMLKf3ntnsgYPee+rGuWptffG7LD3a1YXnHUN7/cGnpIDlTKz6GU8ob+ujWTLrbiO1hMn52Or4p5zrwerM79eK3lb4sBVz2jZGS2uQuP09ZU2ZmRTfresM3pj3jh+8RRIe+0rnSWyKzi/gymB8tjFGMh6uUTGOe7/B5JsP3k=
   </data>
@@ -89,10 +89,10 @@
  </layer>
  <layer id="36" name="shadows" width="100" height="100" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt08EJwCAQRFHv7iWkF/uvKVhACljwGFfyHvwKhmmtvhE59rFHLU/Psc/sOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAU9yxjm9dsY7z+VktflbLiBz7/HGPF5QAEiE=
+   eJzt3bEJgDAQhtH0SSPu4v4riIXOIQ6gfSB25iTvwTfBz9WXUnxLqaMfe8Ry5jr6uXIdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8G7PKR3+AIaxPlts9gAAAAAAAIAhzaUd35pKO/7PncXizmJZSh39jLjHDa8jFaA=
   </data>
  </layer>
- <objectgroup id="4" name="objects" locked="1">
+ <objectgroup id="4" name="objects">
   <object id="10323" name="animal.hedgehog" x="2804" y="1833">
    <point/>
   </object>
@@ -206,8 +206,47 @@
     <property name="eventParameter" value="loa2_main_goto_muspelheim"/>
    </properties>
   </object>
+  <object id="10417" name="npc.loa2_main_adventurer_in_dwarven_village" x="1408" y="1632">
+   <point/>
+  </object>
+  <object id="10418" name="npc.loa2_main_builder_on_farm" x="1344" y="2240">
+   <properties>
+    <property name="idleTimeBetweenMovements" value="5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="10419" name="npc.loa2_main_guardian_at_bifroest" x="1376" y="416">
+   <point/>
+  </object>
+  <object id="10420" name="npc.loa2_main_guardian_at_helheim" x="1312" y="2784">
+   <point/>
+  </object>
+  <object id="10421" name="object.signboard" x="2816" y="3008">
+   <properties>
+    <property name="displayText">The path to muspelheim lies ahead.
+Only the bravest and strongest warriors may pass..</property>
+    <property name="displayTextHeader" value="Way to Muspelheim"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="10422" name="object.signboard" x="2944" y="256">
+   <properties>
+    <property name="displayText">The path to niflheim lies ahead.
+You need the rune Raidho to pass though..</property>
+    <property name="displayTextHeader" value="Way to Niflheim"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="10423" name="object.signboard" x="523.333" y="2496">
+   <properties>
+    <property name="displayText">Only dwarves are allowed in this mine.
+Its much to dangerous for these weak little aesirs, or ice giants, or humans, or elves, or ....</property>
+    <property name="displayTextHeader" value="Dwarven mine"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="33" name="physics">
+ <objectgroup id="33" name="physics" locked="1">
   <object id="8162" x="1022.67" y="1215.91" width="288" height="192"/>
   <object id="8163" x="1086.67" y="1407.91" width="224" height="18.3333"/>
   <object id="8164" x="1022.67" y="1407.91" width="32" height="18"/>

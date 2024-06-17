@@ -1,0 +1,98 @@
+{
+	id: loa2_main_guardian_at_helheim_cutscene,
+	controlledActions: {
+		adventurer_greeting: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Guardian of Helheim",
+				displayText: "What are you doing here, Dwarf?\nThis is the entrance to Helheim. Only the dead may enter the realm of my queen: Hel ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+			
+			startsWithCutscene: true,
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question,
+			],
+		},
+		
+		thorin_question: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"What are you doing here?",
+					"Why can't I enter this area?",
+					"I need to continue my quest."
+				],
+			},
+			choiceOptionExecutions: [
+				what_are_you_doing_here,
+				why_cant_i_enter_this_area,
+				end,
+			],
+		},
+		
+		what_are_you_doing_here: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Guardian of Helheim",
+				displayText: "I'm guarding the entrance to Helheim.\n\nTo enter you need to pay ... \n... with your life... ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                what_are_you_doing_here_2,
+			],
+		},
+		
+		// TODO delete after the level is available
+		what_are_you_doing_here_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Guardian of Helheim",
+				displayText: "But since this level is not yet available in the game...\nYou can't enter anyway. ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+		    
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		why_cant_i_enter_this_area: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Guardian of Helheim",
+				displayText: "Only the dead may enter Hel's realm.\n\nTo pass you must pay ... \n... with your life... ",
+				colorHeader: #555555,
+			}
+		    
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

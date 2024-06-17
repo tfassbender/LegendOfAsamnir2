@@ -1,0 +1,131 @@
+{
+	id: loa2_main_adventurer_in_dwarven_village_cutscene,
+	controlledActions: {
+		adventurer_greeting: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Adventurer from Midgard",
+				displayText: "Hey Thorin,\nYou made it back to Svartalfheim.\n\nCan I help you with something? ",
+				colorHeader: #009933,
+				showNextPageIcon: true,
+			}
+			
+			startsWithCutscene: true,
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question,
+			],
+		},
+		thorin_question: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"How did you get here?",
+					"What should I do next?",
+					"I need to continue my quest."
+				],
+			},
+			choiceOptionExecutions: [
+				how_did_you_get_here,
+				what_should_i_do_next,
+				end,
+			],
+		},
+		
+		how_did_you_get_here: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Adventurer from Midgard",
+				displayText: "I followed you through the cave in midgard.\nIt was quite easy, after you defeated the goblin king. ",
+				colorHeader: #009933,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                how_did_you_get_here_2,
+			],
+		}
+		how_did_you_get_here_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "As I already explored most of the regions in Midgard, I wanted to see what quests are waiting for me in Svartalfheim. ",
+                colorHeader: #009933,
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		// TODO change the text after more levels are added
+		what_should_i_do_next: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "Since this is just an unfinished demo version of the game... I think you can only explore the lands of Svartalfheim so far. ",
+                colorHeader: #009933,
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question_2,
+			],
+		},
+		
+		thorin_question_2: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"Okay, I'll explore the lands of Svartalfheim.",
+					"What is a demo version?"
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				what_is_a_demo_version,
+			],
+		},
+		
+		what_is_a_demo_version: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "How should I know? I'm just an NPC... ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

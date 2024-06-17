@@ -1,5 +1,14 @@
 {
 	//************************************************
+	//*** Legend of Asamnir 2 - Main
+	//************************************************
+	
+	loa2_main_adventurer_in_dwarven_village: config/npc/levels/loa2/main/adventurer_in_dwarven_village.json,
+	loa2_main_builder_on_farm: config/npc/levels/loa2/main/builder_on_farm.json,
+	loa2_main_guardian_at_bifroest: config/npc/levels/loa2/main/guardian_at_bifroest.json,
+	loa2_main_guardian_at_helheim: config/npc/levels/loa2/main/guardian_at_helheim.json,
+
+	//************************************************
 	//*** Demo Level
 	//************************************************
 	
@@ -17,72 +26,72 @@
 	tutorial_level_tale_teller: config/npc/levels/tutorial/tale_teller.json,
 	tutorial_level_boss_introducer: config/npc/levels/tutorial/boss_introducer.json,
 	
-	//************************************************
-	//*** Demo 2 - Tutorial
-	//************************************************
-	
-	demo_2_tutorial__adventurer_female: config/npc/levels/demo_2/tutorial/adventurer_female.json,
-	demo_2_tutorial__running_adventurer: config/npc/levels/demo_2/tutorial/running_adventurer.json,
-	
-	//************************************************
-	//*** Demo 2 - Main
-	//************************************************
-	
-	demo_2_main_builder_on_farm: config/npc/levels/demo_2/main/builder_on_farm.json,
-	demo_2_main_adventurer_at_village_entry: config/npc/levels/demo_2/main/adventurer_at_village_entry.json,
-	demo_2_main_adventurer_mid_village: config/npc/levels/demo_2/main/adventurer_mid_village.json,
-	demo_2_main_adventurer_female_mid_village: config/npc/levels/demo_2/main/adventurer_female_mid_village.json,
-	demo_2_main_builder_near_village_farm: config/npc/levels/demo_2/main/builder_near_village_farm.json
-	demo_2_main_archaeologist_near_invisible_path: config/npc/levels/demo_2/main/archaeologist_near_invisible_path.json,
-	demo_2_main_adventurer_female_on_the_hill: config/npc/levels/demo_2/main/adventurer_female_on_the_hill.json,
-	demo_2_main_adventurer_blocking_castle_entry: config/npc/levels/demo_2/main/adventurer_blocking_castle_entry.json,
-	demo_2_main_builder_on_second_farm: config/npc/levels/demo_2/main/builder_on_second_farm.json,
-	
-	//************************************************
-	//*** Demo 2 - Village Blacksmith
-	//************************************************
-	
-	demo_2_village_blacksmith_builder_left: config/npc/levels/demo_2/village_blacksmith/builder_left.json,
-	demo_2_village_blacksmith_builder_right: config/npc/levels/demo_2/village_blacksmith/builder_right.json,
-	
-	//************************************************
-	//*** Demo 2 - Village Shop
-	//************************************************
-	
-	demo_2_village_shop_adventurer_female: config/npc/levels/demo_2/village_shop/adventurer_female.json,
-	
-	//************************************************
-	//*** Demo 2 - Village Tavern
-	//************************************************
-	
-	demo_2_village_tavern_adventurer_eating: config/npc/levels/demo_2/village_tavern/adventurer_eating.json,
-	demo_2_village_tavern_adventurer_female_drinking: config/npc/levels/demo_2/village_tavern/adventurer_female_drinking.json,
-	demo_2_village_tavern_builder_barkeeper: config/npc/levels/demo_2/village_tavern/builder_barkeeper.json,
-	
-	//************************************************
-	//*** Demo 2 - Castle Tavern
-	//************************************************
-	
-	demo_2_castle_tavern_adventurer_blocking_the_entry: config/npc/levels/demo_2/castle_tavern/adventurer_blocking_the_entry.json,
-	demo_2_castle_tavern_adventurer_female_by_the_door: config/npc/levels/demo_2/castle_tavern/adventurer_female_by_the_door.json,
-	demo_2_castle_tavern_adventurer_female_eating: config/npc/levels/demo_2/castle_tavern/adventurer_female_eating.json,
-	demo_2_castle_tavern_builder_barkeeper: config/npc/levels/demo_2/castle_tavern/builder_barkeeper.json,
-	
-	//************************************************
-	//*** Demo 2 - Level 1
-	//************************************************
-	
-	demo_2_level_1_adventurer_at_first_destroyable_wall: config/npc/levels/demo_2/level_1/adventurer_at_first_destroyable_wall.json,
-	
-	//************************************************
-	//*** Demo 2 - Level 2
-	//************************************************
-	
-	demo_2_level_2_adventurer_female_at_pressure_switches: config/npc/levels/demo_2/level_2/adventurer_female_at_pressure_switches.json,
-	
-	//************************************************
-	//*** Demo 2 - Level 4
-	//************************************************
-	
-	demo_2_level_4_adventurer_at_boss_room: config/npc/levels/demo_2/level_4/adventurer_at_boss_room.json,
+//	//************************************************
+//	//*** Demo 2 - Tutorial
+//	//************************************************
+//	
+//	demo_2_tutorial__adventurer_female: config/npc/levels/demo_2/tutorial/adventurer_female.json,
+//	demo_2_tutorial__running_adventurer: config/npc/levels/demo_2/tutorial/running_adventurer.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Main
+//	//************************************************
+//	
+//	demo_2_main_builder_on_farm: config/npc/levels/demo_2/main/builder_on_farm.json,
+//	demo_2_main_adventurer_at_village_entry: config/npc/levels/demo_2/main/adventurer_at_village_entry.json,
+//	demo_2_main_adventurer_mid_village: config/npc/levels/demo_2/main/adventurer_mid_village.json,
+//	demo_2_main_adventurer_female_mid_village: config/npc/levels/demo_2/main/adventurer_female_mid_village.json,
+//	demo_2_main_builder_near_village_farm: config/npc/levels/demo_2/main/builder_near_village_farm.json
+//	demo_2_main_archaeologist_near_invisible_path: config/npc/levels/demo_2/main/archaeologist_near_invisible_path.json,
+//	demo_2_main_adventurer_female_on_the_hill: config/npc/levels/demo_2/main/adventurer_female_on_the_hill.json,
+//	demo_2_main_adventurer_blocking_castle_entry: config/npc/levels/demo_2/main/adventurer_blocking_castle_entry.json,
+//	demo_2_main_builder_on_second_farm: config/npc/levels/demo_2/main/builder_on_second_farm.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Village Blacksmith
+//	//************************************************
+//	
+//	demo_2_village_blacksmith_builder_left: config/npc/levels/demo_2/village_blacksmith/builder_left.json,
+//	demo_2_village_blacksmith_builder_right: config/npc/levels/demo_2/village_blacksmith/builder_right.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Village Shop
+//	//************************************************
+//	
+//	demo_2_village_shop_adventurer_female: config/npc/levels/demo_2/village_shop/adventurer_female.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Village Tavern
+//	//************************************************
+//	
+//	demo_2_village_tavern_adventurer_eating: config/npc/levels/demo_2/village_tavern/adventurer_eating.json,
+//	demo_2_village_tavern_adventurer_female_drinking: config/npc/levels/demo_2/village_tavern/adventurer_female_drinking.json,
+//	demo_2_village_tavern_builder_barkeeper: config/npc/levels/demo_2/village_tavern/builder_barkeeper.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Castle Tavern
+//	//************************************************
+//	
+//	demo_2_castle_tavern_adventurer_blocking_the_entry: config/npc/levels/demo_2/castle_tavern/adventurer_blocking_the_entry.json,
+//	demo_2_castle_tavern_adventurer_female_by_the_door: config/npc/levels/demo_2/castle_tavern/adventurer_female_by_the_door.json,
+//	demo_2_castle_tavern_adventurer_female_eating: config/npc/levels/demo_2/castle_tavern/adventurer_female_eating.json,
+//	demo_2_castle_tavern_builder_barkeeper: config/npc/levels/demo_2/castle_tavern/builder_barkeeper.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Level 1
+//	//************************************************
+//	
+//	demo_2_level_1_adventurer_at_first_destroyable_wall: config/npc/levels/demo_2/level_1/adventurer_at_first_destroyable_wall.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Level 2
+//	//************************************************
+//	
+//	demo_2_level_2_adventurer_female_at_pressure_switches: config/npc/levels/demo_2/level_2/adventurer_female_at_pressure_switches.json,
+//	
+//	//************************************************
+//	//*** Demo 2 - Level 4
+//	//************************************************
+//	
+//	demo_2_level_4_adventurer_at_boss_room: config/npc/levels/demo_2/level_4/adventurer_at_boss_room.json,
 }

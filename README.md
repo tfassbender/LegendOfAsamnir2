@@ -4,6 +4,8 @@
 
 The game can be played using a keyboard and a mouse or a game pad (it's optimized for game pad use).
 
+You can find the executable jar files for download on [itch.io](https://tux4711.itch.io/legend-of-asamnir-2-rise-of-the-chaos-wizard), or just download this repo and execute the `gradle :desktop:run` task to directly run the project or the `gradle :desktop:dist` task to build it.
+
 The project uses a data-driven approach, to make it configurable and reusable for other projects. How the parts of the game can be (re-)used is described in the following sections.
 
 ## Overview

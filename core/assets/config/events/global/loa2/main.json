@@ -1,5 +1,42 @@
 {
 	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_main_adventurer_in_dwarven_village: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_adventurer_in_dwarven_village,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_adventurer_in_dwarven_village_cutscene,
+		}
+	},
+	
+	loa2_main_guardian_at_bifroest: {
+        event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_main_guardian_at_bifroest,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_main_guardian_at_bifroest_cutscene,
+		}
+	},
+	
+	loa2_main_guardian_at_helheim: {
+        event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_main_guardian_at_helheim,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_main_guardian_at_helheim_cutscene,
+		}
+	},
+
+	//*******************************************
 	//*** change map
 	//*******************************************
 	
