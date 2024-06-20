@@ -1,0 +1,57 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_main_tavern_kings_invitation_cutscene: {
+	    event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_main_tavern_kings_invitation_cutscene,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_main_tavern_kings_invitation_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_main_tavern_barkeeper: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_tavern_barkeeper,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_tavern_barkeeper_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_main_tavern_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_tavern_goto_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_tavern_goto_main_cutscene,
+		}
+	},
+	loa2_main_tavern_goto_main_after_condition_cutscene: {
+		event: {
+			eventType: CUTSCENE_EVENT,
+			stringValue: loa2_main_tavern_goto_main_after_condition_cutscene,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main,
+			startingPointId: 1,
+		}
+	},
+}

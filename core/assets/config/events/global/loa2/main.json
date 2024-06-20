@@ -79,9 +79,10 @@
 			eventType: EVENT_OBJECT_TOUCHED,
 			stringValue: loa2_main_goto_tavern,
 		}
-		executionType: START_CUTSCENE,
+		executionType: CHANGE_MAP,
 		executionParameters: {
-			cutsceneId: loa2_level_under_construction_cutscene,
+			map: loa2_main_tavern,
+			startingPointId: 0,
 		}
 	},
 	

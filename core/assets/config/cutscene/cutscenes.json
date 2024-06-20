@@ -15,10 +15,16 @@
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main
 	//********************************************************
-	
 	config/cutscene/loa2/main/adventurer_in_dwarven_village.json,
 	config/cutscene/loa2/main/guardian_at_bifroest.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Main - Tavern
+	//********************************************************
+	config/cutscene/loa2/main/tavern/barkeeper.json,
+	config/cutscene/loa2/main/tavern/kings_invitation.json,
+	config/cutscene/loa2/main/tavern/goto_main.json,
 
 	//********************************************************
 	//*** Demo Level

@@ -26,6 +26,10 @@
 		texture: mana,
 		pickUpSound: mana
 	},
+	mana_big: {
+		texture: mana,
+        pickUpSound: mana
+	},
 	shield: {
 		texture: shield,
 		pickUpSound: pickup

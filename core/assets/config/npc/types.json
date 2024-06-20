@@ -7,6 +7,11 @@
 	loa2_main_builder_on_farm: config/npc/levels/loa2/main/builder_on_farm.json,
 	loa2_main_guardian_at_bifroest: config/npc/levels/loa2/main/guardian_at_bifroest.json,
 	loa2_main_guardian_at_helheim: config/npc/levels/loa2/main/guardian_at_helheim.json,
+	
+	//************************************************
+	//*** Legend of Asamnir 2 - Main - Tavern
+	//************************************************
+	loa2_main_tavern_barkeeper: config/npc/levels/loa2/main/tavern/barkeeper.json,
 
 	//************************************************
 	//*** Demo Level

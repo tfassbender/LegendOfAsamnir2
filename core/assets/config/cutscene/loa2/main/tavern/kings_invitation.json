@@ -1,0 +1,87 @@
+{
+	id: loa2_main_tavern_kings_invitation_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_main_tavern__spoken_to_mjodwitnir,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: second_condition,
+				condition_not_met: end,
+			}
+		},
+		
+		second_condition: {
+			type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_main_tavern__received_kings_invitation,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end,
+				condition_not_met: courier_entering,
+			}
+		},
+		
+		courier_entering: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "TODO",
+				displayText: "Not yet implemented.\nA courier needs to enter the tavern and tell Thorin to go to the castle.\nUse this to explain running. ",
+				colorHeader: #ff00ff,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value__received_kings_invitation,
+			],
+		},
+		
+		set_global_value__received_kings_invitation: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main_tavern__received_kings_invitation, value: true}",
+			},
+			
+			executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

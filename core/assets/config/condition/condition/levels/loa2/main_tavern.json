@@ -1,0 +1,21 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_main_tavern__spoken_to_mjodwitnir: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+			key: loa2_main_tavern__spoken_to_mjodwitnir,
+			expectedValue: true,
+		}
+	},
+	
+	loa2_main_tavern__received_kings_invitation: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_main_tavern__received_kings_invitation,
+            expectedValue: true,
+		}
+	},
+}

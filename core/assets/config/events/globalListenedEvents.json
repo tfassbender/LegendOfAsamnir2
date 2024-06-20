@@ -3,6 +3,7 @@
 	
 	config/events/global/loa2/prolog.json,
 	config/events/global/loa2/main.json,
+	config/events/global/loa2/main_tavern.json,
 	
 //	config/events/global/demo.json,
 //	config/events/global/map_change_test.json,
