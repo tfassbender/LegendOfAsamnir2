@@ -14,8 +14,7 @@ public class CutsceneActionFactory {
 		CutsceneActionFactory.hudCamera = hudCamera;
 	}
 	
-	public static AbstractCutsceneAction createAction(CutsceneUnitProvider unitProvider, CutsceneControlledActionConfig actionConfig,
-			IsUnitMovingFunction isUnitMovingFunction) {
+	public static AbstractCutsceneAction createAction(CutsceneUnitProvider unitProvider, CutsceneControlledActionConfig actionConfig, IsUnitMovingFunction isUnitMovingFunction) {
 		switch (actionConfig.type) {
 			case CHANGE_STATE:
 				return new CutsceneChangeStateAction(unitProvider, actionConfig);

@@ -1,0 +1,11 @@
+{
+	//*********************************
+	//*** no movement
+	//*********************************
+	npc__courier: {
+		spawnType: npc.courier,
+		events: [CUSTCENE_SPAWN_UNIT],
+		
+		spawnTypeMapProperties: "{unitId: \"loa2_main_tavern_courier\"}",
+	},
+}

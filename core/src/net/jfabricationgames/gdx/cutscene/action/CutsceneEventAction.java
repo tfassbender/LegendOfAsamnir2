@@ -25,8 +25,10 @@ public class CutsceneEventAction extends AbstractCutsceneAction implements Event
 				EventHandler.getInstance().fireEvent(actionConfig.event);
 			}
 			if (actionConfig.globalEvent != null) {
-				EventHandler.getInstance().fireEvent(
-						new EventConfig().setEventType(EventType.CUTSCENE_EVENT).setStringValue(actionConfig.globalEvent).setParameterObject(this));
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUTSCENE_EVENT) //
+						.setStringValue(actionConfig.globalEvent) //
+						.setParameterObject(this));
 			}
 		}
 	}

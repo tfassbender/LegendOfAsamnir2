@@ -12,6 +12,7 @@
 	//*** Legend of Asamnir 2 - Main - Tavern
 	//************************************************
 	loa2_main_tavern_barkeeper: config/npc/levels/loa2/main/tavern/barkeeper.json,
+	courier: config/npc/levels/loa2/main/tavern/courier.json,
 
 	//************************************************
 	//*** Demo Level

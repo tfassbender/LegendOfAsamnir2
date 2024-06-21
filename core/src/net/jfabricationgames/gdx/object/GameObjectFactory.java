@@ -30,6 +30,7 @@ public class GameObjectFactory {
 	private static GameObjectMap gameMap;
 	private static EnemySpawnFactory enemySpawnFactory;
 	private static ItemSpawnFactory itemSpawnFactory;
+	private static NpcSpawnFactory npcSpawnFactory;
 	private static GameObjectItemDropUtil itemDropUtil;
 	private static Class<?> playerObjectClass;
 	
@@ -52,6 +53,10 @@ public class GameObjectFactory {
 		GameObjectFactory.itemSpawnFactory = itemSpawnFactory;
 	}
 	
+	public static void setNpcSpawnFactory(NpcSpawnFactory npcSpawnFactory) {
+		GameObjectFactory.npcSpawnFactory = npcSpawnFactory;
+	}
+	
 	public static void setItemDropUtil(GameObjectItemDropUtil itemDropUtil) {
 		GameObjectFactory.itemDropUtil = itemDropUtil;
 	}
@@ -69,8 +74,7 @@ public class GameObjectFactory {
 	public static GameObject createObject(String type, float x, float y, MapProperties properties) {
 		GameObjectTypeConfig typeConfig = typeConfigs.get(type);
 		if (typeConfig == null) {
-			throw new IllegalStateException("No type config known for type: '" + type
-					+ "'. Either the type name is wrong or you have to add it to the objectTypesConfig (see \"" + CONFIG_FILE + "\")");
+			throw new IllegalStateException("No type config known for type: '" + type + "'. Either the type name is wrong or you have to add it to the objectTypesConfig (see \"" + CONFIG_FILE + "\")");
 		}
 		
 		Sprite sprite = FactoryUtil.createSprite(atlas, x, y, typeConfig.texture);
@@ -94,6 +98,7 @@ public class GameObjectFactory {
 				SpawnPoint spawnPoint = new SpawnPoint(typeConfig, sprite, properties, gameMap);
 				spawnPoint.setEnemySpawnFactory(enemySpawnFactory);
 				spawnPoint.setItemSpawnFactory(itemSpawnFactory);
+				spawnPoint.setNpcSpawnFactory(npcSpawnFactory);
 				object = spawnPoint;
 				break;
 			case EVENT_OBJECT:

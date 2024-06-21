@@ -6,13 +6,15 @@ public class CutsceneMoveAction extends AbstractCutsceneMoveAction {
 	
 	public CutsceneMoveAction(CutsceneUnitProvider unitProvider, CutsceneControlledActionConfig actionConfig) {
 		super(unitProvider, actionConfig);
-		controlledUnit = getControlledUnitAs(CutsceneMoveableUnit.class);
-		findTarget();
+		// the controlled unit has to be initialized lazy, because it might be spawned from within the cutscene 
 	}
 	
 	@Override
 	public void execute(float delta) {
 		if (actionConfig.updatePositionRelativeToTarget) {
+			if (controlledUnit == null) {
+				controlledUnit = getControlledUnitAs(CutsceneMoveableUnit.class);
+			}
 			findTarget();
 		}
 		
@@ -20,6 +22,11 @@ public class CutsceneMoveAction extends AbstractCutsceneMoveAction {
 	}
 	
 	private void moveControlledUnitToTarget() {
+		if (controlledUnit == null) {
+			controlledUnit = getControlledUnitAs(CutsceneMoveableUnit.class);
+			findTarget();
+		}
+		
 		controlledUnit.changeToMovingState();
 		controlledUnit.moveTo(target.cpy(), actionConfig.speedFactor);
 	}
@@ -35,6 +42,11 @@ public class CutsceneMoveAction extends AbstractCutsceneMoveAction {
 	}
 	
 	private float getDistanceToTarget() {
+		if (controlledUnit == null) {
+			controlledUnit = getControlledUnitAs(CutsceneMoveableUnit.class);
+			findTarget();
+		}
+		
 		return target.cpy().sub(controlledUnit.getPosition()).len();
 	}
 }

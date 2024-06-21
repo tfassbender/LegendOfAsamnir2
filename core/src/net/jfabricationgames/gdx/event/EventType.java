@@ -61,6 +61,7 @@ public enum EventType {
 	CUTSCENE_CONDITION, //
 	CUTSCENE_EVENT, //
 	CUTSCENE_PLAYER_CHOICE, //
+	CUSTCENE_SPAWN_UNIT, //
 	//*******************************
 	//*** Fast Travel
 	//*******************************

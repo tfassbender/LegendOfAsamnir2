@@ -127,8 +127,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		camera = new OrthographicCamera();
 		cameraHud = new OrthographicCamera();
 		viewport = new FitViewport(Constants.SCENE_WIDTH, Constants.SCENE_HEIGHT, camera);
-		viewportHud = new FitViewport(Constants.SCENE_WIDTH * Constants.HUD_SCENE_FACTOR, Constants.SCENE_HEIGHT * Constants.HUD_SCENE_FACTOR,
-				cameraHud);
+		viewportHud = new FitViewport(Constants.SCENE_WIDTH * Constants.HUD_SCENE_FACTOR, Constants.SCENE_HEIGHT * Constants.HUD_SCENE_FACTOR, cameraHud);
 		
 		cameraHud.position.x = Constants.HUD_SCENE_WIDTH * 0.5f;
 		cameraHud.position.y = Constants.HUD_SCENE_HEIGHT * 0.5f;
@@ -169,6 +168,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		GameObjectFactory.setGameMap(gameMap);
 		GameObjectFactory.setEnemySpawnFactory(EnemyFactory.asInstance());
 		GameObjectFactory.setItemSpawnFactory(ItemFactory.asInstance());
+		GameObjectFactory.setNpcSpawnFactory(NonPlayableCharacterFactory.asInstance());
 		GameObjectFactory.setItemDropUtil(ItemDropUtil.asInstance());
 		GameObjectFactory.setPlayerObjectClass(PlayableCharacter.class);
 		
@@ -231,8 +231,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 	}
 	
 	private void createCameraMovementHandler() {
-		cameraMovementHandler = CameraMovementHandler.createInstanceIfAbsent(camera, () -> Player.getInstance().getPosition(),
-				() -> CutsceneHandler.getInstance().isCameraControlledByCutscene());
+		cameraMovementHandler = CameraMovementHandler.createInstanceIfAbsent(camera, () -> Player.getInstance().getPosition(), () -> CutsceneHandler.getInstance().isCameraControlledByCutscene());
 	}
 	
 	private void initializeEventHandling() {

@@ -6,6 +6,11 @@
 	config/spawn/maps/map6.json
 	
 	//******************
+	//*** npc
+	//******************
+	config/spawn/npc/courier.json,
+	
+	//******************
 	//*** enemies
 	//******************
 	config/spawn/enemies/bat.json,

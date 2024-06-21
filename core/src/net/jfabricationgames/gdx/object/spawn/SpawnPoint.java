@@ -23,6 +23,7 @@ import net.jfabricationgames.gdx.object.GameObjectFactory;
 import net.jfabricationgames.gdx.object.GameObjectMap;
 import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 import net.jfabricationgames.gdx.object.ItemSpawnFactory;
+import net.jfabricationgames.gdx.object.NpcSpawnFactory;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
 import net.jfabricationgames.gdx.util.MapUtil;
 
@@ -45,8 +46,7 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 			ObjectMap<String, SpawnConfig> configs = json.fromJson(ObjectMap.class, SpawnConfig.class, Gdx.files.internal(configFile));
 			for (String key : configs.keys()) {
 				if (spawnConfigs.containsKey(key)) {
-					throw new IllegalStateException("The key '" + key + "' from the spawn config file '" + configFile
-							+ "' was already added by another spawn config file. Duplicate keys are not allowed.");
+					throw new IllegalStateException("The key '" + key + "' from the spawn config file '" + configFile + "' was already added by another spawn config file. Duplicate keys are not allowed.");
 				}
 			}
 			spawnConfigs.putAll(configs);
@@ -59,6 +59,7 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	
 	private EnemySpawnFactory enemySpawnFactory;
 	private ItemSpawnFactory itemSpawnFactory;
+	private NpcSpawnFactory npcSpawnFactory;
 	
 	@MapObjectState
 	private boolean spawnedObjectPresentInMap;
@@ -84,8 +85,7 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 		String spawnConfigName = mapProperties.get(MAP_PROPERTY_KEY_SPAWN_CONFIG, String.class);
 		spawnConfig = spawnConfigs.get(spawnConfigName);
 		if (spawnConfig == null) {
-			throw new IllegalStateException(
-					"This SpawnPoint has a spawn config in it's map properties, that can't be found. SpawnPoint: " + mapPropertiesToString());
+			throw new IllegalStateException("This SpawnPoint has a spawn config in it's map properties, that can't be found. SpawnPoint: " + mapPropertiesToString());
 		}
 		
 		checkWhetherSpawnEventsExist();
@@ -98,17 +98,14 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 		if (spawnConfig.events != null) {
 			for (String eventName : spawnConfig.events) {
 				if (EventHandler.getInstance().getEventByName(eventName) == null) {
-					throw new IllegalStateException("The spawn config of this SpawnPoint contains an event key that can't be found: " + eventName
-							+ ". SpawnConfig: " + mapPropertiesToString());
+					throw new IllegalStateException("The spawn config of this SpawnPoint contains an event key that can't be found: " + eventName + ". SpawnConfig: " + mapPropertiesToString());
 				}
 			}
 		}
 		if (spawnConfig.complexEvents != null) {
 			for (EventConfig event : spawnConfig.complexEvents) {
 				if (event.eventType == null) {
-					throw new IllegalStateException(
-							"The spawn config of this SpawnPoint contains a complex event without an event type. SpawnConfig: "
-									+ mapPropertiesToString());
+					throw new IllegalStateException("The spawn config of this SpawnPoint contains a complex event without an event type. SpawnConfig: " + mapPropertiesToString());
 				}
 				// if the event type is unknown, it would have let to a json parse exception, so this does not need to be checked
 			}
@@ -125,6 +122,10 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	
 	public void setItemSpawnFactory(ItemSpawnFactory itemSpawnFactory) {
 		this.itemSpawnFactory = itemSpawnFactory;
+	}
+	
+	public void setNpcSpawnFactory(NpcSpawnFactory npcSpawnFactory) {
+		this.npcSpawnFactory = npcSpawnFactory;
 	}
 	
 	@Override
@@ -192,21 +193,20 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 			mapProperties = MapUtil.createMapPropertiesFromString(spawnConfig.spawnTypeMapProperties);
 		}
 		
-		Gdx.app.debug(getClass().getSimpleName(), "Spawning object of type '" + spawnConfig.spawnType + "' with map properties: "
-				+ MapUtil.mapPropertiesToString(mapProperties, false));
+		Gdx.app.debug(getClass().getSimpleName(), "Spawning object of type '" + spawnConfig.spawnType + "' with map properties: " + MapUtil.mapPropertiesToString(mapProperties, false));
 		
 		switch (parts[0]) {
 			case Constants.OBJECT_NAME_ITEM:
-				createAndAddItemAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD,
-						body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties, true);
+				createAndAddItemAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD, body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties, true);
 				break;
 			case Constants.OBJECT_NAME_OBJECT:
-				createAndAddObjectAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD,
-						body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties);
+				createAndAddObjectAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD, body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties);
 				break;
 			case Constants.OBJECT_NAME_ENEMY:
-				createAndAddEnemyAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD,
-						body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties);
+				createAndAddEnemyAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD, body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties);
+				break;
+			case Constants.OBJECT_NAME_NPC:
+				createAndAddNpcAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD, body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties);
 				break;
 			default:
 				throw new IllegalStateException("Unknown spawn type: " + spawnConfig.spawnType);
@@ -232,6 +232,12 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	private void createAndAddEnemyAfterWorldStep(String type, float x, float y, MapProperties mapProperties) {
 		PhysicsWorld.getInstance().runAfterWorldStep(() -> {
 			enemySpawnFactory.createAndAddEnemy(type, x, y, mapProperties, this::spawnObjectRemovedFromMap);
+		});
+	}
+	
+	private void createAndAddNpcAfterWorldStep(String type, float x, float y, MapProperties mapProperties) {
+		PhysicsWorld.getInstance().runAfterWorldStep(() -> {
+			npcSpawnFactory.createAndAddNpc(type, x, y, mapProperties, this::spawnObjectRemovedFromMap);
 		});
 	}
 	

@@ -51,12 +51,95 @@
 		},
 		
 		courier_entering: {
-            type: SHOW_ON_SCREEN_TEXT,
+            type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+			},
+			
+			executes: [
+				courier_move,
+			],
+		},
+		
+		courier_move: {
+			executionDelayInSeconds: 0.1f, // the delay is needed, so that the unit's movement is not started before it's actually spawned
+			type: MOVE,
+			controlledUnitId: loa2_main_tavern_courier,
+			controlledUnitTarget: {x: 0, y: 3},
+			
+			executes: [
+				courier_move_to_thorin,
+			]
+		},
+		
+		courier_move_to_thorin: {
+			type: MOVE,
+			controlledUnitId: loa2_main_tavern_courier,
+			controlledUnitTarget: {x: -2, y: -0.25},
+			targetPositionRelativeToUnitId: PLAYER,
+			
+			executes: [
+				courier_tell_thorin_to_go_to_the_castle,
+			]
+		},
+		
+		courier_tell_thorin_to_go_to_the_castle: {
+			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "TODO",
-				displayText: "Not yet implemented.\nA courier needs to enter the tavern and tell Thorin to go to the castle.\nUse this to explain running. ",
-				colorHeader: #ff00ff,
+				displayTextHeader: "Frar",
+				displayText: "Hey Thorin,\nI knew I would find you here.\nThe chieftain is looking for you. He sent me to get you to the castle as soon as possible. ",
+				colorHeader: #313de8,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				throrins_answer,
+			],
+		},
+		
+		throrins_answer: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Modsognir is searching for me? What does he want? ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				frars_answer,
+			],
+		},
+		
+		frars_answer: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Frar",
+				displayText: "I don't know. He just sent me to get you.\nBut it seemed to be quite urgent...\n\nMaybe he's running out of mead again?! ",
+				colorHeader: #313de8,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				throrins_answer_2,
+			],
+		},
+		
+		throrins_answer_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Then he would have sent you to find Mjodwitnir, not me.\n\nWhatever, I'll better check what he wants. Thanks for letting me know. ",
 			}
 			
 			waitForEventToFinish: true,

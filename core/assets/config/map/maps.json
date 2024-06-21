@@ -3,12 +3,13 @@
 	{
 		name: loa2_prolog,
 		map: "map/loa2_prolog.tmx",
-		//initial: true
 		initialStartingPointId: 0,
+		//initial: true
 	},
 	{
 		name: loa2_main,
 		map: "map/loa2_main.tmx",
+		initialStartingPointId: 0,
 		//initial: true
 	},
 	{
@@ -16,6 +17,12 @@
         map: "map/loa2_main_tavern.tmx",
         initialStartingPointId: 0,
 		initial: true
+	},
+	{
+		name: loa2_main_castle,
+		map: "map/loa2_main_castle.tmx",
+		initialStartingPointId: 0,
+		//initial: true
 	},
 	
 	// testing

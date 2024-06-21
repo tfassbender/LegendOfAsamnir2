@@ -1,0 +1,42 @@
+{
+	id: loa2_main_tavern_courier_cutscene,
+	controlledActions: {
+		barkeeper_greeting: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Frar",
+				displayText: "Did you already talk to Modsognir in the castle? ",
+				colorHeader: #313de8,
+				showNextPageIcon: true,
+			}
+			
+			startsWithCutscene: true,
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer,
+			],
+		},
+		
+		thorin_answer: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Not yet. I'll go there now. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

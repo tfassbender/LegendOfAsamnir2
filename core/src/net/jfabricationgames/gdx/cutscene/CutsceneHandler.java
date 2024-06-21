@@ -108,8 +108,7 @@ public class CutsceneHandler implements EventListener {
 			CutsceneConfig cutscene = cutscenes.get(cutsceneId);
 			
 			if (cutscene == null) {
-				throw new IllegalStateException("The cutscene '" + cutsceneId
-						+ "' is unknown. It has to be added into a file, that is referenced by the cutscene config file '" + CONFIG_PATH + "'");
+				throw new IllegalStateException("The cutscene '" + cutsceneId + "' is unknown. It has to be added into a file, that is referenced by the cutscene config file '" + CONFIG_PATH + "'");
 			}
 			playCutscene(cutscene);
 		}
@@ -130,9 +129,7 @@ public class CutsceneHandler implements EventListener {
 		for (Entry<String, CutsceneControlledActionConfig> actionConfig : cutscene.controlledActions.entries()) {
 			if (actionConfig.value.startsWithCutscene) {
 				if (initialAction != null) {
-					throw new IllegalStateException(
-							"A CutsceneConfig has to configure exactly one action, that startsWithCutscene. This CutsceneConfig defines at least two: '"
-									+ initialAction.key + "' and '" + actionConfig.key + "'.");
+					throw new IllegalStateException("A CutsceneConfig has to configure exactly one action, that startsWithCutscene. This CutsceneConfig defines at least two: '" + initialAction.key + "' and '" + actionConfig.key + "'.");
 				}
 				
 				//create a new entry object because the for each iterator uses the same reference for all entry objects
@@ -199,8 +196,7 @@ public class CutsceneHandler implements EventListener {
 			for (String actionId : action.getFollowingActions()) {
 				CutsceneControlledActionConfig followingActionConfig = getActiveCutsceneConfig().controlledActions.get(actionId);
 				if (followingActionConfig == null) {
-					throw new IllegalStateException(
-							"The following action '" + actionId + "' of the current state (defined in 'executes' parameter) is not known.");
+					throw new IllegalStateException("The following action '" + actionId + "' of the current state (defined in 'executes' parameter) is not known.");
 				}
 				
 				addExecutedAction(followingActionConfig, actionId);

@@ -16,6 +16,10 @@
 	//*** Legend of Asamnir 2 - Main
 	//********************************************************
 	config/cutscene/loa2/main/adventurer_in_dwarven_village.json,
+	config/cutscene/loa2/main/leaving_village_north.json,
+	config/cutscene/loa2/main/leaving_village_east.json,
+	config/cutscene/loa2/main/leaving_village_south.json,
+	config/cutscene/loa2/main/entering_castle.json,
 	config/cutscene/loa2/main/guardian_at_bifroest.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
 	
@@ -23,13 +27,13 @@
 	//*** Legend of Asamnir 2 - Main - Tavern
 	//********************************************************
 	config/cutscene/loa2/main/tavern/barkeeper.json,
+	config/cutscene/loa2/main/tavern/courier.json,
 	config/cutscene/loa2/main/tavern/kings_invitation.json,
 	config/cutscene/loa2/main/tavern/goto_main.json,
 
 	//********************************************************
 	//*** Demo Level
 	//********************************************************
-	
 	config/cutscene/demo/minotaur_cutscene.json,
 	config/cutscene/demo/talk_to_female_adventurer.json,
 	config/cutscene/demo/talk_to_guard_blocking_the_way.json,
@@ -47,7 +51,6 @@
 //	//********************************************************
 //	//*** Demo 2 Prolog
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/prolog/opening.json,
 //	config/cutscene/demo_2/prolog/gate_1.json,
 //	config/cutscene/demo_2/prolog/gate_2.json,
@@ -59,7 +62,6 @@
 //	//********************************************************
 //	//*** Demo 2 Tutorial
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/tutorial/entry.json,
 //	config/cutscene/demo_2/tutorial/adventurer.json,
 //	config/cutscene/demo_2/tutorial/gate_adventurer.json,
@@ -69,7 +71,6 @@
 //	//********************************************************
 //	//*** Demo 2 Main
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/main/goto_tutorial.json,
 //	config/cutscene/demo_2/main/signboard_near_final_dungeon_entry.json,
 //	config/cutscene/demo_2/main/gate_final_dungeon_signboard_not_read.json,
@@ -91,20 +92,17 @@
 //	//********************************************************
 //	//*** Demo 2 Village Blacksmith
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/village_blacksmith/builder_left.json,
 //	config/cutscene/demo_2/village_blacksmith/builder_right.json,
 //	
 //	//********************************************************
 //	//*** Demo 2 Village Shop
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/village_shop/adventurer_female.json,
 //	
 //	//********************************************************
 //	//*** Demo 2 Village Tavern
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/village_tavern/builder_barkeeper.json,
 //	config/cutscene/demo_2/village_tavern/adventurer_eating.json,
 //	config/cutscene/demo_2/village_tavern/adventurer_female_drinking.json,
@@ -112,7 +110,6 @@
 //	//********************************************************
 //	//*** Demo 2 Castle Tavern
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/castle_tavern/adventurer_blocking_the_entry.json,
 //	config/cutscene/demo_2/castle_tavern/adventurer_female_eating.json,
 //	config/cutscene/demo_2/castle_tavern/adventurer_female_by_the_door.json,
@@ -121,13 +118,11 @@
 //	//********************************************************
 //	//*** Demo 2 Waterfall Cave
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/waterfall_cave/waterfall_cave_found.json,
 //	
 //	//********************************************************
 //	//*** Demo 2 Level 1
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/level_1/adventurer_at_first_destroyable_wall.json,
 //	config/cutscene/demo_2/level_1/first_bomb_found.json,
 //	config/cutscene/demo_2/level_1/rune_ansuz_found.json,
@@ -137,7 +132,6 @@
 //	//********************************************************
 //	//*** Demo 2 Level 2
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/level_2/first_mimic_defeated.json,
 //	config/cutscene/demo_2/level_2/boomerang_found.json,
 //	config/cutscene/demo_2/level_2/mana_shrine_found.json,
@@ -149,7 +143,6 @@
 //	//********************************************************
 //	//*** Demo 2 Level 3
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/level_3/goto_level_3_top_left.json,
 //	config/cutscene/demo_2/level_3/goto_level_3_top_right.json,
 //	config/cutscene/demo_2/level_3/goto_main_left.json,
@@ -170,7 +163,6 @@
 //	//********************************************************
 //	//*** Demo 2 Level 4
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/level_4/goto_main.json,
 //	config/cutscene/demo_2/level_4/adventurer_at_boss_room.json,
 //	config/cutscene/demo_2/level_4/entered_boss_area.json,
@@ -179,7 +171,6 @@
 //	//********************************************************
 //	//*** Demo 2 Level 5
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/level_5/rune_gebo_found.json,
 //	config/cutscene/demo_2/level_5/gate_lantern_not_activated.json,
 //	config/cutscene/demo_2/level_5/gate_lantern_not_found_yet.json,
@@ -190,6 +181,5 @@
 //	//********************************************************
 //	//*** Demo 2 End
 //	//********************************************************
-//	
 //	config/cutscene/demo_2/end/end_game.json,
 ]

@@ -26,5 +26,9 @@
 	playerLowOnMana: {
 		eventType: OUT_OF_AMMO,
 		stringValue: MANA,
+	},
+	
+	CUSTCENE_SPAWN_UNIT: {
+		eventType: CUSTCENE_SPAWN_UNIT,
 	}
 }

@@ -29,6 +29,17 @@
 		}
 	},
 	
+	loa2_main_tavern_courier: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_tavern_courier,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_tavern_courier_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** change map
 	//*******************************************

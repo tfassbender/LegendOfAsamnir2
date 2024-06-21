@@ -1,0 +1,97 @@
+{
+	id: loa2_main_leaving_village_east_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_main_tavern__spoken_to_mjodwitnir,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: second_condition,
+				condition_not_met: thorin_needs_to_speak_to_mjodwitnir,
+			}
+		},
+		
+		second_condition: {
+            type: CONDITION,
+            condition: {
+                conditionId: loa2_main__asamnir_stolen,
+                thenCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_met,
+					}
+				},
+                elseCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_not_met,
+					}
+				}
+			},
+            conditionOptionExecutions: {
+                condition_met: end,
+                condition_not_met: thorin_needs_to_go_to_the_castle,
+			}
+		},
+		
+		thorin_needs_to_speak_to_mjodwitnir: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I should go to the tavern before leaving the village. It's in the north-east corner of the village. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
+			]
+		},
+		
+		thorin_needs_to_go_to_the_castle: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I should talk to Modsognir before leaving the village. He's in his castle in the north of the village. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
+			]
+		},
+		
+		move_back: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -2, y: 0},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

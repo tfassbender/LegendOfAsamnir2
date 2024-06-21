@@ -1,5 +1,42 @@
 {
 	//*******************************************
+	//*** cutscenes - event objects touched
+	//*******************************************
+	
+	loa2_main_leaving_village_north: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_main_leaving_village_north,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_main_leaving_village_north_cutscene,
+		}
+	},
+	
+	loa2_main_leaving_village_east: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_main_leaving_village_east,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_main_leaving_village_east_cutscene,
+		}
+	},
+	
+	loa2_main_leaving_village_south: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_main_leaving_village_south,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_main_leaving_village_south_cutscene,
+		}
+	},
+	
+	//*******************************************
 	//*** cutscenes - npc interaction
 	//*******************************************
 	
@@ -59,7 +96,19 @@
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_level_under_construction_cutscene,
+			cutsceneId: loa2_main_entering_castle_cutscene,
+		}
+	},
+	
+	loa2_main_goto_castle_after_condition_cutscene: {
+		event: {
+			eventType: CUTSCENE_EVENT,
+			stringValue: loa2_main_goto_castle_after_condition_cutscene,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main_castle,
+			startingPointId: 0,
 		}
 	},
 	
