@@ -1,0 +1,13 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_main_castle_setup_executed: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+			key: loa2_main_castle_setup_executed,
+			expectedValue: true,
+		}
+	},
+}

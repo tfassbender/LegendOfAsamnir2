@@ -45,6 +45,19 @@
 			}
 			
 			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_variables,
+			]
 		},
+		
+		set_global_variables: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_prolog_alarm_clock_defeated, value: true}",
+			},
+		}
 	}
 }

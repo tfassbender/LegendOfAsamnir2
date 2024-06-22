@@ -1,0 +1,209 @@
+{
+	id: loa2_main_entering_blacksmith_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_main_tavern__spoken_to_mjodwitnir,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: second_condition,
+				condition_not_met: thorin_needs_to_speak_to_mjodwitnir,
+			}
+		},
+		
+		second_condition: {
+            type: CONDITION,
+            condition: {
+                conditionId: loa2_main__asamnir_stolen,
+                thenCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_met,
+					}
+				},
+                elseCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_not_met,
+					}
+				}
+			},
+            conditionOptionExecutions: {
+                condition_met: show_text_1,
+                condition_not_met: thorin_needs_to_go_to_the_castle,
+			}
+		},
+		
+		// TODO replace this with the map change after the map is finished
+		
+		show_text_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1.5f,
+			
+			executionParameters: {
+				displayTextHeader: "Tobias (Developer)",
+				displayText: "You've reached the end of this demo version of the game.\n\nMore content (and so many more bad jokes) are in development. ",
+				colorHeader: #FF00FF,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				show_text_2,
+			]
+		},
+		show_text_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Tobias (Developer)",
+				displayText: "You can still explore svartalfheim, though!\n\nAnyway, thanks for playing! ",
+				colorHeader: #FF00FF,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				continue_choice,
+			]
+		},
+		
+		continue_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Continue to main map?",
+				options: [
+					"I want to to explore!!!",
+					"Hell no! I'm outa here!",
+				],
+			},
+			choiceOptionExecutions: [
+				set_variables_to_explore,
+				leave_game,
+			],
+		},
+		
+		set_variables_to_explore: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__spare_weapon_gained, value: true}",
+			},
+		},
+		
+		leave_game: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "What?! No please!\nNot more of this!!! ",
+				showNextPageIcon: true,
+			}
+			
+			executes: [
+				fade_out,
+			]
+		},
+		
+		fade_out: {
+			type: COLOR_TRANSITION,
+			fadeIntoColor: true,
+			executionDelayInSeconds: 2f,
+			colorTransitionDelayInSeconds: 0f,
+			colorTransitionDurationInSeconds: 3f,
+			delayAfterColorTransitionInSeconds: 2f,
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				back_to_main_menu,
+			],
+		},
+		
+		back_to_main_menu: {
+			type: EVENT,
+			
+			event: {
+				eventType: BACK_TO_MAIN_MENU,
+				booleanValue: true
+			},
+		}
+		
+//		change_map: {
+//			type: EVENT,
+//			
+//			globalEvent: loa2_main_goto_blacksmith_after_condition_cutscene,
+//			
+//			waitForEventToFinish: false,
+//			
+//			executes: [
+//                end,
+//			]
+//		},
+		
+		thorin_needs_to_speak_to_mjodwitnir: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "This is Sindri's and Brokkr's forge. But I need to go to the tavern... ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
+			]
+		},
+		
+		thorin_needs_to_go_to_the_castle: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "This is Sindri's and Brokkr's forge. But I need to speak to Modsognir in the castle... ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
+			]
+		},
+		
+		move_back: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -1},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

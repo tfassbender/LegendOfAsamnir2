@@ -1,0 +1,53 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_main_castle_chaos_wizard_introduction_cutscene: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_castle_chaos_wizard_introduction_cutscene,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_castle_chaos_wizard_introduction_cutscene,
+		}
+	},
+	
+	loa2_main_castle_setup: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_castle_setup,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_castle_setup_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_main_castle_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_castle_goto_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_castle_goto_main_cutscene,
+		}
+	},
+	loa2_main_castle_goto_main_after_condition_cutscene: {
+		event: {
+			eventType: CUTSCENE_EVENT,
+			stringValue: loa2_main_castle_goto_main_after_condition_cutscene,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main,
+			startingPointId: 2,
+		}
+	},
+}

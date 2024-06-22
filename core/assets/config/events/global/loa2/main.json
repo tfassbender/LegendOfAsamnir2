@@ -119,7 +119,19 @@
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_level_under_construction_cutscene,
+			cutsceneId: loa2_main_entering_blacksmith_cutscene,
+		}
+	},
+	
+	loa2_main_goto_blacksmith_after_condition_cutscene: {
+		event: {
+			eventType: CUTSCENE_EVENT,
+			stringValue: loa2_main_goto_blacksmith_after_condition_cutscene,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main_blacksmith,
+			startingPointId: 0,
 		}
 	},
 	
@@ -142,7 +154,19 @@
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_level_under_construction_cutscene,
+			cutsceneId: loa2_main_entering_shop_cutscene,
+		}
+	},
+	
+	loa2_main_goto_shop_after_condition_cutscene: {
+		event: {
+			eventType: CUTSCENE_EVENT,
+			stringValue: loa2_main_goto_shop_after_condition_cutscene,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main_shop,
+			startingPointId: 0,
 		}
 	},
 	

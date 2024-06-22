@@ -1,0 +1,18 @@
+{
+	graphicsConfigFile: config/npc/graphics/chaos_wizard_form_1.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: false
+}

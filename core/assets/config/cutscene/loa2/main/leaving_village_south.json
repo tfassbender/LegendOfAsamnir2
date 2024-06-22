@@ -44,8 +44,31 @@
 				}
 			},
             conditionOptionExecutions: {
-                condition_met: end,
+                condition_met: third_condition,
                 condition_not_met: thorin_needs_to_go_to_the_castle,
+			}
+		},
+		
+		third_condition: {
+            type: CONDITION,
+            condition: {
+                conditionId: loa2_main__spare_weapon_gained,
+                thenCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_met,
+					}
+				},
+                elseCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_not_met,
+					}
+				}
+			},
+            conditionOptionExecutions: {
+                condition_met: end,
+                condition_not_met: thorin_needs_to_go_to_the_blacksmith,
 			}
 		},
 		
@@ -76,6 +99,21 @@
 			
 			executes: [
 				move_back,
+			]
+		},
+		
+		thorin_needs_to_go_to_the_blacksmith: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I should go to the blacksmith before leaving the village. I need to ask Sindri and Brokkr for a new weapon... ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                move_back,
 			]
 		},
 		

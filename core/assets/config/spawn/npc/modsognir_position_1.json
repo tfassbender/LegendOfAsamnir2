@@ -1,0 +1,11 @@
+{
+	//*********************************
+	//*** no movement
+	//*********************************
+	npc__modsognir_position_1: {
+		spawnType: npc.modsognir,
+		events: [LEVEL_SETUP_1],
+		
+		spawnTypeMapProperties: "{unitId: \"loa2_main_castle_modsognir__chaos_wizard_introduction\"}",
+	},
+}

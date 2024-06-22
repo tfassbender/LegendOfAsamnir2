@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/adventurer.json, // TODO get some graphics for the chaos wizard
+	stateConfig: config/npc/states/chaos_wizard_form_1.json,
+	initialState: idle,
+	
+	bodyWidth: 0.7f,
+	bodyHeight: 0.8f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.2f,
+	
+	interactionMarkerOffsetX: 0f,
+	interactionMarkerOffsetY: 0f,
+}

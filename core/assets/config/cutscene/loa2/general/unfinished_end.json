@@ -24,7 +24,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Tobias (Developer)",
-				displayText: "You can already explore the next map, though!\n\nAnyway, thanks for playing! ",
+				displayText: "You can still explore svartalfheim, though!\n\nAnyway, thanks for playing! ",
 				colorHeader: #FF00FF,
 			}
 			
@@ -49,17 +49,18 @@
 				],
 			},
 			choiceOptionExecutions: [
-				continue_to_main_map,
+				set_variables_to_explore,
 				leave_game,
 			],
 		},
 		
-		continue_to_main_map: {
+		set_variables_to_explore: {
 			type: EVENT,
 			
-			globalEvent: loa2_prolog_goto_main_after_cutscene,
-			
-			waitForEventToFinish: false,
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__spare_weapon_gained, value: true}",
+			},
 		},
 		
 		leave_game: {

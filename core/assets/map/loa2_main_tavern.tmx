@@ -13,7 +13,7 @@
    eJzbyMXAMJlEvAmItwLxIjbS8FaovkNspGGYvuNspOFRfdTXhwyQ5UgB9NAHALkscfs=
   </data>
  </layer>
- <layer id="4" name="terrain" width="14" height="13">
+ <layer id="4" name="terrain" width="14" height="13" locked="1">
   <data encoding="base64" compression="zlib">
    eJxjYBg6oIcdgnVZIfw8FgaGfCguAOJVXAwM2UD500D5U6yU25fPQhiD7MUGdFkJs7Hp4WVFZcPU8yLpQxYnBRCrB6SOD4gFWFHdNJQAAIb/DN8=
   </data>
@@ -73,7 +73,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="9" name="physics">
+ <objectgroup id="9" name="physics" locked="1">
   <object id="153" x="0" y="0" width="447" height="78"/>
   <object id="154" x="0" y="64" width="32" height="352"/>
   <object id="155" x="416" y="64" width="32" height="352"/>
@@ -81,7 +81,7 @@
   <object id="157" x="32" y="336.5" width="64" height="79.5"/>
   <object id="240" x="96" y="416" width="96" height="3.45455"/>
  </objectgroup>
- <objectgroup id="11" name="unreachable_area_physics">
+ <objectgroup id="11" name="unreachable_area_physics" locked="1">
   <object id="189" x="111.97" y="104.364">
    <polygon points="0,0 -7.81818,8.90909 -0.545455,12"/>
   </object>

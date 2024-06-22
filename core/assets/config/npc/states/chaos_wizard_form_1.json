@@ -1,0 +1,20 @@
+[
+	{
+		id: idle,
+		animation: adventurer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: adventurer_idle, // no movement, so the "looking arround for the princess" animation works
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+]

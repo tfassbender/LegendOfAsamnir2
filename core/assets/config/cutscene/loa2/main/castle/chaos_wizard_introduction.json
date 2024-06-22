@@ -1,0 +1,942 @@
+{
+	id: loa2_main_castle_chaos_wizard_introduction_cutscene,
+	controlledActions: {
+		start_movements: {
+			startsWithCutscene: true,
+			type: WAIT,
+			executionDelayInSeconds: 1f,
+			
+			executes: [
+                move_thorin_in_front_of_the_chaos_wizard,
+                move_camera,
+			]
+		},
+		
+		move_thorin_in_front_of_the_chaos_wizard: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: eventObject_startChaosWizardIntoductionCutscene,
+			controlledUnitTarget: {x: -0.7, y: 1},
+			
+			executes: [
+				make_thorin_look_to_the_right,
+			]
+		},
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: PLAYER,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 1.2},
+			speedFactor: 3f,
+		},
+		
+		make_thorin_look_to_the_right: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0.05, y: 0},
+			
+			executes: [
+				wait_before_conversation,
+			]
+		}
+		
+		wait_before_conversation: {
+            type: WAIT,
+            executionDurationInSeconds: 2f,
+            
+            executes: [
+                thorin_1,
+			]
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'm searching for Modsognir, the king of the dwarves.\n                                       \nWho are you?!  ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				chaos_wizard_1,
+			],
+		},
+		
+		chaos_wizard_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				colorHeader: #000099,
+				displayText: "That hurts, Thorin.\n                       \nDon't you recognize your old friend after all we've been through together? ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_2,
+			],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "... This voice ...               \n...               \nYou're this strange narrator guy!!!\nYou put me through this annoying quest to get back to Svartalfheim!!! ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_3,
+			],
+		},
+		
+		thorin_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Now that you're here in person I can finally make you shut up ...\n                     \nForever!!! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_2,
+			],
+		},
+		
+		chaos_wizard_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "*evil laughter*",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_3,
+			],
+		},
+		
+		chaos_wizard_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "You'll never learn, Thorin.\n               \nYou don't get to fight the final boss in the prolog of the game... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_4,
+			],
+		},
+		
+		thorin_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "What game?! And what's a prolog?!\n               \nStill nothing you say makes any sense!     \nWhatever, I'll just make sure you won't ever say anything again!!! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_between_thorins_texts,
+			],
+		},
+		
+		wait_between_thorins_texts: {
+            type: WAIT,
+            executionDurationInSeconds: 3f,
+            
+            executes: [
+                thorin_5,
+			],
+		},
+		
+		thorin_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "...          \n \nHey, why can't I move?!\n          \nWhat is this sorcery?! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_4,
+			],
+		},
+		
+		chaos_wizard_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "Well, to be honest with you, Thorin, ...\n                           \nI'm not only the narrator of this story, but also the creator of this world... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_5,
+			],
+		},
+		
+		chaos_wizard_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "*evil laughter*",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_6,
+			],
+		},
+		
+		thorin_6: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "...                    \n...                    \nSo you created this world?          \nAnd then you added yourself to it? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_6,
+			],
+		},
+		
+		chaos_wizard_6: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "That's right, Thorin.\n               \nThese are the first steps in my genius plan ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_7,
+			],
+		},
+		
+		thorin_7: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "You did all this just to become the hero of your own story? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_7,
+			],
+		},
+		
+		chaos_wizard_7: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "What?!          \nHell, no!!!                    \n\nI'm not the hero of this story, Thorin.     \nYou are! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_8,
+			],
+		},
+		
+		chaos_wizard_8: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "I created this world, to become the ultimate villain ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_9,
+			],
+		},
+		
+		chaos_wizard_9: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Narrator Guy",
+                colorHeader: #000099,
+                displayText: "I am ...                                  \n\n... the Chaos Wizard!!!                \n               \n*evil laughter*   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_10,
+			],
+		},
+		
+		chaos_wizard_10: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Chaos Wizard",
+                colorHeader: #850085,
+                displayText: "And now, Thorin, are you ready to face your new quest?! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_8,
+			],
+		},
+		
+		thorin_8: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "...                    \nWell actually I have something important to do ...\nI need to find Mjodwitnir and see if he has some mead left ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_9,
+			],
+		},
+		
+		thorin_9: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Maybe some other time, strange ... Chaos Wizard ... Guy ... ",
+                showNextPageIcon: true,
+            }
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_11,
+			],
+		},
+        
+        chaos_wizard_11: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Are you sure, Thorin?\n                    \nBecause I'm here to steal your princess!!!\n               \n*evil laughter*",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_12,
+			],
+		},
+		
+		chaos_wizard_12: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "To get her back you'll have to fight me in my castle on the fields of Vigrid ... \n                  \nIf you can make it there alive ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_10,
+			],
+		},
+		
+		thorin_10: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "The Princess?!\n                    \nWhat Princess?!\n                    \nWe have a Princess?! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_0,
+			],
+		},
+		
+		wait_0: {
+			type: WAIT,
+            executionDurationInSeconds: 0.5f,
+            
+            executes: [
+                chaos_wizard_looking_arround_1,
+			],
+		}
+		
+		chaos_wizard_looking_arround_1: {
+            type: MOVE,
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitTarget: {x: -0.05, y: 0},
+            
+            executionDurationInSeconds: 1f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_1,
+			],
+		},
+		
+		wait_1: {
+			type: WAIT,
+            executionDurationInSeconds: 1f,
+            
+            executes: [
+                chaos_wizard_looking_arround_2,
+			],
+		}
+		
+		chaos_wizard_looking_arround_2: {
+            type: MOVE,
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitTarget: {x: 0.05, y: 0},
+            
+            executionDurationInSeconds: 1f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_2,
+			],
+		},
+		
+		wait_2: {
+			type: WAIT,
+            executionDurationInSeconds: 1f,
+            
+            executes: [
+                chaos_wizard_looking_arround_3,
+			],
+		}
+		
+		chaos_wizard_looking_arround_3: {
+            type: MOVE,
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitTarget: {x: -0.05, y: 0},
+            
+            executes: [
+                wait_3,
+			],
+		},
+		
+		wait_3: {
+			type: WAIT,
+            executionDurationInSeconds: 0.3f,
+            
+            executes: [
+                chaos_wizard_looking_arround_4,
+			],
+		}
+		
+		chaos_wizard_looking_arround_4: {
+            type: MOVE,
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitTarget: {x: 0.05, y: 0},
+            
+            executes: [
+                wait_4,
+			],
+		},
+		
+		wait_4: {
+			type: WAIT,
+            executionDurationInSeconds: 0.3f,
+            
+            executes: [
+                chaos_wizard_looking_arround_5,
+			],
+		}
+		
+		chaos_wizard_looking_arround_5: {
+            type: MOVE,
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitTarget: {x: -0.05, y: 0},
+            
+            executionDurationInSeconds: 2f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_5,
+			],
+		},
+		
+		wait_5: {
+			type: WAIT,
+            executionDurationInSeconds: 0.3f,
+            
+            executes: [
+                chaos_wizard_looking_arround_6,
+			],
+		}
+		
+		chaos_wizard_looking_arround_6: {
+            type: MOVE,
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitTarget: {x: 0.05, y: 0},
+            
+            executionDurationInSeconds: 2f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_6,
+			],
+		},
+		
+		wait_6: {
+			type: WAIT,
+            executionDurationInSeconds: 1f,
+            
+            executes: [
+                chaos_wizard_13,
+			],
+		}
+		
+		chaos_wizard_13: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "...                    \n                 \nDid I forgett to add her to the game?!\n                              \nWell, that's embarrassing ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_14,
+			],
+		},
+		
+		chaos_wizard_14: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Give me a second! I'll fix this ...\n                         \n\n*keyboard typing* ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_before_spawning_the_princess,
+			],
+		},
+		
+		wait_before_spawning_the_princess: {
+            type: WAIT,
+            executionDurationInSeconds: 2f,
+            
+            executes: [
+                spawn_princess,
+			],
+		},
+		
+		spawn_princess: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+			},
+			
+			executes: [
+				wait_after_spawning_the_princess,
+			],
+		},
+		
+		wait_after_spawning_the_princess: {
+            type: WAIT,
+            executionDurationInSeconds: 1f,
+            
+            executes: [
+                chaos_wizard_15,
+			],
+		},
+		
+		chaos_wizard_15: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "There she is! The Princess!\n                                   \nAnd now I'm gonna steal her!!!\n               \n*evil laughter* ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_11,
+			],
+		},
+		
+		thorin_11: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "So now you're gonna steal this random girl, that you just created and that I have never seen before?!\n                       \nOk ... Have fun ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_before_chaos_wizard_answers_16,
+			],
+		},
+		
+		wait_before_chaos_wizard_answers_16: {
+            type: WAIT,
+            executionDurationInSeconds: 2f,
+            
+            executes: [
+                chaos_wizard_16,
+			],
+		},
+		
+		chaos_wizard_16: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "You, Thorin, are without doubt the most lazy hero I've ever created ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_12,
+			],
+		},
+		
+		thorin_12: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "And who's fault is that? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_before_chaos_wizard_answers_17,
+			],
+		},
+		
+		wait_before_chaos_wizard_answers_17: {
+            type: WAIT,
+            executionDurationInSeconds: 2f,
+            
+            executes: [
+                chaos_wizard_17,
+			],
+		},
+		
+		chaos_wizard_17: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Fine ...\nSince you don't want to fight me to get back the princess, I'll have to steal something else too ...",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_18,
+			],
+		},
+		
+		chaos_wizard_18: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "... Something that will make you come after me ...",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_19,
+			],
+		},
+		
+		chaos_wizard_19: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "So I'm gonna steal your beloved battle axe: Asamnir!!!\n               \n*evil laughter* ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                steal_asamnir,
+			],
+		},
+		
+		steal_asamnir: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Tobias (Developer)",
+                colorHeader: #ff00ff,
+                displayText: "TODO: add an animation of the Chaos Wizard stealing Asamnir ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_13,
+			],
+		},
+		
+		thorin_13: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "What?! You stole asamnir?!\n\nI'm gonna kill you!!!!!!! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_20,
+			],
+		},
+		
+		chaos_wizard_20: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "That's the enthusiasm I was looking for!\n                 \nWe'll meet again, Thorin.               \nFind me in my castle on the fields of Vigrid if you want your axe back! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_leaves,
+			],
+		},
+		
+		chaos_wizard_leaves: {
+			type: COLOR_TRANSITION,
+			fadeIntoColor: true,
+			colorTransitionDelayInSeconds: 1f,
+			colorTransitionDurationInSeconds: 2f,
+			delayAfterColorTransitionInSeconds: 1f,
+			
+			cameraFollowsTarget: false,
+	
+			waitForEventToFinish: true,
+			
+			executes: [
+				fade_in_after_chaos_wizard_left,
+			],
+		},
+		
+		// TODO remove the chaos wizard from the map
+        
+        fade_in_after_chaos_wizard_left: {
+			type: COLOR_TRANSITION,
+			fadeIntoColor: false,
+			colorTransitionDelayInSeconds: 0f,
+			colorTransitionDurationInSeconds: 2f,
+			delayAfterColorTransitionInSeconds: 1f,
+			
+			cameraFollowsTarget: false,
+	
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_14,
+			],
+		},
+		
+		thorin_14: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'll get you, Strange Chaos Wizard Guy!!!\n               \nAnd I'll get back Asamnir!!! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_15,
+           	],
+        },
+		
+		thorin_15: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I need a weapon to kill this strange chaos wizard guy ...           \nI should speak to Sindri and Brokkr in their forge. They always have some spare weapons ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_21,
+           	],
+        },
+        
+        chaos_wizard_21: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "And so our glorious hero Thorin began his quest to get back his beloved battle axe Asamnir ...\n                        \nAnd the princess... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_16,
+			],
+		},
+		
+		thorin_16: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Oh great!\nI still hear this strange chaos wizard narrator guy in my head... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_17,
+			],
+		},
+		
+		thorin_17: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "The Norns must really hate me to put me through all this ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	set_global_variable__asamnir_stolen,
+			],
+		},
+		
+		set_global_variable__asamnir_stolen: {
+		    type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__asamnir_stolen, value: true}",
+			},
+            
+            executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

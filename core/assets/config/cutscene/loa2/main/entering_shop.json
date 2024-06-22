@@ -1,5 +1,5 @@
 {
-	id: loa2_main_leaving_village_east_cutscene,
+	id: loa2_main_entering_shop_cutscene,
 	controlledActions: {
 		start_condition: {
 			type: CONDITION,
@@ -67,9 +67,21 @@
 				}
 			},
             conditionOptionExecutions: {
-                condition_met: end,
+                condition_met: change_map,
                 condition_not_met: thorin_needs_to_go_to_the_blacksmith,
 			}
+		},
+		
+		change_map: {
+			type: EVENT,
+			
+			globalEvent: loa2_main_goto_shop_after_condition_cutscene,
+			
+			waitForEventToFinish: false,
+			
+			executes: [
+                end,
+			]
 		},
 		
 		thorin_needs_to_speak_to_mjodwitnir: {
@@ -77,7 +89,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Thorin",
-				displayText: "I should go to the tavern before leaving the village. It's in the north-east corner of the village. ",
+				displayText: "This is Hanarr's shop. But I need to go to the tavern... ",
 			}
 			
 			waitForEventToFinish: true,
@@ -92,7 +104,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Thorin",
-				displayText: "I should talk to Modsognir before leaving the village. He's in his castle in the north of the village. ",
+				displayText: "This is Hanarr's shop. But I need to speak to Modsognir in the castle... ",
 			}
 			
 			waitForEventToFinish: true,
@@ -103,24 +115,24 @@
 		},
 		
 		thorin_needs_to_go_to_the_blacksmith: {
-            type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Thorin",
-                displayText: "I should go to the blacksmith before leaving the village. I need to ask Sindri and Brokkr for a new weapon... ",
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "This is Hanarr's shop. But I need to ask Sindri and Brokkr for a new weapon... ",
 			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
-                move_back,
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
 			]
 		},
 		
 		move_back: {
 			type: MOVE,
 			controlledUnitId: PLAYER,
-			controlledUnitTarget: {x: -2, y: 0},
+			controlledUnitTarget: {x: 0, y: -1},
 			
 			executes: [
                 end,

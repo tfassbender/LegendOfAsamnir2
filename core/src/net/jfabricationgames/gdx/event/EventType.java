@@ -63,6 +63,13 @@ public enum EventType {
 	CUTSCENE_PLAYER_CHOICE, //
 	CUSTCENE_SPAWN_UNIT, //
 	//*******************************
+	//*** Level Setup
+	//*******************************
+	// add multiple level setup events here, to activate different spawn points
+	// usually from cutscenes, because there you can easily use conditions
+	LEVEL_SETUP_1, //
+	LEVEL_SETUP_2, //
+	//*******************************
 	//*** Fast Travel
 	//*******************************
 	FAST_TRAVEL_POINT_REGISTERED, //

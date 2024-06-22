@@ -62,6 +62,24 @@
 				"textureMagFilter": "Nearest"
 			}
 		},
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_main_blacksmith.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_main_shop.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
 		
 		//***************************************************
 		//*** other maps

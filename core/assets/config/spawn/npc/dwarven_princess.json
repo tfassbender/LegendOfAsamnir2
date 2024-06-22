@@ -1,0 +1,11 @@
+{
+	//*********************************
+	//*** no movement
+	//*********************************
+	npc__dwarven_princess: {
+		spawnType: npc.dwarven_princess,
+		events: [CUSTCENE_SPAWN_UNIT],
+		
+		spawnTypeMapProperties: "{unitId: \"loa2_main_castle_dwarven_princess\"}",
+	},
+}

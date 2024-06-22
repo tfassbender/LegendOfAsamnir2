@@ -9,6 +9,10 @@
 	//*** npc
 	//******************
 	config/spawn/npc/courier.json,
+	config/spawn/npc/chaos_wizard_in_main_castle.json,
+	config/spawn/npc/dwarven_princess.json,
+	config/spawn/npc/modsognir_position_1.json,
+	config/spawn/npc/modsognir_position_2.json,
 	
 	//******************
 	//*** enemies

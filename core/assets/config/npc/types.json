@@ -13,6 +13,13 @@
 	//************************************************
 	loa2_main_tavern_barkeeper: config/npc/levels/loa2/main/tavern/barkeeper.json,
 	courier: config/npc/levels/loa2/main/tavern/courier.json,
+	
+	//************************************************
+	//*** Legend of Asamnir 2 - Main - Castle
+	//************************************************
+	modsognir: config/npc/levels/loa2/main/castle/modsognir.json,
+	chaos_wizard_form_1: config/npc/levels/loa2/main/castle/chaos_wizard_form_1.json,
+	dwarven_princess: config/npc/levels/loa2/main/castle/dwarven_princess.json,
 
 	//************************************************
 	//*** Demo Level

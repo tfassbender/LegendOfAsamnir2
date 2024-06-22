@@ -11,6 +11,7 @@
 	config/cutscene/loa2/prolog/opening.json,
 	config/cutscene/loa2/prolog/near_alarm_clock.json,
 	config/cutscene/loa2/prolog/alarm_clock_defeated.json,
+	config/cutscene/loa2/prolog/goto_main.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main
@@ -20,6 +21,8 @@
 	config/cutscene/loa2/main/leaving_village_east.json,
 	config/cutscene/loa2/main/leaving_village_south.json,
 	config/cutscene/loa2/main/entering_castle.json,
+	config/cutscene/loa2/main/entering_blacksmith.json,
+	config/cutscene/loa2/main/entering_shop.json,
 	config/cutscene/loa2/main/guardian_at_bifroest.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
 	
@@ -30,6 +33,13 @@
 	config/cutscene/loa2/main/tavern/courier.json,
 	config/cutscene/loa2/main/tavern/kings_invitation.json,
 	config/cutscene/loa2/main/tavern/goto_main.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Main - Castle
+	//********************************************************
+	config/cutscene/loa2/main/castle/setup.json,
+	config/cutscene/loa2/main/castle/goto_main.json,
+	config/cutscene/loa2/main/castle/chaos_wizard_introduction.json,
 
 	//********************************************************
 	//*** Demo Level

@@ -208,7 +208,6 @@
 	//*** change map
 	//*******************************************
 	
-	// TODO remove after the main map is ready
 	loa2_prolog_goto_main_map: {
 		event: {
 			eventType: EVENT_OBJECT_TOUCHED,
@@ -216,9 +215,9 @@
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_unfinished_end_cutscene,
+			cutsceneId: loa2_prolog_goto_main_cutscene,
 		}
-	}
+	},
 	
 	loa2_prolog_goto_main_after_cutscene: {
 		event: {
@@ -231,16 +230,4 @@
 			startingPointId: 0,
 		}
 	},
-	
-//	loa2_prolog_goto_main_map: {
-//		event: {
-//			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_prolog_goto_main_map,
-//		}
-//		executionType: CHANGE_MAP,
-//		executionParameters: {
-//			map: loa2_main,
-//			startingPointId: 0,
-//		}
-//	}
 }

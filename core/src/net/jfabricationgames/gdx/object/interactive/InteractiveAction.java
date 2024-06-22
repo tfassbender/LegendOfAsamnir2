@@ -47,8 +47,7 @@ public enum InteractiveAction {
 				GlobalValuesDataHandler.getInstance().put(globalConditionKey, globalConditionValue);
 				
 				if (eventParameter != null) {
-					EventHandler.getInstance()
-							.fireEvent(new EventConfig().setEventType(EventType.CHANGE_SIGNBOARD_TEXT).setStringValue(eventParameter));
+					EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CHANGE_SIGNBOARD_TEXT).setStringValue(eventParameter));
 				}
 				else {
 					//only show the onscreen-text if no event is fired, because the event might lead to a cutscene

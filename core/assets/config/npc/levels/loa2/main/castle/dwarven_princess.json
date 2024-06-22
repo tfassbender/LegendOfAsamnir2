@@ -1,0 +1,18 @@
+{
+	graphicsConfigFile: config/npc/graphics/adventurer_female.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: false,
+}

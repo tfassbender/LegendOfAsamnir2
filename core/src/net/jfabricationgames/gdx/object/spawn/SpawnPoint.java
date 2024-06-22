@@ -85,7 +85,8 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 		String spawnConfigName = mapProperties.get(MAP_PROPERTY_KEY_SPAWN_CONFIG, String.class);
 		spawnConfig = spawnConfigs.get(spawnConfigName);
 		if (spawnConfig == null) {
-			throw new IllegalStateException("This SpawnPoint has a spawn config in it's map properties, that can't be found. SpawnPoint: " + mapPropertiesToString());
+			throw new IllegalStateException("This SpawnPoint has a spawn config in it's map properties, that can't be found. SpawnPoint: " //
+					+ mapPropertiesToString() + ". Did you add it to the spawnConfigs.json file? " + SPAWN_CONFIG_FILE);
 		}
 		
 		checkWhetherSpawnEventsExist();
