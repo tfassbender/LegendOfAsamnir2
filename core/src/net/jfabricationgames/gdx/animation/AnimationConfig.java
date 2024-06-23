@@ -17,6 +17,7 @@ public class AnimationConfig implements Cloneable {
 	public float startScale;
 	public float maxScale;
 	public float duration;
+	public float stayAfterMaxScaleDuration;
 	
 	// shaking animation
 	public float shakingRandomMovementRange;

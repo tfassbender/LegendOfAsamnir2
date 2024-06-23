@@ -18,6 +18,7 @@ import net.jfabricationgames.gdx.character.state.CharacterStateMachine;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.interaction.InteractionManager;
 import net.jfabricationgames.gdx.interaction.Interactive;
@@ -28,7 +29,9 @@ import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsUtil;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
-public class NonPlayableCharacter extends AbstractCharacter implements Interactive {
+public class NonPlayableCharacter extends AbstractCharacter implements Interactive, EventListener {
+	
+	public static final String MAP_PROPERTIES_KEY_REMOVABLE_BY_CUTSCENE_EVENT = "removableByCutsceneEvent";
 	
 	private NonPlayableCharacterTypeConfig typeConfig;
 	
@@ -53,6 +56,8 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 		initializeInteractionAnimation();
 		
 		setImageOffset(typeConfig.graphicsConfig.imageOffsetX, typeConfig.graphicsConfig.imageOffsetY);
+		
+		EventHandler.getInstance().registerEventListener(this);
 	}
 	
 	private void initializeStates() {
@@ -159,6 +164,8 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 		PhysicsWorld.getInstance().removeContactListener(this);
 		body = null;// set the body to null to avoid strange errors in native Box2D methods
 		
+		EventHandler.getInstance().removeEventListener(this);
+		
 		if (onRemoveFromMap != null) {
 			onRemoveFromMap.run();
 		}
@@ -258,5 +265,15 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 	@Override
 	public float getDistanceToPlayer(Vector2 playerPosition) {
 		return getPosition().sub(playerPosition).len();
+	}
+	
+	@Override
+	public void handleEvent(EventConfig event) {
+		if (event.eventType == EventType.CUTSCENE_REMOVE_UNIT) {
+			boolean canBeRemovedByCutsceneEvent = Boolean.parseBoolean(properties.get(MAP_PROPERTIES_KEY_REMOVABLE_BY_CUTSCENE_EVENT, "false", String.class));
+			if (canBeRemovedByCutsceneEvent) {
+				removeFromMap();
+			}
+		}
 	}
 }

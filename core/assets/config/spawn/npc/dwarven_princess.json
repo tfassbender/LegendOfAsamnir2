@@ -6,6 +6,6 @@
 		spawnType: npc.dwarven_princess,
 		events: [CUSTCENE_SPAWN_UNIT],
 		
-		spawnTypeMapProperties: "{unitId: \"loa2_main_castle_dwarven_princess\"}",
+		spawnTypeMapProperties: "{unitId: \"loa2_main_castle_dwarven_princess\", removableByCutsceneEvent: \"true\"}",
 	},
 }

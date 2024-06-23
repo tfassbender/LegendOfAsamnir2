@@ -818,11 +818,21 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				fade_in_after_chaos_wizard_left,
+				remove_chaos_wizard_and_princess_and_asamnir_from_map,
 			],
 		},
 		
-		// TODO remove the chaos wizard from the map
+		remove_chaos_wizard_and_princess_and_asamnir_from_map: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+			},
+			
+			executes: [
+				fade_in_after_chaos_wizard_left,
+			],
+		},
         
         fade_in_after_chaos_wizard_left: {
 			type: COLOR_TRANSITION,
@@ -836,7 +846,28 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				thorin_14,
+				show_title_banner,
+			],
+		},
+		
+		show_title_banner: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_SHOW_TITLE_BANNER,
+			},
+			
+            executes: [
+                wait_after_title_banner,
+			],
+		},
+		
+		wait_after_title_banner: {
+			type: WAIT,
+            executionDurationInSeconds: 9f,
+            
+            executes: [
+                thorin_14,
 			],
 		},
 		
@@ -852,11 +883,141 @@
             waitForEventToFinish: true,
             
             executes: [
+            	modsognir_enters_the_scene,
+           	],
+        },
+        
+        modsognir_enters_the_scene: {
+        	type: MOVE,
+            controlledUnitId: loa2_main_castle_modsognir__chaos_wizard_introduction,
+            controlledUnitTarget: {x: 2, y: 0},
+            targetPositionRelativeToUnitId: PLAYER,
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                modsognir_1,
+			],
+        },
+        
+		modsognir_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Modsognir",
+                colorHeader: #944703,
+                displayText: "Thorin! What's going on here?!\n               \nWho was that strange guy?         \n        \nAnd did he just steal our princess?! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
             	thorin_15,
            	],
         },
+        
+        thorin_15: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That was some strange chaos wizard guy that apparently created this world ... \n                        \nAnd he stole ... a princess ...           \nBut we don't have a princess ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	modsognir_2,
+           	],
+        },
+        
+		modsognir_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Modsognir",
+                colorHeader: #944703,
+                displayText: "That explains why she didn't seem familiar ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	modsognir_3,
+           	],
+        },
+        
+		modsognir_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Modsognir",
+                colorHeader: #944703,
+                displayText: "I still don't fully understand what this chaos wizard guy is ...\nBut I guess we should go after him and save our princess? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_16,
+           	],
+        },
+        
+        thorin_16: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "He stole Asamnir!!!\nI'll kill this strange chaos wizard guy!!!\n\nAnd while I'm at it, I'll save the princess too I guess ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	modsognir_4,
+           	],
+        },
+        
+		modsognir_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Modsognir",
+                colorHeader: #944703,
+                displayText: "That sounds like a good plan.              \nI'll talk to Odin and see if Loki is still in chains ...                  \nThis whole thing kinda feels like one of his bad jokes ... ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	modsognir_5,
+           	],
+        },
+        
+		modsognir_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Modsognir",
+                colorHeader: #944703,
+                displayText: "You go and find the princess and Asamnir.\n          \n         \nGood luck, Thorin! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_17,
+           	],
+        },
 		
-		thorin_15: {
+		thorin_17: {
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {
@@ -885,11 +1046,11 @@
             waitForEventToFinish: true,
             
             executes: [
-                thorin_16,
+                thorin_18,
 			],
 		},
 		
-		thorin_16: {
+		thorin_18: {
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {
@@ -901,11 +1062,11 @@
             waitForEventToFinish: true,
             
             executes: [
-            	thorin_17,
+            	thorin_19,
 			],
 		},
 		
-		thorin_17: {
+		thorin_19: {
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {

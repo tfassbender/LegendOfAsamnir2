@@ -14,6 +14,8 @@
 		}
 	},
 	
+	movingSpeed: 3f,
+	
 	interactionPossible: true,
 	interactionEventId: loa2_main_castle_modsognir,
 }

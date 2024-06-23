@@ -5,6 +5,9 @@
 	health_big: {
 		health: 60
 	},
+	health_full: {
+		health: 100
+	},
 	coin: {
 		value: 1
 	},
@@ -17,8 +20,14 @@
 	mana_big: {
         mana: 65
 	},
+	mana_full: {
+        mana: 100
+	},
 	shield: {
 		armor: 30
+	},
+	shield_full: {
+		armor: 100
 	},
 	arrow: {
 		ammo: 5,

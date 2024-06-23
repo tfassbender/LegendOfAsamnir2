@@ -10,7 +10,11 @@
 	health_big: {
 		texture: health,
 		pickUpSound: health_big,
-	}
+	},
+	health_full: {
+		texture: health,
+		pickUpSound: health_big,
+	},
 	axe: {
 		texture: axe,
 	},
@@ -30,7 +34,15 @@
 		texture: mana,
         pickUpSound: mana
 	},
+	mana_full: {
+		texture: mana,
+        pickUpSound: mana
+	},
 	shield: {
+		texture: shield,
+		pickUpSound: pickup
+	},
+	shield_full: {
 		texture: shield,
 		pickUpSound: pickup
 	},

@@ -62,6 +62,8 @@ public enum EventType {
 	CUTSCENE_EVENT, //
 	CUTSCENE_PLAYER_CHOICE, //
 	CUSTCENE_SPAWN_UNIT, //
+	CUTSCENE_REMOVE_UNIT, //
+	CUTSCENE_SHOW_TITLE_BANNER, //
 	//*******************************
 	//*** Level Setup
 	//*******************************

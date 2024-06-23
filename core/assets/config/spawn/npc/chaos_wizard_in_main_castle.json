@@ -6,6 +6,6 @@
 		spawnType: npc.chaos_wizard_form_1,
 		events: [LEVEL_SETUP_1],
 		
-		spawnTypeMapProperties: "{unitId: \"loa2_main_castle_chaos_wizard\"}",
+		spawnTypeMapProperties: "{unitId: \"loa2_main_castle_chaos_wizard\", removableByCutsceneEvent: \"true\"}",
 	},
 }

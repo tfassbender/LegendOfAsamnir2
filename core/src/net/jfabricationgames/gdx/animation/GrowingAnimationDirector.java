@@ -41,7 +41,7 @@ public class GrowingAnimationDirector<T extends TextureRegion> extends Animation
 	
 	@Override
 	public boolean isAnimationFinished() {
-		return stateTime >= animationConfig.duration;
+		return stateTime >= animationConfig.duration + animationConfig.stayAfterMaxScaleDuration;
 	}
 	
 	@Override
@@ -86,7 +86,12 @@ public class GrowingAnimationDirector<T extends TextureRegion> extends Animation
 	}
 	
 	public float getScale() {
-		return animationConfig.startScale + (animationConfig.maxScale - animationConfig.startScale) * (stateTime / animationConfig.duration);
+		if (stateTime < animationConfig.duration) {
+			return animationConfig.startScale + (animationConfig.maxScale - animationConfig.startScale) * (stateTime / animationConfig.duration);
+		}
+		else {
+			return animationConfig.maxScale;
+		}
 	}
 	
 	private void updateTextureScale() {

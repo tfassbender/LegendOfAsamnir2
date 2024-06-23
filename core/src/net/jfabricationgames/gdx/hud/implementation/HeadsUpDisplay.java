@@ -10,7 +10,7 @@ public class HeadsUpDisplay implements Disposable {
 	private StatusBar statusBar;
 	private BossStatusBar bossStatusBar;
 	private OnScreenInfoRenderer onScreenInfoRenderer;
-	private OnScreenRuneRenderer onScreenRuneRenderer;
+	private OnScreenAnimationRenderer onScreenRuneRenderer;
 	private OnScreenTextBox onScreenText;
 	private WorldEdge worldEdge;
 	
@@ -18,7 +18,7 @@ public class HeadsUpDisplay implements Disposable {
 		statusBar = new StatusBar(camera, character, hudSceneWidth, hudSceneHeight);
 		bossStatusBar = new BossStatusBar(camera, hudSceneWidth, hudSceneHeight);
 		onScreenInfoRenderer = new OnScreenInfoRenderer(camera, character, hudSceneWidth, hudSceneHeight);
-		onScreenRuneRenderer = new OnScreenRuneRenderer(camera, hudSceneWidth, hudSceneHeight);
+		onScreenRuneRenderer = new OnScreenAnimationRenderer(camera, hudSceneWidth, hudSceneHeight);
 		onScreenText = OnScreenTextBox.createInstance(camera, hudSceneWidth, hudSceneHeight);
 		worldEdge = new WorldEdge(camera);
 	}

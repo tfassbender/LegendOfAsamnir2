@@ -1,0 +1,15 @@
+{
+	configList: 
+	[
+		{
+			name: legend_of_asamnir_title_banner,
+			type: GROWING,
+			atlas: packed/demo/demo.atlas,
+			
+			startScale: 0.1,
+			maxScale: 1,
+			duration: 2,
+			stayAfterMaxScaleDuration: 5,
+		},
+	]
+}

@@ -273,6 +273,12 @@
 				//twig blight
 				raw_images/animals/twig_blight/twig_blight_idle,
 				raw_images/animals/twig_blight/twig_blight_move,
+				
+				//##############################################################
+				//### Cutscenes
+				//##############################################################
+				
+				raw_images/cutscene,
 			]
 		},
 		menu: {

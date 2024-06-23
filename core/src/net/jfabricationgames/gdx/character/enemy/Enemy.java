@@ -338,6 +338,8 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		PhysicsWorld.getInstance().removeContactListener(this);
 		body = null;// set the body to null to avoid strange errors in native Box2D methods
 		
+		EventHandler.getInstance().removeEventListener(this);
+		
 		if (onRemoveFromMap != null) {
 			onRemoveFromMap.run();
 		}
