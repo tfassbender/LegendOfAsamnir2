@@ -1,0 +1,32 @@
+{
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_main_shop_hanarr: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_shop_hanarr,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_shop_hanarr_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_main_shop_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_shop_goto_main,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main,
+			startingPointId: 4,
+		}
+	},
+}

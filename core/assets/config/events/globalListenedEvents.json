@@ -6,6 +6,7 @@
 	config/events/global/loa2/main_tavern.json,
 	config/events/global/loa2/main_castle.json,
 	config/events/global/loa2/main_forge.json,
+	config/events/global/loa2/main_shop.json,
 	
 //	config/events/global/demo.json,
 //	config/events/global/map_change_test.json,

@@ -27,25 +27,30 @@
 	//************************************************
 	sindri: config/npc/levels/loa2/main/forge/sindri.json,
 	brokkr: config/npc/levels/loa2/main/forge/brokkr.json,
+	
+	//************************************************
+	//*** Legend of Asamnir 2 - Main - Shop
+	//************************************************
+	hanarr: config/npc/levels/loa2/main/shop/hanarr.json,
 
-	//************************************************
-	//*** Demo Level
-	//************************************************
-	
-	adventurer: config/npc/levels/demo/adventurer.json,
-	adventurer_female: config/npc/levels/demo/adventurer_female.json,
-	guard_blocking_the_way: config/npc/levels/demo/guard_blocking_the_way.json
-	archaeologist: config/npc/levels/demo/archaeologist.json,
-	builder: config/npc/levels/demo/builder.json,
-	
-	//************************************************
-	//*** Tutorial Level
-	//************************************************
-	
-	tutorial_level_adventurer_female: config/npc/levels/tutorial/adventurer_female.json,
-	tutorial_level_tale_teller: config/npc/levels/tutorial/tale_teller.json,
-	tutorial_level_boss_introducer: config/npc/levels/tutorial/boss_introducer.json,
-	
+//	//************************************************
+//	//*** Demo Level
+//	//************************************************
+//	
+//	adventurer: config/npc/levels/demo/adventurer.json,
+//	adventurer_female: config/npc/levels/demo/adventurer_female.json,
+//	guard_blocking_the_way: config/npc/levels/demo/guard_blocking_the_way.json
+//	archaeologist: config/npc/levels/demo/archaeologist.json,
+//	builder: config/npc/levels/demo/builder.json,
+//	
+//	//************************************************
+//	//*** Tutorial Level
+//	//************************************************
+//	
+//	tutorial_level_adventurer_female: config/npc/levels/tutorial/adventurer_female.json,
+//	tutorial_level_tale_teller: config/npc/levels/tutorial/tale_teller.json,
+//	tutorial_level_boss_introducer: config/npc/levels/tutorial/boss_introducer.json,
+//	
 //	//************************************************
 //	//*** Demo 2 - Tutorial
 //	//************************************************

@@ -19,7 +19,7 @@
 		
 		after_forge: {
 			subConfigPath: config/debug/start_config/loa2/prolog.json
-			subConfigName: after_forge,
+			subConfigName: final,
 	        events: []
 		},
 		
