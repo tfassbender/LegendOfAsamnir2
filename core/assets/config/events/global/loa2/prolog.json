@@ -3,15 +3,15 @@
 	//*** new game started
 	//*******************************************
 	
-//	loa2_prolog_game_start__startCutscene: {
-//		event: {
-//			eventType: NEW_GAME_STARTED,
-//		},
-//		executionType: START_CUTSCENE,
-//		executionParameters: {
-//			cutsceneId: loa2_prolog_opening,
-//		}
-//	},
+	loa2_prolog_game_start__startCutscene: {
+		event: {
+			eventType: NEW_GAME_STARTED,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_prolog_opening,
+		}
+	},
 	
 	loa2_prolog_game_start__reduce_health: {
 		event: {
