@@ -11,4 +11,10 @@
 			rune: LAGUZ
 		}
 	}
+	common__rune_kenaz_collected: {
+		conditionType: RUNE_COLLECTED,
+		parameters: {
+			rune: KENAZ
+		}
+	}
 }

@@ -1,0 +1,333 @@
+{
+	id: loa2_main_forge_sindri_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_main__spare_weapon_gained,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: sindri_1,
+				condition_not_met: condition_sindri_moved,
+			}
+		},
+		
+		condition_sindri_moved: {
+			type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_main_forge__sindri_moved,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: sindri_already_moved_1,
+				condition_not_met: spare_weapon_sindri_1,
+			}
+		},
+		
+		spare_weapon_sindri_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "Hey Thorin!\nWhat are you doing here this early? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	spare_weapon_thorin_1,
+           	],
+        },
+		
+		spare_weapon_thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Some strange chaos wizard guy has stolen Asamnir!\nI need a spare waepon to kill him and get Asamnir back! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	spare_weapon_sindri_2,
+           	],
+        },
+		
+		spare_weapon_sindri_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "...                         \nI don't really understand what you're talking about, but I forged an axe yesterday. If it helps you, you can have it. ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	spare_weapon_sindri_3,
+           	],
+        },
+        
+		spare_weapon_sindri_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "It's not as great as Asamnir, but it should do the job.\n          \nIt's over there in the corner. Just take it. ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	spare_weapon_sindri_move,
+           	],
+        },
+        
+        spare_weapon_sindri_move: {
+        	type: MOVE,
+			controlledUnitId: loa2_main_forge_sindri,
+			controlledUnitTarget: {x: 0, y: -1},
+			
+			executes: [
+				set_global_value_sindri_moved,
+			]
+        },
+		
+		set_global_value_sindri_moved: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main_forge__sindri_moved, value: true}",
+			},
+			
+			executes: [
+                spare_weapon_thorin_2,
+			],
+		},
+        
+		spare_weapon_thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Thanks Sindri! I'll put it to good use! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	spare_weapon_sindri_4,
+           	],
+        },
+        
+		spare_weapon_sindri_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "Also you shield looks quite damaged. I can repair it of you want. ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+        },
+        
+        thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"That would be great, thanks.",
+					"It'll do.",
+				],
+			},
+			choiceOptionExecutions: [
+				repair_shield, // see below
+				end,
+			],
+		},
+		
+		sindri_already_moved_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "The axe is there in the corner.\nJust take it. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+        
+        // the usual dialog option after the spare weapon was picked up
+		sindri_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "Hey Thorin!\nWhat can I do for you? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice_2,
+           	],
+		},
+		
+        thorin_choice_2: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"Can you repair my shield? ",
+					"Can you reforge my runes? ",
+					"Nothing, thanks.",
+				],
+			},
+			choiceOptionExecutions: [
+				repair_shield_dialog,
+				reforge_runes_dialog,
+				end,
+			],
+		},
+		
+		repair_shield_dialog: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "Of course! It'll just take a moment. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	repair_shield,
+           	],
+		},
+		
+		repair_shield: {
+			type: EVENT,
+			
+			event: {
+				eventType: GIVE_ITEM_TO_PLAYER,
+				stringValue: shield_full,
+			},
+			
+			executes: [
+				play_sound_forge,
+			]
+		},
+		
+		play_sound_forge: {
+            type: PLAY_SOUND,
+            
+            soundEffectName: forge_rune,
+            
+            executes: [
+                wait_after_repairing_shield,
+			],
+		},
+		
+		wait_after_repairing_shield: {
+            type: WAIT,
+            executionDurationInSeconds: 4f,
+            
+            executes: [
+                repairing_shield_done,
+			],
+		},
+		
+		repairing_shield_done: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "That should do. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		reforge_runes_dialog: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Sindri",
+                colorHeader: #bd6302,
+                displayText: "Brokkr is the expert for runes. Better ask him. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

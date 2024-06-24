@@ -19,4 +19,9 @@
 		spawnType: item.bomb,
 		events: [NEW_GAME_STARTED, GAME_LOADED, PLAYER_RESPAWNED, MAP_ENTERED],
 	},
+	spare_weapon: {
+		spawnType: item.spare_weapon,
+        events: [LEVEL_SETUP_1],
+        spawnTypeMapProperties: "{eventParameter: \"spare_weapon_picked\"}",
+	},
 }

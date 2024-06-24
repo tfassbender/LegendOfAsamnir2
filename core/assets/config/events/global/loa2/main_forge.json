@@ -1,0 +1,83 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_main_forge_setup: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_forge_setup,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_forge_setup_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_main_forge_sindri: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_forge_sindri,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_forge_sindri_cutscene,
+		}
+	},
+	
+	loa2_main_forge_brokkr: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_forge_brokkr,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_forge_brokkr_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** event items
+	//*******************************************
+	
+	loa2_main_forge_spare_weapon_picked: {
+		event: {
+			eventType: EVENT_ITEM_PICKED_UP,
+			stringValue: spare_weapon_picked,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_forge_spare_weapon_gained_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_main_forge_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_forge_goto_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_forge_goto_main_cutscene,
+		}
+	},
+	loa2_main_forge_goto_main_after_condition_cutscene: {
+		event: {
+			eventType: CUTSCENE_EVENT,
+			stringValue: loa2_main_forge_goto_main_after_condition_cutscene,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main,
+			startingPointId: 3,
+		}
+	},
+}

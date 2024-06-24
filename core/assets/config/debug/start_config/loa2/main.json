@@ -1,0 +1,31 @@
+{
+	startingPointMapping: {
+		1: after_tavern,
+		2: after_castle,
+		3: after_forge,
+	},
+	eventsLists: {
+		after_tavern: {
+			subConfigPath: config/debug/start_config/loa2/prolog.json
+			subConfigName: after_tavern,
+			events: []
+		},
+		
+		after_castle: {
+			subConfigPath: config/debug/start_config/loa2/prolog.json
+			subConfigName: after_castle,
+			events: []
+		},
+		
+		after_forge: {
+			subConfigPath: config/debug/start_config/loa2/prolog.json
+			subConfigName: after_forge,
+	        events: []
+		},
+		
+		final: {
+			subConfigName: after_forge,
+			events: []
+		}
+	}
+}

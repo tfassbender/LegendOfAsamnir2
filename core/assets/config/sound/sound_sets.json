@@ -390,6 +390,9 @@
                 game_title: {
                 	path: "sound/cutscene/game_title.wav",
                 },
+                forge_rune: {
+                	path: "sound/cutscene/forge_rune.wav",
+                }
             }
         },
 		menu: {

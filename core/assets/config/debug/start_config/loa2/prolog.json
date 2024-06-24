@@ -1,0 +1,47 @@
+{
+	eventsLists: {
+		after_thorins_house: {
+		    events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_prolog_alarm_clock_cutscene_started, value: true}",
+				},
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_prolog_alarm_clock_defeated, value: true}",
+				},
+			]
+		},
+		after_tavern: {
+			subConfigName: after_thorins_house,
+			events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_main_tavern__spoken_to_mjodwitnir, value: true}",
+				},
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_main_tavern__received_kings_invitation, value: true}",
+				},
+			]
+		},
+		after_castle: {
+			subConfigName: after_tavern,
+			events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_main__asamnir_stolen, value: true}",
+				},
+			]
+		},
+		final: {
+			subConfigName: after_castle,
+			events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_main__spare_weapon_gained, value: true}",
+				},
+			]
+		},
+	}
+}

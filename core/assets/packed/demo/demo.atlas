@@ -3961,7 +3961,7 @@ interrogation
   index: 1
 exclamation
   rotate: false
-  xy: 2918, 580
+  xy: 3158, 548
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
@@ -5725,14 +5725,14 @@ imp_move
   index: 7
 interrogation
   rotate: false
-  xy: 3158, 548
+  xy: 3956, 552
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
   index: 2
 interrogation
   rotate: false
-  xy: 3956, 552
+  xy: 3972, 552
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
@@ -7641,6 +7641,13 @@ signboard_hit
   orig: 32, 32
   offset: 0, 0
   index: 3
+spare_weapon
+  rotate: false
+  xy: 580, 148
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
 spider_damage
   rotate: false
   xy: 3548, 658
@@ -7661,14 +7668,14 @@ spider_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 1
 spider_idle
   rotate: false
   xy: 3548, 658
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 4
 spider_jump
   rotate: false
   xy: 3548, 658
@@ -8133,35 +8140,35 @@ stone
   index: -1
 switch_floor_down
   rotate: false
-  xy: 580, 148
+  xy: 598, 148
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_floor_up
   rotate: false
-  xy: 598, 148
+  xy: 616, 149
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_wall_down
   rotate: false
-  xy: 616, 149
+  xy: 634, 149
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_wall_up
   rotate: false
-  xy: 634, 149
+  xy: 652, 149
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 sword
   rotate: false
-  xy: 652, 149
+  xy: 2922, 612
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -8483,14 +8490,14 @@ wall
   index: 4
 wand
   rotate: false
-  xy: 2922, 612
+  xy: 2918, 594
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 wand_alt
   rotate: false
-  xy: 2918, 594
+  xy: 2918, 576
   size: 16, 16
   orig: 16, 16
   offset: 0, 0

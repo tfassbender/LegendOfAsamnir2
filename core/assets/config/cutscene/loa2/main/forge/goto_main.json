@@ -1,0 +1,101 @@
+{
+	id: loa2_main_forge_goto_main_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_main__spare_weapon_gained,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: reset_setup_global_variable,
+				condition_not_met: thorin_needs_to_speak_to_sindri_and_brokkr,
+			}
+		},
+		
+		reset_setup_global_variable: {
+		    // reset the global variable for the map setup, so the setup is executed the next time, that the map is initialized
+		    
+		    type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main_forge_setup_executed, value: false}",
+			},
+            
+            executes: [
+                reset_sindri_moved_global_variable,
+			]
+		},
+		
+		reset_sindri_moved_global_variable: {
+		    // reset the global variable for sindri's dialog options
+		    
+		    type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main_forge__sindri_moved, value: false}",
+			},
+            
+            executes: [
+                continue_to_main_map,
+			]
+		},
+		
+		continue_to_main_map: {
+			type: EVENT,
+			
+			globalEvent: loa2_main_forge_goto_main_after_condition_cutscene,
+			
+			waitForEventToFinish: false,
+			
+			executes: [
+                end,
+			]
+		},
+		
+		thorin_needs_to_speak_to_sindri_and_brokkr: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I should ask Sindri and Brokkr for a spare weapon before leaving. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
+			]
+		},
+		
+		move_back: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 1},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

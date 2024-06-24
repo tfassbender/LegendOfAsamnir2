@@ -1,0 +1,85 @@
+{
+	id: loa2_main_forge_setup_cutscene,
+	controlledActions: {
+		level_entered_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_main_forge_setup_executed, // This condition has to be reset when leaving the map
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end,
+				condition_not_met: set_setup_variable,
+			}
+		},
+		
+		set_setup_variable: {
+		    // set the global variable for the map setup, so the setup is only executed once (every time the map is entered)
+		    
+		    type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main_forge_setup_executed, value: true}",
+			},
+            
+            executes: [
+                setup_condition,
+			]
+		},
+		
+		setup_condition: {
+			type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_main__spare_weapon_gained,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end, // no special setup needed
+				condition_not_met: setup_spare_weapon,
+			}
+		},
+		
+		setup_spare_weapon: {
+            type: EVENT,
+            
+            event: {
+                eventType: LEVEL_SETUP_1,
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

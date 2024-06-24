@@ -44,7 +44,6 @@
 	},
 	shield_full: {
 		texture: shield,
-		pickUpSound: pickup
 	},
 	arrow: {
 		texture: arrow
@@ -104,6 +103,16 @@
 	demo_2_prolog_shield: {
 		type: EVENT_ITEM,
 		texture: shield,
+		pickUpSound: pickup
+	},
+	
+	//**********************************
+	//*** loa2 - prolog
+	//**********************************
+	
+	spare_weapon: {
+		type: EVENT_ITEM,
+		texture: spare_weapon,
 		pickUpSound: pickup
 	},
 	

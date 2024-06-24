@@ -40,6 +40,15 @@
 	config/cutscene/loa2/main/castle/setup.json,
 	config/cutscene/loa2/main/castle/goto_main.json,
 	config/cutscene/loa2/main/castle/chaos_wizard_introduction.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Main - Forge
+	//********************************************************
+	config/cutscene/loa2/main/forge/setup.json,
+	config/cutscene/loa2/main/forge/goto_main.json,
+	config/cutscene/loa2/main/forge/spare_weapon_gained.json,
+	config/cutscene/loa2/main/forge/sindri.json,
+	config/cutscene/loa2/main/forge/brokkr.json,
 
 	//********************************************************
 	//*** Demo Level

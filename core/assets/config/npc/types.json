@@ -21,6 +21,12 @@
 	chaos_wizard_form_1: config/npc/levels/loa2/main/castle/chaos_wizard_form_1.json,
 	dwarven_princess: config/npc/levels/loa2/main/castle/dwarven_princess.json,
 	asamnir: config/npc/levels/loa2/main/castle/asamnir.json,
+	
+	//************************************************
+	//*** Legend of Asamnir 2 - Main - Forge
+	//************************************************
+	sindri: config/npc/levels/loa2/main/forge/sindri.json,
+	brokkr: config/npc/levels/loa2/main/forge/brokkr.json,
 
 	//************************************************
 	//*** Demo Level
