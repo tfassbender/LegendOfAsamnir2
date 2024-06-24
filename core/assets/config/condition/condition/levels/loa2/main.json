@@ -18,4 +18,12 @@
 			expectedValue: true,
 		}
 	},
+	
+	loa2_main__unfinished_end_explore: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_main__unfinished_end_explore,
+            expectedValue: true,
+		}
+	},
 }

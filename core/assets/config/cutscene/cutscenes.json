@@ -46,7 +46,7 @@
 	//********************************************************
 	config/cutscene/loa2/main/forge/setup.json,
 	config/cutscene/loa2/main/forge/goto_main.json,
-	config/cutscene/loa2/main/forge/spare_weapon_gained.json,
+	config/cutscene/loa2/main/forge/pickup_spare_weapon.json,
 	config/cutscene/loa2/main/forge/sindri.json,
 	config/cutscene/loa2/main/forge/brokkr.json,
 	

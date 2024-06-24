@@ -1,6 +1,55 @@
 {
 	id: loa2_unfinished_end_cutscene,
 	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+            condition: {
+                conditionId: loa2_main__spare_weapon_gained,
+                thenCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_met,
+					}
+				},
+                elseCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_not_met,
+					}
+				}
+			},
+            conditionOptionExecutions: {
+                condition_met: second_condition,
+                condition_not_met: end,
+			}
+		},
+		
+		second_condition: {
+			type: CONDITION,
+			
+            condition: {
+                conditionId: loa2_main__unfinished_end_explore,
+                thenCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_met,
+					}
+				},
+                elseCase: {
+                    type: CUTSCENE,
+                    executionParameters: {
+                        conditionCase: condition_not_met,
+					}
+				}
+			},
+            conditionOptionExecutions: {
+                condition_met: end,
+                condition_not_met: show_text_1,
+			}
+		},
+		
 		show_text_1: {
 			type: SHOW_ON_SCREEN_TEXT,
 			
@@ -13,7 +62,6 @@
 			}
 			
 			waitForEventToFinish: true,
-			startsWithCutscene: true,
 			
 			executes: [
 				show_text_2,
@@ -59,7 +107,7 @@
 			
 			event: {
 				eventType: SET_GLOBAL_CONDITION_VALUE,
-				stringValue: "{key: loa2_main__spare_weapon_gained, value: true}",
+				stringValue: "{key: loa2_main__unfinished_end_explore, value: true}",
 			},
 		},
 		
@@ -99,6 +147,11 @@
 				eventType: BACK_TO_MAIN_MENU,
 				booleanValue: true
 			},
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
 		}
 	}
 }

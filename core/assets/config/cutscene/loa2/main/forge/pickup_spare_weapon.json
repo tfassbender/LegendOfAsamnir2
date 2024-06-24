@@ -1,0 +1,92 @@
+{
+	id: loa2_main_forge_pick_up_spare_weapon_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_main__spare_weapon_gained,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end,
+				condition_not_met: chaos_wizard_1,
+			}
+		},
+		
+		chaos_wizard_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "It's dangerous to go alone.\n           \nTake this! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                move_to_spare_weapon,
+			],
+		},
+		
+		move_to_spare_weapon: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -1.5, y: 0},
+			targetPositionRelativeToUnitId: loa2_main_forge_spare_weapon_event_object,
+			
+			executes: [
+                thorin_1,
+			]
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "It's not asamnir, but it will do for now.\n                      \nNow let's find this strange chaos wizard guy and ram it into his skull! ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value,
+			]
+		},
+		
+		set_global_value: {
+		    type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__spare_weapon_gained, value: true}",
+			},
+            
+            executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

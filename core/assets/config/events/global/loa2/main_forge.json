@@ -41,17 +41,17 @@
 	},
 	
 	//*******************************************
-	//*** event items
+	//*** event objects
 	//*******************************************
 	
-	loa2_main_forge_spare_weapon_picked: {
+	loa2_main_forge_pick_up_spare_weapon: {
 		event: {
-			eventType: EVENT_ITEM_PICKED_UP,
-			stringValue: spare_weapon_picked,
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_main_forge_pick_up_spare_weapon,
 		},
-		executionType: START_CUTSCENE,
-		executionParameters: {
-			cutsceneId: loa2_main_forge_spare_weapon_gained_cutscene,
+        executionType: START_CUTSCENE,
+        executionParameters: {
+        	cutsceneId: loa2_main_forge_pick_up_spare_weapon_cutscene,
 		}
 	},
 	

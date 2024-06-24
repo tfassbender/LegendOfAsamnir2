@@ -392,6 +392,7 @@
                 },
                 forge_rune: {
                 	path: "sound/cutscene/forge_rune.wav",
+                    volume: 0.6,
                 }
             }
         },
