@@ -37,8 +37,7 @@ public class OnScreenTextBox implements InputActionListener, GlobalEventTextBox,
 	
 	public static synchronized OnScreenTextBox getInstance() {
 		if (instance == null) {
-			throw new IllegalStateException("The instance of OnScreenTextBox has not yet been created. "
-					+ "Use the createInstance(HeadsUpDisplay) method to create an instance.");
+			throw new IllegalStateException("The instance of OnScreenTextBox has not yet been created. " + "Use the createInstance(HeadsUpDisplay) method to create an instance.");
 		}
 		return instance;
 	}
@@ -72,6 +71,7 @@ public class OnScreenTextBox implements InputActionListener, GlobalEventTextBox,
 	private Color headerColor = Color.RED;
 	
 	private boolean showOnBlackScreen = false;
+	private boolean canBeSkipped = true;
 	
 	private OnScreenTextBox(OrthographicCamera camera, float sceneWidth, float sceneHeight) {
 		this.camera = camera;
@@ -134,8 +134,7 @@ public class OnScreenTextBox implements InputActionListener, GlobalEventTextBox,
 		}
 		
 		shapeRenderer.rect(textBoxX, textBoxY, textBoxWidth, textBoxHeight);
-		shapeRenderer.rect(textBoxX + textBoxEdge, textBoxY + textBoxEdge, textBoxWidth - 2f * textBoxEdge, textBoxHeight - 2f * textBoxEdge,
-				TEXTURE_CONFIG[0], TEXTURE_CONFIG[1], TEXTURE_CONFIG[2], TEXTURE_CONFIG[3]);
+		shapeRenderer.rect(textBoxX + textBoxEdge, textBoxY + textBoxEdge, textBoxWidth - 2f * textBoxEdge, textBoxHeight - 2f * textBoxEdge, TEXTURE_CONFIG[0], TEXTURE_CONFIG[1], TEXTURE_CONFIG[2], TEXTURE_CONFIG[3]);
 		
 		shapeRenderer.end();
 	}
@@ -156,6 +155,11 @@ public class OnScreenTextBox implements InputActionListener, GlobalEventTextBox,
 	@Override
 	public void setShowOnBlackScreen(boolean showOnBlackScreen) {
 		this.showOnBlackScreen = showOnBlackScreen;
+	}
+	
+	@Override
+	public void setCanBeSkipped(boolean canBeSkipped) {
+		this.canBeSkipped = canBeSkipped;
 	}
 	
 	public String getHeaderText() {
@@ -203,7 +207,7 @@ public class OnScreenTextBox implements InputActionListener, GlobalEventTextBox,
 	
 	@Override
 	public boolean onAction(String action, Type type, Parameters parameters) {
-		if (textRenderer.onAction(action, type, parameters) || playerChoiceRenderer.onAction(action, type, parameters)) {
+		if (textRenderer.onAction(action, type, parameters, canBeSkipped) || playerChoiceRenderer.onAction(action, type, parameters)) {
 			return true;
 		}
 		return false;

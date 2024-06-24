@@ -110,7 +110,17 @@
             waitForEventToFinish: true,
             
             executes: [
-                chaos_wizard_2,
+                chaos_wizard_evil_laugh_1,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_1: {
+			type: PLAY_SOUND,
+			
+            soundEffectName: evil_laugh,
+			
+			executes: [
+				chaos_wizard_2,
 			],
 		},
 		
@@ -122,6 +132,7 @@
                 colorHeader: #000099,
                 displayText: "*evil laughter*",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -202,27 +213,10 @@
             waitForEventToFinish: true,
             
             executes: [
-                chaos_wizard_5,
-			],
-		},
-		
-		chaos_wizard_5: {
-            type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Strange Narrator Guy",
-                colorHeader: #000099,
-                displayText: "*evil laughter*",
-                showNextPageIcon: true,
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
                 thorin_6,
 			],
 		},
-		
+				
 		thorin_6: {
             type: SHOW_ON_SCREEN_TEXT,
             
@@ -303,7 +297,16 @@
             
             executes: [
                 chaos_wizard_9,
+                chaos_wizard_evil_laugh_2,
 			],
+		},
+		
+		chaos_wizard_evil_laugh_2: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 4f,
+			
+            soundEffectName: evil_laugh,
 		},
 		
 		chaos_wizard_9: {
@@ -314,6 +317,7 @@
                 colorHeader: #000099,
                 displayText: "I am ...                                  \n\n... the Chaos Wizard!!!                \n               \n*evil laughter*   ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -369,7 +373,16 @@
             
             executes: [
                 chaos_wizard_11,
+                chaos_wizard_evil_laugh_3,
 			],
+		},
+		
+		chaos_wizard_evil_laugh_3: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 4f,
+			
+            soundEffectName: evil_laugh,
 		},
         
         chaos_wizard_11: {
@@ -378,8 +391,9 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "Are you sure, Thorin?\n                    \nBecause I'm here to steal your princess!!!\n               \n*evil laughter*",
+                displayText: "Are you sure, Thorin?\n                    \nBecause I'm here to steal your princess!!!\n               \n*evil laughter* ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -571,7 +585,16 @@
             
             executes: [
                 chaos_wizard_14,
+                chaos_wizard_keyboard_typing,
 			],
+		},
+		
+		chaos_wizard_keyboard_typing: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 2.5f,
+			
+            soundEffectName: keyboard_typing,
 		},
 		
 		chaos_wizard_14: {
@@ -582,6 +605,7 @@
                 colorHeader: #850085,
                 displayText: "Give me a second! I'll fix this ...\n                         \n\n*keyboard typing* ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -618,7 +642,16 @@
             
             executes: [
                 chaos_wizard_15,
+                chaos_wizard_evil_laugh_4,
 			],
+		},
+		
+		chaos_wizard_evil_laugh_4: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 4f,
+			
+            soundEffectName: evil_laugh,
 		},
 		
 		chaos_wizard_15: {
@@ -629,6 +662,7 @@
                 colorHeader: #850085,
                 displayText: "There she is! The Princess!\n                                   \nAnd now I'm gonna steal her!!!\n               \n*evil laughter* ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -736,7 +770,16 @@
             
             executes: [
                 chaos_wizard_19,
+                chaos_wizard_evil_laugh_5,
 			],
+		},
+		
+		chaos_wizard_evil_laugh_5: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 2.5f,
+			
+            soundEffectName: evil_laugh,
 		},
 		
 		chaos_wizard_19: {
@@ -747,13 +790,21 @@
                 colorHeader: #850085,
                 displayText: "So I'm gonna steal your beloved battle axe: Asamnir!!!\n               \n*evil laughter* ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
             
             executes: [
                 wait_before_stealing_asamnir,
+                play_sound_effect_asamnir_stolen,
 			],
+		},
+		
+		play_sound_effect_asamnir_stolen: {
+            type: PLAY_SOUND,
+            
+            soundEffectName: asamnir_stolen,
 		},
 		
 		wait_before_stealing_asamnir: {
@@ -795,7 +846,7 @@
 		wait_after_stealing_asamnir: {
             type: WAIT,
             
-            executionDurationInSeconds: 1.5f,
+            executionDurationInSeconds: 2.5f,
             
             executes: [
                 thorin_13,
@@ -875,7 +926,24 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				show_title_banner,
+				wait_before_showing_title_banner,
+				play_title_banner_sound,
+			],
+		},
+		
+		play_title_banner_sound: {
+            type: PLAY_SOUND,
+            
+            soundEffectName: game_title,
+		},
+		
+		wait_before_showing_title_banner: {
+			type: WAIT,
+			
+			executionDurationInSeconds: 1.5f,
+			
+			executes: [
+                show_title_banner,
 			],
 		},
 		

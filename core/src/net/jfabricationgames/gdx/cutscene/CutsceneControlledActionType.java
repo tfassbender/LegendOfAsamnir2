@@ -11,4 +11,5 @@ public enum CutsceneControlledActionType {
 	PLAYER_CHOICE, //
 	CONDITION, //
 	COLOR_TRANSITION, //
+	PLAY_SOUND, //
 }

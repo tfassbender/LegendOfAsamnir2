@@ -10,4 +10,5 @@ public interface GlobalEventTextBox {
 	public void setText(String displayText, boolean showNextPageIcon);
 	public void showPlayerChoice(PlayerChoice parameterObject);
 	public void setShowOnBlackScreen(boolean showOnBlackScreen);
+	public void setCanBeSkipped(boolean canBeSkipped);
 }

@@ -372,7 +372,26 @@
                     volume: 0.5,
 				},
 			}
-		}
+		},
+		cutscene: {
+            sounds: {
+                evil_laugh: {
+                	path: "sound/cutscene/evil_laugh.wav",
+                },
+                evil_laugh_2: {
+                	path: "sound/cutscene/evil_laugh_2.wav",
+                },
+                keyboard_typing: {
+                	path: "sound/cutscene/keyboard_typing.wav",
+                },
+                asamnir_stolen: {
+                	path: "sound/cutscene/asamnir_stolen.wav",
+                },
+                game_title: {
+                	path: "sound/cutscene/game_title.wav",
+                },
+            }
+        },
 		menu: {
 			sounds: {
 				enter_pause_menu: {

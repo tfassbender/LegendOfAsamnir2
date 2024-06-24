@@ -57,8 +57,7 @@ public class OnScreenTextRenderer {
 		
 		if (!allCharactersDisplayed()) {
 			timeSincePageStarted += delta;
-			displayedCharacters = Math.min((int) (displayCharactersPerSecond * timeSincePageStarted),
-					displayedTextIndices[1] - displayedTextIndices[0]);
+			displayedCharacters = Math.min((int) (displayCharactersPerSecond * timeSincePageStarted), displayedTextIndices[1] - displayedTextIndices[0]);
 		}
 	}
 	
@@ -67,9 +66,7 @@ public class OnScreenTextRenderer {
 		
 		screenTextWriter.setScale(OnScreenTextBox.TEXT_SCALE);
 		screenTextWriter.setColor(Color.BLACK);
-		screenTextWriter.drawText(text, onScreenTextBox.textBoxX + onScreenTextBox.textOffsetX,
-				onScreenTextBox.textBoxY + onScreenTextBox.textBoxHeight - onScreenTextBox.textOffsetY, displayedTextIndices[0],
-				displayedTextIndices[0] + displayedCharacters, onScreenTextBox.textWidth, Align.left, true);
+		screenTextWriter.drawText(text, onScreenTextBox.textBoxX + onScreenTextBox.textOffsetX, onScreenTextBox.textBoxY + onScreenTextBox.textBoxHeight - onScreenTextBox.textOffsetY, displayedTextIndices[0], displayedTextIndices[0] + displayedCharacters, onScreenTextBox.textWidth, Align.left, true);
 		
 		if ((hasNextPage() || showNextPageIcon) && displayNextPageIndicator) {
 			drawNextPageIndicator();
@@ -159,11 +156,13 @@ public class OnScreenTextRenderer {
 		showNextPageIcon = false;
 	}
 	
-	protected boolean onAction(String action, Type type, Parameters parameters) {
+	protected boolean onAction(String action, Type type, Parameters parameters, boolean canBeSkipped) {
 		if (isDisplaying()) {
 			if (action.equals("interact") && (type == Type.KEY_DOWN || type == Type.CONTROLLER_BUTTON_PRESSED)) {
 				if (!allCharactersDisplayed()) {
-					showAllCharacters();
+					if (canBeSkipped) {
+						showAllCharacters();
+					}
 				}
 				else if (hasNextPage()) {
 					nextPage();

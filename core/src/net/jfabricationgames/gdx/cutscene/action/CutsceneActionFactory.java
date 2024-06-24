@@ -34,6 +34,8 @@ public class CutsceneActionFactory {
 				return new CutsceneConditionAction(unitProvider, actionConfig);
 			case COLOR_TRANSITION:
 				return new CutsceneColorTransitionAction(unitProvider, actionConfig, hudCamera);
+			case PLAY_SOUND:
+				return new CutsceneSoundEffectAction(unitProvider, actionConfig);
 			default:
 				throw new IllegalStateException("Unexpected CutsceneControlledActionType in parameter actionConfig: " + actionConfig.type);
 		}

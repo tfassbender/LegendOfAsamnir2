@@ -47,4 +47,6 @@ public class CutsceneControlledActionConfig {
 	public float colorTransitionDelayInSeconds = 0f;
 	public float colorTransitionDurationInSeconds = 1f;
 	public float delayAfterColorTransitionInSeconds = 0f;
+	
+	public String soundEffectName;
 }
