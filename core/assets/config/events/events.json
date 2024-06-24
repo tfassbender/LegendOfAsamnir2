@@ -31,6 +31,9 @@
 	CUSTCENE_SPAWN_UNIT: {
 		eventType: CUSTCENE_SPAWN_UNIT,
 	},
+	CUSTCENE_SPAWN_UNIT_2: {
+		eventType: CUSTCENE_SPAWN_UNIT_2,
+	},
 	LEVEL_SETUP_1: {
 		eventType: LEVEL_SETUP_1,
 	},

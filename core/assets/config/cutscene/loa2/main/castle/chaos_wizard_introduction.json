@@ -752,21 +752,50 @@
             waitForEventToFinish: true,
             
             executes: [
-                steal_asamnir,
+                wait_before_stealing_asamnir,
 			],
 		},
 		
-		steal_asamnir: {
-            type: SHOW_ON_SCREEN_TEXT,
+		wait_before_stealing_asamnir: {
+            type: WAIT,
             
-            executionParameters: {
-                displayTextHeader: "Tobias (Developer)",
-                colorHeader: #ff00ff,
-                displayText: "TODO: add an animation of the Chaos Wizard stealing Asamnir ... ",
-                showNextPageIcon: true,
-			}
+            executionDurationInSeconds: 0.5f,
             
-            waitForEventToFinish: true,
+            executes: [
+                spawn_asamnir,
+			],
+		},
+		
+		spawn_asamnir: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT_2,
+			},
+			
+			executes: [
+				set_global_variable__asamnir_stolen,
+			],
+		},
+		
+		set_global_variable__asamnir_stolen: {
+			// this will make thorins animations show no weapon
+		    type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__asamnir_stolen, value: true}",
+			},
+            
+            executes: [
+                wait_after_stealing_asamnir,
+			]
+		},
+		
+		wait_after_stealing_asamnir: {
+            type: WAIT,
+            
+            executionDurationInSeconds: 1.5f,
             
             executes: [
                 thorin_13,
@@ -1078,21 +1107,8 @@
             waitForEventToFinish: true,
             
             executes: [
-            	set_global_variable__asamnir_stolen,
+            	end,
 			],
-		},
-		
-		set_global_variable__asamnir_stolen: {
-		    type: EVENT,
-			
-			event: {
-				eventType: SET_GLOBAL_CONDITION_VALUE,
-				stringValue: "{key: loa2_main__asamnir_stolen, value: true}",
-			},
-            
-            executes: [
-                end,
-			]
 		},
 		
 		end: {

@@ -1,0 +1,17 @@
+[
+	{
+		id: idle,
+		animation: asamnir,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [],
+	},
+	{
+	    // the move state is needed for the default npc configuration
+		id: move,
+		animation: asamnir,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [],
+	},
+]

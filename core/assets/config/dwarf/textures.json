@@ -4,6 +4,11 @@
 		texture: dwarf_idle_right_1,
 		type: ANIMATION_FRAME
 	},
+	idle_no_axe: {
+		atlas: packed/demo/demo.atlas,
+		texture: dwarf_idle_no_axe_right,
+		type: TEXTURE_REGION
+	},
 	block: {
 		atlas: packed/demo/demo.atlas,
 		texture: dwarf_shield_hit_right_1,

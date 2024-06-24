@@ -1,0 +1,11 @@
+{
+	//*********************************
+	//*** no movement
+	//*********************************
+	npc__asamnir: {
+		spawnType: npc.asamnir,
+		events: [CUSTCENE_SPAWN_UNIT_2],
+		
+		spawnTypeMapProperties: "{unitId: \"loa2_main_castle_asamnir\", removableByCutsceneEvent: \"true\"}",
+	},
+}

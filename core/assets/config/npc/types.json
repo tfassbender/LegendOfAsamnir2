@@ -20,6 +20,7 @@
 	modsognir: config/npc/levels/loa2/main/castle/modsognir.json,
 	chaos_wizard_form_1: config/npc/levels/loa2/main/castle/chaos_wizard_form_1.json,
 	dwarven_princess: config/npc/levels/loa2/main/castle/dwarven_princess.json,
+	asamnir: config/npc/levels/loa2/main/castle/asamnir.json,
 
 	//************************************************
 	//*** Demo Level

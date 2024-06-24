@@ -20,6 +20,8 @@ class CharacterRenderer {
 	private static final String ANIMATION_DWARF_CONFIG_FILE = "config/animation/dwarf.json";
 	private static final String TEXTURE_CONFIG_FILE_NAME = "config/dwarf/textures.json";
 	
+	private static final String ANIMATION_NAME_RUN_RIGHT_NO_AXE = "dwarf_run_right_no_axe";
+	
 	private static final Vector2 PHYSICS_BODY_POSITION_OFFSET = new Vector2(0f, -0.15f);
 	private static final float DRAWING_DIRECTION_OFFSET = 0.1f;
 	private static final Vector2 DARKNESS_GRADIENT_POSITION_OFFSET = new Vector2(0f, -0.6f);
@@ -32,6 +34,7 @@ class CharacterRenderer {
 	
 	private TextureLoader textureLoader;
 	protected TextureRegion idleDwarfSprite;
+	protected TextureRegion idleDwarfNoAxeSprite;
 	private TextureRegion blockSprite;
 	private TextureRegion aimMarkerSprite;
 	
@@ -46,6 +49,7 @@ class CharacterRenderer {
 		
 		textureLoader = new TextureLoader(TEXTURE_CONFIG_FILE_NAME);
 		idleDwarfSprite = textureLoader.loadTexture("idle");
+		idleDwarfNoAxeSprite = textureLoader.loadTexture("idle_no_axe");
 		blockSprite = textureLoader.loadTexture("block");
 		aimMarkerSprite = textureLoader.loadTexture("aim_marker");
 		darknessAnimation = animationManager.getGrowingAnimationDirector("darkness_fade");
@@ -62,6 +66,9 @@ class CharacterRenderer {
 		}
 	}
 	private AnimationDirector<TextureRegion> getAnimation(CharacterAction action) {
+		if (action == CharacterAction.RUN && !player.hasWeapon()) {
+			return animationManager.getTextureAnimationDirector(ANIMATION_NAME_RUN_RIGHT_NO_AXE);
+		}
 		return animationManager.getTextureAnimationDirector(getAnimationName(action));
 	}
 	private String getAnimationName(CharacterAction action) {
@@ -86,7 +93,12 @@ class CharacterRenderer {
 	public void drawDwarf(SpriteBatch batch) {
 		TextureRegion frame;
 		if (player.action == CharacterAction.NONE) {
-			frame = idleDwarfSprite;
+			if (player.hasWeapon()) {
+				frame = idleDwarfSprite;
+			}
+			else {
+				frame = idleDwarfNoAxeSprite;
+			}
 		}
 		else if (player.action == CharacterAction.BLOCK) {
 			frame = blockSprite;
@@ -150,8 +162,7 @@ class CharacterRenderer {
 	public void drawAimMarker(SpriteBatch batch) {
 		final float aimMarkerDistanceFactor = 0.5f;
 		final float aimMarkerOffsetY = -0.1f;
-		Vector2 aimMarkerOffset = player.movementHandler.getMovingDirection().getNormalizedDirectionVector().scl(aimMarkerDistanceFactor).add(0,
-				aimMarkerOffsetY);
+		Vector2 aimMarkerOffset = player.movementHandler.getMovingDirection().getNormalizedDirectionVector().scl(aimMarkerDistanceFactor).add(0, aimMarkerOffsetY);
 		final float aimMarkerSize = 5f;
 		draw(batch, aimMarkerSprite, aimMarkerOffset, aimMarkerSize, aimMarkerSize);
 	}

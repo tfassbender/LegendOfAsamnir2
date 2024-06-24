@@ -61,6 +61,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final String ATTACK_NAME_REFLECT_MAGIC_WAVE = "reflected_magic_wave";
 	private static final String RUNE_HAGALAZ_ANIMATION_NAME = "rune_hagalaz";
 	
+	private static final String GLOBAL_VALUE_KEY_ASAMNIR_STOLEN = "loa2_main__asamnir_stolen";
+	private static final String GLOBAL_VALUE_KEY_SPARE_WEAPON_GAINED = "loa2_main__spare_weapon_gained";
+	
 	protected AttackHandler attackHandler;
 	
 	protected CharacterAction action;
@@ -183,7 +186,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					}
 					break;
 				case JUMP:
-					if (propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost)) {
+					if (propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost) //
+							&& hasWeapon()) { // the jump animation has a weapon, so it should not be executed without a weapon
 						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
 						return changeAction(CharacterAction.JUMP);
 					}
@@ -324,7 +328,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public void changeToIdleState() {
-		if (action != CharacterAction.IDLE) {
+		if (action != CharacterAction.IDLE && hasWeapon()) { // the idle animation has a weapon
 			changeAction(CharacterAction.IDLE);
 		}
 	}
@@ -401,6 +405,14 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public boolean isSpecialActionFeatherSelected() {
 		return activeSpecialAction == SpecialAction.FEATHER;
+	}
+	
+	/**
+	 * Checks whether asamnir was stolen and the player has not yet gained a spare axe.
+	 */
+	public boolean hasWeapon() {
+		return !GlobalValuesDataHandler.getInstance().getAsBoolean(GLOBAL_VALUE_KEY_ASAMNIR_STOLEN) //
+				|| GlobalValuesDataHandler.getInstance().getAsBoolean(GLOBAL_VALUE_KEY_SPARE_WEAPON_GAINED);
 	}
 	
 	@Override

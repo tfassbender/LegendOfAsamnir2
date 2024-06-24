@@ -1,0 +1,11 @@
+{
+    // Asamnir is handled as an NPC in a cutscene, so it can be spawned via the cutscene system (it can't be collected as item anyway in this cutscene)
+    
+	graphicsConfigFile: config/npc/graphics/asamnir.json
+	
+	aiConfig: {
+		type: BASE_AI,
+	},
+	
+	interactionPossible: false
+}

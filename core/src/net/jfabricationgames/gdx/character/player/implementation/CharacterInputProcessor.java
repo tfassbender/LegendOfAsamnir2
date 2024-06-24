@@ -182,7 +182,7 @@ class CharacterInputProcessor implements InputActionListener {
 				sprint = false;
 				idleTime += delta;
 				
-				if (idleTime > timeTillIdleAnimation) {
+				if (idleTime > timeTillIdleAnimation && player.hasWeapon()) { // the idle animation has a weapon
 					if (player.action != CharacterAction.IDLE) {
 						player.changeAction(CharacterAction.IDLE);
 					}
@@ -215,7 +215,7 @@ class CharacterInputProcessor implements InputActionListener {
 		if (inputContext.isStateActive(INPUT_SPECIAL)) {
 			special = true;
 		}
-		if (inputContext.isStateActive(INPUT_ATTACK)) {
+		if (inputContext.isStateActive(INPUT_ATTACK) && player.hasWeapon()) {
 			if (attackReleased) {
 				attack = true;
 				attackReleased = false;
