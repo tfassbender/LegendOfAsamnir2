@@ -240,7 +240,7 @@ class CharacterInputProcessor implements InputActionListener {
 		}
 		if (inputContext.isStateActive(INPUT_SPRINT)) {
 			if (!changeSprint) {
-				sprint = !sprint;
+				sprint = !sprint && player.hasEnoughEnduranceToSprint();
 			}
 			changeSprint = true;
 		}
@@ -486,7 +486,7 @@ class CharacterInputProcessor implements InputActionListener {
 			return;
 		}
 		
-		if (lastInputActionDirection == direction && lastInputActionDelta < SPRINT_INPUT_ACTIONS_MAX_DELTA) {
+		if (lastInputActionDirection == direction && lastInputActionDelta < SPRINT_INPUT_ACTIONS_MAX_DELTA && player.hasEnoughEnduranceToSprint()) {
 			sprint = true;
 		}
 		lastInputActionDirection = direction;

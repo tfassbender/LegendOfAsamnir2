@@ -14,7 +14,20 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				thorin_question,
+				set_global_variable_bifrost_visited,
+			],
+		},
+		
+		set_global_variable_bifrost_visited: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__bifrost_visisted, value: true}",
+			},
+			
+			executes: [
+                thorin_question,
 			],
 		},
 		

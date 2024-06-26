@@ -26,15 +26,15 @@
 			choice: {
 				header: "Thorin",
 				options: [
-					"How did you get here?",
-					"What should I do next?",
 					"I need to continue my quest."
+					"What should I do next?",
+					"How did you get here?",
 				],
 			},
 			choiceOptionExecutions: [
-				how_did_you_get_here,
-				what_should_i_do_next,
 				end,
+				what_should_i_do_next_condition_1,
+				how_did_you_get_here,
 			],
 		},
 		
@@ -71,15 +71,214 @@
 			],
 		},
 		
+		what_should_i_do_next_condition_1: {
+            type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_main_tavern__spoken_to_mjodwitnir,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: what_should_i_do_next_condition_2,
+				condition_not_met: thorin_needs_to_speak_to_mjodwitnir,
+			}
+		},
+		
+		thorin_needs_to_speak_to_mjodwitnir: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "I think you should speak to Mjodwitnir first. He's in the tavern in the north east of the village. ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		what_should_i_do_next_condition_2: {
+            type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_main__asamnir_stolen,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: what_should_i_do_next_condition_3,
+				condition_not_met: thorin_needs_to_go_to_the_castle,
+			}
+		},
+		
+		thorin_needs_to_go_to_the_castle: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "I think you should go to the castle next. Modsognir is waiting for you. ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		what_should_i_do_next_condition_3: {
+            type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_main__spare_weapon_gained,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: what_should_i_do_next_condition_4,
+				condition_not_met: thorin_needs_to_go_to_the_blacksmith,
+			}
+		},
+		
+		thorin_needs_to_go_to_the_blacksmith: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "I think you should visit Sindri and Brokkr. They are the best blacksmiths in the village. They can give you a spare weapon, till you find Asamnir. ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		what_should_i_do_next_condition_4: {
+            type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_main__bifrost_visisted,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: what_should_i_do_next_condition_5,
+				condition_not_met: thorin_needs_to_go_to_asgard,
+			}
+		},
+		
+		thorin_needs_to_go_to_asgard: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "If you want to find the chaos wizard, you need to go to the fields of Vigrid. They're in Asgard, which can be reached through the Bifrost. It's in the north, shortly after the village. ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		what_should_i_do_next_condition_5: {
+            type: CONDITION,
+			
+			condition: {
+				conditionId: common__rune_raidho_collected,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: demo_version, // TODO add more conditions when more levels are added
+				condition_not_met: thorin_needs_to_find_the_rune_raidho,
+			}
+		},
+		
+		thorin_needs_to_find_the_rune_raidho: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "I think you should find the rune Raidho in order to reach the fields of Vigrid in Asgard. You might find it in the Dwarven Mines in the south. ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
 		// TODO change the text after more levels are added
-		what_should_i_do_next: {
+		demo_version: {
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {
                 displayTextHeader: "Adventurer from Midgard",
                 displayText: "Since this is just an unfinished demo version of the game... I think you can only explore the lands of Svartalfheim so far. ",
                 colorHeader: #009933,
-                showNextPageIcon: true,
 			}
             
             waitForEventToFinish: true,

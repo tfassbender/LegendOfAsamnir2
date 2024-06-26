@@ -51,6 +51,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final float LOW_MANA_LEVEL = 15f;
 	
 	public static final float MIN_ENDURANCE_TO_START_BLOCK = 15f;
+	public static final float MIN_ENDURANCE_TO_START_SPRINT = 15f;
 	
 	private static final String ATTACK_CONFIG_FILE_NAME = "config/dwarf/attacks.json";
 	
@@ -292,6 +293,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	public boolean hasEnoughEnduranceToBlock() {
 		return propertiesDataHandler.hasEnoughEndurance(MIN_ENDURANCE_TO_START_BLOCK);
+	}
+	
+	public boolean hasEnoughEnduranceToSprint() {
+		return propertiesDataHandler.hasEnoughEndurance(MIN_ENDURANCE_TO_START_SPRINT);
 	}
 	
 	@Override

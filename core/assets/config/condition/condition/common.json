@@ -10,11 +10,29 @@
 		parameters: {
 			rune: LAGUZ
 		}
-	}
+	},
+	common__rune_raidho_collected: {
+		conditionType: RUNE_COLLECTED,
+		parameters: {
+			rune: RAIDHO
+		}
+	},
+	common__rune_hagalaz_collected: {
+        conditionType: RUNE_COLLECTED,
+        parameters: {
+            rune: HAGALAZ
+		}
+	},
 	common__rune_kenaz_collected: {
 		conditionType: RUNE_COLLECTED,
 		parameters: {
 			rune: KENAZ
 		}
-	}
+	},
+	common__rune_laguz_collected: {
+        conditionType: RUNE_COLLECTED,
+        parameters: {
+            rune: LAGUZ
+		}
+	},
 }
