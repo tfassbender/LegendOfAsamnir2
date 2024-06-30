@@ -195,7 +195,6 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		properties.mana = 0f;
 		properties.increaseMana = properties.maxMana;
 		properties.endurance = 0f;
-		reduceCoins(50);
 	}
 	
 	public Vector2 getRespawnPoint() {

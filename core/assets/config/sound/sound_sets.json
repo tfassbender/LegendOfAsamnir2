@@ -13,7 +13,7 @@
 				},
 				jump: {
 					path: "sound/dwarf/jump.wav",
-					volume: 1
+					volume: 0.5
 				},
 				damage: {
 					path: "sound/dwarf/damage.wav",

@@ -7,14 +7,12 @@ import net.jfabricationgames.gdx.item.ItemSpecialAction;
 
 public enum SpecialAction implements ItemSpecialAction {
 	
-	JUMP(0, 0f, 10f, 1f, "special_action_available__jump"), //
-	BOW(1, 0f, 25f, 1f, "special_action_available__bow"), //
-	BOMB(2, 0f, 35f, 1f, "special_action_available__bomb"), //
-	BOOMERANG(3, 5f, 25f, 1f, "special_action_available__boomerang"), //
-	WAND(4, 10f, 25f, 1f, "special_action_available__wand"), // 
-	FEATHER(5, 0f, 0f, 0.65f, "special_action_available__feather"), //
-	LANTERN(6, 10f, 0f, 0.65f, "special_action_available__lantern"), //
-	RING(7, 0f, 0f, 1f, "special_action_available__ring"); //
+	BOW(0, 0f, 25f, 1f, "special_action_available__bow"), //
+	BOMB(1, 0f, 35f, 1f, "special_action_available__bomb"), //
+	BOOMERANG(2, 5f, 25f, 1f, "special_action_available__boomerang"), //
+	WAND(3, 10f, 25f, 1f, "special_action_available__wand"), // 
+	FEATHER(4, 0f, 0f, 0.65f, "special_action_available__feather"), //
+	LANTERN(5, 10f, 0f, 0.65f, "special_action_available__lantern"); //
 	
 	public static SpecialAction findByNameIgnoringCase(String specialAction) {
 		for (SpecialAction action : values()) {

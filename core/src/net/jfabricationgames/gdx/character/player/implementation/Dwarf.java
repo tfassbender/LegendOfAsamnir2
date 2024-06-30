@@ -86,7 +86,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		fastTravelDataHandler = FastTravelDataHandler.getInstance();
 		
 		action = CharacterAction.NONE;
-		activeSpecialAction = SpecialAction.JUMP;
+		activeSpecialAction = SpecialAction.BOW;
 		renderer = new CharacterRenderer(this);
 		bodyHandler = new CharacterBodyHandler(this);
 		soundHandler = new CharacterSoundHandler();
@@ -131,6 +131,15 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		return false;
 	}
 	
+	protected boolean jump() {
+		if (propertiesDataHandler.hasEnoughEndurance(CharacterAction.JUMP.getEnduranceCosts()) //
+				&& hasWeapon()) { // the jump animation has a weapon, so it should not be executed without a weapon
+			return changeAction(CharacterAction.JUMP);
+		}
+		
+		return false;
+	}
+	
 	protected boolean executeSpecialAction() {
 		if (activeSpecialAction != null) {
 			switch (activeSpecialAction) {
@@ -156,9 +165,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 							}
 						}
 						else {
-							delayAttacks();
 							soundHandler.playSound(SOUND_AMMO_EMPTY);
-							return false;
 						}
 						
 						return true;
@@ -172,6 +179,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 						useMana(activeSpecialAction.manaCost);
 						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
 						attackHandler.startAttack(activeSpecialAction.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
+						return true;
 					}
 					break;
 				case LANTERN:
@@ -186,17 +194,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 						delayAttacks();
 					}
 					break;
-				case JUMP:
-					if (propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost) //
-							&& hasWeapon()) { // the jump animation has a weapon, so it should not be executed without a weapon
-						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
-						return changeAction(CharacterAction.JUMP);
-					}
 				case FEATHER:
 					//do nothing here - the action will be executed in InteractiveAction.SHOW_OR_CHANGE_TEXT
-					break;
-				case RING:
-					//do nothing here - the ring will be used in a cutscene
 					break;
 				default:
 					throw new IllegalStateException("Unexpected SpecialAction: " + activeSpecialAction);
@@ -363,8 +362,19 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		return propertiesDataHandler.getEndurancePercentual();
 	}
 	
+	@Override
 	public boolean isEnduranceLow() {
 		return !propertiesDataHandler.hasEnoughEndurance(MIN_ENDURANCE_TO_START_BLOCK);
+	}
+	
+	@Override
+	public boolean isActionInCooldown() {
+		return movementHandler.isActionInCooldown();
+	}
+	
+	@Override
+	public float getActionCooldownTimerInPercent() {
+		return movementHandler.getActionCooldownTimerInPercent();
 	}
 	
 	@Override

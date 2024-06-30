@@ -9,7 +9,7 @@ public enum CharacterAction implements DataCharacterAction {
 	BLOCK_MOVE("dwarf_block_move_", null, 0f, true, true, false, null), // moving while blocking
 	IDLE("dwarf_idle_", null, 0f, true, true, false, null), // staying still for some time
 	RUN("dwarf_run_", null, 0f, true, true, false, null), // running in any direction
-	JUMP("dwarf_jump_", "jump", 0f, true, false, true, null), // jumping with or without direction
+	JUMP("dwarf_jump_", "jump", 15f, true, false, true, null), // jumping with or without direction
 	ATTACK("dwarf_attack_", "hit", 10f, true, false, false, "attack"), // attack while standing 
 	ATTACK_JUMP("dwarf_attack_jump_", "hit2", 20f, true, false, true, "jump_attack"), // attack while running
 	ATTACK_SPIN("dwarf_spin_", "spin_attack", 35f, true, false, true, "spin_attack"), // spin attack

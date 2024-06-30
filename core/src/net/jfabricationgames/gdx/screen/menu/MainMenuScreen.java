@@ -5,10 +5,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.Align;
 
-import net.jfabricationgames.gdx.character.player.implementation.SpecialAction;
 import net.jfabricationgames.gdx.data.GameDataHandler;
 import net.jfabricationgames.gdx.data.GameDataService;
-import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -236,7 +234,6 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	public void startGame() {
 		GameDataHandler.getInstance().createNewGameData();
 		createGameScreen(() -> {
-			GlobalValuesDataHandler.getInstance().put(SpecialAction.JUMP.actionEnabledGlobalValueKey, true);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.NEW_GAME_STARTED));
 		});
 	}

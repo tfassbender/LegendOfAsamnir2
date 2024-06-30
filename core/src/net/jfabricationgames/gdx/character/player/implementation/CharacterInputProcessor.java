@@ -16,13 +16,16 @@ class CharacterInputProcessor implements InputActionListener {
 	private static final float TIME_TILL_SPIN_ATTACK = 1.5f;
 	
 	private static final float MOVING_SPEED = 300f;
-	private static final float MOVING_SPEED_JUMP = 425f;
 	private static final float MOVING_SPEED_SPRINT = 425f;
 	private static final float MOVING_SPEED_ATTACK = 150f;
 	private static final float MOVING_SPEED_BLOCK = 100f;
+	private static final float MOVING_SPEED_JUMP_START = 800f;
+	private static final float MOVING_SPEED_JUMP_END = 100f;
+	
+	private static final float JUMP_DURATION = 0.5f;
+	private static final float ACTION_COOLDOWN = 1.25f;
 	
 	private static final float SPRINT_INPUT_ACTIONS_MAX_DELTA = 0.5f;
-	
 	private static final float SPIN_ATTACK_CHARGED_ENDURANCE_COSTS_PER_SECOND = 20f; // resulting costs are reduced by regeneration (15f)
 	private static final String SOUND_SPIN_ATTACK_CHARGED = "spin_attack_charged";
 	
@@ -30,6 +33,7 @@ class CharacterInputProcessor implements InputActionListener {
 	private static final String INPUT_MOVE_DOWN = "down";
 	private static final String INPUT_MOVE_LEFT = "left";
 	private static final String INPUT_MOVE_RIGHT = "right";
+	private static final String INPUT_JUMP = "jump";
 	private static final String INPUT_SPECIAL = "special";
 	private static final String INPUT_ATTACK = "attack";
 	private static final String INPUT_SPRINT = "sprint";
@@ -51,6 +55,7 @@ class CharacterInputProcessor implements InputActionListener {
 	private boolean moveDown = false;
 	private boolean moveLeft = false;
 	private boolean moveRight = false;
+	private boolean jump = false;
 	private boolean special = false;
 	private boolean attack = false;
 	private boolean sprint = false;
@@ -65,6 +70,8 @@ class CharacterInputProcessor implements InputActionListener {
 	private float timeTillIdleAnimation;
 	private float attackHeldTime;
 	private float timeTillSpinAttack;
+	private float jumpTime;
+	private float actionCooldown;
 	
 	private MovingDirection jumpDirection;
 	private MovingDirection lastMoveDirection;
@@ -84,6 +91,7 @@ class CharacterInputProcessor implements InputActionListener {
 		lastMoveDirection = MovingDirection.NONE;
 		inputContext = InputManager.getInstance().getInputContext();
 		inputContext.addListener(this);
+		actionCooldown = ACTION_COOLDOWN;
 	}
 	
 	public void handleInputs(float delta) {
@@ -134,10 +142,24 @@ class CharacterInputProcessor implements InputActionListener {
 					characterActionSet = player.changeAction(CharacterAction.BLOCK);
 				}
 			}
-			if (!characterActionSet && special) {
-				if (player.action.isInterruptable()) {
+			if (!characterActionSet && jump) {
+				if (player.action.isInterruptable() && !isActionInCooldown()) {
 					jumpDirection = getDirectionFromInputs();
+					if (jumpDirection == MovingDirection.NONE) {
+						jumpDirection = lastMoveDirection;
+					}
+					characterActionSet = player.jump();
+					if (characterActionSet) {
+						actionCooldown = 0;
+					}
+				}
+			}
+			if (!characterActionSet && special) {
+				if (player.action.isInterruptable() && !isActionInCooldown()) {
 					characterActionSet = player.executeSpecialAction();
+					if (characterActionSet) {
+						actionCooldown = 0;
+					}
 				}
 			}
 			if (!characterActionSet && move) {
@@ -195,6 +217,15 @@ class CharacterInputProcessor implements InputActionListener {
 			else {
 				idleTime = 0;
 			}
+			
+			if (player.action == CharacterAction.JUMP) {
+				jumpTime += delta;
+			}
+			else {
+				jumpTime = 0;
+			}
+			
+			actionCooldown += delta;
 		}
 	}
 	
@@ -211,6 +242,9 @@ class CharacterInputProcessor implements InputActionListener {
 		}
 		if (inputContext.isStateActive(INPUT_MOVE_RIGHT)) {
 			moveRight = true;
+		}
+		if (inputContext.isStateActive(INPUT_JUMP)) {
+			jump = true;
 		}
 		if (inputContext.isStateActive(INPUT_SPECIAL)) {
 			special = true;
@@ -264,6 +298,7 @@ class CharacterInputProcessor implements InputActionListener {
 		moveLeft = false;
 		moveRight = false;
 		attack = false;
+		jump = false;
 		special = false;
 		block = false;
 		spinAttack = false;
@@ -302,6 +337,14 @@ class CharacterInputProcessor implements InputActionListener {
 			return MovingDirection.DOWN;
 		}
 		return MovingDirection.NONE;
+	}
+	
+	public boolean isActionInCooldown() {
+		return actionCooldown < ACTION_COOLDOWN;
+	}
+	
+	public float getActionCooldownTimerInPercent() {
+		return Math.min(1f, actionCooldown / ACTION_COOLDOWN);
 	}
 	
 	public void move(float delta) {
@@ -384,7 +427,7 @@ class CharacterInputProcessor implements InputActionListener {
 			speed = MOVING_SPEED_ATTACK;
 		}
 		if (player.action == CharacterAction.JUMP) {
-			speed = MOVING_SPEED_JUMP;
+			speed = MOVING_SPEED_JUMP_START - (MOVING_SPEED_JUMP_START - MOVING_SPEED_JUMP_END) * Math.min(jumpTime / JUMP_DURATION, 1f);
 		}
 		if (player.action == CharacterAction.BLOCK_MOVE) {
 			speed = MOVING_SPEED_BLOCK;

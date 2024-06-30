@@ -47,9 +47,16 @@
 			</state>
 			
 			<state name="special">
+				<key code="F" />
+				<controller player="1">
+					<button code="10" />
+				</controller>
+			</state>
+			
+			<state name="jump">
 				<key code="Space" />
-				<controller>
-					<button code="2" />
+				<controller player="1">
+					<button code="9" />
 				</controller>
 			</state>
 			
@@ -96,15 +103,13 @@
 			
 			<action name="previousSpecialAction">
 				<key code="R" />
-				<controller player="1">
-					<button code="9" />
-				</controller>
+				<!-- not available for controller because we need the key for jumping -->
 			</action>
 			
 			<action name="nextSpecialAction">
 				<key code="T" />
 				<controller player="1">
-					<button code="10" />
+					<button code="2" />
 				</controller>
 			</action>
 			

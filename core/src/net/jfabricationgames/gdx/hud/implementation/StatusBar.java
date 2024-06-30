@@ -29,6 +29,8 @@ public class StatusBar implements Disposable {
 	private final Vector2 manaBarSize = new Vector2(size.x - manaBarUpperRightOffset.x * 2 - iconOffsetX, (size.y - (healthBarUpperRightOffset.y * 4)) * manaBarHeightPercent);
 	private final Vector2 enduranceBarUpperRightOffset = new Vector2(-10f, -10f + 2 * healthBarUpperRightOffset.y + healthBarSize.y + manaBarSize.y);
 	private final Vector2 enduranceBarSize = new Vector2(size.x - manaBarUpperRightOffset.x * 2 - iconOffsetX, (size.y - (healthBarUpperRightOffset.y * 4)) * (1f - healthBarHeightPercent - manaBarHeightPercent));
+	private final Vector2 actionCooldownBarUpperRightOffset = new Vector2(-10f, -10f + 2 * healthBarUpperRightOffset.y + healthBarSize.y + manaBarSize.y + enduranceBarSize.y);
+	private final Vector2 actionCoolcownBarSize = new Vector2(size.x - manaBarUpperRightOffset.x * 2 - iconOffsetX, 0.5f * (size.y - (healthBarUpperRightOffset.y * 4)) * (1f - healthBarHeightPercent - manaBarHeightPercent));
 	
 	private final Color[] backgroundTileColors = new Color[] {//
 			new Color(0.3f, 0.3f, 0.3f, 1f), //top-right
@@ -89,6 +91,13 @@ public class StatusBar implements Disposable {
 	private final Color[] enduranceBarColorsLow = new Color[] {//
 			new Color(0.85f, 0f, 0f, 1f), //top-right
 			Color.RED, //top-left
+			Color.DARK_GRAY, //bottom-left
+			new Color(0.05f, 0.05f, 0.05f, 1f) //bottom-right
+	};
+	
+	private final Color[] actionCooldownBarColors = new Color[] {//
+			new Color(0.85f, 0.40f, 0f, 1f), //top-right
+			new Color(1f, 0.45f, 0f, 1f), //top-left
 			Color.DARK_GRAY, //bottom-left
 			new Color(0.05f, 0.05f, 0.05f, 1f) //bottom-right
 	};
@@ -190,6 +199,11 @@ public class StatusBar implements Disposable {
 		
 		//endurance bar
 		shapeRenderer.rect(tileUpperRight.x + enduranceBarUpperRightOffset.x + iconOffsetX, tileUpperRight.y + enduranceBarUpperRightOffset.y, enduranceBarSize.x * endurance, enduranceBarSize.y, enduranceBarColors[0], enduranceBarColors[1], enduranceBarColors[2], enduranceBarColors[3]);
+		
+		// action cooldown bar
+		if (character.isActionInCooldown()) {
+			shapeRenderer.rect(tileUpperRight.x + actionCooldownBarUpperRightOffset.x + iconOffsetX, tileUpperRight.y + actionCooldownBarUpperRightOffset.y, actionCoolcownBarSize.x * character.getActionCooldownTimerInPercent(), actionCoolcownBarSize.y, actionCooldownBarColors[0], actionCooldownBarColors[1], actionCooldownBarColors[2], actionCooldownBarColors[3]);
+		}
 		
 		shapeRenderer.end();
 	}

@@ -13,6 +13,8 @@ public interface StatsCharacter {
 	public int getCoinsForHud();
 	
 	public boolean isEnduranceLow();
+	public boolean isActionInCooldown();
+	public float getActionCooldownTimerInPercent();
 	
 	public String getActiveAction();
 	public Array<String> getActionList();
