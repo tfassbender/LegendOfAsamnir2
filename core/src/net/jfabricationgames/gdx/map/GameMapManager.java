@@ -77,6 +77,14 @@ public class GameMapManager {
 		return getInitialMap().initialStartingPointId;
 	}
 	
+	public String getHomeMapIdentifier() {
+		return getHomeMap().name;
+	}
+	
+	public int getHomeMapStartingPointId() {
+		return getHomeMap().homeMapStartingPointId;
+	}
+	
 	public String getDebugStartConfig() {
 		return getInitialMap().debugStartConfig;
 	}
@@ -88,5 +96,14 @@ public class GameMapManager {
 			}
 		}
 		throw new IllegalStateException("The configuration file '" + GAME_MAPS_CONFIG_FILE_PATH + "' does not configure an initial map.");
+	}
+	
+	private GameMapConfig getHomeMap() {
+		for (GameMapConfig config : mapFiles) {
+			if (config.homeMap) {
+				return config;
+			}
+		}
+		throw new IllegalStateException("The configuration file '" + GAME_MAPS_CONFIG_FILE_PATH + "' does not configure a home map.");
 	}
 }

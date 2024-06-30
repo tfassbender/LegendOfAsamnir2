@@ -13,6 +13,7 @@ public enum EventType {
 	START_CUTSCENE, //
 	ON_SCREEN_TEXT_ENDED, //
 	CHANGE_MAP, // 
+	RESTART_FROM_SVARTALFHEIM, //
 	//*******************************
 	//*** Save / load game
 	//*******************************

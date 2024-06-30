@@ -62,6 +62,13 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		}
 	}
 	
+	public void resetAllToNull() {
+		properties.health = 0.1f; // prevent dying instantly
+		properties.armor = 0f;
+		properties.mana = 0f;
+		properties.endurance = 0f;
+	}
+	
 	public boolean hasEnoughEndurance(DataCharacterAction action) {
 		return hasEnoughEndurance(action.getEnduranceCosts());
 	}
@@ -139,6 +146,10 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		properties.increaseHealth += properties.maxHealth * 0.5f;
 	}
 	
+	public void increaseHealthFull() {
+		properties.increaseHealth += properties.maxHealth;
+	}
+	
 	public float getManaPercentual() {
 		return properties.mana / properties.maxMana;
 	}
@@ -149,6 +160,10 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 	
 	public void increaseMana(float amount) {
 		properties.increaseMana += amount;
+	}
+	
+	public void increaseManaFull() {
+		properties.increaseMana += properties.maxMana;
 	}
 	
 	public void reduceMana(float amount) {
@@ -169,6 +184,10 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 	
 	public void takeArmorDamage(float damage) {
 		properties.armor = Math.max(properties.armor - damage, 0);
+	}
+	
+	public void increaseArmorByHalf() {
+		properties.increaseArmor += properties.maxArmor * 0.5f;
 	}
 	
 	public void increaseCoins(int coins) {

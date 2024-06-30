@@ -69,6 +69,15 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 		ScreenManager.getInstance().changeToGameScreen();
 	}
 	
+	public void backToSvartalfheim() {
+		Gdx.app.debug(getClass().getSimpleName(), "'Back to Svartalfheim' selected");
+		
+		GameScreen.loadAndShowGameScreen(() -> {
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RESTART_FROM_SVARTALFHEIM));
+			backToGame();
+		});
+	}
+	
 	public void restartFromLastCheckpoint() {
 		Gdx.app.debug(getClass().getSimpleName(), "'Restart from last checkpoint' selected");
 		

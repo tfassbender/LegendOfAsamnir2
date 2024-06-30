@@ -1,11 +1,16 @@
 {
 	button_restartGame: {
-		down: button_quit,
+		down: button_back_to_svartalfheim,
 		select: restartFromLastCheckpoint,
 		initial: true
 	},
-	button_quit: {
+	button_back_to_svartalfheim: {
 		up: button_restartGame,
+		down: button_quit,
+        select: backToSvartalfheim,
+	},
+	button_quit: {
+		up: button_back_to_svartalfheim,
 		select: quitGame,
 	}
 }

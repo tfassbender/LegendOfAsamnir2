@@ -315,20 +315,26 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		if (event.eventType == EventType.PLAYER_RESPAWNED) {
 			gameOver = false;
 		}
-		if (event.eventType == EventType.SHOW_IN_GAME_SHOP_MENU) {
+		else if (event.eventType == EventType.SHOW_IN_GAME_SHOP_MENU) {
 			showShopMenu(event.stringValue);
 		}
-		if (event.eventType == EventType.CHANGE_MAP) {
+		else if (event.eventType == EventType.CHANGE_MAP) {
 			changeMap(event.stringValue, event.intValue);
 		}
-		if (event.eventType == EventType.GAME_LOADED) {
+		else if (event.eventType == EventType.RESTART_FROM_SVARTALFHEIM) {
+			changeMap(GameMapManager.getInstance().getHomeMapIdentifier(), GameMapManager.getInstance().getHomeMapStartingPointId());
+			Player.getInstance().resetAfterGameOver();
+			GameStateManager.getInstance().setGameOver(false);
+			gameOver = false;
+		}
+		else if (event.eventType == EventType.GAME_LOADED) {
 			String currentMapIdentifier = map.getCurrentMapIdentifier();
 			String mapStartConfig = GameMapManager.getInstance().getMapStartConfig(currentMapIdentifier);
 			if (mapStartConfig != null) {
 				StartConfigUtil.executeGameLoadStartConfig(mapStartConfig);
 			}
 		}
-		if (event.eventType == EventType.BACK_TO_MAIN_MENU) {
+		else if (event.eventType == EventType.BACK_TO_MAIN_MENU) {
 			ScreenManager.getInstance().changeToMainMenuScreen(event.booleanValue);
 			disposeAfterRender = true;
 		}

@@ -27,4 +27,5 @@ public interface PlayableCharacter extends StatsCharacter, CutsceneMoveableUnit,
 	public int getCoins();
 	
 	public void centerCameraOnPlayer();
+	public void resetAfterGameOver();
 }

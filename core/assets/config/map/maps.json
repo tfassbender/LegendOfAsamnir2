@@ -5,6 +5,8 @@
 		map: "map/loa2_prolog.tmx",
 		initialStartingPointId: 0,
 		//initial: true
+		homeMap: true,
+		homeMapStartingPointId: 2,
 	},
 	{
 		name: loa2_main,

@@ -18,6 +18,7 @@ public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 	private MenuBox background;
 	private MenuBox banner;
 	private FocusButton buttonStartNewGame;
+	private FocusButton buttonBackToSvartalfheim;
 	private FocusButton buttonQuit;
 	
 	public GameOverMenuScreen(MenuGameScreen gameScreen) {
@@ -35,19 +36,17 @@ public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 		background = new MenuBox(12, 8, MenuBox.TextureType.GREEN_BOARD);
 		banner = new MenuBox(6, 2, MenuBox.TextureType.BIG_BANNER);
 		
-		int buttonWidth = 290;
+		int buttonWidth = 490;
 		int buttonHeight = 55;
-		int buttonPosX = 360;
-		int lowestButtonY = 250;
+		int buttonPosX = 230;
+		int lowestButtonY = 175;
 		int buttonGapY = 40;
-		buttonStartNewGame = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG)
-				.setNinePatchConfigFocused(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG_FOCUSED).setSize(buttonWidth, buttonHeight)
-				.setPosition(buttonPosX, lowestButtonY + 1f * (buttonHeight + buttonGapY)).build();
-		buttonQuit = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG)
-				.setNinePatchConfigFocused(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG_FOCUSED).setSize(buttonWidth, buttonHeight)
-				.setPosition(buttonPosX, lowestButtonY).build();
+		buttonStartNewGame = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG).setNinePatchConfigFocused(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG_FOCUSED).setSize(buttonWidth, buttonHeight).setPosition(buttonPosX, lowestButtonY + 2f * (buttonHeight + buttonGapY)).build();
+		buttonBackToSvartalfheim = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG).setNinePatchConfigFocused(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG_FOCUSED).setSize(buttonWidth, buttonHeight).setPosition(buttonPosX, lowestButtonY + 1f * (buttonHeight + buttonGapY)).build();
+		buttonQuit = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG).setNinePatchConfigFocused(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG_FOCUSED).setSize(buttonWidth, buttonHeight).setPosition(buttonPosX, lowestButtonY).build();
 		
 		buttonStartNewGame.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
+		buttonBackToSvartalfheim.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
 		buttonQuit.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
 	}
 	
@@ -82,11 +81,12 @@ public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 	
 	private void drawBackground() {
 		gameSnapshotSprite.draw(batch);
-		background.draw(batch, 300, 200, 580, 400);
+		background.draw(batch, 150, 125, 880, 500);
 	}
 	
 	private void drawButtons() {
 		buttonStartNewGame.draw(batch);
+		buttonBackToSvartalfheim.draw(batch);
 		buttonQuit.draw(batch);
 	}
 	
@@ -99,15 +99,15 @@ public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 		screenTextWriter.setScale(2f);
 		screenTextWriter.drawText("Game Over", 330, 645);
 		
-		int buttonTextX = 360;
+		int buttonTextX = 380;
 		int buttonTextWidth = 430;
 		screenTextWriter.setScale(1.5f);
-		screenTextWriter.drawText("You died...", buttonTextX + 7, 520, buttonTextWidth, Align.center, false);
+		screenTextWriter.drawText("You died...", buttonTextX + 7, 525, buttonTextWidth, Align.center, false);
 		
 		screenTextWriter.setScale(1.15f);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonStartNewGame) + "Die again", buttonTextX, 402, buttonTextWidth, Align.center,
-				false);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonQuit) + "Quit", buttonTextX, 306, buttonTextWidth, Align.center, false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonStartNewGame) + "Die again", buttonTextX, 423, buttonTextWidth, Align.center, false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToSvartalfheim) + "Back to Svartalfheim", buttonTextX, 327, buttonTextWidth, Align.center, false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonQuit) + "Quit", buttonTextX, 231, buttonTextWidth, Align.center, false);
 	}
 	
 	private String getButtonTextColorEncoding(FocusButton button) {
@@ -121,6 +121,9 @@ public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 			case "button_restartGame":
 				buttonStartNewGame.setFocused(true);
 				break;
+			case "button_back_to_svartalfheim":
+				buttonBackToSvartalfheim.setFocused(true);
+				break;
 			case "button_quit":
 				buttonQuit.setFocused(true);
 				break;
@@ -129,6 +132,7 @@ public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 	
 	private void unfocusAll() {
 		buttonStartNewGame.setFocused(false);
+		buttonBackToSvartalfheim.setFocused(false);
 		buttonQuit.setFocused(false);
 	}
 }

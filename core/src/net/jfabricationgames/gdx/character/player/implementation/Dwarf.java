@@ -246,6 +246,15 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	@Override
+	public void resetAfterGameOver() {
+		propertiesDataHandler.resetAllToNull();
+		propertiesDataHandler.increaseHealthFull();
+		propertiesDataHandler.increaseArmorByHalf();
+		propertiesDataHandler.increaseManaFull();
+		// endurance fills up automatically
+	}
+	
+	@Override
 	public Vector2 getPosition() {
 		return bodyHandler.body.getPosition().cpy();
 	}
