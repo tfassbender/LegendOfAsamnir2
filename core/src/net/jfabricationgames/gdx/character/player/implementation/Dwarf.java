@@ -11,7 +11,6 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 
-import net.jfabricationgames.gdx.attack.AttackHandler;
 import net.jfabricationgames.gdx.attack.hit.AttackType;
 import net.jfabricationgames.gdx.camera.CameraMovementHandler;
 import net.jfabricationgames.gdx.character.player.PlayableCharacter;
@@ -39,6 +38,9 @@ import net.jfabricationgames.gdx.projectile.MagicWave;
 import net.jfabricationgames.gdx.projectile.Projectile;
 import net.jfabricationgames.gdx.projectile.ProjectileReflector;
 import net.jfabricationgames.gdx.rune.RuneType;
+import net.jfabricationgames.gdx.skill.PlayerAttackHandler;
+import net.jfabricationgames.gdx.skill.WeaponSkill;
+import net.jfabricationgames.gdx.skill.WeaponSkillType;
 import net.jfabricationgames.gdx.state.GameStateManager;
 import net.jfabricationgames.gdx.util.AnnotationUtil;
 import net.jfabricationgames.gdx.util.GameUtil;
@@ -65,7 +67,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final String GLOBAL_VALUE_KEY_ASAMNIR_STOLEN = "loa2_main__asamnir_stolen";
 	private static final String GLOBAL_VALUE_KEY_SPARE_WEAPON_GAINED = "loa2_main__spare_weapon_gained";
 	
-	protected AttackHandler attackHandler;
+	protected PlayerAttackHandler attackHandler;
+	
+	protected WeaponSkill weaponSkill;
 	
 	protected CharacterAction action;
 	protected SpecialAction activeSpecialAction;
@@ -93,7 +97,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		
 		PhysicsWorld.getInstance().registerContactListener(this);
 		
-		attackHandler = new AttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK);
+		weaponSkill = WeaponSkill.loadWeaponSkillFromConfig();
+		
+		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill);
 		movementHandler = new CharacterInputProcessor(this);
 		
 		EventHandler.getInstance().registerEventListener(this);
@@ -102,7 +108,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public void reAddToWorld() {
 		bodyHandler.createPhysicsBody();
-		attackHandler = new AttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK);
+		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill);
 	}
 	
 	protected boolean changeAction(CharacterAction action) {
@@ -173,20 +179,20 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					break;
 				case BOOMERANG:
 				case WAND:
-					if (propertiesDataHandler.hasEnoughMana(activeSpecialAction.manaCost) //
+					if (hasEnoughMana(activeSpecialAction) //
 							&& propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost) // 
 							&& attackHandler.allAttacksExecuted()) {
-						useMana(activeSpecialAction.manaCost);
+						useMana(activeSpecialAction);
 						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
 						attackHandler.startAttack(activeSpecialAction.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
 						return true;
 					}
 					break;
 				case LANTERN:
-					if (propertiesDataHandler.hasEnoughMana(activeSpecialAction.manaCost) && //
+					if (hasEnoughMana(activeSpecialAction) && //
 							propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost) // 
 							&& attackHandler.allAttacksExecuted()) {
-						useMana(activeSpecialAction.manaCost);
+						useMana(activeSpecialAction);
 						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
 						renderer.startDarknessFade();
 						
@@ -205,12 +211,35 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		return false;
 	}
 	
+	private boolean hasEnoughMana(SpecialAction action) {
+		return propertiesDataHandler.hasEnoughMana(getManaCosts(action));
+	}
+	
+	private void useMana(SpecialAction action) {
+		useMana(getManaCosts(action));
+	}
+	
 	private void useMana(float mana) {
 		boolean manaAboveCriticalLevelBeforeUse = propertiesDataHandler.hasEnoughMana(LOW_MANA_LEVEL);
 		propertiesDataHandler.reduceMana(mana);
 		if (manaAboveCriticalLevelBeforeUse && !propertiesDataHandler.hasEnoughMana(LOW_MANA_LEVEL)) {
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.OUT_OF_AMMO).setStringValue("MANA"));
 		}
+	}
+	
+	private float getManaCosts(SpecialAction action) {
+		float manaCost = action.manaCost;
+		switch (action) {
+			case WAND:
+				manaCost *= weaponSkill.getSkillLevelConfig(WeaponSkillType.WAND).manaCostInPercent;
+				break;
+			case BOOMERANG:
+				manaCost *= weaponSkill.getSkillLevelConfig(WeaponSkillType.BOOMERANG).manaCostInPercent;
+				break;
+			default:
+				break;
+		}
+		return manaCost;
 	}
 	
 	private void fireOutOfAmmoEvent(ItemAmmoType ammoType) {
@@ -407,6 +436,11 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	@Override
+	public int getMetalIngots() {
+		return propertiesDataHandler.getMetalIngots();
+	}
+	
+	@Override
 	public String getActiveAction() {
 		return activeSpecialAction.name();
 	}
@@ -460,7 +494,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		if (isAlive()) {
 			if (isBlocking() && attackType.canBeBlocked()) {
 				takeArmorDamage(damage * 0.33f);
-				damage *= 0.1f;
+				damage *= (1f - (weaponSkill.getSkillLevelConfig(WeaponSkillType.SHIELD).blockRateInPercent / 100f));
 			}
 			propertiesDataHandler.takeDamage(damage);
 			if (!propertiesDataHandler.isAlive()) {
@@ -552,6 +586,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			case GIVE_COINS_TO_PLAYER:
 				soundHandler.playSound(SOUND_SELL_OR_BUY_ITEM);
 				propertiesDataHandler.increaseCoins(event.intValue);
+				break;
+			case GIVE_METAL_INGOTS_TO_PLAYER:
+				soundHandler.playSound(SOUND_SELL_OR_BUY_ITEM);
+				propertiesDataHandler.increaseMetalIngots(event.intValue);
 				break;
 			case PLAYER_BUY_ITEM:
 				Item item = ItemFactory.createItem(event.stringValue, 0f, 0f, new MapProperties());

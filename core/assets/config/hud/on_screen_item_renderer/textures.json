@@ -7,6 +7,10 @@
 		atlas: packed/demo/demo.atlas,
 		texture: key_1
 	},
+	metal_ingot: {
+		atlas: packed/demo/demo.atlas,
+		texture: metal_ingot
+	},
 	jump: {
 		atlas: packed/demo/demo.atlas,
 		texture: jump,

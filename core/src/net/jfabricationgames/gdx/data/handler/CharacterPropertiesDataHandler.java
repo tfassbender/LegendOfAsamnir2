@@ -206,6 +206,13 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		return Math.round(properties.coins - properties.decreaseCoins);
 	}
 	
+	public void increaseMetalIngots(int ingots) {
+		properties.metalIngots += ingots;
+	}
+	public int getMetalIngots() {
+		return Math.round(properties.metalIngots);
+	}
+	
 	public void changeStatsAfterRespawn() {
 		properties.health = 0f;
 		properties.increaseHealth = properties.maxHealth;

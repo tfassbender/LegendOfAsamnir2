@@ -461,7 +461,7 @@ inventory_mid_selected
   index: -1
 inventory_right
   rotate: false
-  xy: 770, 80
+  xy: 802, 80
   size: 17, 26
   orig: 17, 26
   offset: 0, 0
@@ -524,7 +524,7 @@ inventory_up_left
   index: -1
 inventory_up_right
   rotate: false
-  xy: 789, 89
+  xy: 821, 89
   size: 17, 17
   orig: 17, 17
   offset: 0, 0
@@ -545,123 +545,130 @@ lantern
   index: -1
 mana
   rotate: false
-  xy: 808, 90
+  xy: 840, 90
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 map_idle
   rotate: false
-  xy: 636, 49
+  xy: 2055, 432
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 1
 map_unfold
   rotate: false
-  xy: 636, 49
-  size: 30, 32
-  orig: 30, 32
-  offset: 0, 0
-  index: 5
-map_idle
-  rotate: false
   xy: 2055, 432
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 2
+  index: 5
 map_idle
   rotate: false
   xy: 599, 15
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 3
+  index: 2
 map_idle
   rotate: false
   xy: 631, 15
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 4
+  index: 3
 map_idle
   rotate: false
   xy: 2990, 526
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 5
+  index: 4
 map_idle
   rotate: false
   xy: 3022, 526
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 6
+  index: 5
 map_idle
   rotate: false
   xy: 3054, 526
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 7
+  index: 6
 map_idle
   rotate: false
   xy: 1611, 185
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 8
+  index: 7
 map_idle
   rotate: false
   xy: 1611, 151
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 9
+  index: 8
 map_idle
   rotate: false
   xy: 1929, 308
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 10
+  index: 9
 map_idle
   rotate: false
   xy: 1961, 308
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 11
-map_unfold
+  index: 10
+map_idle
   rotate: false
   xy: 1993, 308
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 1
+  index: 11
 map_unfold
   rotate: false
   xy: 674, 74
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 2
+  index: 1
 map_unfold
   rotate: false
   xy: 706, 74
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
-  index: 3
+  index: 2
 map_unfold
   rotate: false
   xy: 738, 74
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
+  index: 3
+map_unfold
+  rotate: false
+  xy: 770, 74
+  size: 30, 32
+  orig: 30, 32
+  offset: 0, 0
   index: 4
+metal_ingot
+  rotate: false
+  xy: 636, 49
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 mini_map_demo_2_level
   rotate: false
   xy: 0, 480

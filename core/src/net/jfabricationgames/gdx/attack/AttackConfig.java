@@ -18,4 +18,5 @@ public class AttackConfig {
 	public float explosionDamage;
 	public float explosionPushForce;
 	public boolean explosionPushForceAffectedByBlock = false;
+	public AttackWeaponType weaponType; // used to adapt attacks to skill levels
 }

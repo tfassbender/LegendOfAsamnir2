@@ -73,6 +73,20 @@ public class GlobalValuesDataHandler implements DataHandler, EventListener {
 		return isValueEqual(key, "true");
 	}
 	
+	public int getAsInteger(String globalValueKey, int defaultValue) {
+		String currentValue = get(globalValueKey);
+		if (currentValue == null) {
+			return defaultValue;
+		}
+		try {
+			return Integer.parseInt(currentValue);
+		}
+		catch (NumberFormatException e) {
+			Gdx.app.error(getClass().getSimpleName(), "The value of the global value with key '" + globalValueKey + "' couldn't be interpreted as integer: " + currentValue + " (using 0 as fallback)", e);
+			return defaultValue;
+		}
+	}
+	
 	public String get(String key) {
 		return globalValuesContainer.globalValues.get(key);
 	}
@@ -90,7 +104,7 @@ public class GlobalValuesDataHandler implements DataHandler, EventListener {
 		else if (event.eventType == EventType.INCREASE_GLOBAL_CONDITION_VALUE) {
 			ObjectMap<String, String> keyAndValue = readParameterMap(event);
 			String key = keyAndValue.get(PARAMETER_KEY_GLOBAL_VALUE_KEY);
-			int currentValue = getCurrentValueAsInteger(key);
+			int currentValue = getAsInteger(key, 0);
 			
 			Gdx.app.debug(getClass().getSimpleName(), "increasing global value with key '" + key + "' to value '" + (currentValue + 1) + "'");
 			put(key, Integer.toString(currentValue + 1));
@@ -107,24 +121,8 @@ public class GlobalValuesDataHandler implements DataHandler, EventListener {
 			keyAndValue = (ObjectMap<String, String>) event.parameterObject;
 		}
 		else {
-			throw new IllegalStateException(
-					"Either the stringValue or the parameterObject must be set when using a SET_GLOBAL_CONDITION_VALUE event");
+			throw new IllegalStateException("Either the stringValue or the parameterObject must be set when using a SET_GLOBAL_CONDITION_VALUE event");
 		}
 		return keyAndValue;
-	}
-	
-	private int getCurrentValueAsInteger(String globalValueKey) {
-		String currentValue = get(globalValueKey);
-		if (currentValue == null) {
-			return 0;
-		}
-		try {
-			return Integer.parseInt(currentValue);
-		}
-		catch (NumberFormatException e) {
-			Gdx.app.error(getClass().getSimpleName(), "The value of the global value with key '" + globalValueKey
-					+ "' couldn't be interpreted as integer: " + currentValue + " (using 0 as fallback)", e);
-			return 0;
-		}
 	}
 }

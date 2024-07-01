@@ -408,7 +408,7 @@
 		stateConfig: config/enemy/states/alarm_clock.json,
 		initialState: idle,
 		
-		health: 12,
+		health: 6,
 		movingSpeed: 0,
 		movable: false,
 		

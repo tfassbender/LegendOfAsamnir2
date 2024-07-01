@@ -1,0 +1,126 @@
+{
+	"axe": {
+		maxLevel: 5,
+		skillLevels: {
+			0: {
+				damageInPercent: 50f,
+			},
+			1: {
+				damageInPercent: 60f,
+			},
+			2: {
+				damageInPercent: 70f,
+			},
+			3: {
+				damageInPercent: 80f,
+			},
+			4: {
+				damageInPercent: 90f,
+			},
+			5: {
+				damageInPercent: 100f,
+			},
+		},
+	},
+	"shield": {
+		maxLevel: 3,
+		skillLevels: {
+			0: {
+				blockRateInPercent: 60f,
+			},
+			1: {
+				blockRateInPercent: 70f,
+			},
+			2: {
+				blockRateInPercent: 80f,
+			},
+			3: {
+				blockRateInPercent: 90f,
+			},
+		},
+	},
+	"arrow": {
+		maxLevel: 3,
+		skillLevels: {
+			0: {
+				damageInPercent: 50f,
+				maxAmmo: 20,
+			},
+			1: {
+				damageInPercent: 65f,
+				maxAmmo: 30,
+			},
+			2: {
+				damageInPercent: 80f,
+				maxAmmo: 40,
+			},
+			3: {
+				damageInPercent: 100f,
+				maxAmmo: 50,
+			},
+		},
+	},
+	"bomb": {
+		maxLevel: 3,
+		skillLevels: {
+			0: {
+				damageInPercent: 50f,
+				maxAmmo: 10,
+			},
+			1: {
+				damageInPercent: 65f,
+				maxAmmo: 15,
+			},
+			2: {
+				damageInPercent: 80f,
+				maxAmmo: 20,
+			},
+			3: {
+				damageInPercent: 100f,
+				maxAmmo: 25,
+			},
+		},
+	},
+	"boomerang": {
+		maxLevel: 3,
+		skillLevels: {
+			0: {
+				damageInPercent: 50f,
+				manaCostInPercent: 100f,
+			},
+			1: {
+				damageInPercent: 65f,
+				manaCostInPercent: 80f,
+			},
+			2: {
+				damageInPercent: 80f,
+				manaCostInPercent: 60f,
+			},
+			3: {
+				damageInPercent: 100f,
+				manaCostInPercent: 40f,
+			},
+		},
+	},
+	"wand": {
+		maxLevel: 3,
+		skillLevels: {
+			0: {
+				damageInPercent: 50f,
+				manaCostInPercent: 100f,
+			},
+			1: {
+				damageInPercent: 65f,
+				manaCostInPercent: 80f,
+			},
+			2: {
+				damageInPercent: 80f,
+				manaCostInPercent: 60f,
+			},
+			3: {
+				damageInPercent: 100f,
+				manaCostInPercent: 40f,
+			},
+		},
+	},
+}

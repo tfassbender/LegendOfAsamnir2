@@ -42,6 +42,7 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 	
 	private TextureRegion coinIcon;
 	private TextureRegion keyIcon;
+	private TextureRegion metalIngotIcon;
 	private ObjectMap<String, TextureRegion> specialActionIcons;
 	
 	private boolean renderSaveInfo;
@@ -64,6 +65,7 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		TextureLoader textureLoader = new TextureLoader(TEXTURE_CONFIG);
 		coinIcon = textureLoader.loadTexture("coin");
 		keyIcon = textureLoader.loadTexture("key");
+		metalIngotIcon = textureLoader.loadTexture("metal_ingot");
 		
 		specialActionIcons = new ObjectMap<>();
 		for (String specialAction : character.getActionList()) {
@@ -89,13 +91,15 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		batch.begin();
 		batch.draw(coinIcon, tileUpperRight.x - 40f, tileUpperRight.y - 130f, 35f, 35f);
 		batch.draw(keyIcon, tileUpperRight.x - 50f, tileUpperRight.y - 185f, 55f, 55f);
-		batch.draw(activeSpecialActionIcon, tileUpperRight.x - 40f, tileUpperRight.y - 225f, 35f, 35f);
+		batch.draw(metalIngotIcon, tileUpperRight.x - 40f, tileUpperRight.y - 225f, 35f, 35f);
+		batch.draw(activeSpecialActionIcon, tileUpperRight.x - 40f, tileUpperRight.y - 275f, 35f, 35f);
 		batch.end();
 	}
 	
 	private void drawIconText() {
 		int coins = character.getCoinsForHud();
 		int keys = character.getNormalKeys();
+		int metalIngots = character.getMetalIngots();
 		int ammo;
 		
 		switch (character.getActiveAction()) {
@@ -114,8 +118,9 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		screenTextWriter.setScale(TEXT_SCALE);
 		screenTextWriter.drawText(Integer.toString(coins), tileUpperRight.x - 155f, tileUpperRight.y - 103f, 100, Align.right, false);
 		screenTextWriter.drawText(Integer.toString(keys), tileUpperRight.x - 155f, tileUpperRight.y - 148f, 100, Align.right, false);
+		screenTextWriter.drawText(Integer.toString(metalIngots), tileUpperRight.x - 155f, tileUpperRight.y - 195f, 100, Align.right, false);
 		if (ammo > -1) {
-			screenTextWriter.drawText(Integer.toString(ammo), tileUpperRight.x - 155f, tileUpperRight.y - 195f, 100, Align.right, false);
+			screenTextWriter.drawText(Integer.toString(ammo), tileUpperRight.x - 155f, tileUpperRight.y - 245f, 100, Align.right, false);
 		}
 	}
 	
@@ -140,8 +145,7 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 	private String getDisplayedSaveInfoText() {
 		String text = "Saving";
 		final int displayStates = 4; // 0 to 3 dots
-		int displayedDots = (int) ((renderSaveInfoDeltaTime % (displayStates * RENDER_SAVE_INFO_DOTS_CHANGING_TIME))
-				/ RENDER_SAVE_INFO_DOTS_CHANGING_TIME);
+		int displayedDots = (int) ((renderSaveInfoDeltaTime % (displayStates * RENDER_SAVE_INFO_DOTS_CHANGING_TIME)) / RENDER_SAVE_INFO_DOTS_CHANGING_TIME);
 		for (int i = 0; i < displayedDots; i++) {
 			text += ".";
 		}

@@ -7,10 +7,13 @@ import net.jfabricationgames.gdx.data.container.GameDataContainer;
 import net.jfabricationgames.gdx.data.handler.type.DataItem;
 import net.jfabricationgames.gdx.data.handler.type.DataItemAmmoType;
 import net.jfabricationgames.gdx.data.handler.type.DataItemPropertyKeys;
+import net.jfabricationgames.gdx.skill.WeaponSkill;
+import net.jfabricationgames.gdx.skill.WeaponSkillType;
 
 public class CharacterItemDataHandler implements DataHandler {
 	
 	private static final String ITEM_NAME_KEY = "key";
+	private static final String ITEM_NAME_METAL_INGOT = "metal_ingot";
 	
 	private static CharacterItemDataHandler instance;
 	
@@ -25,9 +28,12 @@ public class CharacterItemDataHandler implements DataHandler {
 	private CharacterKeyDataHandler characterKeyContainer;
 	private CharacterItemContainer properties;
 	
+	private WeaponSkill weaponSkill; // contains the maximum ammo values
+	
 	private CharacterItemDataHandler() {
 		characterProperties = CharacterPropertiesDataHandler.getInstance();
 		characterKeyContainer = CharacterKeyDataHandler.getInstance();
+		weaponSkill = WeaponSkill.loadWeaponSkillFromConfig();
 	}
 	
 	@Override
@@ -62,6 +68,9 @@ public class CharacterItemDataHandler implements DataHandler {
 			if (item.getItemName().equals(ITEM_NAME_KEY)) {
 				characterKeyContainer.addKey(item);
 			}
+			if (item.getItemName().equals(ITEM_NAME_METAL_INGOT)) {
+				characterProperties.increaseMetalIngots(1);
+			}
 			if (item.containsProperty(DataItemPropertyKeys.VALUE.getPropertyName())) {
 				int itemValue = item.getProperty(DataItemPropertyKeys.VALUE.getPropertyName(), Float.class).intValue();
 				characterProperties.increaseCoins(itemValue);
@@ -74,14 +83,22 @@ public class CharacterItemDataHandler implements DataHandler {
 	private void increaseAmmo(int itemAmmo, DataItemAmmoType ammoType) {
 		switch (ammoType) {
 			case ARROW:
-				properties.ammoArrow = Math.min(properties.ammoArrow + itemAmmo, properties.maxAmmoArrow);
+				properties.ammoArrow = Math.min(properties.ammoArrow + itemAmmo, getMaxAmmoArrow());
 				break;
 			case BOMB:
-				properties.ammoBomb = Math.min(properties.ammoBomb + itemAmmo, properties.maxAmmoBomb);
+				properties.ammoBomb = Math.min(properties.ammoBomb + itemAmmo, getMaxAmmoBomb());
 				break;
 			default:
 				throw new IllegalStateException("Unexpected ItemAmmoType: " + ammoType);
 		}
+	}
+	
+	private int getMaxAmmoArrow() {
+		return weaponSkill.getSkillLevelConfig(WeaponSkillType.ARROW).maxAmmo;
+	}
+	
+	private int getMaxAmmoBomb() {
+		return weaponSkill.getSkillLevelConfig(WeaponSkillType.BOMB).maxAmmo;
 	}
 	
 	public boolean hasAmmo(DataItemAmmoType ammoType) {

@@ -17,11 +17,12 @@ import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 
 public class AttackHandler implements CharacterStateAttackHandler {
 	
+	protected ArrayMap<String, AttackConfig> configs;
+	
 	private Body body;
 	private PhysicsCollisionType collisionType;
 	
 	private Array<Attack> attacks;
-	private ArrayMap<String, AttackConfig> configs;
 	
 	public AttackHandler(String attackConfigFile, Body body, PhysicsCollisionType collisionType) {
 		this.body = body;

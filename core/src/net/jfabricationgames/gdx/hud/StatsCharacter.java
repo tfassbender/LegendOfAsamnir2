@@ -11,6 +11,7 @@ public interface StatsCharacter {
 	
 	public int getNormalKeys();
 	public int getCoinsForHud();
+	public int getMetalIngots();
 	
 	public boolean isEnduranceLow();
 	public boolean isActionInCooldown();
