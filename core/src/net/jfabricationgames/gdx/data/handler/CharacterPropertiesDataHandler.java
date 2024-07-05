@@ -209,6 +209,9 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 	public void increaseMetalIngots(int ingots) {
 		properties.metalIngots += ingots;
 	}
+	public void reduceMetalIngots(int ingots) {
+		properties.metalIngots -= ingots;
+	}
 	public int getMetalIngots() {
 		return Math.round(properties.metalIngots);
 	}

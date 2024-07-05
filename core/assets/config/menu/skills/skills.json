@@ -1,0 +1,26 @@
+{
+	axe: {
+		atlas: packed/menu/menu.atlas,
+		texture: axe,
+	},
+	shield: {
+		atlas: packed/menu/menu.atlas,
+		texture: shield,
+	},
+	bow: {
+		atlas: packed/menu/menu.atlas,
+		texture: bow,
+	},
+	bomb: {
+		atlas: packed/menu/menu.atlas,
+		texture: bomb,
+	},
+	boomerang: {
+		atlas: packed/menu/menu.atlas,
+		texture: boomerang,
+	},
+	wand: {
+		atlas: packed/menu/menu.atlas,
+		texture: wand,
+	},
+}

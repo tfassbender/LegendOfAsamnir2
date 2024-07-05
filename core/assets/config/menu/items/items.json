@@ -11,6 +11,10 @@
 		atlas: packed/menu/menu.atlas,
 		texture: mana,
 	},
+	metal_ingot: {
+	    atlas: packed/menu/menu.atlas,
+        texture: metal_ingot,
+	},
 	
 	//********************
 	//*** items
@@ -51,6 +55,15 @@
 	ring: {
 		atlas: packed/menu/menu.atlas,
 		texture: ring,
+	},
+	
+	//********************
+	//*** skills
+    //********************
+    
+	axe: {
+		atlas: packed/menu/menu.atlas,
+		texture: axe,
 	},
 	
 	//********************

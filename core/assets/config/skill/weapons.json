@@ -7,18 +7,23 @@
 			},
 			1: {
 				damageInPercent: 60f,
+				cost: 1,
 			},
 			2: {
 				damageInPercent: 70f,
+				cost: 2,
 			},
 			3: {
 				damageInPercent: 80f,
+				cost: 4,
 			},
 			4: {
 				damageInPercent: 90f,
+				cost: 6,
 			},
 			5: {
 				damageInPercent: 100f,
+				cost: 10,
 			},
 		},
 	},
@@ -30,16 +35,19 @@
 			},
 			1: {
 				blockRateInPercent: 70f,
+				cost: 1,
 			},
 			2: {
 				blockRateInPercent: 80f,
+				cost: 2,
 			},
 			3: {
 				blockRateInPercent: 90f,
+				cost: 4,
 			},
 		},
 	},
-	"arrow": {
+	"bow": {
 		maxLevel: 3,
 		skillLevels: {
 			0: {
@@ -49,14 +57,17 @@
 			1: {
 				damageInPercent: 65f,
 				maxAmmo: 30,
+				cost: 1,
 			},
 			2: {
 				damageInPercent: 80f,
 				maxAmmo: 40,
+				cost: 2,
 			},
 			3: {
 				damageInPercent: 100f,
 				maxAmmo: 50,
+				cost: 4,
 			},
 		},
 	},
@@ -70,14 +81,17 @@
 			1: {
 				damageInPercent: 65f,
 				maxAmmo: 15,
+				cost: 1,
 			},
 			2: {
 				damageInPercent: 80f,
 				maxAmmo: 20,
+				cost: 2,
 			},
 			3: {
 				damageInPercent: 100f,
 				maxAmmo: 25,
+				cost: 4,
 			},
 		},
 	},
@@ -91,14 +105,17 @@
 			1: {
 				damageInPercent: 65f,
 				manaCostInPercent: 80f,
+				cost: 1,
 			},
 			2: {
 				damageInPercent: 80f,
 				manaCostInPercent: 60f,
+				cost: 2,
 			},
 			3: {
 				damageInPercent: 100f,
 				manaCostInPercent: 40f,
+				cost: 4,
 			},
 		},
 	},
@@ -112,14 +129,17 @@
 			1: {
 				damageInPercent: 65f,
 				manaCostInPercent: 80f,
+				cost: 1,
 			},
 			2: {
 				damageInPercent: 80f,
 				manaCostInPercent: 60f,
+				cost: 2,
 			},
 			3: {
 				damageInPercent: 100f,
 				manaCostInPercent: 40f,
+				cost: 4,
 			},
 		},
 	},

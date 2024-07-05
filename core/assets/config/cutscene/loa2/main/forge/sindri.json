@@ -234,13 +234,13 @@
 				header: "Thorin",
 				options: [
 					"Can you repair my shield? ",
-					"Can you reforge my runes? ",
+					"Can you improve my weapons? ",
 					"Nothing, thanks.",
 				],
 			},
 			choiceOptionExecutions: [
 				repair_shield_dialog,
-				reforge_runes_dialog,
+				improve_weapons_dialog,
 				end,
 			],
 		},
@@ -309,20 +309,32 @@
 			],
 		},
 		
-		reforge_runes_dialog: {
+		improve_weapons_dialog: {
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {
                 displayTextHeader: "Sindri",
                 colorHeader: #bd6302,
-                displayText: "Brokkr is the expert for runes. Better ask him. ",
+                displayText: "Sure, I can do that. But I need metal ingots for this.\nLet's see what you have. ",
 			}
             
             waitForEventToFinish: true,
             
             executes: [
-            	end,
+            	open_skill_menu,
            	],
+		},
+		
+		open_skill_menu: {
+			type: EVENT,
+			
+			event: {
+				eventType: SHOW_IN_GAME_SKILL_MENU,
+			},
+			
+			executes: [
+				end
+			]
 		},
 		
 		end: {

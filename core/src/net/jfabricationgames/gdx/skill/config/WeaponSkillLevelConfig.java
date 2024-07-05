@@ -6,4 +6,6 @@ public class WeaponSkillLevelConfig {
 	public float blockRateInPercent = 50f;
 	public int maxAmmo = 15;
 	public float manaCostInPercent = 100f;
+	
+	public int cost;
 }

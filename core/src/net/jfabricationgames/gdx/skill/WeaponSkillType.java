@@ -6,7 +6,7 @@ public enum WeaponSkillType {
 	
 	AXE, // increases the damage
 	SHIELD, // increases the amount of damage the player can block with the shield (in percent)
-	ARROW, // increases the damage and number of arrows
+	BOW, // increases the damage and number of arrows
 	BOMB, // increases the damage and number of bombs
 	BOOMERANG, // increases the damage 
 	WAND; // increases the damage
@@ -20,7 +20,7 @@ public enum WeaponSkillType {
 			case AXE:
 				return AXE;
 			case ARROW:
-				return ARROW;
+				return BOW;
 			case BOMB:
 				return BOMB;
 			case BOOMERANG:

@@ -131,20 +131,69 @@
 			],
 		},
 		
+		
 		repair_shield_dialog: {
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {
                 displayTextHeader: "Brokkr",
                 colorHeader: #753d01,
-                displayText: "Sindri is the expert for weapons and shields. Better ask him. ",
+                displayText: "Of course! It'll just take a moment. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	repair_shield,
+           	],
+		},
+		
+		repair_shield: {
+			type: EVENT,
+			
+			event: {
+				eventType: GIVE_ITEM_TO_PLAYER,
+				stringValue: shield_full,
+			},
+			
+			executes: [
+				play_sound_forge,
+			]
+		},
+		
+		play_sound_forge: {
+            type: PLAY_SOUND,
+            
+            soundEffectName: forge_rune,
+            
+            executes: [
+                wait_after_repairing_shield,
+			],
+		},
+		
+		wait_after_repairing_shield: {
+            type: WAIT,
+            executionDurationInSeconds: 4f,
+            
+            executes: [
+                repairing_shield_done,
+			],
+		},
+		
+		repairing_shield_done: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Brokkr",
+                colorHeader: #753d01,
+                displayText: "That should do. ",
 			}
             
             waitForEventToFinish: true,
             
             executes: [
             	end,
-           	],
+			],
 		},
 		
 		reforge_runes_condition: {

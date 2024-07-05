@@ -587,6 +587,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				soundHandler.playSound(SOUND_SELL_OR_BUY_ITEM);
 				propertiesDataHandler.increaseCoins(event.intValue);
 				break;
+			case TAKE_PLAYERS_METAL_INGOTS:
+				propertiesDataHandler.reduceMetalIngots(event.intValue);
+				break;
 			case GIVE_METAL_INGOTS_TO_PLAYER:
 				soundHandler.playSound(SOUND_SELL_OR_BUY_ITEM);
 				propertiesDataHandler.increaseMetalIngots(event.intValue);

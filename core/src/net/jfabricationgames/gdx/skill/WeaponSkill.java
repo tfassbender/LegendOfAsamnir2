@@ -30,8 +30,7 @@ public class WeaponSkill {
 	}
 	
 	public WeaponSkillLevelConfig getSkillLevelConfig(WeaponSkillType skillType) {
-		String globalValueKey = GLOBAL_VALUE_KEY_SKILL_LEVEL_PREFIX + skillType.name().toLowerCase();
-		int skillLevel = GlobalValuesDataHandler.getInstance().getAsInteger(globalValueKey, 0);
+		int skillLevel = getSkillLevel(skillType);
 		return getSkillLevelConfig(skillType, skillLevel);
 	}
 	
@@ -39,8 +38,13 @@ public class WeaponSkill {
 		return configs.get(skillType.name().toLowerCase()).skillLevels.get(String.valueOf(level));
 	}
 	
+	public int getSkillLevel(WeaponSkillType skillType) {
+		String globalValueKey = GLOBAL_VALUE_KEY_SKILL_LEVEL_PREFIX + skillType.name().toLowerCase();
+		return GlobalValuesDataHandler.getInstance().getAsInteger(globalValueKey, 0);
+	}
+	
 	public int getMaxSkillLevel(WeaponSkillType skillType) {
-		return configs.get(skillType.name()).maxLevel;
+		return configs.get(skillType.name().toLowerCase()).maxLevel;
 	}
 	
 	public void increaseSkillLevel(WeaponSkillType skillType) {
@@ -51,5 +55,14 @@ public class WeaponSkill {
 		}
 		
 		GlobalValuesDataHandler.getInstance().put(globalValueKey, String.valueOf(skillLevel + 1));
+	}
+	
+	public int getNextSkillLevelCost(WeaponSkillType type) {
+		int level = getSkillLevel(type);
+		if (level >= getMaxSkillLevel(type)) {
+			return -1;
+		}
+		
+		return getSkillLevelConfig(type, level + 1).cost;
 	}
 }

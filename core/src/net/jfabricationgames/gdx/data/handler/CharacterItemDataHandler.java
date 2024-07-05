@@ -94,7 +94,7 @@ public class CharacterItemDataHandler implements DataHandler {
 	}
 	
 	private int getMaxAmmoArrow() {
-		return weaponSkill.getSkillLevelConfig(WeaponSkillType.ARROW).maxAmmo;
+		return weaponSkill.getSkillLevelConfig(WeaponSkillType.BOW).maxAmmo;
 	}
 	
 	private int getMaxAmmoBomb() {

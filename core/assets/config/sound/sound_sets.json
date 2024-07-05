@@ -414,7 +414,11 @@
 				error: {
 					path: "sound/common/error.wav",
 					volume: 0.5,
-				}
+				},
+                forge_rune: {
+                	path: "sound/cutscene/forge_rune.wav",
+                    volume: 0.6,
+                }
 			}
 		}
 	}

@@ -330,7 +330,7 @@
 				</controller>
 			</action>
 			
-			<action name="backToGame_interactButton">
+			<action name="select">
 				<key code="E" />
 				<controller>
 					<button code="3" />

@@ -1,17 +1,17 @@
 [
 	{
-		displayName: shield,
-		technicalName: shield,
-		cost: 20,
-	},
-	{
 		displayName: arrows,
 		technicalName: arrow,
-		cost: 25,
+		cost: 15,
 	},
 	{
 		displayName: bombs,
 		technicalName: bomb,
-		cost: 30,
+		cost: 20,
 	},
+	{
+		displayName: metal ingot,
+		technicalName: metal_ingot,
+		cost: 50,
+	}
 ]

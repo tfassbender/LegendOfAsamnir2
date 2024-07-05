@@ -46,16 +46,20 @@
 		texture: shield,
 	},
 	arrow: {
-		texture: arrow
+		texture: arrow,
 		pickUpSound: pickup_ammo
 	},
 	bomb: {
-		texture: bomb
+		texture: bomb,
 		pickUpSound: pickup
 	},
 	key: {
 		animation: key,
 		pickUpSound: pickup_4
+	},
+	metal_ingot: {
+        texture: metal_ingot,
+        pickUpSound: pickup
 	},
 	
 	//**********************************

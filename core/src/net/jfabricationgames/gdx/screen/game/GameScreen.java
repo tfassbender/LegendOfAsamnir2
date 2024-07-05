@@ -52,6 +52,7 @@ import net.jfabricationgames.gdx.screen.menu.InGameMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.LoadingScreen;
 import net.jfabricationgames.gdx.screen.menu.PauseMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.ShopMenuScreen;
+import net.jfabricationgames.gdx.screen.menu.SkillMenuScreen;
 import net.jfabricationgames.gdx.state.GameStateManager;
 import net.jfabricationgames.gdx.util.StartConfigUtil;
 
@@ -97,6 +98,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 	
 	private PauseMenuScreen pauseMenu;
 	private ShopMenuScreen shopMenu;
+	private SkillMenuScreen skillMenu;
 	
 	private PhysicsWorld physicsWorld;
 	
@@ -318,6 +320,9 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		else if (event.eventType == EventType.SHOW_IN_GAME_SHOP_MENU) {
 			showShopMenu(event.stringValue);
 		}
+		else if (event.eventType == EventType.SHOW_IN_GAME_SKILL_MENU) {
+			showSkillMenu();
+		}
 		else if (event.eventType == EventType.CHANGE_MAP) {
 			changeMap(event.stringValue, event.intValue);
 		}
@@ -346,6 +351,13 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		}
 		shopMenu.loadBuyableItemConfig(shopConfigFilePath);
 		shopMenu.showMenu();
+	}
+	
+	private void showSkillMenu() {
+		if (skillMenu == null) {
+			skillMenu = new SkillMenuScreen(this);
+		}
+		skillMenu.showMenu();
 	}
 	
 	/**

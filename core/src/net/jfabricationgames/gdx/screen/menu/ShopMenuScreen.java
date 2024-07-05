@@ -89,9 +89,7 @@ public class ShopMenuScreen extends InGameMenuScreen<ShopMenuScreen> {
 		int buttonHeight = 55;
 		int buttonPosX = 290;
 		int lowestButtonY = 240;
-		buttonBackToGame = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG)
-				.setNinePatchConfigFocused(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG_FOCUSED).setSize(buttonWidth, buttonHeight)
-				.setPosition(buttonPosX, lowestButtonY).build();
+		buttonBackToGame = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG).setNinePatchConfigFocused(FocusButton.BUTTON_GREEN_NINEPATCH_CONFIG_FOCUSED).setSize(buttonWidth, buttonHeight).setPosition(buttonPosX, lowestButtonY).build();
 		
 		buttonBackToGame.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
 		
@@ -148,8 +146,7 @@ public class ShopMenuScreen extends InGameMenuScreen<ShopMenuScreen> {
 	}
 	
 	private boolean isItemAlreadyOwned(ItemConfig item) {
-		return item.itemOwnedGlobalValueKey != null && !item.itemOwnedGlobalValueKey.isEmpty()
-				&& GlobalValuesDataHandler.getInstance().getAsBoolean(item.itemOwnedGlobalValueKey);
+		return item.itemOwnedGlobalValueKey != null && !item.itemOwnedGlobalValueKey.isEmpty() && GlobalValuesDataHandler.getInstance().getAsBoolean(item.itemOwnedGlobalValueKey);
 	}
 	
 	private void fireBuyItemEvent(String itemName, int itemCosts) {
@@ -231,8 +228,7 @@ public class ShopMenuScreen extends InGameMenuScreen<ShopMenuScreen> {
 		screenTextWriter.setScale(1.15f);
 		int buttonTextX = 290;
 		int buttonTextWidth = 430;
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToGame) + "Leave Shop", buttonTextX, 296, buttonTextWidth, Align.center,
-				false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToGame) + "Leave Shop", buttonTextX, 296, buttonTextWidth, Align.center, false);
 		
 		screenTextWriter.setScale(0.7f);
 		String itemName = "";
@@ -249,8 +245,7 @@ public class ShopMenuScreen extends InGameMenuScreen<ShopMenuScreen> {
 		}
 		
 		String textColor = "[#EB5000]";
-		screenTextWriter.drawText("Item:\n" + textColor + itemName + "\n[BLACK]Costs:\n" + textColor + itemCosts + " Coins\n[BLACK]You have:\n"
-				+ textColor + playersCoins + " Coins", 745, 573);
+		screenTextWriter.drawText("Item:\n" + textColor + itemName + "\n[BLACK]Costs:\n" + textColor + itemCosts + " Coins\n[BLACK]You have:\n" + textColor + playersCoins + " Coins", 745, 573);
 	}
 	
 	private String getButtonTextColorEncoding(FocusButton button) {

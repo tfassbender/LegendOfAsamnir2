@@ -11,6 +11,13 @@ arrow
   orig: 16, 16
   offset: 0, 0
   index: -1
+axe
+  rotate: false
+  xy: 2055, 414
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
 big_banner_down
   rotate: false
   xy: 2588, 524
@@ -104,21 +111,21 @@ big_banner_up_right
   index: -1
 bomb
   rotate: false
-  xy: 2055, 414
+  xy: 1743, 298
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 boomerang
   rotate: false
-  xy: 1779, 304
+  xy: 1761, 286
   size: 14, 11
   orig: 14, 11
   offset: 0, 0
   index: -1
 bow
   rotate: false
-  xy: 1743, 298
+  xy: 1761, 299
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -132,7 +139,7 @@ button_green
   index: -1
 button_green_focus
   rotate: false
-  xy: 1761, 299
+  xy: 1486, 129
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -146,7 +153,7 @@ button_yellow
   index: -1
 button_yellow_focus
   rotate: false
-  xy: 1486, 129
+  xy: 1654, 226
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -405,7 +412,7 @@ green_board_up_right
   index: -1
 health
   rotate: false
-  xy: 1654, 226
+  xy: 4070, 793
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -531,7 +538,7 @@ inventory_up_right
   index: -1
 jump
   rotate: false
-  xy: 4070, 793
+  xy: 840, 90
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -545,7 +552,7 @@ lantern
   index: -1
 mana
   rotate: false
-  xy: 840, 90
+  xy: 2037, 378
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -839,7 +846,7 @@ minotaur_move
   index: 8
 ring
   rotate: false
-  xy: 2037, 378
+  xy: 2055, 396
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -909,7 +916,7 @@ rune_raidho
   index: -1
 shield
   rotate: false
-  xy: 2055, 396
+  xy: 1743, 280
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -937,7 +944,7 @@ small_banner_right
   index: -1
 wand
   rotate: false
-  xy: 1743, 280
+  xy: 1779, 299
   size: 16, 16
   orig: 16, 16
   offset: 0, 0

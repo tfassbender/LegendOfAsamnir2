@@ -23,7 +23,7 @@ public abstract class ControlledMenu<T extends ControlledMenu<T>> extends Screen
 	
 	protected MenuStateMachine stateMachine;
 	
-	private SoundSet soundSet;
+	protected SoundSet soundSet;
 	
 	public ControlledMenu(String... stateConfigFiles) {
 		if (stateConfigFiles != null) {
