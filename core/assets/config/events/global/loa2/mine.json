@@ -1,0 +1,23 @@
+{
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	
+
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_mine_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_mine_goto_main,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main,
+			startingPointId: 5,
+		}
+	},
+}

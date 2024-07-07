@@ -231,10 +231,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		float manaCost = action.manaCost;
 		switch (action) {
 			case WAND:
-				manaCost *= weaponSkill.getSkillLevelConfig(WeaponSkillType.WAND).manaCostInPercent;
+				manaCost *= weaponSkill.getSkillLevelConfig(WeaponSkillType.WAND).manaCostInPercent / 100f;
 				break;
 			case BOOMERANG:
-				manaCost *= weaponSkill.getSkillLevelConfig(WeaponSkillType.BOOMERANG).manaCostInPercent;
+				manaCost *= weaponSkill.getSkillLevelConfig(WeaponSkillType.BOOMERANG).manaCostInPercent / 100f;
 				break;
 			default:
 				break;
