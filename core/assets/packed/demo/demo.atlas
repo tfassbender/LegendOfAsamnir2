@@ -1287,7 +1287,7 @@ projectile_bomb
   index: -1
 boomerang
   rotate: false
-  xy: 1000, 580
+  xy: 2936, 593
   size: 14, 11
   orig: 14, 11
   offset: 0, 0
@@ -5851,7 +5851,7 @@ interrogation
   index: 2
 interrogation
   rotate: false
-  xy: 1016, 579
+  xy: 1018, 579
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
@@ -6428,6 +6428,13 @@ metal_ingot
   xy: 2564, 438
   size: 32, 32
   orig: 32, 32
+  offset: 0, 0
+  index: -1
+metal_ingot_small
+  rotate: false
+  xy: 2922, 612
+  size: 16, 16
+  orig: 16, 16
   offset: 0, 0
   index: -1
 mimic_barrel_die
@@ -7587,21 +7594,21 @@ projectile_rock
   index: -1
 rainbow_bridge_disabled
   rotate: false
-  xy: 2922, 612
+  xy: 2904, 543
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 rainbow_bridge_enabled
   rotate: false
-  xy: 2904, 543
+  xy: 598, 148
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 ring
   rotate: false
-  xy: 598, 148
+  xy: 616, 149
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -7671,14 +7678,14 @@ rune_raidho
   index: -1
 scroll
   rotate: false
-  xy: 616, 149
+  xy: 634, 149
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 shield
   rotate: false
-  xy: 634, 149
+  xy: 652, 149
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -7769,7 +7776,7 @@ signboard_hit
   index: 3
 spare_weapon
   rotate: false
-  xy: 652, 149
+  xy: 2918, 594
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -7794,14 +7801,14 @@ spider_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 1
 spider_idle
   rotate: false
   xy: 3376, 624
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 4
 spider_jump
   rotate: false
   xy: 3376, 624
@@ -8266,35 +8273,35 @@ stone
   index: -1
 switch_floor_down
   rotate: false
-  xy: 2918, 594
+  xy: 2922, 562
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_floor_up
   rotate: false
-  xy: 2922, 562
+  xy: 2922, 544
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_wall_down
   rotate: false
-  xy: 2922, 544
+  xy: 3142, 544
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_wall_up
   rotate: false
-  xy: 3142, 544
+  xy: 670, 149
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 sword
   rotate: false
-  xy: 670, 149
+  xy: 688, 152
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -8616,14 +8623,14 @@ wall
   index: 4
 wand
   rotate: false
-  xy: 688, 152
+  xy: 982, 584
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 wand_alt
   rotate: false
-  xy: 982, 584
+  xy: 1000, 575
   size: 16, 16
   orig: 16, 16
   offset: 0, 0

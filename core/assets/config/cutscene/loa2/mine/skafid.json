@@ -1,0 +1,106 @@
+{
+	id: loa2_mine_skafid__at_storage_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_mine_entry__gate_opened,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: skafid__after_opening_gate,
+				condition_not_met: second_condition,
+			}
+		},
+		
+		second_condition: {
+			type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_mine_entry__key_collected,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: skafid__before_opening_gate,
+				condition_not_met: skafid__before_collecting_key,
+			}
+		},
+		
+		skafid__before_collecting_key: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skafid",
+                colorHeader: #00c9ed,
+                displayText: "Hey Thorin!\nSeems someone closed this gate.\n\nCan you check the storage for a key? ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		skafid__before_opening_gate: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skafid",
+                colorHeader: #00c9ed,
+                displayText: "Hey Thorin!\nYou found the key? Great!\n\nYou can open the gate now. Just move near it and press the interaction key. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		skafid__after_opening_gate: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skafid",
+                colorHeader: #00c9ed,
+                displayText: "Hey Thorin!\nGood work finding that key and opening the gate.\nNow I can go back to work. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

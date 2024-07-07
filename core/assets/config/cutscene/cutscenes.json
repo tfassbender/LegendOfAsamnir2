@@ -54,6 +54,12 @@
 	//*** Legend of Asamnir 2 - Main - Forge
 	//********************************************************
 	config/cutscene/loa2/main/shop/hanarr.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Dwarven Mine - Entry
+	//********************************************************
+	config/cutscene/loa2/mine/skafid.json,
+	config/cutscene/loa2/mine/eikinskjaldi.json,
 
 	//********************************************************
 	//*** Demo Level

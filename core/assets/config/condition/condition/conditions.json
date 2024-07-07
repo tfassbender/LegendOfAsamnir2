@@ -6,6 +6,7 @@
 	config/condition/condition/levels/loa2/main_tavern.json,
 	config/condition/condition/levels/loa2/main_castle.json,
 	config/condition/condition/levels/loa2/main_forge.json,
+	config/condition/condition/levels/loa2/mine.json,
 	
 //	config/condition/condition/levels/demo.json,
 //	config/condition/condition/levels/tutorial.json,

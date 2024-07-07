@@ -45,6 +45,16 @@ public enum ConditionType {
 			return CharacterItemDataHandler.getInstance().containsSpecialItem(itemId);
 		}
 	},
+	HAS_KEY {
+		
+		private static final String PARAMETERS_KEY_ID = "numKeys";
+		
+		@Override
+		public boolean check(Condition condition) {
+			int numKeys = Integer.parseInt(condition.parameters.get(PARAMETERS_KEY_ID, "1"));
+			return CharacterItemDataHandler.getInstance().getNumNormalKeys() >= numKeys;
+		}
+	},
 	HAS_COINS {
 		
 		private static final String PARAMETERS_COINS = "atLeast";
@@ -76,6 +86,17 @@ public enum ConditionType {
 			String expectedValue = condition.parameters.get(PARAMETER_EXPECTED_VALUE);
 			
 			return GlobalValuesDataHandler.getInstance().isValueEqual(key, expectedValue);
+		}
+	},
+	GATE_OPENED {
+		
+		private static final String PARAMETER_GATE_ID = "gateId";
+		private static final String GLOBAL_VALUE_KEY_GATE_OPENED_PREFIX = "gate_opened__";
+		
+		@Override
+		public boolean check(Condition condition) {
+			String gateId = condition.parameters.get(PARAMETER_GATE_ID);
+			return GlobalValuesDataHandler.getInstance().getAsBoolean(GLOBAL_VALUE_KEY_GATE_OPENED_PREFIX + gateId);
 		}
 	},
 	RUNE_COLLECTED {

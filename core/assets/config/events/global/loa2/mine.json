@@ -3,7 +3,27 @@
 	//*** cutscenes - npc interaction
 	//*******************************************
 	
+	loa2_mine_skafid__at_storage: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_mine_skafid__at_storage,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_mine_skafid__at_storage_cutscene,
+		}
+	},
 	
+	loa2_mine_eikinskjaldi__at_training_grounds: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_mine_eikinskjaldi__at_training_grounds,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_mine_eikinskjaldi__at_training_grounds_cutscene,
+		}
+	},
 
 	//*******************************************
 	//*** change map

@@ -1,37 +1,44 @@
 {
-	//************************************************
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Main
-	//************************************************
+	//*****************************************************************
 	
 	loa2_main_adventurer_in_dwarven_village: config/npc/levels/loa2/main/adventurer_in_dwarven_village.json,
 	loa2_main_builder_on_farm: config/npc/levels/loa2/main/builder_on_farm.json,
 	loa2_main_guardian_at_bifroest: config/npc/levels/loa2/main/guardian_at_bifroest.json,
 	loa2_main_guardian_at_helheim: config/npc/levels/loa2/main/guardian_at_helheim.json,
 	
-	//************************************************
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Main - Tavern
-	//************************************************
+	//*****************************************************************
 	loa2_main_tavern_barkeeper: config/npc/levels/loa2/main/tavern/barkeeper.json,
 	courier: config/npc/levels/loa2/main/tavern/courier.json,
 	
-	//************************************************
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Main - Castle
-	//************************************************
+	//*****************************************************************
 	modsognir: config/npc/levels/loa2/main/castle/modsognir.json,
 	chaos_wizard_form_1: config/npc/levels/loa2/main/castle/chaos_wizard_form_1.json,
 	dwarven_princess: config/npc/levels/loa2/main/castle/dwarven_princess.json,
 	asamnir: config/npc/levels/loa2/main/castle/asamnir.json,
 	
-	//************************************************
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Main - Forge
-	//************************************************
+	//*****************************************************************
 	sindri: config/npc/levels/loa2/main/forge/sindri.json,
 	brokkr: config/npc/levels/loa2/main/forge/brokkr.json,
 	
-	//************************************************
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Main - Shop
-	//************************************************
+	//*****************************************************************
 	hanarr: config/npc/levels/loa2/main/shop/hanarr.json,
+	
+	//*****************************************************************
+	//*** Legend of Asamnir 2 - Level 1 - Dwarven Mine
+	//*****************************************************************
+	
+	skafid: config/npc/levels/loa2/dwarven_mine/skafid.json,
+	eikinskjaldi: config/npc/levels/loa2/dwarven_mine/eikinskjaldi.json,
 
 //	//************************************************
 //	//*** Demo Level

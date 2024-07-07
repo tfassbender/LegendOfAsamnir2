@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.condition.ConditionHandler;
 import net.jfabricationgames.gdx.data.handler.CharacterItemDataHandler;
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.data.handler.MapObjectDataHandler;
 import net.jfabricationgames.gdx.data.properties.KeyItemProperties;
 import net.jfabricationgames.gdx.event.EventConfig;
@@ -23,6 +24,8 @@ public class LockedObject extends InteractiveObject implements EventListener {
 	private static final String MAP_PROPERTY_KEY_UNLOCKED_BY_EVENT = "unlockedByEvent";
 	private static final String MAP_PROPERTY_KEY_LOCK_ID = "lockId";
 	private static final String MAP_PROPERTY_KEY_UNLOCK_CONDITION = "unlockCondition";
+	private static final String MAP_PROPERTY_KEY_GATE_ID = "gateId";
+	private static final String GLOBAL_VALUE_KEY_GATE_OPENED_PREFIX = "gate_opened__";
 	
 	private static final String LOCK_EVENT_TEXT_SIMPLE_KEY = "unlocked_by_simple_key";
 	private static final String LOCK_EVENT_TEXT_SPECIAL_KEY = "unlocked_by_special_key";
@@ -142,8 +145,20 @@ public class LockedObject extends InteractiveObject implements EventListener {
 		
 		super.executeInteraction();
 		
+		setGateGlobalValue();
+		
 		if (setAnimationTime) {
 			animation.setStateTime(animation.getAnimationDuration() - animationTime);
+		}
+	}
+	
+	/**
+	 * Sets a global value that tells whether the gate is opened (if the gate configures the map property "gateId").
+	 */
+	private void setGateGlobalValue() {
+		if (mapProperties.containsKey(MAP_PROPERTY_KEY_GATE_ID)) {
+			String gateId = mapProperties.get(MAP_PROPERTY_KEY_GATE_ID, String.class);
+			GlobalValuesDataHandler.getInstance().put(GLOBAL_VALUE_KEY_GATE_OPENED_PREFIX + gateId, true);
 		}
 	}
 	

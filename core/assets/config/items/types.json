@@ -58,7 +58,7 @@
 		pickUpSound: pickup_4
 	},
 	metal_ingot: {
-        texture: metal_ingot,
+        texture: metal_ingot_small,
         pickUpSound: pickup
 	},
 	

@@ -1,0 +1,182 @@
+{
+	id: loa2_mine_eikinskjaldi__at_training_grounds_cutscene,
+	controlledActions: {
+		eikinskjaldi__greeting: {
+			startsWithCutscene: true,
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Eikinskjaldi",
+                colorHeader: #630202,
+                displayText: "Hey Thorin!\nWant to train some combat skills?\nI've just set up a new training dummy in the cave to your left. ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	dummy_defeated_condition,
+           	],
+		},
+		
+		dummy_defeated_condition: {
+			type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_mine_entry__training_dummy_defeated,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: reward_gained_condition,
+				condition_not_met: eikinskjaldi__before_defeating_dummy,
+			}
+		},
+		
+		reward_gained_condition: {
+			type: CONDITION,
+			
+			condition: {
+				conditionId: loa2_mine_entry__training_dummy_reward_gained,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: eikinskjaldi__after_reward_gained,
+				condition_not_met: eikinskjaldi__reward,
+			}
+		},
+		
+		eikinskjaldi__before_defeating_dummy: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Eikinskjaldi",
+                colorHeader: #630202,
+                displayText: "If you defeat it I'll give you a reward. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		eikinskjaldi__reward: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Eikinskjaldi",
+                colorHeader: #630202,
+                displayText: "Hey, seems like you already trained a bit.\n\nHere! Take this metal ingot as a reward. ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	give_metal_ingot_event,
+           	],
+		},
+		
+		give_metal_ingot_event: {
+			type: EVENT,
+			
+			event: {
+				eventType: GIVE_ITEM_TO_PLAYER,
+				stringValue: metal_ingot,
+			},
+			
+			executes: [
+				set_gloal_value__reward_given,
+			]
+		},
+		
+		set_gloal_value__reward_given: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_mine_entry__training_dummy_reward_gained, value: true}",
+			},
+			
+			executes: [
+				eikinskjaldi__reward_2,
+			]
+		},
+		
+		eikinskjaldi__reward_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Eikinskjaldi",
+                colorHeader: #630202,
+                displayText: "If you give it to Sindir in the forge, he can improve one of your weapons with it. ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+           	],
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Thanks Eikinskjaldi!\nI'll make sure to ask Sindir to improve my weapons. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		eikinskjaldi__after_reward_gained: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Eikinskjaldi",
+                colorHeader: #630202,
+                displayText: "Did you already give the metal ingot to Sindir?\n\nImproving your weapons is almost as important as combat training.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
