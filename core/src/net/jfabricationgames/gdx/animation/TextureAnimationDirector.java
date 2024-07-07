@@ -7,9 +7,12 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import net.jfabricationgames.gdx.constants.Constants;
 
+/**
+ * An animation consisting of a set of {@link TextureRegion}s that are displayed in a sequence.
+ */
 public class TextureAnimationDirector<T extends TextureRegion> extends AnimationDirector<T> {
 	
-	private Animation<T> animation;
+	protected Animation<T> animation;
 	
 	public TextureAnimationDirector(Animation<T> animation, AnimationConfig animationConfig) {
 		super(animationConfig);

@@ -20,4 +20,20 @@
 			startingPointId: 5,
 		}
 	},
+	
+	//*******************************************
+	//*** enemy defeated
+	//*******************************************
+	
+	loa2_dwarven_mine_dummy_defeated: {
+		event: {
+			eventType: ENEMY_DEFEATED,
+			stringValue: loa2_dwarven_mine_dummy_defeated,
+		},
+		executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: loa2_dwarven_mine_dummy_defeated,
+			globalValue: true,
+		}
+	}
 }

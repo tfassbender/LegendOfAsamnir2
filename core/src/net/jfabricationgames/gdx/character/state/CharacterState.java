@@ -79,8 +79,7 @@ public class CharacterState implements CutsceneControlledState {
 		}
 		
 		if (directionToTarget == null) {
-			throw new IllegalStateException("The direction for the attack has not been set. "
-					+ "Use the setAttackDirection(Vector2) method to set the direction BEFORE changing to this state.");
+			throw new IllegalStateException("The direction for the attack has not been set. " + "Use the setAttackDirection(Vector2) method to set the direction BEFORE changing to this state.");
 		}
 		CharacterStateAttack attack = attackHandler.startAttack(config.attack, directionToTarget);
 		attacks.add(attack);
@@ -114,7 +113,7 @@ public class CharacterState implements CutsceneControlledState {
 		}
 	}
 	
-	private void playSound() {
+	public void playSound() {
 		if (config.stateEnteringSound != null) {
 			sound = SOUND_SET.playSound(config.stateEnteringSound);
 		}
@@ -130,5 +129,9 @@ public class CharacterState implements CutsceneControlledState {
 	
 	public void setTargetDirectionSupplier(Supplier<Vector2> targetDirectionSupplier) {
 		this.targetDirectionSupplier = targetDirectionSupplier;
+	}
+	
+	public String getStateName() {
+		return config.id;
 	}
 }

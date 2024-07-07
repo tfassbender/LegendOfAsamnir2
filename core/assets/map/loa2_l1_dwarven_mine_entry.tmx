@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="65" tilewidth="32" tileheight="32" infinite="0" nextlayerid="18" nextobjectid="1316">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="65" tilewidth="32" tileheight="32" infinite="0" nextlayerid="18" nextobjectid="1318">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -34,7 +34,7 @@
    eJzt1UsKgDAMQMHuva1n6wHFnYj4aVqMOAMu1Sc0sRQAAAAAAAAgq3l6u+Dc2re9MvtCI/9SL85kbZytnud8xMy0PvPovv0O6rGTsu8JfTH6Yu701Y7z+FT2uY/0Pdl1ke+5eteb/6QR9MXc6VsA0MYekA==
   </data>
  </layer>
- <layer id="10" name="background_above_player" width="40" height="65">
+ <layer id="10" name="background_above_player" width="40" height="65" locked="1">
   <data encoding="base64" compression="zlib">
    eJzt1UEOgjAQRmHU+x+qykWMeg9pwqJpJsWZ344L35ewhD5GW5YFAAAAAAAAAPDvHqdfF4zRp6FPQ5+GPs1z67t9qfE+6V1r43W/lNZZfS1lnhl967bG5Ry7N6NP2S/02X3l4D9Z9r31cvZFZmHdU+cyelZ0bpE+a//W9dszqL+8c1P6qnb/FmH9I1nfrszfN4I+zcy+YuxH7/d3Zp/1bO/cs/tGZ10/W+X8Ga0TPVv7d8745nrQp/mk7w0Y0FWm
   </data>
@@ -44,12 +44,12 @@
    eJztl1sOwiAQRfm3m9eq+7Bo99H4ocsREkjIODwrj5h7kvkr9Dgwt1EIAAAAAAAAAAAAAAAAALVZJyFOph5Tb5tvFuX0OgjxVnUb1G9Tbs+B/Szwy8f1kwPOycK4yIFmmvNz6X3mMT/J9NDNzNo9jvlpbA+t152sqXlvr2rPc+IZ97oL2vFoinOVnr618nNJ6aePFn5rQp98tPBLmRcf/+ZHc4ormgmc3xy5k7OZrUumX062hdboZ0J7lZ5riR83v/oZN4No5fYtx08yZ+7O72zeH7orpd+NPXed+ocyp+b5/gL47aOmn80ut3K/vy3zJXVdbI8USv1CWUd7a/OnhNB7SrOV/ube/08o8NtHit8HZG11mA==
   </data>
  </layer>
- <layer id="4" name="shadows_2" width="40" height="65">
+ <layer id="4" name="shadows_2" width="40" height="65" locked="1">
   <data encoding="base64" compression="zlib">
    eJzt1lEKwyAMxnHf1/ftKLvILlrY/TZhghSTYqMxg/8PfCrWz1RDUwIAAAAAAAAAIKX3bXUCHflsyGdDPpvo+V7ffI+tb473nnLG/Te0rCXXs3M/I2n1jHIWpBwr61aLUqeWnC1KnVqOtbtv+r0pz71I33bGN7/yTun+1j2oHt75LPO81omer3V/o5w/yYyeE7nPZmf5Su86jt7/mVn5Rs/zWkfqdaNrq61ztbf++5lejXw2Z/k++iAziQ==
   </data>
  </layer>
- <layer id="17" name="shadows_3" width="40" height="65">
+ <layer id="17" name="shadows_3" width="40" height="65" locked="1">
   <data encoding="base64" compression="zlib">
    eJztwyERAAAIBLAPQP9iFEJiMPjtbgkAAAAAAAAAAADAT9e+DHGoAp4=
   </data>
@@ -59,7 +59,7 @@
    eJztwTEBAAAAwqD1T20JT6AAAAAAAAAAAAAAvgYooAAB
   </data>
  </layer>
- <objectgroup id="11" name="objects" locked="1">
+ <objectgroup id="11" name="objects">
   <object id="1217" name="player.startingPosition" x="1073.33" y="2032">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -71,8 +71,14 @@
     <property name="eventParameter" value="loa2_mine_goto_main"/>
    </properties>
   </object>
+  <object id="1317" name="enemy.dummy" x="480" y="1824">
+   <properties>
+    <property name="enemyDefeatedEventText" value="loa2_dwarven_mine_dummy_defeated"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="12" name="physics">
+ <objectgroup id="12" name="physics" locked="1">
   <object id="1221" x="640.063" y="1165.99">
    <polygon points="0,0 9.5,-3.25 11.25,-14.5"/>
   </object>

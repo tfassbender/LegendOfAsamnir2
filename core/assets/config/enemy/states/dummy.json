@@ -1,0 +1,42 @@
+[
+	{
+		id: idle,
+		animation: dummy_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, damage_long,
+		]
+	},
+	{
+		id: damage,
+		animation: dummy_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: wood_hit_1,
+		followingState: idle,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: damage_long,
+		animation: dummy_damage_long,
+		endsWithAnimation: true,
+		stateEnteringSound: wood_hit_1,
+		followingState: idle,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	
+	// the default enemy implementation needs a moving state
+	{
+		id: move,
+		animation: dummy_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, damage_long
+		]
+	},
+]

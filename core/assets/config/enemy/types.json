@@ -429,4 +429,30 @@
 		isBoss: true
 		bossName: "Alarm Clock - Scourge of the sleeping",
 	}
+	dummy: {
+		typeName: dummy,
+        
+        animationsConfig: config/animation/enemy/dummy.json,
+        stateConfig: config/enemy/states/dummy.json,
+        initialState: idle,
+        
+        health: 50,
+        movingSpeed: 0,
+        movable: false,
+        
+        imageOffsetX: 0f,
+        imageOffsetY: 0f,
+        
+        bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+        
+        pushForceDamage: 0,
+        pushForceHit: 0,
+        
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: 0,
+		healthBarWidthFactor: 1.0,
+		healthBarAlwaysVisible: true,
+	}
 }

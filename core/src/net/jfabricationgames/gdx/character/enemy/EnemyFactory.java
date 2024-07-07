@@ -7,6 +7,7 @@ import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.character.enemy.implementation.AlarmClock;
 import net.jfabricationgames.gdx.character.enemy.implementation.Bat;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
+import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
 import net.jfabricationgames.gdx.character.enemy.implementation.Minotaur;
 import net.jfabricationgames.gdx.character.enemy.implementation.Totem;
@@ -28,6 +29,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_ICE_ELEMENTAL = "ice_elemental";
 	private static final String ENEMY_NAME_IMP = "imp";
 	private static final String ENEMY_NAME_ALARM_CLOCK = "alarm_clock";
+	private static final String ENEMY_NAME_DUMMY = "dummy";
 	
 	private static final String ENEMY_NAME_BAT = "bat";
 	private static final String ENEMY_NAME_TOTEM = "totem";
@@ -96,6 +98,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_ALARM_CLOCK:
 				enemy = new AlarmClock(typeConfig, properties);
+				break;
+			case ENEMY_NAME_DUMMY:
+				enemy = new Dummy(typeConfig, properties);
 				break;
 			default:
 				throw new IllegalStateException("Unknown enemy type: " + type);

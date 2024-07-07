@@ -33,6 +33,7 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	public float pushForceHit; //the force that is applied to the player when the enemy hits him (multiplied with the body mass times 10)
 	
 	public boolean usesHealthBar = false;
+	public boolean healthBarAlwaysVisible = false;
 	public float healthBarOffsetX;
 	public float healthBarOffsetY;
 	public float healthBarWidthFactor;

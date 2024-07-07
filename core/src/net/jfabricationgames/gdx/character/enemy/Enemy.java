@@ -237,7 +237,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	}
 	
 	protected boolean drawStatsBar() {
-		return typeConfig.usesHealthBar && getPercentualHealth() < 1 && isAlive();
+		return typeConfig.usesHealthBar && isAlive() && (getPercentualHealth() < 1 || typeConfig.healthBarAlwaysVisible);
 	}
 	
 	public float getPercentualHealth() {
@@ -255,17 +255,11 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 			
 			if (!isAlive()) {
 				die();
-				changeBodyToSensor();
+				
 			}
 			else {
 				stateMachine.setState(getDamageStateName(damage));
 			}
-		}
-	}
-	
-	protected void changeBodyToSensor() {
-		for (Fixture fixture : body.getFixtureList()) {
-			fixture.setSensor(true);
 		}
 	}
 	
@@ -296,6 +290,18 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		defeated = true;
 		MapObjectDataHandler.getInstance().addStatefulMapObject(this);
 		
+		fireEnemyDefeatedEvent();
+		
+		changeBodyToSensor();
+	}
+	
+	protected void changeBodyToSensor() {
+		for (Fixture fixture : body.getFixtureList()) {
+			fixture.setSensor(true);
+		}
+	}
+	
+	protected void fireEnemyDefeatedEvent() {
 		if (properties.containsKey(MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT)) {
 			String enemyDefeatedEventText = properties.get(MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT, "", String.class);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DEFEATED).setStringValue(enemyDefeatedEventText));
