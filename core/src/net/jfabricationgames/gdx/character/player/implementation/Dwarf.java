@@ -111,6 +111,16 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill);
 	}
 	
+	@Override
+	public void afterLoadMap() {
+		// fire events if stats are below half when re-added to the world, because they can't go below half anymore in this state
+		checkHealthBelowHalf(false);
+		checkArmorBelowHalf(false);
+		checkManaBelowHalf(false);
+		checkAmmoBelowHalf(ItemAmmoType.ARROW, false);
+		checkAmmoBelowHalf(ItemAmmoType.BOMB, false);
+	}
+	
 	protected boolean changeAction(CharacterAction action) {
 		if (isAlive() || action == CharacterAction.DIE) {
 			if (!propertiesDataHandler.hasEnoughEndurance(action) && action != CharacterAction.ATTACK_SPIN) {
@@ -161,7 +171,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					if (attackHandler.allAttacksExecuted()) {
 						if (itemDataHandler.hasAmmo(ammoType.toDataType())) {
 							if (propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost)) {
+								boolean ammoBelowHalfBeforeShot = itemDataHandler.getAmmo(DataItemAmmoType.getByItemAmmoType(ammoType)) < 0.5f * itemDataHandler.getMaxAmmo(DataItemAmmoType.getByItemAmmoType(ammoType));
 								itemDataHandler.decreaseAmmo(ammoType.toDataType());
+								checkAmmoBelowHalf(ammoType, ammoBelowHalfBeforeShot);
 								propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
 								attackHandler.startAttack(ammoType.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
 								
@@ -211,6 +223,15 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		return false;
 	}
 	
+	private void checkAmmoBelowHalf(ItemAmmoType ammoType, boolean ammoBelowHalfBeforeShot) {
+		if (!ammoBelowHalfBeforeShot && itemDataHandler.getAmmo(DataItemAmmoType.getByItemAmmoType(ammoType)) < 0.5f * itemDataHandler.getMaxAmmo(DataItemAmmoType.getByItemAmmoType(ammoType))) {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
+					.setStringValue(ammoType.name()) //
+					.setFloatValue(0.5f));
+		}
+	}
+	
 	private boolean hasEnoughMana(SpecialAction action) {
 		return propertiesDataHandler.hasEnoughMana(getManaCosts(action));
 	}
@@ -221,9 +242,20 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	private void useMana(float mana) {
 		boolean manaAboveCriticalLevelBeforeUse = propertiesDataHandler.hasEnoughMana(LOW_MANA_LEVEL);
+		boolean manaBelowHalfBeforeUse = propertiesDataHandler.getManaPlusIncreasePercentual() < 0.5f - 1e-3f; // prevent rounding errors
 		propertiesDataHandler.reduceMana(mana);
 		if (manaAboveCriticalLevelBeforeUse && !propertiesDataHandler.hasEnoughMana(LOW_MANA_LEVEL)) {
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.OUT_OF_AMMO).setStringValue("MANA"));
+		}
+		checkManaBelowHalf(manaBelowHalfBeforeUse);
+	}
+	
+	private void checkManaBelowHalf(boolean manaBelowHalfBeforeUse) {
+		if (!manaBelowHalfBeforeUse && propertiesDataHandler.getManaPlusIncreasePercentual() < 0.5f) {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
+					.setStringValue("MANA") //
+					.setFloatValue(0.5f));
 		}
 	}
 	
@@ -496,7 +528,11 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				takeArmorDamage(damage * 0.33f);
 				damage *= (1f - (weaponSkill.getSkillLevelConfig(WeaponSkillType.SHIELD).blockRateInPercent / 100f));
 			}
+			
+			boolean healthBelowHalfBeforeHit = propertiesDataHandler.getHealthPlusIncreasePercentual() < 0.5f - 1e-3f; // prevent rounding errors
 			propertiesDataHandler.takeDamage(damage);
+			checkHealthBelowHalf(healthBelowHalfBeforeHit);
+			
 			if (!propertiesDataHandler.isAlive()) {
 				die();
 			}
@@ -511,9 +547,29 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		}
 	}
 	
+	private void checkHealthBelowHalf(boolean healthBelowHalfBeforeHit) {
+		if (!healthBelowHalfBeforeHit && propertiesDataHandler.getHealthPlusIncreasePercentual() < 0.5f - 1e-3f) { // prevent rounding errors
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
+					.setStringValue("HEALTH") //
+					.setFloatValue(0.5f));
+		}
+	}
+	
 	private void takeArmorDamage(float damage) {
 		propertiesDataHandler.reduceEnduranceForHitBlocking();
+		boolean armorBelowHalfBeforeHit = propertiesDataHandler.getArmorPlusIncreasePercentual() < 0.5f;
 		propertiesDataHandler.takeArmorDamage(damage);
+		checkArmorBelowHalf(armorBelowHalfBeforeHit);
+	}
+	
+	private void checkArmorBelowHalf(boolean armorBelowHalfBeforeHit) {
+		if (!armorBelowHalfBeforeHit && propertiesDataHandler.getArmorPlusIncreasePercentual() < 0.5f) {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
+					.setStringValue("ARMOR") //
+					.setFloatValue(0.5f));
+		}
 	}
 	
 	private void die() {

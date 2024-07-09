@@ -127,6 +127,10 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		return properties.health / properties.maxHealth;
 	}
 	
+	public float getHealthPlusIncreasePercentual() {
+		return (properties.health + properties.increaseHealth) / properties.maxHealth;
+	}
+	
 	public void takeDamage(float damage) {
 		properties.health -= damage;
 		if (properties.health < 0) {
@@ -150,8 +154,22 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		properties.increaseHealth += properties.maxHealth;
 	}
 	
+	public void increaseHealthTo(float max) {
+		if (max > properties.health) {
+			properties.increaseHealth += max - properties.health;
+		}
+	}
+	
 	public float getManaPercentual() {
 		return properties.mana / properties.maxMana;
+	}
+	
+	public float getManaPlusIncreasePercentual() {
+		return (properties.mana + properties.increaseMana) / properties.maxMana;
+	}
+	
+	public float getMaxMana() {
+		return properties.maxMana;
 	}
 	
 	public boolean hasEnoughMana(float manaCost) {
@@ -164,6 +182,12 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 	
 	public void increaseManaFull() {
 		properties.increaseMana += properties.maxMana;
+	}
+	
+	public void increaseManaTo(float max) {
+		if (max > properties.mana) {
+			properties.increaseMana += max - properties.mana;
+		}
 	}
 	
 	public void reduceMana(float amount) {
@@ -182,12 +206,22 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		return properties.armor / properties.maxArmor;
 	}
 	
+	public float getArmorPlusIncreasePercentual() {
+		return (properties.armor + properties.increaseArmor) / properties.maxArmor;
+	}
+	
 	public void takeArmorDamage(float damage) {
 		properties.armor = Math.max(properties.armor - damage, 0);
 	}
 	
 	public void increaseArmorByHalf() {
 		properties.increaseArmor += properties.maxArmor * 0.5f;
+	}
+	
+	public void increaseArmorTo(float max) {
+		if (max > properties.armor) {
+			properties.increaseArmor += max - properties.armor;
+		}
 	}
 	
 	public void increaseCoins(int coins) {

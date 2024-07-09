@@ -140,6 +140,7 @@ public class GameMapImplementation implements GameMap {
 			throw new IllegalStateException(message);
 		}
 		player.setPosition(startingPosition.x, startingPosition.y);
+		player.afterLoadMap();
 		
 		updateMapObjectStates();
 		resetLanternUsed();

@@ -37,4 +37,5 @@
 	config/spawn/common/objects.json,
 	config/spawn/common/ammo.json,
 	config/spawn/common/items.json,
+	config/spawn/common/belowThreshold.json,
 ]

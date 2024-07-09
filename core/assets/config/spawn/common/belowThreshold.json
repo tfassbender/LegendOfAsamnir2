@@ -1,0 +1,52 @@
+{
+	playerHealthBelowHalf: {
+        spawnType: item.health_half,
+        complexEvents: [
+        	{
+				eventType: PLAYER_STATS_BELOW_THRESHOLD,
+		        stringValue: HEALTH,
+        		floatValue: 0.5f,
+			}
+        ],
+	},
+	playerShieldBelowHalf: {
+        spawnType: item.shield_half,
+        complexEvents: [
+            {
+            	eventType: PLAYER_STATS_BELOW_THRESHOLD,
+                stringValue: ARMOR,
+                floatValue: 0.5f,
+            }
+        ],
+	},
+	playerManaBelowHalf: {
+        spawnType: item.mana_half,
+        complexEvents: [
+			{
+            	eventType: PLAYER_STATS_BELOW_THRESHOLD,
+                stringValue: MANA,
+                floatValue: 0.5f,
+			}
+		],
+	},
+	playerAmmoArrowBelowHalf: {
+        spawnType: item.arrow_half,
+        complexEvents: [
+			{
+            	eventType: PLAYER_STATS_BELOW_THRESHOLD,
+                stringValue: ARROW,
+                floatValue: 0.5f,
+			}
+		],
+	},
+	playerAmmoBombBelowHalf: {
+        spawnType: item.bomb_half,
+        complexEvents: [
+			{
+            	eventType: PLAYER_STATS_BELOW_THRESHOLD,
+                stringValue: BOMB,
+                floatValue: 0.5f,
+            }
+        ],
+	},
+}

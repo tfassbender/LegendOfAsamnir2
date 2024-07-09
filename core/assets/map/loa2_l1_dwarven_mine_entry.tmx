@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="31" tilewidth="32" tileheight="32" infinite="0" nextlayerid="18" nextobjectid="1346">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="31" tilewidth="32" tileheight="32" infinite="0" nextlayerid="18" nextobjectid="1351">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -9,226 +9,226 @@
   <property name="shadow_layers" value="[6, 7, 8]"/>
  </properties>
  <tileset firstgid="1" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="30" height="31" locked="1">
+ <layer id="1" name="background" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt0LsKACAIQNGm/v+TW5qsRHyTXnDMI43R3Zp7Ikxvu90Y18t/udY3ZHahrXUb1bX8myiXuv8XV2JWcjk7MrjYO2rZXY1pN68Lq+ZiSd9za/dsAWkSCYU=
+   eJzt0UsKACAIBFBX3f/IbVpEoEma08cBl/IGJcrMUtqgXISfNt6O7MDZET1Ot0ffs5/W3n0jpK01XrMtbv8bpL3ie9w6Ys/blna1ucX2mLTvscf8akux7luSNm9XmksJ0w==
   </data>
  </layer>
- <layer id="2" name="background_2" width="30" height="31" locked="1">
+ <layer id="2" name="background_2" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztlk0SgjAMhSmexKN4NPAk4EnwZ6G3cCoLPYXt2AzPGNoCBReamcywaPv1JXlAloXjqLIsz195UhEbEoU2rLPJi8nrwty7yccXuBS/xlULzhdyC/Ncqo4/5x2QW5nnWnX8csZZ08K5xK+ddq4ZPT+2JhIXowDNxFvlXT2wL0P4N7P24FlfAVc7zhbqgX0Z2hPL3ruU7kB6rE7L2bE11JcpsyDpL0CnL6ZwbQ+tLgzSw3Wm5OoIXXNxQ7pCXO4zKfnsS75qAjPfuJlsYe7XzGs8eW0krl3j87l0xiZ/9xpPvkeaZ7sGvcazjbg7DyXUHue5cef6ehbTKx74DaDEecZ3Rl/PYnrFA78BlDjP+M7o69kYbuy9fN6agxsTY7jkPUyfV1NxpXfb0Dql4vq8ymtBPovd3+f5UHAtS/37/rmfa57xfJj3
+   eJztlssNwjAMhpMwCaMwWsskLZOUxwG2QKUHmIJExOqP5aTp+wCWLHFI8vn1uyiVZmetlDEfv+jESxNZbXlX6zfr9xXYT+uvldhkv8rWC88csjP7O9dtDHPHgezC/i51G0M+8/zVwtsUQ+lrwHPHnTCmNhIbLYPcibkxbV2wR31jeNjzp8idAti1Z+2hLtijIf1x/KN3KQ7Ky+XrWAd2hno0djakOmSQb8zGsl1PXX5olBfPd2p2nZDfnOyu/LrYXIMh57qQNFd1aKHyc9qAHrZMh5LzOklsdya2B6Q3duZbh5Lze9KcuzOoQ+5NQvySaaEPOOeVfzvWw5S+SYbfDXKcc9wroR6m9E0y/G6Q45zjXgn1cCg7NbaY7uZip9hQNmkTPablKdnSHuxbsynZMS3zmpAG+f3YG6G90GU8pyX/V//ZYfYbzlGbBg==
   </data>
  </layer>
- <layer id="5" name="terrain" width="30" height="31" locked="1">
+ <layer id="5" name="terrain" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20LL6AAAADgZw6IAAE=
+   eJzt06ENAEAIwEBQ7L/x+zeQgLxTXaARAABMVfYN7Pw/+YtLD74fACk=
   </data>
  </layer>
- <layer id="16" name="terrain_2" width="30" height="31" locked="1">
+ <layer id="16" name="terrain_2" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20LL6AAAADgZw6IAAE=
+   eJztwQEBAAAAgiD/r25IQAEAAMCHAQ8EAAE=
   </data>
  </layer>
- <layer id="8" name="shadow_underlying" width="30" height="31" locked="1">
+ <layer id="8" name="shadow_underlying" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjILhBYq4B85eZDyQbhgFIwdsIRDnW9DSJDXTBylmkWsvNn3oeQ1f3hvIvDhq78i2dwsR6ZMW9lJTHzXsJTav4rKHkBmkum0wp5mRZi8A0HcekA==
+   eJztk0EKACAIBLv3297mA7uGSFoZIu5AR5vI3dYAAKAuo8e61xP9DpALz52RkgFiOfXOy8l9L25plvdw18vonsINN4cMuf3l9p71cFu7LLm0+dv/zZCjiu4JalggBw==
   </data>
  </layer>
- <layer id="10" name="background_above_player" width="30" height="31" locked="1">
+ <layer id="10" name="background_above_player" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztlGEKgCAMhbXuf6hVF4nyHin4Q8ZUtplE7IE/fZ+bb3Puu7q8cY1rXOPydEfuPoh9Mn0Se8tH8wYuF79BytZwj3h3XeZzNTn7Cxc6fw45k8HXPSTcVEfLC9cp4VJ5Tr7lrOETBnCTyjwD4dvTrB04os/GfYcLRD65+1nCpXYMt0+juK1Zxb2g5qx1vzbzPeFaNDvZuDruA4xgVaY=
+   eJztlUEOgCAMBEH//yiUjxjlH0LCgTS1hLYqh27SIzvQbItz8+v0xja2sY2tryuzdyX+wfAp/K2W5B4cNrwHly9lx3x+Xf5hS7I3AzsyPTB26GQg1Jwm/+zBZZf3UH6w11w2lvPi3c4hrKTELmpzHhDvnr7clVo9N/b77IDkdnSfc9nYHhztmSabmmXYE2wGqfPUXugJvkn6fxhbh30DGtRXLg==
   </data>
  </layer>
- <layer id="3" name="shadows" width="30" height="31" locked="1">
+ <layer id="3" name="shadows" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztllEOwjAIhnl3l9c67+Gqu4fxQY9jm5SEICusttXE/QlvpV+Bn2UAuuYB4JDiOhgSKmkKrMcO4Bni3Jl7C8z7F7iof+P6jv6aBIbv4HGJS9Wq9xrXCzXTnS/ticaNwpqRd2E5Jb44hbNHY69rzySy9ymkN/iFOj/l8jdo9bfgzoa6WnAtPvtVLt8zKbj3Ja5TZu6SJ0ej7+kbc9x4JneX5Q4tR/JzPEN3jcdYwPVC76mfXbo3NzPLrNbK8s0o6XMNbVw9B3ePxtrvc409sua14OZ2lfcC98yav7Tzmngtvf59N+77mRddAnWY
+   eJztlkEOAiEMRbt3Lq843sNB5x7GhR5HSCAhTYEPAmPiNOmO8mj720CE2ToRnZzfJzCokS2G9zoQvY1fN2A/DPe5Edvbv7L1YM0tAkcP0r7EDq1nH3JsLeQe7oRvapNjW/O5e+aNxdTq5GLOn8G69+iP5R+dS+/QkXxbsPk7cnXoxV6B/HqxEe39MpvPYMz5XEhsldGAcjqdwXngb02x7ZnUfcgdSJykc3smnEPucyVbC30Ida7c3akeIn2rMWSv1Na8he3sMrafzdBL93mrGSuJ7cFOzTKviZ9BND61F3LGcxr5r97ZcfYHP/Z20w==
   </data>
  </layer>
- <layer id="4" name="shadows_2" width="30" height="31" locked="1">
+ <layer id="4" name="shadows_2" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBjcYCv3qL2j9o7aO1TtDQXaK8FDmh5quRVk9yYoxucGmH0WJLqTWDfgspvWcYLLfFr4kxh7aW0nrf2Fy15kIM6DP73B5KltLyFxStXCAK70jJzXkDG17KVE31C1F1t6pnX8kuIWethLCiBkLyzvoWNS6ydS7aW2Pkr148qrxIYFPv3klm2DNc2M2ksfewHH3zOJ
+   eJxjYBgaYCv3qN2jdo/aPVztDgXaLcFDmh5quhdk/yYoxucOmJ0WJLqVFHfgsp8e8YPLDlr5lxi76WEvPfyHy25kIM6DPw3C5GlhNyFxStUiA1zpHDkfImNq2k2p3qFsN7Z0To/4xgVIyXeDvW6E5U10TGq9Ro7dtNBLqX5ceZnYMMGnH1+5QAgM9nQ0ajd97QYAKzQ0Rg==
   </data>
  </layer>
- <layer id="17" name="shadows_3" width="30" height="31" locked="1">
+ <layer id="17" name="shadows_3" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwyERAAAIBLAPQP9iFEJikMjtbgkAAAD86dqXAVeQAp4=
+   eJztwzENAAAIA7AJwL8xDHHyoIC0SRMAAAD4oWtfBlgMAp4=
   </data>
  </layer>
- <layer id="14" name="invisible_paths_background" width="30" height="31" locked="1">
+ <layer id="14" name="invisible_paths_background" width="31" height="31" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20LL6AAAADgZw6IAAE=
+   eJztwQEBAAAAgiD/r25IQAEAAMCHAQ8EAAE=
   </data>
  </layer>
  <objectgroup id="11" name="objects">
-  <object id="1217" name="player.startingPosition" x="753.333" y="944">
+  <object id="1217" name="player.startingPosition" x="785.333" y="944">
    <properties>
     <property name="startingPointId" value="0"/>
    </properties>
    <point/>
   </object>
-  <object id="1218" name="object.eventObject" x="704.1" y="990.258" width="95.842" height="1.56818">
+  <object id="1218" name="object.eventObject" x="736.1" y="990.258" width="95.842" height="1.56818">
    <properties>
     <property name="eventParameter" value="loa2_mine_goto_main"/>
    </properties>
   </object>
-  <object id="1317" name="enemy.dummy" x="160" y="736">
+  <object id="1317" name="enemy.dummy" x="176" y="736">
    <properties>
     <property name="enemyDefeatedEventText" value="loa2_dwarven_mine_dummy_defeated"/>
    </properties>
    <point/>
   </object>
-  <object id="1318" name="object.key_wall" x="352" y="192">
+  <object id="1318" name="object.key_wall" x="384" y="192">
    <properties>
     <property name="gateId" value="loa2_mine_entry"/>
     <property name="physicsBodySizeFactorX" value="1.3f"/>
    </properties>
    <point/>
   </object>
-  <object id="1319" name="object.chest" x="869.333" y="391.333">
+  <object id="1319" name="object.chest" x="901.333" y="391.333">
    <properties>
     <property name="drop" value="{key: 1}"/>
    </properties>
    <point/>
   </object>
-  <object id="1320" name="object.chest" x="783.333" y="360.667">
+  <object id="1320" name="object.chest" x="815.333" y="360.667">
    <properties>
     <property name="drop" value="{metal_ingot: 1}"/>
    </properties>
    <point/>
   </object>
-  <object id="1321" name="object.chest" x="880" y="506.667">
+  <object id="1321" name="object.chest" x="912" y="506.667">
    <properties>
     <property name="drop" value="{}"/>
    </properties>
    <point/>
   </object>
-  <object id="1322" name="object.spawnPoint.barrel" x="720" y="389.333">
+  <object id="1322" name="object.spawnPoint.barrel" x="752" y="389.333">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1323" name="object.spawnPoint.barrel" x="824.667" y="387.333">
+  <object id="1323" name="object.spawnPoint.barrel" x="856.667" y="387.333">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1324" name="object.spawnPoint.barrel" x="846" y="400">
+  <object id="1324" name="object.spawnPoint.barrel" x="878" y="400">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1325" name="object.spawnPoint.barrel" x="879.333" y="473.333">
+  <object id="1325" name="object.spawnPoint.barrel" x="911.333" y="473.333">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1327" name="object.spawnPoint.barrel" x="852" y="508">
+  <object id="1327" name="object.spawnPoint.barrel" x="884" y="508">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1328" name="object.spawnPoint.barrel" x="826" y="528">
+  <object id="1328" name="object.spawnPoint.barrel" x="858" y="528">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1330" name="object.spawnPoint.barrel" x="760.667" y="360">
+  <object id="1330" name="object.spawnPoint.barrel" x="792.667" y="360">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1331" name="object.spawnPoint.barrel" x="884" y="440">
+  <object id="1331" name="object.spawnPoint.barrel" x="916" y="440">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1332" name="object.spawnPoint.barrel" x="765.333" y="417.333">
+  <object id="1332" name="object.spawnPoint.barrel" x="797.333" y="417.333">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1333" name="object.spawnPoint.barrel" x="784.667" y="476.667">
+  <object id="1333" name="object.spawnPoint.barrel" x="816.667" y="476.667">
    <properties>
     <property name="spawn" value="object__barrel"/>
    </properties>
    <point/>
   </object>
-  <object id="1334" name="object.spawnPoint.pot" x="707.333" y="444.667">
+  <object id="1334" name="object.spawnPoint.pot" x="739.333" y="444.667">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1335" name="object.spawnPoint.pot" x="802.667" y="409.333">
+  <object id="1335" name="object.spawnPoint.pot" x="834.667" y="409.333">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1336" name="object.spawnPoint.pot" x="747.333" y="376">
+  <object id="1336" name="object.spawnPoint.pot" x="779.333" y="376">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1337" name="object.spawnPoint.pot" x="742.667" y="481.333">
+  <object id="1337" name="object.spawnPoint.pot" x="774.667" y="481.333">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1338" name="object.spawnPoint.pot" x="757.333" y="530.667">
+  <object id="1338" name="object.spawnPoint.pot" x="789.333" y="530.667">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1339" name="object.spawnPoint.pot" x="792.667" y="553.333">
+  <object id="1339" name="object.spawnPoint.pot" x="824.667" y="553.333">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1340" name="object.spawnPoint.pot" x="857.333" y="463.333">
+  <object id="1340" name="object.spawnPoint.pot" x="889.333" y="463.333">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1341" name="object.spawnPoint.pot" x="889.333" y="406">
+  <object id="1341" name="object.spawnPoint.pot" x="921.333" y="406">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1342" name="object.spawnPoint.pot" x="755.333" y="573.333">
+  <object id="1342" name="object.spawnPoint.pot" x="787.333" y="573.333">
    <properties>
     <property name="spawn" value="object__pot"/>
    </properties>
    <point/>
   </object>
-  <object id="1343" name="npc.eikinskjaldi" x="480" y="704">
+  <object id="1343" name="npc.eikinskjaldi" x="512" y="704">
    <properties>
     <property name="unitId" value="loa2_mine_eikinskjaldi__at_training_grounds"/>
    </properties>
    <point/>
   </object>
-  <object id="1344" name="npc.skafid" x="384" y="256">
+  <object id="1344" name="npc.skafid" x="416" y="256">
    <properties>
     <property name="unitId" value="loa2_mine_skafid__at_storage"/>
    </properties>
    <point/>
   </object>
-  <object id="1345" name="object.signboard" x="608" y="452">
+  <object id="1345" name="object.signboard" x="640" y="452">
    <properties>
     <property name="displayText">Storage for mining material.
 Only for dwarven miners!. </property>
@@ -236,131 +236,161 @@ Only for dwarven miners!. </property>
    </properties>
    <point/>
   </object>
+  <object id="1346" name="object.spawnPoint" x="80.5" y="624.5">
+   <properties>
+    <property name="spawn" value="playerManaBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1347" name="object.spawnPoint" x="176.5" y="624.5">
+   <properties>
+    <property name="spawn" value="playerAmmoArrowBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1348" name="object.spawnPoint" x="272.375" y="624.5">
+   <properties>
+    <property name="spawn" value="playerAmmoBombBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1349" name="object.spawnPoint" x="240.5" y="848.625">
+   <properties>
+    <property name="spawn" value="playerShieldBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1350" name="object.spawnPoint" x="112.625" y="848.5">
+   <properties>
+    <property name="spawn" value="playerHealthBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="12" name="physics" locked="1">
-  <object id="1221" x="320.063" y="77.995">
+  <object id="1221" x="352.063" y="77.995">
    <polygon points="0,0 9.5,-3.25 11.25,-14.5"/>
   </object>
-  <object id="1222" x="331.335" y="63.415">
+  <object id="1222" x="363.335" y="63.415">
    <polygon points="0,0 20.5652,-20.1304 -0.26087,-20.2174"/>
   </object>
-  <object id="1223" x="351.942" y="43.205">
+  <object id="1223" x="383.942" y="43.205">
    <polygon points="0,0 24.1821,19.9185 23.8696,-0.706522"/>
   </object>
-  <object id="1224" x="376.125" y="62.995">
+  <object id="1224" x="408.125" y="62.995">
    <polygon points="0,0 1.6875,11.75 7.5625,14.1875"/>
   </object>
-  <object id="1250" x="320" y="608.125" width="128.083" height="77.875"/>
-  <object id="1251" x="576" y="704" width="32" height="14"/>
-  <object id="1252" x="608" y="353" width="32" height="77"/>
-  <object id="1253" x="416" y="224" width="32.25" height="14"/>
-  <object id="1254" x="480" y="256" width="64" height="14"/>
-  <object id="1255" x="672" y="288.333" width="32" height="77.6667"/>
-  <object id="1256" x="864" y="352" width="31.8788" height="14"/>
-  <object id="1257" x="736" y="256" width="95.6667" height="78"/>
-  <object id="1258" x="640" y="594" width="192" height="92"/>
-  <object id="1259" x="32" y="514" width="255.333" height="76"/>
-  <object id="1261" x="448" y="672">
+  <object id="1250" x="352" y="608.125" width="128.083" height="77.875"/>
+  <object id="1251" x="608" y="704" width="32" height="14"/>
+  <object id="1252" x="640" y="353" width="32" height="77"/>
+  <object id="1253" x="448" y="224" width="32.25" height="14"/>
+  <object id="1254" x="512" y="256" width="64" height="14"/>
+  <object id="1255" x="704" y="288.333" width="32" height="77.6667"/>
+  <object id="1256" x="896" y="352" width="31.8788" height="14"/>
+  <object id="1257" x="768" y="256" width="95.6667" height="78"/>
+  <object id="1258" x="672" y="594" width="192" height="92"/>
+  <object id="1259" x="32" y="512" width="287.333" height="78"/>
+  <object id="1261" x="480" y="672">
    <polygon points="0,0 0,14 32,0"/>
   </object>
-  <object id="1262" x="608" y="704">
+  <object id="1262" x="640" y="704">
    <polygon points="0,0 0,14 32,0"/>
   </object>
-  <object id="1263" x="640" y="416">
+  <object id="1263" x="672" y="416">
    <polygon points="0,0 0,14 32,0"/>
   </object>
-  <object id="1264" x="448" y="480">
+  <object id="1264" x="480" y="480">
    <polygon points="0,0 0,14 32,0"/>
   </object>
-  <object id="1265" x="320" y="672">
+  <object id="1265" x="352" y="672">
    <polygon points="0,0 -32,0 0,13.9778"/>
   </object>
-  <object id="1266" x="576" y="704">
+  <object id="1266" x="608" y="704">
    <polygon points="0,0 -32,0 0,13.9778"/>
   </object>
-  <object id="1267" x="608" y="416">
+  <object id="1267" x="640" y="416">
    <polygon points="0,0 -32,0 0,13.9778"/>
   </object>
-  <object id="1268" x="576" y="320">
+  <object id="1268" x="608" y="320">
    <polygon points="0,0 -32,0 0,13.9778"/>
   </object>
-  <object id="1269" x="864" y="352">
+  <object id="1269" x="896" y="352">
    <polygon points="0,0 -32,0 0,13.9778"/>
   </object>
-  <object id="1270" x="480" y="256">
+  <object id="1270" x="512" y="256">
    <polygon points="0,0 -32,0 0,13.9778"/>
   </object>
-  <object id="1271" x="416" y="224">
+  <object id="1271" x="448" y="224">
    <polygon points="0,0 -32,0 0,13.9778"/>
   </object>
-  <object id="1272" x="352.003" y="367.727" width="64" height="16.25"/>
-  <object id="1273" x="416" y="384">
+  <object id="1272" x="384.003" y="367.727" width="64" height="16.25"/>
+  <object id="1273" x="448" y="384">
    <polygon points="0,0 32,0 0.00390625,-16.2734"/>
   </object>
-  <object id="1274" x="448" y="416">
+  <object id="1274" x="480" y="416">
    <polygon points="0,0 32,0 0.00390625,-16.2734"/>
   </object>
-  <object id="1275" x="608" y="544">
+  <object id="1275" x="640" y="544">
    <polygon points="0,0 32,0 0.00390625,-16.2734"/>
   </object>
-  <object id="1276" x="448" y="800">
+  <object id="1276" x="480" y="800">
    <polygon points="0,0 32,0 0.00390625,-16.2734"/>
   </object>
-  <object id="1277" x="672" y="864">
+  <object id="1277" x="704" y="864">
    <polygon points="0,0 32,0 0.00390625,-16.2734"/>
   </object>
-  <object id="1279" x="704" y="352">
+  <object id="1279" x="736" y="352">
    <polygon points="0,0 0,14 32,0"/>
   </object>
-  <object id="1280" x="320" y="352">
+  <object id="1280" x="352" y="352">
    <polygon points="0,0 32,0 0.00390625,-16.2734"/>
   </object>
-  <object id="1281" x="448" y="608">
+  <object id="1281" x="480" y="608">
    <polygon points="0,0 32,0 0.00390625,-16.2734"/>
   </object>
-  <object id="1283" x="320" y="800">
+  <object id="1283" x="352" y="800">
    <polygon points="0,0 -32,0 0,-16.2667"/>
   </object>
-  <object id="1284" x="576" y="640">
+  <object id="1284" x="608" y="640">
    <polygon points="0,0 -32,0 0,-16.2667"/>
   </object>
-  <object id="1285" x="608" y="544">
+  <object id="1285" x="640" y="544">
    <polygon points="0,0 -32,0 0,-16.2667"/>
   </object>
-  <object id="1286" x="864" y="544">
+  <object id="1286" x="896" y="544">
    <polygon points="0,0 -32,0 0,-16.2667"/>
   </object>
-  <object id="1287" x="832" y="864">
+  <object id="1287" x="864" y="864">
    <polygon points="0,0 -32,0 0,-16.2667"/>
   </object>
-  <object id="1288" x="864" y="527.667" width="32" height="16.3333"/>
-  <object id="1289" x="896" y="288" width="32" height="256"/>
-  <object id="1290" x="832" y="256" width="64" height="96"/>
-  <object id="1291" x="704" y="256" width="32" height="96"/>
-  <object id="1292" x="640" y="288" width="32" height="128"/>
-  <object id="1293" x="576" y="256" width="32" height="160"/>
-  <object id="1294" x="544" y="192" width="32" height="128"/>
-  <object id="1295" x="448" y="160" width="96" height="96"/>
-  <object id="1296" x="384" y="0" width="64" height="224"/>
-  <object id="1297" x="288" y="0" width="96" height="32"/>
-  <object id="1298" x="288" y="32" width="32" height="320"/>
-  <object id="1299" x="320" y="352" width="32" height="32"/>
-  <object id="1300" x="416" y="384" width="32" height="288"/>
-  <object id="1301" x="448" y="608" width="32" height="64"/>
-  <object id="1302" x="448" y="416" width="32" height="64"/>
-  <object id="1303" x="288" y="512" width="32" height="160"/>
+  <object id="1288" x="896" y="527.667" width="32" height="16.3333"/>
+  <object id="1289" x="928" y="288" width="32" height="256"/>
+  <object id="1290" x="864" y="256" width="64" height="96"/>
+  <object id="1291" x="736" y="256" width="32" height="96"/>
+  <object id="1292" x="672" y="288" width="32" height="128"/>
+  <object id="1293" x="608" y="256" width="32" height="160"/>
+  <object id="1294" x="576" y="192" width="32" height="128"/>
+  <object id="1295" x="480" y="160" width="96" height="96"/>
+  <object id="1296" x="416" y="0" width="64" height="224"/>
+  <object id="1297" x="320" y="0" width="96" height="32"/>
+  <object id="1298" x="320" y="32" width="32" height="320"/>
+  <object id="1299" x="352" y="352" width="32" height="32"/>
+  <object id="1300" x="448" y="384" width="32" height="288"/>
+  <object id="1301" x="480" y="608" width="32" height="64"/>
+  <object id="1302" x="480" y="416" width="32" height="64"/>
+  <object id="1303" x="320" y="512" width="32" height="160"/>
   <object id="1304" x="0" y="512" width="32" height="384"/>
-  <object id="1305" x="320" y="783.636" width="127.818" height="16.3636"/>
-  <object id="1306" x="448" y="800" width="32" height="64"/>
-  <object id="1307" x="480" y="847.75" width="192" height="16.25"/>
-  <object id="1308" x="672" y="864" width="32" height="128"/>
-  <object id="1309" x="800" y="864" width="32" height="128"/>
-  <object id="1310" x="832" y="640" width="32" height="224"/>
-  <object id="1311" x="544" y="640" width="96" height="64"/>
-  <object id="1312" x="576" y="544" width="64" height="96"/>
-  <object id="1313" x="832" y="544" width="32" height="96"/>
-  <object id="1314" x="288" y="800" width="32" height="96"/>
-  <object id="1315" x="32" y="880" width="255.5" height="16.25"/>
+  <object id="1305" x="352" y="783.636" width="127.818" height="16.3636"/>
+  <object id="1306" x="480" y="800" width="32" height="64"/>
+  <object id="1307" x="512" y="847.75" width="192" height="16.25"/>
+  <object id="1308" x="704" y="864" width="32" height="128"/>
+  <object id="1309" x="832" y="864" width="32" height="128"/>
+  <object id="1310" x="864" y="640" width="32" height="224"/>
+  <object id="1311" x="576" y="640" width="96" height="64"/>
+  <object id="1312" x="608" y="544" width="64" height="96"/>
+  <object id="1313" x="864" y="544" width="32" height="96"/>
+  <object id="1314" x="320" y="800" width="32" height="96"/>
+  <object id="1315" x="32" y="880" width="287.5" height="16.25"/>
  </objectgroup>
  <objectgroup id="13" name="unreachable_area_physics" locked="1"/>
  <objectgroup id="15" name="ground_physics" locked="1"/>

@@ -6,8 +6,13 @@ public enum DataItemPropertyKeys {
 	MANA("mana"), //
 	VALUE("value"), // 
 	ARMOR("armor"), //
-	AMMO("ammo"), 
-	AMMO_TYPE("ammoType"); //
+	AMMO("ammo"), // 
+	AMMO_TYPE("ammoType"), //
+	
+	HEALTH_ABSOLUTE("healthAbsolute"), //
+	ARMOR_ABSOLUTE("armorAbsolute"), //
+	MANA_ABSOLUTE("manaAbsolute"), //
+	AMMO_ABSOLUTE("ammoAbsolute"); // 
 	
 	private final String propertyName;
 	

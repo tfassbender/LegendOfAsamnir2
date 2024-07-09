@@ -47,4 +47,23 @@
 		ammo: 5,
 		ammoType: arrow
 	},
+	
+	
+	health_half: {
+        healthAbsolute: 50,
+	},
+	shield_half: {
+        armorAbsolute: 50,
+	},
+	mana_half: {
+        manaAbsolute: 50,
+	},
+	arrow_half: {
+	    ammoAbsolute: 50, // percent
+	    ammoType: arrow
+	},
+	bomb_half: {
+        ammoAbsolute: 50, // percent
+        ammoType: bomb
+	},
 }

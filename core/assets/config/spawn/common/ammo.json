@@ -11,5 +11,5 @@
 	playerLowOnMana: {
 		spawnType: item.mana,
 		events: [playerLowOnMana, NEW_GAME_STARTED, GAME_LOADED, PLAYER_RESPAWNED, MAP_ENTERED],
-	}
+	},
 }

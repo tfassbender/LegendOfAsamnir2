@@ -76,6 +76,29 @@ public class CharacterItemDataHandler implements DataHandler {
 				characterProperties.increaseCoins(itemValue);
 			}
 			
+			if (item.containsProperty(DataItemPropertyKeys.HEALTH_ABSOLUTE.getPropertyName())) {
+				float itemHealthAbsolute = item.getProperty(DataItemPropertyKeys.HEALTH_ABSOLUTE.getPropertyName(), Float.class);
+				characterProperties.increaseHealthTo(itemHealthAbsolute);
+			}
+			if (item.containsProperty(DataItemPropertyKeys.MANA_ABSOLUTE.getPropertyName())) {
+				float itemManaAbsolute = item.getProperty(DataItemPropertyKeys.MANA_ABSOLUTE.getPropertyName(), Float.class);
+				characterProperties.increaseManaTo(itemManaAbsolute);
+			}
+			if (item.containsProperty(DataItemPropertyKeys.ARMOR_ABSOLUTE.getPropertyName())) {
+				float itemArmorAbsolute = item.getProperty(DataItemPropertyKeys.ARMOR_ABSOLUTE.getPropertyName(), Float.class);
+				characterProperties.increaseArmorTo(itemArmorAbsolute);
+			}
+			if (item.containsProperty(DataItemPropertyKeys.AMMO_ABSOLUTE.getPropertyName())) {
+				float itemAmmoAbsolute = item.getProperty(DataItemPropertyKeys.AMMO_ABSOLUTE.getPropertyName(), Float.class);
+				if (item.containsProperty(DataItemPropertyKeys.AMMO_TYPE.getPropertyName())) {
+					DataItemAmmoType ammoType = DataItemAmmoType.getByNameIgnoreCase(item.getProperty(DataItemPropertyKeys.AMMO_TYPE.getPropertyName(), String.class));
+					increaseAmmoTo(itemAmmoAbsolute, ammoType);
+				}
+				else {
+					throw new IllegalStateException("The ammo item has no ammo type defined. It should be added to default_values.json file.");
+				}
+			}
+			
 			item.pickUp(playSoundWhenPickingUpItem);
 		}
 	}
@@ -87,6 +110,19 @@ public class CharacterItemDataHandler implements DataHandler {
 				break;
 			case BOMB:
 				properties.ammoBomb = Math.min(properties.ammoBomb + itemAmmo, getMaxAmmoBomb());
+				break;
+			default:
+				throw new IllegalStateException("Unexpected ItemAmmoType: " + ammoType);
+		}
+	}
+	
+	private void increaseAmmoTo(float itemAmmoAbsolute, DataItemAmmoType ammoType) {
+		switch (ammoType) {
+			case ARROW:
+				properties.ammoArrow = Math.max(properties.ammoArrow, (int) (itemAmmoAbsolute / 100 * getMaxAmmoArrow()));
+				break;
+			case BOMB:
+				properties.ammoBomb = Math.max(properties.ammoBomb, (int) (itemAmmoAbsolute / 100 * getMaxAmmoBomb()));
 				break;
 			default:
 				throw new IllegalStateException("Unexpected ItemAmmoType: " + ammoType);
@@ -111,6 +147,17 @@ public class CharacterItemDataHandler implements DataHandler {
 				return properties.ammoArrow;
 			case BOMB:
 				return properties.ammoBomb;
+			default:
+				throw new IllegalStateException("Unexpected ItemAmmoType: " + ammoType);
+		}
+	}
+	
+	public int getMaxAmmo(DataItemAmmoType ammoType) {
+		switch (ammoType) {
+			case ARROW:
+				return getMaxAmmoArrow();
+			case BOMB:
+				return getMaxAmmoBomb();
 			default:
 				throw new IllegalStateException("Unexpected ItemAmmoType: " + ammoType);
 		}

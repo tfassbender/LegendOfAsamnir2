@@ -28,6 +28,7 @@ public enum EventType {
 	//*******************************
 	PLAYER_RESPAWNED, //
 	OUT_OF_AMMO, //
+	PLAYER_STATS_BELOW_THRESHOLD, //
 	TAKE_PLAYERS_COINS, //
 	TAKE_PLAYERS_METAL_INGOTS, //
 	GIVE_COINS_TO_PLAYER, //

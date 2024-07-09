@@ -63,6 +63,31 @@
 	},
 	
 	//**********************************
+	//*** thresholds
+	//**********************************
+	
+	health_half: {
+        texture: health,
+        pickUpSound: health_small,
+	},
+	shield_half: {
+        texture: shield,
+        pickUpSound: pickup
+	},
+	mana_half: {
+        texture: mana,
+        pickUpSound: mana
+	},
+	arrow_half: {
+        texture: arrow,
+        pickUpSound: pickup_ammo
+	},
+	bomb_half: {
+        texture: bomb,
+        pickUpSound: pickup
+	},
+	
+	//**********************************
 	//*** demo
 	//**********************************
 	
