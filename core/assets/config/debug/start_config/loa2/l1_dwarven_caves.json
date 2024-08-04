@@ -1,0 +1,28 @@
+{
+	startingPointMapping: {
+		2: destroyable_walls,
+	},
+	eventsLists: {
+		initial: {
+			subConfigPath: config/debug/start_config/loa2/main.json
+			subConfigName: final,
+			events: []
+		},
+		
+		destroyable_walls: {
+			subConfigPath: config/debug/start_config/loa2/main.json
+			subConfigName: final,
+			events: [
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: bomb,
+				}
+			]
+		},
+		
+		final: {
+			subConfigName: initial,
+			events: []
+		}
+	}
+}

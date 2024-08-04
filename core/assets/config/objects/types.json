@@ -178,7 +178,7 @@
 		physicsBodyOffsetFactorY: 0.01,
 		
 		destroySound: rock_break,
-		health: 20,
+		health: 10,
 		requiredAttackType: BOMB,
 	},
 	spawnPoint: {

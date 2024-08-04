@@ -1,0 +1,37 @@
+{
+	id: loa2_l1_dwarven_caves_blocked_tunnel_up_cutscene,
+	controlledActions: {
+		
+		thorin_text: {
+			startsWithCutscene: true,
+			
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "This tunnel doesn't seem to lead anywhere. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
+			]
+		},
+				
+		move_back: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -1},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

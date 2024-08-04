@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="92" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="1920">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="92" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="1953">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -59,7 +59,7 @@
    eJzt0cENgCAQRcFN6EOtRKlE6L8KOWwLBowzyb9v9kUAAAAAX7GViD13lNnX/Ns5/n/lqhZTabEOLdZxj/+3XNcCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABe9QD1fwUp
   </data>
  </layer>
- <objectgroup id="11" name="objects" locked="1">
+ <objectgroup id="11" name="objects">
   <object id="1908" name="object.eventObject" x="1984" y="416" width="63.652" height="7.9394">
    <properties>
     <property name="eventParameter" value="loa2_l1_mine_main__blocked_tunnel_up"/>
@@ -119,6 +119,151 @@
   <object id="1919" name="player.startingPosition" x="704" y="96">
    <properties>
     <property name="startingPointId" value="1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1920" name="enemy.mini_golem" x="2080" y="1120">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1921" name="object.key_wall" x="1536" y="1376">
+   <properties>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1930" name="object.destroyable_wall" x="2304" y="704">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1931" name="object.destroyable_wall" x="2315.33" y="674.667">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1932" name="object.destroyable_wall" x="2314.33" y="724.333">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1933" name="object.destroyable_wall" x="2338" y="733.333">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1934" name="object.destroyable_wall" x="2362.33" y="690.333">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1935" name="object.destroyable_wall" x="2405.67" y="641.667">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1936" name="object.destroyable_wall" x="2524.33" y="613.333">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1937" name="object.destroyable_wall" x="2483" y="700.667">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1938" name="object.destroyable_wall" x="2511.33" y="792">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1939" name="object.destroyable_wall" x="2569.33" y="826">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1940" name="object.destroyable_wall" x="2690" y="580">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1941" name="object.destroyable_wall" x="2757" y="602">
+   <properties>
+    <property name="destroyedEventText" value="dwarven_cave_rock_in_cave_destroyed"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1943" name="player.startingPosition" x="2143" y="755.333">
+   <properties>
+    <property name="startingPointId" value="2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1944" name="object.spawnPoint.pot" x="1591" y="533">
+   <properties>
+    <property name="spawn" value="object__pot"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1945" name="object.spawnPoint.pot" x="1558.33" y="561.667">
+   <properties>
+    <property name="spawn" value="object__pot"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1946" name="object.spawnPoint.pot" x="1723.67" y="559.333">
+   <properties>
+    <property name="spawn" value="object__pot"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1947" name="object.spawnPoint.barrel" x="1621.33" y="525.333">
+   <properties>
+    <property name="spawn" value="object__barrel"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1948" name="object.spawnPoint.barrel" x="1668" y="526">
+   <properties>
+    <property name="spawn" value="object__barrel"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1949" name="object.spawnPoint.barrel" x="1831.33" y="610">
+   <properties>
+    <property name="spawn" value="object__barrel"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1950" name="object.spawnPoint.barrel" x="1888" y="649">
+   <properties>
+    <property name="spawn" value="object__barrel"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1951" name="object.spawnPoint.barrel" x="1920" y="649">
+   <properties>
+    <property name="spawn" value="object__barrel"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1952" name="npc.nyr" x="1997" y="704.333">
+   <properties>
+    <property name="unitId" value="loa2_mine_nyr__at_tunnel"/>
    </properties>
    <point/>
   </object>

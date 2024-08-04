@@ -225,9 +225,11 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	public void drawStatsBar(ShapeRenderer shapeRenderer) {
 		if (drawStatsBar()) {
 			AnimationSpriteConfig spriteConfig = getAnimation().getSpriteConfig();
-			float x = body.getPosition().x - spriteConfig.width * 0.5f * Constants.WORLD_TO_SCREEN + typeConfig.healthBarOffsetX;
+			float width = spriteConfig.width * typeConfig.healthBarWidthFactor;
+			float x = body.getPosition().x - spriteConfig.width * 0.5f * Constants.WORLD_TO_SCREEN // 
+					+ (spriteConfig.width - width) / 2f * Constants.WORLD_TO_SCREEN // center the status bar
+					+ typeConfig.healthBarOffsetX;
 			float y = body.getPosition().y + spriteConfig.height * 0.5f * Constants.WORLD_TO_SCREEN + typeConfig.healthBarOffsetY;
-			float width = getAnimation().getSpriteConfig().width * typeConfig.healthBarWidthFactor;
 			drawStatsBar(shapeRenderer, x, y, width);
 		}
 	}

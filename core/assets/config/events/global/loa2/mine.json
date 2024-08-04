@@ -1,5 +1,53 @@
 {
 	//*******************************************
+	//*** cutscenes - event objects touched
+	//*******************************************
+	
+	loa2_l1_mine_main__blocked_tunnel_up: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_mine_main__blocked_tunnel_up,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l1_dwarven_caves_blocked_tunnel_up_cutscene,
+		}
+	},
+	
+	loa2_l1_mine_main__blocked_tunnel_down: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_mine_main__blocked_tunnel_down,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l1_dwarven_caves_blocked_tunnel_down_cutscene,
+		}
+	},
+	
+	loa2_l1_mine_main__blocked_tunnel_left: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_mine_main__blocked_tunnel_left,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l1_dwarven_caves_blocked_tunnel_left_cutscene,
+		}
+	},
+	
+	loa2_l1_mine_main__blocked_tunnel_right: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_mine_main__blocked_tunnel_right,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l1_dwarven_caves_blocked_tunnel_right_cutscene,
+		}
+	},
+	
+	//*******************************************
 	//*** cutscenes - npc interaction
 	//*******************************************
 	
@@ -24,6 +72,33 @@
 			cutsceneId: loa2_mine_eikinskjaldi__at_training_grounds_cutscene,
 		}
 	},
+	
+	loa2_l1_mine_main__nyr_in_northern_tunnel: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l1_mine_main__nyr_in_northern_tunnel,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l1_mine_main_nyr_in_northern_tunnel_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** destroyable objects
+	//*******************************************
+	
+	loa2_l1_mine_main__way_cleared: {
+		event: {
+			eventType: DESTROYABLE_OBJECT_DESTROYED,
+			stringValue: dwarven_cave_rock_in_cave_destroyed,
+		},
+		executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: loa2_l1_mine_main__way_cleared,
+			globalValue: true,
+		}
+	},
 
 	//*******************************************
 	//*** change map
@@ -38,6 +113,30 @@
 		executionParameters: {
 			map: loa2_main,
 			startingPointId: 5,
+		}
+	},
+	
+	loa2_l1_mine_entry__goto_l1_main: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_mine_entry__goto_l1_main,
+		}
+        executionType: CHANGE_MAP,
+        executionParameters: {
+            map: loa2_dwarven_mine_main,
+            startingPointId: 0,
+		}
+	},
+	
+	loa2_l1_mine_main__goto_l1_entry: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l1_mine_main__goto_l1_entry,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_dwarven_mine_entry,
+			startingPointId: 1,
 		}
 	},
 	

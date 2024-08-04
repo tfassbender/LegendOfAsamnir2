@@ -39,6 +39,7 @@
 	
 	skafid: config/npc/levels/loa2/dwarven_mine/skafid.json,
 	eikinskjaldi: config/npc/levels/loa2/dwarven_mine/eikinskjaldi.json,
+	nyr: config/npc/levels/loa2/dwarven_mine/nyr.json,
 
 //	//************************************************
 //	//*** Demo Level

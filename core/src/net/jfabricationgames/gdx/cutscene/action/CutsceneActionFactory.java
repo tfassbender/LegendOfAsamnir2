@@ -32,6 +32,8 @@ public class CutsceneActionFactory {
 				return new CutscenePlayerChoiceAction(unitProvider, actionConfig);
 			case CONDITION:
 				return new CutsceneConditionAction(unitProvider, actionConfig);
+			case SWITCH_CONDITION:
+				return new CutsceneSwitchConditionAction(unitProvider, actionConfig);
 			case COLOR_TRANSITION:
 				return new CutsceneColorTransitionAction(unitProvider, actionConfig, hudCamera);
 			case PLAY_SOUND:

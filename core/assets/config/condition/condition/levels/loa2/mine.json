@@ -1,6 +1,6 @@
 {
 	//*******************************************
-	//*** cutscenes
+	//*** Dwarven Mine Entry
 	//*******************************************
 	
 	loa2_mine_entry__key_collected: {
@@ -30,6 +30,45 @@
         conditionType: GLOBAL_VALUE_SET,
         parameters: {
             key: loa2_mine_entry__training_dummy_reward_gained,
+            expectedValue: true,
+		}
+	},
+	
+	//*******************************************
+	//*** Dwarven Mine Main
+	//*******************************************
+	
+	loa2_mine_main__reward_claimed: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_mine_main__golem_side_quest_reward_gained,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_mine_main__golems_killed: {
+		// TODO this condition needs to be changed - it's just a placeholder for testing
+	
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_mine_main__golems_killed,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_mine_main__key_collected: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_nyr_key_given,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_mine_main__way_cleared: {
+		// destroying the rocks will send an event - an event handler (by config) will then set the global value
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_mine_main__way_cleared,
             expectedValue: true,
 		}
 	},

@@ -60,6 +60,15 @@
 	//********************************************************
 	config/cutscene/loa2/mine/skafid.json,
 	config/cutscene/loa2/mine/eikinskjaldi.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Dwarven Mine - Main
+	//********************************************************
+	config/cutscene/loa2/mine/blocked_tunnel_down.json,
+	config/cutscene/loa2/mine/blocked_tunnel_left.json,
+	config/cutscene/loa2/mine/blocked_tunnel_right.json,
+	config/cutscene/loa2/mine/blocked_tunnel_up.json,
+	config/cutscene/loa2/mine/nyr.json,
 
 	//********************************************************
 	//*** Demo Level

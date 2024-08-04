@@ -8,11 +8,16 @@ import com.badlogic.gdx.maps.MapProperties;
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.object.GameObject;
 import net.jfabricationgames.gdx.object.GameObjectMap;
 import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 
 public class DestroyableObject extends GameObject {
+	
+	private static final String MAP_PROPERTY_KEY_DESTROYED_EVENT_TEXT = "destroyedEventText";
 	
 	protected float health;
 	protected boolean destroyed;
@@ -63,6 +68,10 @@ public class DestroyableObject extends GameObject {
 		playDestroySound();
 		dropItems();
 		removePhysicsBody();
+		
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.DESTROYABLE_OBJECT_DESTROYED) //
+				.setStringValue(mapProperties.get(MAP_PROPERTY_KEY_DESTROYED_EVENT_TEXT, String.class)));
 	}
 	
 	protected AnimationDirector<TextureRegion> getDestroyAnimation() {

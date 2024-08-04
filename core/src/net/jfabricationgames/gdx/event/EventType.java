@@ -50,6 +50,7 @@ public enum EventType {
 	CLOSE_LOCK, //
 	SET_STATE_SWITCH_STATE, //
 	CHANGE_SIGNBOARD_TEXT, //
+	DESTROYABLE_OBJECT_DESTROYED, //
 	//*******************************
 	//*** Items
 	//*******************************

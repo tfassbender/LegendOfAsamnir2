@@ -1,0 +1,283 @@
+{
+	id: loa2_l1_mine_main_nyr_in_northern_tunnel_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_mine_main__reward_claimed,
+					executedStateName: nyr__after_reward_claimed
+				},
+				{
+					conditionId: loa2_mine_main__golems_killed,
+					executedStateName: nyr__give_reward
+				},
+				{
+					conditionId: loa2_mine_main__key_collected,
+					executedStateName: nyr__explain_golem_quest
+				},
+				{
+					conditionId: loa2_mine_main__way_cleared,
+					executedStateName: nyr__give_key
+				},
+				{
+					// default case
+					executedStateName: nyr__clear_way_quest
+				},
+			],
+		},
+		
+		//#####################################################
+		//### clear way quest (before way is cleared)
+		//#####################################################
+		
+		nyr__clear_way_quest: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "Hey Thorin!\nWhat are you doing here? Did you come to help me get rid of all these annoying golems?  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin__clear_way_quest_1,
+           	],
+		},
+		
+		thorin__clear_way_quest_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'm searching for a rune. But the way is blocked by a gate.\n\nDo you have a key?  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	nyr__clear_way_quest_2,
+			],
+		},
+		
+		nyr__clear_way_quest_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "Yes, I have a key. But if you open the gate, these golems will get here again and I can't work on the tunnel anymore. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	nyr__clear_way_quest_3,
+			],
+		},
+		
+		nyr__clear_way_quest_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "But if you could help me get rid of these rocks that block the way to the tunnel behind me, I could give you the key. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	nyr__clear_way_quest_4,
+			],
+		},
+		
+		nyr__clear_way_quest_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "Your axe Asamnir should be able to break them with ease.\n\nOr you could use something explosive.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin__clear_way_quest_2,
+			],
+		},
+		
+		thorin__clear_way_quest_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'll see what I can do. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		//#####################################################
+		//### give key (after way is cleared)
+		//#####################################################
+		
+		nyr__give_key: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "Hey Thorin!\nYou cleared the way already?! Great job! Now I can go back to work.\nHere is the key. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	give_key,
+           	],
+		},
+		
+		give_key: {
+			type: EVENT,
+			
+			event: {
+				eventType: GIVE_ITEM_TO_PLAYER,
+				stringValue: key,
+			},
+			
+			executes: [
+				set_global_value_key_given,
+			]
+		},
+		
+		set_global_value_key_given: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l1_nyr_key_given, value: true}",
+			},
+			
+			executes: [
+                nyr__give_key_2,
+			]
+		},
+		
+		nyr__give_key_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "If you want to help a bit more, you can kill some of these golems on your way.\nIf you kill ... lets say 10 of them, I'll give you a little reward. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		//#####################################################
+		//### explain golem quest
+		//#####################################################
+		
+		nyr__explain_golem_quest: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "Hey Thorin!\nIt would realy help me if you could kill some more of these golems. \nIf you can kill at least 10 of them I'll give you a reward. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		//#####################################################
+		//### give reward
+		//#####################################################
+		
+		nyr__give_reward: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "Hey Thorin!\nSeems like you got rid of some golems. Thanks for all your help. \nHere, take this as a reward. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	give_metal_ingot_event,
+           	],
+		},
+		
+		give_metal_ingot_event: {
+			type: EVENT,
+			
+			event: {
+				eventType: GIVE_ITEM_TO_PLAYER,
+				stringValue: metal_ingot,
+			},
+			
+			executes: [
+				set_gloal_value__reward_given,
+			]
+		},
+		
+		set_gloal_value__reward_given: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l1_mine_main__golem_side_quest_reward_gained, value: true}",
+			},
+			
+			executes: [
+				end,
+			]
+		},
+		
+		//#####################################################
+		//### after reward claimed
+		//#####################################################
+		
+		nyr__after_reward_claimed: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Nyr",
+                colorHeader: #573400,
+                displayText: "Hey Thorin!\nThanks for getting rid of all these annoying golems.\nNow I can go back to work. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
