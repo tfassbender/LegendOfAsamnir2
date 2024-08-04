@@ -21,4 +21,5 @@ public interface StatsCharacter {
 	public Array<String> getActionList();
 	
 	public int getAmmo(String ammoType);
+	public int getTokens(String tokenName);
 }

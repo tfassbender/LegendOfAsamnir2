@@ -185,9 +185,37 @@
             waitForEventToFinish: true,
             
             executes: [
-            	end,
+            	start_token_quest,
 			],
 		},
+		
+		start_token_quest: {
+			type: EVENT,
+			
+			// set the global value to start the token quest
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest, value: l1_golem}",
+			},
+			
+			executes: [
+                start_token_quest_2,
+			]
+		},
+		
+		start_token_quest_2: {
+			type: EVENT,
+			
+			// set the global value to restict the token quest to the current map (on other maps, the token icons will not be shown in the HUD)
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest_map_exclusive, value: loa2_dwarven_mine_main}",
+			},
+			
+			executes: [
+                end,
+			]
+		}
 		
 		//#####################################################
 		//### explain golem quest
@@ -251,9 +279,37 @@
 			},
 			
 			executes: [
-				end,
+				end_token_quest,
 			]
 		},
+		
+		end_token_quest: {
+			type: EVENT,
+			
+			// reset the set the global value to start the token quest
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest, value: ''}",
+			},
+			
+			executes: [
+                end_token_quest_2,
+			]
+		},
+		
+		end_token_quest_2: {
+			type: EVENT,
+			
+			// set the global value to restict the token quest to the current map (on other maps, the token icons will not be shown in the HUD)
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest_map_exclusive, value: ''}",
+			},
+			
+			executes: [
+                end,
+			]
+		}
 		
 		//#####################################################
 		//### after reward claimed

@@ -2,6 +2,8 @@ package net.jfabricationgames.gdx.condition;
 
 import java.util.function.Function;
 
+import com.badlogic.gdx.Gdx;
+
 import net.jfabricationgames.gdx.data.handler.CharacterItemDataHandler;
 import net.jfabricationgames.gdx.data.handler.CharacterPropertiesDataHandler;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
@@ -108,6 +110,25 @@ public enum ConditionType {
 			String runeName = condition.parameters.get(PARAMETER_RUNE_NAME);
 			RuneType rune = RuneType.getByContainingName(runeName);
 			return rune.isCollected();
+		}
+	},
+	TOKENS_COLLECTED {
+		
+		private static final String PARAMETER_TOKEN_NAME = "tokenName";
+		private static final String PARAMETER_TOKEN_AMOUNT = "neededAmount";
+		
+		@Override
+		public boolean check(Condition condition) {
+			String token = condition.parameters.get(PARAMETER_TOKEN_NAME, "<token_name_not_set>");
+			int amount = Integer.parseInt(condition.parameters.get(PARAMETER_TOKEN_AMOUNT, "-1"));
+			
+			Gdx.app.debug(getClass().getSimpleName(), "Checking if the player has collected at least " + amount + " tokens of type " + token);
+			if (amount < 0) {
+				Gdx.app.error(getClass().getSimpleName(), "The amount of tokens (of type: " + token //
+						+ ") for the condition is not set correctly or not set at all. Using -1 as fallback.");
+			}
+			
+			return CharacterPropertiesDataHandler.getInstance().getTokens(token) >= amount;
 		}
 	};
 	

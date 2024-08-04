@@ -61,6 +61,10 @@
         texture: metal_ingot_small,
         pickUpSound: pickup
 	},
+	token_l1_golem: {
+        texture: token,
+        pickUpSound: pickup_5
+	},
 	
 	//**********************************
 	//*** thresholds

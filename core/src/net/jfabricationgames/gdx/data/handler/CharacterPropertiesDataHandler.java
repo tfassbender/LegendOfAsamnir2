@@ -250,6 +250,16 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		return Math.round(properties.metalIngots);
 	}
 	
+	public void increaseToken(String token) {
+		properties.tokens.put(token, properties.tokens.get(token, 0) + 1);
+	}
+	public void resetTokens(String token) {
+		properties.tokens.put(token, 0);
+	}
+	public int getTokens(String token) {
+		return properties.tokens.get(token, 0);
+	}
+	
 	public void changeStatsAfterRespawn() {
 		properties.health = 0f;
 		properties.increaseHealth = properties.maxHealth;

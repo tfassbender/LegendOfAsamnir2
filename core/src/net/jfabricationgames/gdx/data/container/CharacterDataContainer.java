@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.data.container;
 
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.ObjectMap;
 
 public class CharacterDataContainer {
 	
@@ -37,7 +38,8 @@ public class CharacterDataContainer {
 	public final float coinsDecreasePerSecond = 20f;
 	
 	public float metalIngots;
-	public float maxMetalIngots = 999;
+	
+	public ObjectMap<String, Integer> tokens = new ObjectMap<>();
 	
 	public Vector2 respawnPoint;
 	public Vector2 position;

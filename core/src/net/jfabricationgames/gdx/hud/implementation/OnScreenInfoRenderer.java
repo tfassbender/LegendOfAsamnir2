@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
@@ -27,6 +28,9 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 	private static final String ITEM_AMMO_TYPE_ARROW = "ARROW";
 	private static final String ITEM_AMMO_TYPE_BOMB = "BOMB";
 	
+	private static final String GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_NAME = "active_token_quest";
+	private static final String GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_MAP_EXCLUSIVE = "active_token_quest_map_exclusive";
+	
 	private static final String TEXTURE_CONFIG = "config/hud/on_screen_item_renderer/textures.json";
 	private static final float TEXT_SCALE = 0.9f;
 	
@@ -40,9 +44,13 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 	private SpriteBatch batch;
 	private ScreenTextWriter screenTextWriter;
 	
+	private GlobalValuesDataHandler globalValuesDataHandler;
+	private GameMapManager gameMapManager;
+	
 	private TextureRegion coinIcon;
 	private TextureRegion keyIcon;
 	private TextureRegion metalIngotIcon;
+	private TextureRegion tokenIcon;
 	private ObjectMap<String, TextureRegion> specialActionIcons;
 	
 	private boolean renderSaveInfo;
@@ -56,6 +64,9 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		screenTextWriter.setFont(Constants.DEFAULT_FONT_NAME);
 		tileUpperRight = new Vector2(sceneWidth - 20f, sceneHeight - 20f);
 		
+		globalValuesDataHandler = GlobalValuesDataHandler.getInstance();
+		gameMapManager = GameMapManager.getInstance();
+		
 		EventHandler.getInstance().registerEventListener(this);
 		
 		loadIcons();
@@ -66,6 +77,7 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		coinIcon = textureLoader.loadTexture("coin");
 		keyIcon = textureLoader.loadTexture("key");
 		metalIngotIcon = textureLoader.loadTexture("metal_ingot");
+		tokenIcon = textureLoader.loadTexture("token");
 		
 		specialActionIcons = new ObjectMap<>();
 		for (String specialAction : character.getActionList()) {
@@ -93,6 +105,9 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		batch.draw(keyIcon, tileUpperRight.x - 50f, tileUpperRight.y - 185f, 55f, 55f);
 		batch.draw(metalIngotIcon, tileUpperRight.x - 40f, tileUpperRight.y - 225f, 35f, 35f);
 		batch.draw(activeSpecialActionIcon, tileUpperRight.x - 40f, tileUpperRight.y - 275f, 35f, 35f);
+		if (isTokenQuestActive()) {
+			batch.draw(tokenIcon, tileUpperRight.x - 35f, tileUpperRight.y - 320f, 25f, 25f);
+		}
 		batch.end();
 	}
 	
@@ -101,6 +116,7 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		int keys = character.getNormalKeys();
 		int metalIngots = character.getMetalIngots();
 		int ammo;
+		int tokens = isTokenQuestActive() ? character.getTokens(getActiveTokenQuestName()) : 0;
 		
 		switch (character.getActiveAction()) {
 			case CHARACTER_ACTION_BOW:
@@ -122,6 +138,22 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		if (ammo > -1) {
 			screenTextWriter.drawText(Integer.toString(ammo), tileUpperRight.x - 155f, tileUpperRight.y - 245f, 100, Align.right, false);
 		}
+		if (isTokenQuestActive()) {
+			screenTextWriter.drawText(Integer.toString(tokens), tileUpperRight.x - 155f, tileUpperRight.y - 295f, 100, Align.right, false);
+		}
+	}
+	
+	private boolean isTokenQuestActive() {
+		String activeTokenQuestName = getActiveTokenQuestName();
+		String activeTokenQuestMapExclusive = globalValuesDataHandler.get(GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_MAP_EXCLUSIVE);
+		String currentMapName = gameMapManager.getMap().getCurrentMapIdentifier();
+		
+		return activeTokenQuestName != null && !activeTokenQuestName.isEmpty() //
+				&& (activeTokenQuestMapExclusive == null || activeTokenQuestMapExclusive.isEmpty() || activeTokenQuestMapExclusive.equals(currentMapName));
+	}
+	
+	private String getActiveTokenQuestName() {
+		return globalValuesDataHandler.get(GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_NAME);
 	}
 	
 	private void chooseTextColor() {

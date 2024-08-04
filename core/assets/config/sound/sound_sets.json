@@ -105,6 +105,10 @@
 					path: "sound/item/pickup_4.mp3",
 					volume: 0.6
 				},
+				pickup_5: {
+					path: "sound/item/pickup_5.wav",
+					volume: 0.6
+				}
 				pickup_ammo: {
 					path: "sound/item/pickup_ammo.mp3",
 					volume: 0.4

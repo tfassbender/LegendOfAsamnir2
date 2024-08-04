@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="92" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="1953">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="92" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="1954">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -264,6 +264,13 @@
   <object id="1952" name="npc.nyr" x="1997" y="704.333">
    <properties>
     <property name="unitId" value="loa2_mine_nyr__at_tunnel"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1953" name="enemy.mini_golem" x="1632" y="608">
+   <properties>
+    <property name="drop" value="{token_l1_golem: 1}"/>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
    </properties>
    <point/>
   </object>

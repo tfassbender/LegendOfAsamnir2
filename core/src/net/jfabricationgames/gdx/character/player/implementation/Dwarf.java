@@ -332,6 +332,11 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	@Override
+	public int getTokens(String tokenName) {
+		return itemDataHandler.getTokens(tokenName);
+	}
+	
+	@Override
 	public void process(float delta) {
 		updateAction(delta);
 		propertiesDataHandler.updateStats(delta, action);

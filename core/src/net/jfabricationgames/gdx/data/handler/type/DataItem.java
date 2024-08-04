@@ -4,7 +4,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 public interface DataItem {
 	
-	public Object getItemName();
+	public String getItemName();
 	
 	public boolean canBePicked();
 	public void pickUp(boolean playSound);

@@ -14,6 +14,7 @@ public class CharacterItemDataHandler implements DataHandler {
 	
 	private static final String ITEM_NAME_KEY = "key";
 	private static final String ITEM_NAME_METAL_INGOT = "metal_ingot";
+	private static final String ITEM_NAME_PREFIX_TOKEN = "token_";
 	
 	private static CharacterItemDataHandler instance;
 	
@@ -70,6 +71,10 @@ public class CharacterItemDataHandler implements DataHandler {
 			}
 			if (item.getItemName().equals(ITEM_NAME_METAL_INGOT)) {
 				characterProperties.increaseMetalIngots(1);
+			}
+			if (item.getItemName().startsWith(ITEM_NAME_PREFIX_TOKEN)) {
+				String tokenName = item.getItemName().substring(ITEM_NAME_PREFIX_TOKEN.length());
+				characterProperties.increaseToken(tokenName);
 			}
 			if (item.containsProperty(DataItemPropertyKeys.VALUE.getPropertyName())) {
 				int itemValue = item.getProperty(DataItemPropertyKeys.VALUE.getPropertyName(), Float.class).intValue();
@@ -198,5 +203,9 @@ public class CharacterItemDataHandler implements DataHandler {
 	
 	public void removeSpecialItem(String itemId) {
 		properties.specialItems.remove(itemId);
+	}
+	
+	public int getTokens(String tokenName) {
+		return characterProperties.getTokens(tokenName);
 	}
 }

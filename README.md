@@ -526,6 +526,22 @@ To drop a special item (like a special key to open a door), a different configur
 
 Event items are special types of items, that fire an event when picked up. The event type is an 'EVENT_ITEM_PICKED_UP' object from the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) enum. The string parameter can be configured in the map properties of the event item. The parameter object of the event is the picked up item itself. Usually these events are handled by the [GlobalEventListener](core/src/net/jfabricationgames/gdx/event/global/GlobalEventListener.java), whichs events are configured in the [globalListenedEvents.json](core/assets/config/events/globalListenedEvents.json) config file. See [Events](#events) for more details.
 
+### Tokens
+
+Tokens are special types of items, that can be used in side quests like "kill 10 enemies of this type". In this cases the enemies can be configured to drop a special token item, that the player can collect. To use tokens, do the following steps:
+
+- Create the token type in the [types.json](core/assets/config/items/types.json) file
+  - The name has to start with "token_"
+  - The texture should be "token", because that's the texture that will be used int the heads up display
+- Set the global values to start the token quest, to display the current token count in the heads up display (see the cutscene config of [nyr](core/assets/config/cutscene/loa2/mine/nyr.json/types.json) for an example)
+  - Set the global value 'active_token_quest' to a name for the active token quest. This name has to be the same as the name that was set for the tokens in the [types.json](core/assets/config/items/types.json) file, without the "token_" prefix.
+  - Optionally the global value 'active_token_quest_map_exclusive' can be set to a map identifier (the 'name' of the map in the [maps.json](core/assets/config/map/maps.json) file). Setting this value will make the token in the heads up display disappear if the map is left.
+- Check the number of tokens collected
+  - The number of collected tokens can be compared against the expected value (greater or equals) using the TOKENS_COLLECTED condition. The parameters to use are 'tokenName' (which has to be the same as the name that was set for the tokens in the [types.json](core/assets/config/items/types.json) file, without the "token_" prefix) and 'neededAmount'
+  - See the config file [mine.json](core/assets/config/condition/condition/levels/loa2/mine.json) for an example
+- Set the global values to stop the token quest
+  - To stop the token quest, the same global values that were used to start it ('active_token_quest' and optionally 'active_token_quest_map_exclusive'), need to be set to an empty string. Use "value: ''" in the json config to set the value to an empty string.
+
 ## Game Objects
 
 Game objects are usually added to the game from the map properties, just like items. Unlike items, game objects don't have custom properties, but define the customizable properties for every object type in the configuration json file: [types.json](core/assets/config/objects/types.json). In this file all types of objects can be configured using the following properties:

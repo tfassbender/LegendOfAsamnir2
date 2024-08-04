@@ -98,6 +98,10 @@ public class GlobalValuesDataHandler implements DataHandler, EventListener {
 			String key = keyAndValue.get(PARAMETER_KEY_GLOBAL_VALUE_KEY);
 			String value = keyAndValue.get(PARAMETER_KEY_GLOBAL_VALUE);
 			
+			if (value != null && value.equals("''")) {
+				value = ""; // empty string cannot be configured correctly in the json file
+			}
+			
 			Gdx.app.debug(getClass().getSimpleName(), "setting global value with key '" + key + "' to '" + value + "'");
 			put(key, value);
 		}

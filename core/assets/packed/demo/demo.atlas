@@ -7580,7 +7580,7 @@ pot_hit
   index: 3
 projectile_coin_bag
   rotate: false
-  xy: 1064, 814
+  xy: 922, 537
   size: 12, 10
   orig: 12, 10
   offset: 0, 0
@@ -8304,6 +8304,13 @@ sword
   xy: 688, 152
   size: 16, 16
   orig: 16, 16
+  offset: 0, 0
+  index: -1
+token
+  rotate: false
+  xy: 922, 549
+  size: 12, 12
+  orig: 12, 12
   offset: 0, 0
   index: -1
 totem_appear

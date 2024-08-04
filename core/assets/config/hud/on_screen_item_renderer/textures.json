@@ -11,6 +11,10 @@
 		atlas: packed/demo/demo.atlas,
 		texture: metal_ingot
 	},
+	token: {
+		atlas: packed/demo/demo.atlas,
+        texture: token
+	},
 	jump: {
 		atlas: packed/demo/demo.atlas,
 		texture: jump,

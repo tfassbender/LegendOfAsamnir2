@@ -47,12 +47,10 @@
 	},
 	
 	loa2_mine_main__golems_killed: {
-		// TODO this condition needs to be changed - it's just a placeholder for testing
-	
-        conditionType: GLOBAL_VALUE_SET,
+        conditionType: TOKENS_COLLECTED,
         parameters: {
-            key: loa2_l1_mine_main__golems_killed,
-            expectedValue: true,
+            tokenName: l1_golem,
+			neededAmount: 1,
 		}
 	},
 	
