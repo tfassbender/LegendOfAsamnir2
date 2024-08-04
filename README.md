@@ -533,7 +533,7 @@ Tokens are special types of items, that can be used in side quests like "kill 10
 - Create the token type in the [types.json](core/assets/config/items/types.json) file
   - The name has to start with "token_"
   - The texture should be "token", because that's the texture that will be used int the heads up display
-- Set the global values to start the token quest, to display the current token count in the heads up display (see the cutscene config of [nyr](core/assets/config/cutscene/loa2/mine/nyr.json/types.json) for an example)
+- Set the global values to start the token quest, to display the current token count in the heads up display (see the cutscene config of [nyr](core/assets/config/cutscene/loa2/mine/nyr.json) for an example)
   - Set the global value 'active_token_quest' to a name for the active token quest. This name has to be the same as the name that was set for the tokens in the [types.json](core/assets/config/items/types.json) file, without the "token_" prefix.
   - Optionally the global value 'active_token_quest_map_exclusive' can be set to a map identifier (the 'name' of the map in the [maps.json](core/assets/config/map/maps.json) file). Setting this value will make the token in the heads up display disappear if the map is left.
 - Check the number of tokens collected
