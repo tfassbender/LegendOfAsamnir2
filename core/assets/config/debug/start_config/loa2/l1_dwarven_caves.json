@@ -1,6 +1,7 @@
 {
 	startingPointMapping: {
 		2: destroyable_walls,
+		3: mini_golem_arena,
 	},
 	eventsLists: {
 		initial: {
@@ -10,12 +11,35 @@
 		},
 		
 		destroyable_walls: {
-			subConfigPath: config/debug/start_config/loa2/main.json
-			subConfigName: final,
+			subConfigName: initial,
 			events: [
 				{
 					eventType: GIVE_ITEM_TO_PLAYER,
 					stringValue: bomb,
+				}
+			]
+		},
+		
+		mini_golem_arena: {
+			subConfigName: initial,
+			events: [
+				// a key is needed to get back, because nyr (an NPC) would have given the player one
+			    {
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: key,
+				}
+				// start nyr's quest to kill 10 golems
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_l1_nyr_key_given, value: true}",
+				},
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: active_token_quest, value: l1_golem}",
+				},
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: active_token_quest_map_exclusive, value: loa2_dwarven_mine_main}",
 				}
 			]
 		},

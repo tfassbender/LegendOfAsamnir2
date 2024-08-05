@@ -1,0 +1,13 @@
+{
+	enemy__mini_golem__distributed: {
+		events: [NEW_GAME_STARTED, GAME_LOADED, PLAYER_RESPAWNED, MAP_ENTERED],
+		complexEvents: [
+			{
+				eventType: ENEMY_DEFEATED,
+				stringValue: loa2_l1_mini_golem_in_arena_defeated,
+			}
+		]
+		spawnType: enemy.mini_golem,
+		spawnTypeMapProperties: "{drop: \"{token_l1_golem: 1}\", enemyDefeatedEventText: \"loa2_l1_mini_golem_in_arena_defeated\"}",
+	}
+}

@@ -51,6 +51,7 @@ public enum EventType {
 	SET_STATE_SWITCH_STATE, //
 	CHANGE_SIGNBOARD_TEXT, //
 	DESTROYABLE_OBJECT_DESTROYED, //
+	DISTRIBUTED_SPAWN, //
 	//*******************************
 	//*** Items
 	//*******************************

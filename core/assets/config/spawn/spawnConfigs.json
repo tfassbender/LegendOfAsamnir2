@@ -2,8 +2,12 @@
 	//******************
 	//*** maps
 	//******************
+	config/spawn/maps/loa2/l1_dwarven_mines.json,
+	
+	// demo and testing
 	config/spawn/maps/demo.json,
 	config/spawn/maps/map6.json
+	
 	
 	//******************
 	//*** npc

@@ -64,6 +64,12 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	@MapObjectState
 	private boolean spawnedObjectPresentInMap;
 	
+	// map properties for distributed spawn points
+	private String spawnConfigName;
+	private int spawnPointIndex;
+	private boolean mainDistributionSpawnPoint;
+	private int numDistributionSpawnPoints;
+	
 	public SpawnPoint(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties mapProperties, GameObjectMap gameMap) {
 		super(typeConfig, sprite, mapProperties, gameMap);
 		loadSpawnConfigFromMapProperties();
@@ -82,8 +88,18 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 		if (!mapProperties.containsKey(MAP_PROPERTY_KEY_SPAWN_CONFIG)) {
 			throw new IllegalStateException("This SpawnPoint has no spawn config in it's map properties. SpawnPoint: " + mapPropertiesToString());
 		}
-		String spawnConfigName = mapProperties.get(MAP_PROPERTY_KEY_SPAWN_CONFIG, String.class);
+		
+		spawnConfigName = mapProperties.get(MAP_PROPERTY_KEY_SPAWN_CONFIG, String.class);
 		spawnConfig = spawnConfigs.get(spawnConfigName);
+		
+		spawnPointIndex = Integer.parseInt(mapProperties.get("spawnPointIndex", "-1", String.class));
+		mainDistributionSpawnPoint = Boolean.parseBoolean(mapProperties.get("mainDistributionSpanPoint", "false", String.class));
+		numDistributionSpawnPoints = Integer.parseInt(mapProperties.get("numDistributedSpawnPoints", "1", String.class));
+		
+		if (isDistributedSpawnPoint()) {
+			Gdx.app.debug(getClass().getSimpleName(), "Loaded distributed spawn config: " + spawnConfigName + " (index: " + spawnPointIndex + ", main: " + mainDistributionSpawnPoint + ", num: " + numDistributionSpawnPoints + ")");
+		}
+		
 		if (spawnConfig == null) {
 			throw new IllegalStateException("This SpawnPoint has a spawn config in it's map properties, that can't be found. SpawnPoint: " //
 					+ mapPropertiesToString() + ". Did you add it to the spawnConfigs.json file? " + SPAWN_CONFIG_FILE);
@@ -145,6 +161,35 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	}
 	
 	private boolean isEventHandled(EventConfig event) {
+		if (isDistributedSpawnPoint()) {
+			if (event.eventType == EventType.DISTRIBUTED_SPAWN) {
+				Gdx.app.debug(getClass().getSimpleName(), "DISTRIBUTED_SPAWN event received with parameters: " + event.stringValue + ", " + event.intValue);
+				return event.stringValue.equals(spawnConfigName) && event.intValue == spawnPointIndex;
+			}
+			else if (mainDistributionSpawnPoint && isEventHandledWhenIgnoringDistribution(event)) {
+				Gdx.app.debug(getClass().getSimpleName(), "Firing distributed spawn event for spawn config: " + spawnConfigName + " (from main spawn point).");
+				chooseDistributedSpawnPoint(event);
+			}
+			
+			return false;
+		}
+		
+		return isEventHandledWhenIgnoringDistribution(event);
+	}
+	
+	private boolean isDistributedSpawnPoint() {
+		return spawnPointIndex >= 0 || mainDistributionSpawnPoint;
+	}
+	
+	private void chooseDistributedSpawnPoint(EventConfig event) {
+		int randomIndex = (int) (Math.random() * numDistributionSpawnPoints);
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.DISTRIBUTED_SPAWN) //
+				.setStringValue(spawnConfigName) //
+				.setIntValue(randomIndex));
+	}
+	
+	private boolean isEventHandledWhenIgnoringDistribution(EventConfig event) {
 		if (event.eventType == EventType.GAME_LOADED) {
 			if (!spawnedObjectPresentInMap) {
 				//don't respawn after loading the game, if the spawned object was already removed
@@ -152,7 +197,8 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 			}
 		}
 		else if (spawnedObjectPresentInMap && event.eventType != EventType.MAP_ENTERED) {
-			/** don't spawn the object twice, except for 
+			/** 
+			 * don't spawn the object twice, except for 
 			 * - GAME_LOADED, because the state is set by the loading mechanisms but the objects are not spawned yet
 			 * - MAP_ENTERED, because no objects will be spawned yet
 			 */
@@ -189,10 +235,10 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 		}
 		
 		MapProperties mapProperties = new MapProperties();
-		addPropertiesFromSpawn(mapProperties);
 		if (spawnConfig.spawnTypeMapProperties != null) {
 			mapProperties = MapUtil.createMapPropertiesFromString(spawnConfig.spawnTypeMapProperties);
 		}
+		addPropertiesFromSpawn(mapProperties);
 		
 		Gdx.app.debug(getClass().getSimpleName(), "Spawning object of type '" + spawnConfig.spawnType + "' with map properties: " + MapUtil.mapPropertiesToString(mapProperties, false));
 		

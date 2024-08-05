@@ -50,7 +50,7 @@
         conditionType: TOKENS_COLLECTED,
         parameters: {
             tokenName: l1_golem,
-			neededAmount: 1,
+			neededAmount: 10,
 		}
 	},
 	

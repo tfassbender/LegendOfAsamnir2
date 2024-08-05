@@ -650,9 +650,15 @@ This event is configured to unlock a locked object when the [condition](#conditi
 
 Spawn points are special Game Objects, that can be used to spawn new Items, Game Objects or Enemies. They can be added to the map, just like all other Game Objects. These objects use an Event Handling Service, that informs them on every fired event. If the event triggers a spawn, a new object is spawned on the map. The events and spawns can be configured in the json files [events.json](core/assets/config/events/events.json) and [spawnConfigs.json](core/assets/config/spawn/spawnConfigs.json). An example of a spawn config file is the file [demo.json](core/assets/config/spawn/maps/demo.json). The Spawn Points, that are added in the tiled map, have to use a map property 'spawn', that references a spawn config from the a spawn config file that is referenced by the [spawnConfigs.json](core/assets/config/spawn/spawnConfigs.json) file by name. This spawn config defines, what is to be spawned and when it is spawned.
 
+The spawn config from the file can contain `spawnTypeMapProperties` like pre-defined movement positions or drops. These spawn configs can also be configured in the map properties. The values from the map properties (defined in the tiled map) will be merged with the values that are set in the config file. If the same keys are used, the ones from the map properties will overwrite the ones from the config file.
+
 The following image shows the connections between these config files and objects:
 
 ![Spawns and Events](core/data/documentation/event_and_spawn_classes.png)
+
+#### Distributed Spawn Points
+
+Spawn points can be used as distributed points for one spawn. This can be used to make a single item or enemy spawn in one of many (randomly chosen) positions. To use distributed spawn points, each of the spawn points needs to be configured with the map property `spawnPointIndex` (a zero-based index of a spawn point). Also one of them needs to be configured with the map properties `mainDistributionSpanPoint` set to `true` and `numDistributedSpawnPoints` for the total number of distributed spawn points of this class. The main spawn point usually has no spawnPointIndex and doesn't spawn items or enemies itself, but only manages the other spawn points. This will be the main spawn handler that decides which spawn point will be (randomly) chosen. When a spawn event is triggered, that would cause a spawn on this spawn points, a random integer from the range [0, `numDistributedSpawnPoints`) is chosen and the spawn points with this `spawnPointIndex` will execute their spawn. An example is level 1 (dwarven mine) of Legend of Asamnir 2.
 
 ### Event Objects
 
