@@ -1,0 +1,115 @@
+{
+	//*******************************************
+	//*** locks
+	//*******************************************
+	
+    loa2_l1_main__openLock_1_ifAllSwitchesAreActivated: {
+        conditionId: loa2_l1_main__switch_group_allSwitchesActivated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_1
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_1
+                }
+            }
+        }
+    },
+    
+    loa2_l1_main__openLock_2_ifSwitchIsActivated: {
+        conditionId: loa2_l1_main__switch_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_2
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_2
+                }
+            }
+        }
+    },
+    
+    loa2_l1_main__openLock_3_ifPressureSwitchIsActivated: {
+    	conditionId: loa2_l1_main__pressure_switch_1_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_3
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_3
+                }
+            }
+        }
+    },
+    
+    loa2_l1_main__openLock_4_ifPressureSwitchIsActivated: {
+    	conditionId: loa2_l1_main__pressure_switch_2_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_4
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_4
+                }
+            }
+        }
+    },
+    
+    loa2_l1_main__openLock_5_ifMagicSwitchIsActivated: {
+    	conditionId: loa2_l1_main__magic_switch_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_5
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_main__gate_puzzle_5
+                }
+            }
+        }
+    },
+}

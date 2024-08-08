@@ -70,4 +70,54 @@
             expectedValue: true,
 		}
 	},
+	
+	//*******************************************
+	//*** switches
+	//*******************************************
+	
+	loa2_l1_main__switch_group_allSwitchesActivated: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: STATE_SWITCH_ACTIVE,
+				parameters: {
+					stateSwitchId: loa2_l1_main__switch_group_1,
+				}
+			},
+			condition2: {
+				conditionType: STATE_SWITCH_ACTIVE,
+				parameters: {
+					stateSwitchId: loa2_l1_main__switch_group_2,
+				}
+			}
+		}
+	},
+	
+	loa2_l1_main__switch_activated: {
+		conditionType: STATE_SWITCH_ACTIVE,
+		parameters: {
+			stateSwitchId: loa2_l1_main__switch,
+		}
+	},
+	
+	loa2_l1_main__pressure_switch_1_activated: {
+		conditionType: STATE_SWITCH_ACTIVE,
+		parameters: {
+			stateSwitchId: loa2_l1_main__pressure_switch_1,
+		}
+	},
+	
+	loa2_l1_main__pressure_switch_2_activated: {
+		conditionType: STATE_SWITCH_ACTIVE,
+		parameters: {
+			stateSwitchId: loa2_l1_main__pressure_switch_2,
+		}
+	},
+	
+	loa2_l1_main__magic_switch_activated: {
+		conditionType: STATE_SWITCH_ACTIVE,
+		parameters: {
+			stateSwitchId: loa2_l1_main__magic_switch,
+		}
+	},
 }

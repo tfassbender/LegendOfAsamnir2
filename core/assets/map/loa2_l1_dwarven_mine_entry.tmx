@@ -236,31 +236,31 @@ Only for dwarven miners!. </property>
    </properties>
    <point/>
   </object>
-  <object id="1346" name="object.spawnPoint" x="80.5" y="624.5">
+  <object id="1346" name="object.spawnPoint.mana" x="80.5" y="624.5">
    <properties>
     <property name="spawn" value="playerManaBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="1347" name="object.spawnPoint" x="176.5" y="624.5">
+  <object id="1347" name="object.spawnPoint.arrow" x="176.5" y="624.5">
    <properties>
     <property name="spawn" value="playerAmmoArrowBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="1348" name="object.spawnPoint" x="272.375" y="624.5">
+  <object id="1348" name="object.spawnPoint.bomb" x="272.375" y="624.5">
    <properties>
     <property name="spawn" value="playerAmmoBombBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="1349" name="object.spawnPoint" x="240.5" y="848.625">
+  <object id="1349" name="object.spawnPoint.shield" x="240.5" y="848.625">
    <properties>
     <property name="spawn" value="playerShieldBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="1350" name="object.spawnPoint" x="112.625" y="848.5">
+  <object id="1350" name="object.spawnPoint.health" x="112.625" y="848.5">
    <properties>
     <property name="spawn" value="playerHealthBelowHalf"/>
    </properties>

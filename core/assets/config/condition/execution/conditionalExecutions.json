@@ -1,5 +1,6 @@
 [
     config/condition/execution/levels/loa2/prolog.json,
+    config/condition/execution/levels/loa2/mine.json,
     
 //	config/condition/execution/levels/demo.json,
 //	config/condition/execution/levels/demo_2/prolog.json,

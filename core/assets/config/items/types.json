@@ -59,7 +59,7 @@
 	},
 	metal_ingot: {
         texture: metal_ingot_small,
-        pickUpSound: pickup
+        pickUpSound: pickup_5
 	},
 	token_l1_golem: {
         texture: token,

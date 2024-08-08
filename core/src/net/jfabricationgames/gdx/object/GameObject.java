@@ -109,6 +109,10 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		}
 	}
 	
+	public GameObjectType getType() {
+		return typeConfig.type;
+	}
+	
 	@Override
 	public String getMapObjectId() {
 		return StatefulMapObject.getMapObjectId(mapProperties);

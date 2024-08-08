@@ -99,6 +99,55 @@
 			globalValue: true,
 		}
 	},
+	
+	//*******************************************
+	//*** switches
+	//*******************************************
+	
+	loa2_l1_main__switch_group_activated: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l1_main__switch_group,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_main__openLock_1_ifAllSwitchesAreActivated,
+	},
+	
+	loa2_l1_main__switch_activated: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l1_main__switch,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_main__openLock_2_ifSwitchIsActivated,
+	},
+	
+	loa2_l1_main__pressure_switch_1_activated: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l1_main__pressure_switch_1,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_main__openLock_3_ifPressureSwitchIsActivated,
+	},
+	
+	loa2_l1_main__pressure_switch_2_activated: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l1_main__pressure_switch_2,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_main__openLock_4_ifPressureSwitchIsActivated,
+	},
+	
+	loa2_l1_main__magic_switch_activated: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l1_main__magic_switch,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_main__openLock_5_ifMagicSwitchIsActivated,
+	},
 
 	//*******************************************
 	//*** change map
