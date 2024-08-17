@@ -84,6 +84,17 @@
 		}
 	},
 	
+	loa2_l1_mine_main__onarr_at_invisible_path: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l1_mine_main__onarr_at_invisible_path,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l1_mine_main__onarr_at_invisible_path_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** destroyable objects
 	//*******************************************

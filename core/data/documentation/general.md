@@ -31,6 +31,12 @@
 - Some new Items need to be added (or maybe existing items can be improved ?)
 
 
+## Side Quests
+
+- Collect the chickens
+- Find pieces of the Triforce (side quest by an Elf https://elthen.itch.io/2d-pixel-art-elven-archer-warrior) 
+
+
 
 ## Levels
 

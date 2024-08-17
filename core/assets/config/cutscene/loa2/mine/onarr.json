@@ -1,0 +1,94 @@
+{
+	id: loa2_l1_mine_main__onarr_at_invisible_path_cutscene,
+	controlledActions: {
+		onarr_1: {
+			startsWithCutscene: true,
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Onarr",
+                colorHeader: #630202,
+                displayText: "Hey Thorin!\n\nAre you also here to explore this old castle ahead?  ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	onarr_2,
+           	],
+		},
+		
+		onarr_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Onarr",
+                colorHeader: #630202,
+                displayText: "Some of us already went in, but I don't get how they got there.\nThey said something about an invisible path and a rune called Algiz... But I can't see any path ...  ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+			],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Yes, there is a path, but you need the rule Algiz to see it.\n\nI'll go check out the castle. You can follow me if you want.  ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	onarr_3,
+			],
+		},
+		
+		onarr_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Onarr",
+                colorHeader: #630202,
+                displayText: "Thanks Thorin!\n\nBut I think I'll stay here for now. I'll wait for the others to come back.  ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	onarr_4,
+            ],
+        },
+        
+        onarr_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Onarr",
+                colorHeader: #630202,
+                displayText: "Oh, and watch out for this golem at the entrance. It came out a wile after the others went in.\nSeems quite a bit bigger than the other golems here...  ",
+                showNextPageIcon: true,
+            }
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+            ],
+        },
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
