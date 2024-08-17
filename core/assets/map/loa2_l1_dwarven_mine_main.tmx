@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="94" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="2026">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="94" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="2027">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -533,6 +533,13 @@
   <object id="2025" name="npc.onarr" x="768" y="460.5">
    <properties>
     <property name="unitId" value="loa2_mine_onarr_at_invisible_path"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2026" name="enemy.golem" x="704" y="224">
+   <properties>
+    <property name="drop" value="{token_l1_golem: 1}"/>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
    </properties>
    <point/>
   </object>

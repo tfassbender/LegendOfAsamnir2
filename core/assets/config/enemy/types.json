@@ -89,6 +89,45 @@
 			coin: 0.4,
 		}
 	},
+	
+	golem: {
+		typeName: golem,
+		
+		// TODO change animations as soon as they are available
+		
+		animationsConfig: config/animation/enemy/mini_golem.json,
+		stateConfig: config/enemy/states/mini_golem.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/golem.json
+		aiConfig: config/enemy/ai/golem.json
+		
+		health: 45,
+		movingSpeed: 1.25,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.4f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 3f,
+		
+		pushForceDamage: 15,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			coin: 0.5,
+			big_coin: 0.3,
+		}
+	},
+	
 	minotaur: {
 		typeName: minotaur,
 		

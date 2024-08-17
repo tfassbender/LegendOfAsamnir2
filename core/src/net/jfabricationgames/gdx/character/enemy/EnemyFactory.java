@@ -21,6 +21,7 @@ public class EnemyFactory {
 	
 	private static final String ENEMY_NAME_GLADIATOR = "gladiator";
 	private static final String ENEMY_NAME_MINI_GOLEM = "mini_golem";
+	private static final String ENEMY_NAME_GOLEM = "golem";
 	private static final String ENEMY_NAME_SPIDER = "spider";
 	private static final String ENEMY_NAME_MIMIC_CHEST = "mimic_chest";
 	private static final String ENEMY_NAME_MIMIC_BARREL = "mimic_barrel";
@@ -72,6 +73,7 @@ public class EnemyFactory {
 		switch (type) {
 			case ENEMY_NAME_GLADIATOR:
 			case ENEMY_NAME_MINI_GOLEM:
+			case ENEMY_NAME_GOLEM:
 			case ENEMY_NAME_SPIDER:
 			case ENEMY_NAME_MIMIC_CHEST:
 			case ENEMY_NAME_MIMIC_BARREL:
