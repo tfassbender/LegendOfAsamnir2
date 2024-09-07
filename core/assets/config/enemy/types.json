@@ -93,10 +93,8 @@
 	golem: {
 		typeName: golem,
 		
-		// TODO change animations as soon as they are available
-		
-		animationsConfig: config/animation/enemy/mini_golem.json,
-		stateConfig: config/enemy/states/mini_golem.json,
+		animationsConfig: config/animation/enemy/golem.json,
+		stateConfig: config/enemy/states/golem.json,
 		initialState: idle,
 		attackConfig: config/enemy/attack/golem.json
 		aiConfig: config/enemy/ai/golem.json
@@ -105,20 +103,20 @@
 		movingSpeed: 1.25,
 		
 		imageOffsetX: 0f,
-		imageOffsetY: 0.4f,
+		imageOffsetY: 0.2f,
 		
 		bodyShape: CIRCLE,
-		bodyRadius: 0.3f,
+		bodyRadius: 0.6f,
 		
 		addSensor: true,
-		sensorRadius: 3f,
+		sensorRadius: 5f,
 		
 		pushForceDamage: 15,
 		pushForceHit: 50,
 		
 		usesHealthBar: true,
 		healthBarOffsetX: 0,
-		healthBarOffsetY: -0.2,
+		healthBarOffsetY: 0.3,
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
 		

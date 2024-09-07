@@ -2,7 +2,7 @@
 	{
 		id: attack,
 		type: HIT,
-		delay: 0.4,
+		delay: 0.2,
 		duration: 0,
 		damage: 20,
 		distFromCenter: 0.4,

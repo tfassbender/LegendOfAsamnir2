@@ -10,7 +10,7 @@
 				type: FIXED,
 				fixedTime: 1f,
 			},
-			attackDistance: 1.75f,
+			attackDistance: 1.25f,
 			
 			subAI: {
 				type: FOLLOW_AI,

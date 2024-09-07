@@ -1,0 +1,7 @@
+# the "restricted" folder contains graphics that are not free to use
+# these raw images must not be uploaded to a public repository
+# therefore the folder is excluded from this repository
+#
+# the images are stored in a separate (private) repository: home/legend_of_asamnir_2_restricted_graphics.git
+#
+restricted/*

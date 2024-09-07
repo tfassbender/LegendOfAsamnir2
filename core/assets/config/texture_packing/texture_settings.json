@@ -193,6 +193,17 @@
 				raw_images/enemy/dummy/dummy_damage_long,
 				
 				//##############################################################
+				//### enemies - restricted graphics
+				//##############################################################
+				
+				// golem
+				raw_images/restricted/enemy/golem/golem_attack,
+				raw_images/restricted/enemy/golem/golem_damage,
+				raw_images/restricted/enemy/golem/golem_death,
+				raw_images/restricted/enemy/golem/golem_idle,
+				raw_images/restricted/enemy/golem/golem_move,
+				
+				//##############################################################
 				//### NPCs
 				//##############################################################
 				
