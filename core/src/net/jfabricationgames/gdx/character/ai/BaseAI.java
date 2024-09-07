@@ -21,6 +21,11 @@ public class BaseAI extends AbstractArtificialIntelligence implements Artificial
 		moves = new ArrayMap<>();
 	}
 	
+	@Override
+	public void clearMoves() {
+		moves.clear();
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public <T extends AIMove> T getMove(MoveType moveType, Class<T> clazz) {

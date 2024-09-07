@@ -22,6 +22,11 @@ public abstract class AbstractArtificialIntelligence implements ArtificialIntell
 		this.subAI = subAI;
 	}
 	
+	@Override
+	public void clearMoves() {
+		subAI.clearMoves();
+	}
+	
 	/**
 	 * Get a move of a specific type in this AI-decorator-chain.<br>
 	 * 

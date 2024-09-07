@@ -15,6 +15,11 @@ import net.jfabricationgames.gdx.character.ai.move.MoveType;
 public interface ArtificialIntelligence extends ContactListener {
 	
 	/**
+	 * Clear all moves from the last execution step. 
+	 * This prevents bugs like an attack after the player was moved out of the range of the enemy.
+	 */
+	public void clearMoves();
+	/**
 	 * Calculate a move and add store it using setMove(MoveType, AIMove).
 	 */
 	public void calculateMove(float delta);
