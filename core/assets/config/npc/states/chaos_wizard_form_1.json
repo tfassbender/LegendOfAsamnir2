@@ -1,18 +1,28 @@
 [
 	{
 		id: idle,
-		animation: adventurer_idle,
+		animation: elite_mage_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move
+			move, cast_loop_with_effect
 		]
 	},
 	{
 		id: move,
-		animation: adventurer_idle, // no movement, so the "looking arround for the princess" animation works
+		animation: elite_mage_idle, // no movement, so the "looking arround for the princess" animation works
 		endsWithAnimation: true,
 		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+	
+	{
+		id: cast_loop_with_effect,
+		animation: elite_mage_cast_loop_with_effect,
+		endsWithAnimation: true,
+		followingState: cast_loop_with_effect, // has to be stopped manually (in the cutscene)
 		interruptingStates: [
 			idle
 		]

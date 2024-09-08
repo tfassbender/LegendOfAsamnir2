@@ -1,0 +1,80 @@
+[
+	// TODO some attacks and sounds still need to be configured
+	
+	{
+		id: idle,
+		animation: elite_mage_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: elite_mage_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, damage, die
+		]
+	},
+	{
+		id: blast,
+		animation: elite_mage_blast,
+		endsWithAnimation: true,
+		flipAnimationOnEnteringOnly: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: blast_with_effect,
+		animation: elite_mage_blast_with_effect,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: cast,
+		animation: elite_mage_cast,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: cast_with_effect,
+		animation: elite_mage_cast_with_effect,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: cast_loop_with_effect,
+		animation: elite_mage_cast_loop_with_effect,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	
+	{
+		id: damage,
+		animation: elite_mage_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: death,
+		animation: elite_mage_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

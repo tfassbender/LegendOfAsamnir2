@@ -52,6 +52,16 @@
 		},
 		
 		thanks_i_guess: {
+		    // changes the state of mjodwitnir to display the "give" animation
+			type: CHANGE_STATE,
+			controlledUnitId: loa2_main_tavern_barkeeper,
+			controlledUnitState: give,
+			
+			executes: [
+				give_item_mana,
+			],
+		},
+		give_item_mana: {
 			type: EVENT,
 			
 			event: {
@@ -69,8 +79,18 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				give_food,
+				give_animation_2,
 			]
+		},
+		give_animation_2: {
+            // changes the state of mjodwitnir to display the "give" animation
+			type: CHANGE_STATE,
+			controlledUnitId: loa2_main_tavern_barkeeper,
+			controlledUnitState: give,
+			
+			executes: [
+				give_food,
+			],
 		},
 		give_food: {
 			type: EVENT,

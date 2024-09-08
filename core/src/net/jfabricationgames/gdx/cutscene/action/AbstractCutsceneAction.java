@@ -54,8 +54,8 @@ public abstract class AbstractCutsceneAction implements CutsceneFunctionAction, 
 			throw new IllegalStateException("The controlled unit with the id '" + unitId + "' was not found.");
 		}
 		if (!clazz.isAssignableFrom(controlledUnit.getClass())) {
-			throw new IllegalStateException(
-					"The controlled unit with the id '" + unitId + "' cannot be cast to the requested class '" + clazz.getSimpleName() + "'");
+			throw new IllegalStateException("The controlled unit with the id '" + unitId + "' cannot be cast to the requested class '" // 
+					+ clazz.getSimpleName() + "'. The unit is of type '" + controlledUnit.getClass().getSimpleName() + "'.");
 		}
 		return clazz.cast(controlledUnit);
 	}

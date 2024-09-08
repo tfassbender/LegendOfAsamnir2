@@ -18,11 +18,8 @@ import net.jfabricationgames.gdx.character.CharacterTypeConfig;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.enemy.statsbar.EnemyHealthBarRenderer;
 import net.jfabricationgames.gdx.character.player.PlayableCharacter;
-import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateMachine;
 import net.jfabricationgames.gdx.constants.Constants;
-import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledState;
-import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledStatefullUnit;
 import net.jfabricationgames.gdx.data.handler.MapObjectDataHandler;
 import net.jfabricationgames.gdx.data.state.MapObjectState;
 import net.jfabricationgames.gdx.data.state.StatefulMapObject;
@@ -40,7 +37,7 @@ import net.jfabricationgames.gdx.sound.SoundManager;
 import net.jfabricationgames.gdx.sound.SoundSet;
 import net.jfabricationgames.gdx.util.MapUtil;
 
-public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObject, CutsceneControlledStatefullUnit, EventListener {
+public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObject, EventListener {
 	
 	private static final String MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT = "enemyDefeatedEventText";
 	
@@ -170,21 +167,6 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		if (Boolean.parseBoolean(state.get("defeated"))) {
 			defeated = true;
 			removeFromMap();
-		}
-	}
-	
-	@Override
-	public CutsceneControlledState getState(String controlledUnitState) {
-		return getStateMachine().getState(controlledUnitState);
-	}
-	
-	@Override
-	public void setState(CutsceneControlledState state) {
-		if (state instanceof CharacterState) {
-			getStateMachine().setState((CharacterState) state);
-		}
-		else {
-			throw new IllegalArgumentException("Only states of the type CharacterState are allowed here.");
 		}
 	}
 	

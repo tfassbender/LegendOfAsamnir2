@@ -1,0 +1,55 @@
+[
+	{
+		id: idle,
+		animation: courier_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: courier_run,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, stop
+		]
+	},
+	{
+		id: give_letter,
+		animation: courier_give_letter,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: idle_with_letter,
+		animation: courier_idle_with_letter,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: salute,
+		animation: courier_salute,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: search,
+		animation: courier_search,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: stop,
+		animation: courier_stop,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+]

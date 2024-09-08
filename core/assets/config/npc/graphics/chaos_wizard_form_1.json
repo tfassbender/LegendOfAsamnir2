@@ -1,13 +1,13 @@
 {
-	animationsConfig: config/animation/npc/adventurer.json, // TODO get some graphics for the chaos wizard
-	stateConfig: config/npc/states/chaos_wizard_form_1.json,
+	animationsConfig: config/animation/enemy/elite_mage.json,
+	stateConfig: config/npc/states/chaos_wizard_form_1.json, // a special state config is needed here (for the cutscene to work)
 	initialState: idle,
 	
-	bodyWidth: 0.7f,
-	bodyHeight: 0.8f,
+	bodyWidth: 1f,
+	bodyHeight: 1.1f,
 	
 	imageOffsetX: 0f,
-	imageOffsetY: 0.2f,
+	imageOffsetY: 0.1f,
 	
 	interactionMarkerOffsetX: 0f,
 	interactionMarkerOffsetY: 0f,

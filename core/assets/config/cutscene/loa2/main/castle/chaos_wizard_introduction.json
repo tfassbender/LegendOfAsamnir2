@@ -586,6 +586,7 @@
             executes: [
                 chaos_wizard_14,
                 chaos_wizard_keyboard_typing,
+                chaos_wizard_change_to_cast_loop_state,
 			],
 		},
 		
@@ -595,6 +596,15 @@
 			executionDelayInSeconds: 2.5f,
 			
             soundEffectName: keyboard_typing,
+		},
+		
+		chaos_wizard_change_to_cast_loop_state: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 2f,
+			
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
 		},
 		
 		chaos_wizard_14: {
@@ -612,7 +622,17 @@
             
             executes: [
                 wait_before_spawning_the_princess,
+                change_back_to_idle_state,
 			],
+		},
+		
+		change_back_to_idle_state: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 0.5f,
+            
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitState: idle,
 		},
 		
 		wait_before_spawning_the_princess: {
@@ -797,12 +817,24 @@
             
             executes: [
                 wait_before_stealing_asamnir,
+                chaos_wizard_change_to_cast_loop_state_2,
                 play_sound_effect_asamnir_stolen,
 			],
 		},
 		
+		chaos_wizard_change_to_cast_loop_state_2: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 0.5f,
+			
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
+		},
+		
 		play_sound_effect_asamnir_stolen: {
             type: PLAY_SOUND,
+            
+			executionDelayInSeconds: 1.5f,
             
             soundEffectName: asamnir_stolen,
 		},
@@ -810,7 +842,7 @@
 		wait_before_stealing_asamnir: {
             type: WAIT,
             
-            executionDurationInSeconds: 0.5f,
+            executionDurationInSeconds: 2f,
             
             executes: [
                 spawn_asamnir,
@@ -840,7 +872,17 @@
             
             executes: [
                 wait_after_stealing_asamnir,
+                change_back_to_idle_state_2,
 			]
+		},
+		
+		change_back_to_idle_state_2: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_main_castle_chaos_wizard,
+            controlledUnitState: idle,
 		},
 		
 		wait_after_stealing_asamnir: {

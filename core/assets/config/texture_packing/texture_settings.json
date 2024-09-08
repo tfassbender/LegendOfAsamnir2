@@ -203,6 +203,18 @@
 				raw_images/restricted/enemy/golem/golem_idle,
 				raw_images/restricted/enemy/golem/golem_move,
 				
+				// elite mage
+				raw_images/restricted/enemy/elite_mage/elite_mage_idle,
+				raw_images/restricted/enemy/elite_mage/elite_mage_move,
+				raw_images/restricted/enemy/elite_mage/elite_mage_blast,
+				raw_images/restricted/enemy/elite_mage/elite_mage_blast_with_effect,
+				raw_images/restricted/enemy/elite_mage/elite_mage_cast,
+				raw_images/restricted/enemy/elite_mage/elite_mage_cast_with_effect,
+				raw_images/restricted/enemy/elite_mage/elite_mage_cast_loop,
+				raw_images/restricted/enemy/elite_mage/elite_mage_cast_loop_with_effect,
+				raw_images/restricted/enemy/elite_mage/elite_mage_damage,
+				raw_images/restricted/enemy/elite_mage/elite_mage_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################
@@ -234,6 +246,35 @@
 				
 				raw_images/npc/builder/builder_idle,
 				raw_images/npc/builder/builder_move,
+				
+				//##############################################################
+				//### NPCs - restricted graphics
+				//##############################################################
+				
+				// inn keeper
+				raw_images/restricted/npc/inn_keeper/inn_keeper_idle,
+				raw_images/restricted/npc/inn_keeper/inn_keeper_move,
+				raw_images/restricted/npc/inn_keeper/inn_keeper_give,
+				raw_images/restricted/npc/inn_keeper/inn_keeper_yes,
+				raw_images/restricted/npc/inn_keeper/inn_keeper_no,
+				
+				// courier
+				raw_images/restricted/npc/courier/courier_idle,
+				raw_images/restricted/npc/courier/courier_idle_with_letter,
+				raw_images/restricted/npc/courier/courier_run,
+				raw_images/restricted/npc/courier/courier_stop,
+				raw_images/restricted/npc/courier/courier_search,
+				raw_images/restricted/npc/courier/courier_give_letter,
+			    raw_images/restricted/npc/courier/courier_salute,
+			    
+			    // king
+			    raw_images/restricted/npc/king/king_idle,
+			    raw_images/restricted/npc/king/king_move,
+			    raw_images/restricted/npc/king/king_command,
+			    
+			    // princess
+			    raw_images/restricted/npc/princess/princess_idle,
+			    raw_images/restricted/npc/princess/princess_move,
 				
 				//##############################################################
 				//### Animals

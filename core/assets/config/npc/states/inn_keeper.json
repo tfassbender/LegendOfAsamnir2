@@ -1,0 +1,41 @@
+[
+	{
+		id: idle,
+		animation: inn_keeper_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, give, yes, no
+		]
+	},
+	{
+		id: move,
+		animation: inn_keeper_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+	{
+		id: give,
+		animation: inn_keeper_give,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: yes,
+		animation: inn_keeper_yes,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: no,
+		animation: inn_keeper_no,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+]

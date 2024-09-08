@@ -1,0 +1,27 @@
+[
+	{
+		id: idle,
+		animation: king_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, command
+		]
+	},
+	{
+		id: move,
+		animation: king_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, command
+		]
+	},
+	{
+		id: command,
+		animation: king_command,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+]

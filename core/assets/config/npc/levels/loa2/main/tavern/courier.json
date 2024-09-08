@@ -1,5 +1,5 @@
 {
-	graphicsConfigFile: config/npc/graphics/adventurer.json
+	graphicsConfigFile: config/npc/graphics/courier.json
 	
 	aiConfig: {
 		type: PRE_DEFINED_MOVEMENT_AI,
@@ -17,5 +17,5 @@
 	interactionPossible: true,
 	interactionEventId: loa2_main_tavern_courier,
 	
-	movingSpeed: 3f,
+	movingSpeed: 5f,
 }

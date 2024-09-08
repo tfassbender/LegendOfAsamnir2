@@ -22,6 +22,8 @@ import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateMachine;
 import net.jfabricationgames.gdx.cutscene.CutsceneControlledCharacter;
 import net.jfabricationgames.gdx.cutscene.CutsceneHandler;
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledState;
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledStatefullUnit;
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.map.ground.GameMapGroundType;
 import net.jfabricationgames.gdx.physics.BeforeWorldStep;
@@ -30,7 +32,7 @@ import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyPropertie
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
-public abstract class AbstractCharacter implements ContactListener, CutsceneControlledCharacter, ArtificialIntelligenceCharacter {
+public abstract class AbstractCharacter implements ContactListener, CutsceneControlledCharacter, CutsceneControlledStatefullUnit, ArtificialIntelligenceCharacter {
 	
 	public static final String MAP_PROPERTIES_KEY_AI_TYPE = "aiType";
 	
@@ -252,5 +254,20 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 	@Override
 	public boolean isRemovedFromMap() {
 		return body == null;
+	}
+	
+	@Override
+	public CutsceneControlledState getState(String controlledUnitState) {
+		return getStateMachine().getState(controlledUnitState);
+	}
+	
+	@Override
+	public void setState(CutsceneControlledState state) {
+		if (state instanceof CharacterState) {
+			getStateMachine().setState((CharacterState) state);
+		}
+		else {
+			throw new IllegalArgumentException("Only states of the type CharacterState are allowed here.");
+		}
 	}
 }

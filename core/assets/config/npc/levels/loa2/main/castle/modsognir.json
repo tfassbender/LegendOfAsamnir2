@@ -1,5 +1,5 @@
 {
-	graphicsConfigFile: config/npc/graphics/adventurer.json
+	graphicsConfigFile: config/npc/graphics/king.json
 	
 	aiConfig: {
 		type: PRE_DEFINED_MOVEMENT_AI,

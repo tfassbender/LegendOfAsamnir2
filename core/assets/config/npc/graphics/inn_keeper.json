@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/inn_keeper.json,
+	stateConfig: config/npc/states/inn_keeper.json,
+	initialState: idle,
+	
+	bodyWidth: 0.7f,
+	bodyHeight: 0.8f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.2f,
+	
+	interactionMarkerOffsetX: 0f,
+	interactionMarkerOffsetY: 0f,
+}
