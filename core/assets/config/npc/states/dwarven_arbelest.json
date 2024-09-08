@@ -1,0 +1,20 @@
+[
+	{
+		id: idle,
+		animation: dwarven_arbelest_idle_2,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: dwarven_arbelest_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+]

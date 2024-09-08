@@ -3,6 +3,17 @@
 	//*** cutscenes - event objects touched
 	//*******************************************
 	
+	loa2_l1_mine_entry__lantern_hint: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_mine_entry__lantern_hint,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l1_dwarven_caves__lantern_hint_cutscene,
+		}
+	},
+	
 	loa2_l1_mine_main__blocked_tunnel_up: {
 		event: {
             eventType: EVENT_OBJECT_TOUCHED,

@@ -6,16 +6,16 @@
 		name: loa2_prolog,
 		map: "map/loa2_prolog.tmx",
 		initialStartingPointId: 0,
-		//initial: true
+		initial: true
 		homeMap: true,
-		homeMapStartingPointId: 2,
+		homeMapStartingPointId: 0,
 	},
 	{
 		name: loa2_main,
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
 		initialStartingPointId: 8,
-		initial: true
+		//initial: true
 	},
 	{
         name: loa2_main_tavern,

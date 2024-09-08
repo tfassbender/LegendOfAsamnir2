@@ -60,6 +60,7 @@
 	//********************************************************
 	//*** Legend of Asamnir 2 - Dwarven Mine - Entry
 	//********************************************************
+	config/cutscene/loa2/mine/lantern_hint.json,
 	config/cutscene/loa2/mine/skafid.json,
 	config/cutscene/loa2/mine/eikinskjaldi.json,
 	

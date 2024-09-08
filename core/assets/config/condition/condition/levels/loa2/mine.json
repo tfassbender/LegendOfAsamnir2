@@ -3,8 +3,16 @@
 	//*** Dwarven Mine Entry
 	//*******************************************
 	
+	loa2_mine_entry__lantern_hint_given: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_mine_entry__lantern_hint_given,
+            expectedValue: true,
+		}
+	},
+	
 	loa2_mine_entry__key_collected: {
-		// there is only key that can be collected so far
+		// there is only one key that can be collected so far
 		conditionType: HAS_KEY,
 		parameters: {
 			numKeys: 1,

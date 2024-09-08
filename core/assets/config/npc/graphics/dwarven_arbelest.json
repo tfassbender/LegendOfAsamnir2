@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/dwarven_arbelest.json,
+	stateConfig: config/npc/states/dwarven_arbelest.json,
+	initialState: idle,
+	
+	bodyWidth: 0.9f,
+	bodyHeight: 0.8f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.2f,
+	
+	interactionMarkerOffsetX: -0.4f,
+	interactionMarkerOffsetY: -0.2f,
+}

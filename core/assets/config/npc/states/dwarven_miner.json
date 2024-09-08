@@ -1,0 +1,34 @@
+[
+	{
+		id: idle,
+		animation: dwarven_miner_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, pick, dig
+		]
+	},
+	{
+		id: move,
+		animation: dwarven_miner_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, pick, dig
+		]
+	},
+	{
+		id: pick,
+		animation: dwarven_miner_pick,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: dig,
+		animation: dwarven_miner_dig,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+]

@@ -246,7 +246,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "???",
-				displayText: "Use the left mouse button, the right control key, or the B button on the controller to hit things. ",
+				displayText: "Use the left mouse button, the right control key, or the A button on the controller to hit things. ",
 				colorHeader: #000099,
 				showNextPageIcon: true,
 			}

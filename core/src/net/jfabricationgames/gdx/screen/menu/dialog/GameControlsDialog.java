@@ -19,8 +19,7 @@ public class GameControlsDialog extends InGameMenuDialog {
 	private void createControls() {
 		background = new MenuBox(12, 8, MenuBox.TextureType.YELLOW_PAPER);
 		banner = new MenuBox(6, 2, MenuBox.TextureType.BIG_BANNER);
-		buttonBackToMenu = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG)
-				.setNinePatchConfigFocused(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG_FOCUSED).setPosition(935, 670).setSize(110, 40).build();
+		buttonBackToMenu = new FocusButtonBuilder().setNinePatchConfig(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG).setNinePatchConfigFocused(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG_FOCUSED).setPosition(935, 670).setSize(110, 40).build();
 		buttonBackToMenu.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
 		buttonBackToMenu.setFocused(true);
 	}
@@ -92,8 +91,8 @@ public class GameControlsDialog extends InGameMenuDialog {
 		screenTextWriter.drawText("RIGHT", textColThreeX, textRowOneY - 3f * textRowOffset);
 		screenTextWriter.drawText("X", textColThreeX, textRowOneY - 4f * textRowOffset);
 		screenTextWriter.drawText("Y", textColThreeX, textRowOneY - 5f * textRowOffset);
-		screenTextWriter.drawText("B / RT", textColThreeX, textRowOneY - 6f * textRowOffset);
-		screenTextWriter.drawText("A / LT", textColThreeX, textRowOneY - 7f * textRowOffset);
+		screenTextWriter.drawText("A / RT", textColThreeX, textRowOneY - 6f * textRowOffset);
+		screenTextWriter.drawText("B / LT", textColThreeX, textRowOneY - 7f * textRowOffset);
 		screenTextWriter.drawText("LB / RB", textColThreeX, textRowOneY - 8f * textRowOffset);
 		screenTextWriter.drawText("START", textColThreeX, textRowOneY - 9f * textRowOffset);
 	}

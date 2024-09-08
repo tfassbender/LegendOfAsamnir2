@@ -37,7 +37,7 @@
 			executionParameters: {
 				displayTextHeader: "???",
 				colorHeader: #000099,
-				displayText: "Press the right mouse button, the right shift key or the controller button A to use your shield. ",
+				displayText: "Press the right mouse button, the right shift key or the controller button B to use your shield. ",
 			}
 			
 			waitForEventToFinish: true,

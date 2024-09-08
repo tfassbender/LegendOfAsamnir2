@@ -1,0 +1,47 @@
+{
+	configList: 
+	[
+//		{
+//			name: dwarven_arbelest_idle,
+//			atlas: packed/demo/demo.atlas,
+//			frameDuration: 0.1,
+//			playMode: NORMAL
+//		},
+		{
+			name: dwarven_arbelest_idle_2,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: dwarven_arbelest_move,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+//		{
+//			name: dwarven_arbelest_shoot,
+//			atlas: packed/demo/demo.atlas,
+//			frameDuration: 0.1,
+//			playMode: NORMAL
+//		},
+//		{
+//			name: dwarven_arbelest_reload,
+//			atlas: packed/demo/demo.atlas,
+//			frameDuration: 0.1,
+//			playMode: NORMAL
+//		},
+//		{
+//            name: dwarven_arbelest_damage,
+//            atlas: packed/demo/demo.atlas,
+//            frameDuration: 0.1,
+//            playMode: NORMAL
+//		},
+//		{
+//            name: dwarven_arbelest_death,
+//            atlas: packed/demo/demo.atlas,
+//            frameDuration: 0.1,
+//            playMode: NORMAL
+//		},
+	]
+}

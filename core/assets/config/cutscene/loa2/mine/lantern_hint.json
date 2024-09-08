@@ -1,0 +1,53 @@
+{
+	id: loa2_l1_dwarven_caves__lantern_hint_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_mine_entry__lantern_hint_given,
+					executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: thorin_lantern_hint,
+				},
+			],
+		},
+		
+		thorin_lantern_hint: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "It's dark here.                    \nI should use my lantern. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	set_gloal_value__hint_given,
+           	],
+		},
+		
+		set_gloal_value__hint_given: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_mine_entry__lantern_hint_given, value: true}",
+			},
+			
+			executes: [
+				end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
