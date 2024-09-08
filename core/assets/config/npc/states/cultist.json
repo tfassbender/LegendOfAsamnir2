@@ -1,0 +1,41 @@
+[
+	{
+		id: idle,
+		animation: cultist_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, sacrifice, worship, damage
+		]
+	},
+	{
+		id: move,
+		animation: cultist_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, sacrifice, worship, damage
+		]
+	},
+	{
+		id: sacrifice,
+		animation: cultist_sacrifice,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: worship,
+		animation: cultist_worship,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: damage,
+		animation: cultist_worship,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+]

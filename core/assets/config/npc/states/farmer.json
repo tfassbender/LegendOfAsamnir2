@@ -1,0 +1,20 @@
+[
+	{
+		id: idle,
+		animation: farmer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: farmer_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+]

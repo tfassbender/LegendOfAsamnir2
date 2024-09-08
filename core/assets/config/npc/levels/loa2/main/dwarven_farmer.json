@@ -1,0 +1,40 @@
+{
+	graphicsConfigFile: config/npc/graphics/dwarven_farmer.json
+	
+	aiConfig: {
+		type: RANDOM_IDLE_STATES_MOVEMENT_AI,
+		
+		maxMoveDistance: 3f,
+		movementProbability: 0.2f,
+		distanceToKeepFromPlayer: 0f,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+	
+		idleStates: {
+			idle: {
+				probability: 0.4,
+			},
+			throw_seeds: {
+				probability: 0.3,
+				minRepetitions: 2,
+				maxRepetitions: 4,
+			},
+			work: {
+				probability: 0.3,
+				minRepetitions: 3,
+				maxRepetitions: 5,
+			},
+		}
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	interactionEventId: loa2_main_dwarven_farmer,
+	movingSpeed: 0.75f,
+}

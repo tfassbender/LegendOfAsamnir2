@@ -215,6 +215,20 @@
 				raw_images/restricted/enemy/elite_mage/elite_mage_damage,
 				raw_images/restricted/enemy/elite_mage/elite_mage_death,
 				
+				// cultist
+				raw_images/restricted/enemy/cultist/cultist_idle,
+				raw_images/restricted/enemy/cultist/cultist_move,
+				raw_images/restricted/enemy/cultist/cultist_sacrifice,
+				raw_images/restricted/enemy/cultist/cultist_worship,
+				raw_images/restricted/enemy/cultist/cultist_damage,
+				
+				// cultist brute
+				raw_images/restricted/enemy/cultist_brute/cultist_brute_idle,
+				raw_images/restricted/enemy/cultist_brute/cultist_brute_move,
+				raw_images/restricted/enemy/cultist_brute/cultist_brute_attack,
+				raw_images/restricted/enemy/cultist_brute/cultist_brute_damage,
+				raw_images/restricted/enemy/cultist_brute/cultist_brute_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################
@@ -246,6 +260,7 @@
 				
 				raw_images/npc/builder/builder_idle,
 				raw_images/npc/builder/builder_move,
+				raw_images/npc/builder/builder_work,
 				
 				//##############################################################
 				//### NPCs - restricted graphics
@@ -275,6 +290,29 @@
 			    // princess
 			    raw_images/restricted/npc/princess/princess_idle,
 			    raw_images/restricted/npc/princess/princess_move,
+			    
+			    // blacksmith
+			    raw_images/restricted/npc/blacksmith/blacksmith_idle,
+			    raw_images/restricted/npc/blacksmith/blacksmith_move,
+			    raw_images/restricted/npc/blacksmith/blacksmith_work,
+			    
+			    // old man
+			    raw_images/restricted/npc/old_man/old_man_idle,
+			    raw_images/restricted/npc/old_man/old_man_move,
+			    
+			    // farmer
+			    raw_images/restricted/npc/farmer/farmer_idle,
+			    raw_images/restricted/npc/farmer/farmer_move,
+			    
+			    // dwarven farmer
+			    raw_images/restricted/npc/dwarven_farmer/dwarven_farmer_idle,
+			    raw_images/restricted/npc/dwarven_farmer/dwarven_farmer_move,
+			    raw_images/restricted/npc/dwarven_farmer/dwarven_farmer_throw_seeds,
+			    raw_images/restricted/npc/dwarven_farmer/dwarven_farmer_work,
+			    
+			    // royal guard
+			    raw_images/restricted/npc/royal_guard/royal_guard_idle,
+			    raw_images/restricted/npc/royal_guard/royal_guard_block,
 				
 				//##############################################################
 				//### Animals

@@ -1,5 +1,5 @@
 {
-	graphicsConfigFile: config/npc/graphics/builder.json
+	graphicsConfigFile: config/npc/graphics/farmer.json
 	
 	aiConfig: {
 		type: RANDOM_MOVEMENT_AI,

@@ -7,7 +7,7 @@
 			executionParameters: {
 				displayTextHeader: "Guardian of Bifrost",
 				displayText: "Hey Thorin,\nHow can I help you? ",
-				colorHeader: #ff00ff,
+				colorHeader: #04007a,
 			}
 			
 			startsWithCutscene: true,
@@ -57,7 +57,7 @@
             executionParameters: {
                 displayTextHeader: "Guardian of Bifrost",
                 displayText: "I am the Guardian of the Bifrost.\nI am here to protect the entrance to Asgard. Only those who have been granted access by the rune Raidho can enter. ",
-                colorHeader: #ff00ff,
+                colorHeader: #04007a,
                 showNextPageIcon: true,
 			}
             
@@ -75,7 +75,7 @@
             executionParameters: {
                 displayTextHeader: "Guardian of Bifrost",
                 displayText: "But since this level is not yet available in the game...\nI don't really know what I am doing here. ",
-                colorHeader: #ff00ff,
+                colorHeader: #04007a,
 			}
 		    
             waitForEventToFinish: true,
@@ -92,7 +92,7 @@
             executionParameters: {
                 displayTextHeader: "Guardian of Bifrost",
                 displayText: "The official answer is, that you need to find the rune Raidho to be able to travel between the nine worlds.\nBut to be honest: This level is just not finished yet. ",
-                colorHeader: #ff00ff,
+                colorHeader: #04007a,
 			}
 		    
             waitForEventToFinish: true,

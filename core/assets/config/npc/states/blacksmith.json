@@ -1,7 +1,7 @@
 [
 	{
 		id: idle,
-		animation: builder_idle,
+		animation: blacksmith_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -10,7 +10,7 @@
 	},
 	{
 		id: move,
-		animation: builder_move,
+		animation: blacksmith_move,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -19,7 +19,7 @@
 	},
 	{
 		id: work,
-		animation: builder_work,
+		animation: blacksmith_work,
 		endsWithAnimation: true,
 		followingState: work, // has to be manually set to idle in the cutscene
 		interruptingStates: [

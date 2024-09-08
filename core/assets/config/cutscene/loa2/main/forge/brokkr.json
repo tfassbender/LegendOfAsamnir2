@@ -157,8 +157,16 @@
 			},
 			
 			executes: [
+				change_to_work_state,
 				play_sound_forge,
 			]
+		},
+		
+		change_to_work_state: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_main_forge_brokkr,
+			controlledUnitState: work,
 		},
 		
 		play_sound_forge: {
@@ -176,9 +184,17 @@
             executionDurationInSeconds: 4f,
             
             executes: [
+            	change_to_idle_state,
                 repairing_shield_done,
 			],
 		},
+		
+		change_to_idle_state: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_main_forge_brokkr,
+            controlledUnitState: idle,
+        },
 		
 		repairing_shield_done: {
             type: SHOW_ON_SCREEN_TEXT,
@@ -246,6 +262,7 @@
 			},
 			
 			executes: [
+				change_to_work_state,
                 play_sound_forge,
 			],
 		},
@@ -265,6 +282,7 @@
             executionDurationInSeconds: 4f,
             
             executes: [
+				change_to_idle_state,
                 forging_runes_done,
 			],
 		},

@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/old_man.json,
+	stateConfig: config/npc/states/old_man.json,
+	initialState: idle,
+	
+	bodyWidth: 0.8f,
+	bodyHeight: 0.8f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.3f,
+	
+	interactionMarkerOffsetX: 0.1f,
+	interactionMarkerOffsetY: -0.1f,
+}

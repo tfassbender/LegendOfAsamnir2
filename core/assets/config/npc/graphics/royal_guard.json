@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/royal_guard.json,
+	stateConfig: config/npc/states/royal_guard.json,
+	initialState: idle,
+	
+	bodyWidth: 1f,
+	bodyHeight: 1.2f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.7f,
+	
+	interactionMarkerOffsetX: -0.4f,
+	interactionMarkerOffsetY: -0.9f,
+}

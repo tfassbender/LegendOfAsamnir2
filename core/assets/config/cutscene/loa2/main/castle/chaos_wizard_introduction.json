@@ -641,6 +641,7 @@
             
             executes: [
                 spawn_princess,
+                play_spawn_sound_effect,
 			],
 		},
 		
@@ -654,6 +655,12 @@
 			executes: [
 				wait_after_spawning_the_princess,
 			],
+		},
+		
+		play_spawn_sound_effect: {
+            type: PLAY_SOUND,
+            
+            soundEffectName: spawn,
 		},
 		
 		wait_after_spawning_the_princess: {
@@ -688,6 +695,23 @@
             waitForEventToFinish: true,
             
             executes: [
+                freydis_1,
+			],
+		},
+		
+		freydis_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis (The Princess)",
+                colorHeader: #ff00ff,
+                displayText: "...                         \n...                     \n... what's going on here? ...",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
                 thorin_11,
 			],
 		},
@@ -704,6 +728,23 @@
             waitForEventToFinish: true,
             
             executes: [
+                freydis_2,
+			],
+		},
+		
+		freydis_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "... What?!              \n\nAre you serious?!  ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
                 wait_before_chaos_wizard_answers_16,
 			],
 		},
@@ -924,6 +965,23 @@
             waitForEventToFinish: true,
             
             executes: [
+                freydis_3,
+			],
+		},
+		
+		freydis_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "You two idiots are joking, right?          \n...                             \n...                             \n... right? ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
                 chaos_wizard_leaves,
 			],
 		},

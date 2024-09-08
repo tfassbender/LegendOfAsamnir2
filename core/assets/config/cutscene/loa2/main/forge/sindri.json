@@ -89,7 +89,7 @@
             executionParameters: {
                 displayTextHeader: "Sindri",
                 colorHeader: #bd6302,
-                displayText: "...                         \nI don't really understand what you're talking about, but I forged an axe yesterday. If it helps you, you can have it. ",
+                displayText: "...                         \nI don't really understand what you're talking about, but I forged an axe yesterday.             \nIf it helps you, you can have it. ",
                 showNextPageIcon: true,
 			}
             
@@ -270,8 +270,16 @@
 			},
 			
 			executes: [
+				change_to_work_state,
 				play_sound_forge,
 			]
+		},
+		
+		change_to_work_state: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_main_forge_sindri,
+			controlledUnitState: work,
 		},
 		
 		play_sound_forge: {
@@ -289,9 +297,17 @@
             executionDurationInSeconds: 4f,
             
             executes: [
+            	change_to_idle_state,
                 repairing_shield_done,
 			],
 		},
+		
+		change_to_idle_state: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_main_forge_sindri,
+            controlledUnitState: idle,
+        },
 		
 		repairing_shield_done: {
             type: SHOW_ON_SCREEN_TEXT,

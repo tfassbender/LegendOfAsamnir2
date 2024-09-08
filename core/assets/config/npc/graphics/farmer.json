@@ -1,6 +1,6 @@
 {
-	animationsConfig: config/animation/npc/builder.json,
-	stateConfig: config/npc/states/builder.json,
+	animationsConfig: config/animation/npc/farmer.json,
+	stateConfig: config/npc/states/farmer.json,
 	initialState: idle,
 	
 	bodyWidth: 0.9f,

@@ -17,6 +17,7 @@
 	//*** Legend of Asamnir 2 - Main
 	//********************************************************
 	config/cutscene/loa2/main/adventurer_in_dwarven_village.json,
+	config/cutscene/loa2/main/dwarven_farmer.json,
 	config/cutscene/loa2/main/leaving_village_north.json,
 	config/cutscene/loa2/main/leaving_village_east.json,
 	config/cutscene/loa2/main/leaving_village_south.json,
@@ -40,6 +41,7 @@
 	config/cutscene/loa2/main/castle/setup.json,
 	config/cutscene/loa2/main/castle/goto_main.json,
 	config/cutscene/loa2/main/castle/chaos_wizard_introduction.json,
+	config/cutscene/loa2/main/castle/modsognir.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main - Forge

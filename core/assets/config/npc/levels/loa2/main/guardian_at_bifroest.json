@@ -1,10 +1,10 @@
 {
-	graphicsConfigFile: config/npc/graphics/adventurer_female.json
+	graphicsConfigFile: config/npc/graphics/royal_guard.json
 	
 	aiConfig: {
 		type: PRE_DEFINED_MOVEMENT_AI,
 		
-		stateNameMove: move,
+		stateNameMove: idle, // a move state is needed for the AI to work properly, though it is not used here
 		stateNameIdle: idle,
 		
 		useRelativePositions: true,

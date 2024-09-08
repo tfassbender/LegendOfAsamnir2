@@ -1,27 +1,27 @@
 [
 	{
 		id: idle,
-		animation: builder_idle,
+		animation: royal_guard_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, work
+			block
 		]
 	},
 	{
 		id: move,
-		animation: builder_move,
+		animation: royal_guard_idle, // a move state is needed for the character state machine to work properly (though it is not used in this case)
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, work
+			block
 		]
 	},
 	{
-		id: work,
-		animation: builder_work,
+		id: block,
+		animation: royal_guard_block,
 		endsWithAnimation: true,
-		followingState: work, // has to be manually set to idle in the cutscene
+		followingState: idle,
 		interruptingStates: [
 			idle
 		]

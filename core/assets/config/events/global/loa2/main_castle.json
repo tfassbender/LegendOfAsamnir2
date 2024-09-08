@@ -26,6 +26,21 @@
 	},
 	
 	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_main_castle_modsognir: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_castle_modsognir,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_castle_modsognir_cutscene,
+		}
+	},
+	
+	//*******************************************
 	//*** change map
 	//*******************************************
 	

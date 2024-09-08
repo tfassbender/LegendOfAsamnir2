@@ -14,7 +14,7 @@
 		name: loa2_main,
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
-		initialStartingPointId: 0,
+		initialStartingPointId: 8,
 		initial: true
 	},
 	{

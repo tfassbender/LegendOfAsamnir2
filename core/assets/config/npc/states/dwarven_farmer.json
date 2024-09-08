@@ -1,0 +1,34 @@
+[
+	{
+		id: idle,
+		animation: dwarven_farmer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, work, throw_seeds
+		]
+	},
+	{
+		id: move,
+		animation: dwarven_farmer_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, work, throw_seeds
+		]
+	},
+	{
+		id: throw_seeds,
+		animation: dwarven_farmer_throw_seeds,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: work,
+		animation: dwarven_farmer_work,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+]

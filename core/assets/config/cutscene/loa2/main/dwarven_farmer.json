@@ -1,0 +1,57 @@
+{
+	id: loa2_main_dwarven_farmer_cutscene,
+	controlledActions: {
+		skafid_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Veggr",
+				displayText: "Hey Thorin,\n\nCan I help you with something? ",
+				colorHeader: #538203,
+			}
+			
+			startsWithCutscene: true,
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_1,
+			],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Hi Veggr,\n\nI'm just passing by to see how you're doing.. ",
+            }
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                skafid_2,
+            ],
+        },
+        
+        skafid_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Veggr",
+				displayText: "That's very kind of you Thorin.\nI'm doing well, thank you.  ",
+				colorHeader: #538203,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -1,0 +1,20 @@
+[
+	{
+		id: idle,
+		animation: old_man_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: old_man_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+]

@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/cultist.json,
+	stateConfig: config/npc/states/cultist.json,
+	initialState: idle,
+	
+	bodyWidth: 0.6f,
+	bodyHeight: 0.8f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.2f,
+	
+	interactionMarkerOffsetX: 0f,
+	interactionMarkerOffsetY: 0f,
+}

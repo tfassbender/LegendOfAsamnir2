@@ -1,0 +1,43 @@
+{
+	id: loa2_main_castle_modsognir_cutscene,
+	controlledActions: {
+		modsognir_1: {
+			startsWithCutscene: true,
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Modsognir",
+                colorHeader: #944703,
+                displayText: "Thorin!\nHow's your quest going?\nDid you find this strange chaos wizard guy? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+           	],
+        },
+        
+        thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Not yet, Modsognir.\nBut I'll get him!\n\nAnd then I'll get Asamnir back and ram it in his skull!!!   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+        },
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

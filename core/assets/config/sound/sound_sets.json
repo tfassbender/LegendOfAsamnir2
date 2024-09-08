@@ -71,7 +71,7 @@
 				show_on_screen_text_page: {//not used, because it's played too often and get's anoying
 					path: "sound/common/show_on_screen_text_page.wav",
 					volume: 0.1,
-				}
+				},
 			}
 		},
 		item: {
@@ -131,6 +131,9 @@
 				explosion: {
 					path: "sound/projectile/explosion.wav"
 					volume: 0.5
+				},
+				zap: {
+					path: "sound/projectile/zap.mp3"
 				},
 			}
 		}
@@ -238,6 +241,9 @@
 				},
 				boss_defeated: {
 					path: "sound/enemy/boss_defeated.wav",
+				},
+				charms: {
+					path: "sound/enemy/charms.mp3",
 				},
 				//gladiator
 				attack_gladiator: {
@@ -397,7 +403,19 @@
                 forge_rune: {
                 	path: "sound/cutscene/forge_rune.wav",
                     volume: 0.6,
-                }
+                },
+                spawn: {
+                    path: "sound/cutscene/spawn.wav",
+                },
+				scan: {
+					path: "sound/cutscene/scan.mp3",
+				},
+				click: {
+					path: "sound/cutscene/click.mp3",
+				},
+				dewdrop: {
+					path: "sound/cutscene/dewdrop.mp3",
+				},
             }
         },
 		menu: {

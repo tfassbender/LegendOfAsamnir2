@@ -62,6 +62,17 @@
 		}
 	},
 	
+	loa2_main_dwarven_farmer: {
+		event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_main_dwarven_farmer,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_main_dwarven_farmer_cutscene,
+		}
+	},
+	
 	loa2_main_guardian_at_bifroest: {
         event: {
             eventType: NPC_INTERACTION,

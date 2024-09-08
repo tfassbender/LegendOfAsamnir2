@@ -1,0 +1,17 @@
+{
+	configList: 
+	[
+		{
+			name: royal_guard_idle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: royal_guard_block,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+	]
+}
