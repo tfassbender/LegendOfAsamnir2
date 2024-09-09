@@ -106,7 +106,7 @@
 		imageOffsetY: 0.2f,
 		
 		bodyShape: CIRCLE,
-		bodyRadius: 0.6f,
+		bodyRadius: 0.5f,
 		
 		addSensor: true,
 		sensorRadius: 5f,

@@ -1,4 +1,8 @@
 {
+	//*******************************************
+	//*** runes
+	//*******************************************
+	
 	common__player_has_10_coins_or_more: {
 		conditionType: HAS_COINS,
 		parameters: {
@@ -33,6 +37,18 @@
         conditionType: RUNE_COLLECTED,
         parameters: {
             rune: LAGUZ
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2__unfinished_end_explore: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2__unfinished_end_explore,
+            expectedValue: true,
 		}
 	},
 }

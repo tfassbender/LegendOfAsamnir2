@@ -1,0 +1,71 @@
+{
+	id: loa2_main_guardian_at_bifroest_stops_thorin_cutscene,
+	controlledActions: {
+		
+		guardian_changes_state_to_block: {
+			type: CHANGE_STATE,
+			startsWithCutscene: true,
+			
+			controlledUnitId: loa2_main_guardian_at_bifrost,
+			controlledUnitState: block,
+			
+			executes: [
+				guardian_stops_thorin,
+			],
+		},
+		
+		guardian_stops_thorin: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Guardian of Bifrost",
+				displayText: "Stop! I can't let you pass!\nYou need to find the rune raidho to travel between the nine worlds!\n\nSorry, Thorin. ",
+				colorHeader: #04007a,
+			}
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_variable_bifrost_visited,
+			],
+		},
+		
+		set_global_variable_bifrost_visited: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__bifrost_visisted, value: true}",
+			},
+			
+			executes: [
+                move_back,
+			],
+		},
+		
+		move_back: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -1},
+			
+			executes: [
+	            guardian_changes_state_back_to_idle,
+			]
+		},
+		
+		guardian_changes_state_back_to_idle: {
+			type: CHANGE_STATE,
+			
+			controlledUnitId: loa2_main_guardian_at_bifrost,
+			controlledUnitState: end_block,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

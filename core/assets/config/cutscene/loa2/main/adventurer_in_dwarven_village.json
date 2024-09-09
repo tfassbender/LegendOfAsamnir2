@@ -33,7 +33,7 @@
 			},
 			choiceOptionExecutions: [
 				end,
-				what_should_i_do_next_condition_1,
+				what_should_i_do_next,
 				how_did_you_get_here,
 			],
 		},
@@ -71,28 +71,39 @@
 			],
 		},
 		
-		what_should_i_do_next_condition_1: {
-            type: CONDITION,
+		what_should_i_do_next: {
+			type: SWITCH_CONDITION,
 			
-			condition: {
-				conditionId: loa2_main_tavern__spoken_to_mjodwitnir,
-				thenCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_met,
-					}
+			switchConditions: [
+				{
+					conditionId: loa2__unfinished_end_explore,
+					executedStateName: demo_version
 				},
-				elseCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_not_met,
-					}
-				}
-			},
-			conditionOptionExecutions: {
-				condition_met: what_should_i_do_next_condition_2,
-				condition_not_met: thorin_needs_to_speak_to_mjodwitnir,
-			}
+				{
+					conditionId: common__rune_raidho_collected, // cannot be collected yet - the level is not finished
+					executedStateName: demo_version
+				},
+				{
+					conditionId: loa2_main__bifrost_visisted,
+					executedStateName: thorin_needs_to_find_the_rune_raidho
+				},
+				{
+					conditionId: loa2_main__spare_weapon_gained,
+					executedStateName: thorin_needs_to_go_to_asgard
+				},
+				{
+					conditionId: loa2_main__asamnir_stolen,
+					executedStateName: thorin_needs_to_go_to_the_blacksmith
+				},
+				{
+					conditionId: loa2_main_tavern__spoken_to_mjodwitnir,
+					executedStateName: thorin_needs_to_go_to_the_castle
+				},
+				{
+					// default case - thorin hasn't spoken to mjodwitnir yet
+					executedStateName: thorin_needs_to_speak_to_mjodwitnir
+				},
+			],
 		},
 		
 		thorin_needs_to_speak_to_mjodwitnir: {
@@ -111,30 +122,6 @@
 			],
 		},
 		
-		what_should_i_do_next_condition_2: {
-            type: CONDITION,
-			
-			condition: {
-				conditionId: loa2_main__asamnir_stolen,
-				thenCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_met,
-					}
-				},
-				elseCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_not_met,
-					}
-				}
-			},
-			conditionOptionExecutions: {
-				condition_met: what_should_i_do_next_condition_3,
-				condition_not_met: thorin_needs_to_go_to_the_castle,
-			}
-		},
-		
 		thorin_needs_to_go_to_the_castle: {
             type: SHOW_ON_SCREEN_TEXT,
             
@@ -149,30 +136,6 @@
             executes: [
                 thorin_question,
 			],
-		},
-		
-		what_should_i_do_next_condition_3: {
-            type: CONDITION,
-			
-			condition: {
-				conditionId: loa2_main__spare_weapon_gained,
-				thenCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_met,
-					}
-				},
-				elseCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_not_met,
-					}
-				}
-			},
-			conditionOptionExecutions: {
-				condition_met: what_should_i_do_next_condition_4,
-				condition_not_met: thorin_needs_to_go_to_the_blacksmith,
-			}
 		},
 		
 		thorin_needs_to_go_to_the_blacksmith: {
@@ -191,30 +154,6 @@
 			],
 		},
 		
-		what_should_i_do_next_condition_4: {
-            type: CONDITION,
-			
-			condition: {
-				conditionId: loa2_main__bifrost_visisted,
-				thenCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_met,
-					}
-				},
-				elseCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_not_met,
-					}
-				}
-			},
-			conditionOptionExecutions: {
-				condition_met: what_should_i_do_next_condition_5,
-				condition_not_met: thorin_needs_to_go_to_asgard,
-			}
-		},
-		
 		thorin_needs_to_go_to_asgard: {
             type: SHOW_ON_SCREEN_TEXT,
             
@@ -229,30 +168,6 @@
             executes: [
                 thorin_question,
 			],
-		},
-		
-		what_should_i_do_next_condition_5: {
-            type: CONDITION,
-			
-			condition: {
-				conditionId: common__rune_raidho_collected,
-				thenCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_met,
-					}
-				},
-				elseCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_not_met,
-					}
-				}
-			},
-			conditionOptionExecutions: {
-				condition_met: demo_version, // TODO add more conditions when more levels are added
-				condition_not_met: thorin_needs_to_find_the_rune_raidho,
-			}
 		},
 		
 		thorin_needs_to_find_the_rune_raidho: {
@@ -277,7 +192,7 @@
             
             executionParameters: {
                 displayTextHeader: "Adventurer from Midgard",
-                displayText: "Since this is just an unfinished demo version of the game... I think you can only explore the lands of Svartalfheim so far. ",
+                displayText: "Since this is just an unfinished demo version of the game... I think you can only explore the lands of Svartalfheim and the Dwarven caves so far. ",
                 colorHeader: #009933,
 			}
             
@@ -296,7 +211,7 @@
 			choice: {
 				header: "Thorin",
 				options: [
-					"Okay, I'll explore the lands of Svartalfheim.",
+					"Okay, I'll explore.",
 					"What is a demo version?"
 				],
 			},

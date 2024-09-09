@@ -102,7 +102,7 @@
   </object>
   <object id="1916" name="object.eventObject" x="683.063" y="63.9886" width="45.875" height="4.75">
    <properties>
-    <property name="eventParameter" value="loa2_l1_mine_main__goto_l1_castle"/>
+    <property name="eventParameter" value="loa2_unfinished_end_cutscene"/>
    </properties>
   </object>
   <object id="1917" name="object.eventObject" x="3008.4" y="1404.96" width="95.5417" height="2.75">

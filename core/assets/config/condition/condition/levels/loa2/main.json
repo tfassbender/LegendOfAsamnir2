@@ -27,10 +27,10 @@
 		}
 	},
 	
-	loa2_main__unfinished_end_explore: {
-        conditionType: GLOBAL_VALUE_SET,
+	loa2_main__fields_of_vigrid_hint_given: {
+		conditionType: GLOBAL_VALUE_SET,
         parameters: {
-            key: loa2_main__unfinished_end_explore,
+            key: loa2_main__fields_of_vigrid_hint_given,
             expectedValue: true,
 		}
 	},

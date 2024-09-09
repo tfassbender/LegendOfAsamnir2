@@ -16,7 +16,7 @@ buildscript {
 allprojects {
     apply plugin: "eclipse"
 
-    version = '0.3'
+    version = '0.4'
     ext {
         appName = "Legend of Asamnir 2 - Rise of the Chaos Wizard"
         gdxVersion = '1.12.1'

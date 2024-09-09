@@ -313,6 +313,7 @@
 			    // royal guard
 			    raw_images/restricted/npc/royal_guard/royal_guard_idle,
 			    raw_images/restricted/npc/royal_guard/royal_guard_block,
+			    raw_images/restricted/npc/royal_guard/royal_guard_end_block,
 			    
 			    // dwarven arbelest
 			    raw_images/restricted/npc/dwarven_arbelest/dwarven_arbelest_idle_2,

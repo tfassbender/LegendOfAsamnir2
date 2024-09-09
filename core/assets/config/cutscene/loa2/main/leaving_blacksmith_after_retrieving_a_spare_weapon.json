@@ -1,0 +1,77 @@
+{
+	id: loa2_main_leaving_blacksmith_after_retrieving_a_spare_weapon_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_main__fields_of_vigrid_hint_given,
+					executedStateName: end
+				},
+				{
+					conditionId: loa2_main__spare_weapon_gained,
+					executedStateName: thorin_1
+				},
+				{
+					// default case
+					executedStateName: end
+				},
+			],
+		},
+		
+		thorin_1: {
+			
+			// give a hint where to search for the fields of vigrid
+			
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1.5f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Where should I go next ... ?                   \n...                     \nThe strange chaos wizard guy said something about the fields of Vigrid.\nI think that's in Asgard. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_2,
+			]
+		},
+		
+		thorin_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I should be able to get there when I use the bifrost.\n          \nIt's in the north of the village. I'll check it out. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_variable_hint_given,
+			]
+		},
+		
+		set_variable_hint_given: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__fields_of_vigrid_hint_given, value: true}",
+			},
+			
+			executes: [
+				end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -216,6 +216,9 @@
    <point/>
   </object>
   <object id="10419" name="npc.loa2_main_guardian_at_bifroest" x="1391" y="409.667">
+   <properties>
+    <property name="unitId" value="loa2_main_guardian_at_bifrost"/>
+   </properties>
    <point/>
   </object>
   <object id="10420" name="npc.loa2_main_guardian_at_helheim" x="1312" y="2784">
@@ -321,17 +324,17 @@ Its much to dangerous for these weak little aesirs, or ice giants, or humans, or
   </object>
   <object id="10439" name="object.eventObject" x="1824" y="1696" width="15" height="64">
    <properties>
-    <property name="eventParameter" value="loa2_unfinished_end_cutscene"/>
+    <property name="eventParameter" value="loa2_main_leaving_blacksmith_after_retrieving_a_spare_weapon"/>
    </properties>
   </object>
   <object id="10441" name="object.eventObject" x="1906" y="1696" width="14" height="64">
    <properties>
-    <property name="eventParameter" value="loa2_unfinished_end_cutscene"/>
+    <property name="eventParameter" value="loa2_main_leaving_blacksmith_after_retrieving_a_spare_weapon"/>
    </properties>
   </object>
   <object id="10442" name="object.eventObject" x="1824" y="1760" width="96" height="9.81818">
    <properties>
-    <property name="eventParameter" value="loa2_unfinished_end_cutscene"/>
+    <property name="eventParameter" value="loa2_main_leaving_blacksmith_after_retrieving_a_spare_weapon"/>
    </properties>
   </object>
   <object id="10443" name="object.signboard" x="1199.75" y="2095.75">

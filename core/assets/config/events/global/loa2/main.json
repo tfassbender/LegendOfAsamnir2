@@ -36,14 +36,14 @@
 		}
 	},
 	
-	loa2_unfinished_end_cutscene: {
-        event: {
+	loa2_main_leaving_blacksmith_after_retrieving_a_spare_weapon: {
+		event: {
             eventType: EVENT_OBJECT_TOUCHED,
-            stringValue: loa2_unfinished_end_cutscene,
+            stringValue: loa2_main_leaving_blacksmith_after_retrieving_a_spare_weapon,
 		},
         executionType: START_CUTSCENE,
         executionParameters: {
-            cutsceneId: loa2_unfinished_end_cutscene,
+            cutsceneId: loa2_main_leaving_blacksmith_after_retrieving_a_spare_weapon_cutscene,
 		}
 	},
 	
@@ -244,7 +244,7 @@
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_level_under_construction_cutscene,
+			cutsceneId: loa2_main_guardian_at_bifroest_stops_thorin_cutscene,
 		}
 	},
 }

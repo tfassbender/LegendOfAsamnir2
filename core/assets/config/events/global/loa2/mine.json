@@ -211,6 +211,17 @@
 		}
 	},
 	
+	loa2_unfinished_end_cutscene: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_unfinished_end_cutscene,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_unfinished_end_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** enemy defeated
 	//*******************************************

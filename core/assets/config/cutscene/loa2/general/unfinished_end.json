@@ -1,56 +1,37 @@
 {
 	id: loa2_unfinished_end_cutscene,
 	controlledActions: {
-		start_condition: {
-			type: CONDITION,
-			startsWithCutscene: true,
-			
-            condition: {
-                conditionId: loa2_main__spare_weapon_gained,
-                thenCase: {
-                    type: CUTSCENE,
-                    executionParameters: {
-                        conditionCase: condition_met,
-					}
-				},
-                elseCase: {
-                    type: CUTSCENE,
-                    executionParameters: {
-                        conditionCase: condition_not_met,
-					}
-				}
-			},
-            conditionOptionExecutions: {
-                condition_met: second_condition,
-                condition_not_met: end,
-			}
-		},
-		
-		second_condition: {
-			type: CONDITION,
-			
-            condition: {
-                conditionId: loa2_main__unfinished_end_explore,
-                thenCase: {
-                    type: CUTSCENE,
-                    executionParameters: {
-                        conditionCase: condition_met,
-					}
-				},
-                elseCase: {
-                    type: CUTSCENE,
-                    executionParameters: {
-                        conditionCase: condition_not_met,
-					}
-				}
-			},
-            conditionOptionExecutions: {
-                condition_met: end,
-                condition_not_met: show_text_1,
-			}
-		},
+
+//		start_condition: {
+//			
+//			// this condition should be deactivated when using it at on a map change point (like a cave entry)
+//			// so the user doesn't think it's a bug that nothing happens when he reaches the change point
+//			
+//			type: CONDITION,
+//			
+//            condition: {
+//                conditionId: loa2__unfinished_end_explore,
+//                thenCase: {
+//                    type: CUTSCENE,
+//                    executionParameters: {
+//                        conditionCase: condition_met,
+//					}
+//				},
+//                elseCase: {
+//                    type: CUTSCENE,
+//                    executionParameters: {
+//                        conditionCase: condition_not_met,
+//					}
+//				}
+//			},
+//            conditionOptionExecutions: {
+//                condition_met: end,
+//                condition_not_met: show_text_1,
+//			}
+//		},
 		
 		show_text_1: {
+			startsWithCutscene: true,
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionDelayInSeconds: 1.5f,
@@ -72,7 +53,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Tobias (Developer)",
-				displayText: "You can still explore svartalfheim, though!\n\nAnyway, thanks for playing! ",
+				displayText: "You can still explore svartalfheim and the dwarven caves, though!\n\nAnyway, thanks for playing! ",
 				colorHeader: #FF00FF,
 			}
 			
@@ -90,7 +71,7 @@
 			waitForEventToFinish: true,
 			
 			choice: {
-				header: "Continue to main map?",
+				header: "Continue?",
 				options: [
 					"I want to to explore!!!",
 					"Hell no! I'm outa here!",
@@ -107,7 +88,7 @@
 			
 			event: {
 				eventType: SET_GLOBAL_CONDITION_VALUE,
-				stringValue: "{key: loa2_main__unfinished_end_explore, value: true}",
+				stringValue: "{key: loa2__unfinished_end_explore, value: true}",
 			},
 		},
 		

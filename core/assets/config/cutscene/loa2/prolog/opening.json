@@ -69,7 +69,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "???",
-				displayText: "Oh ... wait ... \nThat's the wrong chapter again...\nWhere should we start this time?...\n...\nAh, this seems fitting!",
+				displayText: "Oh ... wait ... \nThat's the wrong chapter again...        \nWhere should we start this time?...\n                                 \nAh, this seems fitting!",
 				colorHeader: #000099,
 				showNextPageIcon: true,
 				showOnBlackScreen: true,

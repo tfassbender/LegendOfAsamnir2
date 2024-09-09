@@ -20,6 +20,15 @@
 	{
 		id: block,
 		animation: royal_guard_block,
+		endsWithAnimation: false, // let the animation stay at the last frame till it's changed in the cutscene
+		followingState: block,
+		interruptingStates: [
+			idle, end_block
+		]
+	},
+	{
+		id: end_block,
+		animation: royal_guard_end_block,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

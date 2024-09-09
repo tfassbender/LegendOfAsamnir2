@@ -10560,6 +10560,13 @@ royal_guard_block
   orig: 64, 64
   offset: 0, 0
   index: 1
+royal_guard_end_block
+  rotate: false
+  xy: 2120, 665
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
 royal_guard_idle
   rotate: false
   xy: 2120, 665
@@ -10574,6 +10581,13 @@ royal_guard_block
   orig: 64, 64
   offset: 0, 0
   index: 2
+royal_guard_end_block
+  rotate: false
+  xy: 2186, 662
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
 royal_guard_block
   rotate: false
   xy: 2252, 662
@@ -10581,6 +10595,13 @@ royal_guard_block
   orig: 64, 64
   offset: 0, 0
   index: 3
+royal_guard_end_block
+  rotate: false
+  xy: 2252, 662
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
 royal_guard_block
   rotate: false
   xy: 2318, 662
@@ -10588,6 +10609,13 @@ royal_guard_block
   orig: 64, 64
   offset: 0, 0
   index: 4
+royal_guard_end_block
+  rotate: false
+  xy: 2318, 662
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
 rune_algiz
   rotate: false
   xy: 392, 141
@@ -10776,14 +10804,14 @@ spider_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 4
 spider_idle
   rotate: false
   xy: 954, 423
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 1
 spider_jump
   rotate: false
   xy: 954, 423

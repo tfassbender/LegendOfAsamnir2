@@ -70,7 +70,7 @@
   <object id="187" name="object.signboard" x="576" y="359.667">
    <properties>
     <property name="colorHeader" value="#0000ff"/>
-    <property name="displayText" value="Use your shield to get near the alarm clock by pressing the right mouse button, the right shift key or the controller button A."/>
+    <property name="displayText" value="Use your shield to get near the alarm clock by pressing the right mouse button, the right shift key or the controller button B."/>
     <property name="displayTextHeader" value="Use your shield"/>
    </properties>
    <point/>
