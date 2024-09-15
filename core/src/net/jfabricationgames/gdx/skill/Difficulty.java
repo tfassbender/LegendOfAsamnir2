@@ -37,7 +37,21 @@ public class Difficulty {
 		return config.get(String.valueOf(difficultyLevelIndex));
 	}
 	
-	public void setDifficultyLevel(DifficultyLevel level) {
+	public static DifficultyLevel getDifficultyLevel() {
+		int difficultyLevelIndex = GlobalValuesDataHandler.getInstance().getAsInteger(GLOBAL_VALUE_KEY_DIFFICULTY_LEVEL, DEFAULT_DIFFICULTY_LEVEL);
+		switch (difficultyLevelIndex) {
+			case 0:
+				return DifficultyLevel.EASY;
+			case 1:
+				return DifficultyLevel.NORMAL;
+			case 2:
+				return DifficultyLevel.HARD;
+			default:
+				return DifficultyLevel.NORMAL;
+		}
+	}
+	
+	public static void setDifficultyLevel(DifficultyLevel level) {
 		GlobalValuesDataHandler.getInstance().put(GLOBAL_VALUE_KEY_DIFFICULTY_LEVEL, String.valueOf(level.index));
 	}
 }

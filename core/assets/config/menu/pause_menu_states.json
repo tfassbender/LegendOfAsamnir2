@@ -4,19 +4,19 @@
 	//*********************************************
 	
 	button_backToGame: {
-		down: button_controls,
+		down: button_settings,
 		right: button_showMap,
 		select: backToGame
 		initial: true,
 	},
-	button_controls: {
+	button_settings: {
 		up: button_backToGame,
 		down: button_saveGame,
 		right: button_showMap,
-		select: showControls, 
+		select: showSettings, 
 	},
 	button_saveGame: {
-		up: button_controls,
+		up: button_settings,
 		down: button_loadGame,
 		right: button_showMap,
 		select: saveGame,
@@ -153,6 +153,42 @@
 		up: item_8,
 		left: rune_8,
 		select: noAction,
+	},
+	
+	//*********************************************
+	//*** Settings Dialog
+	//*********************************************
+	
+	settingsDialog_button_back: {
+		down: settingsDialog_button_difficultyEasy,
+		left: settingsDialog_button_controls,
+		select: closeSettingsDialog,
+	},
+	
+	settingsDialog_button_difficultyEasy: {
+        up: settingsDialog_button_back,
+        down: settingsDialog_button_difficultyNormal,
+        left: settingsDialog_button_controls,
+        select: setDifficultyEasy,
+    },
+    
+    settingsDialog_button_difficultyNormal: {
+        up: settingsDialog_button_difficultyEasy,
+        down: settingsDialog_button_difficultyHard,
+        left: settingsDialog_button_controls,
+        select: setDifficultyNormal,
+	},
+	
+	settingsDialog_button_difficultyHard: {
+        up: settingsDialog_button_difficultyNormal,
+        left: settingsDialog_button_controls,
+        select: setDifficultyHard,
+	},
+	
+	settingsDialog_button_controls: {
+		up: settingdsDialog_button_back,
+		right: settingsDialog_button_difficultyEasy,
+		select: showControls,
 	},
 	
 	//*********************************************

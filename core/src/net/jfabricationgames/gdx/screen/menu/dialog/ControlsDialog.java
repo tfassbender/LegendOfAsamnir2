@@ -8,9 +8,9 @@ import net.jfabricationgames.gdx.screen.menu.components.FocusButton;
 import net.jfabricationgames.gdx.screen.menu.components.FocusButton.FocusButtonBuilder;
 import net.jfabricationgames.gdx.screen.menu.components.MenuBox;
 
-public class GameControlsDialog extends InGameMenuDialog {
+public class ControlsDialog extends InGameMenuDialog {
 	
-	public GameControlsDialog(OrthographicCamera camera) {
+	public ControlsDialog(OrthographicCamera camera) {
 		super(camera);
 		
 		createControls();
