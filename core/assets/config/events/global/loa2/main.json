@@ -47,6 +47,18 @@
 		}
 	},
 	
+	loa2_main_choose_difficulty: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_choose_difficulty,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_choose_game_difficulty_cutscene,
+		}
+	},
+	
+	
 	//*******************************************
 	//*** cutscenes - npc interaction
 	//*******************************************

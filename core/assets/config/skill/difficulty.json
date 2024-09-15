@@ -1,0 +1,14 @@
+{
+	0: { // easy - "I'm a warrior!"
+		damageFactor: 0.75,
+		attackDamageFactor: 1.25,
+	},
+	1: { // normal - "I'm a berserker!"
+		damageFactor: 1,
+		attackDamageFactor: 1,
+	},
+	2: { // hard - "The allfather knows my name!"
+		damageFactor: 1.25,
+		attackDamageFactor: 0.75,
+	},
+}

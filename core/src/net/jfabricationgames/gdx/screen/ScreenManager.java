@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 
+import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.screen.menu.MainMenuScreen;
 
 public class ScreenManager {
@@ -29,6 +30,9 @@ public class ScreenManager {
 		if (gameScreen == null) {
 			throw new IllegalStateException("backToGameScreen was called, but the gameScreen was not yet set.");
 		}
+		
+		// reload the attack handler because the difficulty could have been changed
+		Player.getInstance().beforeChangeToGameScreen();
 		
 		setScreen(gameScreen);
 	}

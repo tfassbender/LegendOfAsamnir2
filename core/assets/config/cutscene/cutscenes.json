@@ -28,6 +28,7 @@
 	config/cutscene/loa2/main/guardian_at_bifroest.json,
 	config/cutscene/loa2/main/guardian_at_bifroest_stops_thorin.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
+	config/cutscene/loa2/main/choose_game_difficulty.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main - Tavern

@@ -29,4 +29,6 @@ public interface PlayableCharacter extends StatsCharacter, CutsceneMoveableUnit,
 	public void centerCameraOnPlayer();
 	public void resetAfterGameOver();
 	public void afterLoadMap();
+	
+	public void beforeChangeToGameScreen();
 }

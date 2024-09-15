@@ -1,0 +1,273 @@
+{
+	id: loa2_choose_game_difficulty_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_main__difficulty_chosen,
+					executedStateName: end,
+				},
+				{
+					// default case - the player hasn't yet chosen a difficulty
+					executedStateName: chaos_wizard_1,
+				},
+			],
+		},
+	
+		chaos_wizard_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+				displayText: "Hey wait!                                \nYou can't just walk into the first level without choosing a difficulty for the game! ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				chaos_wizard_2,
+				chaos_wizard_evil_laugh_1,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_1: {
+			type: PLAY_SOUND,
+			
+            soundEffectName: evil_laugh,
+			
+			executionDelayInSeconds: 6.5f,
+		},
+		
+		chaos_wizard_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+				displayText: "I would advice a noob like you to choose the easiest mode ...                  \nbut it doesn't really matter. You'll never reach me anyway.                         \n*evil laughter*",
+				showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				choose_difficulty,
+			],
+		},
+		
+		choose_difficulty: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Choose a difficulty for the game",
+				options: [
+					"I'm a warrior! (easy)",
+					"I'm a berserker! (normal)",
+					"The allfather knows my name! (hard)"
+				],
+			},
+			choiceOptionExecutions: [
+				easy_difficulty_chosen,
+				normal_difficulty_chosen,
+				hard_difficulty_chosen,
+			],
+		},
+		
+		easy_difficulty_chosen: {
+			type: WAIT,
+			
+			executes: [
+				chaos_wizard_evil_laugh_easy,
+                chaos_wizard_easy_difficulty,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_easy: {
+			type: PLAY_SOUND,
+			
+            soundEffectName: evil_laugh,
+			
+			executionDelayInSeconds: 3f,
+		},
+		
+		chaos_wizard_easy_difficulty: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+				displayText: "Good choice, noob.                  \nBut you'll die anyway.              \n\n*evil laughter*  ",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value_difficulty_easy,
+			],
+		},
+		
+		set_global_value_difficulty_easy: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: difficulty_level, value: 0}",
+			},
+			
+			executes: [
+                set_global_value_difficulty_chosen,
+			],
+		},
+		
+		normal_difficulty_chosen: {
+			type: WAIT,
+			
+			executes: [
+				chaos_wizard_evil_laugh_normal,
+                chaos_wizard_normal_difficulty,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_normal: {
+			type: PLAY_SOUND,
+			
+            soundEffectName: evil_laugh,
+			
+			executionDelayInSeconds: 3.5f,
+		},
+		
+		chaos_wizard_normal_difficulty: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+				displayText: "You're brave, I'll give you that.      \nNow you'll die a little faster.               \n\n*evil laughter*  ",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value_difficulty_normal,
+			],
+		},
+		
+		set_global_value_difficulty_normal: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: difficulty_level, value: 1}",
+			},
+			
+			executes: [
+                set_global_value_difficulty_chosen,
+			],
+		},
+		
+		hard_difficulty_chosen: {
+			type: WAIT,
+			
+			executes: [
+				chaos_wizard_evil_laugh_hard,
+                chaos_wizard_hard_difficulty,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_hard: {
+			type: PLAY_SOUND,
+			
+            soundEffectName: evil_laugh,
+			
+			executionDelayInSeconds: 4f,
+		},
+		
+		chaos_wizard_hard_difficulty: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+				displayText: "Are you insane?!                   \nYou won't make it through the first level!               \n\n*evil laughter*  ",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value_difficulty_hard,
+			],
+		},
+		
+		set_global_value_difficulty_hard: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: difficulty_level, value: 2}",
+			},
+			
+			executes: [
+                set_global_value_difficulty_chosen,
+			],
+		},
+		
+		set_global_value_difficulty_chosen: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__difficulty_chosen, value: true}",
+			},
+			
+			executes: [
+                chaos_wizard_evil_laugh_end,
+                chaos_wizard_difficulty_in_menu,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_end: {
+			type: PLAY_SOUND,
+			
+            soundEffectName: evil_laugh,
+			
+			executionDelayInSeconds: 6.5f,
+		},
+		
+		chaos_wizard_difficulty_in_menu: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+				displayText: "If it gets too hard for you, you can always lower the difficulty in the menu.\n                    \nGood luck, Thorin!                   \nYou'll need it!          *evil laughter*",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

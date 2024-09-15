@@ -24,6 +24,7 @@ The project uses a data-driven approach, to make it configurable and reusable fo
 - [Game Objects](#game-objects)
 - [Maps](#maps)
 - [Saving and Loading Game States](#saving-and-loading-game-states)
+- [Skills](#skills)
 - [Menus](#menus)
 - [Others](#others)
 
@@ -1114,6 +1115,16 @@ private void executeAnnotatedMethodsBeforePersisting() {
 	AnnotationUtil.executeAnnotatedMethods(BeforePersistState.class, GameMap.getInstance().getPlayer());
 }
 ```
+
+## Skills
+
+Skills can be configured in the [weapons.json](core/assets/config/skill/weapons.json) config file. This file contains skill configurations for weapons (attack) and shields (defence). Also the costs (mana) and the maximum ammo (arrows and bombs) can be configured. The file is structures into a key-value map with the names of the weapons and the different levels (starting from 0) for the weapons.
+
+The current level of a skill is stored in a global value under the key `weapon_skill_level__` followed by the name of the skill (the weapon) in lower case.
+
+### Game Difficulty Setting
+
+The difficulty setting of the game is implemented as a skill to be able to easily adapt the configuration. The configuration can be changed in the [difficulty.json](core/assets/config/skill/difficulty.json) file. The difficulty settings change the damage that the player takes and deals. Therefore the difficulty settings are applied in the [Dwarf](core/src/net/jfabricationgames/gdx/character/player/implementation/Dwarf.java) class only.
 
 ## Menus
 

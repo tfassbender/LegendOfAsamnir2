@@ -38,6 +38,7 @@ import net.jfabricationgames.gdx.projectile.MagicWave;
 import net.jfabricationgames.gdx.projectile.Projectile;
 import net.jfabricationgames.gdx.projectile.ProjectileReflector;
 import net.jfabricationgames.gdx.rune.RuneType;
+import net.jfabricationgames.gdx.skill.Difficulty;
 import net.jfabricationgames.gdx.skill.PlayerAttackHandler;
 import net.jfabricationgames.gdx.skill.WeaponSkill;
 import net.jfabricationgames.gdx.skill.WeaponSkillType;
@@ -70,6 +71,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	protected PlayerAttackHandler attackHandler;
 	
 	protected WeaponSkill weaponSkill;
+	protected Difficulty difficulty;
 	
 	protected CharacterAction action;
 	protected SpecialAction activeSpecialAction;
@@ -98,8 +100,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		PhysicsWorld.getInstance().registerContactListener(this);
 		
 		weaponSkill = WeaponSkill.loadWeaponSkillFromConfig();
+		difficulty = Difficulty.loadDifficultyConfig();
 		
-		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill);
+		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill, difficulty);
 		movementHandler = new CharacterInputProcessor(this);
 		
 		EventHandler.getInstance().registerEventListener(this);
@@ -108,7 +111,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public void reAddToWorld() {
 		bodyHandler.createPhysicsBody();
-		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill);
+		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill, difficulty);
 	}
 	
 	@Override
@@ -119,6 +122,12 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		checkManaBelowHalf(false);
 		checkAmmoBelowHalf(ItemAmmoType.ARROW, false);
 		checkAmmoBelowHalf(ItemAmmoType.BOMB, false);
+	}
+	
+	@Override
+	public void beforeChangeToGameScreen() {
+		// the game difficulty could have been changed
+		attackHandler.reloadAttackConfigAfterSkillChangeOrGameDifficultyChange();
 	}
 	
 	protected boolean changeAction(CharacterAction action) {
@@ -528,6 +537,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public void takeDamage(float damage, AttackType attackType) {
+		damage *= difficulty.getDifficultyConfig().damageFactor; // apply a factor for the game difficulty to the damage
+		
 		if (isAlive()) {
 			if (isBlocking() && attackType.canBeBlocked()) {
 				takeArmorDamage(damage * 0.33f);
