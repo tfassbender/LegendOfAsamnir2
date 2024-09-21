@@ -204,6 +204,17 @@
 		}
 	}
 	
+	loa2_prolog_explain_signboard: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_prolog_explain_signboard,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_prolog_explain_signboard_interaction_cutscene,
+		}
+	}
+	
 	//*******************************************
 	//*** change map
 	//*******************************************

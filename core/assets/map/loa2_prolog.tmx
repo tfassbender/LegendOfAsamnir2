@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="35" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="190">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="44" height="35" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="193">
  <properties>
   <property name="above_player_layers" value="[3, 4]"/>
   <property name="background_layers" value="[0, 1, 2]"/>
@@ -86,6 +86,11 @@
     <property name="startingPointId" value="2"/>
    </properties>
    <point/>
+  </object>
+  <object id="192" name="object.eventObject" x="568.917" y="346.5" width="16.6667" height="20.25">
+   <properties>
+    <property name="eventParameter" value="loa2_prolog_explain_signboard"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="9" name="physics" locked="1">

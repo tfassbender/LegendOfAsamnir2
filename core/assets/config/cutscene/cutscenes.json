@@ -11,6 +11,7 @@
 	config/cutscene/loa2/prolog/opening.json,
 	config/cutscene/loa2/prolog/near_alarm_clock.json,
 	config/cutscene/loa2/prolog/alarm_clock_defeated.json,
+	config/cutscene/loa2/prolog/explain_signboard_interaction.json,
 	config/cutscene/loa2/prolog/goto_main.json,
 	
 	//********************************************************

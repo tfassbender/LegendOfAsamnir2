@@ -1,0 +1,88 @@
+{
+	id: loa2_prolog_explain_signboard_interaction_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_prolog__signboard_interaction_explained,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end,
+				condition_not_met: initial_wait,
+			}
+		},
+		
+		initial_wait: {
+			type: WAIT,
+			executionDurationInSeconds: 1f,
+			
+			executes: [
+				explain_signboard_interaction,
+			]
+		},
+		
+		explain_signboard_interaction: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				colorHeader: #000099,
+				displayText: "To interact with signboards or NPCs, get close to them and press the E key on the keyboard or the Y button on the controller. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				explain_signboard_interaction_2,
+			]
+		},
+		
+		explain_signboard_interaction_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "???",
+				colorHeader: #000099,
+				displayText: "You can always look up the controls in the settings menu.\nPress Escape on the keyboard or the start button on the controller to open the menu. ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value,
+			]
+		},
+		
+		set_global_value: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_prolog__signboard_interaction_explained, value: true}",
+			},
+			
+			executes: [
+				end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

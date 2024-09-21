@@ -115,7 +115,7 @@ public class SettingsDialog extends InGameMenuDialog {
 		
 		screenTextWriter.setScale(0.8f);
 		screenTextWriter.drawText(getButtonTextColorEncoding(buttonDifficultyEasy) + "I'm a warrior! (Easy)", 625, 480, 420, Align.center, false);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonDifficultyNormal) + "I'm a berserker!\n(Normal)", 625, 390, 420, Align.center, false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonDifficultyNormal) + "I'll drink with the\nEinherjar! (Normal)", 625, 390, 420, Align.center, false);
 		screenTextWriter.drawText(getButtonTextColorEncoding(buttonDifficultyHard) + "The allfather knows\nmy name! (Hard)", 625, 260, 420, Align.center, false);
 	}
 	

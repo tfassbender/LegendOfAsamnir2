@@ -70,7 +70,7 @@
 				header: "Choose a difficulty for the game",
 				options: [
 					"I'm a warrior! (easy)",
-					"I'm a berserker! (normal)",
+					"I'll drink with the Einherjar! (normal)",
 					"The allfather knows my name! (hard)"
 				],
 			},

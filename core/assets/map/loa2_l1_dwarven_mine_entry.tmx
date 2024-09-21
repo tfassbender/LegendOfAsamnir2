@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="31" tilewidth="32" tileheight="32" infinite="0" nextlayerid="18" nextobjectid="1356">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="31" tilewidth="32" tileheight="32" infinite="0" nextlayerid="18" nextobjectid="1360">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -273,7 +273,7 @@ Only for dwarven miners!. </property>
   </object>
   <object id="1353" name="player.startingPosition" x="384" y="96">
    <properties>
-    <property name="startingPointId" value="1"/>
+    <property name="startingPointId" value="2"/>
    </properties>
    <point/>
   </object>
@@ -281,6 +281,35 @@ Only for dwarven miners!. </property>
    <properties>
     <property name="eventParameter" value="loa2_l1_mine_entry__lantern_hint"/>
    </properties>
+  </object>
+  <object id="1356" name="object.signboard" x="384" y="704">
+   <properties>
+    <property name="displayText">You can jump to get away from an enemy before he attacks, or get near for a fast attack.
+Try the space key on the keyboard or the LB button on the controller..</property>
+    <property name="displayTextHeader" value="Jumping"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1357" name="object.signboard" x="416" y="704">
+   <properties>
+    <property name="displayText">To change you secondary weapon or item use the R key on the keyboard or the X button on the controller.
+You can also select it in the menu..</property>
+    <property name="displayTextHeader" value="Switching Items"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1358" name="object.signboard" x="448" y="704">
+   <properties>
+    <property name="displayText" value="You can use your secondary weapon (like a bow, a bomb, ...) by pressing the F key on the keyboard or the RB button on the controller."/>
+    <property name="displayTextHeader" value="Secondary Weapons"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1359" name="player.startingPosition" x="544" y="736">
+   <properties>
+    <property name="startingPointId" value="1"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="12" name="physics" locked="1">
