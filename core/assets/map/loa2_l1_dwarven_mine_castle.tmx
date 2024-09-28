@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="33" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="4">
+ <properties>
+  <property name="above_player_layers" value="[]"/>
+  <property name="background_layers" value="[0, 1]"/>
+  <property name="dungeon_level" value="false"/>
+  <property name="invisible_paths_layer" value="[]"/>
+  <property name="mini_map_config_path" value="config/menu/maps/demo_2/level_5.json"/>
+  <property name="shadow_layers" value="[]"/>
+ </properties>
+ <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
+ <tileset firstgid="267" source="tileset/cave.tsx"/>
+ <tileset firstgid="547" source="tileset/dwarven_caves.tsx"/>
+ <tileset firstgid="1023" source="tileset/town_tileset.tsx"/>
+ <tileset firstgid="2283" source="tileset/cultist_dungeon.tsx"/>
+ <tileset firstgid="2583" source="tileset/forest_prairie_tileset.tsx"/>
+ <tileset firstgid="3150" source="tileset/desert_tileset.tsx"/>
+ <tileset firstgid="3730" source="tileset/medival_house_interior.tsx"/>
+ <tileset firstgid="4243" source="tileset/medival_shop_interior.tsx"/>
+ <tileset firstgid="4623" source="tileset/arctic.tsx"/>
+ <tileset firstgid="5001" source="tileset/medival_warcamp.tsx"/>
+ <tileset firstgid="5721" source="tileset/nightmarescape.tsx"/>
+ <tileset firstgid="6330" source="tileset/magic_wasteland.tsx"/>
+ <tileset firstgid="6834" source="tileset/volcanic_lava.tsx"/>
+ <tileset firstgid="7074" source="tileset/lava_dungeon.tsx"/>
+ <layer id="1" name="background" width="33" height="22">
+  <data encoding="base64" compression="zlib">
+   eJyLYmBgqGRABSB+FAP9gAAOzEZHNyhB7WTF4g56AWxhAHKPMh3dIAy1F0aLMAxMOCgzYA8PeoOBtBvZDeyDwA0DHQ6wNCE6gG4YDOEgOgjcMBjCYRSMglEwCgYjAABiZgVd
+  </data>
+ </layer>
+ <layer id="2" name="background_2" width="33" height="22">
+  <data encoding="base64" compression="zlib">
+   eJzzYWBgOAvEvgwQ4IPGpwdwwiHuQGc3/EUT+zsAbsAG6O2G92hi7+nsBjsgNgZiEyjfCMq3p6MbYAAWJw4DYPeoG0bdMOqGUTAKRsEoGFoAAGXgDYQ=
+  </data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="3" name="player.startingPosition" x="114" y="111.333">
+   <properties>
+    <property name="startingPointId" value="0"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
