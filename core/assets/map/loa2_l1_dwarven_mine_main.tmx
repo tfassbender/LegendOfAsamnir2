@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="94" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="2027">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="99" height="94" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="2030">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -542,6 +542,21 @@
     <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
    </properties>
    <point/>
+  </object>
+  <object id="2027" name="object.eventObject" x="1888" y="1056" width="31.8333" height="110.606">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2028" name="object.eventObject" x="1504" y="1440" width="96.1666" height="31.606">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2029" name="object.eventObject" x="672" y="704" width="96.1666" height="31.606">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="12" name="physics" locked="1">

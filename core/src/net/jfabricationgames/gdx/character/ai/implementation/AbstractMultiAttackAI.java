@@ -16,8 +16,7 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 	
 	private boolean moveToPlayerWhenAttacking = true;
 	
-	public AbstractMultiAttackAI(ArtificialIntelligence subAI, ArrayMap<String, CharacterState> attackStates,
-			ArrayMap<CharacterState, Float> attackDistances, AttackTimer attackTimer) {
+	public AbstractMultiAttackAI(ArtificialIntelligence subAI, ArrayMap<String, CharacterState> attackStates, ArrayMap<CharacterState, Float> attackDistances, AttackTimer attackTimer) {
 		super(subAI, null, attackTimer);
 		this.attackStates = attackStates;
 		this.attackDistances = attackDistances;
@@ -30,8 +29,7 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 	
 	@Override
 	protected boolean changeToAttackState() {
-		throw new UnsupportedOperationException(
-				"changeToAttackState can't be called in this implementation. Use changeToAttackState(EnemyState) instead.");
+		throw new UnsupportedOperationException("changeToAttackState can't be called in this implementation. Use changeToAttackState(EnemyState) instead.");
 	}
 	
 	@Override
@@ -49,8 +47,7 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 			CharacterState attack = chooseAttack();
 			if (attack != null) {
 				if (!targetInRange(attackDistances.get(attack))) {
-					Gdx.app.error(getClass().getSimpleName(),
-							"calculateMove(): The chosen attack can't be executed, because the target is not in range.");
+					Gdx.app.error(getClass().getSimpleName(), "calculateMove(): The chosen attack can't be executed, because the target is not in range.");
 					return;
 				}
 				

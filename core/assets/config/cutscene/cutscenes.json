@@ -77,6 +77,11 @@
 	config/cutscene/loa2/mine/blocked_tunnel_up.json,
 	config/cutscene/loa2/mine/nyr.json,
 	config/cutscene/loa2/mine/onarr.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Dwarven Mine - Castle
+	//********************************************************
+	config/cutscene/loa2/mine/mini_boss.json,
 
 	//********************************************************
 	//*** Demo Level

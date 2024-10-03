@@ -229,6 +229,16 @@
 				raw_images/restricted/enemy/cultist_brute/cultist_brute_damage,
 				raw_images/restricted/enemy/cultist_brute/cultist_brute_death,
 				
+				// ogre
+				raw_images/restricted/enemy/ogre/ogre_attack_1,
+				raw_images/restricted/enemy/ogre/ogre_attack_2,
+				raw_images/restricted/enemy/ogre/ogre_charge,
+				raw_images/restricted/enemy/ogre/ogre_damage,
+				raw_images/restricted/enemy/ogre/ogre_death,
+				raw_images/restricted/enemy/ogre/ogre_idle,
+				raw_images/restricted/enemy/ogre/ogre_idle_2,
+				raw_images/restricted/enemy/ogre/ogre_move,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

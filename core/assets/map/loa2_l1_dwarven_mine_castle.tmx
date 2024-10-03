@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="350">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="389">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -36,7 +36,7 @@
    eJztnUtOwzAQhiul4r2sEHQJXA1xAMQBEAvWLFix4ADAmusRQyKMMxPX9vw0qf9PspqEPOjH1LHHTlksCCEaT428TGx4beRlUs5+6/Oj+Xn1l4kNb4LLd/o1YyW4PKVfM+gXC/1i6evfk/b1uFtm/WuPi2PGLQ76xUK/WOgXC/3aEuZxJL/M9eQT5nEkv8z15LEX5HRcWbflPNjm9jmg42SkPpsG6+R06BcL/WKhXyz0i4V+sdAvFvrFQr9YLlpnl0Hpxy/C7Vf0awLzZ1joFwv9YqFfLPSLhX6xWPp157ppfvL4+0pxefvrbr8asPTr5gTdNeP9GHet26aeuULW8bup31rqpJUw/pY79ka/QyznUdLvEPrFYumX97chjF8s0nMu9GsH4xcL/WKRXPj3npS5lLy/DYnFb8pcSneuh+Z3HMrhPz/TjzvdTzx+pZjKnbMr+fX7c6XPzc4xPyfFVO6cXan9YMnc/EpzeEvm7KaM2ecwN7+xe4fl+Syo3S8a+sVCv3mE7RVtfW5+p0LYXtHW6Ted8LtlxtbX9PuNNMfPqtQ+V/CYDv5g2Wal2yExvymfdbodEvPL+0kZzu/LcrH47MrH8u/P6bcMxi8W5/dzJH6nODag5adTt/8Hc4xfLT+duv0/iMXv1PxqOWup3xfbblk0thm//dzelFw+OsesEWunamwzfntXKdfojyntg58kvq+SeQaI86ZcO8dv6e/lv+9N/la5fadtth/68dCUa7wB/CJjSHrO1f/8+Ne2ahf5+XL/GmPtKO2YXC4MYrME6X1YtYteFVdj7SjtmLnif35y2z+x7evuGueR/aVjdsnvFJm7X61eTm3/lLSjxs5Rey7Uop7clboWAf1ioV8s9ItlG35Xy/g+uwLCrzZvyuXhjpq6/ucRwu/YvKnasPSr9e/CPl3PY7v+XKHzVHLi8rCrK/id2XE27UNKuXK2OeyQ4vyMfs2Q4rz2/MSu8QWWQYE4
   </data>
  </layer>
- <layer id="5" name="terrain" width="88" height="88">
+ <layer id="5" name="terrain" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
    eJzt3E1Kw0AYxvFKRD2ALnSnLnSpC72GLtRjCZ7AA4h3aK1r8WupIoIg4k4QEQXfoQmJk0lK5qNTm/8PBmxaAnk607yTTOx0AAAAAAAAAABAbFfT+d+XSfn9i8T8WTQ3LF/Y+ZYM76U9GLK8S9/7IWeMqcNlP59BWS8ZtLOa8d9N8s/BjuncluEc5458w3qqyfCRfJ3VzR2YVwAAgFiODHWeaRua60uNd2zIUm3rU/85UXNDVUOfGvI9Td9jjmivbu6daVu+rx6Pl3zLPtV9Cxm3Xx6OW893R/a7q/3mti3fGTn+WWlzHs499N+wbrTspuQ7S7Tv7Zp8nS2lmT5Lli9pnvPUZl6sSY7raZbvku1Hmu+KbFslYye3kuWWZLhtyHFDtm1Ku+L3wRrnt7/u0zUlb56OmXzNfNS+Cvn+la110Gtf2+swxXz3ZB/76X4OCvtrU75Vhq21nFR1/SrUtb825Rvj3nqb8vWtWD+8JvnrYjOtZUUz6pxDPw2HfAeK49Y0pm2Rb5nPTGz3pdcsk3T/0ke+2XpqNb9Q19mz+UZdK85F9JplktYHuubbNczbkHPJl2yr9SzGdN0YB0ZJn1/xPKBfJ4ztoOi/YdF/w/rv/bdqjtd0eyix+6/r8VbN8Zps71rUpHqrErv/xp4Dnyf5/1JwaVVi99/YQt8fjd1/Ywu9PrDt/Rdhjev6tVHURZN0fb3KYsX366MuGiZ2bQEAAAA36pmtBWq6YHhmKyzyDSt7Jg4AAPjxC98/xUI=
   </data>
@@ -51,9 +51,9 @@
    eJztwTEBAAAAwqD1T+1tB6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADeAHkAAAE=
   </data>
  </layer>
- <layer id="10" name="background_above_player" width="88" height="88" locked="1">
+ <layer id="10" name="background_above_player" width="88" height="88">
   <data encoding="base64" compression="zlib">
-   eJzt22EKwiAUAGBhO9TqANUBqmsV9bugm7aoETQXuWaw9n0gqH+Eh/iEpyEA/N6uaM/tI3P0c4rE8iy+QHD+5ub8ze9QxPsAAAAAAAAAAFMVexPUxVuhdLE3QV28FQIYjvyWl/zWlrLnSJey52AM+uYe+e0zfXPP61lTlSHMHm1eDrMGT4sy3p8S94e83B8AAAAAmJop1wZ+QW0A4O5YvB/znUvxfjy0nPeHph6assa/1VBz3h+aemjKGmqoAAAAQKPq+CvBMG5/JJZ1W4lvFus6rpu6bcUXAEbrCm38HWA=
+   eJzt29FqwjAUANBA+1HOD9j8gM03/YH5LxN9drA/Xcbsi6ZiaqPUnAOBti8pl5B74SYhANzfV3P+bZv4xjCHRCy/xRcI9t/S7L/l7Zr0MwAAAAAAAABArVJngvo4K5QvdSaoj7NCTMGqDWHdPvovntdnjO1GfEchv5Ulv53LWXPky1lzMAVDc4/8dp2hued0r5nFuuzlOOYnNVot+a2k1zb9XBP1Q1nqBwAAAABqU3Nv4B70BgD+7ZvL79zmp7n8PraS9UPXD82Z49l6qCXrh64fmjOHHioAAADQmfXclWAcf3ck3uJYiG8R7zGuH3EsxRcAJusXvaofAg==
   </data>
  </layer>
  <layer id="3" name="shadows" width="88" height="88" locked="1">
@@ -74,16 +74,6 @@
  <layer id="14" name="invisible_paths_background" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T+1tB6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADeAHkAAAE=
-  </data>
- </layer>
- <layer id="7" name="effect_layer_bucket_up" width="88" height="88" locked="1">
-  <data encoding="base64" compression="zlib">
-   eJzt0EENACAMBMF71CYYAP9v6oKkmVGw2QQAAAAAAAAAAAAAAIDpViW7flfMdfrt9RcAAAAAAAAAAAAAAAAAAAAAGOYByK4Bow==
-  </data>
- </layer>
- <layer id="8" name="effect_layer_bucket_down" width="88" height="88" visible="0" locked="1">
-  <data encoding="base64" compression="zlib">
-   eJzt0EENACAMBMF71CcYAP9P6oKkmVGw2QQAAAAAAAAAAAAAAIDpViW7flfMdfrt9RcAAAAAAAAAAAAAAAAAAAAAGOYB+RwBqw==
   </data>
  </layer>
  <layer id="9" name="effect_layer_torch_gate" width="88" height="88" locked="1">
@@ -110,21 +100,21 @@
   </object>
   <object id="340" name="object.bottom_switch_2" x="1232" y="2160">
    <properties>
-    <property name="eventParameter" value="loa2_l1_castle__switch_group"/>
+    <property name="eventParameter" value="loa2_l1_castle__first_gate_switch"/>
     <property name="stateSwitchId" value="loa2_l1_castle__switch_group_1"/>
    </properties>
    <point/>
   </object>
   <object id="341" name="object.bottom_switch_2" x="2564" y="2176">
    <properties>
-    <property name="eventParameter" value="loa2_l1_castle__switch_group"/>
+    <property name="eventParameter" value="loa2_l1_castle__first_gate_switch"/>
     <property name="stateSwitchId" value="loa2_l1_castle__switch_group_3"/>
    </properties>
    <point/>
   </object>
   <object id="342" name="object.bottom_switch_2" x="1936.25" y="2576.5">
    <properties>
-    <property name="eventParameter" value="loa2_l1_castle__switch_group"/>
+    <property name="eventParameter" value="loa2_l1_castle__first_gate_switch"/>
     <property name="stateSwitchId" value="loa2_l1_castle__switch_group_2"/>
    </properties>
    <point/>
@@ -143,8 +133,10 @@
     <property name="displayText" value="To open the gate the 42 switches must be activated"/>
     <property name="displayTextChanged" value="To open the gate the 3 switches must be activated"/>
     <property name="displayTextHeader" value="Open the Gate"/>
+    <property name="eventParameter" value="loa2_l1_castle__signboard_changed"/>
     <property name="globalConditionKey" value="loa2_l1_castle__signboard_changed"/>
     <property name="globalConditionValue" value="true"/>
+    <property name="showTextChangeInfo" value="true"/>
    </properties>
    <point/>
   </object>
@@ -175,6 +167,179 @@
     <property name="startingPointId" value="10"/>
    </properties>
    <point/>
+  </object>
+  <object id="350" name="enemy.mini_golem" x="1211" y="2192.67">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="351" name="enemy.mini_golem" x="1255" y="2192.33">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="352" name="enemy.mini_golem" x="1667" y="2696">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="353" name="enemy.golem" x="1824" y="2624.5">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="359" name="player.startingPosition" x="416" y="2240">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="361" name="object.pressure_switch" x="206" y="2222">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__pressure_switch__treasure_vault_1"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__pressure_switch__treasure_vault_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="363" name="object.wagon_horizontal" x="321.926" y="2218.13">
+   <point/>
+  </object>
+  <object id="364" name="object.pressure_switch" x="206.091" y="2158.27">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__pressure_switch__treasure_vault_2"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__pressure_switch__treasure_vault_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="365" name="object.pressure_switch" x="206.091" y="2094">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__pressure_switch__treasure_vault_3"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__pressure_switch__treasure_vault_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="366" name="object.pressure_switch" x="206.364" y="2030.18">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__pressure_switch__treasure_vault_4"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__pressure_switch__treasure_vault_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="367" name="object.pressure_switch" x="206.182" y="1966">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__pressure_switch__treasure_vault_5"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__pressure_switch__treasure_vault_5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="368" name="object.wagon_horizontal" x="321.909" y="2153.95">
+   <point/>
+  </object>
+  <object id="369" name="object.wagon_horizontal" x="321.727" y="2090.45">
+   <point/>
+  </object>
+  <object id="370" name="object.wagon_horizontal" x="321.818" y="2026">
+   <point/>
+  </object>
+  <object id="371" name="object.wagon_horizontal" x="322" y="1962.26">
+   <point/>
+  </object>
+  <object id="372" name="object.key_wall" x="288" y="1824">
+   <properties>
+    <property name="lockId" value="loa2_l1_castle__gate_treasure_vault"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="373" name="object.key_wall" x="896" y="1728">
+   <properties>
+    <property name="lockId" value="loa2_l1_castle__gate_2"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="374" name="object.key_wall" x="832" y="1152">
+   <properties>
+    <property name="lockId" value="loa2_l1_castle__gate_3"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="375" name="object.key_wall" x="832" y="512">
+   <properties>
+    <property name="lockId" value="loa2_l1_castle__gate_boss"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="376" name="object.key_wall" x="1600" y="1536">
+   <properties>
+    <property name="lockId" value="loa2_l1_castle__gate_moria"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+    <property name="unlockedInitially" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="377" name="object.bottom_switch_2" x="1600" y="1104">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__switch_gate_moria"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__switch_gate_moria"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="379" name="player.startingPosition" x="1600" y="1568">
+   <properties>
+    <property name="startingPointId" value="12"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="380" name="player.startingPosition" x="896" y="1600">
+   <properties>
+    <property name="startingPointId" value="13"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="381" name="player.startingPosition" x="832" y="928">
+   <properties>
+    <property name="startingPointId" value="14"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="382" name="player.startingPosition" x="832" y="416">
+   <properties>
+    <property name="startingPointId" value="15"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="384" name="object.spawnPoint.enemy__ogre" x="1600" y="1408">
+   <properties>
+    <property name="spawn" value="enemy__ogre"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="385" name="object.eventObject" x="1568" y="1600" width="64.1666" height="31.606">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="386" name="object.eventObject" x="768" y="2295.67" width="31.8333" height="101.273">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="387" name="object.eventObject" x="800" y="960" width="64.6666" height="31.606">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
@@ -640,8 +805,9 @@
   <object id="339" x="992" y="2688">
    <polygon points="0,0 -32.3333,-46.6667 0,-96"/>
   </object>
+  <object id="318" x="191" y="1944" width="160.5" height="1"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics">
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="263" x="646.125" y="2295.25" width="18.125" height="32.125"/>
   <object id="264" x="837.875" y="2295" width="18.25" height="32.75"/>
   <object id="265" x="1030.06" y="2294.94" width="18" height="33.375"/>
@@ -698,7 +864,6 @@
   <object id="315" x="191.5" y="2112" width="159.5" height="16"/>
   <object id="316" x="191.5" y="2048" width="159.5" height="15.5"/>
   <object id="317" x="191.5" y="1984" width="159.5" height="16.5"/>
-  <object id="318" x="191" y="1944" width="160.5" height="1"/>
   <object id="319" x="936" y="739.091" width="12.7273" height="15.0909"/>
   <object id="320" x="715.273" y="738.545" width="12.7273" height="17.0909"/>
   <object id="321" x="1472" y="1280">
@@ -707,7 +872,7 @@
   <object id="322" x="1728" y="1280">
    <polygon points="0,0 -38.7273,28.3636 0,2.72727"/>
   </object>
-  <object id="324" x="1575.82" y="1168.36" width="48" height="35.2727"/>
+  <object id="324" x="1575.82" y="1189.86" width="48" height="13.7727"/>
   <object id="330" x="2242" y="2112.33" width="6" height="80.5682"/>
   <object id="331" x="2242.5" y="2112.33" width="36.1667" height="1.66667"/>
   <object id="332" x="2273" y="2072.67" width="8.33333" height="63"/>
@@ -717,9 +882,10 @@
   <object id="336" x="2496" y="2135.33" width="32.3333" height="8.66667"/>
   <object id="337" x="2592" y="2135.67" width="223.667" height="8.33333"/>
   <object id="349" x="2241.88" y="2240.13" width="6" height="31.75"/>
+  <object id="360" x="192" y="1945.33" width="10.875" height="295"/>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1">
-  <object id="325" x="1853.38" y="2519.88" width="29.7497" height="127.5">
+  <object id="325" x="1853.38" y="2519.88" width="31.2497" height="127.5">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
@@ -734,12 +900,12 @@
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="328" x="1477.79" y="1308.07" width="29.7497" height="66.9545">
+  <object id="328" x="1475.29" y="1308.07" width="32.2497" height="66.9545">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="329" x="1477.79" y="1291.61" width="8.99967" height="16.5">
+  <object id="329" x="1475.34" y="1291.61" width="11.4542" height="16.5">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>

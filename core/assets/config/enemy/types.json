@@ -497,5 +497,36 @@
 		healthBarOffsetY: 0,
 		healthBarWidthFactor: 1.0,
 		healthBarAlwaysVisible: true,
+	},
+	
+	ogre: {
+		typeName: ogre,
+		
+		animationsConfig: config/animation/enemy/ogre.json,
+		stateConfig: config/enemy/states/ogre.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/ogre.json,
+		
+		health: 150,
+		movingSpeed: 1.5f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.7f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.7f,
+		
+		addSensor: true,
+		sensorRadius: 7f,
+		
+		pushForceDamage: 5,
+		pushForceHit: 5,
+		
+		drops: {
+			metal_ingot: 1,
+		}
+		
+		isBoss: true
+		bossName: "Cave Troll - Occupant of Moria",
 	}
 }

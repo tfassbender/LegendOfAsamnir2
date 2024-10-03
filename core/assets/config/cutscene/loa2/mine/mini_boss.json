@@ -1,0 +1,106 @@
+{
+	id: loa2_l1_castle__mini_boss_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_mine_castle__mini_boss_appeared,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end,
+				condition_not_met: close_gate,
+			}
+		},
+		
+		close_gate: {
+            type: EVENT,
+			
+			event: {
+				eventType: CLOSE_LOCK,
+				stringValue: loa2_l1_castle__gate_moria,
+			},
+			
+			executes: [
+				spawn_mini_boss,
+			],
+		},
+		
+		spawn_mini_boss: {
+            type: EVENT,
+			
+			event: {
+				eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l1_castle__mini_boss_ogre,
+			},
+            
+            executes: [
+                show_on_screen_text,
+			]
+		},
+		
+		show_on_screen_text: {
+			executionDelayInSeconds: 4f,
+			
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "They have a cave troll! ",
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                set_global_value__mini_boss_appeared,
+			]
+		},
+		
+		set_global_value__mini_boss_appeared: {
+			type: EVENT,
+			
+            executionDelayInSeconds: 1f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+			executes: [
+				narrator_talking,
+			]
+		}
+		
+		narrator_talking: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l1__mini_boss_appeared, value: true}",
+			},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

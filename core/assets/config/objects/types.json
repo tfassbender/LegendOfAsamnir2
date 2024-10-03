@@ -348,6 +348,28 @@
 		
 		density: 5f,
 	},
+	wagon_horizontal: {
+        type: MOVABLE,
+        
+        bodyType: DynamicBody,
+        linearDamping: 3f,
+        collisionType: MAP_OBJECT,
+        
+        texture: wagon_horizontal,
+        
+        density: 3.5f,
+	},
+	wagon_vertical: {
+        type: MOVABLE,
+        
+        bodyType: DynamicBody,
+        linearDamping: 3f,
+        collisionType: MAP_OBJECT,
+        
+        texture: wagon_vertical,
+        
+        density: 3.5f,
+	},
 	
 	magic_switch: {
 		type: STATE_SWITCH,

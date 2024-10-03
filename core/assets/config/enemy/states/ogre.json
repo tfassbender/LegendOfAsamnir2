@@ -1,0 +1,81 @@
+[
+	{
+		id: idle,
+		animation: ogre_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle_2, move, charge, attack_1, attack_2, damage, death
+		]
+	},
+	{
+		id: idle_2,
+		animation: ogre_idle_2,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			death
+		]
+	},
+	{
+		id: charge,
+		animation: ogre_charge,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			death
+		]
+	},
+	{
+		id: move,
+		animation: ogre_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, idle_2, charge, attack_1, attack_2, damage, death
+		]
+	},
+	{
+		id: attack_1,
+		animation: ogre_attack_1,
+		attack: attack_1
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, death
+		]
+	},
+	{
+		id: attack_2,
+		animation: ogre_attack_2,
+		attack: attack_2
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, death
+		]
+	},
+	{
+		id: damage,
+		animation: ogre_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: flesh_hit_2,
+		followingState: idle,
+		interruptingStates: [
+			death
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: death,
+		animation: ogre_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		stateEnteringSound: minotaur_die,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

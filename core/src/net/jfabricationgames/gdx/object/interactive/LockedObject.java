@@ -26,6 +26,7 @@ public class LockedObject extends InteractiveObject implements EventListener {
 	private static final String MAP_PROPERTY_KEY_LOCK_ID = "lockId";
 	private static final String MAP_PROPERTY_KEY_UNLOCK_CONDITION = "unlockCondition";
 	private static final String MAP_PROPERTY_KEY_GATE_ID = "gateId";
+	private static final String MAP_PROPERTY_KEY_UNLOCKED_INITIALLY = "unlockedInitially";
 	private static final String GLOBAL_VALUE_KEY_GATE_OPENED_PREFIX = "gate_opened__";
 	
 	private static final String LOCK_EVENT_TEXT_SIMPLE_KEY = "unlocked_by_simple_key";
@@ -36,6 +37,7 @@ public class LockedObject extends InteractiveObject implements EventListener {
 	
 	private boolean playerContact = false;
 	private boolean reverseInteractionAfterPlayerContactEnds = false;
+	private boolean skipInteractionSound = false;
 	
 	public LockedObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties properties, GameObjectMap gameMap) {
 		super(typeConfig, sprite, properties, gameMap);
@@ -43,6 +45,29 @@ public class LockedObject extends InteractiveObject implements EventListener {
 		keyProperties = KeyItemProperties.getKeyProperties(properties);
 		
 		EventHandler.getInstance().registerEventListener(this);
+	}
+	
+	@Override
+	public void postAddToGameMap() {
+		super.postAddToGameMap();
+		
+		if (Boolean.parseBoolean(mapProperties.get(MAP_PROPERTY_KEY_UNLOCKED_INITIALLY, "false", String.class))) {
+			unlockWithoutAnimationOrSound();
+		}
+	}
+	
+	private void unlockWithoutAnimationOrSound() {
+		skipInteractionSound = true;
+		executeInteraction();
+		animation.setStateTime(animation.getAnimationDuration());
+		skipInteractionSound = false;
+	}
+	
+	@Override
+	protected void playInteractionSound() {
+		if (!skipInteractionSound) {
+			super.playInteractionSound();
+		}
 	}
 	
 	@Override

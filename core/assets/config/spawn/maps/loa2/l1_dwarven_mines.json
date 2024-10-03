@@ -21,5 +21,16 @@
 		]
 		spawnType: enemy.mini_golem,
 		spawnTypeMapProperties: "{drop: \"{}\", enemyDefeatedEventText: \"loa2_l1_castle__mini_golem__pressure_switch__defeated\"}",
-	}
+	},
+	
+	enemy__ogre: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l1_castle__mini_boss_ogre,
+			}
+		]
+        spawnType: enemy.ogre,
+        spawnTypeMapProperties: "{enemyDefeatedEventText: \"loa2_l1_castle__mini_boss_ogre__defeated\"}",
+	},
 }

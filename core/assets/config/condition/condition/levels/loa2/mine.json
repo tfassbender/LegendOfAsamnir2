@@ -133,6 +133,55 @@
 	//*** Dwarven Mine Castle
 	//*******************************************
 	
+	loa2_l1_castle__first_gate__switches_activated_and_signboard_changed: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l1_castle__switch_group_1,
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l1_castle__switch_group_2,
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l1_castle__switch_group_3,
+						}
+					},
+					condition2: {
+						conditionType: GLOBAL_VALUE_SET,
+						parameters: {
+				            key: loa2_l1_castle__signboard_changed,
+				            expectedValue: true,
+						}
+					}
+				}
+			}
+		}
+	},
+	
+	loa2_mine_castle__mini_boss_appeared: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_castle__mini_boss_appeared,
+            expectedValue: true,
+		}
+	},
+	
 	//*******************************************
 	//*** switches
 	//*******************************************
@@ -141,6 +190,13 @@
 		conditionType: STATE_SWITCH_ACTIVE,
 		parameters: {
 			stateSwitchId: loa2_l1_castle__pressure_switch_1,
+		}
+	},
+	
+	loa2_l1_castle__second_gate__switch_activated: {
+	    conditionType: STATE_SWITCH_ACTIVE,
+        parameters: {
+            stateSwitchId: loa2_l1_castle__switch_gate_moria,
 		}
 	},
 }

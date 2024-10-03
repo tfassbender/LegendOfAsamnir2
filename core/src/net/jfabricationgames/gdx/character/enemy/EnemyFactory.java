@@ -10,6 +10,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
 import net.jfabricationgames.gdx.character.enemy.implementation.Minotaur;
+import net.jfabricationgames.gdx.character.enemy.implementation.Ogre;
 import net.jfabricationgames.gdx.character.enemy.implementation.Totem;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.object.EnemySpawnFactory;
@@ -31,6 +32,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_IMP = "imp";
 	private static final String ENEMY_NAME_ALARM_CLOCK = "alarm_clock";
 	private static final String ENEMY_NAME_DUMMY = "dummy";
+	private static final String ENEMY_NAME_OGRE = "ogre";
 	
 	private static final String ENEMY_NAME_BAT = "bat";
 	private static final String ENEMY_NAME_TOTEM = "totem";
@@ -103,6 +105,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_DUMMY:
 				enemy = new Dummy(typeConfig, properties);
+				break;
+			case ENEMY_NAME_OGRE:
+				enemy = new Ogre(typeConfig, properties);
 				break;
 			default:
 				throw new IllegalStateException("Unknown enemy type: " + type);

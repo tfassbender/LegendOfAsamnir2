@@ -133,5 +133,49 @@
                 }
             }
         }
-    }
+    },
+    
+    loa2_l1_castle__openLock_1_ifSwitchesActivatedAndSignboardChanged: {
+    	conditionId: loa2_l1_castle__first_gate__switches_activated_and_signboard_changed,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_1
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_1
+                }
+            }
+        }
+    },
+    
+    loa2_l1_castle__openLock_2_ifSwitchActivated: {
+    	conditionId: loa2_l1_castle__second_gate__switch_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_2
+				}
+			}
+		}
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_2
+				}
+			}
+		}
+	},
 }
