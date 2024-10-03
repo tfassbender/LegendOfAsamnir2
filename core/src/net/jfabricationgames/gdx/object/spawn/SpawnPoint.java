@@ -161,6 +161,7 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	}
 	
 	private boolean isEventHandled(EventConfig event) {
+		Gdx.app.debug(getClass().getSimpleName(), "Checking whether the event is handled by this (" + (isDistributedSpawnPoint() ? "" : "not ") + "distributed) spawn point: " + event);
 		if (isDistributedSpawnPoint()) {
 			if (event.eventType == EventType.DISTRIBUTED_SPAWN) {
 				Gdx.app.debug(getClass().getSimpleName(), "DISTRIBUTED_SPAWN event received with parameters: " + event.stringValue + ", " + event.intValue);
@@ -190,6 +191,16 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	}
 	
 	private boolean isEventHandledWhenIgnoringDistribution(EventConfig event) {
+		// complex events are checked first, because they may overwrite the simple event handling
+		if (spawnConfig.complexEvents != null) {
+			Gdx.app.debug(getClass().getSimpleName(), "Checking event (" + event + ") against complex events: " + spawnConfig.complexEvents);
+			for (EventConfig handledEvent : spawnConfig.complexEvents) {
+				if (handledEvent.equals(event)) {
+					return true;
+				}
+			}
+		}
+		
 		if (event.eventType == EventType.GAME_LOADED) {
 			if (!spawnedObjectPresentInMap) {
 				//don't respawn after loading the game, if the spawned object was already removed
@@ -209,13 +220,6 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 			for (String eventName : spawnConfig.events) {
 				EventConfig handledEvent = EventHandler.getInstance().getEventByName(eventName);
 				if (handledEvent != null && handledEvent.eventType == event.eventType) {
-					return true;
-				}
-			}
-		}
-		if (spawnConfig.complexEvents != null) {
-			for (EventConfig handledEvent : spawnConfig.complexEvents) {
-				if (handledEvent.equals(event)) {
 					return true;
 				}
 			}

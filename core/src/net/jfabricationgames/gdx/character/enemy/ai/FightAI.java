@@ -24,7 +24,6 @@ public class FightAI extends AbstractAttackAI {
 		
 		super.calculateMove(delta);
 		if (targetInRange(attackDistance) && canSeeTarget()) {
-			System.out.println("target in range 1: " + targetingPlayer.getPosition().cpy().sub(character.getPosition()).len());
 			AIAttackingMove move = new AIAttackingMove(this);
 			move.targetPosition = targetingPlayer.getPosition();
 			setMove(MoveType.ATTACK, move);
@@ -39,7 +38,6 @@ public class FightAI extends AbstractAttackAI {
 	public void executeMove(float delta) {
 		AIAttackingMove move = getMove(MoveType.ATTACK, AIAttackingMove.class);
 		if (isExecutedByMe(move)) {
-			System.out.println("target in range 2: " + targetingPlayer.getPosition().cpy().sub(character.getPosition()).len());
 			if (changeToAttackState()) {
 				move.executed();
 			}

@@ -544,7 +544,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="12" name="physics">
+ <objectgroup id="12" name="physics" locked="1">
   <object id="1351" x="2976" y="1056" width="128" height="78"/>
   <object id="1352" x="2560" y="1056" width="192" height="78"/>
   <object id="1353" x="2784" y="1088" width="159.333" height="78"/>

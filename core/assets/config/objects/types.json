@@ -153,7 +153,7 @@
 		physicsBodyOffsetFactorY: 0.05,
 		
 		addSensor: true,
-		sensorRadius: 0.6,
+		sensorRadius: 0.65,
 		
 		multipleActionExecutionsPossible: false,
 		textureAfterAction: key_wall_open_33,
@@ -315,6 +315,24 @@
 		
 		interactionMarkerOffsetX: 0.15f,
 		interactionMarkerOffsetY: 0.1f,
+		
+		addSensor: true,
+		sensorRadius: 0.4f,
+	},
+	bottom_switch_2: {
+		type: STATE_SWITCH,
+		
+		texture: switch_floor_left,
+		textureAfterAction: switch_floor_right,
+		interactionSound: switch_activated,
+		
+		physicsBodySizeFactorX: 0.6f,
+		physicsBodySizeFactorY: 0.6f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0f,
+		
+		interactionMarkerOffsetX: 0.1f,
+		interactionMarkerOffsetY: 0.3f,
 		
 		addSensor: true,
 		sensorRadius: 0.4f,

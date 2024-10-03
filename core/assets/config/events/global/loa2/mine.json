@@ -170,6 +170,19 @@
 		executionType: CONDITIONAL_EVENT,
 		conditionalExecutionId: loa2_l1_main__openLock_5_ifMagicSwitchIsActivated,
 	},
+	
+	//*******************************************
+	//*** switches - castle
+	//*******************************************
+	
+	loa2_l1_castle__pressure_switch_activated: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l1_castle__pressure_switch_1,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__changeLockOfPressureSwitch1,
+	},
 
 	//*******************************************
 	//*** change map

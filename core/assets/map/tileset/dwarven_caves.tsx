@@ -13,6 +13,14 @@
    <frame tileid="455" duration="100"/>
   </animation>
  </tile>
+ <tile id="456">
+  <animation>
+   <frame tileid="456" duration="100"/>
+   <frame tileid="457" duration="100"/>
+   <frame tileid="458" duration="100"/>
+   <frame tileid="459" duration="100"/>
+  </animation>
+ </tile>
  <tile id="462">
   <animation>
    <frame tileid="462" duration="100"/>
@@ -23,6 +31,14 @@
    <frame tileid="467" duration="100"/>
    <frame tileid="468" duration="100"/>
    <frame tileid="469" duration="100"/>
+  </animation>
+ </tile>
+ <tile id="470">
+  <animation>
+   <frame tileid="470" duration="100"/>
+   <frame tileid="471" duration="100"/>
+   <frame tileid="472" duration="100"/>
+   <frame tileid="473" duration="100"/>
   </animation>
  </tile>
 </tileset>

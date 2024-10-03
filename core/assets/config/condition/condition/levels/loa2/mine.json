@@ -128,4 +128,19 @@
 			stateSwitchId: loa2_l1_main__magic_switch,
 		}
 	},
+	
+	//*******************************************
+	//*** Dwarven Mine Castle
+	//*******************************************
+	
+	//*******************************************
+	//*** switches
+	//*******************************************
+	
+	loa2_l1_castle__mini_golem_pressure_switch_activated: {
+		conditionType: STATE_SWITCH_ACTIVE,
+		parameters: {
+			stateSwitchId: loa2_l1_castle__pressure_switch_1,
+		}
+	},
 }

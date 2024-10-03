@@ -112,4 +112,26 @@
             }
         }
     },
+    
+    loa2_l1_castle__changeLockOfPressureSwitch1: {
+	    conditionId: loa2_l1_castle__mini_golem_pressure_switch_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_2
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_2
+                }
+            }
+        }
+    }
 }

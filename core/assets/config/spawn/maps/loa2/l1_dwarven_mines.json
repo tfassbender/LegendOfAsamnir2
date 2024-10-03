@@ -9,5 +9,17 @@
 		]
 		spawnType: enemy.mini_golem,
 		spawnTypeMapProperties: "{drop: \"{token_l1_golem: 1}\", enemyDefeatedEventText: \"loa2_l1_mini_golem_in_arena_defeated\"}",
+	},
+	
+	enemy__mini_golem__pressure_switch: {
+		events: [NEW_GAME_STARTED, GAME_LOADED, PLAYER_RESPAWNED, MAP_ENTERED],
+		complexEvents: [
+			{
+				eventType: ENEMY_DEFEATED,
+				stringValue: loa2_l1_castle__mini_golem__pressure_switch__defeated,
+			}
+		]
+		spawnType: enemy.mini_golem,
+		spawnTypeMapProperties: "{drop: \"{}\", enemyDefeatedEventText: \"loa2_l1_castle__mini_golem__pressure_switch__defeated\"}",
 	}
 }

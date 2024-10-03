@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.object.interactive;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
@@ -32,6 +33,9 @@ public class LockedObject extends InteractiveObject implements EventListener {
 	private static final String LOCK_EVENT_TEXT_UNLOCKED_BY_EVENT_OR_CONDITION = "unlocked_by_event";
 	
 	private ObjectMap<String, String> keyProperties;
+	
+	private boolean playerContact = false;
+	private boolean reverseInteractionAfterPlayerContactEnds = false;
 	
 	public LockedObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties properties, GameObjectMap gameMap) {
 		super(typeConfig, sprite, properties, gameMap);
@@ -128,7 +132,13 @@ public class LockedObject extends InteractiveObject implements EventListener {
 		else if (event.eventType == EventType.CLOSE_LOCK) {
 			if (isUnlockedByEvent() && event.stringValue.equals(mapProperties.get(MAP_PROPERTY_KEY_LOCK_ID))) {
 				if (actionExecuted) {
-					reverseInteraction();
+					if (!playerContact) {
+						reverseInteraction();
+					}
+					else {
+						//if the player is still in contact with the object, the interaction has to be reversed after the contact ends
+						reverseInteractionAfterPlayerContactEnds = true;
+					}
 				}
 			}
 		}
@@ -197,5 +207,25 @@ public class LockedObject extends InteractiveObject implements EventListener {
 	public void removeFromMap() {
 		super.removeFromMap();
 		EventHandler.getInstance().removeEventListener(this);
+	}
+	
+	@Override
+	public void beginContact(Contact contact) {
+		super.beginContact(contact);
+		if (isPlayableCharacterContact(contact)) {
+			playerContact = true;
+		}
+	}
+	
+	@Override
+	public void endContact(Contact contact) {
+		super.endContact(contact);
+		if (isPlayableCharacterContact(contact)) {
+			playerContact = false;
+			if (reverseInteractionAfterPlayerContactEnds) {
+				reverseInteraction();
+				reverseInteractionAfterPlayerContactEnds = false;
+			}
+		}
 	}
 }

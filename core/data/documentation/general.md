@@ -81,7 +81,10 @@
 	- giant eyed monster (?) - 2019 - 6$
 	- flying eye - free
 	- gargoyle - 2020 - 3$
-    - Ancient Crustacean - 2021 - 3$
+    - Shield Guardian
+	- Dwarven Guardian Construct (not as enemy, but as tool to defeat the boss)
+	- Beast
+	- Minotaur
 
 
 ### Level 2
