@@ -81,12 +81,14 @@
 			},
 			
 			executes: [
-				narrator_talking,
+				set_global_condition_value__mini_boss_appeared,
 			]
 		}
 		
-		narrator_talking: {
+		set_global_condition_value__mini_boss_appeared: {
 			type: EVENT,
+			
+            executionDelayInSeconds: 2f,
 			
 			event: {
 				eventType: SET_GLOBAL_CONDITION_VALUE,
