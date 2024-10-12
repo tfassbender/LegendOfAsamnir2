@@ -391,6 +391,24 @@
 		canBeDeactivated: false,
 	},
 	
+	push_fist: {
+        type: MOVING,
+        
+        texture: push_fist,
+		animationAction: push_fist_attack,
+        
+        density: 100000f,
+        multipleActionExecutionsPossible: true,
+        movingPartRadius: 0.2f,
+        movingPartPushForce: 3000000f,
+        movingPartLifetimeInSeconds: 0.3f,
+        
+        physicsBodySizeFactorX: 0.3f,
+        physicsBodySizeFactorY: 1f,
+        physicsBodyOffsetFactorX: -0.35f,
+        physicsBodyOffsetFactorY: 0f,
+	},
+	
 	//**********************************
 	//*** Walls for demo 2 level 2
 	//**********************************

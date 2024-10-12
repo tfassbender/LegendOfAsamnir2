@@ -57,8 +57,7 @@ public class StateSwitchObject extends InteractiveObject implements EventListene
 		
 		stateSwitchId = mapProperties.get(MAP_PROPERTIES_KEY_STATE_SWITCH_ID, String.class);
 		if (stateSwitchId == null) {
-			Gdx.app.error(getClass().getSimpleName(),
-					"A StateSwitchObject should have stateSwitchId (configured in the map properties). Map-ID: " + getMapObjectId());
+			Gdx.app.error(getClass().getSimpleName(), "A StateSwitchObject should have stateSwitchId (configured in the map properties). Map-ID: " + getMapObjectId());
 		}
 		
 		changeSwitchObjectState(stateSwitchId, false);
@@ -113,6 +112,13 @@ public class StateSwitchObject extends InteractiveObject implements EventListene
 		if (mapProperties.containsKey(MAP_PROPERTIES_KEY_STATE_CHANGED_EVENT_PARAMETER)) {
 			String eventParameter = mapProperties.get(MAP_PROPERTIES_KEY_STATE_CHANGED_EVENT_PARAMETER, String.class);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.STATE_SWITCH_ACTION).setStringValue(eventParameter));
+			
+			if (active) {
+				EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.STATE_SWITCH_ACTIVATED).setStringValue(eventParameter));
+			}
+			else {
+				EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.STATE_SWITCH_DEACTIVATED).setStringValue(eventParameter));
+			}
 		}
 	}
 	
@@ -174,8 +180,7 @@ public class StateSwitchObject extends InteractiveObject implements EventListene
 	}
 	
 	private boolean canBeDeactivated() {
-		boolean canBeDeactivatedByMapPropertiesConfig = Boolean
-				.parseBoolean(mapProperties.get(MAP_PROPERTIES_KEY_CAN_BE_DEACTIVATED, "true", String.class));
+		boolean canBeDeactivatedByMapPropertiesConfig = Boolean.parseBoolean(mapProperties.get(MAP_PROPERTIES_KEY_CAN_BE_DEACTIVATED, "true", String.class));
 		if (!canBeDeactivatedByMapPropertiesConfig) {
 			return false;
 		}

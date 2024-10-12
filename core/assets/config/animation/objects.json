@@ -106,5 +106,12 @@
 			frameDuration: 0.1,
 			playMode: REVERSED,
 		},
+		{
+			alias: push_fist_attack,
+			name: push_fist_attack,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+		},
 	]
 }

@@ -63,6 +63,12 @@
 				raw_images/objects/animated/magic_switch/magic_switch_activate,
 				
 				//##############################################################
+				//### objects - restricted graphics
+				//##############################################################
+				raw_images/restricted/objects/all,
+				raw_images/restricted/objects/animated/push_fist_attack,
+				
+				//##############################################################
 				//### enemies
 				//##############################################################
 				

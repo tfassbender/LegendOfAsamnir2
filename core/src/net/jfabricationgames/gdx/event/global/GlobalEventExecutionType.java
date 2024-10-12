@@ -211,6 +211,32 @@ public enum GlobalEventExecutionType {
 					.setStringValue(item) //
 					.setBooleanValue(suppressSound));
 		}
+	},
+	FIRE_EVENT {
+		
+		private static final String MAP_KEY_EVENT_TYPE = "eventType";
+		private static final String MAP_KEY_STRING_VALUE = "stringValue";
+		private static final String MAP_KEY_INT_VALUE = "intValue";
+		private static final String MAP_KEY_FLOAT_VALUE = "floatValue";
+		private static final String MAP_KEY_BOOLEAN_VALUE = "booleanValue";
+		
+		@Override
+		public void execute(GlobalEventConfig eventConfig) {
+			EventType eventType = EventType.valueOf(eventConfig.executionParameters.get(MAP_KEY_EVENT_TYPE));
+			String stringValue = eventConfig.executionParameters.get(MAP_KEY_STRING_VALUE);
+			int intValue = Integer.parseInt(eventConfig.executionParameters.get(MAP_KEY_INT_VALUE, "0"));
+			float floatValue = Float.parseFloat(eventConfig.executionParameters.get(MAP_KEY_FLOAT_VALUE, "0f"));
+			boolean booleanValue = Boolean.parseBoolean(eventConfig.executionParameters.get(MAP_KEY_BOOLEAN_VALUE));
+			
+			EventConfig event = new EventConfig() //
+					.setEventType(eventType) //
+					.setStringValue(stringValue) //
+					.setIntValue(intValue) //
+					.setFloatValue(floatValue) //
+					.setBooleanValue(booleanValue);
+			
+			EventHandler.getInstance().fireEvent(event);
+		}
 	};
 	
 	private static GlobalEventTextBox textBox;

@@ -12,6 +12,7 @@ import net.jfabricationgames.gdx.object.destroyable.DestroyableObject;
 import net.jfabricationgames.gdx.object.event.EventObject;
 import net.jfabricationgames.gdx.object.interactive.InteractiveObject;
 import net.jfabricationgames.gdx.object.interactive.LockedObject;
+import net.jfabricationgames.gdx.object.interactive.MovingObject;
 import net.jfabricationgames.gdx.object.interactive.StateSwitchObject;
 import net.jfabricationgames.gdx.object.moveable.MovableObject;
 import net.jfabricationgames.gdx.object.spawn.SpawnPoint;
@@ -93,6 +94,9 @@ public class GameObjectFactory {
 				break;
 			case STATE_SWITCH:
 				object = new StateSwitchObject(typeConfig, sprite, properties, gameMap);
+				break;
+			case MOVING:
+				object = new MovingObject(typeConfig, sprite, properties, gameMap);
 				break;
 			case SPAWN_POINT:
 				SpawnPoint spawnPoint = new SpawnPoint(typeConfig, sprite, properties, gameMap);

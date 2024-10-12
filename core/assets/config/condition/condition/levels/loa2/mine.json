@@ -199,4 +199,55 @@
             stateSwitchId: loa2_l1_castle__switch_gate_moria,
 		}
 	},
+	
+	loa2_l1_castle__vault_switches_activated: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: AND,
+						conditionalParameters: {
+							condition: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l1_castle__pressure_switch__treasure_vault_1,
+								}
+							},
+							condition2: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l1_castle__pressure_switch__treasure_vault_2,
+								}
+							}
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l1_castle__pressure_switch__treasure_vault_3,
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l1_castle__pressure_switch__treasure_vault_4,
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l1_castle__pressure_switch__treasure_vault_5,
+						}
+					}
+				}
+			}
+		}
+	},
 }

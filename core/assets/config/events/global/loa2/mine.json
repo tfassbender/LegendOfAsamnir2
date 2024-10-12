@@ -220,6 +220,70 @@
 			cutsceneId: loa2_l1_castle__mini_boss_cutscene,
 		}
 	},
+	
+	//*******************************************
+	//*** vault puzzle (moving fists)
+	//*******************************************
+	
+	loa2_l1_castle__moving_fist_1: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__pressure_switch__treasure_vault_2,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: ACTIVATE_MOVING_OBJECT,
+            stringValue: loa2_l1_castle__moving_fist_1,
+		}
+	},
+	
+	loa2_l1_castle__moving_fist_2: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__pressure_switch__treasure_vault_5,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: ACTIVATE_MOVING_OBJECT,
+            stringValue: loa2_l1_castle__moving_fist_2,
+		}
+	},
+	
+	// moving fist 3 is not activated because the sequence needs to start somewhere
+	
+	loa2_l1_castle__moving_fist_4: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__pressure_switch__treasure_vault_1,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: ACTIVATE_MOVING_OBJECT,
+            stringValue: loa2_l1_castle__moving_fist_4,
+		}
+	},
+	
+	loa2_l1_castle__moving_fist_5: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__pressure_switch__treasure_vault_3,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: ACTIVATE_MOVING_OBJECT,
+            stringValue: loa2_l1_castle__moving_fist_5,
+		}
+	},
+	
+	// switch 4 is the last one that must be activated, so it's sufficient to check this one only
+	loa2_l1_castle__vault_gate: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__pressure_switch__treasure_vault_4,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__openVaultLock_ifAllSwitchActivated,
+	},
 
 	//*******************************************
 	//*** change map

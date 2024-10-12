@@ -45,6 +45,8 @@ public enum EventType {
 	EVENT_OBJECT_TOUCHED, //
 	UPDATE_MAP_OBJECT_STATES, //
 	STATE_SWITCH_ACTION, //
+	STATE_SWITCH_ACTIVATED, //
+	STATE_SWITCH_DEACTIVATED, //
 	INTERACTED_WITH_LOCKED_OBJECT, //
 	OPEN_LOCK, //
 	CLOSE_LOCK, //
@@ -52,6 +54,7 @@ public enum EventType {
 	CHANGE_SIGNBOARD_TEXT, //
 	DESTROYABLE_OBJECT_DESTROYED, //
 	DISTRIBUTED_SPAWN, //
+	ACTIVATE_MOVING_OBJECT,
 	//*******************************
 	//*** Items
 	//*******************************

@@ -647,6 +647,16 @@ Another way to configure locked objects is to configure them to be unlocked (and
 
 This event is configured to unlock a locked object when the [condition](#conditions) `demoLevel_allSwitchesActivated` is met (see [event objects](#event-objects) for details on event switches). The event is triggered whenever a state switch object with the map properties `eventParameter: demoLevel_switch_group_1` is triggered. The [condition](#conditions) will check for multiple switches to be activated at the same time. The condition configuration is to be found in the configuration file [demo.json](core/assets/config/condition/condition/levels/demo.json).
 
+### Moving Objects
+
+A moving object is a special kind of [Interactive Object](#interactive-objects), that executes a movement when triggered by an event. This movement can be used to push the player, an object or an enemy away (without dealing damage). The object on the tiled map needs to be configured with the parameter `movingObjectId`. If an event is fired with the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) `ACTIVATE_MOVING_OBJECT` and a `stringValue` that matches the `movingObjectId` from the map parameter, the moving object will execute it's action.
+
+### State Switch Objects
+
+A state switch object is a special kind of [Interactive Object](#interactive-objects), that can be turned on and off (like a button, a switch, a pressure switch, ...). These objects are mainly used in puzzles or to open [Locked Objects](#locked-objects). They should be configured with a `stateSwitchId` in the map parameters, to be able to identify them in the config (mainly in [Conditions](#conditions)). 
+
+If they are configured with an `eventParameter` in the map parameters, two events will be fired, when the state changes. One event will have the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) `STATE_SWITCH_ACTION`. The other depends on whether the switch is activated or deactivated. If the state switch object's state changed from deactivated to activated, the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) of the fired event will be `STATE_SWITCH_ACTIVATED`. Otherwise the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) of the fired event will be `STATE_SWITCH_DEACTIVATED`. In any case, the `stringValue` of the fired event will be the one from the map property `eventParameter`.
+
 ### Spawn Points
 
 Spawn points are special Game Objects, that can be used to spawn new Items, Game Objects or Enemies. They can be added to the map, just like all other Game Objects. These objects use an Event Handling Service, that informs them on every fired event. If the event triggers a spawn, a new object is spawned on the map. The events and spawns can be configured in the json files [events.json](core/assets/config/events/events.json) and [spawnConfigs.json](core/assets/config/spawn/spawnConfigs.json). An example of a spawn config file is the file [demo.json](core/assets/config/spawn/maps/demo.json). The Spawn Points, that are added in the tiled map, have to use a map property 'spawn', that references a spawn config from the a spawn config file that is referenced by the [spawnConfigs.json](core/assets/config/spawn/spawnConfigs.json) file by name. This spawn config defines, what is to be spawned and when it is spawned.
@@ -713,6 +723,10 @@ State switch objects are a special type of Event Objects. They can have two stat
 ```
 
 This configuration uses the state of three switches in a condition that is used to unlock a [locked object](#locked-objects). The condition is met when the state of all three state switch objects `demoLevel_switch_1`, `demoLevel_switch_2` and `demoLevel_pressure_switch` is set to *active*.
+
+###Movable Objects
+
+Movable objects can be added to the game world and can be moved by the player (by running against them). These objects are mainly used to block pathes or activate pressure switches (see [State Switch Objects](#state-switch-objects)). 
 
 ## Maps
 
