@@ -143,7 +143,7 @@ class CharacterInputProcessor implements InputActionListener {
 				}
 			}
 			if (!characterActionSet && jump) {
-				if (player.action.isInterruptable() && !isActionInCooldown()) {
+				if (player.action != CharacterAction.JUMP && !isActionInCooldown()) { // jump may interrupt any other action
 					jumpDirection = getDirectionFromInputs();
 					if (jumpDirection == MovingDirection.NONE) {
 						jumpDirection = lastMoveDirection;
