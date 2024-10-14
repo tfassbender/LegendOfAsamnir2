@@ -381,6 +381,15 @@
 					path: "sound/enemy/alarm_clock.wav",
                     volume: 0.5,
 				},
+				// ogre
+				ogre_charge: {
+					path: "sound/enemy/ogre_charge.mp3",
+					volume: 0.4,
+				},
+				ogre_idle_2: {
+					path: "sound/enemy/ogre_idle_2.mp3",
+					volume: 0.4,
+				}
 			}
 		},
 		cutscene: {

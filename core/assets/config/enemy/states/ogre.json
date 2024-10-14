@@ -13,6 +13,8 @@
 		animation: ogre_idle_2,
 		endsWithAnimation: true,
 		followingState: idle,
+		stateEnteringSound: ogre_idle_2,
+		abortSoundWhenStateInterrupted: true,
 		interruptingStates: [
 			death
 		]
@@ -22,6 +24,8 @@
 		animation: ogre_charge,
 		endsWithAnimation: true,
 		followingState: idle,
+		stateEnteringSound: ogre_charge,
+		abortSoundWhenStateInterrupted: true,
 		interruptingStates: [
 			death
 		]
@@ -41,6 +45,7 @@
 		attack: attack_1
 		endsWithAnimation: true,
 		followingState: idle,
+		stateEnteringSound: hit_3,
 		interruptingStates: [
 			damage, death
 		]
@@ -51,6 +56,7 @@
 		attack: attack_2
 		endsWithAnimation: true,
 		followingState: idle,
+		stateEnteringSound: hit_4,
 		interruptingStates: [
 			damage, death
 		]
