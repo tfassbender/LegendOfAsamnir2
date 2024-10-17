@@ -724,7 +724,7 @@ State switch objects are a special type of Event Objects. They can have two stat
 
 This configuration uses the state of three switches in a condition that is used to unlock a [locked object](#locked-objects). The condition is met when the state of all three state switch objects `demoLevel_switch_1`, `demoLevel_switch_2` and `demoLevel_pressure_switch` is set to *active*.
 
-###Movable Objects
+### Movable Objects
 
 Movable objects can be added to the game world and can be moved by the player (by running against them). These objects are mainly used to block pathes or activate pressure switches (see [State Switch Objects](#state-switch-objects)). 
 
