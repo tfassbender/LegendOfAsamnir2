@@ -773,6 +773,10 @@ The second part of configuration is done in a separate config file, that defines
 
 Ground physics are objects, that can be added to the ground layer of a map. These objects interact with the player, with enemies or other game objects and can be used to change the behavior of them, while touching the ground objects (e.g. the player is slowed down when he climbs up a wall or stairs). The types of ground physics have to be configured in the json configuration file [ground_types.json](core/assets/config/map/ground_types.json). The type of ground, that is applied for a map object in the ground layer is to be defined in the map properties of this map object, with the property key **ground** and a value that matches one of the configured names in the [ground_types.json](core/assets/config/map/ground_types.json) config file. 
 
+### Effect Layers
+
+Effect layers are layers in the tiled map, that are rendered conditionally. The layers have to be configured in the map config with the key `effect_layers`. The value has to be a JSON map ob the effect layer indices mapped to the name of the global value, that is tested when rendering the layer. If the value of this value is evaluated to `true`, the layer is drawn. The global values can be set by [Events](#events). An example can be found in map [Dwarven Mine Castle](core/assets/map/loa2_l1_dwarven_mine_castle.tmx).
+
 ## Saving and Loading Game States
 
 To be able to continue the game after closing it, the game state of the game can be saved to files. Therefore all the information needed to re-create the current state of the game is serialized into a JSON file, that is stored in the file system. Therefore the class [GameDataService](core/src/net/jfabricationgames/gdx/data/GameDataService.java) can be used to to read or write game states from or to files. These files are saved in the user's home directory in the subdirectory '.DwarfScrollerGdx'.  
