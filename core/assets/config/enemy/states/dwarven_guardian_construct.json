@@ -1,0 +1,73 @@
+[
+	{
+		id: idle,
+		animation: dwarven_guardian_construct_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_fire, attack_fist, attack_stomp, damage, death
+		]
+	},
+	{
+		id: move,
+		animation: dwarven_guardian_construct_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_fire, attack_fist, attack_stomp, damage, death
+		]
+	},
+	{
+		id: attack_fire,
+		animation: dwarven_guardian_construct_attack_fire,
+		attack: attack_fire
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			death
+		]
+	},
+	{
+		id: attack_fist,
+		animation: dwarven_guardian_construct_attack_fist,
+		attack: attack_fist
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			death
+		]
+	},
+	{
+		id: attack_stomp,
+		animation: dwarven_guardian_construct_attack_stomp,
+		attack: attack_stomp
+		endsWithAnimation: true,
+		followingState: idle,
+		stateEnteringSound: hit_4,
+		interruptingStates: [
+			death
+		]
+	},
+	{
+		id: damage,
+		animation: dwarven_guardian_construct_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: flesh_hit_2,
+		followingState: idle,
+		interruptingStates: [
+			death
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: death,
+		animation: dwarven_guardian_construct_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

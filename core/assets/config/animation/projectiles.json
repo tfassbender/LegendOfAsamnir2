@@ -28,5 +28,19 @@
 			maxScale: 0.3,
 			duration: 1,
 		},
+		{
+			name: dwarven_guardian_construct_fist_attack,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 0.04
+		},
+		{
+			name: dwarven_guardian_construct_fire_attack,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 0.05
+		},
 	]
 }

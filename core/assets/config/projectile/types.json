@@ -164,4 +164,23 @@
 		
 		multipleHitsPossible: true,
 	},
+	
+	dwarven_guardian_construct_fist: {
+        attackType: ANIMATED_HIT,
+        
+        animation: dwarven_guardian_construct_fist_attack,
+		removeAfterAnimationFinished: true,
+        
+        speed: 0,
+        damping: 0,
+	},
+	dwarven_guardian_construct_fire: {
+        attackType: FIRE_BREATH,
+        
+        animation: dwarven_guardian_construct_fire_attack,
+        removeAfterAnimationFinished: true,
+        
+        speed: 0,
+        damping: 0,
+	},
 }

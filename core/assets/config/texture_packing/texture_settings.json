@@ -41,6 +41,12 @@
 				raw_images/projectiles/explosion,
 				
 				//##############################################################
+				//### projectiles - restricted graphics
+				//##############################################################
+				raw_images/restricted/projectiles/dwarven_guardian_construct_fire_attack,
+				raw_images/restricted/projectiles/dwarven_guardian_construct_fist_attack,
+				
+				//##############################################################
 				//### objects
 				//##############################################################
 				raw_images/objects/all,
@@ -244,6 +250,15 @@
 				raw_images/restricted/enemy/ogre/ogre_idle,
 				raw_images/restricted/enemy/ogre/ogre_idle_2,
 				raw_images/restricted/enemy/ogre/ogre_move,
+				
+				// dwarven guardian construct
+				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_idle,
+				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_move,
+				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_attack_fire,
+				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_attack_fist,
+				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_attack_stomp,
+				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_damage,
+				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_death,
 				
 				//##############################################################
 				//### NPCs

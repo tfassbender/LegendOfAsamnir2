@@ -529,4 +529,28 @@
 		isBoss: true
 		bossName: "Cave Troll - Occupant of Moria",
 	}
+	
+	// not a real enemy, but it's easier to model it as one, because it needs to be attacked by the player
+	dwarven_guardian_construct: {
+		typeName: dwarven_guardian_construct,
+		
+		animationsConfig: config/animation/enemy/dwarven_guardian_construct.json,
+		stateConfig: config/enemy/states/dwarven_guardian_construct.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/dwarven_guardian_construct.json,
+		
+		health: 10, // doesn't take damage
+		movingSpeed: 0.5f,
+		movable: false, // the player can't push it
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.2f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1.7f,
+		bodyHeight: 1.6f,
+		
+		pushForceDamage: 0,
+		pushForceHit: 0,
+	}
 }

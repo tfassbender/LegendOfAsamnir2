@@ -1,0 +1,35 @@
+[
+	{
+		id: attack_fire,
+		type: FIRE_BREATH,
+		projectileType: dwarven_guardian_construct_fire,
+		delay: 0.2,
+		duration: 0,
+		damage: 5,
+		distFromCenter: 1,
+		hitFixtureRadius: 0.5,
+		pushForce: 25
+	},
+	{
+		id: attack_fist,
+		type: ANIMATED_HIT,
+		projectileType: dwarven_guardian_construct_fist,
+		delay: 0.4,
+		duration: 0,
+		damage: 10,
+		distFromCenter: 1,
+		hitFixtureRadius: 1,
+		pushForce: 100
+	},
+	{
+		id: attack_stomp,
+		type: NOVA,
+		delay: 0.2,
+		duration: 0,
+		damage: 5,
+		distFromCenter: 0,
+		hitFixtureRadius: 4,
+		pushForce: 180
+		pushForceAffectedByBlock: false,
+	},
+]

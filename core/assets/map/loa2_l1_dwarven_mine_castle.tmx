@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="396">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="402">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -371,8 +371,22 @@
    </properties>
    <point/>
   </object>
+  <object id="396" name="enemy.dwarven_guardian_construct" x="895.333" y="1450.33">
+   <properties>
+    <property name="facing_left" value="true"/>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="397" name="enemy.dwarven_guardian_construct" x="919.667" y="1183.67">
+   <properties>
+    <property name="facing_left" value="true"/>
+    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="5" x="864" y="2688" width="160" height="32"/>
   <object id="6" x="992" y="2398" width="32" height="290"/>
   <object id="7" x="864" y="2397.29" width="32" height="290.708"/>
@@ -425,8 +439,8 @@
   <object id="60" x="1024" y="512" width="32" height="416"/>
   <object id="61" x="864" y="893.75" width="160" height="34.25"/>
   <object id="62" x="864" y="928" width="32" height="128"/>
-  <object id="63" x="864" y="1056" width="160" height="120.091"/>
-  <object id="64" x="992" y="1152" width="32" height="224"/>
+  <object id="63" x="864" y="1056" width="160" height="64.091"/>
+  <object id="64" x="992" y="1120" width="32" height="256"/>
   <object id="65" x="992" y="1376" width="128" height="119.75"/>
   <object id="66" x="1088" y="1248" width="32" height="128"/>
   <object id="67" x="1120" y="1248" width="128" height="32"/>
@@ -837,7 +851,7 @@
   </object>
   <object id="318" x="160.375" y="1944" width="191.125" height="1"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics">
   <object id="263" x="646.125" y="2295.25" width="18.125" height="32.125"/>
   <object id="264" x="837.875" y="2295" width="18.25" height="32.75"/>
   <object id="265" x="1030.06" y="2294.94" width="18" height="33.375"/>
@@ -913,6 +927,8 @@
   <object id="337" x="2592" y="2135.67" width="223.667" height="8.33333"/>
   <object id="349" x="2241.88" y="2240.13" width="6" height="31.75"/>
   <object id="360" x="160" y="1945.33" width="42.5417" height="295"/>
+  <object id="400" x="864" y="1120" width="39.3333" height="55.6667"/>
+  <object id="401" x="956" y="1120" width="36" height="64"/>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1">
   <object id="325" x="1853.38" y="2519.88" width="31.2497" height="127.5">

@@ -27,6 +27,8 @@ public class ProjectileFactory {
 	private static final String PROJECTILE_TYPE_MAGIC_WAVE = "magic_wave";
 	private static final String PROJECTILE_TYPE_COIN_BAG = "coin_bag";
 	private static final String PROJECTILE_TYPE_FORCE_FIELD = "force_field";
+	private static final String PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIST = "dwarven_guardian_construct_fist";
+	private static final String PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIRE = "dwarven_guardian_construct_fire";
 	
 	private static final String CONFIG_FILE = "config/factory/projectile_factory.json";
 	private static final String ANIMATION_CONFIG_FILE = "config/animation/projectiles.json";
@@ -50,13 +52,11 @@ public class ProjectileFactory {
 	
 	public static Projectile createProjectileAndAddToMap(String type, Vector2 position, Vector2 direction, PhysicsCollisionType collisionType) {
 		if (type == null) {
-			throw new IllegalStateException(
-					"The 'type' parameter mussn't be null. Maybe the projectileType was not configured in the attack config file?");
+			throw new IllegalStateException("The 'type' parameter mussn't be null. Maybe the projectileType was not configured in the attack config file?");
 		}
 		ProjectileTypeConfig typeConfig = typeConfigs.get(type);
 		if (typeConfig == null) {
-			throw new IllegalStateException("No type config known for type: " + type
-					+ ". Either the type name is wrong or you have to add it to the projectileTypesConfig (see \"" + CONFIG_FILE + "\")");
+			throw new IllegalStateException("No type config known for type: " + type + ". Either the type name is wrong or you have to add it to the projectileTypesConfig (see \"" + CONFIG_FILE + "\")");
 		}
 		
 		Sprite sprite = null;
@@ -107,11 +107,17 @@ public class ProjectileFactory {
 			case PROJECTILE_TYPE_FORCE_FIELD:
 				projectile = new ForceField(typeConfig, animation, gameMap);
 				break;
+			case PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIST:
+				projectile = new DwarvenGuardianConstructFist(typeConfig, animation, gameMap);
+				break;
+			case PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIRE:
+				projectile = new DwarvenGuardianConstructFire(typeConfig, animation, gameMap);
+				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}
 		projectile.setExplosionFactory(ProjectileFactory::createProjectileAndAddToMap);
-		projectile.createPhysicsBody(position, collisionType);
+		projectile.createPhysicsBody(position, direction, collisionType);
 		projectile.startProjectile(direction);
 		
 		gameMap.addProjectile(projectile);

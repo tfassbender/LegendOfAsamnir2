@@ -43,7 +43,9 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 				Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN, 0f);
 	}
 	
-	public void scaleSprite(Sprite sprite) {}
+	public void scaleSprite(Sprite sprite) {
+		sprite.setScale(animationConfig.scale);
+	}
 	
 	/**
 	 * Get the frame at the current time.
