@@ -161,7 +161,6 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	}
 	
 	private boolean isEventHandled(EventConfig event) {
-		Gdx.app.debug(getClass().getSimpleName(), "Checking whether the event is handled by this (" + (isDistributedSpawnPoint() ? "" : "not ") + "distributed) spawn point: " + event);
 		if (isDistributedSpawnPoint()) {
 			if (event.eventType == EventType.DISTRIBUTED_SPAWN) {
 				Gdx.app.debug(getClass().getSimpleName(), "DISTRIBUTED_SPAWN event received with parameters: " + event.stringValue + ", " + event.intValue);

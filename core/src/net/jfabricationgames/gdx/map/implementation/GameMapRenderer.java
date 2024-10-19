@@ -11,6 +11,7 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.character.animal.Animal;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
@@ -28,6 +29,7 @@ class GameMapRenderer implements Disposable {
 	public static final String MAP_PROPERTY_KEY_INVISIBLE_PATHS_LAYER = "invisible_paths_layer";
 	public static final String MAP_PROPERTY_KEY_ABOVE_PLAYER_LAYERS = "above_player_layers";
 	public static final String MAP_PROPERTY_KEY_SHADOW_LAYERS = "shadow_layers";
+	public static final String MAP_PROPERTY_KEY_EFFECT_LAYERS = "effect_layers";
 	
 	private static final float INVISIBLE_PATH_OPACITY_MIN = 0.4f;
 	private static final float INVISIBLE_PATH_OPACITY_MAX = 0.8f;
@@ -49,6 +51,7 @@ class GameMapRenderer implements Disposable {
 	private int[] invisiblePathsLayer;
 	private int[] abovePlayerLayers;
 	private int[] shadowLayers;
+	private ObjectMap<String, String> effectLayers; // will be drawn if the corresponding global value is set
 	
 	public GameMapRenderer(GameMapImplementation gameMap, OrthographicCamera camera) {
 		this.gameMap = gameMap;
@@ -66,11 +69,13 @@ class GameMapRenderer implements Disposable {
 		loadLayersFromMapProperties(map.getProperties());
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void loadLayersFromMapProperties(MapProperties properties) {
 		String backgroundLayersJson = properties.get(MAP_PROPERTY_KEY_BACKGROUND_LAYERS, String.class);
 		String invisiblePathsLayerJson = properties.get(MAP_PROPERTY_KEY_INVISIBLE_PATHS_LAYER, String.class);
 		String abovePlayerLayersJson = properties.get(MAP_PROPERTY_KEY_ABOVE_PLAYER_LAYERS, String.class);
 		String shadowLayersJson = properties.get(MAP_PROPERTY_KEY_SHADOW_LAYERS, String.class);
+		String effectLayersJson = properties.get(MAP_PROPERTY_KEY_EFFECT_LAYERS, String.class);
 		
 		Json json = new Json();
 		if (backgroundLayersJson != null) {
@@ -99,6 +104,13 @@ class GameMapRenderer implements Disposable {
 		}
 		else {
 			shadowLayers = new int[0];
+		}
+		
+		if (effectLayersJson != null) {
+			effectLayers = json.fromJson(ObjectMap.class, String.class, effectLayersJson);
+		}
+		else {
+			effectLayers = new ObjectMap<>();
 		}
 	}
 	
@@ -149,6 +161,14 @@ class GameMapRenderer implements Disposable {
 	
 	public void renderAbovePlayer() {
 		renderer.render(abovePlayerLayers);
+	}
+	
+	public void renderEffectLayers() {
+		for (String layer : effectLayers.keys()) {
+			if (GlobalValuesDataHandler.getInstance().getAsBoolean(effectLayers.get(layer))) {
+				renderer.render(new int[] {Integer.parseInt(layer)});
+			}
+		}
 	}
 	
 	public void renderShadows() {

@@ -301,6 +301,7 @@ public class GameMapImplementation implements GameMap {
 		renderer.renderBackground(delta);
 		processAndRenderGameObject(delta);
 		renderer.renderAbovePlayer();
+		renderer.renderEffectLayers();
 		renderer.renderShadows();
 		renderer.renderDarknessArroundPlayer();
 		

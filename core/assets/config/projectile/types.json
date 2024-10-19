@@ -166,19 +166,21 @@
 	},
 	
 	dwarven_guardian_construct_fist: {
-        attackType: ANIMATED_HIT,
+        attackType: DWARVEN_GUARDIAN_CONSTRUCT_FIST,
         
         animation: dwarven_guardian_construct_fist_attack,
 		removeAfterAnimationFinished: true,
+		multipleHitsPossible: true, // needs to be set to true, because otherwise the attack will hit the dwarven guardian construct itself and nothing else
         
         speed: 0,
         damping: 0,
 	},
 	dwarven_guardian_construct_fire: {
-        attackType: FIRE_BREATH,
+        attackType: DWARVEN_GUARDIAN_CONSTRUCT_FIRE,
         
         animation: dwarven_guardian_construct_fire_attack,
         removeAfterAnimationFinished: true,
+        multipleHitsPossible: true, // needs to be set to true, because otherwise the attack will hit the dwarven guardian construct itself and nothing else
         
         speed: 0,
         damping: 0,

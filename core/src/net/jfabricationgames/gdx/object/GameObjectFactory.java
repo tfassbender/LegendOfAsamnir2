@@ -7,9 +7,11 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
+import net.jfabricationgames.gdx.attack.hit.AttackType;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.object.destroyable.DestroyableObject;
 import net.jfabricationgames.gdx.object.event.EventObject;
+import net.jfabricationgames.gdx.object.interactive.AttackActivatedStateSwitchObject;
 import net.jfabricationgames.gdx.object.interactive.InteractiveObject;
 import net.jfabricationgames.gdx.object.interactive.LockedObject;
 import net.jfabricationgames.gdx.object.interactive.MovingObject;
@@ -110,6 +112,13 @@ public class GameObjectFactory {
 				break;
 			case MOVABLE:
 				object = new MovableObject(typeConfig, sprite, properties, gameMap);
+				break;
+			// specialized types
+			case DWARVEN_GUARDIAN_CONSTRUCT_SWITCH:
+				object = new AttackActivatedStateSwitchObject(typeConfig, sprite, properties, gameMap, AttackType.DWARVEN_GUARDIAN_CONSTRUCT_FIST);
+				break;
+			case DWARVEN_GUARDIAN_CONSTRUCT_TORCH:
+				object = new AttackActivatedStateSwitchObject(typeConfig, sprite, properties, gameMap, AttackType.DWARVEN_GUARDIAN_CONSTRUCT_FIRE);
 				break;
 			default:
 				throw new IllegalStateException("Unknown GameObjectType \"" + typeConfig.type + "\" of object type \"" + type + "\"");

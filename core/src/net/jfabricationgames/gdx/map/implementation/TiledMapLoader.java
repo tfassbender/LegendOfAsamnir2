@@ -32,8 +32,7 @@ class TiledMapLoader implements GameMapLoader {
 	
 	protected TiledMapLoader(GameMap gameMap, String mapAsset) {
 		if (!(gameMap instanceof GameMapImplementation)) {
-			throw new IllegalArgumentException("This GameMapLoader implementation (" + getClass().getSimpleName() + ") needs a "
-					+ GameMapImplementation.class.getName() + " to load.");
+			throw new IllegalArgumentException("This GameMapLoader implementation (" + getClass().getSimpleName() + ") needs a " + GameMapImplementation.class.getName() + " to load.");
 		}
 		this.mapAsset = mapAsset;
 		this.gameMap = (GameMapImplementation) gameMap;
@@ -71,15 +70,13 @@ class TiledMapLoader implements GameMapLoader {
 			}
 			
 			if (isDebugObject(properties) && !Constants.DEBUG) {
-				Gdx.app.debug(getClass().getSimpleName(),
-						"Debug object will not be added, because the game is not in debug mode: " + MapUtil.mapPropertiesToString(properties, true));
+				Gdx.app.debug(getClass().getSimpleName(), "Debug object will not be added, because the game is not in debug mode: " + MapUtil.mapPropertiesToString(properties, true));
 				continue;
 			}
 			
 			String[] parts = name.split("[.]");
 			
-			Gdx.app.debug(getClass().getSimpleName(), "Processing map object: " + name + " at [x: " + rectangle.x + ", y: " + rectangle.y + ", w: "
-					+ rectangle.width + ", h: " + rectangle.height + "] properties: " + MapUtil.mapPropertiesToString(properties, false));
+			Gdx.app.debug(getClass().getSimpleName(), "Processing map object: " + name + " at [x: " + rectangle.x + ", y: " + rectangle.y + ", w: " + rectangle.width + ", h: " + rectangle.height + "] properties: " + MapUtil.mapPropertiesToString(properties, false));
 			
 			switch (parts[0]) {
 				case Constants.OBJECT_NAME_PLAYER:
@@ -88,9 +85,7 @@ class TiledMapLoader implements GameMapLoader {
 						Vector2 startingPosition = new Vector2(rectangle.x, rectangle.y).scl(Constants.WORLD_TO_SCREEN);
 						Vector2 oldValue = gameMap.playerStartingPositions.put(id, startingPosition);
 						if (oldValue != null) {
-							Gdx.app.debug(getClass().getSimpleName(),
-									"A startingPosition with the id '" + id + "' already existed. The starting position at " + oldValue
-											+ " was overwritten by the new starting position at " + startingPosition);
+							Gdx.app.debug(getClass().getSimpleName(), "A startingPosition with the id '" + id + "' already existed. The starting position at " + oldValue + " was overwritten by the new starting position at " + startingPosition);
 						}
 					}
 					break;
@@ -112,8 +107,7 @@ class TiledMapLoader implements GameMapLoader {
 					animals.add(AnimalFactory.createAnimal(parts[1], rectangle.x, rectangle.y, properties));
 					break;
 				default:
-					throw new IllegalStateException(
-							"Unknown map object found: " + name + ". Properties: " + MapUtil.mapPropertiesToString(properties, true));
+					throw new IllegalStateException("Unknown map object found: " + name + ". Properties: " + MapUtil.mapPropertiesToString(properties, true));
 			}
 		}
 		

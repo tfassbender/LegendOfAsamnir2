@@ -250,4 +250,22 @@
 			}
 		}
 	},
+	
+	loa2_l1_castle__dwarven_guardian_switches_activated: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: STATE_SWITCH_ACTIVE,
+				parameters: {
+					stateSwitchId: loa2_l1_castle__switch_dwarven_guardian_construct_puzzle,
+				}
+			},
+			condition2: {
+				conditionType: STATE_SWITCH_ACTIVE,
+				parameters: {
+					stateSwitchId: loa2_l1_castle__torch_dwarven_guardian_construct_puzzle,
+				}
+			}
+		}
+	},
 }

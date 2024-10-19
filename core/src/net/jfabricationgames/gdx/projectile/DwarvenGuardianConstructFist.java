@@ -32,7 +32,8 @@ public class DwarvenGuardianConstructFist extends Projectile {
 				.setType(BodyType.DynamicBody) //
 				.setX(position.x + xOffset) //
 				.setY(position.y) //
-				.setCollisionType(collisionType) //
+				.setCollisionType(this.collisionType) //
+				.setSensor(true) //
 				.setLinearDamping(typeConfig.damping);
 		
 		body = PhysicsBodyCreator.createBody(bodyProperties);

@@ -200,4 +200,26 @@
 			}
 		}
 	},
+	
+	loa2_l1_castle__openDwarvenGuardianPuzzleLock_ifSwitchesActivated: {
+		conditionId: loa2_l1_castle__dwarven_guardian_switches_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_dwarven_guardian_puzzle
+				}
+			}
+		}
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_dwarven_guardian_puzzle
+				}
+			}
+		}
+	},
 }

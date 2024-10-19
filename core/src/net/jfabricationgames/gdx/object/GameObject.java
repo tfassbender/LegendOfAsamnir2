@@ -77,7 +77,14 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	}
 	
 	protected void readTypeConfig() {
-		physicsBodyProperties = new PhysicsBodyProperties().setType(typeConfig.bodyType).setSensor(typeConfig.isSensor).setDensity(typeConfig.density).setFriction(typeConfig.friction).setRestitution(typeConfig.restitution).setLinearDamping(typeConfig.linearDamping).setCollisionType(typeConfig.collisionType);
+		physicsBodyProperties = new PhysicsBodyProperties() //
+				.setType(typeConfig.bodyType) //
+				.setSensor(typeConfig.isSensor) //
+				.setDensity(typeConfig.density) //
+				.setFriction(typeConfig.friction) //
+				.setRestitution(typeConfig.restitution) //
+				.setLinearDamping(typeConfig.linearDamping) //
+				.setCollisionType(typeConfig.collisionType);
 		physicsBodySizeFactor = new Vector2(typeConfig.physicsBodySizeFactorX, typeConfig.physicsBodySizeFactorY);
 		physicsBodyOffsetFactor = new Vector2(typeConfig.physicsBodyOffsetFactorX, typeConfig.physicsBodyOffsetFactorY);
 		

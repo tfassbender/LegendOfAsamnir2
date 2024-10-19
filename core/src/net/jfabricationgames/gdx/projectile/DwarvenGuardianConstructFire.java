@@ -33,7 +33,8 @@ public class DwarvenGuardianConstructFire extends Projectile {
 				.setType(BodyType.DynamicBody) //
 				.setX(position.x + xOffset) //
 				.setY(position.y + yOffset) //
-				.setCollisionType(collisionType) //
+				.setCollisionType(this.collisionType) //
+				.setSensor(true) //
 				.setLinearDamping(typeConfig.damping);
 		
 		body = PhysicsBodyCreator.createBody(bodyProperties);

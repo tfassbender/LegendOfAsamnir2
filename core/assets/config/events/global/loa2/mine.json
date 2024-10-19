@@ -222,6 +222,40 @@
 	},
 	
 	//*******************************************
+	//*** dwarven guardian construct puzzle
+	//*******************************************
+	
+	loa2_l1_castle__torch_dwarven_guardian_construct_puzzle__activated: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__torch_dwarven_guardian_construct_puzzle,
+		},
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: render_effect_layer__loa2_l1_torch_gate,
+			globalValue: true,
+		}
+	},
+	
+	loa2_l1_castle__dwarven_guardian_puzzle__torch: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__torch_dwarven_guardian_construct_puzzle,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__openDwarvenGuardianPuzzleLock_ifSwitchesActivated,
+	},
+	
+	loa2_l1_castle__dwarven_guardian_puzzle__switch: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__switch_dwarven_guardian_construct_puzzle,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__openDwarvenGuardianPuzzleLock_ifSwitchesActivated,
+	},
+	
+	//*******************************************
 	//*** vault puzzle (moving fists)
 	//*******************************************
 	

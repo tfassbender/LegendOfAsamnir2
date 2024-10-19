@@ -409,6 +409,29 @@
         physicsBodyOffsetFactorY: 0f,
 	},
 	
+	dwarven_guardian_construct_switch: {
+		type: DWARVEN_GUARDIAN_CONSTRUCT_SWITCH,
+		
+		texture: switch_floor_right,
+		textureAfterAction: switch_floor_left,
+		interactionSound: switch_activated,
+		
+		physicsBodySizeFactorX: 0.6f,
+		physicsBodySizeFactorY: 0.6f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0f,
+		
+		canBeDeactivated: false,
+	}
+	
+	dwarven_guardian_construct_torch: {
+		type: DWARVEN_GUARDIAN_CONSTRUCT_TORCH,
+		
+		texture: empty,
+        textureAfterAction: empty,		
+		canBeDeactivated: false,
+	}
+	
 	//**********************************
 	//*** Walls for demo 2 level 2
 	//**********************************
