@@ -106,6 +106,28 @@
 		}
 	},
 	
+	loa2_l1_mine_castle__andwari_at_treasure_vault: {
+        event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_l1_mine_castle__andwari_at_treasure_vault,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l1_mine_castle__andwari_at_treasure_vault_cutscene,
+		}
+	},
+	
+	loa2_l1_mine_castle__radswit_at_dwarven_guardian_puzzle: {
+        event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_l1_mine_castle__radswit_at_dwarven_guardian_puzzle,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l1_mine_castle__radswit_at_dwarven_guardian_puzzle_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** destroyable objects
 	//*******************************************

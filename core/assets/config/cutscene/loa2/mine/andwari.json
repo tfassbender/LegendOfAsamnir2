@@ -1,0 +1,58 @@
+{
+	id: loa2_l1_mine_castle__andwari_at_treasure_vault_cutscene,
+	controlledActions: {
+		andwari_1: {
+			startsWithCutscene: true,
+		
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Andwari",
+                colorHeader: #d4af37,
+                displayText: "Hey Thorin!\nCan you help me here?\nI think I found the treasure vault! But I can't open it.",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	andwari_2,
+           	],
+		},
+		
+		andwari_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Andwari",
+                colorHeader: #d4af37,
+                displayText: "These switches should open the door, but I can't activate all of them!\nThey keep resetting themselves!",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+			],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'll take a look at it, Andwari.",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -42,6 +42,8 @@
 	eikinskjaldi: config/npc/levels/loa2/dwarven_mine/eikinskjaldi.json,
 	nyr: config/npc/levels/loa2/dwarven_mine/nyr.json,
 	onarr: config/npc/levels/loa2/dwarven_mine/onarr.json,
+	andwari: config/npc/levels/loa2/dwarven_mine/andwari.json,
+	radswit: config/npc/levels/loa2/dwarven_mine/radswit.json,
 
 //	//************************************************
 //	//*** Demo Level

@@ -1,0 +1,58 @@
+{
+	id: loa2_l1_mine_castle__radswit_at_dwarven_guardian_puzzle_cutscene,
+	controlledActions: {
+		radswit_1: {
+			startsWithCutscene: true,
+		
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Radswit",
+                colorHeader: #014226,
+                displayText: "Hey Thorin! Look what I found!     \nThese old dwarven guardian constructs are fascinating!\nThe're not fully working anymore, but they still can do some things.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+           	],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Hi Radswit!                    \n\nThey seem to be quite well preserved.    \nWhat can they do?  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	radswit_2,
+			],
+		},
+		
+		radswit_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Radswit",
+                colorHeader: #014226,
+                displayText: "Just try to hit them with some different attacks and you'll see.\n               \nBut be careful to not stand in their way!  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

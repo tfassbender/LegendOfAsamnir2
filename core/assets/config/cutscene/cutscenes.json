@@ -81,6 +81,8 @@
 	//********************************************************
 	//*** Legend of Asamnir 2 - Dwarven Mine - Castle
 	//********************************************************
+	config/cutscene/loa2/mine/andwari.json,
+	config/cutscene/loa2/mine/radswit.json,
 	config/cutscene/loa2/mine/mini_boss.json,
 
 	//********************************************************

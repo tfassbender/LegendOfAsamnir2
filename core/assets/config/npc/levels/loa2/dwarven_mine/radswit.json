@@ -1,0 +1,19 @@
+{
+	graphicsConfigFile: config/npc/graphics/dwarven_worker.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	interactionEventId: loa2_l1_mine_castle__radswit_at_dwarven_guardian_puzzle,
+}
