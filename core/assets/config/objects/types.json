@@ -420,8 +420,6 @@
 		physicsBodySizeFactorY: 0.6f,
 		physicsBodyOffsetFactorX: 0f,
 		physicsBodyOffsetFactorY: 0f,
-		
-		canBeDeactivated: false,
 	}
 	
 	dwarven_guardian_construct_torch: {
@@ -429,7 +427,6 @@
 		
 		texture: empty,
         textureAfterAction: empty,		
-		canBeDeactivated: false,
 	}
 	
 	//**********************************

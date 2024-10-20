@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="407">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="433">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -39,7 +39,7 @@
  </layer>
  <layer id="5" name="terrain" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt3MFKwzAcx/FJRX0APehNPehRD/oaelAfS/AJfADZO0znWZx6dCKCIMObICIK/sNa2mVpZ5tkGe33AwHXjUJ/S9Z/2tRWCwAAAAAAAAAAhNabT/++jcbfv4nMn0V5k/JFNT+SYV/akyHLx/i9X3LGjDpdd/MZjLuMhu2qYPx3ovRzqMZ0bktwjrNHvn69FGT4TL7WiuYOzCsAAEAoZ4Y6z7QN5XWlxjs3ZKm2dan/rKi5oaqh24Z82/F7zBGrK5p7J5qW78Dh8ZLvuC9130LG7beD49bzPZD9Hmq/uU3Ld0GOf1HakoNzD/3Xr3stuzn5ziLte7sjX2trcaavkuVbnOcytZkTW5Ljdpzlh2T7Gee7Ids2ydjKg2S5JxnuG3LckW270nr8PlTG+W1UP15T8u7omMnXzEXtq5DvqGStg177Vr0Ok833SPZxHO/nJLO/JuWbZ9Jay7oq6le+rv01Kd8Q99ablK9r2fphEKWvs820lhXlqHMO/dQf8h3KjlvTmK6KfMe5zKTqvvSapU73L13km6ynVvMLdZ09mW8UtexcRK9Z6rQ+0DbfjmHehpRNvmRrpo/T/47pojEOTItpfsXzgG5dMLa9of/6R//1pw79N2+OV3a7L6H7r+3x5s3xymzvVKhJ9WYyC/039Bz4Okr/l4JNyxO6/4bm8/7oLPTf0HyvD2x6/4Vfs7p+bRp1UZ2ur+dZzfl+XdRFk4SuLQAAAGBHPbO1Qk3nDc9s+UW+fiXPxAEAADf+AHetymY=
+   eJzt3EFKw0AYhuFKRD2ALnSnLnSpC72GLtRjCZ7AA0jvUK1rserSigiCFHeCiCj4D01IOpmkJjPThOR9YMCmJZCvM80/ycROBwAAAAAAAAAAVG0wH/99G6TfvwnMn0Vx0/JFOT+S4VDakyHLx/C9X3JGTZ2uu/kM0i6DcbvKGf+9IP4cyjGd2yKc4+yRr18vORk+k6+1vLkD8woAAFCVM0OdZ9qG4vpS450bslTb+tR/VtTcUNXQXUO+3fA95ojl5c29I23Ld+TweMk37Uvdt5Bx++3guPV8D2S/h9pvbtvyXZDjX5S25ODcQ//1617Lbk6+s0D73u7I19pamOmrZPkW5rlMbebEluS4HWb5Idl+hvluyLZNMrbyIFnuSYb7hhx3ZNuutAG/D6Vxfps0DNeUvDs6ZvI1c1H7KuQ7KVrroNe+Za/DJPM9kn0ch/s5SeyvTflmmbbWsqny+pWva39tynfW99bVWrQ25etasn4YBfHrZDOtZUUx6pxDP/WHfMeS49Y0pssi3zSXmZTdl16zNOn+pYt8o/XUan6hrrNH8428lpyL6DVLk9YH2ubbM8zbELPJl2zN9HH63zGdN8aBWTHNr3ge0K0LxrY39F//6L/+NKH/Zs3xim73per+a3u8WXO8Itt7JWpSvZnUof9WPQe+DuL/pWDTslTdf6vm8/5oHfpv1XyvD2x7/4VfdV2/Nou6qEnX17OsZny/LuqiaaquLQAAAGBHPbO1Qk3nDc9s+UW+fkXPxAEAADf+AMfMyxU=
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="88" height="88" locked="1">
@@ -375,14 +375,12 @@
   <object id="396" name="enemy.dwarven_guardian_construct" x="895.333" y="1450.33">
    <properties>
     <property name="facing_left" value="true"/>
-    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
    </properties>
    <point/>
   </object>
   <object id="397" name="enemy.dwarven_guardian_construct" x="919.667" y="1183.67">
    <properties>
     <property name="facing_left" value="true"/>
-    <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
    </properties>
    <point/>
   </object>
@@ -411,6 +409,126 @@
     <property name="unitId" value="loa2_mine_radswit"/>
    </properties>
    <point/>
+  </object>
+  <object id="407" name="object.spawnPoint.bomb" x="976.533" y="688.533">
+   <properties>
+    <property name="spawn" value="playerAmmoBombBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="408" name="object.spawnPoint.mana" x="688.489" y="688.5">
+   <properties>
+    <property name="spawn" value="playerManaBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="409" name="object.key_wall" x="720.03" y="875.788">
+   <properties>
+    <property name="lockId" value="loa2_l1_castle__gate_boss_room__left"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="410" name="object.key_wall" x="944.152" y="875.879">
+   <properties>
+    <property name="lockId" value="loa2_l1_castle__gate_boss_room__right"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="411" name="enemy.dwarven_guardian_construct" x="976" y="735.5">
+   <properties>
+    <property name="facing_left" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="412" name="enemy.dwarven_guardian_construct" x="688.5" y="735.5">
+   <properties>
+    <property name="facing_left" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="413" name="enemy.dwarven_guardian_construct" x="736" y="576">
+   <properties>
+    <property name="facing_left" value="false"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="414" name="enemy.dwarven_guardian_construct" x="928" y="576">
+   <properties>
+    <property name="facing_left" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="417" name="object.eventObject" x="768" y="832" width="3.21205" height="61.0605">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_left"/>
+   </properties>
+  </object>
+  <object id="419" name="object.eventObject" x="728.364" y="832" width="39.3939" height="2.51505">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_left"/>
+   </properties>
+  </object>
+  <object id="420" name="object.eventObject" x="893" y="832" width="2.93932" height="61.6855">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_right"/>
+   </properties>
+  </object>
+  <object id="421" name="object.eventObject" x="896" y="832" width="37.7575" height="2.51505">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_right"/>
+   </properties>
+  </object>
+  <object id="423" name="object.eventObject" x="640" y="832" width="69.5757" height="2.51505">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__inside_gate_left"/>
+   </properties>
+  </object>
+  <object id="424" name="object.eventObject" x="952" y="832" width="71.9393" height="2.51505">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__inside_gate_right"/>
+   </properties>
+  </object>
+  <object id="425" name="object.dwarven_guardian_construct_torch" x="944" y="752.909">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__torch_right"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__boss_room__torch_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="426" name="object.dwarven_guardian_construct_torch" x="720" y="752.727">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__torch_left"/>
+    <property name="stateSwitchId" value="loa2_l1_castle__boss_room__torch_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="427" name="object.spawnPoint.mana" x="1072.5" y="1584.57">
+   <properties>
+    <property name="spawn" value="playerManaBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="428" name="object.eventObject" x="889.53" y="831.532" width="2.93932" height="62.123">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_right_2"/>
+   </properties>
+  </object>
+  <object id="429" name="object.eventObject" x="889.371" y="828.992" width="44.5075" height="2.51505">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_right_2"/>
+   </properties>
+  </object>
+  <object id="431" name="object.eventObject" x="728.303" y="828.379" width="47.1555" height="2.51505">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_left_2"/>
+   </properties>
+  </object>
+  <object id="432" name="object.eventObject" x="772.212" y="830.949" width="3.21205" height="62.1272">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_left_2"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">

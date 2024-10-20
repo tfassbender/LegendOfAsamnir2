@@ -222,4 +222,128 @@
 			}
 		}
 	},
+	
+	//*******************************************
+	//*** boss room
+	//*******************************************
+	
+	loa2_l1_castle__boss_room__close_gate_left__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_left__player_was_inside,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_boss_room__left
+				}
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__close_gate_right__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_right__player_was_inside,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l1_castle__gate_boss_room__right
+				}
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__reset_global_value_inside_gate_left__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_left__player_was_inside,
+        thenCase: {
+            type: SET_GLOBAL_VALUE,
+			executionParameters: {
+				globalValueKey: loa2_l1_castle__boss_room__inside_gate_left,
+				globalValue: false,
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__reset_global_value_inside_gate_right__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_right__player_was_inside,
+        thenCase: {
+	        type: SET_GLOBAL_VALUE,
+			executionParameters: {
+				globalValueKey: loa2_l1_castle__boss_room__inside_gate_right,
+				globalValue: false,
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__reset_global_value_torch_left__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_left__player_was_inside,
+        thenCase: {
+            type: SET_GLOBAL_VALUE,
+			executionParameters: {
+				globalValueKey: render_effect_layer__loa2_l1_torch_boss_right,
+				globalValue: false,
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__reset_global_value_torch_right__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_right__player_was_inside,
+        thenCase: {
+	        type: SET_GLOBAL_VALUE,
+			executionParameters: {
+				globalValueKey: render_effect_layer__loa2_l1_torch_boss_left,
+				globalValue: false,
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__put_out_torch_right__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_left__player_was_inside,
+        thenCase: {
+            type: FIRE_EVENT,
+			eventConfig: {
+				event: {
+					eventType: SET_STATE_SWITCH_STATE,
+					stringValue: loa2_l1_castle__boss_room__torch_right,
+				},
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__put_out_torch_left__if_player_was_inside: {
+		conditionId: loa2_l1_castle__boss_room_gate_right__player_was_inside,
+        thenCase: {
+	        type: FIRE_EVENT,
+			eventConfig: {
+				event: {
+					eventType: SET_STATE_SWITCH_STATE,
+					stringValue: loa2_l1_castle__boss_room__torch_left,
+				},
+			}
+		},
+		elseCase: {
+			type: NO_EXECUTION,
+		}
+	},
 }

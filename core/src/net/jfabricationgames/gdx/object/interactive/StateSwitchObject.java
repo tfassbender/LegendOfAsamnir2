@@ -43,7 +43,7 @@ public class StateSwitchObject extends InteractiveObject implements EventListene
 	}
 	
 	@MapObjectState
-	private boolean active;
+	protected boolean active;
 	private String stateSwitchId;
 	
 	public StateSwitchObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties properties, GameObjectMap gameMap) {

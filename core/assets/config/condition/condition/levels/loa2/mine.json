@@ -268,4 +268,24 @@
 			}
 		}
 	},
+	
+	//*******************************************
+	//*** boss room
+	//*******************************************
+	
+	loa2_l1_castle__boss_room_gate_left__player_was_inside: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_castle__boss_room__inside_gate_left,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l1_castle__boss_room_gate_right__player_was_inside: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_castle__boss_room__inside_gate_right,
+            expectedValue: true,
+		}
+	},
 }

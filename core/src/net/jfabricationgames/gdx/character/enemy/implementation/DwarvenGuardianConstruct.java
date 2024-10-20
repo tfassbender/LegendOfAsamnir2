@@ -42,6 +42,9 @@ public class DwarvenGuardianConstruct extends Enemy {
 			if (facingLeft) {
 				moveToDirection(-0.1f, 0f);
 			}
+			else {
+				moveToDirection(0.1f, 0f);
+			}
 			
 			Vector2 attackDirection = new Vector2(facingLeft ? -1f : 1f, 0f);
 			attackFist.setAttackDirection(attackDirection);

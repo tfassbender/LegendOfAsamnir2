@@ -340,6 +340,152 @@
 		executionType: CONDITIONAL_EVENT,
 		conditionalExecutionId: loa2_l1_castle__openVaultLock_ifAllSwitchActivated,
 	},
+	
+	//*******************************************
+	//*** boss room
+	//*******************************************
+	
+	loa2_l1_castle__boss_room__torch_left: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__boss_room__torch_left,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l1_castle__gate_boss_room__right
+        }
+	},
+	
+	loa2_l1_castle__boss_room__torch_right: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__boss_room__torch_right,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l1_castle__gate_boss_room__left
+        }
+	},
+	
+	loa2_l1_castle__boss_room__torch_left__global_value: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__boss_room__torch_left,
+		},
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: render_effect_layer__loa2_l1_torch_boss_left,
+			globalValue: true,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__torch_right__global_value: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l1_castle__boss_room__torch_right,
+		},
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: render_effect_layer__loa2_l1_torch_boss_right,
+			globalValue: true,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__inside_gate_left: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l1_castle__boss_room__inside_gate_left,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: loa2_l1_castle__boss_room__inside_gate_left,
+			globalValue: true,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__inside_gate_right: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l1_castle__boss_room__inside_gate_right,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: loa2_l1_castle__boss_room__inside_gate_right,
+			globalValue: true,
+		}
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_left: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_left,
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__close_gate_left__if_player_was_inside,
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_right: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_right,
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__close_gate_right__if_player_was_inside,
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_left__reset_global_value_inside_gate: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_left_2, // uses a further outside event object, to reset the global value at last
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__reset_global_value_inside_gate_left__if_player_was_inside,
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_right__reset_global_value_inside_gate: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_right_2, // uses a further outside event object, to reset the global value at last
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__reset_global_value_inside_gate_right__if_player_was_inside,
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_left__put_out_torch: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_left,
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__put_out_torch_right__if_player_was_inside,
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_right__put_out_torch: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_right,
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__put_out_torch_left__if_player_was_inside,
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_left__reset_global_value: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_left,
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__reset_global_value_torch_left__if_player_was_inside,
+	},
+	
+	loa2_l1_castle__boss_room__outside_gate_right__reset_global_value: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__boss_room__outside_gate_right,
+		}
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l1_castle__boss_room__reset_global_value_torch_right__if_player_was_inside,
+	},
 
 	//*******************************************
 	//*** change map

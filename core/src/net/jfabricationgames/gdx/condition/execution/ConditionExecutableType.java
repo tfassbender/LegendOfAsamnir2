@@ -1,5 +1,7 @@
 package net.jfabricationgames.gdx.condition.execution;
 
+import com.badlogic.gdx.utils.ObjectMap;
+
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -42,6 +44,23 @@ public enum ConditionExecutableType {
 		@Override
 		public void execute(ConditionExecutable conditionExecutable) {
 			EventHandler.getInstance().fireEvent(conditionExecutable.eventConfig.event);
+		}
+	},
+	SET_GLOBAL_VALUE {
+		
+		private static final String MAP_KEY_GLOBAL_VALUE_KEY = "globalValueKey";
+		private static final String MAP_KEY_GLOBAL_VALUE = "globalValue";
+		
+		@Override
+		public void execute(ConditionExecutable eventConfig) {
+			String key = eventConfig.executionParameters.get(MAP_KEY_GLOBAL_VALUE_KEY);
+			String value = eventConfig.executionParameters.get(MAP_KEY_GLOBAL_VALUE);
+			
+			ObjectMap<String, Object> parameterObject = new ObjectMap<>();
+			parameterObject.put("key", key);
+			parameterObject.put("value", value);
+			
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.SET_GLOBAL_CONDITION_VALUE).setParameterObject(parameterObject));
 		}
 	};
 	

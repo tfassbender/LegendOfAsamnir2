@@ -21,7 +21,12 @@ public class AttackActivatedStateSwitchObject extends StateSwitchObject {
 	
 	@Override
 	public void takeDamage(float damage, AttackType attackType) {
-		if (attackType.isSubTypeOf(activationAttackType)) {
+		/*
+		 * An attack of the correct type can activate the switch but not deactivate it.
+		 * It can be deactivated by an event of type SET_STATE_SWITCH_STATE (see StateSwitchObject.handleEvent) 
+		 * if the configuration allows to deactivate the switch.
+		 */
+		if (!active && attackType.isSubTypeOf(activationAttackType)) {
 			executeInteraction();
 		}
 	}
