@@ -234,6 +234,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	public void startGame() {
 		GameDataHandler.getInstance().createNewGameData();
 		createGameScreen(() -> {
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.PRE_NEW_GAME_STARTED));
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.NEW_GAME_STARTED));
 		});
 	}

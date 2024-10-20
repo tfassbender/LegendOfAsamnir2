@@ -45,11 +45,9 @@
 	//*** add runes and items from the prequel
 	//*******************************************
 	
-	// othala needs to be collected before the special action items (to be able to collect them)
-	// therefore the name has to be alphabetically before the special action items
-	a_loa2_prolog_game_start__add_item_rune_othala: {
+	loa2_prolog_game_start__add_item_rune_othala: {
 		event: {
-            eventType: NEW_GAME_STARTED,
+            eventType: PRE_NEW_GAME_STARTED, // needs to be added before items, so items can be collected
 		},
         executionType: RECEIVE_ITEM,
         executionParameters: {

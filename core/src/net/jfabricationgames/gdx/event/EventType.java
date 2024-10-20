@@ -5,6 +5,7 @@ public enum EventType {
 	//*******************************
 	//*** General
 	//*******************************
+	PRE_NEW_GAME_STARTED, //
 	NEW_GAME_STARTED, //
 	GAME_STARTED, //
 	GAME_LOADED, //
