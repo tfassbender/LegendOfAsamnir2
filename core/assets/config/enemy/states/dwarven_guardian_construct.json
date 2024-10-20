@@ -20,7 +20,8 @@
 	{
 		id: attack_fire,
 		animation: dwarven_guardian_construct_attack_fire,
-		attack: attack_fire
+		attack: attack_fire,
+		stateEnteringSound: dwarven_guardian_construct_fire,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -30,7 +31,8 @@
 	{
 		id: attack_fist,
 		animation: dwarven_guardian_construct_attack_fist,
-		attack: attack_fist
+		attack: attack_fist,
+		stateEnteringSound: dwarven_guardian_construct_fist,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

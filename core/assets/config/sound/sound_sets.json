@@ -389,7 +389,17 @@
 				ogre_idle_2: {
 					path: "sound/enemy/ogre_idle_2.mp3",
 					volume: 0.4,
-				}
+				},
+				// dwarven guardian construct
+				dwarven_guardian_construct_fire: {
+					path: "sound/enemy/attack/dwarven_guardian_construct_fire.mp3",
+					volume: 0.7,
+				},
+				dwarven_guardian_construct_fist: {
+					path: "sound/enemy/attack/dwarven_guardian_construct_fist.mp3",
+					volume: 1,
+					delay: 0.4,
+				},
 			}
 		},
 		cutscene: {
