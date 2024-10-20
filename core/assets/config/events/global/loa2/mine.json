@@ -564,4 +564,19 @@
             lockId: loa2_l1_castle__gate_moria
         }
 	},
+	
+	//*******************************************
+	//*** rune found
+	//*******************************************
+	
+	demo_2_level_2_rune_raidho_found: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: RAIDHO,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l1_castle__rune_raidho_found_cutscene,
+		}
+	},
 }

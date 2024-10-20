@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="433">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="506">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -39,12 +39,12 @@
  </layer>
  <layer id="5" name="terrain" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt3EFKw0AYhuFKRD2ALnSnLnSpC72GLtRjCZ7AA0jvUK1rserSigiCFHeCiCj4D01IOpmkJjPThOR9YMCmJZCvM80/ycROBwAAAAAAAAAAVG0wH/99G6TfvwnMn0Vx0/JFOT+S4VDakyHLx/C9X3JGTZ2uu/kM0i6DcbvKGf+9IP4cyjGd2yKc4+yRr18vORk+k6+1vLkD8woAAFCVM0OdZ9qG4vpS450bslTb+tR/VtTcUNXQXUO+3fA95ojl5c29I23Ld+TweMk37Uvdt5Bx++3guPV8D2S/h9pvbtvyXZDjX5S25ODcQ//1617Lbk6+s0D73u7I19pamOmrZPkW5rlMbebEluS4HWb5Idl+hvluyLZNMrbyIFnuSYb7hhx3ZNuutAG/D6Vxfps0DNeUvDs6ZvI1c1H7KuQ7KVrroNe+Za/DJPM9kn0ch/s5SeyvTflmmbbWsqny+pWva39tynfW99bVWrQ25etasn4YBfHrZDOtZUUx6pxDP/WHfMeS49Y0pssi3zSXmZTdl16zNOn+pYt8o/XUan6hrrNH8428lpyL6DVLk9YH2ubbM8zbELPJl2zN9HH63zGdN8aBWTHNr3ge0K0LxrY39F//6L/+NKH/Zs3xim73per+a3u8WXO8Itt7JWpSvZnUof9WPQe+DuL/pWDTslTdf6vm8/5oHfpv1XyvD2x7/4VfdV2/Nou6qEnX17OsZny/LuqiaaquLQAAAGBHPbO1Qk3nDc9s+UW+fkXPxAEAADf+AMfMyxU=
+   eJzt3D9L5EAYx/GVHOoLOAvt1GItz8J7G1qo70R9FwdXqOW9gMNSbffUWvxXqoggiFwnHCIKPsNOSJydZC+ZmU1Ivh8Y0OwSzG9nNs8kEzsdAABQ1Ea309nUbatb9V/TPNuS6Y5uu+Tr3b5keqDbIfkCAAAAQG2cf0l+PosGXz+N7O9FccPyRTlvkuGNtFtLltf6tXdyRk39mPXzHgz6E/XbUc7470XJ+1CO7dwW4xznjnzDus/J8I58neXNHZhXAACAqvy01Hm2bSjuWGq8X5Ys1bZj6j8nam6oaug9S757+jXmiOXlzb1jbcv3yePxku+gF3XfQsbtq4fjNvNdlv2uGN+5bct3XI5/Qtqkh3MP/TesSyO7MfnMIuNzuyBfZzM60wfJ8lHn+ZXazIuu5Ligs3yWbP/pfOdk2zwZO7mSLJckw++WHL/JtkVp53w/lMb57bMbvabkr6djJl87H7WvQr6fxWsdzNq37HWYdL6rso81vZ/11P7alG+WYWstmyqvX4W69temfEd9b12tRWtTvr6l64enKPk93WxrWVGMOufQT8Mh3770uLWN6bLId5DPTMruy6xZmnT/0ke+8XpqNb9Q19nj+UZeS89FzJqlSesDXfPtWeZtSLjkS7Z25jj93zGdN8aBUbHNr3ge0K/fjO1g6L/h0X/DaUL/zZrjFd0eStX91/V4s+Z4Rbb3StSkZrOpQ/+teg58EiX/S8GlZam6/1Yt5P3ROvTfqoVeH9j2/ouw6rp+bRR1UZOur2eZzvh8fdRFw1RdWwAAAMCNemZripouGJ7ZCot8w4qfiQMAAH58AP1q0/E=
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2MEJgDAQBMBAbMGH/RdgDWIFFmANtmABgSMRNAZmII9jP+HY16UEAAAAAAAAAIzqnJ5lAAAAAADAe5bgRj+73/Nze9DRKKPOEewwygAAAAAAAChtuXxX7v0rqKO/jEx/+dqa47mF/jIy/QUAAAAAAHq6AVqhHnM=
+   eJzt2M0JwkAQBtCFtQUPdpBDukspsQ8vaUCswAKswRZCyHFliCGaH96DgRnmsizfaVIC4Kiu1Vgsr6lT6qqxhp5ltfXnHgAAAAAAKL1O83YAAAAAAMDvXIIb/dn9no17BBmNdkzzDP4w2gEAAAAAAFC657Leee1XwTTyy57JL/92y/H8Dfllz+QXAAAAAABYUw/x+CRf
   </data>
  </layer>
  <layer id="8" name="shadow_underlying" width="88" height="88" locked="1">
@@ -530,8 +530,203 @@
     <property name="eventParameter" value="loa2_l1_castle__boss_room__outside_gate_left_2"/>
    </properties>
   </object>
+  <object id="433" name="object.chest" x="213.333" y="1629">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="435" name="object.chest" x="247" y="1588.67">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="436" name="player.startingPosition" x="288" y="1760">
+   <properties>
+    <property name="startingPointId" value="16"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="437" name="object.chest" x="302" y="1600.33">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="440" name="object.chest" x="282.333" y="1664.67">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="441" name="object.pot" x="258.333" y="1626.33">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="443" name="object.pot" x="182.667" y="1634">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="444" name="object.pot" x="321" y="1619.67">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="445" name="object.pot" x="338.333" y="1579.67">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="447" name="object.pot" x="363.333" y="1649">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="448" name="object.pot" x="323.333" y="1642.67">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="449" name="object.pot" x="340.333" y="1676">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="450" name="object.pot" x="390.333" y="1705.33">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="452" name="object.pot" x="380.333" y="1710.67">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="453" name="object.pot" x="171.333" y="1653.67">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="454" name="object.pot" x="190" y="1641.33">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="455" name="object.pot" x="262.667" y="1634">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="456" name="object.pot" x="305.667" y="1616.33">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="458" name="object.barrel" x="219" y="1595.33">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="459" name="object.barrel" x="402.333" y="1649.67">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="460" name="item.coin" x="271.333" y="1679.67">
+   <point/>
+  </object>
+  <object id="462" name="item.coin" x="286" y="1623.33">
+   <point/>
+  </object>
+  <object id="463" name="item.coin" x="341.667" y="1614.67">
+   <point/>
+  </object>
+  <object id="464" name="item.coin" x="211.333" y="1688.67">
+   <point/>
+  </object>
+  <object id="465" name="item.coin" x="215" y="1697.67">
+   <point/>
+  </object>
+  <object id="466" name="item.coin" x="274" y="1717">
+   <point/>
+  </object>
+  <object id="467" name="item.coin" x="263" y="1713.33">
+   <point/>
+  </object>
+  <object id="468" name="item.coin" x="252" y="1711.33">
+   <point/>
+  </object>
+  <object id="469" name="item.coin" x="370.667" y="1675.33">
+   <point/>
+  </object>
+  <object id="470" name="item.coin" x="272" y="1585">
+   <point/>
+  </object>
+  <object id="471" name="object.chest" x="400.667" y="1681.67">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="500" name="object.chest" x="763" y="268">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="501" name="object.chest" x="903" y="268">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="499" name="item.rune_raidho" x="832" y="208">
+   <point/>
+  </object>
+  <object id="502" name="object.chest" x="763" y="288">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="503" name="object.chest" x="763" y="307">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="504" name="object.chest" x="903" y="288">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="505" name="object.chest" x="903" y="307">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="5" x="864" y="2688" width="160" height="32"/>
   <object id="6" x="992" y="2398" width="32" height="290"/>
   <object id="7" x="864" y="2397.29" width="32" height="290.708"/>
@@ -995,6 +1190,62 @@
    <polygon points="0,0 -32.3333,-46.6667 0,-96"/>
   </object>
   <object id="318" x="160.375" y="1944" width="191.125" height="1"/>
+  <object id="476" x="880.41" y="160.78">
+   <polygon points="0,0 -7.81818,10.5455 -11.0909,48.3636"/>
+  </object>
+  <object id="477" x="869.14" y="207.87">
+   <polygon points="0,0 -3.63636,7.81818 11.8182,11.0909"/>
+  </object>
+  <object id="478" x="880.96" y="218.59">
+   <polygon points="0,0 13.6364,-4.36364 10.9091,-11.0909"/>
+  </object>
+  <object id="479" x="891.5" y="207.5">
+   <polygon points="0,0 -4,-38.7273 -11.2727,-46.9091"/>
+  </object>
+  <object id="472" x="784.16" y="160.78">
+   <polygon points="0,0 -7.81818,10.5455 -11.0909,48.3636"/>
+  </object>
+  <object id="473" x="772.89" y="207.87">
+   <polygon points="0,0 -3.63636,7.81818 11.8182,11.0909"/>
+  </object>
+  <object id="474" x="784.71" y="218.59">
+   <polygon points="0,0 13.6364,-4.36364 10.9091,-11.0909"/>
+  </object>
+  <object id="475" x="795.25" y="207.5">
+   <polygon points="0,0 -4,-38.7273 -11.2727,-46.9091"/>
+  </object>
+  <object id="489" x="812.482" y="140.322">
+   <polygon points="0,0 -8.72727,4 -8.90909,40"/>
+  </object>
+  <object id="491" x="803.572" y="180.682">
+   <polygon points="0,0 24.9091,0.181818 12.5455,-38.1818"/>
+  </object>
+  <object id="492" x="805.932" y="180.682" width="19.6364" height="3.63636"/>
+  <object id="487" x="815.932" y="130.862">
+   <polygon points="0,0 -12.5455,2.36364 12.7273,2.18182"/>
+  </object>
+  <object id="488" x="803.572" y="133.592">
+   <polygon points="0,0 12.7273,9.27273 24.9091,-0.363636"/>
+  </object>
+  <object id="490" x="820.292" y="139.952">
+   <polygon points="0,0 7.45455,4.72727 8,40.9091"/>
+  </object>
+  <object id="493" x="848.057" y="130.987">
+   <polygon points="0,0 -12.5455,2.36364 12.7273,2.18182"/>
+  </object>
+  <object id="494" x="835.697" y="133.717">
+   <polygon points="0,0 12.7273,9.27273 24.9091,-0.363636"/>
+  </object>
+  <object id="495" x="844.607" y="140.447">
+   <polygon points="0,0 -8.72727,4 -8.90909,40"/>
+  </object>
+  <object id="496" x="852.417" y="140.077">
+   <polygon points="0,0 7.45455,4.72727 8,40.9091"/>
+  </object>
+  <object id="497" x="835.697" y="180.807">
+   <polygon points="0,0 24.9091,0.181818 12.5455,-38.1818"/>
+  </object>
+  <object id="498" x="838.057" y="180.807" width="19.6364" height="3.63636"/>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="263" x="646.125" y="2295.25" width="18.125" height="32.125"/>
