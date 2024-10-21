@@ -116,13 +116,17 @@ public abstract class Projectile implements ContactListener {
 		this.collisionType = collisionType;
 		PhysicsBodyProperties bodyProperties = createShapePhysicsBodyProperties() //
 				.setType(BodyType.DynamicBody) //
-				.setX(position.x) //
+				.setX(position.x + getInitialOffsetX(direction)) //
 				.setY(position.y) //
 				.setCollisionType(collisionType) //
 				.setLinearDamping(typeConfig.damping);
 		body = PhysicsBodyCreator.createBody(bodyProperties);
 		body.setUserData(this);
 		addAdditionalPhysicsParts();
+	}
+	
+	protected float getInitialOffsetX(Vector2 direction) {
+		return 0f;
 	}
 	
 	protected void addAdditionalPhysicsParts() {}

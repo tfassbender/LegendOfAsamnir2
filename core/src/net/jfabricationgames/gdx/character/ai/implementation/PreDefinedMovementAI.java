@@ -10,8 +10,8 @@ import net.jfabricationgames.gdx.character.state.CharacterState;
 
 public class PreDefinedMovementAI extends AbstractRelativeMovementAI {
 	
-	private Array<Vector2> relativePositions;
-	private Array<Vector2> absolutePositions;
+	protected Array<Vector2> relativePositions;
+	protected Array<Vector2> absolutePositions;
 	
 	/**
 	 * Update the absolute positions from the relative positions and the enemy position in the first turn (because the enemy position is not set when
@@ -21,12 +21,10 @@ public class PreDefinedMovementAI extends AbstractRelativeMovementAI {
 	
 	private int targetPointIndex = 0;
 	
-	public PreDefinedMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState, boolean relativePositions,
-			float idleTimeBetweenMovements, Vector2... positions) {
+	public PreDefinedMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState, boolean relativePositions, float idleTimeBetweenMovements, Vector2... positions) {
 		this(subAI, movingState, idleState, relativePositions, idleTimeBetweenMovements, new Array<>(positions));
 	}
-	public PreDefinedMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState, boolean relativePositions,
-			float idleTimeBetweenMovements, Array<Vector2> positions) {
+	public PreDefinedMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState, boolean relativePositions, float idleTimeBetweenMovements, Array<Vector2> positions) {
 		super(subAI, movingState, idleState, idleTimeBetweenMovements);
 		positionsDefined = positions != null && !positions.isEmpty();
 		absolutePositionSet = !relativePositions;

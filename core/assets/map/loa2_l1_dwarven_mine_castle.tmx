@@ -719,7 +719,7 @@
    </properties>
    <point/>
   </object>
-  <object id="507" name="enemy.giant_golem" x="832" y="608">
+  <object id="507" name="enemy.giant_golem" x="832" y="576">
    <properties>
     <property name="enemyDefeatedEventText" value="loa2_l1_castle__boss_giant_golem__defeated"/>
    </properties>

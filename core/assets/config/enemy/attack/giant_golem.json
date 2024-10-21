@@ -5,18 +5,15 @@
 		delay: 0.3,
 		duration: 0,
 		damage: 20,
-		distFromCenter: 0.4,
+		distFromCenter: 2,
 		hitFixtureRadius: 0.5,
 		pushForce: 100
 	},
 	{
 		id: attack_stomp,
-		type: HIT, // TODO new kind of projectile
+		type: ANIMATED_HIT,
+		projectileType: rock_blast,
 		delay: 0.3,
-		duration: 0,
 		damage: 20,
-		distFromCenter: 1,
-		hitFixtureRadius: 1,
-		pushForce: 150
 	},
 ]

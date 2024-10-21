@@ -185,4 +185,18 @@
         speed: 0,
         damping: 0,
 	},
+	
+	rock_blast: {
+        attackType: ANIMATED_HIT,
+        
+        animation: rock_blast,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+        
+        speed: 0,
+        damping: 0,
+		distanceFromCenter: 2.2f,
+		hitFixtureRadius: 0.7f,
+		flipAnimationToAttackDirection: true,
+	},
 }

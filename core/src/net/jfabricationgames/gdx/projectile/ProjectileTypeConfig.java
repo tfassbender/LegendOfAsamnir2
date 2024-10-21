@@ -28,4 +28,8 @@ public class ProjectileTypeConfig {
 	public boolean multipleHitsPossible = false;
 	
 	public float timeActive = -1f;
+	
+	public boolean flipAnimationToAttackDirection = true;
+	public float hitFixtureRadius = 1f;
+	public float distanceFromCenter = 0f;
 }

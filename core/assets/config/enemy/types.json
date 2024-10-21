@@ -570,12 +570,12 @@
 		
 		bodyShape: OCTAGON,
 		bodyWidth: 1.5f,
-		bodyHeight: 2f,
+		bodyHeight: 1.7f,
 		
 		addSensor: true,
-		sensorRadius: 7f,
+		sensorRadius: 10f,
 		
-		pushForceDamage: 5,
+		pushForceDamage: 1,
 		pushForceHit: 50,
 		
 		isBoss: true

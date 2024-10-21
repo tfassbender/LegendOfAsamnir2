@@ -29,8 +29,6 @@
 		start_boss_fight: {
 			type: EVENT,
 			
-            executionDelayInSeconds: 1f,
-			
 			event: {
 				eventType: BOSS_ENEMY_SHOW,
 			},
@@ -42,8 +40,6 @@
 		
 		set_global_condition_value__boss_appeared: {
 			type: EVENT,
-			
-            executionDelayInSeconds: 2f,
 			
 			event: {
 				eventType: SET_GLOBAL_CONDITION_VALUE,

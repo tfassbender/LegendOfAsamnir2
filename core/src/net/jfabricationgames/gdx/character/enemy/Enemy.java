@@ -43,7 +43,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	private static final SoundSet SOUND_SET = SoundManager.getInstance().loadSoundSet("enemy");
 	
-	private PhysicsBodyProperties physicsBodyProperties;
+	protected PhysicsBodyProperties physicsBodyProperties;
 	
 	protected EnemyHealthBarRenderer healthBarRenderer;
 	

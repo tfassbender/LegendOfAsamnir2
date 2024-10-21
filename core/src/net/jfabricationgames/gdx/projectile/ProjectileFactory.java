@@ -29,6 +29,7 @@ public class ProjectileFactory {
 	private static final String PROJECTILE_TYPE_FORCE_FIELD = "force_field";
 	private static final String PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIST = "dwarven_guardian_construct_fist";
 	private static final String PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIRE = "dwarven_guardian_construct_fire";
+	private static final String PROJECTILE_TYPE_ROCK_BLAST = "rock_blast";
 	
 	private static final String CONFIG_FILE = "config/factory/projectile_factory.json";
 	private static final String ANIMATION_CONFIG_FILE = "config/animation/projectiles.json";
@@ -112,6 +113,9 @@ public class ProjectileFactory {
 				break;
 			case PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIRE:
 				projectile = new DwarvenGuardianConstructFire(typeConfig, animation, gameMap);
+				break;
+			case PROJECTILE_TYPE_ROCK_BLAST:
+				projectile = new AnimatedHit(typeConfig, animation, gameMap);
 				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
