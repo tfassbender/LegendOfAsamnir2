@@ -260,6 +260,14 @@
 				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_damage,
 				raw_images/restricted/enemy/dwarven_guardian_construct/dwarven_guardian_construct_death,
 				
+				// giant golem
+				raw_images/restricted/enemy/giant_golem/giant_golem_idle,
+				raw_images/restricted/enemy/giant_golem/giant_golem_move,
+				raw_images/restricted/enemy/giant_golem/giant_golem_attack,
+				raw_images/restricted/enemy/giant_golem/giant_golem_attack_2,
+				raw_images/restricted/enemy/giant_golem/giant_golem_damage,
+				raw_images/restricted/enemy/giant_golem/giant_golem_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

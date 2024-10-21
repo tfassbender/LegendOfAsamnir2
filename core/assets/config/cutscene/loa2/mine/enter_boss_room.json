@@ -1,0 +1,63 @@
+{
+	id: loa2_l1_castle__enter_boss_room_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_mine_castle__boss_appeared,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end,
+				condition_not_met: start_boss_fight,
+			}
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			
+            executionDelayInSeconds: 1f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+			executes: [
+				set_global_condition_value__boss_appeared,
+			]
+		}
+		
+		set_global_condition_value__boss_appeared: {
+			type: EVENT,
+			
+            executionDelayInSeconds: 2f,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l1_castle__boss_appeared, value: true}",
+			},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

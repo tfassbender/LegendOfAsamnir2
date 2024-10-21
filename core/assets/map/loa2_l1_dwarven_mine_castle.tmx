@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="506">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="509">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -309,7 +309,7 @@
    </properties>
    <point/>
   </object>
-  <object id="381" name="player.startingPosition" x="832" y="928">
+  <object id="381" name="player.startingPosition" x="832" y="1024">
    <properties>
     <property name="startingPointId" value="14"/>
    </properties>
@@ -337,7 +337,7 @@
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
   </object>
-  <object id="387" name="object.eventObject" x="800" y="960" width="64.6666" height="31.606">
+  <object id="387" name="object.eventObject" x="800" y="1056" width="64.6666" height="31.606">
    <properties>
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
@@ -680,12 +680,6 @@
   <object id="470" name="item.coin" x="272" y="1585">
    <point/>
   </object>
-  <object id="471" name="object.chest" x="400.667" y="1681.67">
-   <properties>
-    <property name="drop" value="{metal_ingot: 1}"/>
-   </properties>
-   <point/>
-  </object>
   <object id="500" name="object.chest" x="763" y="268">
    <properties>
     <property name="drop" value="{metal_ingot: 1}"/>
@@ -724,6 +718,17 @@
     <property name="drop" value="{big_coin: 1}"/>
    </properties>
    <point/>
+  </object>
+  <object id="507" name="enemy.giant_golem" x="832" y="608">
+   <properties>
+    <property name="enemyDefeatedEventText" value="loa2_l1_castle__boss_giant_golem__defeated"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="508" name="object.eventObject" x="800" y="928" width="64.6666" height="31.606">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_castle__enter_boss_room"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics">

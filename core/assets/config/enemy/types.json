@@ -553,4 +553,32 @@
 		pushForceDamage: 0,
 		pushForceHit: 0,
 	}
+	
+	giant_golem: {
+		typeName: giant_golem,
+		
+		animationsConfig: config/animation/enemy/giant_golem.json,
+		stateConfig: config/enemy/states/giant_golem.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/giant_golem.json,
+		
+		health: 50, // not to much health, because it can only be attacked with bombs
+		movingSpeed: 1.5f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.3f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1.5f,
+		bodyHeight: 2f,
+		
+		addSensor: true,
+		sensorRadius: 7f,
+		
+		pushForceDamage: 5,
+		pushForceHit: 50,
+		
+		isBoss: true
+		bossName: "Stone Titan - Keeper of the lost castle",
+	}
 }

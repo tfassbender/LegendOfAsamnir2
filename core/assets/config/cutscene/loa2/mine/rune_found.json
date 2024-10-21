@@ -38,6 +38,7 @@
 		
 		chaos_wizard_1: {
             type: SHOW_ON_SCREEN_TEXT,
+            executionDelayInSeconds: 1f,
             
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
@@ -152,7 +153,7 @@
             
             executionParameters: {
                 displayTextHeader: "Thorin",
-                displayText: "Noone steals my battle axe and gets away with it!\n       \nPrepare to die strange chaos wizard guy!!!",
+                displayText: "Noone steals my battle axe and gets away with it!\n                   \nPrepare to die strange chaos wizard guy!!!",
 			}
             
             waitForEventToFinish: true,

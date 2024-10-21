@@ -58,6 +58,17 @@
 		}
 	},
 	
+	loa2_l1_castle__enter_boss_room: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_castle__enter_boss_room,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l1_castle__enter_boss_room_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** cutscenes - npc interaction
 	//*******************************************
@@ -563,6 +574,17 @@
         executionParameters: {
             lockId: loa2_l1_castle__gate_moria
         }
+	},
+	
+	loa2_l1_castle__boss_giant_golem__defeated: {
+        event: {
+            eventType: ENEMY_DEFEATED,
+            stringValue: loa2_l1_castle__boss_giant_golem__defeated,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l1_castle__gate_boss,
+		}
 	},
 	
 	//*******************************************

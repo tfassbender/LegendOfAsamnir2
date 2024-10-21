@@ -288,4 +288,12 @@
             expectedValue: true,
 		}
 	},
+	
+	loa2_mine_castle__boss_appeared: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l1_castle__boss_appeared,
+            expectedValue: true,
+		}
+	},
 }

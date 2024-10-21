@@ -1,0 +1,65 @@
+[
+	{
+		id: idle,
+		animation: giant_golem_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_fist, attack_stomp, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: giant_golem_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_fist, attack_stomp, damage, die
+		]
+	},
+	{
+		id: attack_fist,
+		animation: giant_golem_attack,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_stomp,
+		animation: giant_golem_attack_2,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: damage,
+		animation: giant_golem_damage,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: rock_hit,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: giant_golem_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		stateEnteringSound: rock_break,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]
