@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.character.enemy.implementation;
 
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.attack.hit.AttackType;
@@ -23,6 +24,8 @@ public class GiantGolem extends Enemy {
 	public static final String STATE_NAME_DIE = "die";
 	
 	private GiantGolemMovementAI giantGolemMovementAI;
+	
+	private Vector2 startingPosition;
 	
 	public GiantGolem(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
@@ -48,15 +51,6 @@ public class GiantGolem extends Enemy {
 		return giantGolemMovementAI;
 	}
 	
-	@Override
-	public void createPhysicsBody(float x, float y) {
-		super.createPhysicsBody(x, y);
-		
-		// calculate the starting position for the giant golem (a physics body is needed for that)
-		giantGolemMovementAI.setCharacter(this); // needs to be set to calculate the starting position
-		giantGolemMovementAI.calculateStartingPosition();
-	}
-	
 	private ArtificialIntelligence createFightAI(ArtificialIntelligence ai) {
 		String attackNameFist = "attack_fist";
 		String attackNameStomp = "attack_stomp";
@@ -79,19 +73,41 @@ public class GiantGolem extends Enemy {
 	}
 	
 	@Override
+	public void createPhysicsBody(float x, float y) {
+		super.createPhysicsBody(x, y);
+		
+		// calculate the starting position for the giant golem (a physics body is needed for that)
+		giantGolemMovementAI.setCharacter(this); // needs to be set to calculate the starting position
+		giantGolemMovementAI.calculateStartingPosition();
+		
+		startingPosition = new Vector2(x, y);
+	}
+	
+	@Override
 	public void takeDamage(float damage, AttackType attackType) {
 		if (attackType.isSubTypeOf(AttackType.DWARVEN_GUARDIAN_CONSTRUCT_FIST) && !stateMachine.isInState(STATE_NAME_VULNERABLE)) {
 			// after being attacked by a dwarven guardian construct, the giant golem is vulnerable for a short time
 			stateMachine.setState(STATE_NAME_VULNERABLE);
 		}
-		else if (attackType.isSubTypeOf(AttackType.BOMB) && stateMachine.isInState(STATE_NAME_VULNERABLE)) {
+		else if (damage > 0 && // only if the bomb explodes - not only touches the giant golem
+				attackType.isSubTypeOf(AttackType.BOMB) && stateMachine.isInState(STATE_NAME_VULNERABLE)) {
 			// in the vulnerable state the giant golem can take damage from bombs
-			super.takeDamage(damage, attackType);
+			super.takeDamage(20, attackType); // always take 20 (percent) damage from bombs - no matter the upgrade level of the bombs
 			
-			if (damage > 0 && !stateMachine.isInState(STATE_NAME_DIE)) { // only if the bomb explodes - not only touches the giant golem
+			if (!stateMachine.isInState(STATE_NAME_DIE)) {
 				// after being hit, the vulnerable state ends (to not take damage from multiple bombs at once)
 				stateMachine.forceStateChange(STATE_NAME_IDLE);
 			}
+		}
+	}
+	
+	@Override
+	public void act(float delta) {
+		super.act(delta);
+		
+		if (getPercentualHealth() > 0 && getPercentualHealth() < 0.5f && getPosition().y > startingPosition.y - 2.5f) {
+			// low health and near starting position -> heal
+			health += delta;
 		}
 	}
 	

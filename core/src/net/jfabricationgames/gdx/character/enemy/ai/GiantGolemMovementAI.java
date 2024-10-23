@@ -30,7 +30,7 @@ public class GiantGolemMovementAI extends PreDefinedMovementAI {
 	
 	@Override
 	public void calculateMove(float delta) {
-		if (percentualHealthSupplier.get() <= 0.2f) {
+		if (percentualHealthSupplier.get() <= 0.39f) { // health is reduced in 20% steps - so 0.39f is everything below 40%
 			// move to the starting point to heal
 			super.calculateMove(delta);
 			
@@ -43,6 +43,20 @@ public class GiantGolemMovementAI extends PreDefinedMovementAI {
 		else {
 			// follow the player (sub AI is a FollowAI)
 			subAI.calculateMove(delta);
+			
+			// check the move that the follow AI created
+			AIPositionChangingMove move = getMove(MoveType.MOVE, AIPositionChangingMove.class);
+			if (move != null) {
+				Vector2 startingPosition = absolutePositions.get(0);
+				Vector2 currentPosition = character.getPosition();
+				Vector2 targetPosition = move.movementTarget;
+				
+				// don't move to far up (near the starting position) because there are dwarven guardian constructs - only move there when healing
+				if (targetPosition != null && currentPosition.y > startingPosition.y - 2.5f && targetPosition.y > currentPosition.y) {
+					// remove the calculated move
+					subAI.clearMoves(); // NOTE: clearMoves clears all moves - this only works here because the underlying AI is the lowest one (except for the BaseAI)
+				}
+			}
 		}
 	}
 }

@@ -562,7 +562,7 @@
 		initialState: idle,
 		attackConfig: config/enemy/attack/giant_golem.json,
 		
-		health: 50, // not to much health, because it can only be attacked with bombs
+		health: 100,
 		movingSpeed: 1.5f,
 		
 		imageOffsetX: 0f,
