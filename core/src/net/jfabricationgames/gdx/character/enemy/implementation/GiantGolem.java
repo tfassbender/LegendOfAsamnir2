@@ -108,6 +108,12 @@ public class GiantGolem extends Enemy {
 		if (getPercentualHealth() > 0 && getPercentualHealth() < 0.5f && getPosition().y > startingPosition.y - 2.5f) {
 			// low health and near starting position -> heal
 			health += delta;
+			
+			// start force field attacks while healing to prevent the player from using bombs to easily
+			if (getPosition().y > startingPosition.y - 1.5f && // don't start to early - wait till the golem almost reached the starting position 
+					attackHandler.allAttacksExecuted()) { // only start one force field at the time to improve the animation
+				attackHandler.startAttack("attack_force_field", new Vector2(1, 0)); // direction does not matter
+			}
 		}
 	}
 	

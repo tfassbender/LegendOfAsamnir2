@@ -51,10 +51,10 @@
 					eventType: COLLECT_RUNE,
 					stringValue: ansuz,
 				},
-				{
-					eventType: GIVE_ITEM_TO_PLAYER,
-					stringValue: ring,
-				},
+//				{
+//					eventType: GIVE_ITEM_TO_PLAYER,
+//					stringValue: ring,
+//				},
 			]
 		}
 	}

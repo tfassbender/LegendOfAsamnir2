@@ -16,4 +16,16 @@
 		delay: 0.3,
 		damage: 20,
 	},
+	{
+		id: attack_force_field,
+		type: FORCE_FIELD,
+		projectileType: giant_golem_force_field,
+		delay: 0,
+		duration: 1,
+		damage: 0,
+		distFromCenter: 0,
+		hitFixtureRadius: 0,
+		pushForce: 100,
+		pushForceAffectedByBlock: false,
+	},
 ]

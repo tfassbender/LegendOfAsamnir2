@@ -32,4 +32,7 @@ public class ProjectileTypeConfig {
 	public boolean flipAnimationToAttackDirection = true;
 	public float hitFixtureRadius = 1f;
 	public float distanceFromCenter = 0f;
+	
+	public float pushForce = 8f; // enough to push the player away if he's running
+	public float radius = 3f;
 }

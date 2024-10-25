@@ -15,8 +15,7 @@ public class CollisionUtil {
 			Object sensorUserData = CollisionUtil.getCollisionTypeUserData(collisionType, fixtureA, fixtureB);
 			Object sensorCollidingUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);
 			
-			if (sensorUserData == collidingObject && collidingType != null && sensorCollidingUserData != null
-					&& collidingType.isAssignableFrom(sensorCollidingUserData.getClass())) {
+			if (sensorUserData == collidingObject && collidingType != null && sensorCollidingUserData != null && collidingType.isAssignableFrom(sensorCollidingUserData.getClass())) {
 				@SuppressWarnings("unchecked")
 				T typedUserData = (T) sensorCollidingUserData;
 				return typedUserData;
@@ -25,8 +24,7 @@ public class CollisionUtil {
 		return null;
 	}
 	
-	public static PhysicsCollisionType getCollisionTypeOfObjectCollidingWith(Object collidingObject, PhysicsCollisionType collisionType,
-			Contact contact) {
+	public static PhysicsCollisionType getCollisionTypeOfObjectCollidingWith(Object collidingObject, PhysicsCollisionType collisionType, Contact contact) {
 		Fixture fixtureA = contact.getFixtureA();
 		Fixture fixtureB = contact.getFixtureB();
 		
@@ -46,8 +44,7 @@ public class CollisionUtil {
 	 * Checks whether at least one of the fixtures is of the given collision type
 	 */
 	public static boolean containsCollisionType(PhysicsCollisionType collisionType, Fixture fixtureA, Fixture fixtureB) {
-		return PhysicsCollisionType.getByFilter(fixtureA.getFilterData()) == collisionType
-				|| PhysicsCollisionType.getByFilter(fixtureB.getFilterData()) == collisionType;
+		return PhysicsCollisionType.getByFilter(fixtureA.getFilterData()) == collisionType || PhysicsCollisionType.getByFilter(fixtureB.getFilterData()) == collisionType;
 	}
 	
 	/**

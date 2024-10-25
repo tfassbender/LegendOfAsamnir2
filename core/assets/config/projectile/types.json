@@ -199,4 +199,22 @@
 		hitFixtureRadius: 0.7f,
 		flipAnimationToAttackDirection: true,
 	},
+	
+	giant_golem_force_field: {
+		attackType: FORCE_FIELD,
+		
+		animation: force_field_goblin_king,
+		textureAnimation: false,
+		textureScale: 2f,
+		
+		speed: 0,
+		damping: 0,
+		
+		timeActive: 2,
+		
+		multipleHitsPossible: true,
+		
+		pushForce: 2f, // enough to push away bombs
+		radius: 3f,
+	},
 }

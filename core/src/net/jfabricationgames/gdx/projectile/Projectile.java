@@ -14,6 +14,7 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.attack.hit.AttackType;
 import net.jfabricationgames.gdx.attack.hit.Hittable;
 import net.jfabricationgames.gdx.physics.CollisionUtil;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
@@ -23,7 +24,7 @@ import net.jfabricationgames.gdx.physics.PhysicsWorld;
 import net.jfabricationgames.gdx.sound.SoundManager;
 import net.jfabricationgames.gdx.sound.SoundSet;
 
-public abstract class Projectile implements ContactListener {
+public abstract class Projectile implements ContactListener, Hittable {
 	
 	private static final String SOUND_SET_PROJECTILE = "projectile";
 	private static final String EXPLOSION_PROJECTILE_TYPE = "explosion";
@@ -300,20 +301,6 @@ public abstract class Projectile implements ContactListener {
 		if (attackUserData == this && !attackedFixture.isSensor()) {
 			Object attackedUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);
 			
-			if (attackedUserData instanceof ProjectileReflector) {
-				ProjectileReflector reflector = (ProjectileReflector) attackedUserData;
-				reflected = reflector.reflectProjectile(this);
-			}
-			if (!reflected && attackedUserData instanceof Hittable) {
-				Hittable hittable = (Hittable) attackedUserData;
-				//enemies define the force themselves; the force parameter is a factor for this self defined force
-				hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
-				hittable.takeDamage(damage, typeConfig.attackType);
-			}
-			
-			startBodyLinearDamping();
-			attackPerformed = true;
-			
 			processContact(attackedUserData);
 		}
 	}
@@ -327,7 +314,19 @@ public abstract class Projectile implements ContactListener {
 	}
 	
 	protected void processContact(Object contactUserData) {
-		// method can be overwritten by subclasses to handle contacts
+		if (contactUserData instanceof ProjectileReflector) {
+			ProjectileReflector reflector = (ProjectileReflector) contactUserData;
+			reflected = reflector.reflectProjectile(this);
+		}
+		if (!reflected && contactUserData instanceof Hittable) {
+			Hittable hittable = (Hittable) contactUserData;
+			//enemies define the force themselves; the force parameter is a factor for this self defined force
+			hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
+			hittable.takeDamage(damage, typeConfig.attackType);
+		}
+		
+		startBodyLinearDamping();
+		attackPerformed = true;
 	}
 	
 	@Override
@@ -338,6 +337,20 @@ public abstract class Projectile implements ContactListener {
 	
 	@Override
 	public void postSolve(Contact contact, ContactImpulse impulse) {}
+	
+	@Override
+	public void takeDamage(float damage, AttackType melee) {
+		// do nothing here - only needed for the Hittable interface
+	}
+	
+	@Override
+	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected) {
+		if (hasBody()) {
+			Vector2 pushDirection = getPushDirection(body.getPosition(), hitCenter);
+			force *= 10f * body.getMass();
+			body.applyForceToCenter(pushDirection.x * force, pushDirection.y * force, true);
+		}
+	}
 	
 	public void removeFromMap() {
 		attackPerformed = true;

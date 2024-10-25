@@ -21,6 +21,8 @@ public class MagicWave extends Projectile {
 	
 	@Override
 	protected void processContact(Object contactUserData) {
+		super.processContact(contactUserData);
+		
 		if (contactUserData == MapObjectType.SOLID_OBJECT || isMovableObject(contactUserData)) {
 			removeFromMap();
 		}
