@@ -26,6 +26,7 @@ public class GiantGolem extends Enemy {
 	private GiantGolemMovementAI giantGolemMovementAI;
 	
 	private Vector2 startingPosition;
+	private boolean forceFieldDeactivated;
 	
 	public GiantGolem(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
@@ -88,6 +89,12 @@ public class GiantGolem extends Enemy {
 		if (attackType.isSubTypeOf(AttackType.DWARVEN_GUARDIAN_CONSTRUCT_FIST) && !stateMachine.isInState(STATE_NAME_VULNERABLE)) {
 			// after being attacked by a dwarven guardian construct, the giant golem is vulnerable for a short time
 			stateMachine.setState(STATE_NAME_VULNERABLE);
+			// reactivate the force field after being attacked
+			forceFieldDeactivated = false;
+		}
+		else if (attackType.isSubTypeOf(AttackType.DWARVEN_GUARDIAN_CONSTRUCT_FIRE) && stateMachine.isInState(STATE_NAME_VULNERABLE)) {
+			// after being attacked by a fire attack of a dwarven guardian construct, the giant golem's force field is deactivated
+			forceFieldDeactivated = true;
 		}
 		else if (damage > 0 && // only if the bomb explodes - not only touches the giant golem
 				attackType.isSubTypeOf(AttackType.BOMB) && stateMachine.isInState(STATE_NAME_VULNERABLE)) {
@@ -109,10 +116,12 @@ public class GiantGolem extends Enemy {
 			// low health and near starting position -> heal
 			health += delta;
 			
-			// start force field attacks while healing to prevent the player from using bombs to easily
-			if (getPosition().y > startingPosition.y - 1.5f && // don't start to early - wait till the golem almost reached the starting position 
-					attackHandler.allAttacksExecuted()) { // only start one force field at the time to improve the animation
-				attackHandler.startAttack("attack_force_field", new Vector2(1, 0)); // direction does not matter
+			if (!forceFieldDeactivated) {
+				// start force field attacks while healing to prevent the player from using bombs to easily
+				if (getPosition().y > startingPosition.y - 1.5f && // don't start to early - wait till the golem almost reached the starting position 
+						attackHandler.allAttacksExecuted()) { // only start one force field at the time to improve the animation
+					attackHandler.startAttack("attack_force_field", new Vector2(1, 0)); // direction does not matter
+				}
 			}
 		}
 	}

@@ -41,7 +41,7 @@
 		id: vulnerable,
 		animation: giant_golem_damage,
 		endsWithAnimation: true,
-		changeStateAfterAnimationDelay: 7f,
+		changeStateAfterAnimationDelay: 10f,
 		followingState: idle,
 		stateEnteringSound: rock_hit,
 		followingState: idle,

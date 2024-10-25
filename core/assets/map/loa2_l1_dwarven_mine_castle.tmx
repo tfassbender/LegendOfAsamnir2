@@ -680,13 +680,13 @@
   <object id="470" name="item.coin" x="272" y="1585">
    <point/>
   </object>
-  <object id="500" name="object.chest" x="763" y="268">
+  <object id="500" name="object.chest" x="763" y="258">
    <properties>
     <property name="drop" value="{metal_ingot: 1}"/>
    </properties>
    <point/>
   </object>
-  <object id="501" name="object.chest" x="903" y="268">
+  <object id="501" name="object.chest" x="903" y="258">
    <properties>
     <property name="drop" value="{metal_ingot: 1}"/>
    </properties>
@@ -695,7 +695,7 @@
   <object id="499" name="item.rune_raidho" x="832" y="208">
    <point/>
   </object>
-  <object id="502" name="object.chest" x="763" y="288">
+  <object id="502" name="object.chest" x="763" y="283">
    <properties>
     <property name="drop" value="{big_coin: 1}"/>
    </properties>
@@ -707,7 +707,7 @@
    </properties>
    <point/>
   </object>
-  <object id="504" name="object.chest" x="903" y="288">
+  <object id="504" name="object.chest" x="903" y="283">
    <properties>
     <property name="drop" value="{big_coin: 1}"/>
    </properties>
