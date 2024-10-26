@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="510">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="532">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
+  <property name="building_level" value="true"/>
   <property name="dungeon_level" value="false"/>
   <property name="effect_layers" value="{&quot;10&quot;: &quot;render_effect_layer__loa2_l1_torch_gate&quot;, &quot;11&quot;: &quot;render_effect_layer__loa2_l1_torch_boss_left&quot;, &quot;12&quot;: &quot;render_effect_layer__loa2_l1_torch_boss_right&quot;}"/>
   <property name="invisible_paths_layer" value="[9]"/>
-  <property name="mini_map_config_path" value="config/menu/maps/demo_2/level_5.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l1_cave_castle.json"/>
   <property name="shadow_layers" value="[6, 7, 8]"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
@@ -39,12 +40,12 @@
  </layer>
  <layer id="5" name="terrain" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt3D9L5EAYx/GVHOoLOAvt1GItz8J7G1qo70R9FwdXqOW9gMNSbffUWvxXqoggiFwnHCIKPsNOSJydZC+ZmU1Ivh8Y0OwSzG9nNs8kEzsdAABQ1Ea309nUbatb9V/TPNuS6Y5uu+Tr3b5keqDbIfkCAAAAQG2cf0l+PosGXz+N7O9FccPyRTlvkuGNtFtLltf6tXdyRk39mPXzHgz6E/XbUc7470XJ+1CO7dwW4xznjnzDus/J8I58neXNHZhXAACAqvy01Hm2bSjuWGq8X5Ys1bZj6j8nam6oaug9S757+jXmiOXlzb1jbcv3yePxku+gF3XfQsbtq4fjNvNdlv2uGN+5bct3XI5/Qtqkh3MP/TesSyO7MfnMIuNzuyBfZzM60wfJ8lHn+ZXazIuu5Ligs3yWbP/pfOdk2zwZO7mSLJckw++WHL/JtkVp53w/lMb57bMbvabkr6djJl87H7WvQr6fxWsdzNq37HWYdL6rso81vZ/11P7alG+WYWstmyqvX4W69temfEd9b12tRWtTvr6l64enKPk93WxrWVGMOufQT8Mh3770uLWN6bLId5DPTMruy6xZmnT/0ke+8XpqNb9Q19nj+UZeS89FzJqlSesDXfPtWeZtSLjkS7Z25jj93zGdN8aBUbHNr3ge0K/fjO1g6L/h0X/DaUL/zZrjFd0eStX91/V4s+Z4Rbb3StSkZrOpQ/+teg58EiX/S8GlZam6/1Yt5P3ROvTfqoVeH9j2/ouw6rp+bRR1UZOur2eZzvh8fdRFw1RdWwAAAMCNemZripouGJ7ZCot8w4qfiQMAAH58AP1q0/E=
+   eJzt3E0vxEAcx/GVCl4AB244rCMH3gYHvBO8C4kDjl6AOOK6Hs7i6YiIRCLiJhEREv+JaVrdaWlnZtu0308yie1uGv3tjP6nnWq1AABAXivtVmtVt7V22b9N/WxKplu6bZOvc/uS6YFuh+QLAAAAAJVx0R/9fB50v38WmD+L/P7KF8V8Soa30u4MWd7o977IGRW1Pu7mM+h2FPy044zx3wmiz6EY07ktxDnOHvn69ZCR4T35WsuaOzCvAAAAZdkw1HmmbcjvRGq8HUOWatsJ9Z8VNTdUNfSeId89/R5zxOKy5t6hpuX77PB4ybfbu7pvIeP2w8FxJ/Odl/0uJP7mNi3fATn+QWlDDs499F+/rhLZ9cl3FiS+t0vytTamM32ULJ90nsPUZk60JccpneWrZPum852QbZNkbOVaspyVDOcMOU7LthlpF/x9KIzz22+3ek3Ji6NjJl8zF7WvQr6/hWsdkrVv0esw8XwXZR9Lej/Lsf01Kd80f621rKusfuXr2l+T8u31vXW1Fq1J+boWrx+eg+h1vJnWsiIfdc6hn/pDvj/i49Y0posi324uMym6r2TNUqf7ly7yDddTq/mFus4ezjeyWnwuEq9ZVK2hXtdl/bttvh3DvA0Rm3zJ1iw5Tv87prPGONArpvkVzwO6tcvY9ob+6x/915869N+0OV7e7b6U3X9tjzftOnWe7Z0CNWmymVSh/5b9jNxpEP0vBZuWpuz+Wzaf90er0H/L5nt9YNP7L/yq6vq1XtRFdbq+nmY05fv9b/2jro+H18rzKru2AAAAgB31zNYINZ03PLPlF/n6FT4TBwAA3PgGgpfWrQ==
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2M0JwkAQBtCFtQUPdpBDukspsQ8vaUCswAKswRZCyHFliCGaH96DgRnmsizfaVIC4Kiu1Vgsr6lT6qqxhp5ltfXnHgAAAAAAKL1O83YAAAAAAMDvXIIb/dn9no17BBmNdkzzDP4w2gEAAAAAAFC657Leee1XwTTyy57JL/92y/H8Dfllz+QXAAAAAABYUw/x+CRf
+   eJzt2MEJwkAQBdCFFazAgx3kkO4sJfbhxQbEClKANdiChJxCZDQhEVffg2FnmdvyD8ukBMCvOlZ9sbxDndK56qvrWVZTP+8BAAAAAICx22beDAAAAAAAWM8+2NHv7O/5ctcgo9GM97TBG0YzAAAAgFe2eXgCAPyDSx7X3X+IQsgvJZNfPu2U4/sU8kvJ5Bdi3X7cjhwAAAAAYD0PHi4khw==
   </data>
  </layer>
  <layer id="8" name="shadow_underlying" width="88" height="88" locked="1">
@@ -57,9 +58,9 @@
    eJzt29FqwjAUANBA+1HOD9j8gM03/YH5LxN9drA/Xcbsi6ZiaqPUnAOBti8pl5B74SYhANzfV3P+bZv4xjCHRCy/xRcI9t/S7L/l7Zr0MwAAAAAAAABArVJngvo4K5QvdSaoj7NCTMGqDWHdPvovntdnjO1GfEchv5Ulv53LWXPky1lzMAVDc4/8dp2hued0r5nFuuzlOOYnNVot+a2k1zb9XBP1Q1nqBwAAAABqU3Nv4B70BgD+7ZvL79zmp7n8PraS9UPXD82Z49l6qCXrh64fmjOHHioAAADQmfXclWAcf3ck3uJYiG8R7zGuH3EsxRcAJusXvaofAg==
   </data>
  </layer>
- <layer id="3" name="shadows" width="88" height="88" locked="1">
+ <layer id="3" name="shadows" width="88" height="88">
   <data encoding="base64" compression="zlib">
-   eJztnWFywiAQRnMS73+o1taZttZb1IztDBKCy8KHNHlvhj+ObpInSdiF6DRpuBym6XWlfR9EG90RnxmHH/itBr9a8KsFv1rwqwW/WvCrBb9a8KvldHX4cm1vgcvj72vv+G1G2I/pt+3BbztSNZ1z4PSLWk8VuXvaGvRpO/jVgl8t+NWCXy341YJfLfjVgl8t+NWCXy341YJfLfjV8jdnEbbU/EXYmMuog/q6lpZ+c2sy97pWs6Vfru9L8KsldBLPv5Weu/hd0nKdCX6X4FcLfrXgVwt+teBXi9Vv/L6UF/wuwa8W/GrJOQnzuTN+XXiczGzVr6UGWFI3wO89lmMo2Wf83jOy3y3MP43s91H80fpqipZ+L4lxgRX85qlxa93GzOh+c8/7rJF6DsgTp3Yb8XZG9Lsl8KsFv1rwqwW/WvCbzrFatdFytZlcvtma46AOeuLNZx+B2xslfkvOddzeKPE7yv3Es261V4t5tt/YlaWWr7qmKXi2X8s856PPjAx+teBXC3614Lec3Dg1pmRfrTXwkhbX5T21fG8O7s1de8xHjoT3vEodu+W7Ksmd8Nsm1hqpNQY9aj8t8TpJHXvPvP6/9O1R8vZS8KsFv1py12bP+MczjrLE2Gst1JM7eGPs8f+Pevrd4++/K/yu5Xe59Vn4tcfwgF97DA/4tcfwgF97DA9b9dsC/GrBrxZrDpmr9eG3nj3mFz3J9fOe9YkfOJ9HzQ==
+   eJztnWFygjAQRjmJJ+j9//UmrW1n2lpvoYztTAwhbJZ8MYX3ZvLH0QWeAbKboMOg4XwYhteZ9nMQbXRHfGUcfuJ3NfjVgl8t+NWCXy341YJfLfjVgl8tH1eHL9f2Frg8/r72jt9qhP2Yflsf/NYjVdM5BU6/qfWsIndPm4M+bQe/WvCrBb9a8KsFv1rwqwW/WvCrBb9a8KsFv1rwqwW/Wv7mLMKWmr8IG3MZ66C+rqWm39yazL2u1azpl+v7FPxqCZ3E82+l5y5+p9RcZ4LfKfjVgl8t+NWCXy341WL1G78v5QW/U/CrBb9ack7CfO6EXxceJyNb9WupAZbUDfB7j+UYSvYZv/f07HcL8089+12K31tfTVHT7zkxLrCC3zxr3Fq3MdK739zzPnOkngPyxFm7jXg7PfrdEvjVgl8t+NWCXy34TedYtVpvudpILt+szbFTBy3x5rNL4PZGid+Scx23N0r89nI/8axbbdViHu03dmWp5auuaQoe7dcyz7n0mZ7Brxb8asGvFvyWkxunxpTsq7UGXtLiurynlu/Nwb25a4v5yJ7wnlepY7d8VyW5E37rxJojtcagRe2nJl4nqWNvmdf/l77dS95eCn614FdL7trsGf94xlGWGHuthXpyB2+MPf7/UUu/e/z9d4Xfufwutz4Lv/YYHvBrj+EBv/YYHvBrj+Fhq35rgN95np+mrRT8arHmkLlaH37Xs8f8oiW5ft6yPnEBMLhMWg==
   </data>
  </layer>
  <layer id="4" name="shadows_2" width="88" height="88" locked="1">
@@ -506,7 +507,7 @@
   </object>
   <object id="427" name="object.spawnPoint.mana" x="1072.5" y="1584.57">
    <properties>
-    <property name="spawn" value="playerManaBelowHalf"/>
+    <property name="spawn" value="playerManaNotFull"/>
    </properties>
    <point/>
   </object>
@@ -728,6 +729,99 @@
   <object id="508" name="object.eventObject" x="800" y="928" width="64.6666" height="31.606">
    <properties>
     <property name="eventParameter" value="loa2_l1_castle__enter_boss_room"/>
+   </properties>
+  </object>
+  <object id="510" name="object.chest" x="978" y="1344">
+   <properties>
+    <property name="drop" value="{health_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="511" name="object.chest" x="978" y="1312">
+   <properties>
+    <property name="drop" value="{shield_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="512" name="object.chest" x="785" y="239">
+   <properties>
+    <property name="drop" value="{shield_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="513" name="object.chest" x="880" y="239">
+   <properties>
+    <property name="drop" value="{health_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="514" name="object.pot" x="816.333" y="1900.67">
+   <point/>
+  </object>
+  <object id="515" name="object.pot" x="798.333" y="1905.33">
+   <point/>
+  </object>
+  <object id="516" name="object.pot" x="1238" y="1776.33">
+   <point/>
+  </object>
+  <object id="517" name="object.pot" x="1216" y="1779.33">
+   <point/>
+  </object>
+  <object id="518" name="object.pot" x="1939.5" y="2672.5">
+   <point/>
+  </object>
+  <object id="519" name="object.pot" x="1921" y="2676">
+   <point/>
+  </object>
+  <object id="520" name="object.pot" x="1937" y="2689.5">
+   <point/>
+  </object>
+  <object id="521" name="object.pot" x="1430.5" y="1101.5">
+   <point/>
+  </object>
+  <object id="522" name="object.pot" x="1777.5" y="1172.5">
+   <point/>
+  </object>
+  <object id="523" name="object.pot" x="1773" y="1195">
+   <point/>
+  </object>
+  <object id="524" name="object.barrel" x="197.667" y="1876.67">
+   <point/>
+  </object>
+  <object id="525" name="object.barrel" x="1938.5" y="2534">
+   <point/>
+  </object>
+  <object id="526" name="object.barrel" x="460.667" y="2065.33">
+   <point/>
+  </object>
+  <object id="527" name="object.spawnPoint.shield" x="1424.5" y="1776.63">
+   <properties>
+    <property name="spawn" value="playerShieldBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="528" name="object.spawnPoint.health" x="1488.5" y="1776.63">
+   <properties>
+    <property name="spawn" value="playerHealthBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="529" name="object.spawnPoint.shield" x="1008.5" y="2320.5">
+   <properties>
+    <property name="spawn" value="playerShieldBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="530" name="object.spawnPoint.health" x="976.5" y="2320.5">
+   <properties>
+    <property name="spawn" value="playerHealthBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="531" name="object.eventObject" x="896" y="2592" width="95.5417" height="4.75">
+   <properties>
+    <property name="eventParameter" value="loa2_l1_mine_castle__goto_l1_main"/>
+    <property name="unitId" value="loa2_l1_mine__event_object__goto_main"/>
    </properties>
   </object>
  </objectgroup>

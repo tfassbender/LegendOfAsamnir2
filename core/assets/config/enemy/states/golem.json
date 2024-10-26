@@ -22,6 +22,7 @@
 		animation: golem_attack,
 		stateEnteringSound: attack_mini_golem,
 		attack: attack
+		changeStateAfterAnimationDelay: 0.5f,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -46,7 +47,7 @@
 		id: die,
 		animation: golem_death,
 		endsWithAnimation: true,
-		changeStateAfterAnimationDelay: 1f,
+		changeStateAfterAnimationDelay: 2f,
 		followingState: END,
 		stateEnteringSound: rock_break,
 		interruptingStates: [],

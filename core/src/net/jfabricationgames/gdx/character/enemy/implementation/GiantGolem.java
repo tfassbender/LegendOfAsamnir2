@@ -114,7 +114,7 @@ public class GiantGolem extends Enemy {
 		
 		if (getPercentualHealth() > 0 && getPercentualHealth() < 0.5f && getPosition().y > startingPosition.y - 2.5f) {
 			// low health and near starting position -> heal
-			health += delta;
+			health += delta * 0.75f; // heal 0.75% per second
 			
 			if (!forceFieldDeactivated) {
 				// start force field attacks while healing to prevent the player from using bombs to easily

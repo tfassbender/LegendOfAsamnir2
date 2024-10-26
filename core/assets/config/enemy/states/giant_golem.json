@@ -21,6 +21,7 @@
 		id: attack_fist,
 		animation: giant_golem_attack,
 		attack: attack_fist,
+		stateEnteringSound: giant_golem_attack_hit,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -31,6 +32,7 @@
 		id: attack_stomp,
 		animation: giant_golem_attack_2,
 		attack: attack_stomp,
+		stateEnteringSound: giant_golem_attack_stomp,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -41,7 +43,7 @@
 		id: vulnerable,
 		animation: giant_golem_damage,
 		endsWithAnimation: true,
-		changeStateAfterAnimationDelay: 10f,
+		changeStateAfterAnimationDelay: 12f,
 		followingState: idle,
 		stateEnteringSound: rock_hit,
 		followingState: idle,

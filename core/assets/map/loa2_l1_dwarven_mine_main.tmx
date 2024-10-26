@@ -5,7 +5,7 @@
   <property name="background_layers" value="[0, 1, 2, 3]"/>
   <property name="dungeon_level" value="true"/>
   <property name="invisible_paths_layer" value="[9]"/>
-  <property name="mini_map_config_path" value="config/menu/maps/demo_2/level_5.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l1_cave_main.json"/>
   <property name="shadow_layers" value="[6, 7, 8]"/>
  </properties>
  <tileset firstgid="1" source="tileset/tileset_pipoya_32.tsx"/>
@@ -102,7 +102,7 @@
   </object>
   <object id="1916" name="object.eventObject" x="683.063" y="63.9886" width="45.875" height="4.75">
    <properties>
-    <property name="eventParameter" value="loa2_unfinished_end_cutscene"/>
+    <property name="eventParameter" value="loa2_l1_mine_main__goto_l1_castle"/>
    </properties>
   </object>
   <object id="1917" name="object.eventObject" x="3008.4" y="1404.96" width="95.5417" height="2.75">
@@ -536,7 +536,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2026" name="enemy.golem" x="704" y="224">
+  <object id="2026" name="enemy.golem" x="704" y="256">
    <properties>
     <property name="drop" value="{token_l1_golem: 1}"/>
     <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>

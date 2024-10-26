@@ -130,9 +130,19 @@ class CharacterInputProcessor implements InputActionListener {
 						lastMoveDirection = getDirectionFromInputs();
 						jumpDirection = getDirectionFromInputs();
 						characterActionSet = player.changeAction(CharacterAction.ATTACK_JUMP);
+						
+						// go back to blocking after the attack
+						if (characterActionSet) {
+							startBlock = true;
+						}
 					}
 					else {
 						characterActionSet = player.changeAction(CharacterAction.ATTACK);
+						
+						// go back to blocking after the attack
+						if (characterActionSet) {
+							startBlock = true;
+						}
 					}
 				}
 			}

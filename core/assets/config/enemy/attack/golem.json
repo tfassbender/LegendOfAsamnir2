@@ -4,7 +4,7 @@
 		type: HIT,
 		delay: 0.2,
 		duration: 0,
-		damage: 20,
+		damage: 15,
 		distFromCenter: 0.4,
 		hitFixtureRadius: 0.45,
 		pushForce: 100

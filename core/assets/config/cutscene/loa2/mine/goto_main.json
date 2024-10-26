@@ -1,0 +1,38 @@
+{
+	id: loa2_l1_mine_castle__goto_l1_main_cutscene,
+	controlledActions: {
+		move_down: {
+			startsWithCutscene: true,
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -3},
+			targetPositionRelativeToUnitId: loa2_l1_mine__event_object__goto_main,
+			
+			executes: [
+                change_map,
+			]
+		},
+		
+		change_map: {
+			executionDelayInSeconds: 1f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+                stringValue: loa2_dwarven_mine_main,
+                intValue: 1,
+			},
+			
+			waitForEventToFinish: false,
+			
+			executes: [
+                end,
+			]
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

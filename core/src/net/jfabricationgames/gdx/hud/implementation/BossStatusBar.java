@@ -181,8 +181,11 @@ public class BossStatusBar implements Disposable, EventListener {
 	@Override
 	public void handleEvent(EventConfig event) {
 		if (event.eventType == EventType.BOSS_ENEMY_APPEARED) {
-			this.boss = (Enemy) event.parameterObject;
-			this.bossName = event.stringValue;
+			boss = (Enemy) event.parameterObject;
+			bossName = event.stringValue;
+		}
+		else if (event.eventType == EventType.UPDATE_MAP_AFTER_LOADING_GAME_STATE) {
+			boss = null; // don't show the boss status bar when the game is restarted (after the player died)
 		}
 	}
 }

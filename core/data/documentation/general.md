@@ -30,6 +30,8 @@
 	- side-quests (?)
 - Some new Items need to be added (or maybe existing items can be improved ?)
 
+- Use something like ForceFields (see boss fight of level 1) in a puzzle, where a projectile weapon of the player has to be redirected (pushed by the force field) to hit a target
+
 
 ## Side Quests
 

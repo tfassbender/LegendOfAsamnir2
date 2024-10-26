@@ -5,7 +5,7 @@
   <property name="background_layers" value="[0, 1, 2, 3]"/>
   <property name="dungeon_level" value="true"/>
   <property name="invisible_paths_layer" value="[9]"/>
-  <property name="mini_map_config_path" value="config/menu/maps/demo_2/level_5.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l1_cave_entrance.json"/>
   <property name="shadow_layers" value="[6, 7, 8]"/>
  </properties>
  <tileset firstgid="1" source="tileset/tileset_pipoya_32.tsx"/>
@@ -273,7 +273,7 @@ Only for dwarven miners!. </property>
   </object>
   <object id="1353" name="player.startingPosition" x="384" y="96">
    <properties>
-    <property name="startingPointId" value="2"/>
+    <property name="startingPointId" value="1"/>
    </properties>
    <point/>
   </object>
@@ -307,7 +307,7 @@ You can also select it in the menu..</property>
   </object>
   <object id="1359" name="player.startingPosition" x="544" y="736">
    <properties>
-    <property name="startingPointId" value="1"/>
+    <property name="startingPointId" value="2"/>
    </properties>
    <point/>
   </object>

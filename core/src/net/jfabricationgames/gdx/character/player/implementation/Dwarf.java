@@ -251,12 +251,23 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	private void useMana(float mana) {
 		boolean manaAboveCriticalLevelBeforeUse = propertiesDataHandler.hasEnoughMana(LOW_MANA_LEVEL);
+		boolean manaFullBeforeUse = propertiesDataHandler.getManaPlusIncreasePercentual() >= 1f - 1e-3f; // prevent rounding errors
 		boolean manaBelowHalfBeforeUse = propertiesDataHandler.getManaPlusIncreasePercentual() < 0.5f - 1e-3f; // prevent rounding errors
 		propertiesDataHandler.reduceMana(mana);
 		if (manaAboveCriticalLevelBeforeUse && !propertiesDataHandler.hasEnoughMana(LOW_MANA_LEVEL)) {
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.OUT_OF_AMMO).setStringValue("MANA"));
 		}
+		checkManaNotFull(manaFullBeforeUse);
 		checkManaBelowHalf(manaBelowHalfBeforeUse);
+	}
+	
+	private void checkManaNotFull(boolean manaFullBeforeUse) {
+		if (manaFullBeforeUse && propertiesDataHandler.getManaPlusIncreasePercentual() < 1f) {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
+					.setStringValue("MANA") //
+					.setFloatValue(1f));
+		}
 	}
 	
 	private void checkManaBelowHalf(boolean manaBelowHalfBeforeUse) {

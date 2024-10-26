@@ -192,7 +192,6 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	private boolean isEventHandledWhenIgnoringDistribution(EventConfig event) {
 		// complex events are checked first, because they may overwrite the simple event handling
 		if (spawnConfig.complexEvents != null) {
-			Gdx.app.debug(getClass().getSimpleName(), "Checking event (" + event + ") against complex events: " + spawnConfig.complexEvents);
 			for (EventConfig handledEvent : spawnConfig.complexEvents) {
 				if (handledEvent.equals(event)) {
 					return true;

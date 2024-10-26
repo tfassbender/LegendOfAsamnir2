@@ -1,4 +1,8 @@
 {
+	// ***************************
+	// *** Health
+	// ***************************
+	
 	playerHealthBelowHalf: {
         spawnType: item.health_half,
         complexEvents: [
@@ -9,6 +13,11 @@
 			}
         ],
 	},
+	
+	// ***************************
+	// *** Shield
+	// ***************************
+	
 	playerShieldBelowHalf: {
         spawnType: item.shield_half,
         complexEvents: [
@@ -19,6 +28,11 @@
             }
         ],
 	},
+	
+	// ***************************
+	// *** Mana
+	// ***************************
+	
 	playerManaBelowHalf: {
         spawnType: item.mana_half,
         complexEvents: [
@@ -29,6 +43,22 @@
 			}
 		],
 	},
+	
+	playerManaNotFull: {
+        spawnType: item.mana_full,
+        complexEvents: [
+			{
+            	eventType: PLAYER_STATS_BELOW_THRESHOLD,
+                stringValue: MANA,
+                floatValue: 1f,
+			}
+		],
+	},
+	
+	// ***************************
+	// *** Arrows
+	// ***************************
+	
 	playerAmmoArrowBelowHalf: {
         spawnType: item.arrow_half,
         complexEvents: [
@@ -39,6 +69,11 @@
 			}
 		],
 	},
+	
+	// ***************************
+	// *** Bomb
+	// ***************************
+	
 	playerAmmoBombBelowHalf: {
         spawnType: item.bomb_half,
         complexEvents: [

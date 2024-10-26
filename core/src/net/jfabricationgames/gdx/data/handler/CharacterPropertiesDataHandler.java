@@ -35,22 +35,38 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 			float increaseStep = Math.min(delta * properties.healthIncreasePerSecond, properties.increaseHealth);
 			properties.increaseHealth -= increaseStep;
 			properties.health = Math.min(properties.health + increaseStep, properties.maxHealth);
+			
+			if (properties.health >= properties.maxHealth) {
+				properties.increaseHealth = 0;
+			}
 		}
 		if (properties.increaseMana > 0f) {
 			float increaseStep = Math.min(delta * properties.manaIncreasePerSecond, properties.increaseMana);
 			properties.increaseMana -= increaseStep;
 			properties.mana = Math.min(properties.mana + increaseStep, properties.maxMana);
+			
+			if (properties.mana >= properties.maxMana) {
+				properties.increaseMana = 0;
+			}
 		}
 		if (properties.increaseEndurance > 0f) {
 			//only used when endurance is increased by an event or an item
 			float increaseStep = Math.min(delta * properties.enduranceIncreasePerSecond, properties.increaseEndurance);
 			properties.increaseEndurance -= increaseStep;
 			properties.endurance = Math.min(properties.endurance + increaseStep, properties.maxEndurance);
+			
+			if (properties.endurance >= properties.maxEndurance) {
+				properties.increaseEndurance = 0;
+			}
 		}
 		if (properties.increaseArmor > 0f) {
 			float increaseStep = Math.min(delta * properties.armorIncreasePerSecond, properties.increaseArmor);
 			properties.increaseArmor -= increaseStep;
 			properties.armor = Math.min(properties.armor + increaseStep, properties.maxArmor);
+			
+			if (properties.armor >= properties.maxArmor) {
+				properties.increaseArmor = 0;
+			}
 		}
 		if (properties.decreaseCoins > 0f) {
 			float decreaseStep = Math.min(delta * properties.coinsDecreasePerSecond, properties.decreaseCoins);

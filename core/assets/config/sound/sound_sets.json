@@ -400,6 +400,17 @@
 					volume: 1,
 					delay: 0.4,
 				},
+				// giant golem
+				giant_golem_attack_stomp: {
+					path: "sound/enemy/attack/giant_golem_stomp.mp3",
+					volume: 0.7,
+					delay: 0.3,
+				},
+				giant_golem_attack_hit: {
+					path: "sound/enemy/attack/gladiator.wav",
+					volume: 0.8,
+					delay: 0.3,
+				},
 			}
 		},
 		cutscene: {

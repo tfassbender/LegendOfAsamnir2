@@ -538,14 +538,26 @@
 		}
 	},
 	
-	loa2_unfinished_end_cutscene: {
+	loa2_l1_mine_main__goto_l1_castle: {
         event: {
             eventType: EVENT_OBJECT_TOUCHED,
-            stringValue: loa2_unfinished_end_cutscene,
-		},
+            stringValue: loa2_l1_mine_main__goto_l1_castle,
+		}
+        executionType: CHANGE_MAP,
+        executionParameters: {
+            map: loa2_dwarven_mine_castle,
+            startingPointId: 0,
+		}
+	},
+	
+	loa2_l1_mine_castle__goto_l1_main: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l1_mine_castle__goto_l1_main,
+		}
         executionType: START_CUTSCENE,
         executionParameters: {
-            cutsceneId: loa2_unfinished_end_cutscene,
+            cutsceneId: loa2_l1_mine_castle__goto_l1_main_cutscene,
 		}
 	},
 	
