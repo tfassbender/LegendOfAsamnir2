@@ -67,11 +67,11 @@
             waitForEventToFinish: true,
             
             executes: [
-                set_global_value__mini_boss_appeared,
+                fire_boss_fight_event,
 			]
 		},
 		
-		set_global_value__mini_boss_appeared: {
+		fire_boss_fight_event: {
 			type: EVENT,
 			
             executionDelayInSeconds: 1f,
@@ -92,7 +92,7 @@
 			
 			event: {
 				eventType: SET_GLOBAL_CONDITION_VALUE,
-				stringValue: "{key: loa2_l1__mini_boss_appeared, value: true}",
+				stringValue: "{key: loa2_l1_castle__mini_boss_appeared, value: true}",
 			},
 			
 			executes: [

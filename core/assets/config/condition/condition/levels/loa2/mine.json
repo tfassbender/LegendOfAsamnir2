@@ -193,13 +193,6 @@
 		}
 	},
 	
-	loa2_l1_castle__second_gate__switch_activated: {
-	    conditionType: STATE_SWITCH_ACTIVE,
-        parameters: {
-            stateSwitchId: loa2_l1_castle__switch_gate_moria,
-		}
-	},
-	
 	loa2_l1_castle__vault_switches_activated: {
 		conditionType: AND,
 		conditionalParameters: {

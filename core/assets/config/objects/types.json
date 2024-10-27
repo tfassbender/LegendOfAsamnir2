@@ -58,7 +58,7 @@
 		
 		animationBreak: pot_break,
 		destroySound: glass_break,
-		health: 5,
+		health: 1,
 	},
 	signboard: {
 		type: INTERACTIVE,
@@ -178,7 +178,7 @@
 		physicsBodyOffsetFactorY: 0.01,
 		
 		destroySound: rock_break,
-		health: 10,
+		health: 5,
 		requiredAttackType: BOMB,
 	},
 	spawnPoint: {

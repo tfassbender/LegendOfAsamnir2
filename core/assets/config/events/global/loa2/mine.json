@@ -235,14 +235,7 @@
 		conditionalExecutionId: loa2_l1_castle__openLock_1_ifSwitchesActivatedAndSignboardChanged,
 	},
 	
-	loa2_l1_castle__switch_gate_moria__open_gate: {
-		event: {
-			eventType: STATE_SWITCH_ACTION,
-			stringValue: loa2_l1_castle__switch_gate_moria,
-		},
-		executionType: CONDITIONAL_EVENT,
-		conditionalExecutionId: loa2_l1_castle__openLock_2_ifSwitchActivated,
-	},
+	// the switch only activates the cutscene - killing the boss opens the gate (it cannot be closed again)
 	loa2_l1_castle__switch_gate_moria__mini_boss_cutscene: {
 		event: {
 			eventType: STATE_SWITCH_ACTION,
@@ -585,6 +578,18 @@
         executionType: OPEN_LOCK,
         executionParameters: {
             lockId: loa2_l1_castle__gate_moria
+        }
+	},
+	
+	// the gates (that are opened after the mini boss) cannot be closed again, because that could confuse the player
+	loa2_l1_castle__mini_boss_ogre__defeated__open_gate_2: {
+		event: {
+            eventType: ENEMY_DEFEATED,
+            stringValue: loa2_l1_castle__mini_boss_ogre__defeated,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l1_castle__gate_2
         }
 	},
 	

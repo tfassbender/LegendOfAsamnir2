@@ -11,13 +11,12 @@
 	},
 	{
 		id: attack_2,
-		type: NOVA,
-		delay: 0.5,
+		type: HIT,
+		delay: 0.2,
 		duration: 0,
-		damage: 5,
-		distFromCenter: 0,
-		hitFixtureRadius: 4,
+		damage: 25,
+		distFromCenter: 1,
+		hitFixtureRadius: 0.75,
 		pushForce: 180
-		pushForceAffectedByBlock: false,
 	},
 ]

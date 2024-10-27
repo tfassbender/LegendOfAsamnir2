@@ -315,6 +315,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 	@Override
 	public void handleEvent(EventConfig event) {
 		if (event.eventType == EventType.PLAYER_RESPAWNED) {
+			GameStateManager.getInstance().setGameOver(false);
 			gameOver = false;
 		}
 		else if (event.eventType == EventType.SHOW_IN_GAME_SHOP_MENU) {

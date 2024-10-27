@@ -157,28 +157,6 @@
         }
     },
     
-    loa2_l1_castle__openLock_2_ifSwitchActivated: {
-    	conditionId: loa2_l1_castle__second_gate__switch_activated,
-        thenCase: {
-            type: EVENT,
-            eventConfig: {
-                executionType: OPEN_LOCK,
-                executionParameters: {
-                    lockId: loa2_l1_castle__gate_2
-				}
-			}
-		}
-        elseCase: {
-            type: EVENT,
-            eventConfig: {
-                executionType: CLOSE_LOCK,
-                executionParameters: {
-                    lockId: loa2_l1_castle__gate_2
-				}
-			}
-		}
-	},
-	
 	loa2_l1_castle__openVaultLock_ifAllSwitchActivated: {
         conditionId: loa2_l1_castle__vault_switches_activated,
         thenCase: {

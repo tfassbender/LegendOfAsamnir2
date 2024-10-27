@@ -32,6 +32,12 @@
 
 - Use something like ForceFields (see boss fight of level 1) in a puzzle, where a projectile weapon of the player has to be redirected (pushed by the force field) to hit a target
 
+- Quick access items (the one that are accessible with the X button) should be configurable, so it's easier to switch to the wanted weapons (and you can configure it for every battle / level)
+  - The cutscene that tells to use the lantern at the beginning of the dwarven caves needs to be reworked
+  - A new signboard in the entrance of the dwarven caves is needed that tells how this setting can be used
+  
+- The shield should protect the player more damage (not fully, but more - otherwise it's not that useful)
+
 
 ## Side Quests
 

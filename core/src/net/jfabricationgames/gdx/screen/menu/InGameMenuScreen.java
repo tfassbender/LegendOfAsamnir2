@@ -74,6 +74,7 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 		
 		GameScreen.loadAndShowGameScreen(() -> {
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RESTART_FROM_SVARTALFHEIM));
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.PLAYER_RESPAWNED));
 			backToGame();
 		});
 	}
@@ -86,6 +87,7 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 			gameDataService.loadGameDataFromQuicksaveSlot();
 			GameScreen.loadAndShowGameScreen(() -> {
 				EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
+				EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.PLAYER_RESPAWNED));
 				backToGame();
 			});
 		}
