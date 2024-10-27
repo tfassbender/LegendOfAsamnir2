@@ -3,6 +3,7 @@
 		1: after_tavern,
 		2: after_castle,
 		3: after_forge,
+		9: after_level_1_finished,
 	},
 	eventsLists: {
 		after_tavern: {
@@ -27,5 +28,15 @@
 			subConfigName: after_forge,
 			events: []
 		}
+		
+		after_level_1_finished: {
+            subConfigName: final,
+            events: [
+            	{
+					eventType: COLLECT_RUNE,
+					stringValue: raidho,
+				},
+            ]
+        },
 	}
 }

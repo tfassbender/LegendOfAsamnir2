@@ -69,6 +69,17 @@
 		}
 	},
 	
+	loa2_unfinished_end: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_unfinished_end,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_unfinished_end_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** cutscenes - npc interaction
 	//*******************************************

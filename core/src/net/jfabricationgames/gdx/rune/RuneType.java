@@ -11,10 +11,10 @@ public enum RuneType {
 	ANSUZ(2, "rune_collected__ansuz", "ANSUZ - solve puzzles"), //
 	MANNAZ(3, "rune_collected__mannaz", "MANNAZ - reflect magical attacks"), //
 	ALGIZ(4, "rune_collected__algiz", "ALGIZ - see hidden paths"), //
-	RAIDHO(5, "rune_collected__raidho", "RAIDHO - fast travel using the map"), //
-	HAGALAZ(6, "rune_collected__hagalaz", "HAGALAZ - prevent death"), //
-	KENAZ(7, "rune_collected__kenaz", "KENAZ - prevent from freezing colds"), //
-	LAGUZ(8, "rune_collected__laguz", "LAGUZ - open the last door to yggdrasiel"); //
+	RAIDHO(5, "rune_collected__raidho", "RAIDHO - travel between the nine worlds"), //
+	HAGALAZ(6, "rune_collected__hagalaz", "HAGALAZ - gain supreme strength"), //
+	KENAZ(7, "rune_collected__kenaz", "KENAZ - revive after death"), //
+	LAGUZ(8, "rune_collected__laguz", "LAGUZ - access the castle of the chaos wizard"); //
 	
 	public static final String GLOBAL_VALUE_KEY_RUNE_HAGALAZ_FORGED = "rune_forged__hagalaz";
 	public static final String RUNE_HAGALAZ_DESCRIPTION_POSTFIX_FORGED = " (reforge after use)";

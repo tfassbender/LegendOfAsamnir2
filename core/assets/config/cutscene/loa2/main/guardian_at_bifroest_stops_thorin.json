@@ -38,6 +38,64 @@
 			},
 			
 			executes: [
+                condition__thorin_has_rune_raidho,
+			],
+		},
+		
+		condition__thorin_has_rune_raidho: {
+			type: CONDITION,
+			
+			condition: {
+				conditionId: common__rune_raidho_collected,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: thorin_has_rune_raidho,
+				condition_not_met: move_back,
+			}
+		},
+		
+		thorin_has_rune_raidho: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I already have the rune Raidho. Can I pass now? ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                guardian_unfinished_level,
+			],
+        },
+        
+        // TODO change this after the level is finished
+		guardian_unfinished_level: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Guardian of Bifrost",
+                displayText: "I'm sorry Thorin, but I can't let you pass yet.\n                \nThis level is still under construction...  ",
+                colorHeader: #04007a,
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
                 move_back,
 			],
 		},

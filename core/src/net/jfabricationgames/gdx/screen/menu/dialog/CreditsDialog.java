@@ -2,6 +2,7 @@ package net.jfabricationgames.gdx.screen.menu.dialog;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.utils.Align;
 
 import net.jfabricationgames.gdx.screen.menu.components.FocusButton;
 import net.jfabricationgames.gdx.screen.menu.components.FocusButton.FocusButtonBuilder;
@@ -57,18 +58,18 @@ public class CreditsDialog extends InGameMenuDialog {
 		screenTextWriter.setScale(1.4f);
 		screenTextWriter.drawText("Programming", 350, 630);
 		screenTextWriter.drawText("Story", 475, 490);
-		screenTextWriter.drawText("Graphics", 425, 350);
-		screenTextWriter.drawText("Engine", 460, 110);
+		screenTextWriter.drawText("Graphics", 425, 360);
+		screenTextWriter.drawText("Engine", 460, 100);
 		
 		screenTextWriter.setColor(Color.BLACK);
 		screenTextWriter.setScale(0.9f);
 		screenTextWriter.drawText("Tobias Fassbender", 390, 565);
 		screenTextWriter.drawText("Tobias Fassbender", 390, 430);
-		screenTextWriter.drawText("LibGDX (libgdx.com)", 380, 50);
+		screenTextWriter.drawText("LibGDX (libgdx.com)", 380, 40);
 		
 		screenTextWriter.setScale(0.8f);
-		screenTextWriter.drawText("Characters - Elthen's Pixel Art Shop (elthen.itch.io)", 120, 280);
-		screenTextWriter.drawText("UI - Pixel Frog (pixelfrog-assets.itch.io)", 200, 230);
-		screenTextWriter.drawText("Tileset - Pipoya (pipoya.itch.io)", 300, 180);
+		screenTextWriter.drawText("[#FF0000]Characters[#000000] - Elthen's Pixel Art Shop (elthen.itch.io)", 120, 290);
+		screenTextWriter.drawText("[#FF0000]UI[#000000] - Pixel Frog (pixelfrog-assets.itch.io)", 200, 240);
+		screenTextWriter.drawText("[#FF0000]Tilesets[#000000] - Pipoya (pipoya.itch.io) and Elthen's Pixel Art Shop (elthen.itch.io)", 200, 190, 800, Align.center, true);
 	}
 }

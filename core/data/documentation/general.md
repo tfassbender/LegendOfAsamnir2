@@ -23,20 +23,14 @@
 
 ## General Ideas
 
-- Add a possibility to get back to Svartalfheim if the dungeon is to difficult (maybe after death: either the last checkpoint can be loaded or one can go back to Svartalfheim and fully heal)
-- All Levels could be split into multiple dungeons
-    - only if enough enemy types are available to fill them
-	- would enlarge the game and it could contain some more content (not only dungeons)
-	- side-quests (?)
 - Some new Items need to be added (or maybe existing items can be improved ?)
-
 - Use something like ForceFields (see boss fight of level 1) in a puzzle, where a projectile weapon of the player has to be redirected (pushed by the force field) to hit a target
-
 - Quick access items (the one that are accessible with the X button) should be configurable, so it's easier to switch to the wanted weapons (and you can configure it for every battle / level)
   - The cutscene that tells to use the lantern at the beginning of the dwarven caves needs to be reworked
-  - A new signboard in the entrance of the dwarven caves is needed that tells how this setting can be used
-  
+  - A new signboard in the entrance of the dwarven caves is needed that tells how this setting can be used  
 - The shield should protect the player more damage (not fully, but more - otherwise it's not that useful)
+- After a level is finished there should be an option to fast travel back to svartalfheim, to not run through the whole dungeon again (only possible if the player dies right now)
+- Rework the main menu animation - Thorin should chase the Chaos Wizard instead of the Minotaurus
 
 
 ## Side Quests

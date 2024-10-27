@@ -38,8 +38,7 @@ public class RuneSubMenu extends ItemSubMenu {
 	}
 	
 	@Override
-	protected void drawItem(SpriteBatch batch, float posX, float posY, float scaledWidth, float scaledHeight, float borderFactor, float sizeFactor,
-			TextureRegion itemTexture, int index) {
+	protected void drawItem(SpriteBatch batch, float posX, float posY, float scaledWidth, float scaledHeight, float borderFactor, float sizeFactor, TextureRegion itemTexture, int index) {
 		if (index == RuneType.HAGALAZ.order && !runeHagalazForged) {
 			//the rune hagalaz needs to be forged after use; if it's not forged, the texture is marked in gray
 			batch.setColor(Color.LIGHT_GRAY);
@@ -71,12 +70,12 @@ public class RuneSubMenu extends ItemSubMenu {
 			return RUNE_NOT_FOUND_YET;
 		}
 		
-		if (hoveredRune == RuneType.HAGALAZ) {
+		if (hoveredRune == RuneType.KENAZ) {
 			if (runeHagalazForged) {
-				return RuneType.HAGALAZ.description + RuneType.RUNE_HAGALAZ_DESCRIPTION_POSTFIX_FORGED;
+				return RuneType.KENAZ.description + RuneType.RUNE_HAGALAZ_DESCRIPTION_POSTFIX_FORGED;
 			}
 			else {
-				return RuneType.HAGALAZ.description + RuneType.RUNE_HAGALAZ_DESCRIPTION_POSTFIX_UNFORGED;
+				return RuneType.KENAZ.description + RuneType.RUNE_HAGALAZ_DESCRIPTION_POSTFIX_UNFORGED;
 			}
 		}
 		

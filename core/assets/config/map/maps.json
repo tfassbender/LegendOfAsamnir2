@@ -6,7 +6,7 @@
 		name: loa2_prolog,
 		map: "map/loa2_prolog.tmx",
 		initialStartingPointId: 0,
-		//initial: true
+		initial: true
 		homeMap: true,
 		homeMapStartingPointId: 0,
 	},
@@ -14,7 +14,7 @@
 		name: loa2_main,
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
-		initialStartingPointId: 5,
+		initialStartingPointId: 9,
 		//initial: true
 	},
 	{
@@ -60,8 +60,8 @@
 	{
         name: loa2_dwarven_mine_castle,
         map: "map/loa2_l1_dwarven_mine_castle.tmx",
-        initialStartingPointId: 0,
-		initial: true
+        initialStartingPointId: 15,
+		//initial: true
 	},
 	
 	//****************************************

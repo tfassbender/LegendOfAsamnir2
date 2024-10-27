@@ -29,9 +29,35 @@
 //                condition_not_met: show_text_1,
 //			}
 //		},
+
+        // start condition - only for level 1
+		condition__thorin_has_rune_raidho: {
+			startsWithCutscene: true,
+			type: CONDITION,
+			
+			condition: {
+				conditionId: common__rune_raidho_collected,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: show_text_1,
+				condition_not_met: end,
+			}
+		},
 		
 		show_text_1: {
-			startsWithCutscene: true,
+//			startsWithCutscene: true,
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionDelayInSeconds: 1.5f,
