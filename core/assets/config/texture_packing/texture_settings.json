@@ -445,12 +445,15 @@
 				raw_images/menu/background/small_banner,
 				raw_images/menu/background/yellow_board,
 				raw_images/menu/background/yellow_paper,
+				raw_images/menu/background/background_images,
 				
 				raw_images/dwarf/dwarf_run_right,
 				raw_images/dwarf/dwarf_idle_right,
 				raw_images/dwarf/dwarf_attack_jump_right,
-				raw_images/enemy/minotaur/minotaur_move,
-				raw_images/enemy/minotaur/minotaur_die,
+				raw_images/restricted/enemy/elite_mage/elite_mage_idle,
+				raw_images/restricted/enemy/elite_mage/elite_mage_cast_with_effect,
+				raw_images/restricted/enemy/elite_mage/elite_mage_cast_loop_with_effect,
+				raw_images/restricted/enemy/elite_mage/elite_mage_blast_with_effect,
 				
 				//runes
 				raw_images/items/runes,

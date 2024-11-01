@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.screen.menu;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Align;
 
 import net.jfabricationgames.gdx.data.GameDataHandler;
@@ -17,12 +18,14 @@ import net.jfabricationgames.gdx.screen.menu.components.MainMenuAnimation;
 import net.jfabricationgames.gdx.screen.menu.components.MenuBox;
 import net.jfabricationgames.gdx.screen.menu.dialog.CreditsDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.LoadGameDialog;
+import net.jfabricationgames.gdx.texture.TextureLoader;
 
 public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	
 	private static final String INPUT_CONTEXT_NAME = "mainMenu";
 	private static final String MAIN_MENU_STATE_CONFIG = "config/menu/main_menu_states.json";
 	private static final String STATE_PREFIX_LOAD_DIALOG = "loadDialog_";
+	private static final String TEXTURE_CONFIG = "config/menu/main_menu_textures.json";
 	
 	private MenuBox background;
 	private MenuBox bannerMainMenu;
@@ -38,6 +41,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	private CreditsDialog creditsDialog;
 	
 	private MainMenuAnimation mainMenuAnimation;
+	private TextureRegion backgroundImage;
 	
 	public MainMenuScreen() {
 		super(MAIN_MENU_STATE_CONFIG);
@@ -47,6 +51,9 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 		stateMachine.changeToInitialState();
 		
 		mainMenuAnimation = new MainMenuAnimation();
+		
+		TextureLoader textureLoader = new TextureLoader(TEXTURE_CONFIG);
+		backgroundImage = textureLoader.loadTexture("main_menu_background");
 		
 		setInputContext();
 		
@@ -81,7 +88,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	private FocusButton createButton(int button) {
 		int buttonWidth = 290;
 		int buttonHeight = 55;
-		int buttonPosX = 370;
+		int buttonPosX = 20;
 		int lowestButtonY = 40;
 		int buttonGapY = 50;
 		
@@ -106,6 +113,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 		setProjectionMatrixBeforeRendering();
 		
 		batch.begin();
+		batch.draw(backgroundImage, -30, 0, 1260, 800);
 		mainMenuAnimation.drawAnimation(batch, delta);
 		drawBackground();
 		drawButtons();
@@ -119,7 +127,8 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	}
 	
 	private void drawBackground() {
-		background.draw(batch, 300, 0, 580, 650);
+		background.draw(batch, -10, 0, 483, 650);
+		
 	}
 	
 	private void drawButtons() {
@@ -133,7 +142,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	private void drawBanners() {
 		banner.draw(batch, -15, 575, 1200, 350);
 		bannerSubTitle.draw(batch, 90, 565, 1000, 210);
-		bannerMainMenu.draw(batch, 310, 470, 550, 250);
+		bannerMainMenu.draw(batch, -40, 470, 550, 250);
 	}
 	
 	private void drawTexts() {
@@ -145,7 +154,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 		screenTextWriter.setScale(1.3f);
 		screenTextWriter.drawText("Rise of the Chaos Wizard", 200, 687);
 		
-		int buttonTextX = 370;
+		int buttonTextX = 20;
 		int buttonTextWidth = 430;
 		screenTextWriter.setColor(Color.BLACK);
 		screenTextWriter.setScale(1.5f);

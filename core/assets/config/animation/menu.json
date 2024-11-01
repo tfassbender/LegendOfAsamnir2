@@ -32,13 +32,25 @@
 			playMode: LOOP
 		},
 		{
-			name: minotaur_move,
+			name: elite_mage_idle,
 			atlas: packed/menu/menu.atlas,
 			frameDuration: 0.1,
 			playMode: LOOP
 		},
 		{
-			name: minotaur_die,
+			name: elite_mage_cast_with_effect,
+			atlas: packed/menu/menu.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: elite_mage_cast_loop_with_effect,
+			atlas: packed/menu/menu.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP
+		},
+		{
+			name: elite_mage_blast_with_effect,
 			atlas: packed/menu/menu.atlas,
 			frameDuration: 0.1,
 			playMode: NORMAL
