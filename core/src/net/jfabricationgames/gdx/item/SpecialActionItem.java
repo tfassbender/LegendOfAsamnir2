@@ -30,7 +30,7 @@ public class SpecialActionItem extends Item {
 	public void pickUp(boolean playSound) {
 		if (canUseSpecialActions()) {
 			super.pickUp(playSound);
-			GlobalValuesDataHandler.getInstance().put(action.getActionEnabledGlobalValueKey(), true);
+			GlobalValuesDataHandler.getInstance().put(action.getActionAvailableGlobalValueKey(), true);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.SPECIAL_ACTION_ITEM_PICKED_UP).setStringValue(itemName));
 		}
 	}

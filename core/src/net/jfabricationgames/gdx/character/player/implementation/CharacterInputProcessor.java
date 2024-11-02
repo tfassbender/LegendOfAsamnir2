@@ -7,6 +7,7 @@ import net.jfabricationgames.gdx.input.InputActionListener;
 import net.jfabricationgames.gdx.input.InputContext;
 import net.jfabricationgames.gdx.input.InputManager;
 import net.jfabricationgames.gdx.interaction.InteractionManager;
+import net.jfabricationgames.gdx.item.SpecialAction;
 
 class CharacterInputProcessor implements InputActionListener {
 	
@@ -525,12 +526,16 @@ class CharacterInputProcessor implements InputActionListener {
 		}
 		
 		SpecialAction specialAction = SpecialAction.getNextSpecialAction(player.getActiveSpecialAction(), delta);
-		while (!specialAction.canBeUsed()) {
-			//search on till a special action can be used (should not be an infinite loop, since the jump action can always be used)
+		int tries = 0;
+		while (!(specialAction.canBeUsed() && specialAction.isQuickSelectionEnabled()) && tries <= SpecialAction.values().length) {
 			specialAction = SpecialAction.getNextSpecialAction(specialAction, delta);
+			tries++;
 		}
 		
-		player.setActiveSpecialAction(specialAction);
+		if (tries <= SpecialAction.values().length) {
+			player.setActiveSpecialAction(specialAction);
+		}
+		// else: no special action found that can be used -> do nothing
 	}
 	
 	private void handleSprintByInputAction(MovingDirection direction) {

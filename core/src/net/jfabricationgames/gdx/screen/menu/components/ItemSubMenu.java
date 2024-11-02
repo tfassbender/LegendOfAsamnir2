@@ -15,8 +15,8 @@ public class ItemSubMenu extends MenuBox {
 	private int numItemsPerLine;
 	private int numItemLines;
 	
-	private int selectedIndex;//-1 for none
-	private int hoveredIndex;//-1 for none
+	private int selectedIndex; //-1 for none
+	private int hoveredIndex; //-1 for none
 	
 	private TextureRegion selectionTexture;
 	private TextureRegion hoverTexture;
@@ -48,7 +48,7 @@ public class ItemSubMenu extends MenuBox {
 	
 	public void updateStateAfterMenuShown() {}
 	
-	protected void loadItemTextures() {
+	private void loadItemTextures() {
 		itemTextures = new Array<>(items.size);
 		for (String item : items) {
 			if (item != null) {
@@ -97,10 +97,8 @@ public class ItemSubMenu extends MenuBox {
 		return true;
 	}
 	
-	protected void drawItem(SpriteBatch batch, float posX, float posY, float scaledWidth, float scaledHeight, float borderFactor, float sizeFactor,
-			TextureRegion itemTexture, int index) {
-		batch.draw(itemTexture, posX + scaledWidth * borderFactor, posY + scaledHeight * borderFactor, scaledWidth * sizeFactor,
-				scaledHeight * sizeFactor);
+	protected void drawItem(SpriteBatch batch, float posX, float posY, float scaledWidth, float scaledHeight, float borderFactor, float sizeFactor, TextureRegion itemTexture, int index) {
+		batch.draw(itemTexture, posX + scaledWidth * borderFactor, posY + scaledHeight * borderFactor, scaledWidth * sizeFactor, scaledHeight * sizeFactor);
 	}
 	
 	private int calculateItemIndex(int x, int y) {

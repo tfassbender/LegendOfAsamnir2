@@ -168,27 +168,34 @@
 	settingsDialog_button_difficultyEasy: {
         up: settingsDialog_button_back,
         down: settingsDialog_button_difficultyNormal,
-        left: settingsDialog_button_controls,
+        left: settingsDialog_button_item_settings,
         select: setDifficultyEasy,
     },
     
     settingsDialog_button_difficultyNormal: {
         up: settingsDialog_button_difficultyEasy,
         down: settingsDialog_button_difficultyHard,
-        left: settingsDialog_button_controls,
+        left: settingsDialog_button_item_settings,
         select: setDifficultyNormal,
 	},
 	
 	settingsDialog_button_difficultyHard: {
         up: settingsDialog_button_difficultyNormal,
-        left: settingsDialog_button_controls,
+        left: settingsDialog_button_item_settings,
         select: setDifficultyHard,
 	},
 	
 	settingsDialog_button_controls: {
-		up: settingdsDialog_button_back,
+		up: settingsDialog_button_back,
+		down: settingsDialog_button_item_settings,
 		right: settingsDialog_button_difficultyEasy,
 		select: showControls,
+	},
+	
+	settingsDialog_button_item_settings: {
+        up: settingsDialog_button_controls,
+		right: settingsDialog_button_difficultyEasy,
+        select: showItemSettings,
 	},
 	
 	//*********************************************
@@ -197,6 +204,57 @@
 	
 	button_controlsDialogBack: {
 		select: closeControlsDialog,
+	},
+	
+	//*********************************************
+	//*** Item Settings Dialog
+	//*********************************************
+	
+	itemsettings_dialog_button_back: {
+        select: closeItemSettingsDialog,
+        down: itemsettings_dialog_checkbox_bow,
+        left: itemsettings_dialog_checkbox_bow,
+    },
+    
+	itemsettings_dialog_checkbox_bow: {
+		up: itemsettings_dialog_button_back,
+		down: itemsettings_dialog_checkbox_bomb,
+		right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
+	},
+	
+	itemsettings_dialog_checkbox_bomb: {
+        up: itemsettings_dialog_checkbox_bow,
+        down: itemsettings_dialog_checkbox_boomerang,
+        right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
+	},
+	
+	itemsettings_dialog_checkbox_boomerang: {
+        up: itemsettings_dialog_checkbox_bomb,
+        down: itemsettings_dialog_checkbox_wand,
+        right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
+	},
+	
+	itemsettings_dialog_checkbox_wand: {
+        up: itemsettings_dialog_checkbox_boomerang,
+        down: itemsettings_dialog_checkbox_feather,
+        right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
+	},
+	
+	itemsettings_dialog_checkbox_feather: {
+        up: itemsettings_dialog_checkbox_wand,
+        down: itemsettings_dialog_checkbox_lantern,
+        right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
+	},
+	
+	itemsettings_dialog_checkbox_lantern: {
+        up: itemsettings_dialog_checkbox_feather,
+        right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
 	},
 	
 	//*********************************************

@@ -4,5 +4,5 @@ public interface ItemSpecialAction {
 	
 	public float getScaleFactor();
 	
-	public String getActionEnabledGlobalValueKey();
+	public String getActionAvailableGlobalValueKey();
 }

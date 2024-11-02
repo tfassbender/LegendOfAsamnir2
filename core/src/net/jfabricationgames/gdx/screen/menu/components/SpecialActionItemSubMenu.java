@@ -1,7 +1,7 @@
 package net.jfabricationgames.gdx.screen.menu.components;
 
-import net.jfabricationgames.gdx.character.player.implementation.SpecialAction;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
+import net.jfabricationgames.gdx.item.SpecialAction;
 
 public class SpecialActionItemSubMenu extends ItemSubMenu {
 	
@@ -20,7 +20,7 @@ public class SpecialActionItemSubMenu extends ItemSubMenu {
 		
 		GlobalValuesDataHandler globalValues = GlobalValuesDataHandler.getInstance();
 		for (SpecialAction action : SpecialAction.values()) {
-			specialActionAvailable[action.indexInMenu] = globalValues.getAsBoolean(action.actionEnabledGlobalValueKey);
+			specialActionAvailable[action.indexInMenu] = globalValues.getAsBoolean(action.actionAvailableGlobalValueKey);
 		}
 	}
 	

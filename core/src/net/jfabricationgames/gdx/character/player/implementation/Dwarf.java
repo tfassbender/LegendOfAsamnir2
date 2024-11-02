@@ -29,6 +29,7 @@ import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.item.Item;
 import net.jfabricationgames.gdx.item.ItemAmmoType;
 import net.jfabricationgames.gdx.item.ItemFactory;
+import net.jfabricationgames.gdx.item.SpecialAction;
 import net.jfabricationgames.gdx.map.ground.GameMapGroundType;
 import net.jfabricationgames.gdx.object.event.EventObject;
 import net.jfabricationgames.gdx.physics.BeforeWorldStep;

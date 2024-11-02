@@ -11,6 +11,7 @@ import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.item.SpecialAction;
 
 public class GlobalValuesDataHandler implements DataHandler, EventListener {
 	
@@ -34,6 +35,13 @@ public class GlobalValuesDataHandler implements DataHandler, EventListener {
 	private GlobalValuesDataHandler() {
 		json = new Json();
 		EventHandler.getInstance().registerEventListener(this);
+	}
+	
+	public void initializeNewGame() {
+		// all special actions can be quick selected at the beginning of the game
+		for (SpecialAction action : SpecialAction.values()) {
+			put(action.actionQuickSelectEnabledGlobalValueKey, true);
+		}
 	}
 	
 	@Override

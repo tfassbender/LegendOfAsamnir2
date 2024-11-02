@@ -15,6 +15,7 @@ public class SettingsDialog extends InGameMenuDialog {
 	private ShapeRenderer shapeRenderer;
 	
 	private FocusButton buttonControls;
+	private FocusButton buttonItemSettings;
 	
 	private MenuBox backgroundDifficulty;
 	private MenuBox bannerDifficulty;
@@ -49,6 +50,14 @@ public class SettingsDialog extends InGameMenuDialog {
 				.setSize(250, 50) //
 				.build();
 		buttonControls.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
+		
+		buttonItemSettings = new FocusButtonBuilder() //
+				.setNinePatchConfig(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG) //
+				.setNinePatchConfigFocused(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG_FOCUSED) //
+				.setPosition(100, 410) //
+				.setSize(250, 50) //
+				.build();
+		buttonItemSettings.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
 		
 		buttonDifficultyEasy = new FocusButtonBuilder() //
 				.setNinePatchConfig(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG) //
@@ -87,6 +96,7 @@ public class SettingsDialog extends InGameMenuDialog {
 			buttonBackToMenu.draw(batch);
 			
 			buttonControls.draw(batch);
+			buttonItemSettings.draw(batch);
 			
 			buttonDifficultyEasy.draw(batch);
 			buttonDifficultyNormal.draw(batch);
@@ -110,7 +120,8 @@ public class SettingsDialog extends InGameMenuDialog {
 		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToMenu) + "Back", 970, 713);
 		
 		screenTextWriter.setScale(1f);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonControls) + "Controls", 175, 550);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonControls) + "Controls", 120, 550, 340, Align.center, false);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonItemSettings) + "Items", 120, 460, 340, Align.center, false);
 		screenTextWriter.drawText("Difficulty", 710, 572);
 		
 		screenTextWriter.setScale(0.8f);
@@ -162,6 +173,9 @@ public class SettingsDialog extends InGameMenuDialog {
 			case "settingsDialog_button_controls":
 				button = buttonControls;
 				break;
+			case "settingsDialog_button_item_settings":
+				button = buttonItemSettings;
+				break;
 			case "settingsDialog_button_difficultyEasy":
 				button = buttonDifficultyEasy;
 				break;
@@ -182,6 +196,7 @@ public class SettingsDialog extends InGameMenuDialog {
 	private void unfocusAll() {
 		buttonBackToMenu.setFocused(false);
 		buttonControls.setFocused(false);
+		buttonItemSettings.setFocused(false);
 		buttonDifficultyEasy.setFocused(false);
 		buttonDifficultyNormal.setFocused(false);
 		buttonDifficultyHard.setFocused(false);

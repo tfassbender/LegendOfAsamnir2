@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.Align;
 
 import net.jfabricationgames.gdx.data.GameDataHandler;
 import net.jfabricationgames.gdx.data.GameDataService;
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -242,6 +243,7 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	
 	public void startGame() {
 		GameDataHandler.getInstance().createNewGameData();
+		GlobalValuesDataHandler.getInstance().initializeNewGame();
 		createGameScreen(() -> {
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.PRE_NEW_GAME_STARTED));
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.NEW_GAME_STARTED));

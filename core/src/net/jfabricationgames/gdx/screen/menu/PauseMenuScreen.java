@@ -9,11 +9,11 @@ import com.badlogic.gdx.utils.Align;
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.animation.TextureAnimationDirector;
-import net.jfabricationgames.gdx.character.player.implementation.SpecialAction;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.item.SpecialAction;
 import net.jfabricationgames.gdx.screen.ScreenManager;
 import net.jfabricationgames.gdx.screen.menu.components.AmmoSubMenu;
 import net.jfabricationgames.gdx.screen.menu.components.FocusButton;
@@ -25,6 +25,7 @@ import net.jfabricationgames.gdx.screen.menu.components.SpecialActionItemSubMenu
 import net.jfabricationgames.gdx.screen.menu.control.MenuStateMachine;
 import net.jfabricationgames.gdx.screen.menu.dialog.ControlsDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.GameMapDialog;
+import net.jfabricationgames.gdx.screen.menu.dialog.ItemSettingsDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.LoadGameDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.SaveGameDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.SettingsDialog;
@@ -49,9 +50,11 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	private static final String STATE_PREFIX_MAP_DIALOG = "mapDialog_";
 	private static final String STATE_PREFIX_SAVE_DIALOG = "saveDialog_";
 	private static final String STATE_PREFIX_LOAD_DIALOG = "loadDialog_";
+	private static final String STATE_PREFIX_ITEM_SETTINGS_DIALOG = "itemsettings_dialog_"; // must not start with the prefix "item_" because of the STATE_PREFIX_ITEM
 	
 	private SettingsDialog settingsDialog;
 	private ControlsDialog controlsDialog;
+	private ItemSettingsDialog itemSettingsDialog;
 	private GameMapDialog mapDialog;
 	private SaveGameDialog saveGameDialog;
 	private LoadGameDialog loadGameDialog;
@@ -163,6 +166,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	private void createDialogs() {
 		settingsDialog = new SettingsDialog(camera);
 		controlsDialog = new ControlsDialog(camera);
+		itemSettingsDialog = new ItemSettingsDialog(camera);
 		mapDialog = new GameMapDialog(gameScreen, camera, this::backToGame, this::playMenuSound);
 		saveGameDialog = new SaveGameDialog(camera, this::backToGame, this::playMenuSound);
 		loadGameDialog = new LoadGameDialog(camera, this::backToGame, this::playMenuSound);
@@ -182,6 +186,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		if (action.equals(ACTION_BACK) && isEventTypeHandled(type)) {
 			if (controlsDialog.isVisible()) {
 				closeControlsDialog();
+			}
+			else if (itemSettingsDialog.isVisible()) {
+				closeItemSettingsDialog();
 			}
 			else if (mapDialog.isVisible()) {
 				closeMapDialog();
@@ -249,6 +256,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		
 		settingsDialog.draw();
 		controlsDialog.draw();
+		itemSettingsDialog.draw();
 		mapDialog.draw(delta);
 		saveGameDialog.draw();
 		loadGameDialog.draw();
@@ -352,6 +360,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		else if (stateName.startsWith(STATE_PREFIX_SETTINGS_DIALOG)) {
 			settingsDialog.setFocusTo(stateName);
 		}
+		else if (stateName.startsWith(STATE_PREFIX_ITEM_SETTINGS_DIALOG)) {
+			itemSettingsDialog.setFocusTo(stateName);
+		}
 		else if (stateName.startsWith(STATE_PREFIX_MAP_DIALOG)) {
 			if (stateName.equals(STATE_PREFIX_MAP_DIALOG + "button_mapDialogBack")) {
 				mapDialog.setFocusToBackButton();
@@ -386,6 +397,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 					button = buttonShowMap;
 					break;
 				case "controlsDialogBack":
+				case "itemSettingsDialogBack":
 					//dialog button; not handled here
 					break;
 				default:
@@ -410,6 +422,8 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		buttonShowMap.setFocused(false);
 		itemMenu.setHoveredIndex(-1);
 		runeMenu.setHoveredIndex(-1);
+		
+		itemSettingsDialog.unfocusAll();
 	}
 	
 	@Override
@@ -417,6 +431,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		super.dispose();
 		settingsDialog.dispose();
 		controlsDialog.dispose();
+		itemSettingsDialog.dispose();
 		mapDialog.dispose();
 		saveGameDialog.dispose();
 		loadGameDialog.dispose();
@@ -436,6 +451,12 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		Gdx.app.debug(getClass().getSimpleName(), "'Show Controls' selected");
 		controlsDialog.setVisible(true);
 		stateMachine.changeState("button_controlsDialogBack");
+	}
+	
+	public void showItemSettings() {
+		Gdx.app.debug(getClass().getSimpleName(), "'Show Item Settings' selected");
+		itemSettingsDialog.setVisible(true);
+		stateMachine.changeState("itemsettings_dialog_button_back");
 	}
 	
 	public void saveGame() {
@@ -494,7 +515,12 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	
 	public void closeControlsDialog() {
 		controlsDialog.setVisible(false);
-		stateMachine.changeState("settingsDialog_button_back");
+		stateMachine.changeState("settingsDialog_button_controls");
+	}
+	
+	public void closeItemSettingsDialog() {
+		itemSettingsDialog.setVisible(false);
+		stateMachine.changeState("settingsDialog_button_item_settings");
 	}
 	
 	public void closeMapDialog() {
@@ -517,6 +543,14 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	}
 	
 	public void noAction() {}
+	
+	//*********************************************************************
+	//*** State machine methods for item menu (called via reflection)
+	//*********************************************************************
+	
+	public void toggleItemSettingsCheckbox() {
+		itemSettingsDialog.toggleSelectedCheckbox();
+	}
 	
 	//*********************************************************************
 	//*** State machine methods for save dialog (called via reflection)

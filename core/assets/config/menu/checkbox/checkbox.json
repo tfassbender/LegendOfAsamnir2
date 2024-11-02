@@ -1,0 +1,6 @@
+{
+	checkmark: {
+		atlas: packed/menu/menu.atlas,
+		texture: checkmark,
+	},
+}
