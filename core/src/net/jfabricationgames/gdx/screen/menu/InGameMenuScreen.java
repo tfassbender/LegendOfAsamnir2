@@ -73,7 +73,8 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 		Gdx.app.debug(getClass().getSimpleName(), "'Back to Svartalfheim' selected");
 		
 		GameScreen.loadAndShowGameScreen(() -> {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RESTART_FROM_SVARTALFHEIM));
+			// the boolean value determines that the cause of the respawn was that the player died
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RESTART_FROM_SVARTALFHEIM).setBooleanValue(true));
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.PLAYER_RESPAWNED));
 			backToGame();
 		});

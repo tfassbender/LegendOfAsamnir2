@@ -1,0 +1,26 @@
+{
+	id: loa2_level_not_completed_cutscene,
+	controlledActions: {
+
+		show_text: {
+			startsWithCutscene: true,
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I shouldn't leave this place yet.\n             \nI think there is still something to do here.  ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

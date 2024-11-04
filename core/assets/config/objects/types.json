@@ -429,6 +429,21 @@
         textureAfterAction: empty,		
 	}
 	
+	return_point: {
+        type: INTERACTIVE,
+        
+        texture: empty,
+        
+		addSensor: true,
+		sensorRadius: 0.8f,
+		
+		interactionMarkerOffsetX: 0.4f,
+		interactionMarkerOffsetY: 1.8f,
+		
+		multipleActionExecutionsPossible: true,
+		interactiveAction: TRAVEL_BACK_TO_SVARTALFHEIM,
+	},
+	
 	//**********************************
 	//*** Walls for demo 2 level 2
 	//**********************************

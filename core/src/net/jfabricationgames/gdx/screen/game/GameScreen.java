@@ -329,7 +329,9 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		}
 		else if (event.eventType == EventType.RESTART_FROM_SVARTALFHEIM) {
 			changeMap(GameMapManager.getInstance().getHomeMapIdentifier(), GameMapManager.getInstance().getHomeMapStartingPointId());
-			Player.getInstance().resetAfterGameOver();
+			if (event.booleanValue) { // the boolean value is used to determine if the player died before the respawn (true) or if the level was finished (false)
+				Player.getInstance().resetAfterGameOver();
+			}
 			GameStateManager.getInstance().setGameOver(false);
 			gameOver = false;
 		}

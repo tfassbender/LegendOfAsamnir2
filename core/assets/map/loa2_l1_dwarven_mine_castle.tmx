@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="533">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="536">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -45,7 +45,7 @@
  </layer>
  <layer id="16" name="terrain_2" width="88" height="88" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2MEJwkAQBdCFFazAgx3kkO4sJfbhxQbEClKANdiChJxCZDQhEVffg2FnmdvyD8ukBMCvOlZ9sbxDndK56qvrWVZTP+8BAAAAAICx22beDAAAAAAAWM8+2NHv7O/5ctcgo9GM97TBG0YzAAAAgFe2eXgCAPyDSx7X3X+IQsgvJZNfPu2U4/sU8kvJ5Bdi3X7cjhwAAAAAYD0PHi4khw==
+   eJzt2M0JAjEQBtBABCvwYAc5bHeWon14sQGxgsWzNXiwARVPsjL+4KpZ34OQhLmE4TuESQmAoVqUlLbl268YplmT0urU20O5nHmveXP7DAAAAAAAdO1Gr9UAAAAAAID+TIMZ/cT8nh+3CTIa1XhMG/QwqgEAAADcM87XOwDAP1jn7tr7D1EJ+aVm8sunLXN8f4b8UjP5hdh5Pm5GDgAAAADQnyNwpiUF
   </data>
  </layer>
  <layer id="8" name="shadow_underlying" width="88" height="88" locked="1">
@@ -693,7 +693,7 @@
    </properties>
    <point/>
   </object>
-  <object id="499" name="item.rune_raidho" x="832" y="208">
+  <object id="499" name="item.rune_raidho" x="816" y="202">
    <point/>
   </object>
   <object id="502" name="object.chest" x="763" y="283">
@@ -740,18 +740,6 @@
   <object id="511" name="object.chest" x="978" y="1312">
    <properties>
     <property name="drop" value="{shield_full: 1}"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="512" name="object.chest" x="785" y="239">
-   <properties>
-    <property name="drop" value="{shield_full: 1}"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="513" name="object.chest" x="880" y="239">
-   <properties>
-    <property name="drop" value="{health_full: 1}"/>
    </properties>
    <point/>
   </object>
@@ -828,6 +816,20 @@
    <properties>
     <property name="eventParameter" value="loa2_unfinished_end"/>
    </properties>
+  </object>
+  <object id="534" name="object.return_point" x="847.455" y="178">
+   <properties>
+    <property name="condition" value="common__rune_raidho_collected"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="535" name="object.signboard" x="880" y="235">
+   <properties>
+    <property name="colorHeader" value="#5E5E5E"/>
+    <property name="displayText" value="The valkyrie statues can be used to travel back to svartalfheim after a level is finished. "/>
+    <property name="displayTextHeader" value="Valkyrie Statues"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
@@ -1318,38 +1320,9 @@
   <object id="475" x="795.25" y="207.5">
    <polygon points="0,0 -4,-38.7273 -11.2727,-46.9091"/>
   </object>
-  <object id="489" x="812.482" y="140.322">
-   <polygon points="0,0 -8.72727,4 -8.90909,40"/>
-  </object>
-  <object id="491" x="803.572" y="180.682">
-   <polygon points="0,0 24.9091,0.181818 12.5455,-38.1818"/>
-  </object>
   <object id="492" x="805.932" y="180.682" width="19.6364" height="3.63636"/>
-  <object id="487" x="815.932" y="130.862">
-   <polygon points="0,0 -12.5455,2.36364 12.7273,2.18182"/>
-  </object>
-  <object id="488" x="803.572" y="133.592">
-   <polygon points="0,0 12.7273,9.27273 24.9091,-0.363636"/>
-  </object>
-  <object id="490" x="820.292" y="139.952">
-   <polygon points="0,0 7.45455,4.72727 8,40.9091"/>
-  </object>
-  <object id="493" x="848.057" y="130.987">
-   <polygon points="0,0 -12.5455,2.36364 12.7273,2.18182"/>
-  </object>
-  <object id="494" x="835.697" y="133.717">
-   <polygon points="0,0 12.7273,9.27273 24.9091,-0.363636"/>
-  </object>
-  <object id="495" x="844.607" y="140.447">
-   <polygon points="0,0 -8.72727,4 -8.90909,40"/>
-  </object>
-  <object id="496" x="852.417" y="140.077">
-   <polygon points="0,0 7.45455,4.72727 8,40.9091"/>
-  </object>
-  <object id="497" x="835.697" y="180.807">
-   <polygon points="0,0 24.9091,0.181818 12.5455,-38.1818"/>
-  </object>
   <object id="498" x="838.057" y="180.807" width="19.6364" height="3.63636"/>
+  <object id="533" x="800" y="128" width="63.8182" height="52.5455"/>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="263" x="646.125" y="2295.25" width="18.125" height="32.125"/>

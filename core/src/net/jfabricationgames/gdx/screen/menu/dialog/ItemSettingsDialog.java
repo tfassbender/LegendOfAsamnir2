@@ -137,8 +137,8 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 		
 		screenTextWriter.setScale(0.6f);
 		screenTextWriter.drawText(itemExplanationText, 540, 505, 500, Align.left, true);
-		screenTextWriter.drawText("Check items in this menu to be able to access them with the 'R' Key on the keyboard or the X button on the controller. " //
-				+ "Other items can be selected in the pause menu.", 540, 280, 500, Align.left, true);
+		screenTextWriter.drawText("Check items in this menu to be able to equip them with the 'R' Key on the keyboard or the 'X' button on the controller.\n" //
+				+ "Other items can be equipped in the pause menu.", 540, 280, 500, Align.left, true);
 		
 		screenTextWriter.setScale(1f);
 		screenTextWriter.setColor(Color.BROWN);

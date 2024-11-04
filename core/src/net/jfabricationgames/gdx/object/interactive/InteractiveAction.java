@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.object.interactive;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.maps.MapProperties;
 
+import net.jfabricationgames.gdx.condition.ConditionHandler;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -88,6 +89,27 @@ public enum InteractiveAction {
 		public void execute(InteractiveObject object) {
 			FastTravelPointEventDto eventDto = object.createFastTravelPointEventDto();
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.FAST_TRAVEL_POINT_ENABLED).setParameterObject(eventDto));
+		}
+	},
+	TRAVEL_BACK_TO_SVARTALFHEIM {
+		
+		private static final String MAP_PROPERTY_KEY_CONDITION = "condition";
+		private static final String CUTSCENE_ID_LEVEL_NOT_FINISHED = "loa2_level_not_completed_cutscene";
+		private static final String CUTSCENE_ID_TRAVEL_BACK_TO_SVARTALFHEIM = "loa2_travel_back_to_svartalfheim_cutscene";
+		
+		@Override
+		public void execute(InteractiveObject object) {
+			String condition = object.getMapProperties().get(MAP_PROPERTY_KEY_CONDITION, String.class);
+			if (ConditionHandler.getInstance().isConditionMet(condition)) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.START_CUTSCENE) //
+						.setStringValue(CUTSCENE_ID_TRAVEL_BACK_TO_SVARTALFHEIM));
+			}
+			else {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.START_CUTSCENE) //
+						.setStringValue(CUTSCENE_ID_LEVEL_NOT_FINISHED));
+			}
 		}
 	},
 	START_CUTSCENE {

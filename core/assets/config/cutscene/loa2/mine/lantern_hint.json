@@ -28,6 +28,21 @@
             waitForEventToFinish: true,
             
             executes: [
+            	thorin_lantern_hint_2,
+           	],
+		},
+		
+		thorin_lantern_hint_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "If I remember correctly I should press the 'R' key on the keyboard or the 'X' button on the controller to switch to the selected item and then use it with the 'F' key or the 'RB' button. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
             	set_gloal_value__hint_given,
            	],
 		},

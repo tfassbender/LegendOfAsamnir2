@@ -1,0 +1,54 @@
+{
+	id: loa2_travel_back_to_svartalfheim_cutscene,
+	controlledActions: {
+
+		thorin_question: {
+			startsWithCutscene: true,
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Travel back to Svartalfheim?",
+				headerColor: #5E5E5E,
+				options: [
+					"I want to stay here. "
+					"Get me out of here! ",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				back_to_svartalfheim__event_1,
+			],
+		},
+		
+		back_to_svartalfheim__event_1: {
+            type: EVENT,
+            
+			event: {
+				eventType: RESTART_FROM_SVARTALFHEIM,
+			},
+			
+			executes: [
+				back_to_svartalfheim__event_2,
+			]
+		},
+		
+		back_to_svartalfheim__event_2: {
+            type: EVENT,
+            
+			event: {
+				eventType: PLAYER_RESPAWNED,
+			},
+			
+			executes: [
+				end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

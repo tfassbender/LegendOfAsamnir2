@@ -3,7 +3,7 @@
 		damageFactor: 0.75,
 		attackDamageFactor: 1.25,
 	},
-	1: { // normal - "I'm a berserker!"
+	1: { // normal - "I'll drink with the Einherjar"
 		damageFactor: 1,
 		attackDamageFactor: 1,
 	},
