@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="62" height="57" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="951">
+ <properties>
+  <property name="above_player_layers" value="[5, 6]"/>
+  <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
+  <property name="building_level" value="false"/>
+  <property name="dungeon_level" value="false"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/fields_of_vigrid.json"/>
+  <property name="shadow_layers" value="[7, 8, 9]"/>
+ </properties>
+ <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
+ <tileset firstgid="491" source="tileset/cave.tsx"/>
+ <tileset firstgid="771" source="tileset/dwarven_caves.tsx"/>
+ <tileset firstgid="1247" source="tileset/town_tileset.tsx"/>
+ <tileset firstgid="2507" source="tileset/cultist_dungeon.tsx"/>
+ <tileset firstgid="2807" source="tileset/forest_prairie_tileset.tsx"/>
+ <tileset firstgid="3374" source="tileset/desert_tileset.tsx"/>
+ <tileset firstgid="3954" source="tileset/medival_house_interior.tsx"/>
+ <tileset firstgid="4467" source="tileset/medival_shop_interior.tsx"/>
+ <tileset firstgid="4847" source="tileset/arctic.tsx"/>
+ <tileset firstgid="5225" source="tileset/medival_warcamp.tsx"/>
+ <tileset firstgid="5945" source="tileset/nightmarescape.tsx"/>
+ <tileset firstgid="6554" source="tileset/magic_wasteland.tsx"/>
+ <tileset firstgid="7058" source="tileset/volcanic_lava.tsx"/>
+ <tileset firstgid="7298" source="tileset/lava_dungeon.tsx"/>
+ <tileset firstgid="7820" source="tileset/shadows.tsx"/>
+ <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
+ <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
+ <layer id="1" name="background" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztmL1OwzAQgD2mvAPQRuqCeAUeBd6EvRJLghjLDoIhrVjZEU+S8BQ4IhaXk5065K5HkrP0LU1q+fP9xMlmacxGUZRJokOHDh1TG+WFovDS9VyVXpt6q7d6q/dYvaXfi7i4WhtztwwjvT71Vu8uTq3PmeV83X3P44S8oc824B7jPBZvF2Pss21+h8Q4j8E7Nn59kfY6xKH+NFXva+t9O7J4v6yMqRpeV8Pcb4j9Ob0/retTaszC8jHAmyP2nLH+At4lgTelO2esn9Nf74Qo5lR5j2NUEdWk836w5MTeFLGHnjAvXW5WEcD9gXPV3rsGDu8hsV8Az5O07Z2k7eshSuAK57q3vF/+kAX2cUhO+fwhXXtB4Z2A/8O59sC7CMzHkQMxdYC9XT3mBN7O2eGbrySMeZ86yIFnnZdvoCaztH09BPSGc8V4c9U9Bp93d8Bzj9ZapO3rITLgGprL1bhvz47hjesfr+0vFB2uh/YxQf2OM+chFN5DyFAf4a73/+KN+/yx8l7aG/e7OXlnqM/h8w1H3ks7u1yHzwb8vOOoeWln3x5gb47cl/b04fOmjrm0ow98vkkYYi7tGMp1fB6cg7dvH3x9fgjSTn1yP/b9MAZpn74xn5t3zVy9Y78HxCDt0ofY7wExSLsoisLHNyByp3s=
+  </data>
+ </layer>
+ <layer id="2" name="background_2" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt188JwjAYh+FcFJdQoX9EcA9xEj3oGtpJdBPHUC/qFqIJVdBSaUpp8pG+L/zozfbpQRql/LRNlNp9LUs8PYjjcPtxD1I/K3O7vP+UMRbsFh0dkYt8f7e4bjPLr//c65m/Z2sz3Lhxh+v+JPX//BQpda65S2T/+1LdD22Y19wTd2W4cUuobfdeO48F+0qAvW23qWi/CrC7cJuk2V25TZLsLt0mKfZhrNSo5sZxs3tKsfsIO3bs2LsQ9l/70mIhvJ+ys0zVpJzzmmbsB4sdA3NXddPfyvcoP9+ba/a+FhdaPf2t3LdYaOHGjRt3aHXVnWrTxGJEREREJLsXD9Rnag==
+  </data>
+ </layer>
+ <layer id="5" name="terrain" width="62" height="57">
+  <data encoding="base64" compression="zlib">
+   eJztWc1uEzEQ9jEUxK09J0qQNkmjHngEhNRAKq59hLQU2iJ4AOCS/lB4jDb94w2AW2lPwBXu0Ip3YKx4yux07PUmu+1ms5/0aTdeez2fZzy2N0qlg3YlpRenDGr3fEIafMcC+5PqS7ZEvZe2SUrXdfo1Tl9RdfuNyWSBApOA08Zk8nxCWaBAmig1YU8BfCTwMfBO86YtTA9J7XsLJI/Zhh/jYBzOamnoHgd0Gn5MAknEQb+s1H7Z/nwXnu05niNWGn68bnSrgysfq9OyUmflsH5a5wTKSo7x3azB2NT8deu6WzW3jXHwxPJ9wBYTWB6YK+rXqFfC43BStr+vZzRsN/xI20jvDKr/bYoCt6UjtMN4rZNnPMaxji6/XRmMgy3OsQ/U0A2UWorgchBu0xrCvxpN0m6ejRnXpn32tRzWR32s8Rvu/7By2k73Ubf4m+t+CeWvam7dku1JrV1cm9Z8qzLQQn1JyzUw1qLynk333fqAPrqHBY5R22Gr5HfMWXusnLbBeEcssL4k3Rf3lPprqO99dHM/Nx1zQMp/pWrYx6iX+33W9EP1Yl3bPJBiEDX0QNOGoda4Y7hEyjeJbm279L5giDk/T/Jw3bTnttNYwPs2y+k0Dlxxrm2UfMfzGYfUhueNuPNc8rWG5MNzuF6w5wiMA11/ytjQNFeahyQNG0GYHKPm8yigzXxea/C1CnPaZbxUwu9B8DVymByVVF6TIPmXzgHbWmWLFwk6zvtmv6a57dBzQOrtm3q+sSztR2xALeg3ncdQk+08T33crtjzWmh/5bBp1LV4lPbos5KZSwHJffxK69N7W/88F1G4/pfDZwsxdMX99oI+m6tejX2c/zjP+XrN/e2DKB/FWafmhLr8XBEFXU/am9jyexbh2su4YMtTrhyo4Yrnm4KOG99zK81r9KwZdWaZzZDuUXKddObGvEH3aqP2kzaStk3as2cdSX1rt51nsoZRc8/qjFJrwPWZwe+s66Xg8c73BfQcQOsuTiv1GvS+Ab4FPpi+yryA5ujlnOiSvrtd7nPYmjcFv+/nRLdGnByfJ90cHeZ3DYwFrfsUeAY8BB4Bj8d8LFx+xzn+EDT+BP4CfgJ+Bn4Zc90+WAeNL4zOb3D9DvyRA93dllJLwGXgU+AK8BnwOXAVuAbsCGvXuK9jPdC1AdwEbgG3ge+AO8D3wA+tQT1+/mhmeG/ug13QtQfsA/eBB8BD4BHwGPjR6I57ps86fHXnDYXuQnehu9CdNxS6C91xdf8D9cNWAg==
+  </data>
+ </layer>
+ <layer id="16" name="terrain_2" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1DFOAkEUxvFXeAIRCrVYIwImSKO12tuoHEDv4DXsXO6gMVZyCIlaeRPDAfwIu3EhBGj2jc7+f8lLdmY22f0y88YMAAAAAAAAKNd3e/13a53y/iOU1/3VazHl3syyfGXZ+tr/Xmda/fbsmofHxOwp8ftevqd3ypo2zQbN6XNxzcNbYjZK/L6X7+m4cJbHc2chNqny1Q7NtlTPLbP7rF5av/NpRL2dGyrTsbKdLMidzw9Lzr2srz16fj63l2V97dHz74Xcn4651+V93/8V3vc9wgl994US+u4DAPjZbpjtqHYbof+kPA/KlqoGhYxdPR+pepHm3qvPjj80HqlOlfdMdR5p7omNuWwHGl+qrlTXEedGddyol2/rq9+LTbeCmScuKpobAAAA/98Pn/8/GQ==
+  </data>
+ </layer>
+ <layer id="13" name="terrain_3" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1cEJAkEMAMBtwcfeFSCc9xQL8CF2JxajLWgJFmRA5YRTX6IYZyCwS/axIYSUAgAAAADAu536x+fsNt1w3nbP3wEAAPB/dk0p+4hFvdzndZzL6BB1HSPW13pXdZwjv0af/1Jto/ftt3/xebOouU9c9/3+upnGjE8Sz/myDvsr885+xc4GAPhNZzo2ELA=
+  </data>
+ </layer>
+ <layer id="8" name="shadow_underlying" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
+  </data>
+ </layer>
+ <layer id="10" name="background_above_player" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
+  </data>
+ </layer>
+ <layer id="3" name="shadows" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
+  </data>
+ </layer>
+ <layer id="4" name="shadows_2" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
+  </data>
+ </layer>
+ <layer id="17" name="shadows_3" width="62" height="57" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
+  </data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="915" name="player.startingPosition" x="416" y="764">
+   <properties>
+    <property name="startingPointId" value="1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="913" name="player.startingPosition" x="1583" y="1568">
+   <properties>
+    <property name="startingPointId" value="0"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="914" name="object.eventObject" x="1504" y="1664" width="159.563" height="7.375">
+   <properties>
+    <property name="eventParameter" value="loa2_asgard_goto_main"/>
+   </properties>
+  </object>
+  <object id="916" name="npc.guardian_of_asgard" x="960" y="512">
+   <point/>
+  </object>
+  <object id="927" name="animal.squirrel" x="1472" y="1440">
+   <point/>
+  </object>
+  <object id="928" name="object.signboard" x="1392.67" y="1202.67">
+   <properties>
+    <property name="displayText">North: Asgard
+West: Secret Castle of the Chaos Wizard</property>
+    <property name="displayTextHeader" value="Directions"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="937" name="npc.heimdal" x="1741" y="1387.25">
+   <point/>
+  </object>
+  <object id="938" name="npc.guardian_of_asgard" x="992" y="512">
+   <point/>
+  </object>
+  <object id="939" name="npc.guardian_of_asgard" x="1024" y="512">
+   <point/>
+  </object>
+  <object id="940" name="npc.guardian_of_asgard" x="1056" y="512">
+   <point/>
+  </object>
+  <object id="941" name="npc.guardian_of_asgard" x="1088" y="512">
+   <point/>
+  </object>
+  <object id="942" name="npc.guardian_of_asgard" x="1120" y="512">
+   <point/>
+  </object>
+  <object id="948" name="object.eventObject" x="382.06" y="716.585" width="67.8807" height="1.375">
+   <properties>
+    <property name="eventParameter" value="loa2_vigrid_goto_chaos_wizard_castle_entry"/>
+   </properties>
+  </object>
+  <object id="949" name="animal.fox" x="1376" y="608">
+   <point/>
+  </object>
+  <object id="950" name="animal.hedgehog" x="736" y="640">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="physics" locked="1">
+  <object id="536" x="0" y="256" width="1984" height="160"/>
+  <object id="537" x="0" y="416" width="928" height="113"/>
+  <object id="538" x="1152" y="416" width="832" height="112.5"/>
+  <object id="570" x="1536.01" y="1078">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="571" x="1536" y="1078">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="572" x="1536.01" y="1056">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="573" x="1536.01" y="1056">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="574" x="1536.01" y="1056">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="575" x="1536.01" y="1056">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="576" x="1440.01" y="982">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="577" x="1440" y="982">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="578" x="1440.01" y="960">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="579" x="1440.01" y="960">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="580" x="1440.01" y="960">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="581" x="1440.01" y="960">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="582" x="1376.01" y="918">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="583" x="1376" y="918">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="584" x="1376.01" y="896">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="585" x="1376.01" y="896">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="586" x="1376.01" y="896">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="587" x="1376.01" y="896">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="588" x="1344.01" y="854">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="589" x="1344" y="854">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="590" x="1344.01" y="832">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="591" x="1344.01" y="832">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="592" x="1344.01" y="832">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="593" x="1344.01" y="832">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="594" x="1312.01" y="822">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="595" x="1312" y="822">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="596" x="1312.01" y="800">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="597" x="1312.01" y="800">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="598" x="1312.01" y="800">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="599" x="1312.01" y="800">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="600" x="1344.01" y="758">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="601" x="1344" y="758">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="602" x="1344.01" y="736">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="603" x="1344.01" y="736">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="604" x="1344.01" y="736">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="605" x="1344.01" y="736">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="606" x="1408.01" y="726">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="607" x="1408" y="726">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="608" x="1408.01" y="704">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="609" x="1408.01" y="704">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="610" x="1408.01" y="704">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="611" x="1408.01" y="704">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="612" x="1440.01" y="694">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="613" x="1440" y="694">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="614" x="1440.01" y="672">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="615" x="1440.01" y="672">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="616" x="1440.01" y="672">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="617" x="1440.01" y="672">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="618" x="1504.01" y="662">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="619" x="1504" y="662">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="620" x="1504.01" y="640">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="621" x="1504.01" y="640">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="622" x="1504.01" y="640">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="623" x="1504.01" y="640">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="624" x="1664.01" y="662">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="625" x="1664" y="662">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="626" x="1664.01" y="640">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="627" x="1664.01" y="640">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="628" x="1664.01" y="640">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="629" x="1664.01" y="640">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="630" x="1600.01" y="694">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="631" x="1600" y="694">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="632" x="1600.01" y="672">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="633" x="1600.01" y="672">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="634" x="1600.01" y="672">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="635" x="1600.01" y="672">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="636" x="1568.01" y="726">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="637" x="1568" y="726">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="638" x="1568.01" y="704">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="639" x="1568.01" y="704">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="640" x="1568.01" y="704">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="641" x="1568.01" y="704">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="642" x="1504.01" y="758">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="643" x="1504" y="758">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="644" x="1504.01" y="736">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="645" x="1504.01" y="736">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="646" x="1504.01" y="736">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="647" x="1504.01" y="736">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="648" x="1440.01" y="790">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="649" x="1440" y="790">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="650" x="1440.01" y="768">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="651" x="1440.01" y="768">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="652" x="1440.01" y="768">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="653" x="1440.01" y="768">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="654" x="1408.01" y="854">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="655" x="1408" y="854">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="656" x="1408.01" y="832">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="657" x="1408.01" y="832">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="658" x="1408.01" y="832">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="659" x="1408.01" y="832">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="660" x="1440.01" y="886">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="661" x="1440" y="886">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="662" x="1440.01" y="864">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="663" x="1440.01" y="864">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="664" x="1440.01" y="864">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="665" x="1440.01" y="864">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="666" x="1536.01" y="1014">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="667" x="1536" y="1014">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="668" x="1536.01" y="992">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="669" x="1536.01" y="992">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="670" x="1536.01" y="992">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="671" x="1536.01" y="992">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="672" x="1664.01" y="726">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="673" x="1664" y="726">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="674" x="1664.01" y="704">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="675" x="1664.01" y="704">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="676" x="1664.01" y="704">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="677" x="1664.01" y="704">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="678" x="1696.01" y="566">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="679" x="1696" y="566">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="680" x="1696.01" y="544">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="681" x="1696.01" y="544">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="682" x="1696.01" y="544">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="683" x="1696.01" y="544">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="684" x="1760.01" y="598">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="685" x="1760" y="598">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="686" x="1760.01" y="576">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="687" x="1760.01" y="576">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="688" x="1760.01" y="576">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="689" x="1760.01" y="576">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="690" x="1664.01" y="1110">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="691" x="1664" y="1110">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="692" x="1664.01" y="1088">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="693" x="1664.01" y="1088">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="694" x="1664.01" y="1088">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="695" x="1664.01" y="1088">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="696" x="1632.01" y="1014">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="697" x="1632" y="1014">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="698" x="1632.01" y="992">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="699" x="1632.01" y="992">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="700" x="1632.01" y="992">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="701" x="1632.01" y="992">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="702" x="1600.01" y="982">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="703" x="1600" y="982">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="704" x="1600.01" y="960">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="705" x="1600.01" y="960">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="706" x="1600.01" y="960">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="707" x="1600.01" y="960">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="708" x="1696.01" y="1014">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="709" x="1696" y="1014">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="710" x="1696.01" y="992">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="711" x="1696.01" y="992">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="712" x="1696.01" y="992">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="713" x="1696.01" y="992">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="714" x="1728.01" y="1078">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="715" x="1728" y="1078">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="716" x="1728.01" y="1056">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="717" x="1728.01" y="1056">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="718" x="1728.01" y="1056">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="719" x="1728.01" y="1056">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="720" x="1792.01" y="1046">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="721" x="1792" y="1046">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="722" x="1792.01" y="1024">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="723" x="1792.01" y="1024">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="724" x="1792.01" y="1024">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="725" x="1792.01" y="1024">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="726" x="1824.01" y="1110">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="727" x="1824" y="1110">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="728" x="1824.01" y="1088">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="729" x="1824.01" y="1088">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="730" x="1824.01" y="1088">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="731" x="1824.01" y="1088">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="732" x="1856.01" y="1142">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="733" x="1856" y="1142">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="734" x="1856.01" y="1120">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="735" x="1856.01" y="1120">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="736" x="1856.01" y="1120">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="737" x="1856.01" y="1120">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="738" x="1856.01" y="1014">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="739" x="1856" y="1014">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="740" x="1856.01" y="992">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="741" x="1856.01" y="992">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="742" x="1856.01" y="992">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="743" x="1856.01" y="992">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="744" x="1888.01" y="1078">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="745" x="1888" y="1078">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="746" x="1888.01" y="1056">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="747" x="1888.01" y="1056">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="748" x="1888.01" y="1056">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="749" x="1888.01" y="1056">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="750" x="1792.01" y="1014">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="751" x="1792" y="1014">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="752" x="1792.01" y="992">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="753" x="1792.01" y="992">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="754" x="1792.01" y="992">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="755" x="1792.01" y="992">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="756" x="1824.01" y="982">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="757" x="1824" y="982">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="758" x="1824.01" y="960">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="759" x="1824.01" y="960">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="760" x="1824.01" y="960">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="761" x="1824.01" y="960">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="762" x="1728.01" y="982">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="763" x="1728" y="982">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="764" x="1728.01" y="960">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="765" x="1728.01" y="960">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="766" x="1728.01" y="960">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="767" x="1728.01" y="960">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="768" x="1664.01" y="982">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="769" x="1664" y="982">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="770" x="1664.01" y="960">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="771" x="1664.01" y="960">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="772" x="1664.01" y="960">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="773" x="1664.01" y="960">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="774" x="1888.01" y="1206">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="775" x="1888" y="1206">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="776" x="1888.01" y="1184">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="777" x="1888.01" y="1184">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="778" x="1888.01" y="1184">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="779" x="1888.01" y="1184">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="780" x="1952.01" y="1174">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="781" x="1952" y="1174">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="782" x="1952.01" y="1152">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="783" x="1952.01" y="1152">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="784" x="1952.01" y="1152">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="785" x="1952.01" y="1152">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="786" x="1696.01" y="758">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="787" x="1696" y="758">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="788" x="1696.01" y="736">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="789" x="1696.01" y="736">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="790" x="1696.01" y="736">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="791" x="1696.01" y="736">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="792" x="1760.01" y="726">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="793" x="1760" y="726">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="794" x="1760.01" y="704">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="795" x="1760.01" y="704">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="796" x="1760.01" y="704">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="797" x="1760.01" y="704">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="798" x="1792.01" y="694">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="799" x="1792" y="694">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="800" x="1792.01" y="672">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="801" x="1792.01" y="672">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="802" x="1792.01" y="672">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="803" x="1792.01" y="672">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="810" x="1792.01" y="662">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="811" x="1792" y="662">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="812" x="1792.01" y="640">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="813" x="1792.01" y="640">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="814" x="1792.01" y="640">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="815" x="1792.01" y="640">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="816" x="1536.01" y="918">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="817" x="1536" y="918">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="818" x="1536.01" y="896">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="819" x="1536.01" y="896">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="820" x="1536.01" y="896">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="821" x="1536.01" y="896">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="822" x="1504.01" y="854">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="823" x="1504" y="854">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="824" x="1504.01" y="832">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="825" x="1504.01" y="832">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="826" x="1504.01" y="832">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="827" x="1504.01" y="832">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="870" x="256.477" y="767.5" width="95.2955" height="50"/>
+  <object id="871" x="480.227" y="768" width="95.2955" height="50"/>
+  <object id="879" x="1688" y="1205" width="4.66667" height="22.3333"/>
+  <object id="880" x="1816.67" y="1460.67" width="3.66667" height="33"/>
+  <object id="881" x="1726.67" y="1425.67" width="257.333" height="34.3333"/>
+  <object id="882" x="1700.67" y="1376" width="3.33333" height="57.0455"/>
+  <object id="883" x="1707.33" y="1256" width="9.33333" height="120.333"/>
+  <object id="885" x="1751.33" y="1403.83" width="3" height="21.8333"/>
+  <object id="886" x="1707.67" y="1255">
+   <polygon points="0,0 24.3333,-50 20.3333,-7"/>
+  </object>
+  <object id="887" x="1732" y="1206">
+   <polygon points="0,0 0.333333,-17 45.3333,-21.6667"/>
+  </object>
+  <object id="888" x="1776.67" y="1184.67">
+   <polygon points="0,0 43,5.33333 42.6667,21.3333"/>
+  </object>
+  <object id="889" x="1819.67" y="1206">
+   <polygon points="0,0 8.66667,11 1.33333,11"/>
+  </object>
+  <object id="890" x="1828.67" y="1216.33" width="60" height="14.6667"/>
+  <object id="891" x="1888.33" y="1205.33" width="95" height="90.6667"/>
+  <object id="894" x="352" y="749.333" width="14" height="132.333"/>
+  <object id="895" x="466.333" y="749.667" width="13.6667" height="132.667"/>
+  <object id="896" x="352.667" y="673" width="29" height="92.6667"/>
+  <object id="897" x="449.667" y="674" width="30.3333" height="91.6667"/>
+  <object id="898" x="381" y="671" width="69.3333" height="45.0909"/>
+  <object id="899" x="256" y="512" width="320" height="160"/>
+  <object id="900" x="480.667" y="672" width="95.3333" height="96"/>
+  <object id="901" x="256" y="672" width="96.6667" height="96"/>
+  <object id="929" x="1704.18" y="1376" width="12.3636" height="1.63636"/>
+  <object id="945" x="576" y="512" width="6.5" height="69"/>
+ </objectgroup>
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
+  <object id="539" x="256" y="1024">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="540" x="576" y="1056">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="542" x="896" y="1056">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="543" x="1056" y="1120">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="544" x="1088" y="1216">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="545" x="1184" y="1248">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="546" x="1216" y="1344">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="547" x="1344" y="1376">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="548" x="1376" y="1440">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="549" x="1408" y="1536">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="550" x="128" y="1024">
+   <polygon points="0,0 -32,0 -0.363636,-9.81818"/>
+  </object>
+  <object id="551" x="640" y="1056">
+   <polygon points="0,0 -32,0 -0.363636,-9.81818"/>
+  </object>
+  <object id="552" x="736" y="1024">
+   <polygon points="0,0 -32,0 -0.363636,-9.81818"/>
+  </object>
+  <object id="541" x="864" y="928">
+   <polygon points="0,0 -32,0 -32,-10.3636"/>
+  </object>
+  <object id="553" x="768" y="928">
+   <polygon points="0,0 -32,0 -0.363636,-9.81818"/>
+  </object>
+  <object id="554" x="0" y="1024" width="128" height="32"/>
+  <object id="555" x="128" y="992" width="96" height="32"/>
+  <object id="556" x="224" y="1024" width="320" height="32"/>
+  <object id="557" x="544" y="1056" width="96" height="32"/>
+  <object id="558" x="640" y="1024" width="96" height="32"/>
+  <object id="559" x="736" y="928" width="32" height="96"/>
+  <object id="560" x="768" y="864" width="64" height="96"/>
+  <object id="561" x="832" y="928" width="32" height="128"/>
+  <object id="562" x="864" y="1056" width="160" height="64"/>
+  <object id="563" x="1024" y="1120" width="32" height="96"/>
+  <object id="564" x="1056" y="1216" width="96" height="32"/>
+  <object id="565" x="1152" y="1248" width="32" height="96"/>
+  <object id="566" x="1184" y="1344" width="128" height="32"/>
+  <object id="567" x="1312" y="1376" width="32" height="64"/>
+  <object id="568" x="1344" y="1440" width="32" height="96"/>
+  <object id="828" x="1552.5" y="629.29">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="829" x="1552.5" y="629.25">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="830" x="1680.5" y="598.04">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="831" x="1680.5" y="598">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="832" x="1423.33" y="918.707">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="833" x="1423.33" y="918.667">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="834" x="1488.42" y="1013.62">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="835" x="1488.42" y="1013.58">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="836" x="1584.55" y="1109.68">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="837" x="1584.55" y="1109.64">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="838" x="1616.55" y="1077.86">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="839" x="1616.55" y="1077.82">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="840" x="1232.25" y="1205.79">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="841" x="1232.25" y="1205.75">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="842" x="1168.5" y="1013.04">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="843" x="1168.5" y="1013">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="844" x="784.5" y="821.54">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="845" x="784.5" y="821.5">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="846" x="880" y="629.29">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="847" x="880" y="629.25">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="848" x="208" y="948.949">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="849" x="208" y="948.909">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="850" x="80" y="693.04">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="851" x="80" y="693">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="852" x="1839.82" y="1524.36">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="853" x="1839.82" y="1524.32">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="854" x="1904.55" y="1494.04">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="855" x="1904.55" y="1494">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="856" x="1203.38" y="1068.38">
+   <polygon points="0,0 -11,5.4375 5.25,4.125"/>
+  </object>
+  <object id="857" x="1139.45" y="748.364">
+   <polygon points="0,0 -11,5.4375 5.25,4.125"/>
+  </object>
+  <object id="858" x="819.625" y="588.313">
+   <polygon points="0,0 -11,5.4375 5.25,4.125"/>
+  </object>
+  <object id="859" x="659.455" y="780.182">
+   <polygon points="0,0 -11,5.4375 5.25,4.125"/>
+  </object>
+  <object id="862" x="48.25" y="855.54">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="863" x="48.25" y="855.5">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="864" x="523.25" y="901.25" width="105.5" height="15.75"/>
+  <object id="865" x="619.25" y="581.25" width="9.25" height="320"/>
+  <object id="866" x="576" y="581.25" width="43.25" height="15.5"/>
+  <object id="867" x="203" y="581.25" width="53" height="15.5"/>
+  <object id="868" x="203" y="596.5" width="9.5" height="304.75"/>
+  <object id="869" x="202.5" y="901.25" width="106.25" height="15.75"/>
+  <object id="872" x="592.545" y="608.545">
+   <polygon points="0,0 -13,18.3333 13.3333,18.3333"/>
+  </object>
+  <object id="873" x="592.909" y="641.455">
+   <polygon points="0,0 -13,18.3333 13.3333,18.3333"/>
+  </object>
+  <object id="874" x="240" y="676">
+   <polygon points="0,0 -13,18.3333 13.3333,18.3333"/>
+  </object>
+  <object id="875" x="239.75" y="610.25">
+   <polygon points="0,0 -13,18.3333 13.3333,18.3333"/>
+  </object>
+  <object id="876" x="1616" y="1258.13">
+   <polygon points="0,0 -5.25,4.875 4.875,4.75"/>
+  </object>
+  <object id="877" x="1647.75" y="1386">
+   <polygon points="0,0 -5.25,4.875 4.875,4.75"/>
+  </object>
+  <object id="878" x="1775.5" y="1483">
+   <polygon points="0,0 -5.25,4.875 4.875,4.75"/>
+  </object>
+  <object id="905" x="1376" y="1536" width="128" height="32"/>
+  <object id="909" x="1664" y="1536" width="320" height="32"/>
+  <object id="910" x="1664" y="1568" width="32" height="256"/>
+  <object id="911" x="1472" y="1568" width="32" height="256"/>
+  <object id="912" x="1491" y="557">
+   <polygon points="0,0 -11,5.4375 5.25,4.125"/>
+  </object>
+  <object id="943" x="1552.55" y="949.131">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="944" x="1552.55" y="949.091">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+  <object id="946" x="176.75" y="980.79">
+   <polygon points="0,0 -14,-6 -0.25,-20.25"/>
+  </object>
+  <object id="947" x="176.75" y="980.75">
+   <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="ground_physics" locked="1">
+  <object id="892" x="1704.36" y="1426.97" width="22.1818" height="31.5151">
+   <properties>
+    <property name="ground" value="ladder"/>
+   </properties>
+  </object>
+  <object id="893" x="366.667" y="774.697" width="100" height="104.606">
+   <properties>
+    <property name="ground" value="stairs"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

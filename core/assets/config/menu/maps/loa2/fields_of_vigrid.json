@@ -1,0 +1,9 @@
+{
+	name: Fields of Vigrid,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l1_cave_castle
+	},
+	textureWidth: 500,
+	textureHeight: 500,
+}

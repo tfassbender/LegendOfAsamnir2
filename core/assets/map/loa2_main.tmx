@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="42" nextobjectid="10456">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="42" nextobjectid="10457">
  <properties>
   <property name="above_player_layers" value="[9, 12, 15]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14]"/>
@@ -394,6 +394,11 @@ West: Helheim.</property>
   <object id="10455" name="object.eventObject" x="416" y="2464" width="127.875" height="4.75">
    <properties>
     <property name="eventParameter" value="loa2_choose_difficulty"/>
+   </properties>
+  </object>
+  <object id="10456" name="object.eventObject" x="1312" y="160" width="159.563" height="7.375">
+   <properties>
+    <property name="eventParameter" value="loa2_main_goto_asgard_2"/>
    </properties>
   </object>
  </objectgroup>
@@ -6030,7 +6035,6 @@ West: Helheim.</property>
   </object>
   <object id="10397" x="1696" y="2944" width="256" height="32"/>
   <object id="10398" x="1632" y="2912" width="64" height="32"/>
-  <object id="10412" x="1312" y="352" width="159.833" height="8"/>
  </objectgroup>
  <objectgroup id="39" name="ground_physics" locked="1">
   <properties>

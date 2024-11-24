@@ -61,6 +61,15 @@
         name: loa2_dwarven_mine_castle,
         map: "map/loa2_l1_dwarven_mine_castle.tmx",
         initialStartingPointId: 15,
+		//initial: true
+	},
+	
+	// loa2 - fields of vigrid
+	
+	{
+		name: loa2_fields_of_vigrid,
+		map: "map/loa2_fields_of_vigrid.tmx",
+		initialStartingPointId: 0,
 		initial: true
 	},
 	

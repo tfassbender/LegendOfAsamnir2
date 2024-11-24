@@ -44,6 +44,13 @@
 	onarr: config/npc/levels/loa2/dwarven_mine/onarr.json,
 	andwari: config/npc/levels/loa2/dwarven_mine/andwari.json,
 	radswit: config/npc/levels/loa2/dwarven_mine/radswit.json,
+	
+	//*****************************************************************
+	//*** Legend of Asamnir 2 - Fields of Vigrid
+	//*****************************************************************
+	
+	guardian_of_asgard: config/npc/levels/loa2/fields_of_vigrid/guardian_of_asgard.json,
+	heimdal: config/npc/levels/loa2/fields_of_vigrid/heimdal.json,
 
 //	//************************************************
 //	//*** Demo Level

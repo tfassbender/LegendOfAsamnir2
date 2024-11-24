@@ -80,6 +80,7 @@
 				"textureMagFilter": "Nearest"
 			}
 		},
+		
 		// level 1 - dwarven mines
 		{
 			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
@@ -109,6 +110,16 @@
 			}
 		},
 		
+		// fields of vigrid
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_fields_of_vigrid.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
 		
 		//***************************************************
 		//*** other maps
