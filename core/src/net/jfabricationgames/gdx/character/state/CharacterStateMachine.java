@@ -62,7 +62,7 @@ public class CharacterStateMachine {
 	
 	private void initializeStates(Array<CharacterStateConfig> stateConfig) {
 		for (CharacterStateConfig config : stateConfig) {
-			CharacterState state = new CharacterState(animationManager.getTextureAnimationDirector(config.animation), config, attackHandler);
+			CharacterState state = new CharacterState(animationManager.getTextureAnimationDirectorCopy(config.animation), config, attackHandler);
 			states.put(config.id, state);
 		}
 		
@@ -79,15 +79,13 @@ public class CharacterStateMachine {
 			if (config.followingState != null) {
 				CharacterState followingState = states.get(config.followingState);
 				if (followingState == null) {
-					throw new IllegalStateException(
-							"The followingState '" + config.followingState + "' of the state '" + config.id + "' is unknown.");
+					throw new IllegalStateException("The followingState '" + config.followingState + "' of the state '" + config.id + "' is unknown.");
 				}
 				state.followingState = followingState;
 			}
 			else {
 				if (config.endsWithAnimation) {
-					throw new IllegalStateException("An EnemyStateConfig that sets 'endsWithAnimation' to true must define a 'followingState'. "
-							+ "This config ('" + config.id + "') doesn't.");
+					throw new IllegalStateException("An EnemyStateConfig that sets 'endsWithAnimation' to true must define a 'followingState'. " + "This config ('" + config.id + "') doesn't.");
 				}
 			}
 			
@@ -95,8 +93,7 @@ public class CharacterStateMachine {
 			for (String interruptingStateName : config.interruptingStates) {
 				CharacterState interruptingState = states.get(interruptingStateName);
 				if (interruptingState == null) {
-					throw new IllegalStateException(
-							"The interruptingState '" + interruptingStateName + "' of the state '" + config.id + "' is unknown.");
+					throw new IllegalStateException("The interruptingState '" + interruptingStateName + "' of the state '" + config.id + "' is unknown.");
 				}
 				state.interruptingStates.add(interruptingState);
 			}
@@ -181,8 +178,7 @@ public class CharacterStateMachine {
 	}
 	
 	private boolean isStateChangeAllowed(CharacterState state) {
-		return currentState.interruptingStates.contains(state)
-				|| isStateEnded(0f) && (followsOnCurrentState(state) || state == overridingFollowingState);
+		return currentState.interruptingStates.contains(state) || isStateEnded(0f) && (followsOnCurrentState(state) || state == overridingFollowingState);
 	}
 	
 	private void changeState(CharacterState state) {
@@ -195,8 +191,8 @@ public class CharacterStateMachine {
 	}
 	
 	private boolean followsOnCurrentState(CharacterState state) {
-		return (currentState.config.endsWithAnimation || currentState.config.endsAfterAttackFinishes) && currentState.animation.isAnimationFinished()
-				&& currentState.followingState == state;
+		return (currentState.config.endsWithAnimation || currentState.config.endsAfterAttackFinishes) //
+				&& currentState.animation.isAnimationFinished() && currentState.followingState == state;
 	}
 	
 	public void flipAnimationTexturesToMovementDirection(AnimationDirector<TextureRegion> animation, Vector2 movingDirection) {
