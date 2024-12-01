@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/king_dwarf.json,
+	stateConfig: config/npc/states/king_dwarf.json,
+	initialState: idle,
+	
+	bodyWidth: 1.5f,
+	bodyHeight: 1.5f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0f,
+	
+	interactionMarkerOffsetX: -0.6f,
+	interactionMarkerOffsetY: -0.5f,
+}

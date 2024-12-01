@@ -17,7 +17,12 @@ public class TextureAnimationDirector<T extends TextureRegion> extends Animation
 	public TextureAnimationDirector(Animation<T> animation, AnimationConfig animationConfig) {
 		super(animationConfig);
 		this.animation = animation;
-		initializeSpriteConfigWithoutPosition();
+		try {
+			initializeSpriteConfigWithoutPosition();
+		}
+		catch (IndexOutOfBoundsException e) {
+			throw new IllegalStateException("The animation '" + animationConfig.name + "' has no key frames. Please check the texture atlas and the 'texture_settings.json' file.");
+		}
 	}
 	
 	@Override

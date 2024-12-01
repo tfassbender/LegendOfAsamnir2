@@ -50,7 +50,8 @@
 	//*****************************************************************
 	
 	guardian_of_asgard: config/npc/levels/loa2/fields_of_vigrid/guardian_of_asgard.json,
-	heimdal: config/npc/levels/loa2/fields_of_vigrid/heimdal.json,
+	heimdall: config/npc/levels/loa2/fields_of_vigrid/heimdall.json,
+	ratatosk: config/npc/levels/loa2/fields_of_vigrid/ratatosk.json,
 
 //	//************************************************
 //	//*** Demo Level

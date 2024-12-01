@@ -152,6 +152,10 @@
 	- The second boss fight is against the chaos wizard (who has ~3 different forms)
 - When Thorin reaches the Chaos Wizard, they first talk (so I can add many bad jokes):
     - "The princess is an another castle" (but one can see the princess behind a wall because of the 2D graphics)
+	- When the fight beginns: "So it beginns ... " (yes, another lord of the rings reference :D )
+	- Thorin can't defeat the Chaos Wizard without asamnir 
+		- "You have no power here, Thorin the Gray!!! *evil laughter*" 
+		- Then Freydis manages to give Thorin the Axe Asamnir with which he is able to defeat the Chaos Wizard
 	- After defeating the Chaos Wizard, thorin forgetts to save the princess, but goes after his axe Asamnir (cutscene)
 	- When leaving with Asamnir and the Princess, the Chaos Wizard stands up again and talks about the sequel
 	

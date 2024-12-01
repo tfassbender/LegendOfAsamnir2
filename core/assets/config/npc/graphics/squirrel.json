@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/animals/squirrel.json,
+	stateConfig: config/animals/states/squirrel.json,
+	initialState: idle,
+	
+	bodyWidth: 0.5f,
+	bodyHeight: 0.5f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.4f,
+	
+	interactionMarkerOffsetX: 0f,
+	interactionMarkerOffsetY: -0.4f,
+}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="62" height="57" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="951">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="62" height="57" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="963">
  <properties>
   <property name="above_player_layers" value="[5, 6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -36,9 +36,9 @@
    eJzt188JwjAYh+FcFJdQoX9EcA9xEj3oGtpJdBPHUC/qFqIJVdBSaUpp8pG+L/zozfbpQRql/LRNlNp9LUs8PYjjcPtxD1I/K3O7vP+UMRbsFh0dkYt8f7e4bjPLr//c65m/Z2sz3Lhxh+v+JPX//BQpda65S2T/+1LdD22Y19wTd2W4cUuobfdeO48F+0qAvW23qWi/CrC7cJuk2V25TZLsLt0mKfZhrNSo5sZxs3tKsfsIO3bs2LsQ9l/70mIhvJ+ys0zVpJzzmmbsB4sdA3NXddPfyvcoP9+ba/a+FhdaPf2t3LdYaOHGjRt3aHXVnWrTxGJEREREJLsXD9Rnag==
   </data>
  </layer>
- <layer id="5" name="terrain" width="62" height="57">
+ <layer id="5" name="terrain" width="62" height="57" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="62" height="57" locked="1">
@@ -56,9 +56,9 @@
    eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
   </data>
  </layer>
- <layer id="10" name="background_above_player" width="62" height="57" locked="1">
+ <layer id="10" name="background_above_player" width="62" height="57">
   <data encoding="base64" compression="zlib">
-   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
+   eJztz1ENgDAQRMFVcTYp0ooGhHEmSkmYSd7/bgIAAAAAAAAAALDWrOTqjm50Z+1e9J77R18BAAAAvuIBMZMD/A==
   </data>
  </layer>
  <layer id="3" name="shadows" width="62" height="57" locked="1">
@@ -97,7 +97,7 @@
   <object id="916" name="npc.guardian_of_asgard" x="960" y="512">
    <point/>
   </object>
-  <object id="927" name="animal.squirrel" x="1472" y="1440">
+  <object id="927" name="npc.ratatosk" x="1472" y="1440">
    <point/>
   </object>
   <object id="928" name="object.signboard" x="1392.67" y="1202.67">
@@ -108,7 +108,7 @@ West: Secret Castle of the Chaos Wizard</property>
    </properties>
    <point/>
   </object>
-  <object id="937" name="npc.heimdal" x="1741" y="1387.25">
+  <object id="937" name="npc.heimdall" x="1732" y="1380.25">
    <point/>
   </object>
   <object id="938" name="npc.guardian_of_asgard" x="992" y="512">
@@ -137,8 +137,24 @@ West: Secret Castle of the Chaos Wizard</property>
   <object id="950" name="animal.hedgehog" x="736" y="640">
    <point/>
   </object>
+  <object id="951" name="npc.guardian_of_asgard" x="1788" y="1304">
+   <point/>
+  </object>
+  <object id="952" name="npc.guardian_of_asgard" x="1912" y="1350">
+   <point/>
+  </object>
+  <object id="953" name="npc.guardian_of_asgard" x="1827" y="1310.5">
+   <point/>
+  </object>
+  <object id="956" name="object.signboard" x="544" y="939">
+   <properties>
+    <property name="displayText" value="No Dwarves allowed!!!"/>
+    <property name="displayTextHeader" value="Secret Castle of the Chaos Wizard"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="536" x="0" y="256" width="1984" height="160"/>
   <object id="537" x="0" y="416" width="928" height="113"/>
   <object id="538" x="1152" y="416" width="832" height="112.5"/>
@@ -900,20 +916,14 @@ West: Secret Castle of the Chaos Wizard</property>
   </object>
   <object id="870" x="256.477" y="767.5" width="95.2955" height="50"/>
   <object id="871" x="480.227" y="768" width="95.2955" height="50"/>
-  <object id="879" x="1688" y="1205" width="4.66667" height="22.3333"/>
+  <object id="879" x="1688" y="1213.13" width="4.66667" height="14.2083"/>
   <object id="880" x="1816.67" y="1460.67" width="3.66667" height="33"/>
   <object id="881" x="1726.67" y="1425.67" width="257.333" height="34.3333"/>
   <object id="882" x="1700.67" y="1376" width="3.33333" height="57.0455"/>
-  <object id="883" x="1707.33" y="1256" width="9.33333" height="120.333"/>
+  <object id="883" x="1707.33" y="1256" width="2.58333" height="121.583"/>
   <object id="885" x="1751.33" y="1403.83" width="3" height="21.8333"/>
   <object id="886" x="1707.67" y="1255">
    <polygon points="0,0 24.3333,-50 20.3333,-7"/>
-  </object>
-  <object id="887" x="1732" y="1206">
-   <polygon points="0,0 0.333333,-17 45.3333,-21.6667"/>
-  </object>
-  <object id="888" x="1776.67" y="1184.67">
-   <polygon points="0,0 43,5.33333 42.6667,21.3333"/>
   </object>
   <object id="889" x="1819.67" y="1206">
    <polygon points="0,0 8.66667,11 1.33333,11"/>
@@ -928,8 +938,18 @@ West: Secret Castle of the Chaos Wizard</property>
   <object id="899" x="256" y="512" width="320" height="160"/>
   <object id="900" x="480.667" y="672" width="95.3333" height="96"/>
   <object id="901" x="256" y="672" width="96.6667" height="96"/>
-  <object id="929" x="1704.18" y="1376" width="12.3636" height="1.63636"/>
+  <object id="929" x="1704.18" y="1376" width="3.3636" height="1.63636"/>
   <object id="945" x="576" y="512" width="6.5" height="69"/>
+  <object id="955" x="1700.7" y="1433.09">
+   <polygon points="0,0 3.26087,-0.0434783 0.347826,1.21739"/>
+  </object>
+  <object id="958" x="1819.64" y="1206">
+   <polygon points="0,0 -4.36364,7.63636 0,7.81818"/>
+  </object>
+  <object id="959" x="1731.45" y="1211.2" width="88.1818" height="4.79545"/>
+  <object id="960" x="1732" y="1205.09">
+   <polygon points="0,0 5,8.3125 -0.28125,8.40625"/>
+  </object>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="539" x="256" y="1024">

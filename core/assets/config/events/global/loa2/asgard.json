@@ -1,0 +1,64 @@
+{
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_asgard__heimdal: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_vigrid_heimdall,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_asgard_heimdall_cutscene,
+		}
+	},
+	
+	loa2_asgard__guardian_of_asgard: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_vigrid_guardian_of_asgard,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_asgard_guardian_of_asgard_cutscene,
+		}
+	},
+	
+	loa2_asgard__ratatosk: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_vigrid_ratatosk,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_asgard_ratatosk_cutscene,
+		}
+	},
+
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_asgard_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_asgard_goto_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_asgard_goto_main_cutscene,
+		}
+	},
+	
+	loa2_asgard_goto_chaos_wizard_castle: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_vigrid_goto_chaos_wizard_castle_entry,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_asgard__goto_chaos_wizard_castle_cutscene,
+		}
+	},
+}

@@ -368,6 +368,16 @@
 			    raw_images/restricted/npc/dwarven_miner/dwarven_miner_move,
 			    raw_images/restricted/npc/dwarven_miner/dwarven_miner_pick,
 			    raw_images/restricted/npc/dwarven_miner/dwarven_miner_dig,
+			    
+			    //king dwarf
+//			    raw_images/restricted/npc/king_dwarf/king_dwarf_attack,
+//			    raw_images/restricted/npc/king_dwarf/king_dwarf_damage,
+//			    raw_images/restricted/npc/king_dwarf/king_dwarf_death,
+			    raw_images/restricted/npc/king_dwarf/king_dwarf_horn,
+			    raw_images/restricted/npc/king_dwarf/king_dwarf_horn_loop,
+			    raw_images/restricted/npc/king_dwarf/king_dwarf_idle,
+//			    raw_images/restricted/npc/king_dwarf/king_dwarf_laugh,
+//			    raw_images/restricted/npc/king_dwarf/king_dwarf_move,
 				
 				//##############################################################
 				//### Animals

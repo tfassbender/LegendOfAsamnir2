@@ -1,0 +1,59 @@
+{
+	id: loa2_main_moving_east_above_the_river_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			condition: {
+				conditionId: loa2_asgard__chaos_wizard_castle_visisted,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: end,
+				condition_not_met: thorin_needs_to_go_to_the_chaos_wizard_castle_first,
+			}
+		},
+		
+		thorin_needs_to_go_to_the_chaos_wizard_castle_first: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I need to go to the fields of Vigrid to find the castle of the Chaos Wizard.\n                     \nAsgard's in the north, not in the east...   ",
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				move_back,
+			]
+		},
+		
+		move_back: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -2, y: 0},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

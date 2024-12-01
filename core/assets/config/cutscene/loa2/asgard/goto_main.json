@@ -1,0 +1,81 @@
+{
+	id: loa2_asgard_goto_main_cutscene,
+	controlledActions: {
+		start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_asgard__chaos_wizard_castle_visisted,
+					executedStateName: move_down
+				},
+				{
+					// default case - thorin hasn't found the chaos wizard's castle yet
+					executedStateName: thorin_1
+				},
+			],
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I should find the Chaos Wizard's castle first.              \nI can go back and drink mead in Mjodwitnir's tavern when this strange chaos wizard guy is dead!   ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                move_up,
+			],
+		},
+	
+		move_up: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 1},
+			
+			executes: [
+                end,
+			]
+		},
+	
+		move_down: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -6},
+			cameraFollowsTarget: false,
+			
+			executes: [
+                change_map,
+			]
+		},
+		
+		change_map: {
+			executionDelayInSeconds: 1f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+                stringValue: loa2_main,
+                intValue: 9,
+			},
+			
+			waitForEventToFinish: false,
+			cameraFollowsTarget: false,
+			
+			executes: [
+                end,
+			]
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

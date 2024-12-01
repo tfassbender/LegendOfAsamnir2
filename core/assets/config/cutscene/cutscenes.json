@@ -32,6 +32,7 @@
 	config/cutscene/loa2/main/guardian_at_bifroest_stops_thorin.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
 	config/cutscene/loa2/main/choose_game_difficulty.json,
+	config/cutscene/loa2/main/moving_east_above_the_river.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main - Tavern
@@ -89,6 +90,15 @@
 	config/cutscene/loa2/mine/mini_boss.json,
 	config/cutscene/loa2/mine/enter_boss_room.json,
 	config/cutscene/loa2/mine/rune_found.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Asgard
+	//********************************************************
+	config/cutscene/loa2/asgard/goto_main.json,
+	config/cutscene/loa2/asgard/heimdall.json,
+	config/cutscene/loa2/asgard/guardian_of_asgard.json,
+	config/cutscene/loa2/asgard/goto_chaos_wizard_castle.json,
+	config/cutscene/loa2/asgard/ratatosk.json,
 
 	//********************************************************
 	//*** Demo Level

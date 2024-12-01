@@ -1,0 +1,38 @@
+[
+	{
+		id: idle,
+		animation: king_dwarf_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			horn,
+		]
+	},
+	{
+		id: move, // a move state is needed for the configuration, but won't be used here, so we just use the idle animation
+		animation: king_dwarf_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			horn,
+		]
+	},
+	{
+		id: horn,
+		animation: king_dwarf_horn,
+		endsWithAnimation: true,
+		followingState: horn_loop,
+		interruptingStates: [
+		    idle,
+		]
+	},
+	{
+		id: horn_loop,
+		animation: king_dwarf_horn_loop,
+		endsWithAnimation: true,
+		followingState: horn_loop,
+		interruptingStates: [
+		    idle,
+		]
+	},
+]

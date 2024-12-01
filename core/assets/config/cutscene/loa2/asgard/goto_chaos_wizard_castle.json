@@ -1,0 +1,268 @@
+{
+	id: loa2_asgard__goto_chaos_wizard_castle_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: CONDITION,
+			startsWithCutscene: true,
+			
+			executionDelayInSeconds: 1f,
+			
+			condition: {
+				conditionId: common__rune_laguz_collected,
+				thenCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_met,
+					}
+				},
+				elseCase: {
+					type: CUTSCENE,
+					executionParameters: {
+						conditionCase: condition_not_met,
+					}
+				}
+			},
+			conditionOptionExecutions: {
+				condition_met: chaos_wizard_comment_entering,
+				condition_not_met: chaos_wizard_1,
+			}
+		},
+		
+		chaos_wizard_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Hey, didn't you read the sign?!\n         \nNo dwarves allowed here! Go away!",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                freydis_1,
+			],
+		},
+		
+		freydis_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Is that Thorin?!\nThorin! Get me out of here!!!\n        \nThis chaos wizard idiot is so annoying!!!  ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                thorin_1,
+			],
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Why isn't this door opening?!\n            \nI need to kill this strange chaos wizard guy and save Asamnir!  ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                freydis_2,
+			],
+		},
+		
+		freydis_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Asamnir?!!\nWhat about me you lazy idiot?!  ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                thorin_2,
+			],
+		},
+		
+		thorin_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1.5f,
+			
+			executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "... and Freydis ...\n                    \nI need to save Asamnir and Freydis!  ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                freydis_3,
+			],
+		},
+		
+		freydis_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "*angry mumbling*  ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                chaos_wizard_2,
+			],
+		},
+		
+		chaos_wizard_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Come on Thorin! Did you really think I would let you in here this easily?!\n                        \nYou only solved one level of the game!\nAnd you've only found one rune! ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_3,
+                chaos_wizard_evil_laugh,
+			],
+		},
+		
+		chaos_wizard_evil_laugh: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 6.5f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "That's not enough to challenge the final boss!                                 \nCome back when you've found the rune that opens my castle's door!               \n*evil laughter*  ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                step_back,
+			],
+		},
+		
+		step_back: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -0.5},
+			
+			executes: [
+                set_global_value,
+			]
+		},
+		
+		set_global_value: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_asgard__chaos_wizard_castle_visisted, value: true}",
+			},
+			
+			executes: [
+                end,
+			],
+		},
+		
+		chaos_wizard_comment_entering: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Thorin?!               \nYou're still alive?\n                 \nAnd you found the rune Laguz?!!          \nTook you long enough!  ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_comment_entering_2,
+                chaos_wizard_evil_laugh_2,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_2: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 5f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard_comment_entering_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "So the time for our epic final battle has come at last!\n                          \nPrepare to meet thy doom!!!             \n*evil laughter*  ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                change_map,
+			],
+		},
+		
+		change_map: {
+			executionDelayInSeconds: 1f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+                stringValue: loa2_chaos_wizard_castle_entry,
+                intValue: 0,
+			},
+			
+			waitForEventToFinish: false,
+			
+			executes: [
+                end,
+			]
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

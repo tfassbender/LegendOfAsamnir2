@@ -1,0 +1,109 @@
+{
+	id: loa2_asgard_heimdall_cutscene,
+	controlledActions: {
+		heimdall_1: {
+			startsWithCutscene: true,
+			
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "A dwarf?!\n                     \nWhat does a dwarf want in Asgard?  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+           	],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'm searching for this strange chaos wizard guy.\n             \nHave you seen him?  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	heimdall_2,
+			],
+		},
+		
+		heimdall_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "A chaos wizard?            \nNever heard of someone like that.\n                \nBut you could ask Ratatosk, he knows everything that happens around here.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+           	],
+		},
+		
+		thorin_2: {
+            type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				description: ""
+				options: [
+					"Thanks for the help. I'll ask Ratatosk.",
+					"Who is Ratatosk?",
+				],
+			},
+			choiceOptionExecutions: [
+				heimdall_4,
+				heimdall_3,
+			]
+	    },
+	    
+		heimdall_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "Didn't you see him on you way here?\nHe always runs up and down the world tree.\n\nHe's right there! Beneath the Bifrost! ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	heimdall_4,
+           	],
+		},
+		
+		heimdall_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "I gotta go back to work now.\n                   \nSomeone needs to look out for Naglfars arrival.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

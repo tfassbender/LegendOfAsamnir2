@@ -1,5 +1,5 @@
 {
-	graphicsConfigFile: config/npc/graphics/royal_guard.json // TODO replace graphics config file
+	graphicsConfigFile: config/npc/graphics/king_dwarf.json
 	
 	aiConfig: {
 		type: PRE_DEFINED_MOVEMENT_AI,
@@ -17,5 +17,5 @@
 	interactionPossible: true,
 	movingSpeed: 0.75f,
 	
-	interactionEventId: loa2_vigrid_heimdal,
+	interactionEventId: loa2_vigrid_heimdall,
 }

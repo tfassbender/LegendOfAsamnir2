@@ -12,6 +12,9 @@
 	// level 1 - dwarven mine
 	config/events/global/loa2/mine.json,
 	
+	// asgard - fields of vigrid
+	config/events/global/loa2/asgard.json,
+	
 //	config/events/global/demo.json,
 //	config/events/global/map_change_test.json,
 //	

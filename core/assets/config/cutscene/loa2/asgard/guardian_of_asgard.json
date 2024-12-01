@@ -1,0 +1,73 @@
+{
+	id: loa2_asgard_guardian_of_asgard_cutscene,
+	controlledActions: {
+		guardian_1: {
+			startsWithCutscene: true,
+			
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Guardian of Asgard",
+                colorHeader: #ffd342,
+                displayText: "Stop right there!\n                   \nYou can't pass without permission from the Allfather.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+           	],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I need to find this strange chaos wizard guy.\n                 \nHe said to seek him on the fields of Vigrid.\nIs that here?  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	guardian_2,
+			],
+		},
+		
+		guardian_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Guardian of Asgard",
+                colorHeader: #ffd342,
+                displayText: "Do you mean this strange guy that built his castle in front of Asgards walls?\n                     \nHis 'secret' castle is right there! Just a fiew steps to the west. You can't miss it.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+           	],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'll search for him there.\nThanks!  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+	    },
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

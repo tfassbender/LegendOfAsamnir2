@@ -58,6 +58,16 @@
 		}
 	},
 	
+	loa2_main_moving_east_above_the_river: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_main_moving_east_above_the_river,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_main_moving_east_above_the_river_cutscene,
+		}
+	},
 	
 	//*******************************************
 	//*** cutscenes - npc interaction

@@ -1,0 +1,223 @@
+{
+	id: loa2_asgard_ratatosk_cutscene,
+	controlledActions: {
+	    start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__rune_laguz_collected,
+					executedStateName: laguz_collected__ratatosk_1
+				},
+				{
+					conditionId: loa2_asgard__chaos_wizard_castle_visisted,
+					executedStateName: chaos_wizard_castle_visited__ratatosk_1
+				},
+				{
+					// default case - thorin hasn't found the chaos wizard's castle yet
+					executedStateName: first_met__ratatosk_1
+				},
+			],
+		},
+		
+		laguz_collected__ratatosk_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Thorin!\n          \nYou finally found the rune Laguz?     \nGreat! Seems like you're close to finishing the game! ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	laguz_collected__ratatosk_2,
+           	],
+		},
+		
+		laguz_collected__ratatosk_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Good luck with defeating the chaos wizard! ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	laguz_collected__thorin_1,
+           	],
+		},
+		
+		laguz_collected__thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Thanks Ratatosk!",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		chaos_wizard_castle_visited__ratatosk_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Hey Thorin!\n           \nDid you find the chaos wizard?  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_castle_visited__thorin_1,
+           	],
+		},
+		
+		chaos_wizard_castle_visited__thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I found the castle, but I couldn't enter it...\n                         \nThe strange chaos wizard guy said something about a rune...  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_castle_visited__ratatosk_2,
+           	],
+		},
+		
+		chaos_wizard_castle_visited__ratatosk_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "I think you should search for the next rune in Niflheim. It's ... not that bad there at this time of the year.\nYou should be able to reach it from svartalfheim.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_castle_visited__thorin_2,
+           	],
+		},
+		
+		chaos_wizard_castle_visited__thorin_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Thanks for the hint Ratatosk!\n       \nI'll try to find the way to Niflheim.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		first_met__ratatosk_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Hey Thorin!\n           \nAre you looking for the chaos wizard?        \nHis castle is in the west in front of the walls of Asgard.             ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	first_met__ratatosk_2,
+           	],
+		},
+		
+		first_met__ratatosk_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "But you probably won't find him yet.\n           \nI heard him say something about a plan to send you on a quest to find more runes before you can enter his castle.  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	first_met__thorin_1,
+           	],
+		},
+		
+		first_met__thorin_1: {
+            type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"Thanks! I'll try to find the castle."
+					"How do you know all this?",
+					"... a talking squirrel?! ...",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				how_do_you_know_all_this__ratatosk_1,
+				a_talking_squirrel__ratatosk_1,
+			],
+		},
+		
+		how_do_you_know_all_this__ratatosk_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "I run up and down the world tree Yggdrasil all day long.\n                 \nI hear a lot of things.\nSome might be helpful for you...  ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		a_talking_squirrel__ratatosk_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "The name's Ratatosk.\n                \nAnd I'm not just a squirrel, but one of the most important creatures in the nine realms.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	how_do_you_know_all_this__ratatosk_1,
+           	],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

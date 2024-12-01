@@ -1,0 +1,13 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_asgard__chaos_wizard_castle_visisted: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+			key: loa2_asgard__chaos_wizard_castle_visisted,
+			expectedValue: true,
+		}
+	},
+}
