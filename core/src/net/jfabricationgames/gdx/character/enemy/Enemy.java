@@ -240,7 +240,6 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 			
 			if (!isAlive()) {
 				die();
-				
 			}
 			else {
 				stateMachine.setState(getDamageStateName(damage));

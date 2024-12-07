@@ -1,5 +1,6 @@
 package net.jfabricationgames.gdx.animation;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -34,13 +35,18 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 		if (spriteConfig == null) {
 			throw new IllegalStateException("No AnimationSpriteConfig. Please add an AnimationSpriteConfig in order to use the draw method");
 		}
-		T keyFrame = getKeyFrame();
-		float x = spriteConfig.x + ((spriteConfig.width - keyFrame.getRegionWidth() * animationConfig.scale) * Constants.WORLD_TO_SCREEN * 0.5f);
-		float y = spriteConfig.y + ((spriteConfig.height - keyFrame.getRegionHeight() * animationConfig.scale) * Constants.WORLD_TO_SCREEN * 0.5f);
-		batch.draw(keyFrame, x + getXOffset(), y + getYOffset(), //
-				spriteConfig.width * 0.5f, spriteConfig.height * 0.5f, //
-				keyFrame.getRegionWidth() * animationConfig.scale, keyFrame.getRegionHeight() * animationConfig.scale, //
-				Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN, 0f);
+		try {
+			T keyFrame = getKeyFrame();
+			float x = spriteConfig.x + ((spriteConfig.width - keyFrame.getRegionWidth() * animationConfig.scale) * Constants.WORLD_TO_SCREEN * 0.5f);
+			float y = spriteConfig.y + ((spriteConfig.height - keyFrame.getRegionHeight() * animationConfig.scale) * Constants.WORLD_TO_SCREEN * 0.5f);
+			batch.draw(keyFrame, x + getXOffset(), y + getYOffset(), //
+					spriteConfig.width * 0.5f, spriteConfig.height * 0.5f, //
+					keyFrame.getRegionWidth() * animationConfig.scale, keyFrame.getRegionHeight() * animationConfig.scale, //
+					Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN, 0f);
+		}
+		catch (IndexOutOfBoundsException e) {
+			Gdx.app.error(getClass().getSimpleName(), "key frame for animation wasn't found - animation will not be drawn", e);
+		}
 	}
 	
 	public void scaleSprite(Sprite sprite) {

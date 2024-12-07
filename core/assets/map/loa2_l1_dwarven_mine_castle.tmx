@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="536">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="540">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -828,6 +828,30 @@
     <property name="colorHeader" value="#5E5E5E"/>
     <property name="displayText" value="The valkyrie statues can be used to travel back to svartalfheim after a level is finished. "/>
     <property name="displayTextHeader" value="Valkyrie Statues"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="536" name="enemy.gargoyle" x="497" y="2321">
+   <properties>
+    <property name="moveBackToStartingPoint" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="537" name="enemy.gargoyle" x="992" y="1613">
+   <properties>
+    <property name="moveBackToStartingPoint" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="538" name="enemy.gargoyle" x="1680" y="1128">
+   <properties>
+    <property name="moveBackToStartingPoint" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="539" name="enemy.gargoyle" x="1521" y="1127">
+   <properties>
+    <property name="moveBackToStartingPoint" value="true"/>
    </properties>
    <point/>
   </object>

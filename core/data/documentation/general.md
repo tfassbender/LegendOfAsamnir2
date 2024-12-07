@@ -24,7 +24,9 @@
 ## General Ideas
 
 - Some new Items need to be added (or maybe existing items can be improved ?)
+  - A rope tool (like in the old legend of zeldas) could be used in Muspelheim to cross lava rivers
 - Use something like ForceFields (see boss fight of level 1) in a puzzle, where a projectile weapon of the player has to be redirected (pushed by the force field) to hit a target
+- add a loading screen or splash screen while the main menu is loading (takes quite a while now)
 
 
 ## Side Quests
@@ -88,12 +90,12 @@
 - Thorin can (again) try to get to the castle of the Chaos Wizard (enforce that?)
 - Thorin is able to get to the fields of Vigrid but he cannot enter the castle (the rune from the fourth dungeon is needed)
 - Only the way to the second level is free
-    - Third level is blocked by something heavy (rune of level 2 makes it possible to move it)
+    - Third level is reachable, but thorin takes constant damage, which makes it not possible to win this level yet (rune of level 2 negates this constant damage)
 	- Fourth level needs to be payed with a live (see [Runes](#to-be-added))
 - Level is in Niflheim (cold area in the north - entry near Asgard / Vigrid)
 - Map:
     - The map should not consist of only the dungeon, but also a view other things and NPCs
-	- Maybe use the ice tileset? (not available yet)
+	- Maybe use the ice tileset?
 - Textures:
     - Final part (maybe use ice tileset here):
         - Ice Elemental (small)
@@ -106,7 +108,8 @@
 
 ### Level 3
 
-- Thorin can move somethin heavy out of the way (with the rune from level 2) to access this level
+- Thorin can access this level after he went to the fields of vigrid for the first time (same time he's able to access level 2)
+  - But he takes constant damage (from the heat), which is negated by the rune from level 2 (without this rune it's not possible to win this level)
 - Level is in Muspelheim (hot area in the south)
 - Map:
     - Maybe use desert tileset (for a part of the level)?

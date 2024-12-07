@@ -581,4 +581,29 @@
 		isBoss: true
 		bossName: "Stone Titan - Keeper of the lost castle",
 	}
+	
+	gargoyle: {
+		typeName: gargoyle,
+		
+		animationsConfig: config/animation/enemy/gargoyle.json,
+		stateConfig: config/enemy/states/gargoyle.json,
+		initialState: statue,
+		attackConfig: config/enemy/attack/gargoyle.json,
+		
+		health: 20,
+		movingSpeed: 1.5f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.3f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1f,
+		bodyHeight: 0.7f,
+		
+		addSensor: true,
+		sensorRadius: 5f,
+		
+		pushForceDamage: 0,
+		pushForceHit: 30,
+	},
 }

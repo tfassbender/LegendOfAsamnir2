@@ -205,6 +205,14 @@
 				raw_images/enemy/dummy/dummy_damage,
 				raw_images/enemy/dummy/dummy_damage_long,
 				
+				// gargoyle
+				raw_images/restricted/enemy/gargoyle/gargoyle_attack,
+				raw_images/restricted/enemy/gargoyle/gargoyle_damage,
+				raw_images/restricted/enemy/gargoyle/gargoyle_death,
+				raw_images/restricted/enemy/gargoyle/gargoyle_idle,
+				raw_images/restricted/enemy/gargoyle/gargoyle_idle_2,
+				raw_images/restricted/enemy/gargoyle/gargoyle_statue,
+				
 				//##############################################################
 				//### enemies - restricted graphics
 				//##############################################################

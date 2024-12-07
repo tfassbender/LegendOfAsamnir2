@@ -1,0 +1,65 @@
+[
+	{
+		id: statue,
+		animation: gargoyle_statue,
+		endsWithAnimation: true,
+		followingState: statue,
+		interruptingStates: [
+			idle, move, attack, damage, death
+		]
+	},
+	{
+		id: idle,
+		animation: gargoyle_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, damage, death
+		]
+	},
+	{
+		id: move,
+		animation: gargoyle_idle_2,
+		endsWithAnimation: true,
+		followingState: statue,
+		interruptingStates: [
+			idle, attack, damage, death
+		]
+	},
+	{
+		id: attack,
+		animation: gargoyle_attack,
+		stateEnteringSound: attack_mini_golem,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: statue,
+		interruptingStates: [
+			damage, death
+		]
+	},
+	{
+		id: damage,
+		animation: gargoyle_damage,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 0.2f,
+		followingState: END,
+		stateEnteringSound: rock_hit,
+		followingState: statue,
+		interruptingStates: [
+			death
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: death,
+		animation: gargoyle_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 2f,
+		followingState: END,
+		stateEnteringSound: rock_break,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

@@ -1,0 +1,12 @@
+[
+	{
+		id: attack,
+		type: HIT,
+		delay: 0.1,
+		duration: 0,
+		damage: 5,
+		distFromCenter: 1,
+		hitFixtureRadius: 0.5,
+		pushForce: 50
+	},
+]
