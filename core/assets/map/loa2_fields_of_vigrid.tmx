@@ -76,7 +76,7 @@
    eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAAAA/Bg3OAAB
   </data>
  </layer>
- <objectgroup id="3" name="objects">
+ <objectgroup id="3" name="objects" visible="0">
   <object id="915" name="player.startingPosition" x="416" y="764">
    <properties>
     <property name="startingPointId" value="1"/>
@@ -154,7 +154,7 @@ West: Secret Castle of the Chaos Wizard</property>
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" visible="0">
   <object id="536" x="0" y="256" width="1984" height="160"/>
   <object id="537" x="0" y="416" width="928" height="113"/>
   <object id="538" x="1152" y="416" width="832" height="112.5"/>
@@ -951,7 +951,7 @@ West: Secret Castle of the Chaos Wizard</property>
    <polygon points="0,0 5,8.3125 -0.28125,8.40625"/>
   </object>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics" visible="0" locked="1">
   <object id="539" x="256" y="1024">
    <polygon points="0,0 -32,0 -32,-10.3636"/>
   </object>
@@ -1161,7 +1161,7 @@ West: Secret Castle of the Chaos Wizard</property>
    <polygon points="0,0 -0.217391,-20.1304 13.8696,-5.56522"/>
   </object>
  </objectgroup>
- <objectgroup id="6" name="ground_physics" locked="1">
+ <objectgroup id="6" name="ground_physics" visible="0" locked="1">
   <object id="892" x="1704.36" y="1426.97" width="22.1818" height="31.5151">
    <properties>
     <property name="ground" value="ladder"/>
