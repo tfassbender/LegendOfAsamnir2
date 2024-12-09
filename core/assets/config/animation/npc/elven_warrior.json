@@ -1,0 +1,13 @@
+{
+	configList: 
+	[
+		{
+			name: elven_warrior_idle_hat,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		
+		// other animations need to be added to the texture_settings.json file and need to be packed before they can be used
+	]
+}

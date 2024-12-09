@@ -1,0 +1,21 @@
+{
+	graphicsConfigFile: config/npc/graphics/elven_warrior.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: idle, // a movement state is needed for the config, but this NPC won't move, so we use the idle state
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	movingSpeed: 0.75f,
+	
+	interactionEventId: loa2_main_elven_warrior_in_dwarven_village,
+}

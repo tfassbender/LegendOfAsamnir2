@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/elven_warrior.json,
+	stateConfig: config/npc/states/elven_warrior.json,
+	initialState: idle,
+	
+	bodyWidth: 0.9f,
+	bodyHeight: 0.8f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.2f,
+	
+	interactionMarkerOffsetX: 0.1f,
+	interactionMarkerOffsetY: 0f,
+}

@@ -1,5 +1,12 @@
 package net.jfabricationgames.gdx.hud.implementation;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -7,6 +14,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.utils.Align;
 
+import net.jfabricationgames.gdx.condition.ConditionHandler;
+import net.jfabricationgames.gdx.cutscene.variable.CutsceneVariable;
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.input.InputActionListener.Parameters;
 import net.jfabricationgames.gdx.input.InputActionListener.Type;
 import net.jfabricationgames.gdx.text.ScreenTextWriter;
@@ -134,10 +144,88 @@ public class OnScreenTextRenderer {
 	}
 	
 	protected void setText(String text, boolean showNextPageIcon) {
-		this.text = text;
+		this.text = resolveVariablesInText(text);
 		this.showNextPageIcon = showNextPageIcon;
 		calculateTextLayout();
 		calculateDisplayedText();
+	}
+	
+	private String resolveVariablesInText(String text) {
+		Map<String, String> variablesAndValues = findVariables(text);
+		variablesAndValues.putAll(findTernaryVariables(text));
+		
+		if (!variablesAndValues.isEmpty()) {
+			String jointVariables = variablesAndValues.entrySet().stream() //
+					.map(e -> e.getKey() + " -> '" + e.getValue() + "'") //
+					.collect(Collectors.joining(", "));
+			Gdx.app.debug(getClass().getSimpleName(), "Replacing variables in on screen text: " + jointVariables);
+		}
+		
+		// replace all variables in the text
+		for (Map.Entry<String, String> entry : variablesAndValues.entrySet()) {
+			text = text.replace(entry.getKey(), entry.getValue());
+		}
+		
+		return text;
+	}
+	
+	private Map<String, String> findVariables(String text) {
+		Map<String, String> variablesAndValues = new HashMap<>();
+		
+		// find all variables in the text
+		Pattern replacementVariables = Pattern.compile("#\\{[^}]*\\}");
+		Matcher matcher = replacementVariables.matcher(text);
+		while (matcher.find()) {
+			String variable = matcher.group();
+			String variableName = variable.substring(2, variable.length() - 1);
+			String replacement;
+			
+			// try to replace the variables with values from the CutsceneVariables enum
+			if (CutsceneVariable.doesVariableExist(variableName)) {
+				replacement = CutsceneVariable.valueOf(variableName).evaluate();
+			}
+			else {
+				// if no enum value was defined, a global value is used instead
+				replacement = GlobalValuesDataHandler.getInstance().get(variableName);
+			}
+			
+			if (replacement == null) {
+				Gdx.app.error(getClass().getSimpleName(), "Variable for on screen text not found: " + variableName);
+				replacement = "<" + variableName + ">";
+			}
+			
+			variablesAndValues.put(variable, replacement);
+		}
+		
+		return variablesAndValues;
+	}
+	
+	private Map<String, String> findTernaryVariables(String text) {
+		Map<String, String> variablesAndValues = new HashMap<>();
+		
+		// find all ternary operator variables in the text
+		Pattern ternaryOperatorVariables = Pattern.compile("\\?\\{.+\\|.*\\|.*\\}");
+		Matcher matcher = ternaryOperatorVariables.matcher(text);
+		while (matcher.find()) {
+			String variable = matcher.group();
+			String variableName = variable.substring(2, variable.length() - 1);
+			String[] parts = variableName.split("\\|");
+			
+			if (ConditionHandler.getInstance().isConditionMet(parts[0])) {
+				variablesAndValues.put(variable, parts[1]);
+			}
+			else {
+				if (parts.length > 2) {
+					variablesAndValues.put(variable, parts[2]);
+				}
+				else {
+					// ?{condition|text|} will result in only two parts
+					variablesAndValues.put(variable, "");
+				}
+			}
+		}
+		
+		return variablesAndValues;
 	}
 	
 	private void calculateTextLayout() {

@@ -66,6 +66,7 @@ public enum EventType {
 	RUNE_NEEDED, //
 	RUNE_USED, //
 	SPECIAL_ACTION_ITEM_PICKED_UP, //
+	DELIVER_TRIFORCE_PIECES, //
 	//*******************************
 	//*** Cutscenes
 	//*******************************

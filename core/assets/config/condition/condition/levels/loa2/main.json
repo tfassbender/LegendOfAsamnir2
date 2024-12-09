@@ -42,4 +42,12 @@
             expectedValue: true,
 		}
 	},
+	
+	loa2_main__elven_warrior_in_dwarven_village_met: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_main__elven_warrior_in_dwarven_village_met,
+            expectedValue: true,
+		},
+	},
 }

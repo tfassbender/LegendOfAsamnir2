@@ -4,6 +4,8 @@
 		2: after_castle,
 		3: after_forge,
 		9: after_level_1_finished,
+		10: after_fields_of_vigrid_first_time,
+		11: after_fields_of_vigrid_first_time,
 	},
 	eventsLists: {
 		after_tavern: {
@@ -38,5 +40,15 @@
 				},
             ]
         },
+        
+        after_fields_of_vigrid_first_time: {
+        	subConfigName: after_level_1_finished,
+        	events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_asgard__chaos_wizard_castle_visisted, value: true}",
+				},
+			]
+        }
 	}
 }

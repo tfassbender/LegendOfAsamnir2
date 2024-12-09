@@ -84,6 +84,17 @@
 		}
 	},
 	
+	loa2_main_elven_warrior: {
+        event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_main_elven_warrior_in_dwarven_village,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_main_elven_warrior_in_dwarven_village_cutscene,
+		}
+	},
+	
 	loa2_main_dwarven_farmer: {
 		event: {
             eventType: NPC_INTERACTION,

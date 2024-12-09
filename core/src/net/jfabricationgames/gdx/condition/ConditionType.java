@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import net.jfabricationgames.gdx.data.handler.CharacterItemDataHandler;
 import net.jfabricationgames.gdx.data.handler.CharacterPropertiesDataHandler;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
+import net.jfabricationgames.gdx.item.TriforceItem;
 import net.jfabricationgames.gdx.rune.RuneType;
 
 public enum ConditionType {
@@ -129,6 +130,26 @@ public enum ConditionType {
 			}
 			
 			return CharacterPropertiesDataHandler.getInstance().getTokens(token) >= amount;
+		}
+	},
+	TRIFORCE_PIECES_COLLECTED {
+		
+		private static final String PARAMETER_AMOUNT = "neededAmount";
+		
+		@Override
+		public boolean check(Condition condition) {
+			int pieces = Integer.parseInt(condition.parameters.get(PARAMETER_AMOUNT, "1"));
+			return TriforceItem.getNumCarriedTriforcePieces() >= pieces;
+		}
+	},
+	TRIFORCE_PIECES_DELIVERED {
+		
+		private static final String PARAMETER_AMOUNT = "neededAmount";
+		
+		@Override
+		public boolean check(Condition condition) {
+			int pieces = Integer.parseInt(condition.parameters.get(PARAMETER_AMOUNT, "1"));
+			return TriforceItem.getNumDeliveredTriforcePieces() >= pieces;
 		}
 	};
 	

@@ -45,7 +45,8 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 					Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN, 0f);
 		}
 		catch (IndexOutOfBoundsException e) {
-			Gdx.app.error(getClass().getSimpleName(), "key frame for animation wasn't found - animation will not be drawn", e);
+			Gdx.app.error(getClass().getSimpleName(), "key frame for animation wasn't found for animation '" + animationConfig.name + //
+					"' (alias '" + animationConfig.alias + "') from atlas '" + animationConfig.atlas + "' - animation will not be drawn", e);
 		}
 	}
 	

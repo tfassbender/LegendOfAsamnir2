@@ -33,6 +33,10 @@
 
 - Collect the chickens
 - Find pieces of the Triforce (side quest by an Elf https://elthen.itch.io/2d-pixel-art-elven-archer-warrior) 
+  - If the player collects all pieces of the triforce the elf gives the player a piece of information that is needed in the final level to reach the chaos wizard
+  - Like in "Links Awakening" where the side quest leads to the information on which route to take in the final dungeon to reach the boss
+  - Some hints where the remaining parts of the triforce can be found should be added as a dialog option
+  - One piece should be buyable in the shop for a quite high price
 
 
 
@@ -104,6 +108,8 @@
 		- Wolf
 		- Santa (? - maybe only as joke, but not as actuall enemy)
     - Use common monsters in the other parts (since there are not many ice monsters)
+		- Shield Guardian
+		- Bandits or Ratfolk
 
 
 ### Level 3

@@ -330,6 +330,14 @@ A [CutsceneControlledActionConfig](core/src/net/jfabricationgames/gdx/cutscene/a
 - **updatePositionRelativeToTarget:** A boolean flag, that defines whether target position of the controlled unit is to be updated, relative to the targetPositionRelativeToUnitId parameter. This can be useful if the relative target is also moving. The default is false.
 - **cameraFollowsTarget:** A boolean flag, that defines whether the camera has to follow the current controlled unit. If this parameter is set to false the camera will only move if it is moved by this cutscene. The default value is false.
 
+### Variables in displayed texts
+
+Variables can be used in cutscenes that display text on the screen. Variables are placed inside curly brackets and start with a # character (e.g. `#{name_of_the_variable}`).  The text inside the variable will be resolved and replaced in the text that is displayed on the screen in the cutscene. The variable that is used here must either be the name of an enum constant from the enum [CutsceneVariable](core/src/net/jfabricationgames/gdx/cutscene/variable/CutsceneVariable.java) or a global value. Enum constants will be checked first.
+
+Also conditions can be used inside text (like variables). These special variables are placed inside curly brackets but start with a ? character. The variable has to be a condition (see [Conditions](#conditions)) with a ternary operator (e.g. `?{condition|displayed_if_condition_met|displayed_if_condition_NOT_met}`).
+
+An example for variables can be found in the cutscene config [elven_warrior_in_dwarven_village.json](core/assets/config/cutscene/loa2/main/elven_warrior_in_dwarven_village.json).
+
 ### Activating Cutscenes
 
 Cutscenes are usually started by a [Global Event](#global-events), that's type is set to `START_CUTSCENE`. The global event has to be configured to be activated when the cutscene is meant to be started. A cutscene that is configured to be started when the player touches an event object on the map is configured in the [demo.json](core/assets/config/events/global/demo.json) config file (that is a config file for global listened events, which is referenced from the main config file [globalListenedEvents.json](core/assets/config/events/globalListenedEvents.json)):

@@ -239,4 +239,40 @@
 		texture: rune_raidho,
 		pickUpSound: levelEnd
 	},
+	
+	//**********************************
+	//*** triforce
+	//**********************************
+	
+	triforce_svartalfheim_main_north: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	triforce_svartalfheim_main_south: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	triforce_svartalfheim_dwarven_cave_main: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	triforce_svartalfheim_dwarven_cave_castle: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	
+	triforce_asgard_castle: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	triforce_asgard_forest: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
 }

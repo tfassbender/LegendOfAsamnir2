@@ -35,6 +35,39 @@
 	},
 	
 	//*******************************************
+	//*** triforce side quest
+	//*******************************************
+	
+	common__triforce__all_pieces_collected: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+            key: triforce__all_pieces_collected,
+            expectedValue: true
+		}
+	},
+	
+	common__triforce__carrying_at_least_one_piece: {
+		conditionType: TRIFORCE_PIECES_COLLECTED,
+        parameters: {
+			neededAmount: 1,
+		}
+	},
+	
+	common__triforce__carrying_at_least_two_pieces: { // for plural in dialogues
+		conditionType: TRIFORCE_PIECES_COLLECTED,
+        parameters: {
+			neededAmount: 2,
+		}
+	},
+	
+	common__triforce__all_pieces_delivered: {
+		conditionType: TRIFORCE_PIECES_DELIVERED,
+        parameters: {
+			neededAmount: 42, // TODO replace by the actual number of pieces
+		}
+	},
+	
+	//*******************************************
 	//*** cutscenes
 	//*******************************************
 	

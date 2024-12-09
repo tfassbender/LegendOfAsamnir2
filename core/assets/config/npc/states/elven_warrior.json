@@ -1,0 +1,16 @@
+[
+	{
+		id: idle,
+		animation: elven_warrior_idle_hat,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: move,
+		animation: elven_warrior_idle_hat, // no movement is needed, but the move state is needed, so we use the idle animation
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	}
+]

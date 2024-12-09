@@ -8,6 +8,7 @@
 	loa2_main_dwarven_farmer: config/npc/levels/loa2/main/dwarven_farmer.json,
 	loa2_main_guardian_at_bifroest: config/npc/levels/loa2/main/guardian_at_bifroest.json,
 	loa2_main_guardian_at_helheim: config/npc/levels/loa2/main/guardian_at_helheim.json,
+	loa2_main_elven_warrior: config/npc/levels/loa2/main/elven_warrior.json,
 	
 	//*****************************************************************
 	//*** Legend of Asamnir 2 - Main - Tavern

@@ -20,6 +20,7 @@
 	//*** Legend of Asamnir 2 - Main
 	//********************************************************
 	config/cutscene/loa2/main/adventurer_in_dwarven_village.json,
+	config/cutscene/loa2/main/elven_warrior_in_dwarven_village.json,
 	config/cutscene/loa2/main/dwarven_farmer.json,
 	config/cutscene/loa2/main/leaving_village_north.json,
 	config/cutscene/loa2/main/leaving_village_east.json,

@@ -138,6 +138,9 @@ public class ItemFactory {
 				ItemSpecialAction itemSpecialAction = itemSpecialActionByNameFunction.apply(name);
 				item = new SpecialActionItem(name, typeConfig, sprite, animation, properties, itemSpecialAction);
 				break;
+			case TRIFORCE:
+				item = new TriforceItem(name, typeConfig, sprite, animation, properties);
+				break;
 			default:
 				throw new IllegalStateException("Unknown ItemType \"" + typeConfig.type + "\" of object type \"" + name + "\"");
 		}

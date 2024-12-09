@@ -6,5 +6,6 @@ public enum ItemType {
 	EVENT_ITEM, //
 	BUYABLE_ITEM, //
 	RUNE, //
-	SPECIAL_ACTION,
+	SPECIAL_ACTION, //
+	TRIFORCE;
 }

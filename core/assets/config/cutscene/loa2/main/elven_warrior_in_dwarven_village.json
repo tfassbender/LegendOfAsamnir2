@@ -1,0 +1,356 @@
+{
+	id: loa2_main_elven_warrior_in_dwarven_village_cutscene,
+	controlledActions: {
+	    starting_condition: {
+			startsWithCutscene: true,
+	    	
+	    	type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__triforce__all_pieces_collected,
+					executedStateName: elf_all_pieces_collected,
+				},
+				{
+					conditionId: loa2_main__elven_warrior_in_dwarven_village_met,
+					executedStateName: elf_greeting,
+				},
+				{
+					// default case - the player hasn't yet chosen a difficulty
+					executedStateName: thorin_greeting,
+				},
+			],
+	    },
+	    
+		thorin_greeting: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "An Elf?\n            \nWhat does an elf with a funny hat do in svartalfheim?  ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value,
+			],
+		},
+		
+		set_global_value: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__elven_warrior_in_dwarven_village_met, value: true}",
+			},
+			
+			executes: [
+			    elf_explain_side_quest,
+			],
+		},
+	
+		elf_explain_side_quest: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "I'm a warrior on an important quest.\n                  \nI'm searching for a mighty amulet that was stolen by an evil warlock.   ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				elf_explain_side_quest_2,
+			],
+		},
+		
+		elf_explain_side_quest_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "Many pieces of the amulet were scattered across the nine realms, and I need to find them all.   ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				elf_explain_side_quest_3,
+			],
+		},
+		
+		elf_explain_side_quest_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "I'm not very familiar with this realm, so I could use some help.              \nIf you find all pieces of the amulet and bring them to me I can help you on your quest.   ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question__what_can_you_offer,
+			],
+		},
+		
+		thorin_question__what_can_you_offer: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"Ok. I'll help you.",
+					"How can you help me on my quest?",
+				],
+			},
+			choiceOptionExecutions: [
+				thorin_question,
+				elf_explain_side_quest_4,
+			],
+		},
+		
+		elf_explain_side_quest_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "I can provide you with some helpful information.\n           \nThat might be useful at some point in your quest...   ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question,
+			],
+		},
+		
+		elf_greeting: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "Hello Thorin.\n        \nDid you find any pieces of the amulet?  ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer_amulet_pieces__condition,
+			],
+		},
+		
+		thorin_answer_amulet_pieces__condition: {
+	    	type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__triforce__carrying_at_least_one_piece,
+					executedStateName: thorin_answer_amulet_pieces_found,
+				},
+				{
+					// default case - no more pieces of the amulet found
+					executedStateName: thorin_answer_amulet_pieces_not_found,
+				},
+			],
+	    },
+	    
+		thorin_answer_amulet_pieces_found: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I found #{NUM_TRIFORCE_PIECES_CARRIED} more piece?{common__triforce__carrying_at_least_two_pieces|s|} of the amulet.\n          \nHere you can have ?{common__triforce__carrying_at_least_two_pieces|them|it}.  ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				deliver_amulet_pieces,
+			],
+		},
+		
+		deliver_amulet_pieces: {
+			type: EVENT,
+			
+			event: {
+				eventType: DELIVER_TRIFORCE_PIECES,
+			},
+			
+			executes: [
+				elf_answer_amulet_pieces_found,
+			],
+		},
+		
+		elf_condition_final_piece_delivered: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__triforce__all_pieces_delivered,
+					executedStateName: elf_all_pieces_collected,
+				},
+				{
+					// default case - not all pieces of the amulet have been delivered yet
+					executedStateName: elf_answer_amulet_pieces_found,
+				},
+			],
+		},
+		
+		elf_answer_amulet_pieces_found: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "Thank you Thorin.\n        \nYou already found #{NUM_TRIFORCE_PIECES_DELIVERED} of the #{NUM_TRIFORCE_PIECES_TOTAL} lost pieces of the amulet.    ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question,
+			],
+		},
+	    
+	    thorin_answer_amulet_pieces_not_found: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I didn't find any more pieces of the amulet yet.  ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question,
+			],
+		},
+		
+		thorin_question: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"What are you doing here?",
+					"How many pieces of the amulet are missing?",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				elf_explain_side_quest,
+				missing_pieces,
+			],
+		},
+		
+		missing_pieces: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__triforce__all_pieces_collected,
+					executedStateName: elf_all_pieces_collected,
+				},
+				{
+					// default case - not all pieces of the amulet have been found yet
+					executedStateName: elf_missing_pieces,
+				},
+			],
+		},
+		
+		elf_missing_pieces: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "You found #{NUM_TRIFORCE_PIECES_DELIVERED} of the #{NUM_TRIFORCE_PIECES_TOTAL} pieces of the amulet.\n                       \nThe remaining ones should be hidden somewhere in the nine realms.  ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				elf_missing_pieces_2,
+			],
+		},
+		
+		elf_missing_pieces_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "There should be #{NUM_TRIFORCE_PIECES_LEFT_IN_SVARTALFHEIM} left in Svartalfheim, #{NUM_TRIFORCE_PIECES_LEFT_IN_ASGARD} in Asgard, #{NUM_TRIFORCE_PIECES_LEFT_IN_NIFLHEIM} in Niflheim, #{NUM_TRIFORCE_PIECES_LEFT_IN_MUSPELHEIM} in Muspelheim, and #{NUM_TRIFORCE_PIECES_LEFT_IN_HELHEIM} in Helheim.  ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question,
+			],
+		},
+		
+		elf_all_pieces_collected: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "You found all pieces of the amulet!          \nThank you so much!\n             \nI'll tell you what I know about your quest now.  ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				elf_all_pieces_collected_2,
+			],
+		},
+		
+		elf_all_pieces_collected_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "TODO add crucial information for the player here (path to take in the final dungeon)  ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
