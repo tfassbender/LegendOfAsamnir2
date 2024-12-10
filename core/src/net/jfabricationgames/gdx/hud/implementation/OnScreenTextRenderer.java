@@ -204,7 +204,7 @@ public class OnScreenTextRenderer {
 		Map<String, String> variablesAndValues = new HashMap<>();
 		
 		// find all ternary operator variables in the text
-		Pattern ternaryOperatorVariables = Pattern.compile("\\?\\{.+\\|.*\\|.*\\}");
+		Pattern ternaryOperatorVariables = Pattern.compile("\\?\\{[^}]+\\|[^}]*\\|[^}]*\\}");
 		Matcher matcher = ternaryOperatorVariables.matcher(text);
 		while (matcher.find()) {
 			String variable = matcher.group();

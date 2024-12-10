@@ -60,6 +60,13 @@
 		}
 	},
 	
+	common__triforce__delivered_at_least_one_piece: {
+		conditionType: TRIFORCE_PIECES_DELIVERED,
+        parameters: {
+			neededAmount: 1,
+		}
+	},
+	
 	common__triforce__all_pieces_delivered: {
 		conditionType: TRIFORCE_PIECES_DELIVERED,
         parameters: {

@@ -8739,14 +8739,14 @@ hedgehog_move
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 3
 hedgehog_move
   rotate: false
   xy: 2432, 258
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 3
+  index: 1
 hedgehog_idle
   rotate: false
   xy: 2500, 292
@@ -9061,13 +9061,6 @@ inn_keeper_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
-inn_keeper_idle
-  rotate: false
-  xy: 2874, 258
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
   index: 5
 inn_keeper_idle
   rotate: false
@@ -9076,6 +9069,13 @@ inn_keeper_idle
   orig: 32, 32
   offset: 0, 0
   index: 11
+inn_keeper_idle
+  rotate: false
+  xy: 2874, 258
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
 inn_keeper_no
   rotate: false
   xy: 2874, 258
@@ -11504,6 +11504,13 @@ old_man_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
+  index: 13
+old_man_idle
+  rotate: false
+  xy: 3826, 258
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
   index: 15
 old_man_idle
   rotate: false
@@ -11512,13 +11519,6 @@ old_man_idle
   orig: 32, 32
   offset: 0, 0
   index: 14
-old_man_idle
-  rotate: false
-  xy: 3826, 258
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
 old_man_move
   rotate: false
   xy: 3826, 258
@@ -11546,14 +11546,14 @@ old_man_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 9
+  index: 7
 old_man_idle
   rotate: false
   xy: 3894, 292
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 7
+  index: 9
 old_man_idle
   rotate: false
   xy: 3860, 258
@@ -11561,20 +11561,6 @@ old_man_idle
   orig: 32, 32
   offset: 0, 0
   index: 4
-old_man_idle
-  rotate: false
-  xy: 3860, 258
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
-old_man_idle
-  rotate: false
-  xy: 3860, 258
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 10
 old_man_idle
   rotate: false
   xy: 3860, 258
@@ -11589,6 +11575,20 @@ old_man_idle
   orig: 32, 32
   offset: 0, 0
   index: 8
+old_man_idle
+  rotate: false
+  xy: 3860, 258
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+old_man_idle
+  rotate: false
+  xy: 3860, 258
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 10
 old_man_idle
   rotate: false
   xy: 3826, 224
@@ -12302,14 +12302,14 @@ spider_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 1
 spider_idle
   rotate: false
   xy: 3070, 190
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 4
 spider_jump
   rotate: false
   xy: 3070, 190

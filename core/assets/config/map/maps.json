@@ -54,13 +54,13 @@
 		name: loa2_dwarven_mine_main,
 		map: "map/loa2_l1_dwarven_mine_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l1_dwarven_caves.json,
-		initialStartingPointId: 3,
+		initialStartingPointId: 4,
 		//initial: true
 	},
 	{
         name: loa2_dwarven_mine_castle,
         map: "map/loa2_l1_dwarven_mine_castle.tmx",
-        initialStartingPointId: 0,
+        initialStartingPointId: 12,
 		//initial: true
 	},
 	
@@ -70,7 +70,7 @@
 		name: loa2_fields_of_vigrid,
 		map: "map/loa2_fields_of_vigrid.tmx",
 		initialStartingPointId: 0,
-		initial: true
+		//initial: true
 	},
 	
 	//****************************************

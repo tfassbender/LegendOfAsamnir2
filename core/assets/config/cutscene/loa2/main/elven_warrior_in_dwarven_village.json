@@ -174,7 +174,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Thorin",
-				displayText: "I found #{NUM_TRIFORCE_PIECES_CARRIED} more piece?{common__triforce__carrying_at_least_two_pieces|s|} of the amulet.\n          \nHere you can have ?{common__triforce__carrying_at_least_two_pieces|them|it}.  ",
+				displayText: "I found #{NUM_TRIFORCE_PIECES_CARRIED} ?{common__triforce__delivered_at_least_one_piece|more |}piece?{common__triforce__carrying_at_least_two_pieces|s|} of the amulet.\n          \nHere you can have ?{common__triforce__carrying_at_least_two_pieces|them|it}.  ",
 				showNextPageIcon: true,
 			}
 			
@@ -234,7 +234,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Thorin",
-				displayText: "I didn't find any more pieces of the amulet yet.  ",
+				displayText: "I didn't find any ?{common__triforce__delivered_at_least_one_piece|more |}pieces of the amulet yet.  ",
 				showNextPageIcon: true,
 			}
 			
