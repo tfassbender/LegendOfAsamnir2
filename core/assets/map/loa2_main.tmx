@@ -427,9 +427,6 @@ West: Helheim.</property>
   <object id="10462" name="item.triforce_svartalfheim_main_south" x="768" y="2912">
    <point/>
   </object>
-  <object id="10465" name="item.triforce_asgard_forest" x="1376" y="1504">
-   <point/>
-  </object>
  </objectgroup>
  <objectgroup id="33" name="physics" locked="1">
   <object id="8162" x="1022.67" y="1215.91" width="288" height="192"/>

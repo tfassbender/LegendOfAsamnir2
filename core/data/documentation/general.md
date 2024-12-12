@@ -24,14 +24,17 @@
 ## General Ideas
 
 - Some new Items need to be added (or maybe existing items can be improved ?)
-  - A rope tool (like in the old legend of zeldas) could be used in Muspelheim to cross lava rivers
+  - An ice pick that is needed to get up a slippery stairway or to stop on an icy way (without the item you cannot stop or change your movement anymore) (in Niflheim)
+  - A rope tool (or "grapping hook" / "hookshot") (like in the old legend of zeldas) could be used in Muspelheim to cross lava rivers
+  - A compas, that can be used to find a path in an area where the lantern isn't enough to light up the path (in Helheim)
+    - Could also be used to show the direction to the nearest Triforce piece (if any is present on the map)
 - Use something like ForceFields (see boss fight of level 1) in a puzzle, where a projectile weapon of the player has to be redirected (pushed by the force field) to hit a target
 - add a loading screen or splash screen while the main menu is loading (takes quite a while now)
 
 
 ## Side Quests
 
-- Collect the chickens
+- Collect the chickens (level 2)
 - Find pieces of the Triforce (side quest by an Elf https://elthen.itch.io/2d-pixel-art-elven-archer-warrior) 
   - If the player collects all pieces of the triforce the elf gives the player a piece of information that is needed in the final level to reach the chaos wizard
   - Like in "Links Awakening" where the side quest leads to the information on which route to take in the final dungeon to reach the boss
@@ -91,7 +94,7 @@
 
 ### Level 2
 
-- Thorin can (again) try to get to the castle of the Chaos Wizard (enforce that?)
+- Thorin can (again) try to get to the castle of the Chaos Wizard (enforce that)
 - Thorin is able to get to the fields of Vigrid but he cannot enter the castle (the rune from the fourth dungeon is needed)
 - Only the way to the second level is free
     - Third level is reachable, but thorin takes constant damage, which makes it not possible to win this level yet (rune of level 2 negates this constant damage)
@@ -99,7 +102,7 @@
 - Level is in Niflheim (cold area in the north - entry near Asgard / Vigrid)
 - Map:
     - The map should not consist of only the dungeon, but also a view other things and NPCs
-	- Maybe use the ice tileset?
+	- Use the ice tileset for the final part of the level
 - Textures:
     - Final part (maybe use ice tileset here):
         - Ice Elemental (small)
@@ -109,7 +112,7 @@
 		- Santa (? - maybe only as joke, but not as actuall enemy)
     - Use common monsters in the other parts (since there are not many ice monsters)
 		- Shield Guardian
-		- Bandits or Ratfolk
+		- Bandits
 
 
 ### Level 3

@@ -1,5 +1,6 @@
 package net.jfabricationgames.gdx.desktop;
 
+import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
@@ -21,6 +22,7 @@ public class DesktopLauncher {
 		config.height = 800;
 		config.vSyncEnabled = true;
 		config.fullscreen = false;
+		config.addIcon("raw_images/items/asamnir.png", Files.FileType.Internal);
 		return config;
 	}
 	
