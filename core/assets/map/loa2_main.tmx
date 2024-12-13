@@ -428,7 +428,7 @@ West: Helheim.</property>
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="33" name="physics" locked="1">
+ <objectgroup id="33" name="physics">
   <object id="8162" x="1022.67" y="1215.91" width="288" height="192"/>
   <object id="8163" x="1086.67" y="1407.91" width="224" height="18.3333"/>
   <object id="8164" x="1022.67" y="1407.91" width="32" height="18"/>

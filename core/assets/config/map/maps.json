@@ -15,7 +15,7 @@
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
 		initialStartingPointId: 11,
-		initial: true
+		//initial: true
 	},
 	{
         name: loa2_main_tavern,
@@ -62,6 +62,15 @@
         map: "map/loa2_l1_dwarven_mine_castle.tmx",
         initialStartingPointId: 12,
 		//initial: true
+	},
+	
+	// loa2 level 2 - niflheim
+	
+	{
+        name: loa2_niflheim_main,
+        map: "map/loa2_l2_niflheim_main.tmx",
+        initialStartingPointId: 0,
+		initial: true
 	},
 	
 	// loa2 - fields of vigrid

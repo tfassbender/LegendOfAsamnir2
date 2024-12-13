@@ -30,6 +30,7 @@
     - Could also be used to show the direction to the nearest Triforce piece (if any is present on the map)
 - Use something like ForceFields (see boss fight of level 1) in a puzzle, where a projectile weapon of the player has to be redirected (pushed by the force field) to hit a target
 - add a loading screen or splash screen while the main menu is loading (takes quite a while now)
+	- or use a new texture atlas for the main menu that loads faster
 
 
 ## Side Quests
@@ -103,6 +104,25 @@
 - Map:
     - The map should not consist of only the dungeon, but also a view other things and NPCs
 	- Use the ice tileset for the final part of the level
+	- The map is split up into three parts
+		- A main part, with a village
+			- Not many enemies here (only bandits)
+			- A village that needs help because of the bandits
+				- The bandits have stolen many things from the village, including an ice-pick that is needed to proceed in the final part of this level
+			- Chicken side quest (for a piece of the triforce)
+		- A small map with a bandit camp, where thorin has to defeat the bandits and find the ice-pick
+			- Use the Medival-Warcamp tileset for the bandit camp
+			- Include a (small) puzzle that has to be solved to enter the bandit camp
+			- Include a mini boss (bugbear)
+		- The final part of the level (which is reachable without going through the bandit camp, but one cannot succeed there without the ice-pick)
+			- Include some puzzles
+				- At the beginning, a frozen lake has to be crossed, where thorin needs to use the ice-pick (to let the player know that he cannot succeed the level without the item)
+				- (?) A puzzle where Thorin has to move through some iglus, where it's not directly clear which entry leads to which exit
+				- Use pressure switches to move a movable object on a frozen lake, to open a gate
+					- The frozen lake cannot be entered by the player, but the switches must be used
+					- The movable object doesn't stop while moving on the ice (like Thorin without the ice-pick)
+					- Could use the boomerang, the Dwarven Guardian Construct fists from level 1 or a magic switch (the magic switch can be activated to not block the way)
+					- The movable object could be moved in a direction if no force is applied (like a pinball, where the dwarven guardian construct's fist is the starter)
 - Textures:
     - Final part (maybe use ice tileset here):
         - Ice Elemental (small)
@@ -111,8 +131,8 @@
 		- Wolf
 		- Santa (? - maybe only as joke, but not as actuall enemy)
     - Use common monsters in the other parts (since there are not many ice monsters)
-		- Shield Guardian
 		- Bandits
+		- Bugbear (mini boss)
 
 
 ### Level 3
