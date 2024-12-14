@@ -1,0 +1,13 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_l2_niflheim__bandits_introduced: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+			key: loa2_l2_niflheim__bandits_introduced,
+			expectedValue: true,
+		}
+	},
+}

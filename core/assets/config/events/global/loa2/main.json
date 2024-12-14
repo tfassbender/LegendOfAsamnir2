@@ -244,7 +244,7 @@
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_level_under_construction_cutscene,
+			cutsceneId: loa2_goto_niflheim_cutscene,
 		}
 	},
 	
@@ -278,6 +278,17 @@
 		executionType: START_CUTSCENE,
 		executionParameters: {
 			cutsceneId: loa2_main_guardian_at_bifroest_stops_thorin_cutscene,
+		}
+	},
+	
+	loa2_main_goto_asgard_2: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_asgard_2,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_goto_asgard_cutscene,
 		}
 	},
 }

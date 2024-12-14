@@ -1,0 +1,40 @@
+{
+	id: loa2_l2_niflheim_goto_main_cutscene,
+	controlledActions: {
+		move_down: {
+			startsWithCutscene: true,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -6},
+			cameraFollowsTarget: false,
+			
+			executes: [
+                change_map,
+			]
+		},
+		
+		change_map: {
+			executionDelayInSeconds: 1f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+                stringValue: loa2_main,
+                intValue: 6,
+			},
+			
+			waitForEventToFinish: false,
+			cameraFollowsTarget: false,
+			
+			executes: [
+                end,
+			]
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

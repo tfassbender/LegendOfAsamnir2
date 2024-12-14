@@ -1,0 +1,68 @@
+{
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_l2_niflheim__ratatosk: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l2_niflheim_ratatosk,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l2_niflheim_ratatosk_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes - event objects touched
+	//*******************************************
+	
+	loa2_l2_niflheim_main__introduce_bandits: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_main__introduce_bandits,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main__introduce_bandits_cutscene,
+		}
+	},
+
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l2_niflheim_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l2_niflheim_goto_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l2_niflheim_goto_main_cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_main_goto_niflheim_bandit_camp_cutscene: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_main_goto_niflheim_bandit_camp,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main_goto_niflheim_bandit_camp_cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_main_goto_niflheim_final: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_main_goto_niflheim_final,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main_goto_niflheim_final_cutscene,
+		}
+	},
+}

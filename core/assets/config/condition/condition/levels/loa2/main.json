@@ -50,4 +50,12 @@
             expectedValue: true,
 		},
 	},
+	
+	loa2_main__guardian_at_bifrost_has_seen_thorins_rune_raidho: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_main__guardian_at_bifrost_has_seen_thorins_rune_raidho,
+            expectedValue: true,
+		},
+	},
 }

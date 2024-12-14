@@ -1,0 +1,147 @@
+{
+	id: loa2_l2_niflheim_main__introduce_bandits_cutscene,
+	controlledActions: {
+	    start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandits_introduced,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: camera_multiplexer
+				},
+			],
+		},
+		
+		camera_multiplexer: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+				move_camera,
+				bandit_sword_stops_thorin,
+			],
+		},
+		
+		move_camera: {
+			executionDelayInSeconds: 1f,
+		
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: event_object__introduce_bandits,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 1.2},
+			speedFactor: 3f,
+		},
+		
+		bandit_sword_stops_thorin: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Bandit (with a sword)",
+				displayText: "Stop right there!!!\n          \nNoone's allowed to pass through here!       \nEspecially not a kid...               \n... in full battle armor ... ?!            ",
+				colorHeader: #7a6259,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				bandit_shield,
+			],
+		},
+		
+		bandit_shield: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Bandit (with a shield)",
+				displayText: "... I think that's a dwarf ... not a kid ...  ",
+				colorHeader: #56756f,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_choice,
+			],
+		},
+		
+		thorin_choice: {
+            type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"Why are you blocking the road?",
+					"Get out of my way!",
+					"*kill them already*",
+				],
+			},
+			choiceOptionExecutions: [
+				bandit_sword__explain_road_block,
+				bandit_sword__warn_thorin,
+				set_global_value_bandits_introduced,
+			],
+		},
+		
+		bandit_sword__explain_road_block: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Bandit (with a sword)",
+				displayText: "The boss told us to block the road, so that he can plunder the village without any interruptions.   ",
+				colorHeader: #7a6259,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				bandit_sword__warn_thorin,
+			],
+		},
+		
+		bandit_sword__warn_thorin: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Bandit (with a sword)",
+				displayText: "Stay back and we might let you live.   ",
+				colorHeader: #7a6259,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value_bandits_introduced,
+			],
+		},
+		
+		set_global_value_bandits_introduced: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l2_niflheim__bandits_introduced, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

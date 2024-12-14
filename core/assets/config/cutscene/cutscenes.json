@@ -33,7 +33,9 @@
 	config/cutscene/loa2/main/guardian_at_bifroest_stops_thorin.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
 	config/cutscene/loa2/main/choose_game_difficulty.json,
+	config/cutscene/loa2/main/goto_asgard.json,
 	config/cutscene/loa2/main/moving_east_above_the_river.json,
+	config/cutscene/loa2/main/goto_niflheim.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main - Tavern
@@ -93,6 +95,14 @@
 	config/cutscene/loa2/mine/rune_found.json,
 	
 	//********************************************************
+	//*** Legend of Asamnir 2 - Niflheim - Main
+	//********************************************************
+	config/cutscene/loa2/niflheim/goto_main.json,
+	config/cutscene/loa2/niflheim/introduce_bandits.json,
+	config/cutscene/loa2/niflheim/goto_bandit_camp.json,
+	config/cutscene/loa2/niflheim/goto_final.json,
+	
+	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
 	//********************************************************
 	config/cutscene/loa2/asgard/goto_main.json,
@@ -101,23 +111,23 @@
 	config/cutscene/loa2/asgard/goto_chaos_wizard_castle.json,
 	config/cutscene/loa2/asgard/ratatosk.json,
 
-	//********************************************************
-	//*** Demo Level
-	//********************************************************
-	config/cutscene/demo/minotaur_cutscene.json,
-	config/cutscene/demo/talk_to_female_adventurer.json,
-	config/cutscene/demo/talk_to_guard_blocking_the_way.json,
-	config/cutscene/demo/demo_signboard_cutscene.json,
-	
-	//********************************************************
-	//*** Tutorial Level
-	//********************************************************
-	
-	config/cutscene/tutorial/talk_to_female_adventurer.json,
-	config/cutscene/tutorial/minotaur_cutscene.json,
-	config/cutscene/tutorial/adventurer_tells_a_tale.json,
-	config/cutscene/tutorial/adventurer_introduces_the_boss.json,
-	
+//	//********************************************************
+//	//*** Demo Level
+//	//********************************************************
+//	config/cutscene/demo/minotaur_cutscene.json,
+//	config/cutscene/demo/talk_to_female_adventurer.json,
+//	config/cutscene/demo/talk_to_guard_blocking_the_way.json,
+//	config/cutscene/demo/demo_signboard_cutscene.json,
+//	
+//	//********************************************************
+//	//*** Tutorial Level
+//	//********************************************************
+//	
+//	config/cutscene/tutorial/talk_to_female_adventurer.json,
+//	config/cutscene/tutorial/minotaur_cutscene.json,
+//	config/cutscene/tutorial/adventurer_tells_a_tale.json,
+//	config/cutscene/tutorial/adventurer_introduces_the_boss.json,
+//	
 //	//********************************************************
 //	//*** Demo 2 Prolog
 //	//********************************************************
