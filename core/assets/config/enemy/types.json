@@ -606,4 +606,74 @@
 		pushForceDamage: 0,
 		pushForceHit: 30,
 	},
+	
+	bandit_leader: {
+		typeName: bandit_leader,
+		
+		animationsConfig: config/animation/enemy/bandit_leader.json,
+		stateConfig: config/enemy/states/bandit_leader.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bandit_leader.json,
+		aiConfig: config/enemy/ai/bandit.json,
+		
+		health: 20,
+		movingSpeed: 2,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 4f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: -0.1,
+		healthBarOffsetY: 0,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			coin: 0.7,
+		}
+	},
+	
+	bandit_shield: {
+		typeName: bandit_shield,
+		
+		animationsConfig: config/animation/enemy/bandit_shield.json,
+		stateConfig: config/enemy/states/bandit_shield.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bandit_shield.json,
+		aiConfig: config/enemy/ai/bandit.json,
+		
+		health: 30,
+		movingSpeed: 1.25,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 4f,
+		
+		pushForceDamage: 15,
+		pushForceHit: 30,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			coin: 0.7,
+		}
+	},
 }

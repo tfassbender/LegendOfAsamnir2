@@ -2,52 +2,34 @@
 	configList: 
 	[
 		{
-			name: ogre_attack_1,
+			name: bandit_shield_attack,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
 			playMode: NORMAL
 		},
 		{
-			name: ogre_attack_2,
+			name: bandit_shield_damage,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
 			playMode: NORMAL
 		},
 		{
-			name: ogre_charge,
+			name: bandit_shield_death,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
 			playMode: NORMAL
 		},
 		{
-			name: ogre_damage,
+			name: bandit_shield_idle,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
 			playMode: NORMAL
 		},
 		{
-			name: ogre_death,
+			name: bandit_shield_move,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
 			playMode: NORMAL
-		},
-		{
-			name: ogre_idle,
-			atlas: packed/demo/demo.atlas,
-			frameDuration: 0.1,
-			playMode: NORMAL
-		},
-		{
-			name: ogre_idle_2,
-			atlas: packed/demo/demo.atlas,
-			frameDuration: 0.1,
-			playMode: NORMAL
-		},
-		{
-			name: ogre_move,
-			atlas: packed/demo/demo.atlas,
-			frameDuration: 0.1,
-			playMode: NORMAL
-		},
+		}
 	]
 }

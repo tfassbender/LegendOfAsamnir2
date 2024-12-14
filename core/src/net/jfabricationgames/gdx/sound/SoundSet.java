@@ -77,11 +77,16 @@ public class SoundSet implements Disposable {
 	}
 	
 	public SoundHandler playSound(String name) {
+		return playSound(name, new SoundPlayConfig());
+	}
+	
+	public SoundHandler playSound(String name, SoundPlayConfig config) {
 		Sound sound = getSound(name);
 		SoundHandler soundHandler = new SoundHandler(sound);
 		
-		float volume = soundConfigs.get(name).getVolume();
-		float delay = soundConfigs.get(name).getDelay();
+		float delay = config.delay == SoundPlayConfig.DEFAULT_SETTING ? soundConfigs.get(name).getDelay() : config.delay;
+		float volume = config.volume == SoundPlayConfig.DEFAULT_SETTING ? soundConfigs.get(name).getVolume() : config.volume;
+		
 		if (delay > 0.01) {
 			Timer.schedule(new Task() {
 				
@@ -98,30 +103,6 @@ public class SoundSet implements Disposable {
 		}
 		
 		return soundHandler;
-	}
-	
-	public Sound loopSound(String name) {
-		Sound sound = getSound(name);
-		SoundHandler soundHandler = new SoundHandler(sound);
-		
-		float volume = soundConfigs.get(name).getVolume();
-		float delay = soundConfigs.get(name).getDelay();
-		if (delay > 0.01) {
-			Timer.schedule(new Task() {
-				
-				@Override
-				public void run() {
-					if (!soundHandler.isSoundStoped()) {
-						sound.loop(volume);
-					}
-				}
-			}, delay);
-		}
-		else {
-			sound.loop(volume);
-		}
-		
-		return sound;
 	}
 	
 	@Override

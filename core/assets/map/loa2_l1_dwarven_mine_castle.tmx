@@ -93,7 +93,7 @@
    eJztzkENAAAIBKB72L+fbYzhdJCABAAAAAAAAAD4qGt7AAAAAAAAAAAAAAAAAAAAAAAAAAAAAFw2QTsA3g==
   </data>
  </layer>
- <objectgroup id="3" name="objects" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="4" name="player.startingPosition" x="944.246" y="2544.13">
    <properties>
     <property name="startingPointId" value="0"/>

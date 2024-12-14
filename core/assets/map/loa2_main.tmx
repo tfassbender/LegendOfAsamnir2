@@ -310,7 +310,7 @@ Its much to dangerous for these weak little aesirs, or ice giants, or humans, or
    </properties>
    <point/>
   </object>
-  <object id="10436" name="player.startingPosition" x="1422" y="396.667">
+  <object id="10436" name="player.startingPosition" x="1448.33" y="396.334">
    <properties>
     <property name="startingPointId" value="9"/>
    </properties>
@@ -428,7 +428,7 @@ West: Helheim.</property>
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="33" name="physics">
+ <objectgroup id="33" name="physics" locked="1">
   <object id="8162" x="1022.67" y="1215.91" width="288" height="192"/>
   <object id="8163" x="1086.67" y="1407.91" width="224" height="18.3333"/>
   <object id="8164" x="1022.67" y="1407.91" width="32" height="18"/>
@@ -5514,7 +5514,6 @@ West: Helheim.</property>
   </object>
   <object id="10413" x="1248" y="2824" width="159.667" height="24"/>
   <object id="10415" x="2880" y="2976" width="32" height="128"/>
-  <object id="10416" x="2848" y="160" width="160" height="23.75"/>
  </objectgroup>
  <objectgroup id="34" name="unreachable_area_physics" locked="1">
   <object id="8172" x="1328.01" y="1409">

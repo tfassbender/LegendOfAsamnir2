@@ -277,6 +277,20 @@
 				raw_images/restricted/enemy/giant_golem/giant_golem_damage,
 				raw_images/restricted/enemy/giant_golem/giant_golem_death,
 				
+				// bandit leader
+				raw_images/restricted/enemy/bandit_leader/bandit_leader_idle,
+				raw_images/restricted/enemy/bandit_leader/bandit_leader_move,
+				raw_images/restricted/enemy/bandit_leader/bandit_leader_attack,
+				raw_images/restricted/enemy/bandit_leader/bandit_leader_damage,
+				raw_images/restricted/enemy/bandit_leader/bandit_leader_death,
+				
+				// bandit shield
+				raw_images/restricted/enemy/bandit_shield/bandit_shield_idle,
+				raw_images/restricted/enemy/bandit_shield/bandit_shield_move,
+				raw_images/restricted/enemy/bandit_shield/bandit_shield_attack,
+				raw_images/restricted/enemy/bandit_shield/bandit_shield_damage,
+				raw_images/restricted/enemy/bandit_shield/bandit_shield_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

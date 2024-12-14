@@ -205,7 +205,7 @@
             executionParameters: {
                 displayTextHeader: "Ratatosk",
                 colorHeader: #965a00,
-                displayText: "The name's Ratatosk.\n                \nAnd I'm not just a squirrel, but one of the most important creatures in the nine realms.   ",
+                displayText: "The name's Ratatosk.\n                \nAnd I'm not just a squirrel, but one of the most important creatures in the nine realms!   ",
 			}
             
             waitForEventToFinish: true,

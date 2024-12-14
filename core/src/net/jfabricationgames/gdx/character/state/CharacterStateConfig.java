@@ -2,6 +2,8 @@ package net.jfabricationgames.gdx.character.state;
 
 import com.badlogic.gdx.utils.Array;
 
+import net.jfabricationgames.gdx.sound.SoundPlayConfig;
+
 public class CharacterStateConfig {
 	
 	public String id;
@@ -9,6 +11,8 @@ public class CharacterStateConfig {
 	public String attack;
 	
 	public String stateEnteringSound;
+	public float soundDelay = SoundPlayConfig.DEFAULT_SETTING; // will overwrite the delay of the sound config (does not add up)
+	public float soundVolume = SoundPlayConfig.DEFAULT_SETTING;
 	public boolean abortSoundWhenStateInterrupted = false;
 	
 	public boolean endsWithAnimation = true;

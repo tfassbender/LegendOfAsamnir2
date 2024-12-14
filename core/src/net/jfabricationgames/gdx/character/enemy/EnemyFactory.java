@@ -39,6 +39,8 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_DWARVEN_GUARDIAN_CONSTRUCT = "dwarven_guardian_construct";
 	private static final String ENEMY_NAME_GIANT_GOLEM = "giant_golem";
 	private static final String ENEMY_NAME_GARGOYLE = "gargoyle";
+	private static final String ENEMY_NAME_BANDIT_LEADER = "bandit_leader";
+	private static final String ENEMY_NAME_BANDIT_SHIELD = "bandit_shield";
 	
 	private static final String ENEMY_NAME_BAT = "bat";
 	private static final String ENEMY_NAME_TOTEM = "totem";
@@ -89,6 +91,8 @@ public class EnemyFactory {
 			case ENEMY_NAME_FIRE_ELEMENTAL:
 			case ENEMY_NAME_ICE_ELEMENTAL:
 			case ENEMY_NAME_IMP:
+			case ENEMY_NAME_BANDIT_LEADER:
+			case ENEMY_NAME_BANDIT_SHIELD:
 				enemy = new Enemy(typeConfig, properties);
 				break;
 			case ENEMY_NAME_BAT:

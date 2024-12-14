@@ -11,6 +11,7 @@ import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledState;
 import net.jfabricationgames.gdx.sound.SoundHandler;
 import net.jfabricationgames.gdx.sound.SoundManager;
+import net.jfabricationgames.gdx.sound.SoundPlayConfig;
 import net.jfabricationgames.gdx.sound.SoundSet;
 
 public class CharacterState implements CutsceneControlledState {
@@ -115,7 +116,7 @@ public class CharacterState implements CutsceneControlledState {
 	
 	public void playSound() {
 		if (config.stateEnteringSound != null) {
-			sound = SOUND_SET.playSound(config.stateEnteringSound);
+			sound = SOUND_SET.playSound(config.stateEnteringSound, new SoundPlayConfig().setVolume(config.soundVolume).setDelay(config.soundDelay));
 		}
 	}
 	
