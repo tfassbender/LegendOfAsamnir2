@@ -64,6 +64,7 @@ public enum ArtificialIntelligenceType {
 			ai.setMinDistanceToTarget(aiConfig.minDistanceToTargetPlayer);
 			ai.setMaxDistanceFromStart(aiConfig.maxMoveDistance);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			ai.setFollowCondition(aiConfig.followCondition);
 			return ai;
 		}
 	},

@@ -1,8 +1,11 @@
 package net.jfabricationgames.gdx.character.animal;
 
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 
+import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.hit.Hittable;
 import net.jfabricationgames.gdx.character.AbstractCharacter;
 import net.jfabricationgames.gdx.character.CharacterTypeConfig;
 import net.jfabricationgames.gdx.character.state.CharacterStateMachine;
@@ -11,13 +14,17 @@ import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsUtil;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
-public class Animal extends AbstractCharacter {
+public class Animal extends AbstractCharacter implements Hittable {
 	
 	private static PhysicsBodyProperties physicsBodyProperties = createDefaultPhysicsBodyProperties();
 	
 	private static PhysicsBodyProperties createDefaultPhysicsBodyProperties() {
-		return physicsBodyProperties = new PhysicsBodyProperties().setType(BodyType.DynamicBody).setSensor(false)
-				.setCollisionType(PhysicsCollisionType.MAP_OBJECT).setDensity(10f).setLinearDamping(10f);
+		return physicsBodyProperties = new PhysicsBodyProperties() //
+				.setType(BodyType.DynamicBody) //
+				.setSensor(false) //
+				.setCollisionType(PhysicsCollisionType.MAP_OBJECT) //
+				.setDensity(10f) //
+				.setLinearDamping(10f);
 	}
 	
 	protected AnimalTypeConfig typeConfig;
@@ -57,7 +64,9 @@ public class Animal extends AbstractCharacter {
 	
 	@Override
 	protected PhysicsBodyProperties definePhysicsBodyProperties() {
-		return physicsBodyProperties.setRadius(typeConfig.bodyRadius).setWidth(typeConfig.bodyWidth).setHeight(typeConfig.bodyHeight)
+		return physicsBodyProperties.setRadius(typeConfig.bodyRadius) //
+				.setWidth(typeConfig.bodyWidth) //
+				.setHeight(typeConfig.bodyHeight) //
 				.setPhysicsBodyShape(typeConfig.bodyShape);
 	}
 	
@@ -89,5 +98,21 @@ public class Animal extends AbstractCharacter {
 		gameMap.removeAnimal(this, body);
 		PhysicsWorld.getInstance().removeContactListener(this);
 		body = null;// set the body to null to avoid strange errors in native Box2D methods
+	}
+	
+	@Override
+	public void takeDamage(float damage, AttackType type) {
+		if (damage > 0 && typeConfig.damageState != null) {
+			stateMachine.setState(typeConfig.damageState);
+		}
+	}
+	
+	@Override
+	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected) {
+		if (typeConfig.damageState != null) {
+			Vector2 pushDirection = getPushDirection(getPosition(), hitCenter);
+			force *= 500f * body.getMass(); // this factor that works for most animals
+			body.applyForceToCenter(pushDirection.x * force, pushDirection.y * force, true);
+		}
 	}
 }

@@ -1,0 +1,39 @@
+{
+	id: loa2_l2_niflheim_main_inside_chicken_target_area_cutscene,
+	controlledActions: {
+	    start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__chicken_quest_started,
+					executedStateName: deactivate_follow_condition,
+				},
+				{
+					// default case
+					executedStateName: end
+				},
+			],
+		},
+		
+		deactivate_follow_condition: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l2_niflheim__player_has_bait_seeds, value: false}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

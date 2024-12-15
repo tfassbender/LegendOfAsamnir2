@@ -7,6 +7,7 @@ import net.jfabricationgames.gdx.character.ai.move.AIPositionChangingMove;
 import net.jfabricationgames.gdx.character.ai.move.MoveType;
 import net.jfabricationgames.gdx.character.player.PlayableCharacter;
 import net.jfabricationgames.gdx.character.state.CharacterState;
+import net.jfabricationgames.gdx.condition.ConditionHandler;
 
 /**
  * An AI implementation that follows the player when he's in a range in which he's noticed by the enemy.
@@ -18,6 +19,9 @@ public class FollowAI extends AbstractRelativeMovementAI {
 	/** The distance till which the controlled actor follows the target (to not push him if to near) */
 	protected float minDistanceToTarget = 1f;
 	protected float maxDistanceFromStart;
+	
+	protected String followCondition;
+	protected ConditionHandler conditionHandler;
 	
 	public FollowAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState) {
 		super(subAI, movingState, idleState, 0f);
@@ -31,7 +35,7 @@ public class FollowAI extends AbstractRelativeMovementAI {
 			updateRelativeZero(character.getPosition());
 		}
 		
-		if (targetToFollow != null) {
+		if (targetToFollow != null && (followCondition == null || conditionHandler.isConditionMet(followCondition))) {
 			AIPositionChangingMove move = new AIPositionChangingMove(this);
 			if (distanceToTarget() > minDistanceToTarget && (maxDistanceFromStart <= 0 || distanceFromStart() < maxDistanceFromStart)) {
 				move.movementTarget = targetToFollow.getPosition();
@@ -102,5 +106,16 @@ public class FollowAI extends AbstractRelativeMovementAI {
 	
 	public void setMaxDistanceFromStart(float maxDistanceFromStart) {
 		this.maxDistanceFromStart = maxDistanceFromStart;
+	}
+	
+	public void setFollowCondition(String followCondition) {
+		this.followCondition = followCondition;
+		
+		if (followCondition != null) {
+			conditionHandler = ConditionHandler.getInstance();
+		}
+		else {
+			conditionHandler = null;
+		}
 	}
 }

@@ -170,4 +170,46 @@
 		addSensor: true,
 		sensorRadius: 4f,
 	},
+	
+	chicken: {
+		typeName: chicken,
+		
+		animationsConfig: config/animation/animals/chicken.json,
+		stateConfig: config/animals/states/chicken.json,
+		initialState: idle,
+		damageState: scare,
+		aiConfig: config/animals/ai/chicken.json,
+		
+		movingSpeed: 3.5f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.4f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 3f,
+	},
+	
+	rooster: {
+		typeName: rooster,
+		
+		animationsConfig: config/animation/animals/rooster.json
+		stateConfig: config/animals/states/rooster.json,
+		initialState: idle,
+		damageState: scare,
+		aiConfig: config/animals/ai/rooster.json,
+		
+		movingSpeed: 1.5f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.4f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 3f,
+	},
 }

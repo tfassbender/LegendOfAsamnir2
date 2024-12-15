@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="1934">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="1957">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7, 8]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -58,7 +58,7 @@
  </layer>
  <layer id="10" name="background_above_player" width="81" height="59" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztmU0uBEEYhmuhkzkGbcMR3GAM1q4gM67g3x7DIZDYSjDcxE7EKfAKiUmnf6e6aqq7nyd5M4taTOXpr/6NAQAAAAAAAAAAAIA2M46MuVSuompt8M9Efp6VlxRPeW3wy6vcvP/5+dDvW1SuDQCgC3wuGPOlGOa/mVmRu9WctXi/Z8yBcqhsK8fKSc9vH5vMnlwdZaQLLKqulpRYWWaczsRA3jaUTWULhwAAEADT+0P2hdX52R9eKzfKrXKnnOIxOPqxMespGcTz7lm4JJ3t4qoyOzU7S6tjHzV8XzCnuXxXqdthGkPH/5FcZ9dSfDb9XWXksB7LrLO8qzQPH2O77eDQnjY5PNO8eK5cKGOPZ5E2OXyQt0flSZl4ctivcY896sjZxvUZxfW+MARcj1sc2tP28Vzn3JdHm2vR1/pbxuG87ilsCcmhTV+y7juzUue38eWw6L7B15yS7E+R3+S3SWvzfdeaVY8h7emn/Sb7NQzgnroJDkMHh/bg0B4c2oPDbL4BMJZpww==
+   eJztmUsuBEEchytiknEL2oYjuMEYrF1BZlzBe/YYDoHEVoLhHDZ2Ik6BnyAmne551UN1zfclv8yiMunK1/96dJUxAAAAAAAAAAAAAJAy3ZoxZ8p5bbw2+KMnPw/KY4GnQW3wzbPcvP74edPvS220NgCAaeB91pgPxTD/TcyS3C0PWIt368bsKfvKpnKoHNXD9rHK7MjVQUmmgXnV1YKSKYuM04loytuasq5s4BAAACKgf3/IvnB8vvaHF8qlcqVcKx08WvPk2GEjM2a1IM3M7XNiYmbO7v95Z9sJu/LFlmNnRXUcooZvhoxHn/cqrh0W0fL8jPw6u1Lgs+r3Km2P9TjKOsu9SvUIMbZTB4f2pOTwWPPiiXKqdAN+i6Tk8Fbe7pR7pRfIYcPhHrud+LfNL76/UXzvC2PA97jFoT2pj2eXc98gUq7FUOvvKA7/65zClpgc2vSl7LyzLC7fTSiHw84bQs0p+f4M85t/N0Vtoc9ay+oxpj19v998v1oRnFNXwWHs4NAeHNqDQ3twWM4ne91qrg==
   </data>
  </layer>
  <layer id="14" name="background_above_player_2" width="81" height="59" locked="1">
@@ -144,6 +144,85 @@
     <property name="startingPointId" value="10"/>
    </properties>
    <point/>
+  </object>
+  <object id="1934" name="animal.rooster" x="1702.33" y="1365.67">
+   <point/>
+  </object>
+  <object id="1935" name="animal.chicken" x="1627.33" y="1357.33">
+   <point/>
+  </object>
+  <object id="1936" name="animal.chicken" x="1780.33" y="1403.67">
+   <point/>
+  </object>
+  <object id="1937" name="animal.chicken" x="906.667" y="1412">
+   <point/>
+  </object>
+  <object id="1938" name="animal.chicken" x="853.333" y="1561.33">
+   <point/>
+  </object>
+  <object id="1939" name="animal.chicken" x="1988" y="1590.67">
+   <point/>
+  </object>
+  <object id="1940" name="animal.chicken" x="2152" y="1405.33">
+   <point/>
+  </object>
+  <object id="1941" name="animal.chicken" x="1814.67" y="921.333">
+   <point/>
+  </object>
+  <object id="1942" name="animal.chicken" x="1920" y="712">
+   <point/>
+  </object>
+  <object id="1943" name="animal.chicken" x="1058.67" y="562.667">
+   <point/>
+  </object>
+  <object id="1944" name="animal.chicken" x="1120" y="977.333">
+   <point/>
+  </object>
+  <object id="1945" name="animal.chicken" x="1432" y="1404">
+   <point/>
+  </object>
+  <object id="1946" name="animal.chicken" x="2150.67" y="928">
+   <point/>
+  </object>
+  <object id="1947" name="animal.cat" x="1293.33" y="1152">
+   <point/>
+  </object>
+  <object id="1948" name="animal.pig" x="973.333" y="1141.33">
+   <point/>
+  </object>
+  <object id="1949" name="animal.pig" x="944" y="1232">
+   <point/>
+  </object>
+  <object id="1950" name="player.startingPosition" x="1664" y="1216">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1951" name="object.eventObject" x="1685.6" y="1349.67" width="117.502" height="7">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_main_inside_chicken_target_area"/>
+   </properties>
+  </object>
+  <object id="1952" name="object.eventObject" x="1677.79" y="1269.02" width="7.75" height="87.5985">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_main_inside_chicken_target_area"/>
+   </properties>
+  </object>
+  <object id="1953" name="object.eventObject" x="1803.09" y="1269.02" width="7.75" height="87.6667">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_main_inside_chicken_target_area"/>
+   </properties>
+  </object>
+  <object id="1954" name="object.eventObject" x="1695" y="1165.92" width="6.375" height="95.0531">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_main_outside_chicken_target_area"/>
+   </properties>
+  </object>
+  <object id="1956" name="object.eventObject" x="1348.63" y="1352.7" width="69.25" height="87.5985">
+   <properties>
+    <property name="eventParameter" value="test"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
@@ -2336,7 +2415,7 @@
   <object id="1903" x="1432.17" y="1076.92">
    <polygon points="0,0 143.5,0.75 104,-35.5 40.25,-35.5"/>
   </object>
-  <object id="1904" x="1431.92" y="1077.42" width="143.5" height="63.5"/>
+  <object id="1904" x="1431.92" y="1077.42" width="144.25" height="63.5"/>
   <object id="1905" x="1432" y="824" width="206.5" height="123"/>
   <object id="1906" x="1431.5" y="823.5">
    <polygon points="0,0 40.5,-32.5 168,-33 207,0.5"/>

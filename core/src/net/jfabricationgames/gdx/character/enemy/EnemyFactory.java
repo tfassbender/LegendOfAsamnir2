@@ -23,24 +23,12 @@ public class EnemyFactory {
 	
 	private EnemyFactory() {}
 	
-	private static final String ENEMY_NAME_GLADIATOR = "gladiator";
-	private static final String ENEMY_NAME_MINI_GOLEM = "mini_golem";
-	private static final String ENEMY_NAME_GOLEM = "golem";
-	private static final String ENEMY_NAME_SPIDER = "spider";
-	private static final String ENEMY_NAME_MIMIC_CHEST = "mimic_chest";
-	private static final String ENEMY_NAME_MIMIC_BARREL = "mimic_barrel";
-	private static final String ENEMY_NAME_COBRA = "cobra";
-	private static final String ENEMY_NAME_FIRE_ELEMENTAL = "fire_elemental";
-	private static final String ENEMY_NAME_ICE_ELEMENTAL = "ice_elemental";
-	private static final String ENEMY_NAME_IMP = "imp";
 	private static final String ENEMY_NAME_ALARM_CLOCK = "alarm_clock";
 	private static final String ENEMY_NAME_DUMMY = "dummy";
 	private static final String ENEMY_NAME_OGRE = "ogre";
 	private static final String ENEMY_NAME_DWARVEN_GUARDIAN_CONSTRUCT = "dwarven_guardian_construct";
 	private static final String ENEMY_NAME_GIANT_GOLEM = "giant_golem";
 	private static final String ENEMY_NAME_GARGOYLE = "gargoyle";
-	private static final String ENEMY_NAME_BANDIT_LEADER = "bandit_leader";
-	private static final String ENEMY_NAME_BANDIT_SHIELD = "bandit_shield";
 	
 	private static final String ENEMY_NAME_BAT = "bat";
 	private static final String ENEMY_NAME_TOTEM = "totem";
@@ -81,20 +69,6 @@ public class EnemyFactory {
 		
 		Enemy enemy;
 		switch (type) {
-			case ENEMY_NAME_GLADIATOR:
-			case ENEMY_NAME_MINI_GOLEM:
-			case ENEMY_NAME_GOLEM:
-			case ENEMY_NAME_SPIDER:
-			case ENEMY_NAME_MIMIC_CHEST:
-			case ENEMY_NAME_MIMIC_BARREL:
-			case ENEMY_NAME_COBRA:
-			case ENEMY_NAME_FIRE_ELEMENTAL:
-			case ENEMY_NAME_ICE_ELEMENTAL:
-			case ENEMY_NAME_IMP:
-			case ENEMY_NAME_BANDIT_LEADER:
-			case ENEMY_NAME_BANDIT_SHIELD:
-				enemy = new Enemy(typeConfig, properties);
-				break;
 			case ENEMY_NAME_BAT:
 				enemy = new Bat(typeConfig, properties);
 				break;
@@ -129,7 +103,8 @@ public class EnemyFactory {
 				enemy = new Gargoyle(typeConfig, properties);
 				break;
 			default:
-				throw new IllegalStateException("Unknown enemy type: " + type);
+				enemy = new Enemy(typeConfig, properties);
+				break;
 		}
 		enemy.setGameMap(gameMap);
 		enemy.createPhysicsBody(x * Constants.WORLD_TO_SCREEN, y * Constants.WORLD_TO_SCREEN);

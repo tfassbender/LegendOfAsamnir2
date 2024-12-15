@@ -69,7 +69,8 @@
 	{
         name: loa2_niflheim_main,
         map: "map/loa2_l2_niflheim_main.tmx",
-        initialStartingPointId: 10,
+		debugStartConfig: config/debug/start_config/loa2/l2_niflheim.json,
+        initialStartingPointId: 11,
 		initial: true
 	},
 	

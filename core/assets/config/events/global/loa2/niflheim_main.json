@@ -28,6 +28,28 @@
             cutsceneId: loa2_l2_niflheim_main__introduce_bandits_cutscene,
 		}
 	},
+	
+	loa2_l2_niflheim_main_outside_chicken_target_area: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_main_outside_chicken_target_area,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main_outside_chicken_target_area_cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_main_inside_chicken_target_area: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_main_inside_chicken_target_area,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main_inside_chicken_target_area_cutscene,
+		}
+	},
 
 	//*******************************************
 	//*** change map

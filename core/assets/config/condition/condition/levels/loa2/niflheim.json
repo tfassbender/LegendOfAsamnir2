@@ -10,4 +10,25 @@
 			expectedValue: true,
 		}
 	},
+	
+	loa2_l2_niflheim__chicken_quest_started: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__chicken_quest_started,
+            expectedValue: true,
+		}
+	},
+	
+	//**************************************************
+	//*** AI (for the chickens to follow the player)
+	//**************************************************
+	
+	// the condition is turned off when the player reaches the target location and turned on when the player leaves the target location
+	chicken__follow_player: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__player_has_bait_seeds,
+            expectedValue: true,
+		}
+	},
 }

@@ -1,0 +1,47 @@
+{
+	defaultAI: rooster,
+	aiConfigurations: {
+		rooster: {
+			type: RUN_AWAY_AI,
+			
+			distanceToStopRunning: 0f,
+			distanceToKeepFromPlayer: 0.5f,
+			
+			stateNameMove: move,
+			stateNameIdle: idle,
+			
+			subAI: {
+				type: RANDOM_IDLE_STATES_MOVEMENT_AI,
+				
+				useRelativePositions: true,
+			
+				stateNameMove: move,
+				stateNameIdle: idle,
+			
+				movementProbability: 0.05f,
+			    maxMoveDistance: 2f,
+				distanceToKeepFromPlayer: 0.5f,
+				
+				idleStates: {
+					idle: {
+						probability: 0.8,
+					},
+					peck: {
+						probability: 0.1,
+						minRepetitions: 2,
+						maxRepetitions: 5,
+					},
+					crow: {
+						probability: 0.1,
+						minRepetitions: 2,
+						maxRepetitions: 3,
+					},
+				}
+				
+				subAI: {
+					type: BASE_AI,
+				}
+			}
+		}
+	}
+}

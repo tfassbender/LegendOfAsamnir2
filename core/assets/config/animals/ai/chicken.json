@@ -1,0 +1,46 @@
+{
+	defaultAI: chicken,
+	aiConfigurations: {
+		chicken: {
+		    type: FOLLOW_AI,
+		    
+		    distanceToKeepFromPlayer: 0.25f,
+		    followCondition: chicken__follow_player,
+		    
+			stateNameMove: move,
+			stateNameIdle: peck, // follows the player to peck seeds that the player carries
+			
+			subAI: {
+				type: RANDOM_IDLE_STATES_MOVEMENT_AI,
+				
+				useRelativePositions: true,
+			
+				stateNameMove: move,
+				stateNameIdle: idle,
+			
+				movementProbability: 0f, // the chickens must not move back to their starting positions
+				distanceToKeepFromPlayer: 0.5f,
+				
+				idleStates: {
+					idle: {
+						probability: 0.7,
+					},
+					peck: {
+						probability: 0.2,
+						minRepetitions: 3,
+						maxRepetitions: 5,
+					},
+					sleep: {
+						probability: 0.1,
+						minRepetitions: 15,
+						maxRepetitions: 25,
+					}
+				}
+				
+				subAI: {
+					type: BASE_AI,
+				}
+			}
+		}
+	}
+}

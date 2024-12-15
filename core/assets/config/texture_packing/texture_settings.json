@@ -392,7 +392,7 @@
 			    raw_images/restricted/npc/dwarven_miner/dwarven_miner_pick,
 			    raw_images/restricted/npc/dwarven_miner/dwarven_miner_dig,
 			    
-			    //king dwarf
+			    // king dwarf
 //			    raw_images/restricted/npc/king_dwarf/king_dwarf_attack,
 //			    raw_images/restricted/npc/king_dwarf/king_dwarf_damage,
 //			    raw_images/restricted/npc/king_dwarf/king_dwarf_death,
@@ -401,6 +401,12 @@
 			    raw_images/restricted/npc/king_dwarf/king_dwarf_idle,
 //			    raw_images/restricted/npc/king_dwarf/king_dwarf_laugh,
 //			    raw_images/restricted/npc/king_dwarf/king_dwarf_move,
+                
+                // medieval townfolk 7
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_cry,
 				
 				//##############################################################
 				//### Animals
@@ -457,6 +463,24 @@
 				//twig blight
 				raw_images/animals/twig_blight/twig_blight_idle,
 				raw_images/animals/twig_blight/twig_blight_move,
+				
+				//##############################################################
+				//### Animals - restricted graphics
+				//##############################################################
+				
+				// chicken
+				raw_images/restricted/animals/chicken/chicken_idle,
+				raw_images/restricted/animals/chicken/chicken_move,
+				raw_images/restricted/animals/chicken/chicken_peck,
+				raw_images/restricted/animals/chicken/chicken_scare,
+				raw_images/restricted/animals/chicken/chicken_sleep,
+				
+				// rooster
+				raw_images/restricted/animals/rooster/rooster_idle,
+				raw_images/restricted/animals/rooster/rooster_move,
+				raw_images/restricted/animals/rooster/rooster_peck,
+				raw_images/restricted/animals/rooster/rooster_scare,
+				raw_images/restricted/animals/rooster/rooster_crow,
 				
 				//##############################################################
 				//### Cutscenes

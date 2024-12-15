@@ -1,0 +1,45 @@
+[
+	{
+		id: idle,
+		animation: chicken_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, peck, scare, sleep
+		]
+	},
+	{
+		id: move,
+		animation: chicken_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			peck, scare
+		]
+	},
+	{
+        id: peck,
+        animation: chicken_peck,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	move, scare
+        ]
+	},
+	{
+        id: scare,
+        animation: chicken_scare,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: []
+	},
+	{
+		id: sleep,
+		animation: chicken_sleep,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, scare
+		]
+	},
+]

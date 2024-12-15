@@ -101,6 +101,8 @@
 	config/cutscene/loa2/niflheim/introduce_bandits.json,
 	config/cutscene/loa2/niflheim/goto_bandit_camp.json,
 	config/cutscene/loa2/niflheim/goto_final.json,
+	config/cutscene/loa2/niflheim/inside_chicken_target_area.json,
+	config/cutscene/loa2/niflheim/outside_chicken_target_area.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

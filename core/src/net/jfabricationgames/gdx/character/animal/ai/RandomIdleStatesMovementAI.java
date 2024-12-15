@@ -22,9 +22,8 @@ public class RandomIdleStatesMovementAI extends RandomMovementAI {
 	private float movementProbability;
 	private Random random;
 	
-	public RandomIdleStatesMovementAI(ArtificialIntelligence subAI,
-			ObjectMap<CharacterState, ArtificialIntelligenceStateConfig> idleStateProbabilities, float movementProbability,
-			CharacterState movingState, CharacterState idleState, float maxDistance, boolean changeTargetWhenStaticBodyHit) {
+	public RandomIdleStatesMovementAI(ArtificialIntelligence subAI, ObjectMap<CharacterState, ArtificialIntelligenceStateConfig> idleStateProbabilities, //
+			float movementProbability, CharacterState movingState, CharacterState idleState, float maxDistance, boolean changeTargetWhenStaticBodyHit) {
 		super(subAI, movingState, idleState, maxDistance, 0f, changeTargetWhenStaticBodyHit);
 		this.idleStateProbabilities = idleStateProbabilities;
 		this.movementProbability = movementProbability;
@@ -46,7 +45,7 @@ public class RandomIdleStatesMovementAI extends RandomMovementAI {
 			updateRelativeZero(character.getPosition());
 		}
 		
-		if (isTargetPositionSet()) {
+		if (isTargetPositionSet() && movementProbability > 0) {
 			AIPositionChangingMove move = createPositionChangeMove();
 			setMove(MoveType.MOVE, move);
 		}

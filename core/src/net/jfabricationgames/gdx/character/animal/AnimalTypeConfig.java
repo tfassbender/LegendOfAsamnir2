@@ -8,6 +8,7 @@ public class AnimalTypeConfig extends CharacterTypeConfig {
 	public String animationsConfig;//the animation config file that is to be loaded (by the factory)
 	public String stateConfig;//the state config file that is to be loaded (by the StateMachine)
 	public String initialState;
+	public String damageState;
 	public String aiConfig;
 	
 	public float movingSpeed = 1f;

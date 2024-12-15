@@ -19,6 +19,8 @@ public class ArtificialIntelligenceConfig {
 	public String stateNameWait = "waiting";
 	public String stateNameSurprise = "surprise";
 	
+	public String followCondition;
+	
 	public float minDistToEnemy;
 	public float maxDistToEnemy;
 	public float maxMoveDistance;
