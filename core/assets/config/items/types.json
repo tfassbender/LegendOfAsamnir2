@@ -265,6 +265,12 @@
         pickUpSound: pickup_5
 	},
 	
+	triforce_niflheim_main_chicken_side_quest: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	
 	triforce_asgard_castle: {
 		type: TRIFORCE,
         texture: triforce,

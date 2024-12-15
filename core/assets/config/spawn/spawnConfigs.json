@@ -3,6 +3,7 @@
 	//*** maps
 	//******************
 	config/spawn/maps/loa2/l1_dwarven_mines.json,
+	config/spawn/maps/loa2/l2_niflheim.json,
 	
 	// demo and testing
 	config/spawn/maps/demo.json,

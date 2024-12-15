@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.object.AnimalSpawnFactory;
 import net.jfabricationgames.gdx.util.FactoryUtil;
 
 public class AnimalFactory {
@@ -38,8 +39,7 @@ public class AnimalFactory {
 	public static Animal createAnimal(String type, float x, float y, MapProperties properties) {
 		AnimalTypeConfig typeConfig = typeConfigs.get(type);
 		if (typeConfig == null) {
-			throw new IllegalStateException("No type config known for type: '" + type
-					+ "'. Either the type name is wrong or you have to add it to the objectTypesConfig (see \"" + CONFIG_FILE + "\")");
+			throw new IllegalStateException("No type config known for type: '" + type + "'. Either the type name is wrong or you have to add it to the objectTypesConfig (see \"" + CONFIG_FILE + "\")");
 		}
 		
 		Animal animal = new Animal(typeConfig, properties);
@@ -47,6 +47,20 @@ public class AnimalFactory {
 		animal.createPhysicsBody(x * Constants.WORLD_TO_SCREEN, y * Constants.WORLD_TO_SCREEN);
 		
 		return animal;
+	}
+	
+	public static AnimalFactoryInstance asInstance() {
+		return new AnimalFactoryInstance();
+	}
+	
+	public static class AnimalFactoryInstance implements AnimalSpawnFactory {
+		
+		@Override
+		public void createAndAddAnimal(String type, float x, float y, MapProperties mapProperties, Runnable onRemoveFromMap) {
+			Animal animal = createAnimal(type, x, y, mapProperties);
+			animal.setOnRemoveFromMap(onRemoveFromMap);
+			gameMap.addAnimal(animal);
+		}
 	}
 	
 	private static class Config {

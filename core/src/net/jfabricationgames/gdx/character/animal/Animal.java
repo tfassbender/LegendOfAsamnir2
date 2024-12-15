@@ -31,6 +31,8 @@ public class Animal extends AbstractCharacter implements Hittable {
 	
 	private AnimalCharacterMap gameMap;
 	
+	private Runnable onRemoveFromMap;
+	
 	public Animal(AnimalTypeConfig typeConfig, MapProperties properties) {
 		super(properties);
 		this.typeConfig = typeConfig;
@@ -98,6 +100,14 @@ public class Animal extends AbstractCharacter implements Hittable {
 		gameMap.removeAnimal(this, body);
 		PhysicsWorld.getInstance().removeContactListener(this);
 		body = null;// set the body to null to avoid strange errors in native Box2D methods
+		
+		if (onRemoveFromMap != null) {
+			onRemoveFromMap.run();
+		}
+	}
+	
+	public void setOnRemoveFromMap(Runnable onRemoveFromMap) {
+		this.onRemoveFromMap = onRemoveFromMap;
 	}
 	
 	@Override

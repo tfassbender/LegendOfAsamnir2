@@ -74,6 +74,14 @@
 		}
 	},
 	
+	// if the piece of the triforce is not collected or delivered, the NPC move out of the way to let the player collect it
+	common__triforce__chicken_side_quest_collected_or_delivered: {
+		conditionType: TRIFORCE_PIECE_COLLECTED_OR_DELIVERED,
+        parameters: {
+			triforceId: TRIFORCE_NIFLHEIM_MAIN_CHICKEN_SIDE_QUEST,
+		}
+	},
+	
 	//*******************************************
 	//*** cutscenes
 	//*******************************************

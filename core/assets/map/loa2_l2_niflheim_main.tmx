@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="1957">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="1994">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7, 8]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -154,36 +154,6 @@
   <object id="1936" name="animal.chicken" x="1780.33" y="1403.67">
    <point/>
   </object>
-  <object id="1937" name="animal.chicken" x="906.667" y="1412">
-   <point/>
-  </object>
-  <object id="1938" name="animal.chicken" x="853.333" y="1561.33">
-   <point/>
-  </object>
-  <object id="1939" name="animal.chicken" x="1988" y="1590.67">
-   <point/>
-  </object>
-  <object id="1940" name="animal.chicken" x="2152" y="1405.33">
-   <point/>
-  </object>
-  <object id="1941" name="animal.chicken" x="1814.67" y="921.333">
-   <point/>
-  </object>
-  <object id="1942" name="animal.chicken" x="1920" y="712">
-   <point/>
-  </object>
-  <object id="1943" name="animal.chicken" x="1058.67" y="562.667">
-   <point/>
-  </object>
-  <object id="1944" name="animal.chicken" x="1120" y="977.333">
-   <point/>
-  </object>
-  <object id="1945" name="animal.chicken" x="1432" y="1404">
-   <point/>
-  </object>
-  <object id="1946" name="animal.chicken" x="2150.67" y="928">
-   <point/>
-  </object>
   <object id="1947" name="animal.cat" x="1293.33" y="1152">
    <point/>
   </object>
@@ -219,10 +189,163 @@
     <property name="eventParameter" value="loa2_l2_niflheim_main_outside_chicken_target_area"/>
    </properties>
   </object>
-  <object id="1956" name="object.eventObject" x="1348.63" y="1352.7" width="69.25" height="87.5985">
+  <object id="1957" name="npc.farmer_chickens" x="1762" y="1201.5">
    <properties>
-    <property name="eventParameter" value="test"/>
+    <property name="unitId" value="loa2_l2_niflheim_farmer_chickens"/>
    </properties>
+   <point/>
+  </object>
+  <object id="1967" name="object.eventObject" x="1555.94" y="1453.48">
+   <properties>
+    <property name="description" value="Used to determine the area where the chickens are delivered to (for the side quest). The position of this event object is requested by the CutsceneVariable NUM_CHICKENS_CAUGHT."/>
+    <property name="unitId" value="loa2_l2_niflheim_chicken_target_area_lower_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1969" name="object.eventObject" x="1836.31" y="1269.06">
+   <properties>
+    <property name="description" value="Used to determine the area where the chickens are delivered to (for the side quest). The position of this event object is requested by the CutsceneVariable NUM_CHICKENS_CAUGHT."/>
+    <property name="unitId" value="loa2_l2_niflheim_chicken_target_area_upper_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1970" name="item.triforce_niflheim_main_chicken_side_quest" x="1807.75" y="1232.75">
+   <point/>
+  </object>
+  <object id="1971" name="object.spawnPoint.animal_chicken" x="1069.5" y="561.5">
+   <properties>
+    <property name="spawn" value="animal_chicken_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1972" name="object.spawnPoint.animal_chicken" x="1586" y="1306">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1973" name="object.eventObject" x="2342.13" y="928" width="4.75" height="139">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_main__spawn_chickens"/>
+   </properties>
+  </object>
+  <object id="1974" name="object.eventObject" x="316.625" y="222" width="233.75" height="4.5">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_main__spawn_chickens"/>
+   </properties>
+  </object>
+  <object id="1975" name="object.eventObject" x="384" y="1458" width="223.25" height="4.5">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_main__spawn_chickens"/>
+   </properties>
+  </object>
+  <object id="1976" name="object.spawnPoint.animal_chicken" x="1920" y="704">
+   <properties>
+    <property name="spawn" value="animal_chicken_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1977" name="object.spawnPoint.animal_chicken" x="1120.67" y="972">
+   <properties>
+    <property name="spawn" value="animal_chicken_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1978" name="object.spawnPoint.animal_chicken" x="1815" y="920">
+   <properties>
+    <property name="spawn" value="animal_chicken_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1979" name="object.spawnPoint.animal_chicken" x="2385" y="879">
+   <properties>
+    <property name="spawn" value="animal_chicken_5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1980" name="object.spawnPoint.animal_chicken" x="906" y="1401">
+   <properties>
+    <property name="spawn" value="animal_chicken_6"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1981" name="object.spawnPoint.animal_chicken" x="1458" y="1395">
+   <properties>
+    <property name="spawn" value="animal_chicken_7"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1982" name="object.spawnPoint.animal_chicken" x="2139" y="1406">
+   <properties>
+    <property name="spawn" value="animal_chicken_8"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1983" name="object.spawnPoint.animal_chicken" x="869" y="1557">
+   <properties>
+    <property name="spawn" value="animal_chicken_9"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1984" name="object.spawnPoint.animal_chicken" x="1976" y="1587">
+   <properties>
+    <property name="spawn" value="animal_chicken_10"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1985" name="object.spawnPoint.animal_chicken" x="1655" y="1296">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1986" name="object.spawnPoint.animal_chicken" x="1596" y="1370">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1987" name="object.spawnPoint.animal_chicken" x="1624" y="1411">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1988" name="object.spawnPoint.animal_chicken" x="1683" y="1428">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1989" name="object.spawnPoint.animal_chicken" x="1733" y="1382">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1990" name="object.spawnPoint.animal_chicken" x="1747" y="1297">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1991" name="object.spawnPoint.animal_chicken" x="1791" y="1317">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1992" name="object.spawnPoint.animal_chicken" x="1814" y="1379">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1993" name="object.spawnPoint.animal_chicken" x="1741" y="1416">
+   <properties>
+    <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">

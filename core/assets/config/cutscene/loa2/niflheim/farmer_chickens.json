@@ -1,0 +1,407 @@
+{
+	id: loa2_l2_niflheim_main__farmer_chickens_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__chicken_quest_finished,
+					executedStateName: farmer_after_chicken_quest_finished,
+				},
+				{
+					conditionId: loa2_l2_niflheim__all_chickens_caught,
+					executedStateName: farmer_all_chickens_caught,
+				},
+				{
+					conditionId: loa2_l2_niflheim__chicken_quest_started,
+					executedStateName: farmer_chickens_left,
+				},
+				{
+					// default case
+					executedStateName: farmer_introduction,
+				},
+			],
+		},
+		
+		farmer_introduction: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "A traveler?!\n           \nAre you here to help our village?\nWe were robbed by bandits just a few hours ago.   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_choice_1,
+			],
+		},
+		
+		thorin_choice_1: {
+            type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"I'm here to help.",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				farmer_explain_quest,
+			],
+		},
+		
+		farmer_explain_quest: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "That's really kind of you dear traveler!   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				farmer_change_state_cry,
+			],
+		},
+		
+		farmer_change_state_cry: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l2_niflheim_farmer_chickens,
+			controlledUnitState: cry,
+			
+			executes: [
+                farmer_explain_quest_2,
+			],
+		},
+		
+		farmer_explain_quest_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "During the attack of the bandits, most of my chickens ran away because the bandits destroyed the fence.\n             \nCould you help me find them?\nI fear that the others will also run away if I don't stay here.  ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer_quest,
+			],
+		},
+		
+		thorin_answer_quest: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Don't worry. I'll search for your chickens.   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				farmer_change_state_idle,
+			],
+		},
+		
+		farmer_change_state_idle: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l2_niflheim_farmer_chickens,
+			controlledUnitState: idle,
+			
+			executes: [
+                farmer_explain_quest_3,
+			],
+		},
+		
+		farmer_explain_quest_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "Thank you so much!\n                 \nI had 12 chickens. 10 of them ran away during the attack.  ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				farmer_explain_quest_4,
+			],
+		},
+		
+		farmer_explain_quest_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "I wish I could reward you for your help, but I don't have anything left, since the bandits looted everything.   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				farmer_explain_quest_5,
+			],
+		},
+		
+		farmer_explain_quest_5: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "I can only offer you this amulet that I found. It's not much, but it's all that I can offer you.   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_accept_amulet,
+			],
+		},
+		
+		thorin_accept_amulet: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That might be useful. I think I know someone who is searching for amulet pieces like this one.\n                          \nI'll search for the chickens now.   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                farmer_explain_quest_6,
+			],
+		},
+		
+		farmer_explain_quest_6: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "Here, take these seeds. The chickens love them.\nThey will follow you if you have them.\n                \nThank you again for your help!   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				farmer_change_state_give,
+			],
+		},
+		
+		farmer_change_state_give: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l2_niflheim_farmer_chickens,
+			controlledUnitState: give,
+			
+			executes: [
+                set_global_value_chicken_quest_started,
+			],
+		},
+		
+		set_global_value_chicken_quest_started: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l2_niflheim__chicken_quest_started, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		// after quest started
+		
+		farmer_chickens_left: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "There ?{loa2_l2_one_chicken_missing|is|are} still #{NUM_CHICKENS_MISSING} chicken?{loa2_l2_one_chicken_missing||s} missing. Just go near ?{loa2_l2_one_chicken_missing|it|them} and ?{loa2_l2_one_chicken_missing|it|they} will follow you.  ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				farmer_chickens_left_2,
+			],
+		},
+		
+		farmer_chickens_left_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "Thank you for your help!   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		// all chickens caught
+		
+		farmer_all_chickens_caught: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "That was the last one! You really found all of my chickens!\n         \nThank you so much for your help!   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value_chicken_side_quest_finished,
+			],
+		},
+		
+		set_global_value_chicken_side_quest_finished: {
+			type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__chicken_quest_finished, value: true}",
+			},
+            
+            executes: [
+                farmer_give_amulet,
+			],
+		},
+		
+		// after quest finished
+		
+		farmer_after_chicken_quest_finished: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__triforce__chicken_side_quest_collected_or_delivered,
+					executedStateName: farmer_thank_player,
+				},
+				{
+					// default case
+					executedStateName: farmer_give_amulet,
+				},
+			],
+		},
+		
+		farmer_give_amulet: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "Here, take the amulet that I found as a reward. It's not much, but I hope it helps you on your journey.\n         \nThank you again for your help!   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				farmer_move_condition,
+			],
+		},
+		
+		// the global value that is set when the farmer moves is reset when the player leaves the map
+		farmer_move_condition: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__farmer_moved,
+					executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: farmer_move,
+				},
+			],
+		},
+		
+		farmer_move: {
+			type: MOVE,
+			controlledUnitId: loa2_l2_niflheim_farmer_chickens,
+			controlledUnitTarget: {x: 0, y: -1},
+			
+			executes: [
+				set_global_value_farmer_moved,
+			]
+		},
+		
+		set_global_value_farmer_moved: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__farmer_moved, value: true}",
+			},
+            
+            executes: [
+                end,
+			],
+		},
+		
+		farmer_thank_player: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Farmer",
+				displayText: "All my chickens are back and happy!\n                  \nThank you so much for your help!   ",
+				colorHeader: #1ab042,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

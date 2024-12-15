@@ -1,0 +1,123 @@
+{
+	// spawn the chickens distributed on the map (if the side quest was not finished yet)
+	animal_chicken_1: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_1\"}",
+	},
+	
+	animal_chicken_2: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_2\"}",
+	},
+	
+	animal_chicken_3: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_3\"}",
+	},
+	
+	animal_chicken_4: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_4\"}",
+	},
+	
+	animal_chicken_5: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_5\"}",
+	},
+	
+	animal_chicken_6: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_6\"}",
+	},
+	
+	animal_chicken_7: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_7\"}",
+	},
+	
+	animal_chicken_8: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_8\"}",
+	},
+	
+	animal_chicken_9: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_9\"}",
+	},
+	
+	animal_chicken_10: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			}
+		]
+        spawnType: animal.chicken,
+        spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_chicken_10\"}",
+	},
+	
+	// spawn the chickens in the target area (if the side quest was finished - no need to add unit ids anymore because the side quest is already finished)
+	animal_chicken: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_in_target_area,
+			}
+		]
+        spawnType: animal.chicken,
+	},
+}

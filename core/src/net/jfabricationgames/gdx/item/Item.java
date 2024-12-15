@@ -90,6 +90,10 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 		this.itemTextBox = itemTextBox;
 	}
 	
+	public Vector2 getPosition() {
+		return position;
+	}
+	
 	public void setPosition(Vector2 position) {
 		this.position = position;
 	}

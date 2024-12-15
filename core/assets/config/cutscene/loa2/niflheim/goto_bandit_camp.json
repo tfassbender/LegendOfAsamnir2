@@ -30,9 +30,35 @@
 			cameraFollowsTarget: false,
 			
 			executes: [
-                end,
+                reset_global_value_farmer_moved,
 			]
-		}
+		},
+		
+		reset_global_value_farmer_moved: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__farmer_moved, value: false}",
+			},
+            
+            executes: [
+                reset_global_value_chickens_spawned,
+			],
+		},
+		
+		reset_global_value_chickens_spawned: {
+			type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__chickens_spawned, value: false}",
+			},
+            
+            executes: [
+                end,
+			],
+		},
 		
 		end: {
 			type: WAIT,

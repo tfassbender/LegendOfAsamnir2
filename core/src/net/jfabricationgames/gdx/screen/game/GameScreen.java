@@ -171,6 +171,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		GameObjectFactory.setEnemySpawnFactory(EnemyFactory.asInstance());
 		GameObjectFactory.setItemSpawnFactory(ItemFactory.asInstance());
 		GameObjectFactory.setNpcSpawnFactory(NonPlayableCharacterFactory.asInstance());
+		GameObjectFactory.setAnimalSpawnFactory(AnimalFactory.asInstance());
 		GameObjectFactory.setItemDropUtil(ItemDropUtil.asInstance());
 		GameObjectFactory.setPlayerObjectClass(PlayableCharacter.class);
 		

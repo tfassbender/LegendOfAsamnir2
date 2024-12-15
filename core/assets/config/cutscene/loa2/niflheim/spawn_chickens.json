@@ -1,0 +1,70 @@
+{
+	id: loa2_l2_niflheim_main__spawn_chickens_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					// the global value for this condition is reset when the player leaves the map
+					conditionId: loa2_l2_niflheim__chickens_spawned,
+					executedStateName: end,
+				},
+				{
+					conditionId: loa2_l2_niflheim__chicken_quest_finished,
+					executedStateName: spawn_chickens_in_target_area,
+				},
+				{
+					// default case
+					executedStateName: spawn_chickens_distributed_on_the_map,
+				},
+			],
+		},
+		
+		spawn_chickens_in_target_area: {
+			type: EVENT,
+			
+			event: {
+				eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_in_target_area,
+			},
+            
+            executes: [
+                set_global_value_chickens_spawned,
+			]
+		},
+		
+		spawn_chickens_distributed_on_the_map: {
+			type: EVENT,
+			
+			event: {
+				eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			},
+            
+            executes: [
+                set_global_value_chickens_spawned,
+			]
+		},
+		
+		set_global_value_chickens_spawned: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__chickens_spawned, value: true}",
+			},
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

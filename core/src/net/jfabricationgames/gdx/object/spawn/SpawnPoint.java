@@ -17,6 +17,7 @@ import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.object.AnimalSpawnFactory;
 import net.jfabricationgames.gdx.object.EnemySpawnFactory;
 import net.jfabricationgames.gdx.object.GameObject;
 import net.jfabricationgames.gdx.object.GameObjectFactory;
@@ -60,6 +61,7 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	private EnemySpawnFactory enemySpawnFactory;
 	private ItemSpawnFactory itemSpawnFactory;
 	private NpcSpawnFactory npcSpawnFactory;
+	private AnimalSpawnFactory animalSpawnFactory;
 	
 	@MapObjectState
 	private boolean spawnedObjectPresentInMap;
@@ -143,6 +145,10 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	
 	public void setNpcSpawnFactory(NpcSpawnFactory npcSpawnFactory) {
 		this.npcSpawnFactory = npcSpawnFactory;
+	}
+	
+	public void setAnimalSpawnFactory(AnimalSpawnFactory animalSpawnFactory) {
+		this.animalSpawnFactory = animalSpawnFactory;
 	}
 	
 	@Override
@@ -257,6 +263,9 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 			case Constants.OBJECT_NAME_NPC:
 				createAndAddNpcAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD, body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties);
 				break;
+			case Constants.OBJECT_NAME_ANIMAL:
+				createAndAddAnimalAfterWorldStep(parts[1], body.getPosition().x * Constants.SCREEN_TO_WORLD, body.getPosition().y * Constants.SCREEN_TO_WORLD, mapProperties);
+				break;
 			default:
 				throw new IllegalStateException("Unknown spawn type: " + spawnConfig.spawnType);
 		}
@@ -293,6 +302,12 @@ public class SpawnPoint extends GameObject implements EventListener, Disposable 
 	private void createAndAddObjectAfterWorldStep(String type, float x, float y, MapProperties mapProperties) {
 		PhysicsWorld.getInstance().runAfterWorldStep(() -> {
 			GameObjectFactory.createAndAddObject(type, x, y, mapProperties, this::spawnObjectRemovedFromMap);
+		});
+	}
+	
+	private void createAndAddAnimalAfterWorldStep(String type, float x, float y, MapProperties mapProperties) {
+		PhysicsWorld.getInstance().runAfterWorldStep(() -> {
+			animalSpawnFactory.createAndAddAnimal(type, x, y, mapProperties, this::spawnObjectRemovedFromMap);
 		});
 	}
 	

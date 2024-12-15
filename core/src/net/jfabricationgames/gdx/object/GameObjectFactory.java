@@ -34,6 +34,7 @@ public class GameObjectFactory {
 	private static EnemySpawnFactory enemySpawnFactory;
 	private static ItemSpawnFactory itemSpawnFactory;
 	private static NpcSpawnFactory npcSpawnFactory;
+	private static AnimalSpawnFactory animalSpawnFactory;
 	private static GameObjectItemDropUtil itemDropUtil;
 	private static Class<?> playerObjectClass;
 	
@@ -58,6 +59,10 @@ public class GameObjectFactory {
 	
 	public static void setNpcSpawnFactory(NpcSpawnFactory npcSpawnFactory) {
 		GameObjectFactory.npcSpawnFactory = npcSpawnFactory;
+	}
+	
+	public static void setAnimalSpawnFactory(AnimalSpawnFactory animalSpawnFactory) {
+		GameObjectFactory.animalSpawnFactory = animalSpawnFactory;
 	}
 	
 	public static void setItemDropUtil(GameObjectItemDropUtil itemDropUtil) {
@@ -105,6 +110,7 @@ public class GameObjectFactory {
 				spawnPoint.setEnemySpawnFactory(enemySpawnFactory);
 				spawnPoint.setItemSpawnFactory(itemSpawnFactory);
 				spawnPoint.setNpcSpawnFactory(npcSpawnFactory);
+				spawnPoint.setAnimalSpawnFactory(animalSpawnFactory);
 				object = spawnPoint;
 				break;
 			case EVENT_OBJECT:

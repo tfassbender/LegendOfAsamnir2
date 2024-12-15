@@ -4,10 +4,12 @@ import java.util.function.Function;
 
 import com.badlogic.gdx.Gdx;
 
+import net.jfabricationgames.gdx.cutscene.variable.CutsceneVariable;
 import net.jfabricationgames.gdx.data.handler.CharacterItemDataHandler;
 import net.jfabricationgames.gdx.data.handler.CharacterPropertiesDataHandler;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.item.TriforceItem;
+import net.jfabricationgames.gdx.item.TriforceItem.TriforceItemType;
 import net.jfabricationgames.gdx.rune.RuneType;
 
 public enum ConditionType {
@@ -150,6 +152,26 @@ public enum ConditionType {
 		public boolean check(Condition condition) {
 			int pieces = Integer.parseInt(condition.parameters.get(PARAMETER_AMOUNT, "1"));
 			return TriforceItem.getNumDeliveredTriforcePieces() >= pieces;
+		}
+	},
+	TRIFORCE_PIECE_COLLECTED_OR_DELIVERED {
+		
+		private static final String PARAMETER_ID = "triforceId";
+		
+		@Override
+		public boolean check(Condition condition) {
+			String triforceId = condition.parameters.get(PARAMETER_ID);
+			return TriforceItemType.getByContainingName(triforceId).isCollectedOrDelivered();
+		}
+	},
+	CHICKENS_MISSING {
+		
+		private static final String PARAMETER_NUM_CHICKENS = "numChickens";
+		
+		@Override
+		public boolean check(Condition condition) {
+			String numChickens = condition.parameters.get(PARAMETER_NUM_CHICKENS, "0");
+			return CutsceneVariable.NUM_CHICKENS_MISSING.evaluate().equals(numChickens);
 		}
 	};
 	

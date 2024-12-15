@@ -1,22 +1,12 @@
 {
 	startingPointMapping: {
-		11: collect_chickens,
+		11: initial,
 	},
 	eventsLists: {
 		initial: {
 			subConfigPath: config/debug/start_config/loa2/l1_dwarven_caves.json
 			subConfigName: final,
 			events: []
-		},
-		
-		collect_chickens: {
-			subConfigName: initial,
-			events: [
-				{
-					eventType: SET_GLOBAL_CONDITION_VALUE,
-					stringValue: "{key: loa2_l2_niflheim__chicken_quest_started, value: true}",
-				}
-			]
 		},
 		
 		final: {

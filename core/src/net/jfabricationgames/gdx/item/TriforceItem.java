@@ -24,6 +24,8 @@ public class TriforceItem extends Item {
 		TRIFORCE_SVARTALFHEIM_DWARVEN_CAVE_MAIN(TriforceItemLocation.SVARTALFHEIM), //
 		TRIFORCE_SVARTALFHEIM_DWARVEN_CAVE_CASTLE(TriforceItemLocation.SVARTALFHEIM), //
 		
+		TRIFORCE_NIFLHEIM_MAIN_CHICKEN_SIDE_QUEST(TriforceItemLocation.NIFLHEIM), //
+		
 		TRIFORCE_ASGARD_CASTLE(TriforceItemLocation.ASGARD), //
 		TRIFORCE_ASGARD_FOREST(TriforceItemLocation.ASGARD); //
 		
@@ -46,6 +48,11 @@ public class TriforceItem extends Item {
 			globalValueKeyCollected = "triforce_" + name().toLowerCase() + "_collected";
 			globalValueKeyDelivered = "triforce_" + name().toLowerCase() + "_delivered";
 		}
+		
+		public boolean isCollectedOrDelivered() {
+			return GlobalValuesDataHandler.getInstance().getAsBoolean(globalValueKeyCollected) //
+					|| GlobalValuesDataHandler.getInstance().getAsBoolean(globalValueKeyDelivered);
+		}
 	}
 	
 	/**
@@ -53,11 +60,13 @@ public class TriforceItem extends Item {
 	 * Needed to be able to tell the player where to find the remaining triforce parts in the dialog with the elf in the dwarven village.
 	 */
 	public static enum TriforceItemLocation {
+		
 		SVARTALFHEIM, //
 		NIFLHEIM, //
 		MUSPELHEIM, //
 		HELHEIM, //
 		ASGARD; //
+	
 	}
 	
 	public static int getNumCarriedTriforcePieces() {

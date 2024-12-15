@@ -11,10 +11,49 @@
 		}
 	},
 	
+	loa2_l2_niflheim__chickens_spawned: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__chickens_spawned,
+            expectedValue: true,
+		}
+	},
+	
 	loa2_l2_niflheim__chicken_quest_started: {
 		conditionType: GLOBAL_VALUE_SET,
         parameters: {
             key: loa2_l2_niflheim__chicken_quest_started,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l2_niflheim__chicken_quest_finished: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__chicken_quest_finished,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l2_one_chicken_missing: {
+        conditionType: CHICKENS_MISSING,
+        parameters: {
+        	numChickens: 1,
+        }
+	},
+	
+	loa2_l2_niflheim__all_chickens_caught: {
+        conditionType: CHICKENS_MISSING,
+        parameters: {
+        	numChickens: 0,
+        }
+	},
+	
+	// the global value that is set when the farmer moves is reset when the player leaves the map
+	loa2_l2_niflheim__farmer_moved: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__farmer_moved,
             expectedValue: true,
 		}
 	},

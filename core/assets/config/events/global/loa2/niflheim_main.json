@@ -14,6 +14,17 @@
 		}
 	},
 	
+	loa2_l2_niflheim_main__farmer_chickens: {
+		event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_l2_niflheim_main__farmer_chickens,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main__farmer_chickens_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** cutscenes - event objects touched
 	//*******************************************
@@ -48,6 +59,17 @@
         executionType: START_CUTSCENE,
         executionParameters: {
             cutsceneId: loa2_l2_niflheim_main_inside_chicken_target_area_cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_main__spawn_chickens: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_main__spawn_chickens,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main__spawn_chickens_cutscene,
 		}
 	},
 

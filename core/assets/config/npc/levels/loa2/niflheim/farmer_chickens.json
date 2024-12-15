@@ -1,0 +1,21 @@
+{
+	graphicsConfigFile: config/npc/graphics/medieval_townfolk_7.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	movingSpeed: 0.75f,
+	
+	interactionEventId: loa2_l2_niflheim_main__farmer_chickens,
+}
