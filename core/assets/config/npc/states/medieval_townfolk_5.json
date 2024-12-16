@@ -1,0 +1,45 @@
+[
+	{
+		id: idle,
+		animation: medieval_townfolk_5_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, give, cry, scared
+		]
+	},
+	{
+		id: move,
+		animation: medieval_townfolk_5_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, give, cry, scared
+		]
+	},
+	{
+		id: give,
+		animation: medieval_townfolk_5_give,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: cry,
+		animation: medieval_townfolk_5_cry,
+		endsWithAnimation: true,
+		followingState: cry,
+		interruptingStates: [
+			idle, move, scared
+		]
+	},
+	{
+		id: scared,
+		animation: medieval_townfolk_5_scared,
+		endsWithAnimation: true,
+		followingState: scared,
+		interruptingStates: [
+			idle, move, give, cry
+		]
+	},
+]

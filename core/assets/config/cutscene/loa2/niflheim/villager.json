@@ -1,0 +1,60 @@
+{
+	id: loa2_l2_niflheim_main__villager_cutscene,
+	controlledActions: {
+	    start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandits_beaten,
+					executedStateName: after_bandits_beaten,
+				},
+				{
+					// default case
+					executedStateName: before_bandits_beaten,
+				},
+			],
+		},
+		
+		before_bandits_beaten: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Villager",
+				displayText: "Our village got attacked by bandits.\n              \nCan you help us?\n          \nPlease talk to the chieftain.   ",
+				colorHeader: #554dff,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		after_bandits_beaten: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Villager",
+				displayText: "Thanks for your help with these bandits!   ",
+				colorHeader: #554dff,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

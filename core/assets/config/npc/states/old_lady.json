@@ -1,0 +1,41 @@
+[
+	{
+		id: idle,
+		animation: old_lady_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, yes, no, hadouken
+		]
+	},
+	{
+		id: move,
+		animation: old_lady_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, yes, no, hadouken
+		]
+	},
+	{
+		id: yes,
+		animation: old_lady_yes,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: no,
+		animation: old_lady_no,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: hadouken,
+		animation: old_lady_hadouken,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+]

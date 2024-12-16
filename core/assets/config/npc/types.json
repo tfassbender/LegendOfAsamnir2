@@ -49,6 +49,15 @@
 	//*** Legend of Asamnir 2 - Level 2 - Niflheim
 	//*****************************************************************
 	farmer_chickens: config/npc/levels/loa2/niflheim/farmer_chickens.json,
+	chieftain: config/npc/levels/loa2/niflheim/chieftain.json,
+	townfolk_1: config/npc/levels/loa2/niflheim/medieval_townfolk_1.json,
+	townfolk_2: config/npc/levels/loa2/niflheim/medieval_townfolk_2.json,
+	townfolk_4: config/npc/levels/loa2/niflheim/medieval_townfolk_4.json,
+	townfolk_5: config/npc/levels/loa2/niflheim/medieval_townfolk_5.json,
+	townfolk_6: config/npc/levels/loa2/niflheim/medieval_townfolk_6.json,
+	townfolk_8: config/npc/levels/loa2/niflheim/medieval_townfolk_8.json,
+	townfolk_9: config/npc/levels/loa2/niflheim/medieval_townfolk_9.json,
+	old_lady: config/npc/levels/loa2/niflheim/old_lady.json,
 	
 	//*****************************************************************
 	//*** Legend of Asamnir 2 - Fields of Vigrid

@@ -25,6 +25,40 @@
 		}
 	},
 	
+	loa2_l2_niflheim_main__old_lady: {
+		event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_l2_niflheim_main__old_lady,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main__old_lady_cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_main__villager: {
+		event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_l2_niflheim_main__villager,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main__villager_cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_main__chieftain: {
+		event: {
+            eventType: NPC_INTERACTION,
+            stringValue: loa2_l2_niflheim_main__chieftain,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_main__chieftain_cutscene,
+		}
+	},
+	
+	
 	//*******************************************
 	//*** cutscenes - event objects touched
 	//*******************************************
@@ -62,14 +96,14 @@
 		}
 	},
 	
-	loa2_l2_niflheim_main__spawn_chickens: {
+	loa2_l2_niflheim_main__init_village: {
 		event: {
             eventType: EVENT_OBJECT_TOUCHED,
-            stringValue: loa2_l2_niflheim_main__spawn_chickens,
+            stringValue: loa2_l2_niflheim_main__init_village,
 		},
         executionType: START_CUTSCENE,
         executionParameters: {
-            cutsceneId: loa2_l2_niflheim_main__spawn_chickens_cutscene,
+            cutsceneId: loa2_l2_niflheim_main__init_village_cutscene,
 		}
 	},
 

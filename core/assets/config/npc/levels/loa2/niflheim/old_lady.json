@@ -1,0 +1,21 @@
+{
+	graphicsConfigFile: config/npc/graphics/old_lady.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	movingSpeed: 0.4f,
+	
+	interactionEventId: loa2_l2_niflheim_main__old_lady,
+}

@@ -1,0 +1,328 @@
+{
+	id: loa2_l2_niflheim_main__chieftain_cutscene,
+	controlledActions: {
+	    start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandits_beaten,
+					executedStateName: after_bandits_beaten,
+				},
+				{
+					conditionId: loa2_l2_niflheim__bandit_quest_started
+					executedStateName: after_bandit_quest_started,
+				},
+				{
+					// default case
+					executedStateName: before_bandits_beaten,
+				},
+			],
+		},
+		
+		before_bandits_beaten: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Chieftain",
+				displayText: "Hello traveler! I'm the chieftain of this village.\nI'm sorry that we can't offer you a warm welcome, but we were just attacked by bandits.   ",
+				colorHeader: #452000,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				chieftain_explain_quest,
+			],
+		},
+		
+		chieftain_explain_quest: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Chieftain",
+				displayText: "You look quite heavily armed. Could you help us with these bandits?\n            \nWe can't offer you much, but we will be forever grateful!   ",
+				colorHeader: #452000,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer,
+			],
+		},
+		
+		thorin_answer: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'm here to search for a rune, but now that I'm already here, I might as well help you with these bandits.\nHave you seen any runes around here?\nOr did these bandits use one?   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				chieftain_answer_rune,
+			],
+		},
+		
+		chieftain_answer_rune: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Chieftain",
+				displayText: "A rune?\nI'm sorry but I haven't seen any runes arround here.\nI'm not sure if the bandits used one.   ",
+				colorHeader: #452000,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer_2,
+			],
+		},
+		
+		thorin_answer_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'll make sure to ask the bandits for a rune before I ram my axe into their skulls.\n              \nWait here, this shouldn't take too long.   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				chieftain_introduce_impa,
+			],
+		},
+		
+		chieftain_introduce_impa: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Chieftain",
+				displayText: "Wait!\nMost of use are no fighters, but our strongest warrior can help you defeat the bandits.   ",
+				colorHeader: #452000,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				chieftain_introduce_impa_2,
+			],
+		},
+		
+		chieftain_introduce_impa_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Chieftain",
+				displayText: "Impa! Could you come here for a moment?   ",
+				colorHeader: #452000,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				impa_move_to_thorin,
+			],
+		},
+		
+		impa_move_to_thorin: {
+			type: MOVE,
+            
+            controlledUnitId: loa2_l2_niflheim_old_lady,
+			controlledUnitTarget: {x: -3, y: 0},
+			
+            executes: [
+                impa_1,
+			],
+		},
+		
+		impa_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "Did you find a warrior to help me defeat these bandits?\n                  \nThat's great! I'm really getting to old for this.   ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_choice,
+			],
+		},
+		
+		thorin_choice: {
+            type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"Let's kill some bandits!",
+					"I think I can handle this myself...",
+				],
+			},
+			choiceOptionExecutions: [
+				impa_lets_kill_some_bandits,
+				impa_i_can_handle_this_myself,
+			],
+		},
+		
+		impa_lets_kill_some_bandits: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "I like the enthusiasm of the dwarfs!  ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				impa_go_ahead,
+			],
+		},
+		
+		impa_i_can_handle_this_myself: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "I might not look like it, but I'm a mighty shieldmaiden!\n             \nI won't stand back and let you have all the fun!   ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				impa_go_ahead,
+			],
+		},
+		
+		impa_go_ahead: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "Could you go ahead and take a look at the bandit camp?\nI'll follow you, but I'm not as fast as I was in my younger days.   ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				impa_dont_go_alone,
+			],
+		},
+		
+		impa_dont_go_alone: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "But don't go into the bandit's camp alone!\n         \nYou will need my help to defeat them!   ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_go_ahead,
+			],
+		},
+		
+		thorin_go_ahead: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Alright! I'll go ahead!\n                   \nI'll see you at the bandit camp!   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value__bandit_quest_started,
+			],
+		},
+		
+		set_global_value__bandit_quest_started: {
+			type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__bandit_quest_started, value: true}",
+			},
+            
+            executes: [
+                end,
+			],
+		},
+		
+		// after the bandit quest was started
+		
+		after_bandit_quest_started: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Chieftain",
+                displayText: "Thank you for helping us with the bandits!\n        \nPlease tell us when you and Impa have defeated them!   ",
+                colorHeader: #452000,
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		// after the bandit boss is defeated
+		
+		after_bandits_beaten: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Chieftain",
+				displayText: "Hey Thorin! Thank you for saving us from the bandits!\n      \nWe are forever grateful!   ",
+				colorHeader: #452000,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

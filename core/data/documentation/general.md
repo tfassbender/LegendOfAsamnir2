@@ -151,6 +151,7 @@
 	- Warlock & Hell Portal
 	- Pyromancer
 	- Kobold Pyromancer
+	- Phoenixling (2024)
 
 
 ### Level 4

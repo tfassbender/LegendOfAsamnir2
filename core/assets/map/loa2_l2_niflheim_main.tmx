@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="1994">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2003">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7, 8]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -154,7 +154,7 @@
   <object id="1936" name="animal.chicken" x="1780.33" y="1403.67">
    <point/>
   </object>
-  <object id="1947" name="animal.cat" x="1293.33" y="1152">
+  <object id="1947" name="animal.cat" x="1308" y="1148.67">
    <point/>
   </object>
   <object id="1948" name="animal.pig" x="973.333" y="1141.33">
@@ -226,17 +226,17 @@
   </object>
   <object id="1973" name="object.eventObject" x="2342.13" y="928" width="4.75" height="139">
    <properties>
-    <property name="eventParameter" value="loa2_l2_niflheim_main__spawn_chickens"/>
+    <property name="eventParameter" value="loa2_l2_niflheim_main__init_village"/>
    </properties>
   </object>
   <object id="1974" name="object.eventObject" x="316.625" y="222" width="233.75" height="4.5">
    <properties>
-    <property name="eventParameter" value="loa2_l2_niflheim_main__spawn_chickens"/>
+    <property name="eventParameter" value="loa2_l2_niflheim_main__init_village"/>
    </properties>
   </object>
   <object id="1975" name="object.eventObject" x="384" y="1458" width="223.25" height="4.5">
    <properties>
-    <property name="eventParameter" value="loa2_l2_niflheim_main__spawn_chickens"/>
+    <property name="eventParameter" value="loa2_l2_niflheim_main__init_village"/>
    </properties>
   </object>
   <object id="1976" name="object.spawnPoint.animal_chicken" x="1920" y="704">
@@ -344,6 +344,60 @@
   <object id="1993" name="object.spawnPoint.animal_chicken" x="1741" y="1416">
    <properties>
     <property name="spawn" value="animal_chicken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1994" name="npc.townfolk_1" x="1104.67" y="1056.67">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_townfolk_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1995" name="npc.chieftain" x="1302.67" y="1086">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_village_chieftain"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1996" name="npc.townfolk_2" x="1157.33" y="1068">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_townfolk_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1997" name="npc.townfolk_4" x="1591.33" y="967.333">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_townfolk_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1998" name="npc.townfolk_5" x="898" y="1058.67">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_townfolk_5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="1999" name="npc.townfolk_6" x="1120" y="1098.67">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_townfolk_6"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2000" name="npc.townfolk_8" x="1170.67" y="1208.67">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_townfolk_8"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2001" name="npc.townfolk_9" x="1632.67" y="966.667">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_townfolk_9"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2002" name="npc.old_lady" x="1419.33" y="1091.33">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_old_lady"/>
    </properties>
    <point/>
   </object>

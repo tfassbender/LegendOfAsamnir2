@@ -46,6 +46,7 @@
 				raw_images/restricted/projectiles/dwarven_guardian_construct_fire_attack,
 				raw_images/restricted/projectiles/dwarven_guardian_construct_fist_attack,
 				raw_images/restricted/projectiles/rock_blast,
+				raw_images/restricted/npc/old_lady/hadouken,
 				
 				//##############################################################
 				//### objects
@@ -401,6 +402,55 @@
 			    raw_images/restricted/npc/king_dwarf/king_dwarf_idle,
 //			    raw_images/restricted/npc/king_dwarf/king_dwarf_laugh,
 //			    raw_images/restricted/npc/king_dwarf/king_dwarf_move,
+
+                // old lady
+                raw_images/restricted/npc/old_lady/old_lady_idle,
+                raw_images/restricted/npc/old_lady/old_lady_move,
+                raw_images/restricted/npc/old_lady/old_lady_yes,
+                raw_images/restricted/npc/old_lady/old_lady_no,
+                raw_images/restricted/npc/old_lady/old_lady_hadouken,
+                
+                // medieval townfolk 1
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_1_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_1_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_1_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_1_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_1_scared,
+                
+                // medieval townfolk 2
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_2_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_2_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_2_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_2_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_2_scared,
+                
+                // medieval townfolk 3
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_3_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_3_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_3_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_3_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_3_scared,
+                
+                // medieval townfolk 4
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_4_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_4_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_4_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_4_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_4_scared,
+                
+                // medieval townfolk 5
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_5_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_5_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_5_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_5_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_5_scared,
+                
+                // medieval townfolk 6
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_6_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_6_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_6_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_6_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_6_scared,
                 
                 // medieval townfolk 7
                 raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_idle,
@@ -408,6 +458,20 @@
                 raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_give,
                 raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_cry,
                 raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_7_scared,
+                
+                // medieval townfolk 8
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_8_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_8_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_8_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_8_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_8_scared,
+                
+                // medieval townfolk 9
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_9_idle,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_9_move,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_9_give,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_9_cry,
+                raw_images/restricted/npc/medieval_townfolks/medieval_townfolk_9_scared,
 				
 				//##############################################################
 				//### Animals

@@ -104,7 +104,10 @@
 	config/cutscene/loa2/niflheim/inside_chicken_target_area.json,
 	config/cutscene/loa2/niflheim/outside_chicken_target_area.json,
 	config/cutscene/loa2/niflheim/farmer_chickens.json,
-	config/cutscene/loa2/niflheim/spawn_chickens.json,
+	config/cutscene/loa2/niflheim/init_village.json,
+	config/cutscene/loa2/niflheim/old_lady.json,
+	config/cutscene/loa2/niflheim/villager.json,
+	config/cutscene/loa2/niflheim/chieftain.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

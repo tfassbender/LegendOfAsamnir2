@@ -1,0 +1,81 @@
+{
+	id: loa2_l2_niflheim_main__old_lady_cutscene,
+	controlledActions: {
+	    start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandits_beaten,
+					executedStateName: after_bandits_beaten,
+				},
+				{
+					conditionId: loa2_l2_niflheim__bandit_quest_started
+					executedStateName: after_bandit_quest_started,
+				},
+				{
+					// default case
+					executedStateName: before_bandits_beaten,
+				},
+			],
+		},
+		
+		before_bandits_beaten: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "A dwarf!? I haven't seen one of your tribe in ages.\nCould you help us with our bandit problem?\n          \nPlease talk to the chieftain if you want to help us.   ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		after_bandit_quest_started: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "Please go ahead to the bandit camp, Thorin.\n        \nI'll meet you there.  ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		after_bandits_beaten: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Impa",
+				displayText: "Thanks for your help with these bandits.\n                     \nNow they will think twice before attacking us again!   ",
+				colorHeader: #e36c64,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

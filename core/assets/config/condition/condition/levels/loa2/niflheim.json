@@ -58,6 +58,22 @@
 		}
 	},
 	
+	loa2_l2_niflheim__bandit_quest_started: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__bandit_quest_started,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l2_niflheim__bandits_beaten: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__bandits_beaten,
+            expectedValue: true,
+		}
+	},
+	
 	//**************************************************
 	//*** AI (for the chickens to follow the player)
 	//**************************************************

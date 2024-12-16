@@ -1,0 +1,230 @@
+{
+	id: loa2_l2_niflheim_main__init_village_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+	    	startsWithCutscene: true,
+	    	
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                start_condition,
+                townfolks_condition, // the townfolk's state needs to be set every time, because otherwise the starting of the cutscene will reset them to idle
+			],
+		},
+		
+		start_condition: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					// the global value for this condition is reset when the player leaves the map
+					conditionId: loa2_l2_niflheim__chickens_spawned, // the same condition is used for the chickens and the townfolks to prevent duplications
+					executedStateName: end,
+				},
+				{
+					// default case
+                    executedStateName: condition_multiplexer,
+				},
+			],
+		}
+		
+		condition_multiplexer: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                chicken_condition,
+                old_lady_look_left,
+			],
+		},
+		
+		// initialize chickens
+		
+		chicken_condition: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					// the global value for this condition is reset when the player leaves the map
+					conditionId: loa2_l2_niflheim__chickens_spawned,
+					executedStateName: end,
+				},
+				{
+					conditionId: loa2_l2_niflheim__chicken_quest_finished,
+					executedStateName: spawn_chickens_in_target_area,
+				},
+				{
+					// default case
+					executedStateName: spawn_chickens_distributed_on_the_map,
+				},
+			],
+		},
+		
+		spawn_chickens_in_target_area: {
+			type: EVENT,
+			
+			event: {
+				eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_in_target_area,
+			},
+            
+            executes: [
+                set_global_value_chickens_spawned,
+			]
+		},
+		
+		spawn_chickens_distributed_on_the_map: {
+			type: EVENT,
+			
+			event: {
+				eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l2_niflheim_main__spawn_chickens_distributed,
+			},
+            
+            executes: [
+                set_global_value_chickens_spawned,
+			]
+		},
+		
+		set_global_value_chickens_spawned: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__chickens_spawned, value: true}",
+			},
+            
+            executes: [
+                end,
+			],
+		},
+		
+		// initialize townfolks
+		
+		old_lady_look_left: {
+			type: MOVE,
+            
+            controlledUnitId: loa2_l2_niflheim_old_lady,
+			controlledUnitTarget: {x: -0.1, y: 0},
+			
+            executes: [
+                farmer_look_left,
+			],
+		},
+		
+		farmer_look_left: {
+			type: MOVE,
+            
+            controlledUnitId: loa2_l2_niflheim_farmer_chickens,
+			controlledUnitTarget: {x: -0.1, y: 0},
+			
+            executes: [
+                end,
+			],
+		},
+		
+		// change states of the townfolks to cry (needs to be executed every time, because otherwise the starting of the cutscene will reset them to idle)
+		
+		townfolks_condition: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandits_beaten,
+					executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: townfolk_1_change_state_cry,
+				},
+			],
+		},
+		
+		townfolk_1_change_state_cry: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l2_niflheim_townfolk_1,
+			controlledUnitState: cry,
+			
+			executes: [
+                townfolk_2_change_state_cry,
+			],
+		},
+		
+		townfolk_2_change_state_cry: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l2_niflheim_townfolk_2,
+			controlledUnitState: cry,
+			
+			executes: [
+                townfolk_4_change_state_cry,
+			],
+		},
+		
+		// townfolk 3 is the chieftain
+		
+		townfolk_4_change_state_cry: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_niflheim_townfolk_4,
+            controlledUnitState: cry,
+            
+            executes: [
+                townfolk_5_change_state_cry,
+			],
+		},
+		
+		townfolk_5_change_state_cry: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_niflheim_townfolk_5,
+            controlledUnitState: cry,
+            
+            executes: [
+                townfolk_6_change_state_cry,
+			],
+		},
+		
+		townfolk_6_change_state_cry: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_niflheim_townfolk_6,
+            controlledUnitState: cry,
+            
+            executes: [
+                townfolk_8_change_state_cry,
+			],
+		},
+		
+		// townfolk 7 is the farmer
+		
+		townfolk_8_change_state_cry: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_niflheim_townfolk_8,
+            controlledUnitState: cry,
+            
+            executes: [
+                townfolk_9_change_state_cry,
+			],
+		},
+		
+		townfolk_9_change_state_cry: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_niflheim_townfolk_9,
+            controlledUnitState: cry,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
