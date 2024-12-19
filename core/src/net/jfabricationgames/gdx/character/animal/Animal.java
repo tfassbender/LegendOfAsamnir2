@@ -69,7 +69,8 @@ public class Animal extends AbstractCharacter implements Hittable {
 		return physicsBodyProperties.setRadius(typeConfig.bodyRadius) //
 				.setWidth(typeConfig.bodyWidth) //
 				.setHeight(typeConfig.bodyHeight) //
-				.setPhysicsBodyShape(typeConfig.bodyShape);
+				.setPhysicsBodyShape(typeConfig.bodyShape) //
+				.setDensity(typeConfig.bodyDensity);
 	}
 	
 	@Override

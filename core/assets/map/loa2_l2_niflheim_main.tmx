@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2003">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2006">
  <properties>
-  <property name="above_player_layers" value="[5, 6, 7, 8]"/>
+  <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
   <property name="building_level" value="false"/>
   <property name="dungeon_level" value="false"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/fields_of_vigrid.json"/>
-  <property name="shadow_layers" value="[9, 10, 11]"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
  <tileset firstgid="491" source="tileset/cave.tsx"/>
@@ -51,11 +50,6 @@
    eJzt2KkRAlEQBNBW+9dBDhz5W0gCCGKJgUswAoViBbUc71W1G9HVchIAAAAAAEg2Ldm2qVt8lqH2OI7YZOz9P5j1ybx/3z0AAAAA/JJdl+wrh27qJt/rXNtdKtfKzY4vOT3ttGjJsrKqrP28AQAAAAAAgIc7TdwNwg==
   </data>
  </layer>
- <layer id="8" name="shadow_underlying" width="81" height="59" locked="1">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U1/gCFUBAAAAAAAAAAAAAAAAAAAAAADAN0qsAAE=
-  </data>
- </layer>
  <layer id="10" name="background_above_player" width="81" height="59" locked="1">
   <data encoding="base64" compression="zlib">
    eJztmUsuBEEchytiknEL2oYjuMEYrF1BZlzBe/YYDoHEVoLhHDZ2Ik6BnyAmne551UN1zfclv8yiMunK1/96dJUxAAAAAAAAAAAAAJAy3ZoxZ8p5bbw2+KMnPw/KY4GnQW3wzbPcvP74edPvS220NgCAaeB91pgPxTD/TcyS3C0PWIt368bsKfvKpnKoHNXD9rHK7MjVQUmmgXnV1YKSKYuM04loytuasq5s4BAAACKgf3/IvnB8vvaHF8qlcqVcKx08WvPk2GEjM2a1IM3M7XNiYmbO7v95Z9sJu/LFlmNnRXUcooZvhoxHn/cqrh0W0fL8jPw6u1Lgs+r3Km2P9TjKOsu9SvUIMbZTB4f2pOTwWPPiiXKqdAN+i6Tk8Fbe7pR7pRfIYcPhHrud+LfNL76/UXzvC2PA97jFoT2pj2eXc98gUq7FUOvvKA7/65zClpgc2vSl7LyzLC7fTSiHw84bQs0p+f4M85t/N0Vtoc9ay+oxpj19v998v1oRnFNXwWHs4NAeHNqDQ3twWM4ne91qrg==
@@ -69,21 +63,6 @@
  <layer id="15" name="background_above_player_3" width="81" height="59" locked="1">
   <data encoding="base64" compression="zlib">
    eJzt2DENAAAIBDFW9ODfGwqYySetgpuvCgAAAAAAAACyTX8XAAAAAOn8BQAAAAAAALgt74oAeQ==
-  </data>
- </layer>
- <layer id="3" name="shadows" width="81" height="59" locked="1">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U1/gCFUBAAAAAAAAAAAAAAAAAAAAAADAN0qsAAE=
-  </data>
- </layer>
- <layer id="4" name="shadows_2" width="81" height="59" locked="1">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U1/gCFUBAAAAAAAAAAAAAAAAAAAAAADAN0qsAAE=
-  </data>
- </layer>
- <layer id="17" name="shadows_3" width="81" height="59" locked="1">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U1/gCFUBAAAAAAAAAAAAAAAAAAAAAADAN0qsAAE=
   </data>
  </layer>
  <objectgroup id="3" name="objects">
@@ -399,6 +378,17 @@
    <properties>
     <property name="unitId" value="loa2_l2_niflheim_old_lady"/>
    </properties>
+   <point/>
+  </object>
+  <object id="2003" name="object.eventObject" x="1324" y="896" width="108.167" height="31.606">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2004" name="animal.horse_brown" x="1646" y="1149">
+   <point/>
+  </object>
+  <object id="2005" name="npc.ratatosk_niflheim" x="343.076" y="1587.62">
    <point/>
   </object>
  </objectgroup>

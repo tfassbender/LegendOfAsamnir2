@@ -1,0 +1,156 @@
+{
+	id: loa2_l2_niflheim_ratatosk_cutscene,
+	controlledActions: {
+	    ratatosk_1: {
+			startsWithCutscene: true,
+			
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Hey Thorin!         \nYou made it to Niflheim!\n             \nCan I help you with anything?   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"Where should I go next?",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				ratatosk_condition,
+			],
+		},
+		
+		ratatosk_condition: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__rune_hagalaz_collected,
+					executedStateName: hagalaz_collected__ratatosk_1
+				},
+				{
+					conditionId: common__player_has_ice_pick,
+					executedStateName: ice_pick__ratatosk_1
+				},
+				{
+					conditionId: loa2_l2_niflheim__ice_fields_visited,
+					executedStateName: ice_fields_visisted__ratatosk_1,
+				},
+				{
+					// default case - thorin hasn't found the chaos wizard's castle yet
+					executedStateName: first_hint__ratatosk_1
+				},
+			],
+		},
+		
+		// hagalaz rune collected
+		
+		hagalaz_collected__ratatosk_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "You found the rune hagalaz!          \nI don't think that there are more runes to be found in this realm.\nYou could search for a rune in Musplheim next...    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		// ice pick found
+		
+		ice_pick__ratatosk_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "You found an ice pick!          \nThat might be handy in the ice fields of Niflheim.\nIt's quite slippery there...   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		// ice fields visited (but ice pick not found yet)
+		
+		ice_fields_visisted__ratatosk_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "You visited the ice fields already?          \nIf you didn't find anything there, you might want to visit the village in the east.\nWho knows what you might find there...   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		// fist hint
+		
+		first_hint__ratatosk_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "The ice fields of niflheim are located to the north.\n      \nIt's the most likely place to find a rune in this realm.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	first_hint__ratatosk_2,
+			],
+		},
+		
+		first_hint__ratatosk_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "In the east, behind the river, you will find a village.\n         \nIt might be worth checking out.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

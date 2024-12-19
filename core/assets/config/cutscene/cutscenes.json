@@ -98,6 +98,7 @@
 	//*** Legend of Asamnir 2 - Niflheim - Main
 	//********************************************************
 	config/cutscene/loa2/niflheim/goto_main.json,
+	config/cutscene/loa2/niflheim/ratatosk.json,
 	config/cutscene/loa2/niflheim/introduce_bandits.json,
 	config/cutscene/loa2/niflheim/goto_bandit_camp.json,
 	config/cutscene/loa2/niflheim/goto_final.json,

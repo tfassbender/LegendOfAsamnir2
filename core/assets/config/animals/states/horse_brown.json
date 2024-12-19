@@ -1,0 +1,29 @@
+[
+	{
+		id: idle,
+		animation: horse_brown_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, run
+		]
+	},
+	{
+		id: move,
+		animation: horse_brown_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, run
+		]
+	},
+	{
+        id: run,
+        animation: horse_brown_run,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	idle, move
+        ]
+	},
+]

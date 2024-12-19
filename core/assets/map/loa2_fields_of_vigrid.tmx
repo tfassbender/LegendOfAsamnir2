@@ -97,13 +97,13 @@
   <object id="916" name="npc.guardian_of_asgard" x="960" y="512">
    <point/>
   </object>
-  <object id="927" name="npc.ratatosk" x="1472" y="1440">
+  <object id="927" name="npc.ratatosk_asgard" x="1472" y="1440">
    <point/>
   </object>
   <object id="928" name="object.signboard" x="1392.67" y="1202.67">
    <properties>
     <property name="displayText">North: Asgard
-West: Secret Castle of the Chaos Wizard</property>
+West: Secret Castle of the Chaos Wizard.</property>
     <property name="displayTextHeader" value="Directions"/>
    </properties>
    <point/>

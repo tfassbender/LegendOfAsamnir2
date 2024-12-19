@@ -20,6 +20,7 @@ public class AnimalTypeConfig extends CharacterTypeConfig {
 	public float bodyRadius;
 	public float bodyWidth;
 	public float bodyHeight;
+	public float bodyDensity;
 	
 	public boolean addSensor = true;
 	public float sensorRadius;

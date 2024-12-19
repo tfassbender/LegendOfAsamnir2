@@ -58,6 +58,7 @@
 	townfolk_8: config/npc/levels/loa2/niflheim/medieval_townfolk_8.json,
 	townfolk_9: config/npc/levels/loa2/niflheim/medieval_townfolk_9.json,
 	old_lady: config/npc/levels/loa2/niflheim/old_lady.json,
+	ratatosk_niflheim: config/npc/levels/loa2/niflheim/ratatosk.json,
 	
 	//*****************************************************************
 	//*** Legend of Asamnir 2 - Fields of Vigrid
@@ -65,7 +66,7 @@
 	
 	guardian_of_asgard: config/npc/levels/loa2/fields_of_vigrid/guardian_of_asgard.json,
 	heimdall: config/npc/levels/loa2/fields_of_vigrid/heimdall.json,
-	ratatosk: config/npc/levels/loa2/fields_of_vigrid/ratatosk.json,
+	ratatosk_asgard: config/npc/levels/loa2/fields_of_vigrid/ratatosk.json,
 
 //	//************************************************
 //	//*** Demo Level

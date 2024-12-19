@@ -213,7 +213,7 @@
 	- Svartalfheim
 - Hagalaz: 
     - Balance of forces
-	- strength to move something heavy out of the way (to get to the next dungeon)
+	- prevents constant damage (from heat in muspelheim)
 	- second dungeon
 	- Niflheim
 - Kenaz: 

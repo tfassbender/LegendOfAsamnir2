@@ -209,7 +209,27 @@
 		bodyShape: CIRCLE,
 		bodyRadius: 0.4f,
 		
-		addSensor: true,
-		sensorRadius: 3f,
+		addSensor: false,
+	},
+	
+	horse_brown: {
+		typeName: horse_brown,
+		
+		animationsConfig: config/animation/animals/horse_brown.json,
+		stateConfig: config/animals/states/horse_brown.json,
+		initialState: idle,
+		aiConfig: config/animals/ai/horse.json,
+		
+		movingSpeed: 2f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.5f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1.7f,
+		bodyHeight: 1f,
+		bodyDensity: 100f,
+		
+		addSensor: false,
 	},
 }

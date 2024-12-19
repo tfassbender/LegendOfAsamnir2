@@ -1,6 +1,6 @@
 {
 	//*******************************************
-	//*** runes
+	//*** items
 	//*******************************************
 	
 	common__player_has_10_coins_or_more: {
@@ -9,6 +9,18 @@
 			atLeast: 10
 		}
 	},
+	
+	common__player_has_ice_pick: {
+		conditionType: HAS_ITEM,
+        parameters: {
+            itemId: ice_pick
+		}
+	},
+	
+	//*******************************************
+	//*** runes
+	//*******************************************
+	
 	common__rune_raidho_collected: {
 		conditionType: RUNE_COLLECTED,
 		parameters: {

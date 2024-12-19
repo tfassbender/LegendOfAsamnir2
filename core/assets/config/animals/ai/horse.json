@@ -1,0 +1,8 @@
+{
+	defaultAI: horse,
+	aiConfigurations: {
+		horse: {
+		    type: BASE_AI,
+		}
+	}
+}

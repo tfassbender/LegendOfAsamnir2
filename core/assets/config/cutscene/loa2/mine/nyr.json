@@ -247,7 +247,7 @@
             executionParameters: {
                 displayTextHeader: "Nyr",
                 colorHeader: #573400,
-                displayText: "Hey Thorin!\nSeems like you got rid of some golems. Thanks for all your help. \nHere, take this as a reward. ",
+                displayText: "Hey Thorin!\nSeems like you got rid of some golems. Thanks for all your help. \nHere, take this metal ingot as a reward. ",
 			}
             
             waitForEventToFinish: true,

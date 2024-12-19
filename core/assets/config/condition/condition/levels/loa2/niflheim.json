@@ -74,6 +74,14 @@
 		}
 	},
 	
+	loa2_l2_niflheim__ice_fields_visited: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__ice_fields_visited,
+            expectedValue: true,
+		}
+	},
+	
 	//**************************************************
 	//*** AI (for the chickens to follow the player)
 	//**************************************************

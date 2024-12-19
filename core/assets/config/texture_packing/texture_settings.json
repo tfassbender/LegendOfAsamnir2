@@ -206,14 +206,6 @@
 				raw_images/enemy/dummy/dummy_damage,
 				raw_images/enemy/dummy/dummy_damage_long,
 				
-				// gargoyle
-				raw_images/restricted/enemy/gargoyle/gargoyle_attack,
-				raw_images/restricted/enemy/gargoyle/gargoyle_damage,
-				raw_images/restricted/enemy/gargoyle/gargoyle_death,
-				raw_images/restricted/enemy/gargoyle/gargoyle_idle,
-				raw_images/restricted/enemy/gargoyle/gargoyle_idle_2,
-				raw_images/restricted/enemy/gargoyle/gargoyle_statue,
-				
 				//##############################################################
 				//### enemies - restricted graphics
 				//##############################################################
@@ -278,6 +270,14 @@
 				raw_images/restricted/enemy/giant_golem/giant_golem_damage,
 				raw_images/restricted/enemy/giant_golem/giant_golem_death,
 				
+				// gargoyle
+				raw_images/restricted/enemy/gargoyle/gargoyle_attack,
+				raw_images/restricted/enemy/gargoyle/gargoyle_damage,
+				raw_images/restricted/enemy/gargoyle/gargoyle_death,
+				raw_images/restricted/enemy/gargoyle/gargoyle_idle,
+				raw_images/restricted/enemy/gargoyle/gargoyle_idle_2,
+				raw_images/restricted/enemy/gargoyle/gargoyle_statue,
+				
 				// bandit leader
 				raw_images/restricted/enemy/bandit_leader/bandit_leader_idle,
 				raw_images/restricted/enemy/bandit_leader/bandit_leader_move,
@@ -323,12 +323,12 @@
 				raw_images/npc/builder/builder_move,
 				raw_images/npc/builder/builder_work,
 				
-				// elven warrior
-				raw_images/restricted/npc/elven_warrior/elven_warrior_idle_hat,
-				
 				//##############################################################
 				//### NPCs - restricted graphics
 				//##############################################################
+				
+				// elven warrior
+				raw_images/restricted/npc/elven_warrior/elven_warrior_idle_hat,
 				
 				// inn keeper
 				raw_images/restricted/npc/inn_keeper/inn_keeper_idle,
@@ -526,8 +526,8 @@
 				raw_images/animals/squirrel/squirrel_move,
 				
 				//twig blight
-				raw_images/animals/twig_blight/twig_blight_idle,
-				raw_images/animals/twig_blight/twig_blight_move,
+//				raw_images/animals/twig_blight/twig_blight_idle,
+//				raw_images/animals/twig_blight/twig_blight_move,
 				
 				//##############################################################
 				//### Animals - restricted graphics
@@ -546,6 +546,11 @@
 				raw_images/restricted/animals/rooster/rooster_peck,
 				raw_images/restricted/animals/rooster/rooster_scare,
 				raw_images/restricted/animals/rooster/rooster_crow,
+				
+				// horse
+				raw_images/restricted/animals/horse_brown/horse_brown_idle,
+				raw_images/restricted/animals/horse_brown/horse_brown_move,
+				raw_images/restricted/animals/horse_brown/horse_brown_run,
 				
 				//##############################################################
 				//### Cutscenes
