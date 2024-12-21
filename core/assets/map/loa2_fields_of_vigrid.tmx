@@ -160,7 +160,7 @@ West: Secret Castle of the Chaos Wizard.</property>
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="536" x="0" y="256" width="1984" height="160"/>
   <object id="537" x="0" y="416" width="928" height="113"/>
   <object id="538" x="1152" y="416" width="832" height="112.5"/>

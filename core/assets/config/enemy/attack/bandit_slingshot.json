@@ -1,0 +1,11 @@
+[
+	{
+		id: attack,
+		type: SLINGSHOT,
+		projectileType: slingshot,
+		delay: 0.3,
+		duration: 0,
+		damage: 5,
+		pushForce: 30,
+	},
+]

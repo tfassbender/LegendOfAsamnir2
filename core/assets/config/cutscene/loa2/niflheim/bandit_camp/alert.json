@@ -1,0 +1,56 @@
+{
+	id: loa2_l2_niflheim_bandit_camp__alert_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandits_alarmed,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: bandit_shield
+				},
+			],
+		},
+		
+		bandit_shield: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Bandit",
+				displayText: "The camp is under attack!!!\n\nTo arms, brothers!   ",
+				colorHeader: #56756f,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value,
+			],
+		},
+		
+		set_global_value: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l2_niflheim__bandits_alarmed, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

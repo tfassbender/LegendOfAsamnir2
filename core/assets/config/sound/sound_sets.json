@@ -134,6 +134,7 @@
 				},
 				zap: {
 					path: "sound/projectile/zap.mp3"
+					volume: 0.5
 				},
 			}
 		}
@@ -244,6 +245,10 @@
 				},
 				charms: {
 					path: "sound/enemy/charms.mp3",
+				},
+				arrow: {
+					path: "sound/projectile/arrow.wav"
+					volume: 0.3
 				},
 				//gladiator
 				attack_gladiator: {

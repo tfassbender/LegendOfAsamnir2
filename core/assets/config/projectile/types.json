@@ -126,6 +126,8 @@
 		textureInitialRotation: 180,
 		rotateTextureToMovementDirection: true,
 		
+		sound: zap,
+		
 		speed: 50,
 		damping: 0,
 		range: 100,
@@ -216,5 +218,16 @@
 		
 		pushForce: 2f, // enough to push away bombs
 		radius: 3f,
+	},
+	
+	slingshot: {
+		attackType: SLINGSHOT,
+		
+		texture: pebble,
+		textureScale: 1,
+		
+		range: 100,
+		speed: 150,
+		dampingAfterObjectHit: 5,
 	},
 }

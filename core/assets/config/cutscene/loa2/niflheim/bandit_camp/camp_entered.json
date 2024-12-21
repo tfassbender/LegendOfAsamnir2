@@ -1,0 +1,55 @@
+{
+	id: loa2_l2_niflheim_bandit_camp__enter_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandit_camp_entered,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: thorin_1
+				},
+			],
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Impa said to wait for her... but now the bandits are alerted.\n                             \nShe should be here soon. I'll take care of some bandits in the meantime.   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				set_global_value,
+			],
+		},
+		
+		set_global_value: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l2_niflheim__bandit_camp_entered, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

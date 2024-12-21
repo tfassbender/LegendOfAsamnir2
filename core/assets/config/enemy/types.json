@@ -676,4 +676,140 @@
 			coin: 0.7,
 		}
 	},
+	
+	bandit_archer: {
+		typeName: bandit_archer,
+		
+		animationsConfig: config/animation/enemy/bandit_archer.json,
+		stateConfig: config/enemy/states/bandit_archer.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bandit_archer.json,
+		aiConfig: config/enemy/ai/bandit_archer.json,
+		
+		health: 20,
+		movingSpeed: 2,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 6f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			coin: 0.7,
+		}
+	},
+	
+	bandit_mage: {
+		typeName: bandit_mage,
+		
+		animationsConfig: config/animation/enemy/bandit_mage.json,
+		stateConfig: config/enemy/states/bandit_mage.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bandit_mage.json,
+		aiConfig: config/enemy/ai/bandit_archer.json,
+		
+		health: 20,
+		movingSpeed: 2,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 5f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 75,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			coin: 0.7,
+		}
+	},
+	
+	bandit_slingshot: {
+		typeName: bandit_slingshot,
+		
+		animationsConfig: config/animation/enemy/bandit_slingshot.json,
+		stateConfig: config/enemy/states/bandit_slingshot.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bandit_slingshot.json,
+		aiConfig: config/enemy/ai/bandit_archer.json,
+		
+		health: 20,
+		movingSpeed: 2,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 5f,
+		
+		pushForceDamage: 15,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: 0,
+		healthBarWidthFactor: 0.5,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			coin: 0.7,
+		}
+	},
+	
+	bugbear: {
+		typeName: bugbear,
+		
+		animationsConfig: config/animation/enemy/bugbear.json,
+		stateConfig: config/enemy/states/bugbear.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bugbear.json,
+		
+		health: 100,
+		movingSpeed: 1f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.7f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.7f,
+		
+		addSensor: true,
+		sensorRadius: 7f,
+		
+		pushForceDamage: 5,
+		pushForceHit: 100,
+		
+		drops: {
+			metal_ingot: 1,
+		}
+		
+		isBoss: true
+		bossName: "Bugbear - Champion of the Bandits",
+	}
 }

@@ -14,6 +14,8 @@
 	
 	// level 2 - niflheim
 	config/events/global/loa2/niflheim_main.json,
+	config/events/global/loa2/niflheim_bandit_camp.json,
+	
 	
 	// asgard - fields of vigrid
 	config/events/global/loa2/asgard.json,

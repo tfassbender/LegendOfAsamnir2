@@ -82,6 +82,66 @@
 		}
 	},
 	
+	loa2_l2_niflheim__bandits_alarmed: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__bandits_alarmed,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l2_niflheim__bandit_camp_entered: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__bandit_camp_entered,
+            expectedValue: true,
+		}
+	},
+	
+	//*******************************************
+	//*** switches
+	//*******************************************
+	
+	loa2_l2_bandit_camp__all_switches_activated: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l2_niflheim_bandit_camp__switch_1,
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l2_niflheim_bandit_camp__switch_2,
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l2_niflheim_bandit_camp__switch_3,
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l2_niflheim_bandit_camp__switch_4,
+						}
+					}
+				}
+			}
+		}
+	},
+	
 	//**************************************************
 	//*** AI (for the chickens to follow the player)
 	//**************************************************

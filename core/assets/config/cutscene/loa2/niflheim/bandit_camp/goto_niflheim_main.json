@@ -1,0 +1,41 @@
+{
+	id: loa2_l2_niflheim_bandit_camp_goto_niflheim_main_cutscene,
+	controlledActions: {
+		move_left: {
+			startsWithCutscene: true,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -8, y: 0},
+			targetPositionRelativeToUnitId: loa2_l2_niflheim_event_object_goto_niflheim_main,
+			cameraFollowsTarget: false,
+			
+			executes: [
+                change_map,
+			]
+		},
+		
+		change_map: {
+			executionDelayInSeconds: 1f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+				stringValue: loa2_niflheim_main,
+				intValue: 1,
+			},
+			
+			waitForEventToFinish: false,
+			cameraFollowsTarget: false,
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

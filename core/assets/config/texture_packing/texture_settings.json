@@ -47,6 +47,7 @@
 				raw_images/restricted/projectiles/dwarven_guardian_construct_fist_attack,
 				raw_images/restricted/projectiles/rock_blast,
 				raw_images/restricted/npc/old_lady/hadouken,
+				raw_images/restricted/projectiles/bandit_slingshot,
 				
 				//##############################################################
 				//### objects
@@ -292,6 +293,45 @@
 				raw_images/restricted/enemy/bandit_shield/bandit_shield_damage,
 				raw_images/restricted/enemy/bandit_shield/bandit_shield_death,
 				
+				// bandit archer
+				raw_images/restricted/enemy/bandit_archer/bandit_archer_idle,
+				raw_images/restricted/enemy/bandit_archer/bandit_archer_move,
+				raw_images/restricted/enemy/bandit_archer/bandit_archer_attack,
+				raw_images/restricted/enemy/bandit_archer/bandit_archer_damage,
+				raw_images/restricted/enemy/bandit_archer/bandit_archer_death,
+				
+				// bandit mage
+				raw_images/restricted/enemy/bandit_mage/bandit_mage_idle,
+				raw_images/restricted/enemy/bandit_mage/bandit_mage_move,
+				raw_images/restricted/enemy/bandit_mage/bandit_mage_cast,
+				raw_images/restricted/enemy/bandit_mage/bandit_mage_damage,
+				raw_images/restricted/enemy/bandit_mage/bandit_mage_death,
+				
+				// bandit necromancer
+				raw_images/restricted/enemy/bandit_necromancer/bandit_necromancer_idle,
+				raw_images/restricted/enemy/bandit_necromancer/bandit_necromancer_move,
+				raw_images/restricted/enemy/bandit_necromancer/bandit_necromancer_cast,
+				raw_images/restricted/enemy/bandit_necromancer/bandit_necromancer_cast_with_effect,
+				raw_images/restricted/enemy/bandit_necromancer/bandit_necromancer_damage,
+				raw_images/restricted/enemy/bandit_necromancer/bandit_necromancer_death,
+				
+				// bandit slingshot
+				raw_images/restricted/enemy/bandit_slingshot/bandit_slingshot_idle,
+				raw_images/restricted/enemy/bandit_slingshot/bandit_slingshot_move,
+				raw_images/restricted/enemy/bandit_slingshot/bandit_slingshot_attack,
+				raw_images/restricted/enemy/bandit_slingshot/bandit_slingshot_damage,
+				raw_images/restricted/enemy/bandit_slingshot/bandit_slingshot_death,
+				
+				// bugbear
+				raw_images/restricted/enemy/bugbear/bugbear_idle,
+				raw_images/restricted/enemy/bugbear/bugbear_move,
+				raw_images/restricted/enemy/bugbear/bugbear_attack,
+				raw_images/restricted/enemy/bugbear/bugbear_block,
+				raw_images/restricted/enemy/bugbear/bugbear_block_2,
+				raw_images/restricted/enemy/bugbear/bugbear_taunt,
+				raw_images/restricted/enemy/bugbear/bugbear_damage,
+				raw_images/restricted/enemy/bugbear/bugbear_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################
@@ -526,8 +566,8 @@
 				raw_images/animals/squirrel/squirrel_move,
 				
 				//twig blight
-//				raw_images/animals/twig_blight/twig_blight_idle,
-//				raw_images/animals/twig_blight/twig_blight_move,
+				raw_images/animals/twig_blight/twig_blight_idle,
+				raw_images/animals/twig_blight/twig_blight_move,
 				
 				//##############################################################
 				//### Animals - restricted graphics

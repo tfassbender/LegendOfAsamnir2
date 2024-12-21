@@ -111,6 +111,13 @@
 	config/cutscene/loa2/niflheim/chieftain.json,
 	
 	//********************************************************
+	//*** Legend of Asamnir 2 - Niflheim - Bandit Camp
+	//********************************************************
+	config/cutscene/loa2/niflheim/bandit_camp/goto_niflheim_main.json,
+	config/cutscene/loa2/niflheim/bandit_camp/alert.json,
+	config/cutscene/loa2/niflheim/bandit_camp/camp_entered.json,
+	
+	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
 	//********************************************************
 	config/cutscene/loa2/asgard/goto_main.json,

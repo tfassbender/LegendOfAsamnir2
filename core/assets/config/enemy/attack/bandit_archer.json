@@ -1,0 +1,11 @@
+[
+	{
+		id: attack,
+		type: ARROW,
+		projectileType: arrow,
+		delay: 0.3,
+		duration: 0,
+		damage: 10,
+		pushForce: 50,
+	},
+]

@@ -17,14 +17,13 @@
 		
 		change_map: {
 			executionDelayInSeconds: 1f,
-			type: WAIT,
+			type: EVENT,
 			
-			// TODO change map
-//			event: {
-//				eventType: CHANGE_MAP,
-//				stringValue: loa2_l2_niflheim_final,
-//				intValue: 0,
-//			},
+			event: {
+				eventType: CHANGE_MAP,
+				stringValue: loa2_niflheim_bandit_camp,
+				intValue: 0,
+			},
 			
 			waitForEventToFinish: false,
 			cameraFollowsTarget: false,

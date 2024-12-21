@@ -1,0 +1,11 @@
+[
+	{
+		id: attack,
+		type: MAGIC_WAVE,
+		projectileType: magic_wave,
+		delay: 0.6,
+		duration: 0,
+		damage: 10,
+		pushForce: 150,
+	},
+]

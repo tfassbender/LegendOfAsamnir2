@@ -1,0 +1,51 @@
+{
+	defaultAI: bandit_archer,
+	aiConfigurations: {
+		bandit_archer: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 1.5f,
+			},
+			attackDistance: 5f,
+			minDistanceToTargetPlayer: 4f,
+			
+			subAI: {
+				type: RUN_AWAY_AI,
+				
+				stateNameMove: move,
+				stateNameIdle: idle,
+				
+				distanceToKeepFromPlayer: 2.5f,
+				distanceToStopRunning: 0f,
+				
+				subAI: {
+					type: FOLLOW_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					
+					minDistanceToTargetPlayer: 4f,
+					
+					subAI: {
+						type: PRE_DEFINED_MOVEMENT_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						distanceToKeepFromPlayer: 2.5f,
+						
+						useRelativePositions: true,
+						
+						subAI: {
+							type: BASE_AI,
+						}
+					}
+				}
+			}
+		}
+	}
+}
