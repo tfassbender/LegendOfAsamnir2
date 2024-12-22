@@ -43,4 +43,9 @@
 		spawnType: object.destroyable_wall,
 		events: [NEW_GAME_STARTED, GAME_LOADED, PLAYER_RESPAWNED, MAP_ENTERED],
 	}
+	
+	explosion: {
+		spawnType: object.explosion,
+        events: [CUSTCENE_SPAWN_UNIT],
+	},
 }

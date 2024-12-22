@@ -12,6 +12,10 @@ import com.badlogic.gdx.physics.box2d.Joint;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventListener;
+import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.object.GameObjectMap;
 import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 import net.jfabricationgames.gdx.object.InteractivePlayer;
@@ -19,7 +23,7 @@ import net.jfabricationgames.gdx.physics.CollisionUtil;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
-public class DraggableObject extends MovableObject implements ContactListener {
+public class DraggableObject extends MovableObject implements ContactListener, EventListener {
 	
 	private Joint joint; // box2d joint that connects the object body to the player body
 	
@@ -27,6 +31,7 @@ public class DraggableObject extends MovableObject implements ContactListener {
 		super(typeConfig, sprite, mapProperties, gameMap);
 		
 		PhysicsWorld.getInstance().registerContactListener(this);
+		EventHandler.getInstance().registerEventListener(this);
 	}
 	
 	public void toggleDrag(Body body) {
@@ -93,5 +98,13 @@ public class DraggableObject extends MovableObject implements ContactListener {
 	public void removeFromMap() {
 		super.removeFromMap();
 		PhysicsWorld.getInstance().removeContactListener(this);
+		EventHandler.getInstance().removeEventListener(this);
+	}
+	
+	@Override
+	public void handleEvent(EventConfig event) {
+		if (event.eventType == EventType.DISSOLVE_DRAGGABLE_OBJECT_JOINTS && joint != null) {
+			dissolveJoint();
+		}
 	}
 }

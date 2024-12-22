@@ -113,5 +113,11 @@
 			frameDuration: 0.1,
 			playMode: NORMAL,
 		},
+		{
+			name: mine_explosion,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+		},
 	]
 }

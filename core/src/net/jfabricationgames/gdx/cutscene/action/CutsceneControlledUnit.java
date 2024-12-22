@@ -9,4 +9,6 @@ public interface CutsceneControlledUnit {
 	public String getUnitId();
 	
 	public Vector2 getPosition();
+	
+	public void removeFromMap();
 }

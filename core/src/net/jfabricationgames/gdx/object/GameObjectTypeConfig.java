@@ -97,4 +97,10 @@ public class GameObjectTypeConfig {
 	//****************************************
 	
 	public float maxDistanceToPlayer = 2f;
+	
+	//****************************************
+	//*** Animation Objects
+	//****************************************
+	
+	public String animation;
 }

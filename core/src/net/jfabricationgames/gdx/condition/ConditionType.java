@@ -3,13 +3,16 @@ package net.jfabricationgames.gdx.condition;
 import java.util.function.Function;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Vector2;
 
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.cutscene.variable.CutsceneVariable;
 import net.jfabricationgames.gdx.data.handler.CharacterItemDataHandler;
 import net.jfabricationgames.gdx.data.handler.CharacterPropertiesDataHandler;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.item.TriforceItem;
 import net.jfabricationgames.gdx.item.TriforceItem.TriforceItemType;
+import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.rune.RuneType;
 
 public enum ConditionType {
@@ -172,6 +175,41 @@ public enum ConditionType {
 		public boolean check(Condition condition) {
 			String numChickens = condition.parameters.get(PARAMETER_NUM_CHICKENS, "0");
 			return CutsceneVariable.NUM_CHICKENS_MISSING.evaluate().equals(numChickens);
+		}
+	},
+	OBJECT_IN_POSITION {
+		
+		private static final String PARAMETER_OBJECT_ID = "objectId";
+		private static final String PARAMETER_TARGET_LOWER_LEFT_OBJECT_ID = "targetLowerLeftObjectId";
+		private static final String PARAMETER_TARGET_UPPER_RIGHT_OBJECT_ID = "targetUpperRightObjectId";
+		
+		@Override
+		public boolean check(Condition condition) {
+			String objectId = condition.parameters.get(PARAMETER_OBJECT_ID);
+			String targetLowerLeftObjectId = condition.parameters.get(PARAMETER_TARGET_LOWER_LEFT_OBJECT_ID);
+			String targetUpperRightObjectId = condition.parameters.get(PARAMETER_TARGET_UPPER_RIGHT_OBJECT_ID);
+			
+			if (objectId == null || targetLowerLeftObjectId == null || targetUpperRightObjectId == null) {
+				Gdx.app.error(getDeclaringClass().getSimpleName(), "The parameters for the OBJECT_IN_POSITION condition are not set correctly: " //
+						+ "objectId: " + objectId + ", targetLowerLeftObjectId: " + targetLowerLeftObjectId + ", targetUpperRightObjectId: " + targetUpperRightObjectId);
+				return false;
+			}
+			
+			CutsceneControlledUnit object = GameMapManager.getInstance().getMap().getUnitById(objectId);
+			CutsceneControlledUnit lowerLeftEventObject = GameMapManager.getInstance().getMap().getUnitById(targetLowerLeftObjectId);
+			CutsceneControlledUnit upperRightEventObject = GameMapManager.getInstance().getMap().getUnitById(targetUpperRightObjectId);
+			
+			if (object == null || lowerLeftEventObject == null || upperRightEventObject == null) {
+				Gdx.app.error(getDeclaringClass().getSimpleName(), "The object or the target area for the OBJECT_IN_POSITION condition cannot be found: " //
+						+ "object: " + object + ", lowerLeftObject: " + lowerLeftEventObject + ", upperRightObject: " + upperRightEventObject);
+				return false;
+			}
+			
+			Vector2 lowerLeft = lowerLeftEventObject.getPosition();
+			Vector2 upperRight = upperRightEventObject.getPosition();
+			
+			return object.getPosition().x >= lowerLeft.x && object.getPosition().x <= upperRight.x //
+					&& object.getPosition().y >= lowerLeft.y && object.getPosition().y <= upperRight.y;
 		}
 	};
 	

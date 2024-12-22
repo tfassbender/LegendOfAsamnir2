@@ -458,6 +458,13 @@
 				dewdrop: {
 					path: "sound/cutscene/dewdrop.mp3",
 				},
+				fuse: {
+					path: "sound/cutscene/fuse.mp3",
+				},
+				explosion: {
+					path: "sound/cutscene/explosion.mp3",
+					volume: 0.3f,
+				},
             }
         },
 		menu: {

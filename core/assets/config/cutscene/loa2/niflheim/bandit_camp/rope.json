@@ -1,0 +1,29 @@
+{
+	id: loa2_l2_niflheim_bandit_camp__rope_cutscene,
+	controlledActions: {
+		thorin: {
+		    startsWithCutscene: true,
+		    
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "A rope...              \nMaybe I could use it to tie up the strange chaos wizard guy.\n             \nOr I could use it to drag something...   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -55,7 +55,8 @@ public enum EventType {
 	CHANGE_SIGNBOARD_TEXT, //
 	DESTROYABLE_OBJECT_DESTROYED, //
 	DISTRIBUTED_SPAWN, //
-	ACTIVATE_MOVING_OBJECT,
+	ACTIVATE_MOVING_OBJECT, //
+	DISSOLVE_DRAGGABLE_OBJECT_JOINTS, //
 	//*******************************
 	//*** Items
 	//*******************************

@@ -531,6 +531,12 @@ public class GameMapImplementation implements GameMap {
 		if (event.eventType == EventType.UPDATE_MAP_AFTER_LOADING_GAME_STATE) {
 			updateAfterLoadingGameState();
 		}
+		if (event.eventType == EventType.CUTSCENE_REMOVE_UNIT && event.stringValue != null) {
+			CutsceneControlledUnit unitToRemove = getUnitById(event.stringValue);
+			if (unitToRemove != null) {
+				unitToRemove.removeFromMap();
+			}
+		}
 	}
 	
 	private void updateMapObjectStates() {

@@ -11,6 +11,7 @@ import net.jfabricationgames.gdx.attack.hit.AttackType;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.object.destroyable.DestroyableObject;
 import net.jfabricationgames.gdx.object.event.EventObject;
+import net.jfabricationgames.gdx.object.interactive.AnimationObject;
 import net.jfabricationgames.gdx.object.interactive.AttackActivatedStateSwitchObject;
 import net.jfabricationgames.gdx.object.interactive.InteractiveObject;
 import net.jfabricationgames.gdx.object.interactive.LockedObject;
@@ -122,6 +123,9 @@ public class GameObjectFactory {
 				break;
 			case DRAGGABLE:
 				object = new DraggableObject(typeConfig, sprite, properties, gameMap);
+				break;
+			case ANIMATION:
+				object = new AnimationObject(typeConfig, sprite, properties, gameMap);
 				break;
 			// specialized types
 			case DWARVEN_GUARDIAN_CONSTRUCT_SWITCH:

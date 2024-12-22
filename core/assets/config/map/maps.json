@@ -77,7 +77,7 @@
         name: loa2_niflheim_bandit_camp,
         map: "map/loa2_l2_niflheim_bandit_camp.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l2_niflheim.json,
-        initialStartingPointId: 10,
+        initialStartingPointId: 0,
 		initial: true
 	},
 	

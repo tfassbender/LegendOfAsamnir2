@@ -37,6 +37,32 @@
             cutsceneId: loa2_l2_niflheim_bandit_camp__enter_cutscene,
 		}
 	},
+	
+	//****************************************************
+	//*** cutscenes
+	//****************************************************
+	
+	loa2_l2_niflheim_bandit_camp__rope_collected: {
+		event: {
+            eventType: SPECIAL_ACTION_ITEM_PICKED_UP,
+            stringValue: rope,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l2_niflheim_bandit_camp__rope_cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_bandit_camp__ignite_bomb_to_open_central_arena: {
+		event: {
+			eventType: FIRE_TOTEM_ACTIVATED,
+			stringValue: loa2_l2_niflheim_bandit_camp__fire_totem_at_central_gate,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l2_niflheim_bandit_camp__ignite_bomb_to_open_central_arena_cutscene,
+        }
+	},
 
 	//*******************************************
 	//*** change map
