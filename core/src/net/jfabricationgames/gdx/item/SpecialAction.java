@@ -11,7 +11,8 @@ public enum SpecialAction implements ItemSpecialAction {
 	BOOMERANG(2, 5f, 25f, 1f, "special_action_available__boomerang", "special_action_quick_select_enabled__boomerang"), //
 	WAND(3, 10f, 25f, 1f, "special_action_available__wand", "special_action_quick_select_enabled__wand"), //
 	FEATHER(4, 0f, 0f, 0.65f, "special_action_available__feather", "special_action_quick_select_enabled__feather"), //
-	LANTERN(5, 10f, 0f, 0.65f, "special_action_available__lantern", "special_action_quick_select_enabled__lantern");
+	LANTERN(5, 10f, 0f, 0.65f, "special_action_available__lantern", "special_action_quick_select_enabled__lantern"), //
+	ROPE(6, 0f, 0f, 0.2f, "special_action_available__rope", "special_action_quick_select_enabled__rope");
 	
 	public static SpecialAction findByNameIgnoringCase(String specialAction) {
 		for (SpecialAction action : values()) {

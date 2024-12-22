@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -45,7 +46,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	protected Body body;
 	protected GameObjectMap gameMap;
 	protected GameObjectItemDropUtil itemDropUtil;
-	protected Class<?> playerObjectClass;
+	protected Class<? extends InteractivePlayer> playerObjectClass;
 	
 	protected TextureAtlas textureAtlas;
 	protected GameObjectTypeConfig typeConfig;
@@ -99,7 +100,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		this.itemDropUtil = itemDropUtil;
 	}
 	
-	public void setPlayerObjectClass(Class<?> playerObjectClass) {
+	public void setPlayerObjectClass(Class<? extends InteractivePlayer> playerObjectClass) {
 		this.playerObjectClass = playerObjectClass;
 	}
 	
@@ -165,6 +166,12 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 			sprite.draw(batch);
 		}
 	}
+	
+	/**
+	 * Overwrite to draw a (filled) shape. 
+	 * This method is called before the draw method, so the shapes will be drawn underneath the sprite.
+	 */
+	public void drawShapes(ShapeRenderer shapeRenderer) {}
 	
 	@Override
 	public String getUnitId() {

@@ -554,4 +554,27 @@
 		
 		defaultLocked: true,
 	},
+	
+	bomb_big: {
+		type: DRAGGABLE,
+		
+		textureSizeFactorX: 0.4f,
+		textureSizeFactorY: 0.4f,
+		
+		physicsBodySizeFactorX: 0.4f,
+		physicsBodySizeFactorY: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 1.2f,
+		
+		bodyType: DynamicBody,
+		linearDamping: 4f,
+		collisionType: MAP_OBJECT,
+		
+		texture: bomb_big,
+		
+		density: 5f,
+		
+		maxDistanceToPlayer: 1.5f,
+	},
 }

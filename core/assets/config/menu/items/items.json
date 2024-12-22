@@ -56,6 +56,10 @@
 		atlas: packed/menu/menu.atlas,
 		texture: ring,
 	},
+	rope: {
+		atlas: packed/menu/menu.atlas,
+		texture: rope,
+	},
 	
 	//********************
 	//*** skills

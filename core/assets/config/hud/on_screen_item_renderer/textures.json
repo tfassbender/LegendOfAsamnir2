@@ -47,4 +47,8 @@
 		atlas: packed/demo/demo.atlas,
 		texture: ring,
 	},
+	rope: {
+		atlas: packed/menu/menu.atlas,
+		texture: rope,
+	},
 }

@@ -7,7 +7,7 @@
 		textureInitialRotation: 225,
 		rotateTextureToMovementDirection: true,
 		
-		sound: arrow,
+		sound: bow,
 		
 		range: 100,
 		speed: 60,

@@ -9,6 +9,7 @@ public enum GameObjectType {
 	SPAWN_POINT, //
 	EVENT_OBJECT, //
 	MOVABLE, //
+	DRAGGABLE, //
 	
 	// specialized types
 	DWARVEN_GUARDIAN_CONSTRUCT_SWITCH, //

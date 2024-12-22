@@ -91,4 +91,10 @@ public class GameObjectTypeConfig {
 	public float movingPartPushForce = 1000f; // must be quite high because usually the density is also high (should be about 10 times the density)
 	public float movingPartStartDistance = 0.5f;
 	public float movingPartLifetimeInSeconds = 1f; // the moving part will be removed after this period of time
+	
+	//****************************************
+	//*** Draggable Objects
+	//****************************************
+	
+	public float maxDistanceToPlayer = 2f;
 }

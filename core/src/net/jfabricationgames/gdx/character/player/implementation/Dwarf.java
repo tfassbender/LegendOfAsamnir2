@@ -32,6 +32,7 @@ import net.jfabricationgames.gdx.item.ItemFactory;
 import net.jfabricationgames.gdx.item.SpecialAction;
 import net.jfabricationgames.gdx.map.ground.GameMapGroundType;
 import net.jfabricationgames.gdx.object.event.EventObject;
+import net.jfabricationgames.gdx.object.moveable.DraggableObject;
 import net.jfabricationgames.gdx.physics.BeforeWorldStep;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
@@ -62,6 +63,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final String SOUND_AMMO_EMPTY = "ammo_empty";
 	private static final String SOUND_REFLECT_PROJECTILE = "reflect_projectile";
 	private static final String SOUND_SELL_OR_BUY_ITEM = "sell_buy_item";
+	private static final String SOUND_ROPE = "rope";
 	private static final String ATTACK_NAME_WAIT = "wait";
 	private static final String ATTACK_NAME_REFLECT_MAGIC_WAVE = "reflected_magic_wave";
 	private static final String RUNE_HAGALAZ_ANIMATION_NAME = "rune_hagalaz";
@@ -86,6 +88,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	protected CharacterBodyHandler bodyHandler;
 	protected CharacterRenderer renderer;
 	protected CharacterSoundHandler soundHandler;
+	
+	private DraggableObject draggableObject;
 	
 	public Dwarf() {
 		propertiesDataHandler = CharacterPropertiesDataHandler.getInstance();
@@ -220,6 +224,13 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 						
 						//handle the lantern as attack to have a duration (so it's not executed in every game step)
 						delayAttacks();
+					}
+					break;
+				case ROPE:
+					if (draggableObject != null) {
+						soundHandler.playSound(SOUND_ROPE);
+						draggableObject.toggleDrag(bodyHandler.body);
+						return true;
 					}
 					break;
 				case FEATHER:
@@ -529,6 +540,11 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	public boolean hasWeapon() {
 		return !GlobalValuesDataHandler.getInstance().getAsBoolean(GLOBAL_VALUE_KEY_ASAMNIR_STOLEN) //
 				|| GlobalValuesDataHandler.getInstance().getAsBoolean(GLOBAL_VALUE_KEY_SPARE_WEAPON_GAINED);
+	}
+	
+	@Override
+	public void setDraggableObject(DraggableObject draggableObject) {
+		this.draggableObject = draggableObject;
 	}
 	
 	@Override

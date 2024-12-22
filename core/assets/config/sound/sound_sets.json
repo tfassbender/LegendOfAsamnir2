@@ -52,6 +52,9 @@
 				rune_hagalaz_used: {
 					path: "sound/dwarf/rune_hagalaz_used.wav",
 				},
+				rope: {
+					path: "sound/item/rope.mp3",
+				},
 			}
 		},
 		common: {
@@ -124,6 +127,10 @@
 		},
 		projectile: {
 			sounds: {
+				bow: {
+					path: "sound/projectile/bow.mp3"
+					volume: 0.6
+				},
 				arrow: {
 					path: "sound/projectile/arrow.wav"
 					volume: 0.3

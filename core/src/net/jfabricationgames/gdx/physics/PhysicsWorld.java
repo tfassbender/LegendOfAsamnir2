@@ -13,6 +13,8 @@ import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.Joint;
+import com.badlogic.gdx.physics.box2d.JointDef;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.RayCastCallback;
 import com.badlogic.gdx.physics.box2d.World;
@@ -83,6 +85,14 @@ public class PhysicsWorld implements ContactListener, Disposable {
 		//hide this log, because it's to verbose to be always displayed (and there is no "trace" logging)
 		//Gdx.app.debug(getClass().getSimpleName(), "Creating body on world (count: " + world.getBodyCount() + ")");
 		return world.createBody(bodyDef);
+	}
+	
+	public Joint createJoint(JointDef jointDef) {
+		return world.createJoint(jointDef);
+	}
+	
+	public void destroyJoint(Joint joint) {
+		world.destroyJoint(joint);
 	}
 	
 	public void registerContactListener(ContactListener contactListener) {

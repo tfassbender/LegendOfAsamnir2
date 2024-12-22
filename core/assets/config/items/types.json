@@ -189,6 +189,10 @@
 		type: SPECIAL_ACTION,
 		texture: ring,
 	},
+	rope: {
+		type: SPECIAL_ACTION,
+        texture: rope,
+	},
 	
 	//**********************************
 	//*** runes

@@ -16,6 +16,7 @@ import net.jfabricationgames.gdx.object.interactive.InteractiveObject;
 import net.jfabricationgames.gdx.object.interactive.LockedObject;
 import net.jfabricationgames.gdx.object.interactive.MovingObject;
 import net.jfabricationgames.gdx.object.interactive.StateSwitchObject;
+import net.jfabricationgames.gdx.object.moveable.DraggableObject;
 import net.jfabricationgames.gdx.object.moveable.MovableObject;
 import net.jfabricationgames.gdx.object.spawn.SpawnPoint;
 import net.jfabricationgames.gdx.util.FactoryUtil;
@@ -36,7 +37,7 @@ public class GameObjectFactory {
 	private static NpcSpawnFactory npcSpawnFactory;
 	private static AnimalSpawnFactory animalSpawnFactory;
 	private static GameObjectItemDropUtil itemDropUtil;
-	private static Class<?> playerObjectClass;
+	private static Class<? extends InteractivePlayer> playerObjectClass;
 	
 	static {
 		config = FactoryUtil.loadConfig(Config.class, CONFIG_FILE);
@@ -69,7 +70,7 @@ public class GameObjectFactory {
 		GameObjectFactory.itemDropUtil = itemDropUtil;
 	}
 	
-	public static void setPlayerObjectClass(Class<?> playerObjectClass) {
+	public static void setPlayerObjectClass(Class<? extends InteractivePlayer> playerObjectClass) {
 		GameObjectFactory.playerObjectClass = playerObjectClass;
 	}
 	
@@ -118,6 +119,9 @@ public class GameObjectFactory {
 				break;
 			case MOVABLE:
 				object = new MovableObject(typeConfig, sprite, properties, gameMap);
+				break;
+			case DRAGGABLE:
+				object = new DraggableObject(typeConfig, sprite, properties, gameMap);
 				break;
 			// specialized types
 			case DWARVEN_GUARDIAN_CONSTRUCT_SWITCH:

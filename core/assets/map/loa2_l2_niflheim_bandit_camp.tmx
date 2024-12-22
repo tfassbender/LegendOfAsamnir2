@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2343">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2349">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -38,12 +38,12 @@
  </layer>
  <layer id="5" name="terrain" width="53" height="37" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="53" height="37" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztlzsKwkAQhqdW26SONxCPoB7BXjsfnVYabdTSxw181HoTvYd6BLXyBwkG8nAlkszIfPBD2OzCP8zMLkOkKApXzhbRBbpa77WB79u1gme4c4PnO/QQ6D2KnE2Uhwq22f4W9rWhDtQ1PMOdIeJwoRE0hvYO0cHJ2lUy5ohjAS2hFXR0iE5OcJ+kWNeIYwNtoV1M7UXFqvBHUj2aovWYDSXDd7os6D2vxHj1/6sJiqkBr00Dv5Ly1IPXfoRfqXkq/mE/xd0RYXmS8D7F3RF+vDxJf5+k9hNHwub2X+HlqZ5yjj7N7RPMElNoJmie/XZuTxOud2QSX1zvyF/4qlov+fvAW0sC1zpIAtc6UJQwtAcVJRueWdo/9w==
+   eJztlzsKwkAQhqdW26SONxCPoB7BXjsfnVYabdTSxw181HoTvYd6BLXyBwkG8nAlkszIfPBD2OzCP8zMLkOkKApXzhbRBbpa77WB79u1gme4c4PnO/QQ6D2KnE2Uhwq22f4W9rWhDtQ1PMOdIeJwoRE0hvYO0cHJ2lUy5ohjAS2hFXR0iE5OcJ+kWNeIYwNtoV1M7UXFqvBHUj2aovWYDSXDd7os6D2vxHj1/6sJiqkBr00Dv5Ly1IPXfoRfqXkq/mE/xd0RYXmS8D7F3RF+vDxJf5+k9hNH32Fz+6/w4q2nHOunuX2CWWIKzQTNs9/O7WnC9Y5M4ovrHfkLX1XrJX8feGtJ4FoHSeBaB4oShvagomTDE3/8QKc=
   </data>
  </layer>
  <layer id="13" name="terrain_3" width="53" height="37" locked="1">
@@ -53,7 +53,7 @@
  </layer>
  <layer id="10" name="background_above_player" width="53" height="37" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt1zEKgDAMheF3ifQc0vvoFVrvvxgHwS46JoH/gy7p8iANoRIAxOsmbRadAgAA3L528vuus7vTok810Kca6FMNWf+To0nTz9mikyC73d/wYf+1SoZnn7bOwVMDAAC4AGvUCkc=
+   eJzt1zEKgDAMheF3ifQc0vvoFVrvvxgHQRcFlyTwf9AlXR6kIVQCgHjdpMWiUwAAgNPbTr7fdXZ3WvSpBvpUQ9U+Vc39V9b/5GjS9LO36CTIbvU3vNl3rZLh2ac95+CqAQAAHFsvCtM=
   </data>
  </layer>
  <layer id="14" name="background_above_player_2" width="53" height="37" locked="1">
@@ -102,10 +102,10 @@
    </properties>
    <point/>
   </object>
-  <object id="2317" name="object.key_wall" x="864" y="207">
+  <object id="2317" name="object.key_wall" x="1211" y="688">
    <properties>
     <property name="lockId" value="loa2_l2_bandit_camp__gate_bomb"/>
-    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
     <property name="unlockedByEvent" value="true"/>
    </properties>
    <point/>
@@ -149,7 +149,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2324" name="enemy.bandit_leader" x="1205" y="746">
+  <object id="2324" name="enemy.bandit_leader" x="1264.33" y="798">
    <properties>
     <property name="predefinedMovementPositions" value="[{x:0, y:0}]"/>
    </properties>
@@ -227,8 +227,26 @@
    </properties>
    <point/>
   </object>
+  <object id="2343" name="object.bomb_big" x="864" y="173">
+   <properties>
+    <property name="drop" value="{health_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2344" name="object.bomb_big" x="1024" y="864">
+   <properties>
+    <property name="drop" value="{health_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2346" name="item.rope" x="1169.27" y="687.091">
+   <point/>
+  </object>
+  <object id="2347" name="item.rope" x="1016.55" y="812">
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="2006" x="192.01" y="886">
    <polygon points="0,0 0,-22 28.9375,-21.9375"/>
   </object>
@@ -722,10 +740,10 @@
   <object id="2172" x="896" y="896" width="256" height="18"/>
   <object id="2173" x="1205.27" y="1024" width="128" height="18"/>
   <object id="2174" x="1366.5" y="736" width="94" height="18"/>
-  <object id="2175" x="1367.5" y="672" width="92.5" height="18"/>
-  <object id="2176" x="1367" y="608" width="93" height="18"/>
-  <object id="2177" x="1367.5" y="544" width="92.5" height="18"/>
-  <object id="2178" x="1367.5" y="480" width="92.5" height="18"/>
+  <object id="2175" x="1367.5" y="672" width="84.5" height="18"/>
+  <object id="2176" x="1367" y="608" width="84" height="18"/>
+  <object id="2177" x="1367.5" y="544" width="83.5" height="18"/>
+  <object id="2178" x="1367.5" y="480" width="84" height="18"/>
   <object id="2179" x="1184" y="352" width="224" height="18"/>
   <object id="2180" x="1024" y="192" width="128" height="18"/>
   <object id="2181" x="640" y="128" width="352" height="18"/>
@@ -977,6 +995,7 @@
   <object id="2312" x="1124.38" y="602.75">
    <polygon points="0,0 7.625,6.75 7.625,0"/>
   </object>
+  <object id="2345" x="1141.25" y="704" width="83.75" height="17"/>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="2287" x="751.875" y="367.5">

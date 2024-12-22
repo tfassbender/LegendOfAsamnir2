@@ -311,6 +311,10 @@ public class GameMapImplementation implements GameMap {
 	}
 	
 	private void processAndRenderGameObject(float delta) {
+		renderer.beginShapeRenderer();
+		renderer.renderObjectShapes();
+		renderer.endShapeRenderer();
+		
 		renderer.beginBatch();
 		renderer.renderItems(delta);
 		renderer.renderObjects(delta);

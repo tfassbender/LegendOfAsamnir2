@@ -10,6 +10,7 @@ import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.event.dto.FastTravelPointEventDto;
 import net.jfabricationgames.gdx.object.GameObjectTextBox;
+import net.jfabricationgames.gdx.object.InteractivePlayer;
 import net.jfabricationgames.gdx.util.GameUtil;
 
 public enum InteractiveAction {
