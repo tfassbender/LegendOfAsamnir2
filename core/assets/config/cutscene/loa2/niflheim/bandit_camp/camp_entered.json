@@ -30,16 +30,29 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				set_global_value,
+				set_global_value__bandit_camp_entered,
 			],
 		},
 		
-		set_global_value: {
+		set_global_value__bandit_camp_entered: {
 			type: EVENT,
 			
 			event: {
 				eventType: SET_GLOBAL_CONDITION_VALUE,
 				stringValue: "{key: loa2_l2_niflheim__bandit_camp_entered, value: true}",
+			},
+			
+			executes: [
+				set_global_value__show_effect_layer_central_gate,
+			],
+		},
+		
+		set_global_value__show_effect_layer_central_gate: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_l2_central_gate, value: true}",
 			},
 			
 			executes: [

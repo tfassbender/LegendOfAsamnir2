@@ -299,9 +299,9 @@ public class GameMapImplementation implements GameMap {
 	public void processAndRender(float delta) {
 		renderer.updateCamera();
 		renderer.renderBackground(delta);
+		renderer.renderEffectLayers();
 		processAndRenderGameObject(delta);
 		renderer.renderAbovePlayer();
-		renderer.renderEffectLayers();
 		renderer.renderShadows();
 		renderer.renderDarknessArroundPlayer();
 		

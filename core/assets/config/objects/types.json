@@ -444,6 +444,20 @@
 		interactiveAction: TRAVEL_BACK_TO_SVARTALFHEIM,
 	},
 	
+	path_blocker: {
+		type: LOCKED,
+		
+		texture: empty,
+		
+		multipleActionExecutionsPossible: false,
+		changeBodyToSensorAfterAction: true,
+		
+		physicsBodySizeFactorX: 1f,
+		physicsBodySizeFactorY: 1f,
+		
+		defaultLocked: true,
+	},
+	
 	//**********************************
 	//*** Walls for demo 2 level 2
 	//**********************************

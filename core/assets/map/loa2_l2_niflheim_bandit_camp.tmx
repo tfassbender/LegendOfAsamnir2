@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2337">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2342">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
   <property name="building_level" value="false"/>
   <property name="dungeon_level" value="false"/>
+  <property name="effect_layers" value="{&quot;8&quot;: &quot;render_effect_layer__loa2_l2_central_gate&quot;}"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/fields_of_vigrid.json"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
@@ -204,6 +205,20 @@
    <properties>
     <property name="eventParameter" value="loa2_l2_niflheim_bandit_camp__enter"/>
    </properties>
+  </object>
+  <object id="2338" name="object.path_blocker" x="912" y="781">
+   <properties>
+    <property name="lockId" value="loa2_l2_bandit_camp__central_gate"/>
+    <property name="physicsBodySizeFactorX" value="50f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2339" name="player.startingPosition" x="864" y="864">
+   <properties>
+    <property name="startingPointId" value="10"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
