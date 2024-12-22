@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2006">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2008">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -389,6 +389,12 @@
    <point/>
   </object>
   <object id="2005" name="npc.ratatosk_niflheim" x="343.076" y="1587.62">
+   <point/>
+  </object>
+  <object id="2006" name="player.startingPosition" x="448" y="1568">
+   <properties>
+    <property name="startingPointId" value="12"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

@@ -11,9 +11,10 @@
 	},
 	
 	common__player_has_ice_pick: {
-		conditionType: HAS_ITEM,
+		conditionType: GLOBAL_VALUE_SET,
         parameters: {
-            itemId: ice_pick
+            key: special_action_available__ice_pick,
+            expectedValue: true,
 		}
 	},
 	

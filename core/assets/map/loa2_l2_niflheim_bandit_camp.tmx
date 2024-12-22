@@ -266,9 +266,6 @@
   <object id="2354" name="item.health_half" x="1156.18" y="687.455">
    <point/>
   </object>
-  <object id="2355" name="item.health_half" x="1166" y="766.545">
-   <point/>
-  </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
   <object id="2006" x="192.01" y="886">

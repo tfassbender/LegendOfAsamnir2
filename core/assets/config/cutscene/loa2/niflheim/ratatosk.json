@@ -50,6 +50,10 @@
 					executedStateName: ice_pick__ratatosk_1
 				},
 				{
+					conditionId: loa2_l2_niflheim__rope_collected_but_central_gate_not_opened,
+					executedStateName: central_gate_not_opened__ratatosk_1,
+				},
+				{
 					conditionId: loa2_l2_niflheim__ice_fields_visited,
 					executedStateName: ice_fields_visisted__ratatosk_1,
 				},
@@ -87,6 +91,23 @@
                 displayTextHeader: "Ratatosk",
                 colorHeader: #965a00,
                 displayText: "You found an ice pick!          \nThat might be handy in the ice fields of Niflheim.\nIt's quite slippery there...   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		// rope collected but central gate not opened (a hint might be needed here)
+		central_gate_not_opened__ratatosk_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Seems like you found a new item!       \nA rope could be used to drag something heavy, like a bomb that opens a gate...\nYou only need to ignite it somehow... maybe with a wand?    ",
 			}
             
             waitForEventToFinish: true,

@@ -30,8 +30,7 @@ public class StartConfigUtil {
 			return;
 		}
 		
-		Gdx.app.debug(StartConfigUtil.class.getSimpleName(),
-				"Executing events from start configuration file: " + startConfigPath + " with starting point id: " + initialStartingPointId);
+		Gdx.app.debug(StartConfigUtil.class.getSimpleName(), "Executing events from start configuration file: " + startConfigPath + " with starting point id: " + initialStartingPointId);
 		StartConfig startConfig = loadStartConfigFromPath(startConfigPath);
 		executeStartConfigEvents(startConfig, initialStartingPointId);
 	}
@@ -42,8 +41,7 @@ public class StartConfigUtil {
 			return;
 		}
 		
-		Gdx.app.debug(StartConfigUtil.class.getSimpleName(),
-				"Executing events from start configuration file: " + startConfigPath + " after game loaded.");
+		Gdx.app.debug(StartConfigUtil.class.getSimpleName(), "Executing events from start configuration file: " + startConfigPath + " after game loaded.");
 		StartConfig startConfig = loadStartConfigFromPath(startConfigPath);
 		String configName = startConfig.startingPointMapping.get(GAME_LOADED_START_CONFIG_NAME);
 		if (configName != null) {
@@ -96,8 +94,7 @@ public class StartConfigUtil {
 		}
 		
 		String subConfigPath = eventList.subConfigPath;
-		Gdx.app.debug(StartConfigUtil.class.getSimpleName(), "Executing sub event list from start configuration file: " + subConfigPath
-				+ " (null means same file) with config name: " + eventList.subConfigName);
+		Gdx.app.debug(StartConfigUtil.class.getSimpleName(), "Executing sub event list from start configuration file: " + subConfigPath + " (null means same file) with config name: " + eventList.subConfigName);
 		
 		StartConfig subConfig = startConfig;
 		if (eventList.subConfigPath != null) {

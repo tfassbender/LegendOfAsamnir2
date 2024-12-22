@@ -1,12 +1,23 @@
 {
 	startingPointMapping: {
 		11: initial,
+		12: ratatosk,
 	},
 	eventsLists: {
 		initial: {
 			subConfigPath: config/debug/start_config/loa2/l1_dwarven_caves.json
 			subConfigName: final,
 			events: []
+		},
+		
+		ratatosk: {
+            subConfigName: initial,
+            events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_l2_niflheim_bandit_camp__central_gate_opened, value: false}",
+				},
+            ]
 		},
 		
 		final: {

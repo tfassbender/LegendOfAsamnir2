@@ -115,6 +115,31 @@
         }
 	},
 	
+	loa2_l2_niflheim__rope_collected_but_central_gate_not_opened: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: GLOBAL_VALUE_SET,
+		        parameters: {
+		            key: special_action_available__rope,
+                    expectedValue: true,
+				}
+			},
+			condition2: {
+				conditionType: NOT,
+				conditionalParameters: {
+                    condition: {
+                        conditionType: GLOBAL_VALUE_SET,
+                        parameters: {
+                            key: loa2_l2_niflheim_bandit_camp__central_gate_opened,
+                            expectedValue: true,
+						}
+					}
+				}
+			}
+		}
+	},
+	
 	//*******************************************
 	//*** switches
 	//*******************************************
