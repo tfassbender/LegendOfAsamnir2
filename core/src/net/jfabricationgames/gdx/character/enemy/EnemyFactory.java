@@ -9,6 +9,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Bat;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.DwarvenGuardianConstruct;
+import net.jfabricationgames.gdx.character.enemy.implementation.FireTotem;
 import net.jfabricationgames.gdx.character.enemy.implementation.Gargoyle;
 import net.jfabricationgames.gdx.character.enemy.implementation.GiantGolem;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
@@ -32,6 +33,7 @@ public class EnemyFactory {
 	
 	private static final String ENEMY_NAME_BAT = "bat";
 	private static final String ENEMY_NAME_TOTEM = "totem";
+	private static final String ENEMY_NAME_FIRE_TOTEM = "fire_totem";
 	
 	private static final String ENEMY_NAME_MINOTAUR = "minotaur";
 	private static final String ENEMY_NAME_CYCLOPS = "cyclops";
@@ -74,6 +76,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_TOTEM:
 				enemy = new Totem(typeConfig, properties);
+				break;
+			case ENEMY_NAME_FIRE_TOTEM:
+				enemy = new FireTotem(typeConfig, properties);
 				break;
 			case ENEMY_NAME_MINOTAUR:
 				enemy = new Minotaur(typeConfig, properties);

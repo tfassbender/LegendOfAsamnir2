@@ -20,7 +20,8 @@ public class ProjectileAttack extends Attack {
 	
 	@Override
 	protected void start() {
-		projectile = ProjectileFactory.createProjectileAndAddToMap(config.projectileType, body.getPosition(), direction, collisionType);
+		Vector2 startingPosition = body.getPosition().cpy().add(0, config.projectileStartOffsetY);
+		projectile = ProjectileFactory.createProjectileAndAddToMap(config.projectileType, startingPosition, direction, collisionType);
 		projectile.setDamage(config.damage);
 		projectile.setPushForce(config.pushForce);
 		projectile.setPushForceWhenBlocked(config.pushForceWhenBlocked);

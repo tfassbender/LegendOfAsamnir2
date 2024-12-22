@@ -185,6 +185,13 @@
 				raw_images/enemy/totem/totem_die,
 				raw_images/enemy/totem/totem_idle,
 				
+				// fire totem
+				raw_images/enemy/totem_fire/totem_fire_appear,
+				raw_images/enemy/totem_fire/totem_fire_damage,
+				raw_images/enemy/totem_fire/totem_fire_death,
+				raw_images/enemy/totem_fire/totem_fire_idle,
+				raw_images/enemy/totem_fire/totem_fire_attack,
+				
 				// goblin king
 				raw_images/enemy/goblin_king/goblin_king_coin_bag,
 				raw_images/enemy/goblin_king/goblin_king_command,

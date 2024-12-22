@@ -554,6 +554,30 @@
 		pushForceHit: 0,
 	}
 	
+	// not a real enemy, but it's easier to model it as one, because it needs to be attacked by the player
+	fire_totem: {
+		typeName: fire_totem,
+		
+		animationsConfig: config/animation/enemy/fire_totem.json,
+		stateConfig: config/enemy/states/fire_totem.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/fire_totem.json,
+		
+		health: 10, // doesn't take damage
+		movingSpeed: 0.5f,
+		movable: false, // the player can't push it
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.2f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 0.5f,
+		bodyHeight: 0.5f,
+		
+		pushForceDamage: 0,
+		pushForceHit: 0,
+	}
+	
 	giant_golem: {
 		typeName: giant_golem,
 		
