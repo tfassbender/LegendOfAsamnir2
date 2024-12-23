@@ -1,0 +1,9 @@
+{
+	name: Niflheim,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l2_niflheim_main
+	},
+	textureWidth: 500,
+	textureHeight: 364,
+}
