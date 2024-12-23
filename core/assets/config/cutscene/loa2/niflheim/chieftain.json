@@ -44,7 +44,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Chieftain",
-				displayText: "You look quite heavily armed. Could you help us with these bandits?\n            \nWe can't offer you much, but we will be forever grateful!   ",
+				displayText: "You look quite heavily armed.\nCould you help us with these bandits?\n            \nWe can't offer you much, but we will be forever grateful!   ",
 				colorHeader: #452000,
 				showNextPageIcon: true,
 			}

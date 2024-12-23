@@ -1,9 +1,24 @@
 {
 	id: loa2_l2_niflheim_main_goto_niflheim_bandit_camp_cutscene,
 	controlledActions: {
-		move_up: {
-			startsWithCutscene: true,
+	    startCondition: {
+	    	startsWithCutscene: true,
 			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__bandit_quest_started,
+					executedStateName: move_right,
+				},
+				{
+					// default case
+					executedStateName: step_back,
+				},
+			],
+	    },
+	    
+		move_right: {
 			type: MOVE,
 			controlledUnitId: PLAYER,
 			controlledUnitTarget: {x: 8, y: 0},
@@ -56,6 +71,32 @@
             
             executes: [
                 end,
+			],
+		},
+		
+		step_back: { // thorin needs to talk to the chieftain first
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -2, y: 0},
+			
+			executes: [
+                thorin_step_back,
+			]
+		},
+		
+		thorin_step_back: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I should check this village before moving on...   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
 			],
 		},
 		
