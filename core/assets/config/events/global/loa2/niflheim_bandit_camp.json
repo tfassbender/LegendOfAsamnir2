@@ -38,6 +38,17 @@
 		}
 	},
 	
+	loa2_l2_niflheim_bandit_camp__enter_central_arena: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_bandit_camp__enter_central_arena,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_bandit_camp__enter_central_arena_cutscene,
+		}
+	},
+	
 	//****************************************************
 	//*** cutscenes
 	//****************************************************

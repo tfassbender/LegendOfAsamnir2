@@ -213,8 +213,8 @@ public class PhysicsWorld implements ContactListener, Disposable {
 			}
 			else {
 				Gdx.app.debug(getClass().getSimpleName(), "Destroying body from world: " + body);
-				body.setUserData(null);
 				world.destroyBody(body);
+				body.setUserData(null);
 			}
 		}
 	}

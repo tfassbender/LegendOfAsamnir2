@@ -1,0 +1,26 @@
+{
+	id: loa2_l2_niflheim_bandit_camp__bugbear_defeat_cutscene,
+	controlledActions: {
+		thorin_1: {
+	    	startsWithCutscene: true,
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "test cutscene   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

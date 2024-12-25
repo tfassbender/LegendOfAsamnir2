@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2356">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2362">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -36,9 +36,9 @@
    eJztmNsNgjAUhvti3AMQF8FNRCcxTqIu4ihe1pAmNiENp5xLr+iX9M2W8/XvBVTqzy/xrJR6Mdq7Sl05zKrm9Vsz+4VGZ9Qza9vXeebGzWgK7ZiDl08nTer1KFl3EKmz8p2RIWVWoZzssyPmPRDKCUOILEPsJQoh9l3KjAy+s1qaE7Tu+kapA7MdG3odPp2gjE6MugwPhqMvJ9fZIHGyOUdwMt8TrrOuJCfsuZ2zk/2Nh72HcnWS3KU5OknfDSRO96HvddRunpyk96jECZOLzdKcuqHW7cKcsOeD1Oli7QlKw+yfMbGcYoFdd5oSnCg+mhKcqO9DuTtRM9LEdNL1td+2Qz6X8866mRm/I9bgGmM833PPNf2oGY3Hb4FmxoR+A9XVTYxhM7dGUv3nB7li5teVlSSj1Ejm5E9ZfADOQHha
   </data>
  </layer>
- <layer id="5" name="terrain" width="53" height="37" locked="1">
+ <layer id="5" name="terrain" width="53" height="37">
   <data encoding="base64" compression="zlib">
-   eJytWT1vE0EQvYIigtpOa8sFZ6WJUoAQXUiRYCc0EQghKJERQvAznCgSokfUEP4ICfwS+BPsgEd+9/xmb8/Ok1aJ927n5ntmd6sqj+tBVf0clL9zNFzOX6a578HaEro/0vMresfo5+iq7yJPjPniWT1qf9eg+Fb8MJ+HC7pTon82XNK9PVzl+2v6/W1Q9t0ZyeJrHWMhWx3IG9kH52cFtsb3J4v3lV3nw9X3FdRaw+MWu0VAnUyIBvMyLvRt1z9ia7RcH619Q98/7VXVow7jaU/z4+ji287LhHg22RSd3+nZn8HSjoZa6Ou14PFWv6rO0/xeGrtpXKTxK42rNGYZmeqMv28JGzAiX5sW+KLpxZ+fBzx+TvMHaeyn8aXXnC+1nfv7VPhO3ZILOf7RLxt0hK4imbogZzsE65l/Y1xE8c/rOJYNJTKpdYiLjjRy9JTtfA5j7DjIO6fgV08Cfz8piAOUSdUIhD+fFdSN2cI/7wzztQvXqPzQ266q/naeL4TpXNl6h3ieCxmi3gH1wv55mMkXaCP0hbtJnnp7db6BfvOnyhslOSTKYx73rBcG53tloxzWrc0P+8sconTkeo/y31mQM//9HS15O6X83BUqxiKbHvf/21HZCvWM9lJ5oq1PYhs979hL4HgR6IZljPJ9V/4noq4pG73dwGbvSMZnRMvnVW5UOQ1r6DioyyizxZyKo48byPSJ1kb2cJnmmZym8qDaozBU3kWZ2upR1/qr7GQ01L7GZeRnPo/9EspvMj3oN/mL7FRSbydp7RTWq57C6nnUa3Bfh+D9JfZLaGOTaUL1ZRPfY17ZHspOEZ+OnJwK7HtmizaZcv52QTkiqhFKJu6PPNZQzpL9nfrmOem2C9r618hOaAuXxXLYpr2BY939hseJ850Dy8Q+h3kN+72u+wbPAbl1e4tnu4U+xfTZP9gPnH+Ld9WrO2+Yr0p8KdeDHixo7nfwZZTJYP6j+tHo7MLqrufqm9iz3jS4b+H9lao5dnaBZwsv03hFsqm5UpTYOfeOinGslx5X2CdxPX2fxodeMw58DtHVP9dB1P+rHtXnuAe0uPC6jnHgcyVndLxPKqkPTA/jqA3Hog/y/q7tjB2h+kw+j7iXeo37/TK+FD1lI4wlPyPK9d1oT+7T2Lfa9tqlec1gdlV7PtfFmfDr6HwkyoNtsXESnP1F3zTUGZ062FZRf+H7h7Y7nwiKt0hHBtdH7h4D9zLuSzvDVduzfTFn+3dcV0eks+jvGPSB+0U/R1c65354nXOBCLlz1ctBM99hPJkOMQ+a/Hh+js99HZ6p8XeRf5aP7yKQP+Wffgeg7l2uB81cbvN81zYDu0yCu7itkf6+rZ0PV88PS+7V1O/oXLaNnrIrruHnRxk+S2pCtGfDvIXnDrm7Wv//L/w7tPI=
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="53" height="37" locked="1">
@@ -264,6 +264,38 @@
    <point/>
   </object>
   <object id="2354" name="item.health_half" x="1156.18" y="687.455">
+   <point/>
+  </object>
+  <object id="2356" name="object.eventObject" x="882.098" y="774.89" width="59.9852" height="2.87873">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2357" name="object.eventObject" x="881.507" y="766.686" width="59.9852" height="2.87873">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_bandit_camp__enter_central_arena"/>
+    <property name="unitId" value="event_object__bandit_camp_enter_central_arena"/>
+   </properties>
+  </object>
+  <object id="2358" name="object.spawnPoint.bomb" x="688.516" y="496.5">
+   <properties>
+    <property name="spawn" value="playerAmmoBombBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2359" name="object.spawnPoint.arrow" x="688.533" y="752.533">
+   <properties>
+    <property name="spawn" value="playerAmmoArrowBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2360" name="enemy.bugbear" x="912" y="627">
+   <point/>
+  </object>
+  <object id="2361" name="player.startingPosition" x="832" y="736">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

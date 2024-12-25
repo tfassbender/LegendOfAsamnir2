@@ -80,8 +80,7 @@ public class GoblinKing extends Enemy {
 		float minTimeBetweenAttacks = 0.5f;
 		float maxTimeBetweenAttacks = 2.5f;
 		
-		GoblinKingAttackAI attackAI = new GoblinKingAttackAI(ai, attackStates, attackDistances,
-				new RandomIntervalAttackTimer(minTimeBetweenAttacks, maxTimeBetweenAttacks));
+		GoblinKingAttackAI attackAI = new GoblinKingAttackAI(ai, attackStates, attackDistances, new RandomIntervalAttackTimer(minTimeBetweenAttacks, maxTimeBetweenAttacks));
 		attackAI.setEnduranceConsumer(change -> enduranceDecrease = change);
 		attackAI.setAttackHandler(attackHandler);
 		attackAI.setMoveToPlayerWhenAttacking(false);
@@ -92,8 +91,7 @@ public class GoblinKing extends Enemy {
 	private ArtificialIntelligence createEnduranceAI(ArtificialIntelligence ai) {
 		CharacterState commandState = stateMachine.getState(GoblinKing.STATE_NAME_COMMAND);
 		
-		return new GoblinKingEnduranceAI(ai, commandState, () -> endurance <= 0f, () -> endurance >= MAX_ENDURANCE, () -> health / typeConfig.health,
-				this::startEnduranceRecharge);
+		return new GoblinKingEnduranceAI(ai, commandState, () -> endurance <= 0f, () -> endurance >= MAX_ENDURANCE, () -> health / typeConfig.health, this::startEnduranceRecharge);
 	}
 	
 	private void startEnduranceRecharge() {
@@ -161,7 +159,7 @@ public class GoblinKing extends Enemy {
 				return;
 			}
 		}
-		if (attackType == AttackType.BOMB) {
+		if (attackType != null && attackType.isSubTypeOf(AttackType.BOMB)) {
 			//don't take damage from bombs
 			return;
 		}

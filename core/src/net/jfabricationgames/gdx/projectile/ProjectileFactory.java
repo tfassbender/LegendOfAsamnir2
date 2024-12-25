@@ -16,23 +16,6 @@ public class ProjectileFactory {
 	
 	private ProjectileFactory() {}
 	
-	private static final String PROJECTILE_TYPE_ARROW = "arrow";
-	private static final String PROJECTILE_TYPE_BOMB = "bomb";
-	private static final String PROJECTILE_TYPE_EXPLOSION = "explosion";
-	private static final String PROJECTILE_TYPE_WEB = "web";
-	private static final String PROJECTILE_TYPE_IMP_FIRE = "imp_fire";
-	private static final String PROJECTILE_TYPE_ROCK = "rock";
-	private static final String PROJECTILE_TYPE_BOOMERANG = "boomerang";
-	private static final String PROJECTILE_TYPE_WAND = "wand";
-	private static final String PROJECTILE_TYPE_MAGIC_WAVE = "magic_wave";
-	private static final String PROJECTILE_TYPE_COIN_BAG = "coin_bag";
-	private static final String PROJECTILE_TYPE_FORCE_FIELD = "force_field";
-	private static final String PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIST = "dwarven_guardian_construct_fist";
-	private static final String PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIRE = "dwarven_guardian_construct_fire";
-	private static final String PROJECTILE_TYPE_ROCK_BLAST = "rock_blast";
-	private static final String PROJECTILE_TYPE_GIANT_GOLEM_FORCE_FIELD = "giant_golem_force_field";
-	private static final String PROJECTILE_TYPE_SLINGSHOT = "slingshot";
-	
 	private static final String CONFIG_FILE = "config/factory/projectile_factory.json";
 	private static final String ANIMATION_CONFIG_FILE = "config/animation/projectiles.json";
 	
@@ -77,50 +60,49 @@ public class ProjectileFactory {
 		}
 		
 		Projectile projectile;
-		switch (type) {
-			case PROJECTILE_TYPE_ARROW:
+		switch (typeConfig.attackType) {
+			case ARROW:
 				projectile = new Arrow(typeConfig, sprite, gameMap);
 				break;
-			case PROJECTILE_TYPE_BOMB:
+			case BOMB:
 				projectile = new Bomb(typeConfig, sprite, gameMap);
 				break;
-			case PROJECTILE_TYPE_EXPLOSION:
+			case EXPLOSION:
 				projectile = new Explosion(typeConfig, animation, gameMap);
 				collisionType = PhysicsCollisionType.EXPLOSION;
 				break;
-			case PROJECTILE_TYPE_WEB:
+			case WEB:
 				projectile = new Web(typeConfig, animation, gameMap);
 				break;
-			case PROJECTILE_TYPE_IMP_FIRE:
+			case FIREBALL:
 				projectile = new ImpFireball(typeConfig, animation, gameMap);
 				break;
-			case PROJECTILE_TYPE_ROCK:
+			case ROCK:
 				projectile = new Rock(typeConfig, sprite, gameMap);
 				break;
-			case PROJECTILE_TYPE_BOOMERANG:
+			case BOOMERANG:
 				projectile = new Boomerang(typeConfig, sprite, gameMap);
 				break;
-			case PROJECTILE_TYPE_WAND:
-			case PROJECTILE_TYPE_MAGIC_WAVE:
+			case WAND:
+			case MAGIC_WAVE:
 				projectile = new MagicWave(typeConfig, sprite, gameMap);
 				break;
-			case PROJECTILE_TYPE_COIN_BAG:
+			case COIN_BAG:
 				projectile = new CoinBag(typeConfig, sprite, gameMap);
 				break;
-			case PROJECTILE_TYPE_FORCE_FIELD:
-			case PROJECTILE_TYPE_GIANT_GOLEM_FORCE_FIELD:
+			case FORCE_FIELD:
 				projectile = new ForceField(typeConfig, animation, gameMap);
 				break;
-			case PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIST:
+			case DWARVEN_GUARDIAN_CONSTRUCT_FIST:
 				projectile = new DwarvenGuardianConstructFist(typeConfig, animation, gameMap);
 				break;
-			case PROJECTILE_TYPE_DWARVEN_GUARDIAN_CONSTRUCT_FIRE:
+			case DWARVEN_GUARDIAN_CONSTRUCT_FIRE:
 				projectile = new DwarvenGuardianConstructFire(typeConfig, animation, gameMap);
 				break;
-			case PROJECTILE_TYPE_ROCK_BLAST:
+			case ANIMATED_HIT:
 				projectile = new AnimatedHit(typeConfig, animation, gameMap);
 				break;
-			case PROJECTILE_TYPE_SLINGSHOT:
+			case SLINGSHOT:
 				projectile = new Slingshot(typeConfig, sprite, gameMap);
 				break;
 			default:

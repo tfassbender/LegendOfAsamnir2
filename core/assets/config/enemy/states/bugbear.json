@@ -1,0 +1,94 @@
+[
+	{
+		id: idle,
+		animation: bugbear_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, block, block2, charge, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: bugbear_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, block, block2, charge, damage, die
+		]
+	},
+	{
+		id: attack,
+		animation: bugbear_attack,
+		attack: attack,
+		stateEnteringSound: hit_4
+		soundDelay: 0.3f,
+		soundVolume: 0.6f,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			block, block2, damage, die
+		]
+	},
+	{
+		id: block,
+		animation: bugbear_block,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: block2,
+		animation: bugbear_block,
+		endsWithAnimation: true,
+		followingState: block_hold,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: block_hold,
+		animation: bugbear_block_2,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3.5f,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: charge,
+		animation: bugbear_taunt,
+		endsWithAnimation: true,
+		stateEnteringSound: minotaur_taunt,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: bugbear_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: flesh_hit_1,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: bugbear_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		stateEnteringSound: minotaur_taunt,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

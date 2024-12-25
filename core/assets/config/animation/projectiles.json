@@ -29,6 +29,15 @@
 			duration: 1,
 		},
 		{
+			name: force_field_bugbear,
+			type: GROWING,
+			atlas: packed/demo/demo.atlas,
+			
+			startScale: 0.01,
+			maxScale: 0.3,
+			duration: 1,
+		},
+		{
 			name: dwarven_guardian_construct_fist_attack,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

@@ -16,6 +16,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.attack.hit.AttackType;
 import net.jfabricationgames.gdx.attack.hit.Hittable;
+import net.jfabricationgames.gdx.map.PositionedObject;
 import net.jfabricationgames.gdx.physics.CollisionUtil;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
@@ -24,7 +25,7 @@ import net.jfabricationgames.gdx.physics.PhysicsWorld;
 import net.jfabricationgames.gdx.sound.SoundManager;
 import net.jfabricationgames.gdx.sound.SoundSet;
 
-public abstract class Projectile implements ContactListener, Hittable {
+public abstract class Projectile implements ContactListener, Hittable, PositionedObject {
 	
 	private static final String SOUND_SET_PROJECTILE = "projectile";
 	private static final String EXPLOSION_PROJECTILE_TYPE = "explosion";
@@ -377,6 +378,15 @@ public abstract class Projectile implements ContactListener, Hittable {
 	
 	public void setPlayerBody(Body body) {
 		this.playerBody = body;
+	}
+	
+	@Override
+	public Vector2 getPosition() {
+		if (body != null) {
+			return body.getPosition();
+		}
+		
+		return null;
 	}
 	
 	@FunctionalInterface

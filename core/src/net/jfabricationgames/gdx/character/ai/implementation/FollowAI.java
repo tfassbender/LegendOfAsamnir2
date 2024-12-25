@@ -100,15 +100,17 @@ public class FollowAI extends AbstractRelativeMovementAI {
 		targetToFollow = null;
 	}
 	
-	public void setMinDistanceToTarget(float distance) {
+	public FollowAI setMinDistanceToTarget(float distance) {
 		this.minDistanceToTarget = distance;
+		return this;
 	}
 	
-	public void setMaxDistanceFromStart(float maxDistanceFromStart) {
+	public FollowAI setMaxDistanceFromStart(float maxDistanceFromStart) {
 		this.maxDistanceFromStart = maxDistanceFromStart;
+		return this;
 	}
 	
-	public void setFollowCondition(String followCondition) {
+	public FollowAI setFollowCondition(String followCondition) {
 		this.followCondition = followCondition;
 		
 		if (followCondition != null) {
@@ -117,5 +119,7 @@ public class FollowAI extends AbstractRelativeMovementAI {
 		else {
 			conditionHandler = null;
 		}
+		
+		return this;
 	}
 }

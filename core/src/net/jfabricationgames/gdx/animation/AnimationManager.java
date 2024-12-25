@@ -145,7 +145,11 @@ public class AnimationManager {
 	 *        The name of the animation that was defined in the JSON configuration file from which the animations were loaded.
 	 */
 	public GrowingAnimationDirector<TextureRegion> getGrowingAnimationDirector(String name) {
-		return new GrowingAnimationDirector<TextureRegion>(growingAnimationTextures.get(name), animationConfigurations.get(name).clone());
+		AnimationConfig animationConfig = animationConfigurations.get(name);
+		if (animationConfig == null) {
+			throw new IllegalArgumentException("The animation \"" + name + "\" doesn't exist in this asset manager. Please add it to the animation configuration (see config files: " + configFiles + ")");
+		}
+		return new GrowingAnimationDirector<TextureRegion>(growingAnimationTextures.get(name), animationConfig.clone());
 	}
 	
 	/**

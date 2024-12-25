@@ -98,11 +98,16 @@ public abstract class AbstractArtificialIntelligence implements ArtificialIntell
 		Fixture fixtureA = contact.getFixtureA();
 		Fixture fixtureB = contact.getFixtureB();
 		
+		if (fixtureA.isSensor() && fixtureB.isSensor()) {
+			// no collision if both are sensors (the attack might be a sensor with the player as its user data, but we are looking for the player as the colliding object)
+			return null;
+		}
+		
 		if (CollisionUtil.containsCollisionType(PhysicsCollisionType.ENEMY_SENSOR, fixtureA, fixtureB)) {
 			Object sensorUserData = CollisionUtil.getCollisionTypeUserData(PhysicsCollisionType.ENEMY_SENSOR, fixtureA, fixtureB);
 			Object sensorCollidingUserData = CollisionUtil.getOtherTypeUserData(PhysicsCollisionType.ENEMY_SENSOR, fixtureA, fixtureB);
 			
-			if (sensorUserData == character && collidingType.isAssignableFrom(sensorCollidingUserData.getClass())) {
+			if (sensorUserData == character && sensorCollidingUserData != null && collidingType.isAssignableFrom(sensorCollidingUserData.getClass())) {
 				return (T) sensorCollidingUserData;
 			}
 		}

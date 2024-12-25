@@ -27,8 +27,7 @@ public abstract class AbstractRelativeMovementAI extends AbstractMovementAI {
 	
 	protected PlayableCharacter playerCharacter;
 	
-	public AbstractRelativeMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState,
-			float idleTimeBetweenMovements) {
+	public AbstractRelativeMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState, float idleTimeBetweenMovements) {
 		super(subAI, movingState, idleState);
 		
 		this.idleTimeBetweenMovements = idleTimeBetweenMovements;

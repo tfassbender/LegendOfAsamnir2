@@ -118,6 +118,8 @@
 	config/cutscene/loa2/niflheim/bandit_camp/camp_entered.json,
 	config/cutscene/loa2/niflheim/bandit_camp/rope.json,
 	config/cutscene/loa2/niflheim/bandit_camp/ignite_bomb_to_open_central_arena.json,
+	config/cutscene/loa2/niflheim/bandit_camp/enter_central_arena.json,
+	config/cutscene/loa2/niflheim/bandit_camp/bugbear_defeat.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

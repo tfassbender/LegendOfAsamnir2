@@ -6,6 +6,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.character.enemy.implementation.AlarmClock;
 import net.jfabricationgames.gdx.character.enemy.implementation.Bat;
+import net.jfabricationgames.gdx.character.enemy.implementation.Bugbear;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.DwarvenGuardianConstruct;
@@ -24,20 +25,21 @@ public class EnemyFactory {
 	
 	private EnemyFactory() {}
 	
-	private static final String ENEMY_NAME_ALARM_CLOCK = "alarm_clock";
-	private static final String ENEMY_NAME_DUMMY = "dummy";
-	private static final String ENEMY_NAME_OGRE = "ogre";
-	private static final String ENEMY_NAME_DWARVEN_GUARDIAN_CONSTRUCT = "dwarven_guardian_construct";
-	private static final String ENEMY_NAME_GIANT_GOLEM = "giant_golem";
-	private static final String ENEMY_NAME_GARGOYLE = "gargoyle";
-	
 	private static final String ENEMY_NAME_BAT = "bat";
 	private static final String ENEMY_NAME_TOTEM = "totem";
+	private static final String ENEMY_NAME_ALARM_CLOCK = "alarm_clock";
+	private static final String ENEMY_NAME_GARGOYLE = "gargoyle";
+	
+	private static final String ENEMY_NAME_DUMMY = "dummy";
+	private static final String ENEMY_NAME_DWARVEN_GUARDIAN_CONSTRUCT = "dwarven_guardian_construct";
 	private static final String ENEMY_NAME_FIRE_TOTEM = "fire_totem";
 	
 	private static final String ENEMY_NAME_MINOTAUR = "minotaur";
 	private static final String ENEMY_NAME_CYCLOPS = "cyclops";
 	private static final String ENEMY_NAME_GOBLIN_KING = "goblin_king";
+	private static final String ENEMY_NAME_OGRE = "ogre";
+	private static final String ENEMY_NAME_GIANT_GOLEM = "giant_golem";
+	private static final String ENEMY_NAME_BUGBEAR = "bugbear";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -106,6 +108,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_GARGOYLE:
 				enemy = new Gargoyle(typeConfig, properties);
+				break;
+			case ENEMY_NAME_BUGBEAR:
+				enemy = new Bugbear(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

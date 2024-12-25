@@ -26,7 +26,7 @@
 		timeTillExplosion: 3,
 	},
 	explosion: {
-		attackType: BOMB,
+		attackType: EXPLOSION,
 		
 		animation: explosion,
 		textureScale: 0.05,
@@ -217,6 +217,24 @@
 		multipleHitsPossible: true,
 		
 		pushForce: 2f, // enough to push away bombs
+		radius: 3f,
+	},
+	
+	bugbear_force_field: {
+		attackType: FORCE_FIELD,
+		
+		animation: force_field_bugbear,
+		textureAnimation: false,
+		textureScale: 2f,
+		
+		speed: 0,
+		damping: 0,
+		
+		timeActive: 2,
+		
+		multipleHitsPossible: true,
+		
+		pushForce: 1f, // enough to push away bombs
 		radius: 3f,
 	},
 	

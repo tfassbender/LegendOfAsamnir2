@@ -140,6 +140,14 @@
 		}
 	},
 	
+	loa2_l2_niflheim__central_arena_entered: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l2_niflheim__central_arena_entered,
+            expectedValue: true,
+		}
+	},
+	
 	//*******************************************
 	//*** switches
 	//*******************************************

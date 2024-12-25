@@ -1,0 +1,178 @@
+{
+	id: loa2_l2_niflheim_bandit_camp__enter_central_arena_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim__central_arena_entered,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: bugbear_1
+				},
+			],
+		},
+		
+		bugbear_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Bugbear",
+                colorHeader: #735c38,
+				displayText: "What was that sound?!\n           \nI told you that I want to inspect our loot in peace!!!    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				camera_multiplexer,
+			],
+		},
+		
+		camera_multiplexer: {
+			type: WAIT,
+			executionDelayInSeconds: 0.5f,
+			
+			executes: [
+				move_camera,
+				move_thorin,
+			],
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: event_object__bandit_camp_enter_central_arena,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 2.5},
+			speedFactor: 3f,
+			
+			executes: [
+                thorin_1,
+			],
+		},
+		
+		move_thorin: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 2},
+			cameraFollowsTarget: false,
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Hey you! I'm searching for a rune!\n                    \nHave you seen any around here?    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				bugbear_2,
+			],
+		},
+		
+		bugbear_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Bugbear",
+                colorHeader: #735c38,
+				displayText: "... a child?!\n                        \nPlease don't tell me my men were defeated by a child...            \nGood staff is so hard to find these days...    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_2,
+			],
+		},
+		
+		thorin_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'm not a child! I'm Thorin from Svartalfheim!\n      \nI'm a dwarf and I'm searching for a rune!\nSo, have you seen any around here?   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				bugbear_3,
+			],
+		},
+		
+		bugbear_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Bugbear",
+                colorHeader: #735c38,
+				displayText: "A dwarf?! ... well that's slightly less embarrassing for these idiots that you defeated to get here ...          \nI guess I'll have to take care of you myself...    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				start_boss_fight,
+			],
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+			executes: [
+				wait_after_boss_fight_started,
+			]
+		}
+		
+		wait_after_boss_fight_started: {
+            type: WAIT,
+            executionDelayInSeconds: 3f,
+            
+            executes: [
+                set_global_value__central_arena_camp_entered,
+			],
+		},
+		
+		set_global_value__central_arena_camp_entered: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l2_niflheim__central_arena_entered, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

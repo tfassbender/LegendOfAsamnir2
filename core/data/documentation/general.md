@@ -114,6 +114,14 @@
 			- Use the Medival-Warcamp tileset for the bandit camp
 			- Include a (small) puzzle that has to be solved to enter the bandit camp
 			- Include a mini boss (bugbear)
+				- The mini boss does only take damage from bombs (all other attacks are blocked - bugbear has a blocking animation)
+				- The player gets an unlimited number of bombs
+				- The mini boss runs awas from the bombs, what makes it difficult to attack him
+				- After blocking an attack the mini boss stays in the blocking mode for a short while
+				- The blocking mode of the mini boss must be used to prevent him from running away from the bombs
+				- After falling below a given health amount (~ 10%) the mini boss retreats to the necromancer that supports him
+				- The necromancer makes it impossible to throw bombs at the mini boss (using a force field like in the boss fight of level 1)
+				- That's where Impa comes in (in a cutscene) and fires a hadouken and defeats the mini boss
 		- The final part of the level (which is reachable without going through the bandit camp, but one cannot succeed there without the ice-pick)
 			- Include some puzzles
 				- At the beginning, a frozen lake has to be crossed, where thorin needs to use the ice-pick (to let the player know that he cannot succeed the level without the item)

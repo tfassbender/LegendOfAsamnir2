@@ -128,6 +128,11 @@ public class BeamAttack extends Attack {
 		Fixture fixtureA = contact.getFixtureA();
 		Fixture fixtureB = contact.getFixtureB();
 		
+		if (fixtureA.isSensor() && fixtureB.isSensor()) {
+			// no attack damage if both are sensors (the attack might be a sensor, but the attacked object must not be an enemy sensor)
+			return;
+		}
+		
 		if (CollisionUtil.containsCollisionType(collisionType, fixtureA, fixtureB)) {
 			Object attackUserData = CollisionUtil.getCollisionTypeUserData(collisionType, fixtureA, fixtureB);
 			Object attackedObjectUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);

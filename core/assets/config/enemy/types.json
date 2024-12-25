@@ -814,24 +814,21 @@
 		initialState: idle,
 		attackConfig: config/enemy/attack/bugbear.json,
 		
-		health: 100,
-		movingSpeed: 1f,
+		health: 40,
+		movingSpeed: 1.75f,
 		
 		imageOffsetX: 0f,
-		imageOffsetY: 0.7f,
+		imageOffsetY: 0.2f,
 		
-		bodyShape: CIRCLE,
-		bodyRadius: 0.7f,
+		bodyShape: OCTAGON,
+		bodyWidth: 1.7f,
+		bodyHeight: 1.5f,
 		
 		addSensor: true,
-		sensorRadius: 7f,
+		sensorRadius: 12f,
 		
 		pushForceDamage: 5,
 		pushForceHit: 100,
-		
-		drops: {
-			metal_ingot: 1,
-		}
 		
 		isBoss: true
 		bossName: "Bugbear - Champion of the Bandits",
