@@ -1,0 +1,69 @@
+[
+	{
+		id: idle,
+		animation: bandit_necromancer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, cast, cast_with_effect, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: bandit_necromancer_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, cast, cast_with_effect, damage, die
+		]
+	},
+	{
+		id: attack, // an attack state is needed for the default configuration
+		animation: bandit_necromancer_cast,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: cast,
+		animation: bandit_necromancer_cast,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: cast_with_effect,
+		animation: bandit_necromancer_cast_with_effect,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: bandit_necromancer_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: bandit_necromancer_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: flesh_hit_1,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

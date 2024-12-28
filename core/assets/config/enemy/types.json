@@ -806,6 +806,29 @@
 		}
 	},
 	
+	bandit_necromancer: {
+		typeName: bandit_necromancer,
+		
+		animationsConfig: config/animation/enemy/bandit_necromancer.json,
+		stateConfig: config/enemy/states/bandit_necromancer.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bandit_necromancer.json,
+		aiConfig: config/enemy/ai/bandit.json,
+		
+		health: 10,
+		movingSpeed: 2,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: false, // no sensor - this enemy type is only used in a cutscene
+		
+		usesHealthBar: false
+	},
+	
 	bugbear: {
 		typeName: bugbear,
 		

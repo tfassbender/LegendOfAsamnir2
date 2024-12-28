@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2362">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2372">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -236,23 +236,20 @@
   <object id="2346" name="item.rope" x="1180.36" y="687.273">
    <point/>
   </object>
-  <object id="2349" name="object.eventObject" x="878.364" y="830.364">
+  <object id="2349" name="object.configObject" x="878.364" y="830.364">
    <properties>
-    <property name="eventParameter" value=""/>
     <property name="unitId" value="loa2_l2_niflheim_bandit_camp__bomb_target_lower_left"/>
    </properties>
    <point/>
   </object>
-  <object id="2351" name="object.eventObject" x="949.438" y="784.875">
+  <object id="2351" name="object.configObject" x="949.438" y="784.875">
    <properties>
-    <property name="eventParameter" value=""/>
     <property name="unitId" value="loa2_l2_niflheim_bandit_camp__bomb_target_upper_right"/>
    </properties>
    <point/>
   </object>
-  <object id="2352" name="object.eventObject" x="799.5" y="914">
+  <object id="2352" name="object.configObject" x="799.5" y="914">
    <properties>
-    <property name="eventParameter" value=""/>
     <property name="unitId" value="loa2_l2_niflheim_bandit_camp__bomb_cover_position"/>
    </properties>
    <point/>
@@ -289,12 +286,58 @@
    </properties>
    <point/>
   </object>
-  <object id="2360" name="enemy.bugbear" x="912" y="627">
+  <object id="2360" name="enemy.bugbear" x="912.667" y="639.875">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_bandit_camp__bugbear"/>
+   </properties>
    <point/>
   </object>
   <object id="2361" name="player.startingPosition" x="832" y="736">
    <properties>
     <property name="startingPointId" value="11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2364" name="object.configObject" x="1088" y="563">
+   <properties>
+    <property name="unitId" value="cutscene_object__bandit_camp__bugbear_final_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2365" name="object.configObject" x="941" y="563">
+   <properties>
+    <property name="unitId" value="cutscene_object__bandit_camp__impa_final_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2366" name="object.spawnPoint.npc_impa" x="908" y="671.333">
+   <properties>
+    <property name="spawn" value="npc__impa"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2367" name="object.configObject" x="959.667" y="528.5">
+   <properties>
+    <property name="unitId" value="cutscene_object__bandit_camp__thorin_final_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2368" name="object.configObject" x="944" y="563">
+   <properties>
+    <property name="attackDirection" value="(1,0)"/>
+    <property name="attackId" value="hadouken"/>
+    <property name="unitId" value="cutscene_object__bandit_camp__impa_hadouken"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2369" name="object.eventObject" x="1115.67" y="513.561" width="8.31853" height="88.8787">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_bandit_camp__test"/>
+   </properties>
+  </object>
+  <object id="2371" name="enemy.bandit_necromancer" x="1149" y="539">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_bandit_camp__bandit_necromancer"/>
    </properties>
    <point/>
   </object>

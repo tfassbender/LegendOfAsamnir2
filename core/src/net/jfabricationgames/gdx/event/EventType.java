@@ -76,6 +76,7 @@ public enum EventType {
 	CUTSCENE_PLAYER_CHOICE, //
 	CUSTCENE_SPAWN_UNIT, //
 	CUSTCENE_SPAWN_UNIT_2, //
+	CUTSCENE_CREATE_ATTACK, //
 	CUTSCENE_REMOVE_UNIT, //
 	CUTSCENE_SHOW_TITLE_BANNER, //
 	//*******************************

@@ -35,4 +35,5 @@ public class ProjectileTypeConfig {
 	
 	public float pushForce = 8f; // enough to push the player away if he's running
 	public float radius = 3f;
+	public boolean affectedByForceField = true;
 }

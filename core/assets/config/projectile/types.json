@@ -248,4 +248,18 @@
 		speed: 150,
 		dampingAfterObjectHit: 5,
 	},
+	
+	hadouken: {
+		attackType: HADOUKEN,
+		
+		animation: hadouken,
+		textureScale: 1,
+		removeAfterAnimationFinished: false,
+		
+		dampingAfterObjectHit: 0,
+		affectedByForceField: false,
+		multipleHitsPossible: true, // needs to be set to true, because otherwise the attack will hit the NPC who fires it (impa) and nothing else
+		
+		speed: 20,
+	},
 }

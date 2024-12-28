@@ -1,0 +1,11 @@
+{
+	//*********************************
+	//*** no movement
+	//*********************************
+	npc__impa: {
+		spawnType: npc.impa,
+		events: [CUSTCENE_SPAWN_UNIT_2],
+		
+		spawnTypeMapProperties: "{unitId: \"loa2_l2_niflheim_bandit_camp__impa\"}",
+	},
+}

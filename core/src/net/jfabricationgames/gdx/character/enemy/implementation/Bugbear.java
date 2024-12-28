@@ -31,6 +31,8 @@ public class Bugbear extends Enemy {
 	
 	public Bugbear(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
+		
+		health = typeConfig.health * 0.2f; // TODO remove after tests
 	}
 	
 	@Override
@@ -64,12 +66,6 @@ public class Bugbear extends Enemy {
 				&& attackHandler.allAttacksExecuted()) { // only start one force field at the time to improve the animation
 			attackHandler.startAttack("attack_force_field", new Vector2(1, 0)); // direction does not matter
 		}
-		
-		if (!finalCutsceneStarted && getPercentualHealth() > 0 && getPercentualHealth() < 0.15f) {
-			finalCutsceneStarted = true;
-			
-			// TODO start the final cutscene
-		}
 	}
 	
 	private boolean isInBlockingState() {
@@ -93,6 +89,10 @@ public class Bugbear extends Enemy {
 		else if (attackType.isSubTypeOf(AttackType.ARROW)) {
 			// change to a blocking state hat stays active for a few seconds, so the player can attack the bugbear with a bomb
 			stateMachine.setState(STATE_NAME_BLOCK_2);
+		}
+		else if (attackType.isSubTypeOf(AttackType.HADOUKEN)) {
+			// the hadouken in the final cutscene kills the bugbear
+			super.takeDamage(health, attackType);
 		}
 		else {
 			// all attacks but bombs can be blocked

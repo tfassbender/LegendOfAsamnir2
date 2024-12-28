@@ -17,5 +17,5 @@
 	interactionPossible: true,
 	movingSpeed: 0.4f,
 	
-	interactionEventId: loa2_l2_niflheim_main__old_lady,
+	interactionEventId: loa2_l2_niflheim_main__impa,
 }

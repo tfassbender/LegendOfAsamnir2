@@ -105,6 +105,9 @@ public class ProjectileFactory {
 			case SLINGSHOT:
 				projectile = new Slingshot(typeConfig, sprite, gameMap);
 				break;
+			case HADOUKEN:
+				projectile = new Hadouken(typeConfig, animation, gameMap);
+				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}

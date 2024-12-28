@@ -9,6 +9,7 @@ import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
 import net.jfabricationgames.gdx.attack.hit.AttackType;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.object.config.ConfigObject;
 import net.jfabricationgames.gdx.object.destroyable.DestroyableObject;
 import net.jfabricationgames.gdx.object.event.EventObject;
 import net.jfabricationgames.gdx.object.interactive.AnimationObject;
@@ -126,6 +127,9 @@ public class GameObjectFactory {
 				break;
 			case ANIMATION:
 				object = new AnimationObject(typeConfig, sprite, properties, gameMap);
+				break;
+			case CONFIG_OBJECT:
+				object = new ConfigObject(typeConfig, sprite, properties, gameMap);
 				break;
 			// specialized types
 			case DWARVEN_GUARDIAN_CONSTRUCT_SWITCH:

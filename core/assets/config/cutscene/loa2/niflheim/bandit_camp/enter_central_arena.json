@@ -62,6 +62,7 @@
 			controlledUnitId: PLAYER,
 			controlledUnitTarget: {x: 0, y: 2},
 			cameraFollowsTarget: false,
+			targetPositionRelativeToUnitId: event_object__bandit_camp_enter_central_arena,
 		},
 		
 		thorin_1: {
@@ -125,7 +126,7 @@
 			executionParameters: {
 				displayTextHeader: "Bugbear",
                 colorHeader: #735c38,
-				displayText: "A dwarf?! ... well that's slightly less embarrassing for these idiots that you defeated to get here ...          \nI guess I'll have to take care of you myself...    ",
+				displayText: "... A dwarf?! ... well that's slightly less embarrassing for these idiots that you defeated to get here ...          \nI guess I'll have to take care of you myself...    ",
 				showNextPageIcon: true,
 			}
 			
@@ -133,6 +134,7 @@
 			
 			executes: [
 				start_boss_fight,
+				turn_arround_bandit_necromancer,
 			],
 		},
 		
@@ -146,7 +148,13 @@
 			executes: [
 				wait_after_boss_fight_started,
 			]
-		}
+		},
+		
+		turn_arround_bandit_necromancer: {
+			type: MOVE,
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__bandit_necromancer,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
 		
 		wait_after_boss_fight_started: {
             type: WAIT,

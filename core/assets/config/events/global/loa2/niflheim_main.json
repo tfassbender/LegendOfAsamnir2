@@ -25,14 +25,14 @@
 		}
 	},
 	
-	loa2_l2_niflheim_main__old_lady: {
+	loa2_l2_niflheim_main__impa: {
 		event: {
             eventType: NPC_INTERACTION,
-            stringValue: loa2_l2_niflheim_main__old_lady,
+            stringValue: loa2_l2_niflheim_main__impa,
 		},
         executionType: START_CUTSCENE,
         executionParameters: {
-            cutsceneId: loa2_l2_niflheim_main__old_lady_cutscene,
+            cutsceneId: loa2_l2_niflheim_main__impa_cutscene,
 		}
 	},
 	

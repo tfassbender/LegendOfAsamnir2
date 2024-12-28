@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack, block, block2, charge, damage, die
+			move, attack, block, block2, block_cutscene_init, charge, damage, die
 		]
 	},
 	{
@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack, block, block2, charge, damage, die
+			idle, attack, block, block2, block_cutscene_init, charge, damage, die
 		]
 	},
 	{
@@ -59,6 +59,24 @@
 		]
 	},
 	{
+		id: block_cutscene_init,
+		animation: bugbear_block,
+		endsWithAnimation: true,
+		followingState: block_cutscene,
+		interruptingStates: []
+	},
+	{
+		id: block_cutscene,
+		animation: bugbear_block_3,
+		changeStateAfterAnimationDelay: 1.5f,
+		attack: attack_force_field,
+		endsWithAnimation: true,
+		followingState: block_cutscene,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
 		id: charge,
 		animation: bugbear_taunt,
 		endsWithAnimation: true,
@@ -73,7 +91,7 @@
 		animation: bugbear_damage,
 		endsWithAnimation: true,
 		stateEnteringSound: flesh_hit_1,
-		followingState: idle,
+		followingState: charge,
 		interruptingStates: [
 			die
 		],

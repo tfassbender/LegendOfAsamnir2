@@ -57,7 +57,7 @@
 	townfolk_6: config/npc/levels/loa2/niflheim/medieval_townfolk_6.json,
 	townfolk_8: config/npc/levels/loa2/niflheim/medieval_townfolk_8.json,
 	townfolk_9: config/npc/levels/loa2/niflheim/medieval_townfolk_9.json,
-	old_lady: config/npc/levels/loa2/niflheim/old_lady.json,
+	impa: config/npc/levels/loa2/niflheim/impa.json,
 	ratatosk_niflheim: config/npc/levels/loa2/niflheim/ratatosk.json,
 	
 	//*****************************************************************

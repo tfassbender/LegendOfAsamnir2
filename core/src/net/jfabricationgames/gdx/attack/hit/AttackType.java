@@ -23,8 +23,9 @@ public enum AttackType {
 	SLINGSHOT(PROJECTILE), //
 	WAND(MAGIC), //
 	MAGIC_WAVE(MAGIC), //
-	BEAM(ATTACK), //
 	FORCE_FIELD(MAGIC), //
+	HADOUKEN(MAGIC), //
+	BEAM(ATTACK), //
 	CONTINUOUS_MAP_DAMAGE(ATTACK); // 
 	
 	private final AttackType superType;

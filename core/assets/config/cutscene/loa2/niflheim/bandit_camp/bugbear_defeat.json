@@ -1,22 +1,223 @@
 {
 	id: loa2_l2_niflheim_bandit_camp__bugbear_defeat_cutscene,
 	controlledActions: {
-		thorin_1: {
+		bugbear_1: {
 	    	startsWithCutscene: true,
+	    	executionDelayInSeconds: 1f,
+	    	
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "Thorin",
-				displayText: "test cutscene   ",
+				displayTextHeader: "Bugbear",
+                colorHeader: #735c38,
+				displayText: "Damn! You're really annoying!\n                \nIt's time for my final attack!   ",
 				showNextPageIcon: true,
 			}
 			
 			waitForEventToFinish: true,
 			
 			executes: [
-				end,
+				move_thorin,
+				move_bugbear,
 			],
 		},
+		
+		move_thorin: {
+			executionDelayInSeconds: 1f,
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			targetPositionRelativeToUnitId: cutscene_object__bandit_camp__thorin_final_position,
+			
+			executes: [
+				move_camera,
+			],
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: PLAYER,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 3, y: -1},
+			speedFactor: 3f,
+		},
+		
+		move_bugbear: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__bugbear,
+            controlledUnitTarget: {x: 0, y: 0},
+            targetPositionRelativeToUnitId: cutscene_object__bandit_camp__bugbear_final_position,
+            
+            executes: [
+                turn_arround_bugbear,
+			],
+		},
+		
+		turn_arround_bugbear: {
+			type: MOVE,
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__bugbear,
+            controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executes: [
+            	bandit_necromancer_change_state_to_cast,
+                bugbear_change_state_block,
+			],
+		},
+		
+		bandit_necromancer_change_state_to_cast: {
+			executionDelayInSeconds: 0.5f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__bandit_necromancer,
+            controlledUnitState: cast_with_effect,
+		},
+		
+		bugbear_change_state_block: {
+			executionDelayInSeconds: 1f,
+			
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__bugbear,
+			controlledUnitState: block_cutscene_init,
+			
+			executes: [
+                bugbear_2,
+			],
+		},
+		
+		bugbear_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Bugbear",
+                colorHeader: #735c38,
+                displayText: "You will never reach me now!!!\n         \nYour magic is much to weak to get through my shield!\nNow let me prepare my final attack!!!    ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                spawn_impa,
+			],
+		},
+		
+		spawn_impa: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT_2, // makes the spawn point spawn impa
+            },
+            
+            executes: [
+                move_impa,
+                impa_1,
+			],
+		},
+		
+		move_impa: {
+			executionDelayInSeconds: 0.5f,
+			
+            type: MOVE,
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__impa,
+            controlledUnitTarget: {x: 0, y: 0},
+            targetPositionRelativeToUnitId: cutscene_object__bandit_camp__impa_final_position,
+            
+            executes: [
+                bugbear_3,
+			],
+		},
+		
+		impa_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Impa",
+                colorHeader: #e36c64,
+                displayText: "Hey, Thorin!            \nI told you to wait for me!\n                        \nAt least you didn't kill all of them without me! Leave this one to me!   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+		},
+		
+		bugbear_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Bugbear",
+                colorHeader: #735c38,
+                displayText: "... an old lady?! ...                \nFirst a child attacks my camp and now an old lady?!\n                 \nWhy do I even set up guards?!   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                impa_2,
+			],
+		},
+		
+		impa_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Impa",
+                colorHeader: #e36c64,
+                displayText: "Now I'll pay you back for the trouble you caused me and my village!\n                \nPrepare yourself for my final attack!   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                impa_change_state_to_hadouken,
+			],
+		},
+		
+		impa_change_state_to_hadouken: {
+			type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__impa,
+			controlledUnitState: hadouken,
+			
+			executes: [
+                start_hadouken_attack,
+                impa_3,
+			],
+		},
+		
+		start_hadouken_attack: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_CREATE_ATTACK, // makes a configObject create the attack
+                stringValue: "cutscene_object__bandit_camp__impa_hadouken", // the unitId of the config object that has to create the attack
+                
+                // attack name and direction are configured in the config object (in the tiled map)
+			},
+		},
+		
+		impa_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            executionParameters: {
+                displayTextHeader: "Impa",
+                colorHeader: #e36c64,
+                displayText: "Hadouken!!!     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+		},
+		
+		// TODO end cutscene
 		
 		end: {
 			type: WAIT,

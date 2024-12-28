@@ -20,6 +20,12 @@
 			playMode: NORMAL
 		},
 		{
+			name: bugbear_block_3,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
 			name: bugbear_damage,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

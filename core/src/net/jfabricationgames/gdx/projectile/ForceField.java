@@ -33,10 +33,19 @@ public class ForceField extends Projectile {
 	
 	private void pushAffectedObjects() {
 		for (Hittable hittable : affectedObjects) {
-			if (hittable != null && body != null) {
+			if (hittable != null && body != null && !isProjectileNotAffectedByForceField(hittable)) {
 				hittable.pushByHit(body.getPosition().cpy(), typeConfig.pushForce, typeConfig.pushForce, false);
 			}
 		}
+	}
+	
+	private boolean isProjectileNotAffectedByForceField(Hittable hittable) {
+		if (hittable instanceof Projectile) {
+			Projectile projectile = (Projectile) hittable;
+			return !projectile.typeConfig.affectedByForceField;
+		}
+		
+		return false;
 	}
 	
 	@Override

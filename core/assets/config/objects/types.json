@@ -192,6 +192,11 @@
 		
 		texture: empty,
 	},
+	configObject: {
+		type: CONFIG_OBJECT,
+		
+		texture: empty,
+	},
 	shop: {
 		type: INTERACTIVE,
 		

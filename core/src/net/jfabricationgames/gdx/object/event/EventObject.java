@@ -78,8 +78,7 @@ public class EventObject extends GameObject implements ContactListener {
 	@Override
 	public void beginContact(Contact contact) {
 		if (isPlayableCharacterContact(contact) && canBeExecuted()) {
-			EventConfig event = new EventConfig().setEventType(EventType.EVENT_OBJECT_TOUCHED).setStringValue(eventParameter)
-					.setParameterObject(this);
+			EventConfig event = new EventConfig().setEventType(EventType.EVENT_OBJECT_TOUCHED).setStringValue(eventParameter).setParameterObject(this);
 			EventHandler.getInstance().fireEvent(event);
 			executed = true;
 			MapObjectDataHandler.getInstance().addStatefulMapObject(this);
