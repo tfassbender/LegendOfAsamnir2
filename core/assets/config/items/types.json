@@ -193,6 +193,10 @@
 		type: SPECIAL_ACTION,
         texture: rope,
 	},
+	ice_pick: {
+        type: SPECIAL_ACTION,
+        texture: ice_pick,
+	},
 	
 	//**********************************
 	//*** runes

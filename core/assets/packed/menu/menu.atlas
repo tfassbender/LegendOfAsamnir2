@@ -648,6 +648,13 @@ health
   orig: 16, 16
   offset: 0, 0
   index: -1
+ice_pick
+  rotate: false
+  xy: 61, 14
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
 inventory_down
   rotate: false
   xy: 1148, 394

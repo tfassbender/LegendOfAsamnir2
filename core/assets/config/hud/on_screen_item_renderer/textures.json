@@ -51,4 +51,8 @@
 		atlas: packed/menu/menu.atlas,
 		texture: rope,
 	},
+	ice_pick: {
+		atlas: packed/menu/menu.atlas,
+		texture: ice_pick,
+	},
 }

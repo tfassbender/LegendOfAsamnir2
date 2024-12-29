@@ -65,7 +65,7 @@
 		},
 		
 		bandit_necromancer_change_state_to_cast: {
-			executionDelayInSeconds: 0.5f,
+			executionDelayInSeconds: 1f,
 			
             type: CHANGE_STATE,
             
@@ -107,7 +107,7 @@
             type: EVENT,
             
             event: {
-                eventType: CUSTCENE_SPAWN_UNIT_2, // makes the spawn point spawn impa
+                eventType: CUSTCENE_SPAWN_UNIT_2, // makes the spawn point spawn Impa
             },
             
             executes: [
@@ -145,7 +145,7 @@
 		bugbear_3: {
             type: SHOW_ON_SCREEN_TEXT,
             
-            executionDelayInSeconds: 1f,
+            executionDelayInSeconds: 2f,
             
             executionParameters: {
                 displayTextHeader: "Bugbear",
@@ -167,7 +167,7 @@
             executionParameters: {
                 displayTextHeader: "Impa",
                 colorHeader: #e36c64,
-                displayText: "Now I'll pay you back for the trouble you caused me and my village!\n                \nPrepare yourself for my final attack!   ",
+                displayText: "Now I'll pay you back for the trouble you caused me and my village!\n                \nPrepare yourself for my final attack!!!   ",
                 showNextPageIcon: true,
 			}
             
@@ -192,6 +192,8 @@
 		
 		start_hadouken_attack: {
 			type: EVENT,
+			
+			executionDelayInSeconds: 0.5f,
             
             event: {
                 eventType: CUTSCENE_CREATE_ATTACK, // makes a configObject create the attack
@@ -215,9 +217,148 @@
             
             waitForEventToFinish: true,
             
+            executes: [
+                thorin_1,
+            ],
 		},
 		
-		// TODO end cutscene
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Nice shot, Impa!\n                            \nSorry that I didn't leave more of them for you!\nI was a bit in a hurry...    ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                impa_4,
+            ],
+		},
+		
+		impa_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Impa",
+                colorHeader: #e36c64,
+                displayText: "It's okay, Thorin!\nI know I took my time to get here...        \nAt least I could finish the bandit leader off!                       \nLet's get back to the village.     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_2,
+            ],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'll just check if the bandit leader had any runes or other useful items on him.\n                  \nI'll meet you back in the village!     \nThanks for your help, Impa!     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	move_impa_out_of_screen,
+            	impa_5,
+            ],
+		},
+		
+		move_impa_out_of_screen: {
+			executionDelayInSeconds: 0.5f,
+			
+            type: MOVE,
+            controlledUnitId: loa2_l2_niflheim_bandit_camp__impa,
+            controlledUnitTarget: {x: -2, y: -7},
+            targetPositionRelativeToUnitId: cutscene_object__bandit_camp__impa_final_position,
+            
+            executes: [
+                remove_impa,
+			],
+		},
+		
+		remove_impa: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT, // makes Impa disappear
+            },
+		},
+		
+		impa_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Impa",
+                colorHeader: #e36c64,
+                displayText: "Alright, Thorin!\nI'll see you in the village!\n               \nTake care!     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                move_thorin_to_pick_up_item,
+			],
+		},
+		
+		move_thorin_to_pick_up_item: {
+			executionDelayInSeconds: 1f,
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			targetPositionRelativeToUnitId: cutscene_object__bandit_camp__bugbear_final_position,
+			
+			executes: [
+				thorin_3,
+			],
+		},
+		
+		thorin_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Hmm... no runes to be found here...       \nDamn bandits! They're so unreliable! They can't even find a rune that I could steal from them!                      \nJust this ice pick...           ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_4,
+            ],
+		},
+		
+		thorin_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I'll take it with me... maybe it will come in handy later...\n                      \nI should go back to the village now.       \nOtherwise Impa will be faster than me...     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                end,
+            ],
+		},
 		
 		end: {
 			type: WAIT,

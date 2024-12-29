@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2372">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2373">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -286,8 +286,9 @@
    </properties>
    <point/>
   </object>
-  <object id="2360" name="enemy.bugbear" x="912.667" y="639.875">
+  <object id="2360" name="enemy.bugbear" x="911.667" y="625.375">
    <properties>
+    <property name="drop" value="{ice_pick: 1}"/>
     <property name="unitId" value="loa2_l2_niflheim_bandit_camp__bugbear"/>
    </properties>
    <point/>
@@ -329,11 +330,6 @@
     <property name="unitId" value="cutscene_object__bandit_camp__impa_hadouken"/>
    </properties>
    <point/>
-  </object>
-  <object id="2369" name="object.eventObject" x="1115.67" y="513.561" width="8.31853" height="88.8787">
-   <properties>
-    <property name="eventParameter" value="loa2_l2_niflheim_bandit_camp__test"/>
-   </properties>
   </object>
   <object id="2371" name="enemy.bandit_necromancer" x="1149" y="539">
    <properties>
