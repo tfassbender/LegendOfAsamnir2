@@ -31,8 +31,6 @@ public class Bugbear extends Enemy {
 	
 	public Bugbear(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
-		
-		health = typeConfig.health * 0.2f; // TODO remove after tests
 	}
 	
 	@Override

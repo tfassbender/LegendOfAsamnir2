@@ -356,8 +356,21 @@
             waitForEventToFinish: true,
             
             executes: [
-                end,
+                set_global_value_bandits_beaten,
             ],
+		},
+		
+		set_global_value_bandits_beaten: {
+			type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l2_niflheim__bandits_beaten, value: true}",
+			},
+            
+            executes: [
+                end,
+			],
 		},
 		
 		end: {

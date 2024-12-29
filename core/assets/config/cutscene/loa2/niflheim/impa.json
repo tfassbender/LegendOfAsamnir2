@@ -61,7 +61,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Impa",
-				displayText: "Thanks for your help with these bandits.\n                     \nNow they will think twice before attacking us again!   ",
+				displayText: "Thanks for your help with these bandits, Thorin.\n                     \nNow they will think twice before attacking us again!   ",
 				colorHeader: #e36c64,
 				showNextPageIcon: true,
 			}
