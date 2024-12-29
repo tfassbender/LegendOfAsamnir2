@@ -31,6 +31,8 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 	
 	private String itemExplanationText;
 	
+	private int notFoundItems = 0;
+	
 	public ItemSettingsDialog(OrthographicCamera camera) {
 		super(camera);
 		
@@ -40,14 +42,13 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 	}
 	
 	private void loadItemTextures() {
-		Array<String> items = SpecialAction.getNamesAsList();
+		Array<SpecialAction> items = SpecialAction.asList();
 		itemTextures = new Array<>(items.size);
-		for (String item : items) {
-			if (item != null) {
-				itemTextures.add(itemTextureLoader.loadTexture(item));
-			}
-			else {
-				itemTextures.add(null);
+		for (SpecialAction item : items) {
+			String itemName = item.name().toLowerCase();
+			itemTextures.add(itemTextureLoader.loadTexture(itemName));
+			if (!item.canBeUsed()) {
+				notFoundItems++;
 			}
 		}
 	}
@@ -58,7 +59,7 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 		buttonBackToMenu = new FocusButtonBuilder() //
 				.setNinePatchConfig(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG) //
 				.setNinePatchConfigFocused(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG_FOCUSED) //
-				.setPosition(760, 555) //
+				.setPosition(760, 700) //
 				.setSize(110, 40) //
 				.build();
 		buttonBackToMenu.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
@@ -73,8 +74,8 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 			FocusCheckbox checkbox = new FocusCheckbox.FocusCheckboxBuilder() //
 					.setNinePatchConfig(FocusCheckbox.BUTTON_YELLOW_NINEPATCH_CONFIG) //
 					.setNinePatchConfigFocused(FocusCheckbox.BUTTON_YELLOW_NINEPATCH_CONFIG_FOCUSED) //
-					.setPosition(400, 465 - i * 70) //
-					.setSize(35) //
+					.setPosition(350, 585 - i * 55) //
+					.setSize(28) //
 					.setSelectionSupplier(createSelectionSupplier(items.get(i))) //
 					.setOnSelectionChangeConsumer(createSelectionConsumer(items.get(i))) //
 					.build();
@@ -93,15 +94,25 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 		return (selected) -> globalValuesDataHandler.put(GLOBAL_VALUE_KEY_SPECIAL_ACTION_QUICK_SELECT_ENABLED + itemName, selected);
 	}
 	
+	public void updateStateAfterMenuShown() {
+		notFoundItems = 0;
+		Array<SpecialAction> items = SpecialAction.asList();
+		for (SpecialAction item : items) {
+			if (!item.canBeUsed()) {
+				notFoundItems++;
+			}
+		}
+	}
+	
 	public void draw() {
 		if (visible) {
 			batch.setProjectionMatrix(camera.combined);
 			batch.begin();
 			
-			background.draw(batch, 200, 50, 750, 600);
-			backgroundItemExplanation.draw(batch, 500, 285, 550, 260);
-			backgroundQuickSelectExplanation.draw(batch, 500, 100, 550, 210);
-			banner.draw(batch, 150, 525, 550, 200);
+			background.draw(batch, 200, 10, 750, 800);
+			backgroundItemExplanation.draw(batch, 450, 355, 560, 260);
+			backgroundQuickSelectExplanation.draw(batch, 450, 135, 560, 220);
+			banner.draw(batch, 150, 660, 550, 200);
 			buttonBackToMenu.draw(batch);
 			
 			drawCheckboxes();
@@ -130,29 +141,36 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 		
 		screenTextWriter.setColor(Color.BLACK);
 		screenTextWriter.setScale(1.2f);
-		screenTextWriter.drawText("Item Settings", 240, 641);
+		screenTextWriter.drawText("Item Settings", 240, 775);
 		
 		screenTextWriter.setScale(0.8f);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToMenu) + "Back", 795, 598);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToMenu) + "Back", 795, 743);
 		
 		screenTextWriter.setScale(0.6f);
-		screenTextWriter.drawText(itemExplanationText, 540, 505, 500, Align.left, true);
+		screenTextWriter.drawText(itemExplanationText, 490, 575, 500, Align.left, true);
 		screenTextWriter.drawText("Check items in this menu to be able to equip them with the 'R' Key on the keyboard or the 'X' button on the controller.\n" //
-				+ "Other items can be equipped in the pause menu.", 540, 280, 500, Align.left, true);
+				+ "Other items can be equipped in the pause menu.", 490, 320, 500, Align.left, true);
 		
 		screenTextWriter.setScale(1f);
 		screenTextWriter.setColor(Color.BROWN);
-		screenTextWriter.drawText("Quick Select Items", 270, 570);
+		screenTextWriter.drawText("Quick Select Items", 270, 700);
+		
+		screenTextWriter.setScale(1.2f);
+		screenTextWriter.setColor(Color.BLACK);
+		
+		for (int i = 0; i < notFoundItems; i++) {
+			screenTextWriter.drawText("?", 287, 232 + i * 55);
+		}
 	}
 	
 	private void drawItemTextures() {
-		float itemWidth = 40;
-		float itemHeight = 40;
-		float itemX = 320;
-		float itemY = 470;
-		float itemDistance = 70;
+		float itemWidth = 35;
+		float itemHeight = 35;
+		float itemX = 280;
+		float itemY = 590;
+		float itemDistance = 55;
 		
-		for (int i = 0; i < itemTextures.size; i++) {
+		for (int i = 0; i < itemTextures.size - notFoundItems; i++) {
 			TextureRegion itemTexture = itemTextures.get(i);
 			if (itemTexture != null) {
 				batch.draw(itemTexture, itemX, itemY - i * itemDistance, itemWidth, itemHeight);
@@ -193,6 +211,24 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 			case "itemsettings_dialog_checkbox_lantern":
 				checkbox = itemCheckboxes.get(5);
 				itemExplanationText = "[#C8441B]Lantern:\n[#000000]A light source that can be used to light up dark areas like caves or dungeons.\nMana is needed to use this item.";
+				break;
+			case "itemsettings_dialog_checkbox_rope":
+				checkbox = itemCheckboxes.get(6);
+				if (SpecialAction.ROPE.canBeUsed()) { // previous items were already added in the prequel and are available from the beginning
+					itemExplanationText = "[#C8441B]Rope:\n[#000000]A tool that can be used to drag specific objects.";
+				}
+				else {
+					itemExplanationText = "[#C8441B]???:\n[#000000]You haven't found this item yet.";
+				}
+				break;
+			case "itemsettings_dialog_checkbox_ice_pick":
+				checkbox = itemCheckboxes.get(7);
+				if (SpecialAction.ICE_PICK.canBeUsed()) {
+					itemExplanationText = "[#C8441B]Ice Pick:\n[#000000]A tool that can be used to prevent slipping on ice.";
+				}
+				else {
+					itemExplanationText = "[#C8441B]???:\n[#000000]You haven't found this item yet.";
+				}
 				break;
 			default:
 				throw new IllegalStateException("Unexpected button state identifier: " + stateName);

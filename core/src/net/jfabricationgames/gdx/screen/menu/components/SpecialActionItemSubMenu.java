@@ -5,7 +5,7 @@ import net.jfabricationgames.gdx.item.SpecialAction;
 
 public class SpecialActionItemSubMenu extends ItemSubMenu {
 	
-	private static final int ITEM_MENU_ITEMS_PER_LINE = 4;
+	private static final int ITEM_MENU_ITEMS_PER_LINE = 5;
 	private static final int ITEM_MENU_LINES = 2;
 	
 	private boolean[] specialActionAvailable;

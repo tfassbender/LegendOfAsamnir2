@@ -228,6 +228,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		itemMenu.setSelectedIndex(player.getActiveSpecialAction().indexInMenu);
 		itemMenu.updateStateAfterMenuShown();
 		runeMenu.updateStateAfterMenuShown();
+		itemSettingsDialog.updateStateAfterMenuShown();
 	}
 	
 	@Override

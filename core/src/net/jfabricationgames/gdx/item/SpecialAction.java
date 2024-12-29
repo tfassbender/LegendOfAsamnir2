@@ -53,6 +53,16 @@ public enum SpecialAction implements ItemSpecialAction {
 		throw new IllegalStateException("No special action found.");
 	}
 	
+	public static Array<SpecialAction> asList() {
+		Array<SpecialAction> actions = new Array<>(values().length);
+		
+		for (SpecialAction action : values()) {
+			actions.add(action);
+		}
+		
+		return actions;
+	}
+	
 	public final int indexInMenu;
 	public final float manaCost;
 	public final float enduranceCost;
