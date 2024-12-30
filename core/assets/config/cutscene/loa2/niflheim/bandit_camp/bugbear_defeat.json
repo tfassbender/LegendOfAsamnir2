@@ -206,7 +206,7 @@
 		impa_3: {
             type: SHOW_ON_SCREEN_TEXT,
             
-            executionDelayInSeconds: 1.5f,
+            executionDelayInSeconds: 3f,
             
             executionParameters: {
                 displayTextHeader: "Impa",

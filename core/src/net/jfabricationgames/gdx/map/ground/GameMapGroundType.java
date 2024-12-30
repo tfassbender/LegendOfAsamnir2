@@ -10,8 +10,7 @@ public class GameMapGroundType {
 	
 	public static final GameMapGroundType DEFAULT_GROUND_PROPERTIES = new GameMapGroundType();
 	
-	public static GameMapGroundType handleGameMapGroundContact(Contact contact, PhysicsCollisionType targetCollisionType,
-			GameMapGroundType groundProperties) {
+	public static GameMapGroundType handleGameMapGroundContact(Contact contact, PhysicsCollisionType targetCollisionType, GameMapGroundType groundProperties) {
 		Fixture fixtureA = contact.getFixtureA();
 		Fixture fixtureB = contact.getFixtureB();
 		
@@ -36,9 +35,11 @@ public class GameMapGroundType {
 			groundProperties = new GameMapGroundType();
 		}
 		groundProperties.movementSpeedFactor = Math.min(groundProperties.movementSpeedFactor, collidingGroundType.movementSpeedFactor);
+		groundProperties.linearDamping = collidingGroundType.linearDamping;
 		
 		return groundProperties;
 	}
 	
 	public float movementSpeedFactor = 1f;
+	public float linearDamping = -1f;
 }

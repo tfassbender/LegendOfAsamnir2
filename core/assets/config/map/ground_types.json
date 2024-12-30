@@ -13,5 +13,10 @@
 	},
 	stones_on_water: {
 		movementSpeedFactor: 0.35,
-	}
+	},
+	ice: {
+	    // the initial movement cannot be changed on ice
+        movementSpeedFactor: 0,
+        linearDamping: 0,
+    },
 }

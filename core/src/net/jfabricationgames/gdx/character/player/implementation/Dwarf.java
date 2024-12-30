@@ -30,7 +30,6 @@ import net.jfabricationgames.gdx.item.Item;
 import net.jfabricationgames.gdx.item.ItemAmmoType;
 import net.jfabricationgames.gdx.item.ItemFactory;
 import net.jfabricationgames.gdx.item.SpecialAction;
-import net.jfabricationgames.gdx.map.ground.GameMapGroundType;
 import net.jfabricationgames.gdx.object.event.EventObject;
 import net.jfabricationgames.gdx.object.moveable.DraggableObject;
 import net.jfabricationgames.gdx.physics.BeforeWorldStep;
@@ -325,7 +324,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@BeforeWorldStep
 	public void resetGroundProperties() {
-		bodyHandler.groundProperties = GameMapGroundType.DEFAULT_GROUND_PROPERTIES;
+		bodyHandler.resetGroundProperties();
 	}
 	
 	@BeforePersistState

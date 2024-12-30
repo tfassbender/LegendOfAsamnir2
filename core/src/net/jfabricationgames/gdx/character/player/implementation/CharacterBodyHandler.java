@@ -22,6 +22,7 @@ class CharacterBodyHandler {
 	private static final float PHYSICS_BODY_SIZE_FACTOR_X = 0.6f;
 	private static final float PHYSICS_BODY_SIZE_FACTOR_Y = 0.7f;
 	private static final float PHYSICS_BODY_SENSOR_RADIUS = 0.6f;
+	private static final float PHYSICS_BODY_LINEAR_DAMPING = 10f;
 	
 	private Dwarf player;
 	
@@ -36,12 +37,28 @@ class CharacterBodyHandler {
 	}
 	
 	public void createPhysicsBody() {
-		PhysicsBodyProperties bodyProperties = new PhysicsBodyProperties().setType(BodyType.DynamicBody).setWidth(player.renderer.idleDwarfSprite.getRegionWidth() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_X).setHeight(player.renderer.idleDwarfSprite.getRegionHeight() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_Y).setCollisionType(PhysicsCollisionType.PLAYER).setLinearDamping(10f);
+		PhysicsBodyProperties bodyProperties = new PhysicsBodyProperties() //
+				.setType(BodyType.DynamicBody) //
+				.setWidth(player.renderer.idleDwarfSprite.getRegionWidth() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_X) //
+				.setHeight(player.renderer.idleDwarfSprite.getRegionHeight() * Constants.WORLD_TO_SCREEN * PHYSICS_BODY_SIZE_FACTOR_Y) //
+				.setCollisionType(PhysicsCollisionType.PLAYER) //
+				.setLinearDamping(PHYSICS_BODY_LINEAR_DAMPING);
 		body = PhysicsBodyCreator.createOctagonBody(bodyProperties);
 		body.setSleepingAllowed(false);
-		PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties().setBody(body).setSensor(true).setRadius(PHYSICS_BODY_SENSOR_RADIUS).setCollisionType(PhysicsCollisionType.PLAYER_SENSOR);
+		
+		PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties() //
+				.setBody(body) //
+				.setSensor(true) //
+				.setRadius(PHYSICS_BODY_SENSOR_RADIUS) //
+				.setCollisionType(PhysicsCollisionType.PLAYER_SENSOR);
 		PhysicsBodyCreator.addCircularFixture(sensorProperties);
+		
 		body.setUserData(player);
+	}
+	
+	public void resetGroundProperties() {
+		groundProperties = GameMapGroundType.DEFAULT_GROUND_PROPERTIES;
+		body.setLinearDamping(PHYSICS_BODY_LINEAR_DAMPING);
 	}
 	
 	public void move(float deltaX, float deltaY) {
@@ -73,6 +90,12 @@ class CharacterBodyHandler {
 		GameMapGroundType updatedGroundProperties = GameMapGroundType.handleGameMapGroundContact(contact, PhysicsCollisionType.PLAYER, groundProperties);
 		if (updatedGroundProperties != null) {
 			groundProperties = updatedGroundProperties;
+			if (groundProperties.linearDamping >= 0) {
+				body.setLinearDamping(groundProperties.linearDamping);
+			}
+			else {
+				body.setLinearDamping(PHYSICS_BODY_LINEAR_DAMPING);
+			}
 		}
 	}
 	
