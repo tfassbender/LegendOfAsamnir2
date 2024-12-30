@@ -62,8 +62,16 @@ class CharacterBodyHandler {
 	}
 	
 	public void move(float deltaX, float deltaY) {
-		float force = 10f * groundProperties.movementSpeedFactor * body.getMass();
+		float force = 10f * body.getMass();
+		if (!groundProperties.ignoreMovementSpeedFactorWhenStopped //
+				|| body.getLinearVelocity().len() > 1f) { // slow enough to consider the player as stopped
+			force *= groundProperties.movementSpeedFactor;
+		}
 		body.applyForceToCenter(deltaX * force, deltaY * force, true);
+	}
+	
+	public void stopMovement() {
+		body.setLinearVelocity(0, 0);
 	}
 	
 	public void beginContact(Contact contact) {

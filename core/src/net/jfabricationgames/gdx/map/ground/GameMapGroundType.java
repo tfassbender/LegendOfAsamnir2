@@ -36,10 +36,12 @@ public class GameMapGroundType {
 		}
 		groundProperties.movementSpeedFactor = Math.min(groundProperties.movementSpeedFactor, collidingGroundType.movementSpeedFactor);
 		groundProperties.linearDamping = collidingGroundType.linearDamping;
+		groundProperties.ignoreMovementSpeedFactorWhenStopped = collidingGroundType.ignoreMovementSpeedFactorWhenStopped;
 		
 		return groundProperties;
 	}
 	
 	public float movementSpeedFactor = 1f;
 	public float linearDamping = -1f;
+	public boolean ignoreMovementSpeedFactorWhenStopped = false;
 }

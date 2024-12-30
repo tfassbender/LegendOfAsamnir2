@@ -232,6 +232,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 						return true;
 					}
 					break;
+				case ICE_PICK:
+					bodyHandler.stopMovement();
+					break;
 				case FEATHER:
 					//do nothing here - the action will be executed in InteractiveAction.SHOW_OR_CHANGE_TEXT
 					break;
