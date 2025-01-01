@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Json;
 
 import net.jfabricationgames.gdx.attack.AttackHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
@@ -23,14 +24,59 @@ import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
  */
 public class ConfigObject extends GameObject implements EventListener {
 	
+	private static final String MAP_PROPERTY_KEY_ATTACK_ID = "attackId";
+	private static final String MAP_PROPERTY_KEY_ATTACK_DIRECTION = "attackDirection";
+	
+	private static final String MAP_PROPERTY_KEY_EVENT_DELAY_IN_SECONDS = "eventDelayInSeconds";
+	private static final String MAP_PROPERTY_KEY_EVENT_TO_FIRE = "eventToFire";
+	
 	private static final String CONFIG_FILE_ATTACKS = "config/objects/config_object_attacks.json";
 	
 	private AttackHandler attackHandler;
 	
+	private String attackName;
+	private Vector2 attackDirection;
+	
+	private EventConfig configuredEvent;
+	private float eventDelayInSeconds;
+	
+	private float fireEventTimer = 0; // fire the configured event (if any) after the delay has passed
+	
 	public ConfigObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties mapProperties, GameObjectMap gameMap) {
 		super(typeConfig, sprite, mapProperties, gameMap);
 		
+		parseMapProperties();
 		EventHandler.getInstance().registerEventListener(this);
+	}
+	
+	private void parseMapProperties() {
+		attackName = mapProperties.get(MAP_PROPERTY_KEY_ATTACK_ID, String.class);
+		attackDirection = getAttackDirection();
+		
+		configuredEvent = parseEventConfigFromMapProperties();
+		eventDelayInSeconds = Float.parseFloat(mapProperties.get(MAP_PROPERTY_KEY_EVENT_DELAY_IN_SECONDS, "0f", String.class));
+	}
+	
+	private EventConfig parseEventConfigFromMapProperties() {
+		String eventConfigJson = mapProperties.get(MAP_PROPERTY_KEY_EVENT_TO_FIRE, String.class);
+		if (eventConfigJson != null) {
+			return new Json().fromJson(EventConfig.class, eventConfigJson);
+		}
+		
+		return null;
+	}
+	
+	private Vector2 getAttackDirection() {
+		// parse the attack direction from the string of the form (x,y)
+		String attackDirectionString = mapProperties.get(MAP_PROPERTY_KEY_ATTACK_DIRECTION, String.class);
+		if (attackDirectionString == null || attackDirectionString.isEmpty()) {
+			return null;
+		}
+		
+		float attackDirectionX = Float.parseFloat(attackDirectionString.substring(1, attackDirectionString.indexOf(",")).trim());
+		float attackDirectionY = Float.parseFloat(attackDirectionString.substring(attackDirectionString.indexOf(",") + 1, attackDirectionString.length() - 1).trim());
+		
+		return new Vector2(attackDirectionX, attackDirectionY);
 	}
 	
 	@Override
@@ -50,25 +96,30 @@ public class ConfigObject extends GameObject implements EventListener {
 	public void draw(float delta, SpriteBatch batch) {
 		// only attacks need to be handled - the config object has no sprite
 		attackHandler.handleAttacks(delta);
+		
+		// fire delayed events (NOTE: only one timer per config event is supported - restarting before the event is fired will reset the timer)
+		if (fireEventTimer > 0) {
+			fireEventTimer -= delta;
+			if (fireEventTimer <= 0) {
+				EventHandler.getInstance().fireEvent(configuredEvent);
+				fireEventTimer = 0;
+			}
+		}
 	}
 	
 	@Override
 	public void handleEvent(EventConfig event) {
 		if (event.eventType == EventType.CUTSCENE_CREATE_ATTACK && event.stringValue != null && event.stringValue.equals(getUnitId())) {
-			String attackName = mapProperties.get("attackId", String.class);
-			Vector2 attackDirection = getAttackDirection();
-			
 			attackHandler.startAttack(attackName, attackDirection);
 		}
-	}
-	
-	private Vector2 getAttackDirection() {
-		// parse the attack direction from the string of the form (x,y)
-		String attackDirectionString = mapProperties.get("attackDirection", String.class);
-		float attackDirectionX = Float.parseFloat(attackDirectionString.substring(1, attackDirectionString.indexOf(",")).trim());
-		float attackDirectionY = Float.parseFloat(attackDirectionString.substring(attackDirectionString.indexOf(",") + 1, attackDirectionString.length() - 1).trim());
-		
-		return new Vector2(attackDirectionX, attackDirectionY);
+		else if (event.eventType == EventType.CONFIG_GAME_OBJECT_ACTION && event.stringValue != null && event.stringValue.equals(getUnitId())) {
+			if (eventDelayInSeconds <= 0) {
+				EventHandler.getInstance().fireEvent(configuredEvent);
+			}
+			else {
+				fireEventTimer = eventDelayInSeconds; // set the delay timer to fire the event after the delay has passed
+			}
+		}
 	}
 	
 	@Override

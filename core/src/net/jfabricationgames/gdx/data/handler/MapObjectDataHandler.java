@@ -114,7 +114,12 @@ public class MapObjectDataHandler {
 			Object value = field.get(mapObject);
 			field.setAccessible(accessible);
 			
-			state.put(field.getName(), json.prettyPrint(value));
+			try {
+				state.put(field.getName(), json.prettyPrint(value));
+			}
+			catch (Exception e) {
+				Gdx.app.error(getClass().getSimpleName(), "Error during serialization of field: " + field.getName(), e);
+			}
 		}
 		
 		MapObjectStateProperties stateProperties = new MapObjectStateProperties();

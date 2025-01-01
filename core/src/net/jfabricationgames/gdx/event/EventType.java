@@ -57,6 +57,7 @@ public enum EventType {
 	DISTRIBUTED_SPAWN, //
 	ACTIVATE_MOVING_OBJECT, //
 	DISSOLVE_DRAGGABLE_OBJECT_JOINTS, //
+	CONFIG_GAME_OBJECT_ACTION, //
 	//*******************************
 	//*** Items
 	//*******************************

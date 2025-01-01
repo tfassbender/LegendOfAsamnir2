@@ -665,6 +665,10 @@ A state switch object is a special kind of [Interactive Object](#interactive-obj
 
 If they are configured with an `eventParameter` in the map parameters, two events will be fired, when the state changes. One event will have the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) `STATE_SWITCH_ACTION`. The other depends on whether the switch is activated or deactivated. If the state switch object's state changed from deactivated to activated, the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) of the fired event will be `STATE_SWITCH_ACTIVATED`. Otherwise the [EventType](core/src/net/jfabricationgames/gdx/event/EventType.java) of the fired event will be `STATE_SWITCH_DEACTIVATED`. In any case, the `stringValue` of the fired event will be the one from the map property `eventParameter`.
 
+### Animation objects
+
+Animation objects are objects that only play an animation in a given place (e.g. an explosion to open a door). When created they directly execute the interaction to display the configured animation and are removed afterwards. An example can be found in the level "Niflheim - Bandit Camp", where an animation object is spawned in front of the central gate to show an explosion animation.
+
 ### Spawn Points
 
 Spawn points are special Game Objects, that can be used to spawn new Items, Game Objects or Enemies. They can be added to the map, just like all other Game Objects. These objects use an Event Handling Service, that informs them on every fired event. If the event triggers a spawn, a new object is spawned on the map. The events and spawns can be configured in the json files [events.json](core/assets/config/events/events.json) and [spawnConfigs.json](core/assets/config/spawn/spawnConfigs.json). An example of a spawn config file is the file [demo.json](core/assets/config/spawn/maps/demo.json). The Spawn Points, that are added in the tiled map, have to use a map property 'spawn', that references a spawn config from the a spawn config file that is referenced by the [spawnConfigs.json](core/assets/config/spawn/spawnConfigs.json) file by name. This spawn config defines, what is to be spawned and when it is spawned.
@@ -735,6 +739,18 @@ This configuration uses the state of three switches in a condition that is used 
 ### Movable Objects
 
 Movable objects can be added to the game world and can be moved by the player (by running against them). These objects are mainly used to block pathes or activate pressure switches (see [State Switch Objects](#state-switch-objects)). 
+
+### Draggable objects
+
+Draggable objects are movable objects that can also be dragged by the player (using the **rope** special action item). This special kind of object uses Box2D joints to connect an object to the player. If the density of such an object is very high, it won't move, but can make the player change the direction when attached to it.
+
+### Config objects
+
+Config objects are only for configuration and don't have any other effect. Usecases of these config objects include:
+- Mark a target position for a unit in a cutscene
+- Mark a target area on the map (which can be checked with the OBJECT_IN_POSITION condition)
+- Create an attack (which is mostly helpfull in cutscenes)
+- Fire events (that are configurable in the map properties) after a delay (also configurable in the map properties)
 
 ## Maps
 

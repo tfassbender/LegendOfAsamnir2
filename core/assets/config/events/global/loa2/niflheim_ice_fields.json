@@ -27,6 +27,17 @@
 		}
 	},
 	
+	loa2_l2_niflheim_ice_fields__pressure_switch_target__ice_rock_pressure_switch_puzzle__activated: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l2_niflheim_ice_fields__pressure_switch_target__ice_rock_pressure_switch_puzzle,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l2_niflheim_ice_fields__key_wall__ice_rock_pressure_switch_puzzle
+        }
+	},
+	
 	loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle__activate: {
         event: {
             eventType: STATE_SWITCH_ACTIVATED,
@@ -37,5 +48,39 @@
             eventType: ACTIVATE_MOVING_OBJECT,
             stringValue: loa2_l2_niflheim_ice_fields__push_fist__ice_rope_puzzle,
 		}
+	},
+	
+	loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle__open_gate: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l2_niflheim_ice_fields__key_wall__ice_rope_puzzle
+        }
+	},
+	
+	loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle__activate_close_gate_delay: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l2_niflheim_ice_fields__config_object__close_key_wall_after_delay,
+		}
+	},
+	
+	loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle__close_gate_after_delay: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l2_niflheim_ice_fields__key_wall__ice_rope_puzzle__close_gate_after_delay,
+		},
+        executionType: CLOSE_LOCK,
+        executionParameters: {
+            lockId: loa2_l2_niflheim_ice_fields__key_wall__ice_rope_puzzle
+        }
 	},
 }

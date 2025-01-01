@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2110">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="81" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2113">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -137,6 +137,33 @@
    <point/>
   </object>
   <object id="2109" name="object.movable_rock_on_ice" x="1654.67" y="966">
+   <point/>
+  </object>
+  <object id="2110" name="object.key_wall" x="1504" y="864">
+   <properties>
+    <property name="lockId" value="loa2_l2_niflheim_ice_fields__key_wall__ice_rock_pressure_switch_puzzle"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2111" name="object.key_wall" x="384" y="96">
+   <properties>
+    <property name="lockId" value="loa2_l2_niflheim_ice_fields__key_wall__ice_rope_puzzle"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2112" name="object.configObject" x="384" y="32">
+   <properties>
+    <property name="eventDelayInSeconds" value="8"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l2_niflheim_ice_fields__key_wall__ice_rope_puzzle__close_gate_after_delay,
+}</property>
+    <property name="unitId" value="loa2_l2_niflheim_ice_fields__config_object__close_key_wall_after_delay"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
