@@ -63,6 +63,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final String SOUND_REFLECT_PROJECTILE = "reflect_projectile";
 	private static final String SOUND_SELL_OR_BUY_ITEM = "sell_buy_item";
 	private static final String SOUND_ROPE = "rope";
+	private static final String SOUND_ICE_PICK = "ice_pick";
 	private static final String ATTACK_NAME_WAIT = "wait";
 	private static final String ATTACK_NAME_REFLECT_MAGIC_WAVE = "reflected_magic_wave";
 	private static final String RUNE_HAGALAZ_ANIMATION_NAME = "rune_hagalaz";
@@ -229,12 +230,14 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					if (draggableObject != null) {
 						soundHandler.playSound(SOUND_ROPE);
 						draggableObject.toggleDrag(bodyHandler.body);
+						movementHandler.setActionCooldownInPercent(50f); // the rope needs a faster cooldown to be used to change directions on ice
 						return true;
 					}
 					break;
 				case ICE_PICK:
+					soundHandler.playSound(SOUND_ICE_PICK);
 					bodyHandler.stopMovement();
-					break;
+					return true;
 				case FEATHER:
 					//do nothing here - the action will be executed in InteractiveAction.SHOW_OR_CHANGE_TEXT
 					break;

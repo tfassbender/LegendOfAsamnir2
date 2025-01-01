@@ -1,0 +1,41 @@
+{
+	//*******************************************
+	//*** switches
+	//*******************************************
+	
+	loa2_l2_niflheim_ice_fields__pressure_switch_starter__ice_rock_pressure_switch_puzzle__activate_left: {
+		event: {
+			eventType: STATE_SWITCH_ACTIVATED,
+			stringValue: loa2_l2_niflheim_ice_fields__pressure_switch_starter__ice_rock_pressure_switch_puzzle,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: ACTIVATE_MOVING_OBJECT,
+            stringValue: loa2_l2_niflheim_ice_fields__left_push_fist__ice_rock_pressure_switch_puzzle,
+		}
+	},
+	
+	loa2_l2_niflheim_ice_fields__pressure_switch_starter__ice_rock_pressure_switch_puzzle__activate_right: {
+		event: {
+			eventType: STATE_SWITCH_ACTIVATED,
+			stringValue: loa2_l2_niflheim_ice_fields__pressure_switch_starter__ice_rock_pressure_switch_puzzle,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: ACTIVATE_MOVING_OBJECT,
+            stringValue: loa2_l2_niflheim_ice_fields__right_push_fist__ice_rock_pressure_switch_puzzle,
+		}
+	},
+	
+	loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle__activate: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: ACTIVATE_MOVING_OBJECT,
+            stringValue: loa2_l2_niflheim_ice_fields__push_fist__ice_rope_puzzle,
+		}
+	},
+}

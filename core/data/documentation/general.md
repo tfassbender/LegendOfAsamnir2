@@ -125,14 +125,21 @@
 		- The final part of the level (which is reachable without going through the bandit camp, but one cannot succeed there without the ice-pick)
 			- Include some puzzles
 				- At the beginning, a frozen lake has to be crossed, where thorin needs to use the ice-pick (to let the player know that he cannot succeed the level without the item)
-				- (?) A puzzle where Thorin has to move through some iglus, where it's not directly clear which entry leads to which exit
+				- Also a puzzle where the rope has to be used in combination with ice fields could be made (where thorin can change the direction with the rope)
 				- Use pressure switches to move a movable object on a frozen lake, to open a gate
 					- The frozen lake cannot be entered by the player, but the switches must be used
 					- The movable object doesn't stop while moving on the ice (like Thorin without the ice-pick)
 					- Could use the boomerang, the Dwarven Guardian Construct fists from level 1 or a magic switch (the magic switch can be activated to not block the way)
 					- The movable object could be moved in a direction if no force is applied (like a pinball, where the dwarven guardian construct's fist is the starter)
+		- Enemies:
+			- Ice Elementals and Yetis as normal enemies
+			- Wolf can be used as only countering enemy (like the gargoyle)
+			- Frost Giant is the boss enemy:
+				- Target is to make him throw his axe so he can be attacked without dealing much damage
+				- Could be fought on an ice field, which makes it much more difficult to reach him
 - Textures:
     - Final part (maybe use ice tileset here):
+		- Penguin
         - Ice Elemental (small)
 	    - Frost Giant
 		- Yeti

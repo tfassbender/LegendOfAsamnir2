@@ -15,6 +15,9 @@ public class GameObjectTypeConfig {
 	public String animationHit;
 	public String hitSound;
 	
+	public boolean flipTextureX = false;
+	public boolean flipTextureY = false;
+	
 	public float textureSizeFactorX = 1f;
 	public float textureSizeFactorY = 1f;
 	
@@ -81,6 +84,7 @@ public class GameObjectTypeConfig {
 	public boolean pressureActivated = false;
 	public boolean magicActivated = false;
 	public boolean canBeDeactivated = true;
+	public boolean activateByAttack = false;
 	
 	//****************************************
 	//*** Moving Objects

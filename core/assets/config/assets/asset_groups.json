@@ -129,6 +129,15 @@
 				"textureMagFilter": "Nearest"
 			}
 		},
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_l2_niflheim_ice_fields.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
 		
 		// fields of vigrid
 		{

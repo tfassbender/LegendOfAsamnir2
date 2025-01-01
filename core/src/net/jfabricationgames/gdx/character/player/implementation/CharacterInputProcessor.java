@@ -168,7 +168,7 @@ class CharacterInputProcessor implements InputActionListener {
 			if (!characterActionSet && special) {
 				if (player.action.isInterruptable() && !isActionInCooldown()) {
 					characterActionSet = player.executeSpecialAction();
-					if (characterActionSet) {
+					if (characterActionSet && actionCooldown >= ACTION_COOLDOWN) { // only set the cooldown if the action didn't do it itself
 						actionCooldown = 0;
 					}
 				}
@@ -356,6 +356,10 @@ class CharacterInputProcessor implements InputActionListener {
 	
 	public float getActionCooldownTimerInPercent() {
 		return Math.min(1f, actionCooldown / ACTION_COOLDOWN);
+	}
+	
+	public void setActionCooldownInPercent(float cooldownPercent) {
+		actionCooldown = ACTION_COOLDOWN * cooldownPercent / 100f;
 	}
 	
 	public void move(float delta) {

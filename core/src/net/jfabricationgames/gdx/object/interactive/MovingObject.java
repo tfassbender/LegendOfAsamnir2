@@ -21,14 +21,21 @@ import net.jfabricationgames.gdx.physics.PhysicsWorld;
 public class MovingObject extends InteractiveObject implements EventListener {
 	
 	private static final String MAP_PROPERTY_KEY_MOVING_OBJECT_ID = "movingObjectId";
+	private static final String MAP_PROPERTY_KEY_PUSH_FORCE_FACTOR = "pushForceFactor";
 	
 	private Body movingBody;
 	private float movingBodyTimer = 0f;
+	private float pushForceFactor = 1f;
 	
 	public MovingObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties properties, GameObjectMap gameMap) {
 		super(typeConfig, sprite, properties, gameMap);
 		
+		readMapProperties(properties);
 		EventHandler.getInstance().registerEventListener(this);
+	}
+	
+	private void readMapProperties(MapProperties properties) {
+		pushForceFactor = Float.parseFloat(properties.get(MAP_PROPERTY_KEY_PUSH_FORCE_FACTOR, "1f", String.class));
 	}
 	
 	@Override
@@ -72,7 +79,7 @@ public class MovingObject extends InteractiveObject implements EventListener {
 		movingBody = PhysicsBodyCreator.createCircularBody(properties);
 		
 		// apply a force to move the object once because it has no linear damping and the density is very high
-		movingBody.applyForceToCenter(movingVector.scl(typeConfig.movingPartPushForce), true);
+		movingBody.applyForceToCenter(movingVector.scl(typeConfig.movingPartPushForce * pushForceFactor), true);
 	}
 	
 	@Override

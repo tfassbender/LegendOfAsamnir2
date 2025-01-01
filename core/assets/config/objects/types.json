@@ -306,6 +306,25 @@
 		isSensor: true,
 		pressureActivated: true,
 	},
+	attack_pressure_switch: {
+		type: STATE_SWITCH,
+		
+		texture: button_wall_up,
+		textureAfterAction: button_wall_down,
+		interactionSound: switch_activated,
+		
+		physicsBodySizeFactorX: 0.6f,
+		physicsBodySizeFactorY: 0.6f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0f,
+		
+		interactionMarkerOffsetX: 0.15f,
+		interactionMarkerOffsetY: 0.1f,
+		
+		addSensor: false, // activated by a player attack
+		pressureActivated: true,
+		activateByAttack: true,
+	},
 	bottom_switch: {
 		type: STATE_SWITCH,
 		
@@ -347,6 +366,17 @@
 		
 		bodyType: DynamicBody,
 		linearDamping: 5f,
+		collisionType: MAP_OBJECT,
+		
+		texture: stone,
+		
+		density: 5f,
+	},
+	movable_rock_on_ice: {
+		type: MOVABLE,
+		
+		bodyType: DynamicBody,
+		linearDamping: 0f, // no linear damping on ice
 		collisionType: MAP_OBJECT,
 		
 		texture: stone,
@@ -411,6 +441,27 @@
         physicsBodySizeFactorX: 0.3f,
         physicsBodySizeFactorY: 1f,
         physicsBodyOffsetFactorX: -0.35f,
+        physicsBodyOffsetFactorY: 0f,
+	},
+	
+	push_fist_left: {
+        type: MOVING,
+        
+        texture: push_fist,
+		animationAction: push_fist_attack,
+		flipTextureX: true,
+		flipTextureY: false,
+        
+        density: 100000f,
+        multipleActionExecutionsPossible: true,
+        movingPartRadius: 0.2f,
+        movingPartPushForce: 3000000f,
+        movingPartLifetimeInSeconds: 0.3f,
+        movingPartDirectionInDegree: 180f,
+        
+        physicsBodySizeFactorX: 0.3f,
+        physicsBodySizeFactorY: 1f,
+        physicsBodyOffsetFactorX: 0.35f,
         physicsBodyOffsetFactorY: 0f,
 	},
 	
@@ -492,6 +543,26 @@
 		texture: empty,
 		animationAction: mine_explosion,
 		changeBodyToSensorAfterAction: true,
+	},
+	
+	iced_rock: {
+		type: DRAGGABLE,
+		
+		physicsBodySizeFactorX: 0.9f,
+		physicsBodySizeFactorY: 0.9f,
+		
+		addSensor: true,
+		sensorRadius: 3f,
+		
+		bodyType: DynamicBody,
+		linearDamping: 100f,
+		collisionType: MAP_OBJECT,
+		
+		texture: iced_rock,
+		
+		density: 10000f, // very high density to prevent moving it - it's only for the player to attach a rope to change direction
+		
+		maxDistanceToPlayer: 2.5f,
 	},
 	
 	//**********************************

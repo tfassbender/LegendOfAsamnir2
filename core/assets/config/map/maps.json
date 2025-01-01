@@ -71,7 +71,7 @@
         map: "map/loa2_l2_niflheim_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l2_niflheim.json,
         initialStartingPointId: 10,
-		initial: true
+		//initial: true
 	},
 	{
         name: loa2_niflheim_bandit_camp,
@@ -79,6 +79,13 @@
 		debugStartConfig: config/debug/start_config/loa2/l2_niflheim.json,
         initialStartingPointId: 0,
 		//initial: true
+	},
+	{
+        name: loa2_niflheim_ice_fields,
+        map: "map/loa2_l2_niflheim_ice_fields.tmx",
+		debugStartConfig: config/debug/start_config/loa2/l2_niflheim_ice_fields.json,
+        initialStartingPointId: 12,
+		initial: true
 	},
 	
 	// loa2 - fields of vigrid

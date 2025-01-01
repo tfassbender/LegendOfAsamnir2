@@ -115,6 +115,11 @@ public class CutsceneHandler implements EventListener {
 	}
 	
 	private void playCutscene(CutsceneConfig cutscene) {
+		if (!isGameInitialized()) {
+			Gdx.app.debug(getClass().getSimpleName(), "The game is not fully initialized yet, therefore the cutscene can't be played yet. This can be caused by a debug configuration and is usually not a problem.");
+			return;
+		}
+		
 		Gdx.app.debug(getClass().getSimpleName(), "playing cutscene: " + cutscene.id);
 		if (isCutsceneActive()) {
 			Gdx.app.error(getClass().getSimpleName(), "A cutscene is already in action. Can't start a second cutscene.");
@@ -140,6 +145,10 @@ public class CutsceneHandler implements EventListener {
 		}
 		
 		addExecutedAction(initialAction.value, initialAction.key);
+	}
+	
+	private boolean isGameInitialized() {
+		return unitProvider != null && isTextDisplayed != null;
 	}
 	
 	private void stopPlayerAction() {

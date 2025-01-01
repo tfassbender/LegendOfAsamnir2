@@ -1,0 +1,37 @@
+{
+	startingPointMapping: {
+		10: add_items,
+		11: add_items,
+		12: add_items,
+	},
+	eventsLists: {
+		initial: {
+			subConfigPath: config/debug/start_config/loa2/l2_niflheim.json
+			subConfigName: final,
+			events: []
+		},
+		
+		add_items: {
+            subConfigName: initial,
+            events: [
+            	{
+					eventType: COLLECT_RUNE,
+					stringValue: othala,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: rope,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: ice_pick,
+				},
+            ]
+		},
+		
+		final: {
+			subConfigName: initial,
+			events: []
+		}
+	}
+}

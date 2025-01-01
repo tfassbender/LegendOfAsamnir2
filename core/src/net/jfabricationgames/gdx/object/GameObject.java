@@ -94,6 +94,8 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		mapConfiguredBodySizeFactor = new Vector2(mapConfiguredBodySizeFactorX, mapConfiguredBodySizeFactorY);
 		
 		hitSound = typeConfig.hitSound;
+		
+		sprite.flip(typeConfig.flipTextureX, typeConfig.flipTextureY);
 	}
 	
 	public void setItemDropUtil(GameObjectItemDropUtil itemDropUtil) {
@@ -203,12 +205,14 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	}
 	
 	protected AnimationDirector<TextureRegion> getActionAnimation() {
-		return getAnimation(typeConfig.animationAction);
+		AnimationDirector<TextureRegion> actionAnimation = getAnimation(typeConfig.animationAction);
+		actionAnimation.flip(typeConfig.flipTextureX, typeConfig.flipTextureY);
+		return actionAnimation;
 	}
 	
 	protected AnimationDirector<TextureRegion> getAnimation(String animationName) {
 		if (animationName != null) {
-			AnimationDirector<TextureRegion> animation = animationManager.getTextureAnimationDirector(animationName);
+			AnimationDirector<TextureRegion> animation = animationManager.getTextureAnimationDirectorCopy(animationName);
 			animation.setSpriteConfig(AnimationSpriteConfig.fromSprite(sprite));
 			return animation;
 		}

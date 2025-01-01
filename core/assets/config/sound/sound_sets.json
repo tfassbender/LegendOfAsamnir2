@@ -55,6 +55,10 @@
 				rope: {
 					path: "sound/item/rope.mp3",
 				},
+				ice_pick: {
+					path: "sound/item/ice_pick.mp3",
+					volume: 0.5,
+			    },
 			}
 		},
 		common: {
