@@ -562,7 +562,7 @@
 		
 		density: 10000f, // very high density to prevent moving it - it's only for the player to attach a rope to change direction
 		
-		maxDistanceToPlayer: 2.5f,
+		maxDistanceToPlayer: 2.9f,
 	},
 	
 	//**********************************

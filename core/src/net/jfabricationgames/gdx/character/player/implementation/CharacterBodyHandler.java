@@ -64,7 +64,7 @@ class CharacterBodyHandler {
 	public void move(float deltaX, float deltaY) {
 		float force = 10f * body.getMass();
 		if (!groundProperties.ignoreMovementSpeedFactorWhenStopped //
-				|| body.getLinearVelocity().len() > 1f) { // slow enough to consider the player as stopped
+				|| body.getLinearVelocity().len() > 1.5f) { // slow enough to consider the player as stopped
 			force *= groundProperties.movementSpeedFactor;
 		}
 		body.applyForceToCenter(deltaX * force, deltaY * force, true);
