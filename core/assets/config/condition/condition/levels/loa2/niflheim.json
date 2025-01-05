@@ -192,6 +192,46 @@
 		}
 	},
 	
+	loa2_l2_ice_fields___all_pressure_switches_activated: {
+        conditionType: AND,
+        conditionalParameters: {
+            condition: {
+                conditionType: AND,
+                conditionalParameters: {
+                    condition: {
+                        conditionType: STATE_SWITCH_ACTIVE,
+                        parameters: {
+                            stateSwitchId: loa2_l2_niflheim_ice_fields__pressure_switch_1__ice_pressure_switches_puzzle,
+						}
+					},
+                    condition2: {
+                        conditionType: STATE_SWITCH_ACTIVE,
+                        parameters: {
+                            stateSwitchId: loa2_l2_niflheim_ice_fields__pressure_switch_2__ice_pressure_switches_puzzle,
+						}
+					}
+				}
+			},
+            condition2: {
+                conditionType: AND,
+                conditionalParameters: {
+                    condition: {
+                        conditionType: STATE_SWITCH_ACTIVE,
+                        parameters: {
+                            stateSwitchId: loa2_l2_niflheim_ice_fields__pressure_switch_3__ice_pressure_switches_puzzle,
+                        }
+                    },
+                    condition2: {
+                        conditionType: STATE_SWITCH_ACTIVE,
+                        parameters: {
+                            stateSwitchId: loa2_l2_niflheim_ice_fields__pressure_switch_4__ice_pressure_switches_puzzle,
+						}
+					}
+				}
+			}
+		}
+	},
+	
 	//**************************************************
 	//*** AI (for the chickens to follow the player)
 	//**************************************************

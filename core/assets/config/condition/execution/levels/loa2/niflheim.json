@@ -24,4 +24,20 @@
             }
         }
     },
+    
+    loa2_l2_ice_fields__open_lock_if_all_pressure_switches_activated: {
+        conditionId: loa2_l2_ice_fields___all_pressure_switches_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l2_niflheim_ice_fields__key_wall__ice_pressure_switches_puzzle
+                }
+            }
+        }
+        elseCase: {
+            type: NO_EXECUTION,
+		}
+    },
 }

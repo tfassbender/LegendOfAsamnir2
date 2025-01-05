@@ -196,6 +196,9 @@
 					path: "sound/object/switch_activated.wav",
 					volume: 0.3,
 				},
+				clock_ticking: {
+					path: "sound/object/clock_ticking.mp3",
+				},
 			}
 		},
 		enemy: {

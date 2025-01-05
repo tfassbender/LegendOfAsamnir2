@@ -6,6 +6,7 @@ public class SoundPlayConfig {
 	
 	public float delay;
 	public float volume;
+	public boolean looping = false;
 	
 	public SoundPlayConfig() {
 		delay = DEFAULT_SETTING;
@@ -19,6 +20,11 @@ public class SoundPlayConfig {
 	
 	public SoundPlayConfig setVolume(float volume) {
 		this.volume = volume;
+		return this;
+	}
+	
+	public SoundPlayConfig setLooping(boolean looping) {
+		this.looping = looping;
 		return this;
 	}
 }

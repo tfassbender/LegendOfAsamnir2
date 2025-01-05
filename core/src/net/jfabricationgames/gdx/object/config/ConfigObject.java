@@ -17,6 +17,8 @@ import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
+import net.jfabricationgames.gdx.sound.SoundHandler;
+import net.jfabricationgames.gdx.sound.SoundPlayConfig;
 
 /**
  * An object that is used in as configuration point (usually to define positions for characters in a cutscene or for conditions).
@@ -29,6 +31,7 @@ public class ConfigObject extends GameObject implements EventListener {
 	
 	private static final String MAP_PROPERTY_KEY_EVENT_DELAY_IN_SECONDS = "eventDelayInSeconds";
 	private static final String MAP_PROPERTY_KEY_EVENT_TO_FIRE = "eventToFire";
+	private static final String MAP_PROPERTY_KEY_PLAY_CLOCK_TICKING_SOUND_FOR_DELAY = "playClockTickingSoundForDelay";
 	
 	private static final String CONFIG_FILE_ATTACKS = "config/objects/config_object_attacks.json";
 	
@@ -39,8 +42,10 @@ public class ConfigObject extends GameObject implements EventListener {
 	
 	private EventConfig configuredEvent;
 	private float eventDelayInSeconds;
+	private boolean playClockTickingSoundForDelay;
 	
 	private float fireEventTimer = 0; // fire the configured event (if any) after the delay has passed
+	private SoundHandler clockTickingSoundHandler;
 	
 	public ConfigObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties mapProperties, GameObjectMap gameMap) {
 		super(typeConfig, sprite, mapProperties, gameMap);
@@ -55,6 +60,7 @@ public class ConfigObject extends GameObject implements EventListener {
 		
 		configuredEvent = parseEventConfigFromMapProperties();
 		eventDelayInSeconds = Float.parseFloat(mapProperties.get(MAP_PROPERTY_KEY_EVENT_DELAY_IN_SECONDS, "0f", String.class));
+		playClockTickingSoundForDelay = Boolean.parseBoolean(mapProperties.get(MAP_PROPERTY_KEY_PLAY_CLOCK_TICKING_SOUND_FOR_DELAY, "false", String.class));
 	}
 	
 	private EventConfig parseEventConfigFromMapProperties() {
@@ -102,7 +108,11 @@ public class ConfigObject extends GameObject implements EventListener {
 			fireEventTimer -= delta;
 			if (fireEventTimer <= 0) {
 				EventHandler.getInstance().fireEvent(configuredEvent);
+				
 				fireEventTimer = 0;
+				if (clockTickingSoundHandler != null) {
+					clockTickingSoundHandler.stop();
+				}
 			}
 		}
 	}
@@ -118,6 +128,9 @@ public class ConfigObject extends GameObject implements EventListener {
 			}
 			else {
 				fireEventTimer = eventDelayInSeconds; // set the delay timer to fire the event after the delay has passed
+				if (playClockTickingSoundForDelay) {
+					clockTickingSoundHandler = soundSet.playSound("clock_ticking", new SoundPlayConfig().setLooping(true).setVolume(0.3f));
+				}
 			}
 		}
 	}

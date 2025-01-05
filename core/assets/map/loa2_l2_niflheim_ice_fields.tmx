@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="100" height="62" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2171">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2231">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -25,121 +25,121 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="100" height="62" locked="1">
+ <layer id="1" name="background" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztnItNAzEMhtnhxmADilgBugMwCLADsAOwA7ADdBx6QhHG8iV24rxt6ZfgLvXZ/pI4bRFPy8nJk8lk6kavAtWO1WQymZyuAqod32wyHm1pNar+xqMeD+rnWXiE9geujMc8PGbqH8ajLRmPttQSD8jCeMzJg7JReUhzbIUHFUcpXiXWBycHakwrPKS5tM4D563BI+eeOiIPn3FzpHiU6HM1ecQwkqwF41FfEh4t5jcijxxjW1Bv8UpiHjm3lhRa71t9pBVJ9tse1GPMWzx813pRjzFzeNSOa1YeVB4959Rz7MajXXF49NBTWo9Pi0cv564csYUsl3+cU4zV5vFWmAU375Raxt5f7bEyj1Upn3fn4LFlZ8d7O6BzNDb0epcbZbtlXB4pY3x2KYwt5jPlGjw0vw+i6ol9nTN4YNPK80agWXhg+fYWzjPwvuX2Lo3ajM5jy1JYUPHuI2OFdt8gh1I8thjB+Q/nvLsGfcO95jai/qXXQQ88fPMfzvlLFJ+v/hTPGsI54nxzs9DgAesOa369/K0Dro/9Qtclta4pfmrzkPrGtfTls1UvzE5jjmvwwOqBB6yldH6G1k0sh5F4aMSdoxaluKbw0MpF22eq7pbfs6zTA5OD8cgj/B7vmcGjRFy98kidtxo8Lk7H4JH6nJBxfLws//+vCvc7hpUBlDaPEmqRx/tRH0CfESyMB+9Z+Jrr3bBnfx31DXSYjAdlMTxC85+673rFVo/gahQeMXXV4OHWhftdygM/y3ik8cBnKOnfBRgPXb/wDLWy4PRs6Md46PqFZ6iVxUGZhfGQ+YVnKA4L37nZeJThl8JiZh6lWFD3jUddFr76G492WYzAI7Q3xLKL6UfSXjECD59R46n3CJo8fDFIWfTGI2TUaw4ZeWizWPUDx+057A==
+   eJztnItNAzEMhrvDjcEGtGKF0h2AQYAdKDsAOwA7QMehJxRhLCdxEudtS78Ed6nP9pfEaYs4LpvNUaVSqVQqlUo1tF4DVDtWlUqlMrr2qHZ8s0l5tKXVqPorj3o8qJ9n4eHbH7hSHvPwmKl/KI+2pDzaUks8IAvlMScPykblEZpjKzyoOErxKrE+ODlQY1rhEZpL6zxw3hI8cu6pI/KwzTlX3Tk8SvS5mjxiGIWsBc5eoDzyKoRHi/mNyCPH2BbUW7whMY+cW0vyrXdbH2lFIfttD+oxZhsP17Ve1GPMHB6145qVB5VHzzn1HLvyaFccHj30lNbjk+LRy7krR2w+y+Uf5xRjtXm8FWbBzTullrH3V3uqzGNVyufdOXjY7PJ8bwu0Q2N9rze5UbZdxuWRMsZl+8DYYj5TrsFD8vsgqp7Y147BA5tUnrcBmoUHlmtv4TwD71tm75Kozeg8bJbCgor3EBkrtIcGOZTiYWME5z+c8+Ya9A33mruI+pdeBz3wcM1/OOf3KD5X/SmeNYRzxPnmZiHBA9Yd1vxm+VsHXB+Hha5Lal1T/NTmEeob19KVj61emJ3EHJfggdUDD1jL0PnpWzexHEbiIRF3jlqU4prCQyoXaZ+pul9+z7JGj0wOyiOP8Hu8ZwaPEnH1yiN13krwuLoYg0fqc3zG8fGy/P+/KtzvGFYGUNI8SqhFHu9nfQB9RrBQHrxn4Wumd8Oe/XXWN9BpMh6UxfDwzX/qvukVth7B1Sg8YuoqwcOsC/N7KA/8LOWRxgOfoUL/LkB5yPqFZ6iVBadnQz/KQ9YvPEOtLE7CLJRHmF94huKwcJ2blUcZfiksZuZRigV1X3nUZeGqv/Jol8UIPHx7Qyy7mH4U2itG4OEyajz1HkGShyuGUBa98fAZ9ZpTRh7SLFb9AEDxRdY=
   </data>
  </layer>
- <layer id="2" name="background_2" width="100" height="62">
+ <layer id="2" name="background_2" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
- <layer id="5" name="terrain" width="100" height="62" locked="1">
+ <layer id="5" name="terrain" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2LENQFAUhlE7WMECYgVDYCJhEWFJCpUorkQ84Zzk7173VfdlGQAAAAAAAAAAAAAAAAB/NBXXBwAA8DWjW+dV+kCPwZ36mEiPyBvuoce7zIG/tEUPAur8fKRx1qLUI5nq0KHd1umRTLM30AEAAABYASSoIG0=
+   eJzt2c9JA0EUwOHpIWlAyGHB9SA2YESIDfgXrcImJIIXU0TQq51Yig34QpKL7GGE6BvI98GDPexh4AczzG4pAPD3Fl0pn132Klh57Ev5iBZf3fqZXK/98DMAsL8Ox6X0MUfj7JWwchodpjFnejThMjpcxVzrkcL+1Bb7U1vsT1DHWdKW7Vkyi7nQJN32LLmPedADoNrLQfYKAAAAAABgfy0nvx/a4T8LAADsxrO7TlOeKnrM3VP/TU2PmnfYDT3a8lbxLe1dDyqcj4aHHEMtjvVIc/Kjw23MnR5pbjYNdAAAAAC+Aa3LMgM=
   </data>
  </layer>
- <layer id="16" name="terrain_2" width="100" height="62" locked="1">
+ <layer id="16" name="terrain_2" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U9/gBFUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8A2DgAAE=
+   eJzt1DENACAMRNGKqCNM4F9JN8LQzjC8p+CSS34EAAAAADBZ+XoBt+0POPTpL/oEAAAAAAAAAAAAAAAAAAAAAAAA0Ctd5QGH
   </data>
  </layer>
- <layer id="13" name="terrain_3" width="100" height="62" locked="1">
+ <layer id="13" name="terrain_3" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U9/gBFUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8A2DgAAE=
+   eJztwTEBAAAAwqD1T20JT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4G9nIAAB
   </data>
  </layer>
- <layer id="10" name="background_above_player" width="100" height="62" locked="1">
+ <layer id="10" name="background_above_player" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U9/gBFUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8A2DgAAE=
+   eJztwTEBAAAAwqD1T20JT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4G9nIAAB
   </data>
  </layer>
- <layer id="14" name="background_above_player_2" width="100" height="62" locked="1">
+ <layer id="14" name="background_above_player_2" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U9/gBFUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8A2DgAAE=
+   eJztwTEBAAAAwqD1T20JT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4G9nIAAB
   </data>
  </layer>
- <layer id="15" name="background_above_player_3" width="100" height="62" locked="1">
+ <layer id="15" name="background_above_player_3" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5U9/gBFUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8A2DgAAE=
+   eJztwTEBAAAAwqD1T20JT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4G9nIAAB
   </data>
  </layer>
  <objectgroup id="3" name="objects">
-  <object id="2089" name="player.startingPosition" x="1680" y="1816.5">
+  <object id="2089" name="player.startingPosition" x="1680" y="1944.5">
    <properties>
     <property name="startingPointId" value="0"/>
    </properties>
    <point/>
   </object>
-  <object id="2094" name="player.startingPosition" x="2587.33" y="1160">
+  <object id="2094" name="player.startingPosition" x="2587.33" y="1288">
    <properties>
     <property name="startingPointId" value="11"/>
    </properties>
    <point/>
   </object>
-  <object id="2095" name="player.startingPosition" x="2063" y="531">
+  <object id="2095" name="player.startingPosition" x="2063" y="659">
    <properties>
     <property name="startingPointId" value="12"/>
    </properties>
    <point/>
   </object>
-  <object id="2096" name="object.iced_rock" x="1546.5" y="568.5">
+  <object id="2096" name="object.iced_rock" x="1543.5" y="705.5">
    <point/>
   </object>
-  <object id="2097" name="player.startingPosition" x="1680.33" y="1776.33">
+  <object id="2097" name="player.startingPosition" x="1680.33" y="1904.33">
    <properties>
     <property name="startingPointId" value="10"/>
    </properties>
    <point/>
   </object>
-  <object id="2098" name="object.iced_rock" x="1458" y="235.333">
+  <object id="2098" name="object.iced_rock" x="1461" y="360.333">
    <point/>
   </object>
-  <object id="2099" name="object.push_fist_left" x="2010.5" y="605.75">
+  <object id="2099" name="object.push_fist_left" x="2010.5" y="753.75">
    <properties>
     <property name="movingObjectId" value="loa2_l2_niflheim_ice_fields__push_fist__ice_rope_puzzle"/>
     <property name="pushForceFactor" value="2"/>
    </properties>
    <point/>
   </object>
-  <object id="2101" name="object.push_fist_left" x="2939" y="1061.25">
+  <object id="2101" name="object.push_fist_left" x="2939" y="1189.25">
    <properties>
     <property name="movingObjectId" value="loa2_l2_niflheim_ice_fields__right_push_fist__ice_rock_pressure_switch_puzzle"/>
    </properties>
    <point/>
   </object>
-  <object id="2102" name="object.push_fist" x="2596.75" y="1060.75">
+  <object id="2102" name="object.push_fist" x="2596.75" y="1188.75">
    <properties>
     <property name="movingObjectId" value="loa2_l2_niflheim_ice_fields__left_push_fist__ice_rock_pressure_switch_puzzle"/>
    </properties>
    <point/>
   </object>
-  <object id="2103" name="object.attack_pressure_switch" x="2000" y="497.5">
+  <object id="2103" name="object.attack_pressure_switch" x="2000" y="625.5">
    <properties>
     <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle"/>
     <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__attack_pressure_switch__ice_rope_puzzle"/>
    </properties>
    <point/>
   </object>
-  <object id="2107" name="object.pressure_switch" x="2719.88" y="1024">
+  <object id="2107" name="object.pressure_switch" x="2719.88" y="1152">
    <properties>
     <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch_target__ice_rock_pressure_switch_puzzle"/>
     <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch_target__ice_rock_pressure_switch_puzzle"/>
    </properties>
    <point/>
   </object>
-  <object id="2108" name="object.pressure_switch" x="2720" y="1130">
+  <object id="2108" name="object.pressure_switch" x="2720" y="1258">
    <properties>
     <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch_starter__ice_rock_pressure_switch_puzzle"/>
     <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch_starter__ice_rock_pressure_switch_puzzle"/>
    </properties>
    <point/>
   </object>
-  <object id="2109" name="object.movable_rock_on_ice" x="2614.67" y="1062">
+  <object id="2109" name="object.movable_rock_on_ice" x="2614.67" y="1190">
    <point/>
   </object>
-  <object id="2110" name="object.key_wall" x="2464" y="960">
+  <object id="2110" name="object.key_wall" x="2464" y="1088">
    <properties>
     <property name="lockId" value="loa2_l2_niflheim_ice_fields__key_wall__ice_rock_pressure_switch_puzzle"/>
     <property name="physicsBodySizeFactorX" value="1.3f"/>
@@ -147,7 +147,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2111" name="object.key_wall" x="1344" y="192">
+  <object id="2111" name="object.key_wall" x="1344" y="320">
    <properties>
     <property name="lockId" value="loa2_l2_niflheim_ice_fields__key_wall__ice_rope_puzzle"/>
     <property name="physicsBodySizeFactorY" value="1.3f"/>
@@ -155,271 +155,420 @@
    </properties>
    <point/>
   </object>
-  <object id="2112" name="object.configObject" x="1344" y="128">
+  <object id="2112" name="object.configObject" x="1344" y="256">
    <properties>
-    <property name="eventDelayInSeconds" value="10"/>
+    <property name="eventDelayInSeconds" value="8"/>
     <property name="eventToFire">{
     eventType: CONFIG_GENERATED_EVENT,
     stringValue: loa2_l2_niflheim_ice_fields__key_wall__ice_rope_puzzle__close_gate_after_delay,
 }</property>
+    <property name="playClockTickingSoundForDelay" value="true"/>
     <property name="unitId" value="loa2_l2_niflheim_ice_fields__config_object__close_key_wall_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2194" name="item.rune_hagalaz" x="400.091" y="201.112">
+   <point/>
+  </object>
+  <object id="2195" name="object.return_point" x="431.546" y="177.112">
+   <properties>
+    <property name="condition" value="common__rune_hagalaz_collected"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2208" name="object.key_wall" x="1024" y="846">
+   <properties>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2209" name="object.key_wall" x="496" y="1358">
+   <properties>
+    <property name="lockId" value="loa2_l2_niflheim_ice_fields__key_wall__ice_pressure_switches_puzzle"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2210" name="object.pressure_switch" x="752.5" y="1425.5">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch__ice_pressure_switches_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch_1__ice_pressure_switches_puzzle"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2217" name="object.pressure_switch" x="879" y="1361">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch__ice_pressure_switches_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch_2__ice_pressure_switches_puzzle"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2218" name="object.pressure_switch" x="815" y="1528">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch__ice_pressure_switches_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch_3__ice_pressure_switches_puzzle"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2219" name="player.startingPosition" x="864" y="1088">
+   <properties>
+    <property name="startingPointId" value="13"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2220" name="player.startingPosition" x="416" y="928">
+   <properties>
+    <property name="startingPointId" value="14"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2221" name="player.startingPosition" x="384" y="256">
+   <properties>
+    <property name="startingPointId" value="15"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2222" name="object.ice_cube" x="663" y="1618">
+   <point/>
+  </object>
+  <object id="2223" name="object.ice_cube" x="979" y="1526">
+   <point/>
+  </object>
+  <object id="2224" name="object.ice_cube" x="969" y="1179">
+   <point/>
+  </object>
+  <object id="2226" name="object.chest" x="976" y="368.667">
+   <properties>
+    <property name="drop" value="{key: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2227" name="object.pressure_switch" x="1200" y="305">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch__ice_rope_puzzle__after_gate"/>
+    <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch__ice_rope_puzzle__after_gate"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2228" name="object.spawnPoint.mana" x="2960.48" y="1264.52">
+   <properties>
+    <property name="spawn" value="playerManaBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2229" name="object.spawnPoint.mana" x="2128.5" y="752.51">
+   <properties>
+    <property name="spawn" value="playerManaBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2230" name="object.pressure_switch" x="560.25" y="1329.5">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch__ice_pressure_switches_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch_4__ice_pressure_switches_puzzle"/>
    </properties>
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
-  <object id="2011" x="1472" y="1568" width="160" height="416"/>
-  <object id="2012" x="1728" y="1408" width="32" height="576"/>
-  <object id="2013" x="1568" y="1344" width="256" height="113.667"/>
-  <object id="2014" x="1440" y="960" width="32" height="640"/>
-  <object id="2015" x="1472" y="960" width="256" height="81"/>
-  <object id="2016" x="1728" y="960" width="32" height="192"/>
-  <object id="2017" x="1568" y="1152" width="256" height="113"/>
-  <object id="2018" x="1824" y="1120" width="96" height="81"/>
-  <object id="2019" x="1920" y="1088" width="32" height="49"/>
-  <object id="2020" x="1952" y="1056" width="64" height="48.5"/>
-  <object id="2021" x="2016" y="1024" width="224" height="48.5"/>
-  <object id="2022" x="2240" y="992" width="192" height="48.5"/>
-  <object id="2024" x="2336" y="768" width="96" height="224"/>
-  <object id="2025" x="2496" y="768" width="64" height="336.5"/>
-  <object id="2026" x="2560" y="768" width="64" height="31.6667"/>
-  <object id="2028" x="2688" y="928" width="64" height="64"/>
-  <object id="2030" x="2976" y="992" width="32" height="160"/>
-  <object id="2031" x="2816" y="1152" width="192" height="64"/>
-  <object id="2033" x="2624" y="1248" width="64" height="64"/>
-  <object id="2034" x="2560" y="1280" width="64" height="64"/>
-  <object id="2035" x="2432" y="1312" width="128" height="32"/>
-  <object id="2036" x="2368" y="1280" width="64" height="64"/>
-  <object id="2037" x="2176" y="1248" width="192" height="96"/>
-  <object id="2038" x="2112" y="1312" width="64" height="96"/>
-  <object id="2039" x="1824" y="1376" width="288" height="32"/>
-  <object id="2040" x="2688" y="1184" width="128" height="96"/>
-  <object id="2041" x="2752" y="960" width="224" height="85"/>
-  <object id="2044" x="2592" y="480" width="32" height="288"/>
-  <object id="2045" x="2176" y="480" width="160" height="160"/>
-  <object id="2046" x="2208" y="640" width="128" height="128"/>
-  <object id="2048" x="1376" y="640" width="832" height="32"/>
-  <object id="2049" x="2048.25" y="576" width="63.75" height="64"/>
-  <object id="2050" x="1280" y="224" width="128" height="416"/>
-  <object id="2051" x="1185" y="96" width="383" height="64"/>
-  <object id="2052" x="1536" y="160" width="416" height="368.75"/>
-  <object id="2054" x="1952" y="416" width="96" height="81"/>
-  <object id="2055" x="2048" y="352" width="32" height="80.875"/>
-  <object id="2056" x="2080" y="320" width="384" height="48.3333"/>
-  <object id="2057" x="2464" y="352" width="160" height="128"/>
-  <object id="2058" x="1664" y="528" width="192" height="33.25"/>
-  <object id="2059" x="2429.25" y="704" width="16.3864" height="64"/>
-  <object id="2060" x="2482.18" y="704" width="16.8182" height="64"/>
-  <object id="2061" x="2432" y="800" width="13.8182" height="63.8182"/>
-  <object id="2062" x="2481.82" y="800" width="14.1818" height="64"/>
-  <object id="2078" x="2688" y="992">
+  <object id="2011" x="1472" y="1696" width="160" height="416"/>
+  <object id="2012" x="1728" y="1536" width="32" height="576"/>
+  <object id="2013" x="1568" y="1472" width="256" height="113.667"/>
+  <object id="2014" x="1440" y="1088" width="32" height="640"/>
+  <object id="2015" x="1472" y="1088" width="256" height="81"/>
+  <object id="2016" x="1728" y="1088" width="32" height="192"/>
+  <object id="2017" x="1568" y="1280" width="256" height="113"/>
+  <object id="2018" x="1824" y="1248" width="96" height="81"/>
+  <object id="2019" x="1920" y="1216" width="32" height="49"/>
+  <object id="2020" x="1952" y="1184" width="64" height="48.5"/>
+  <object id="2021" x="2016" y="1152" width="224" height="48.5"/>
+  <object id="2022" x="2240" y="1120" width="192" height="48.5"/>
+  <object id="2024" x="2336" y="896" width="96" height="224"/>
+  <object id="2025" x="2496" y="896" width="64" height="336.5"/>
+  <object id="2026" x="2560" y="896" width="64" height="31.6667"/>
+  <object id="2028" x="2688" y="1056" width="64" height="64"/>
+  <object id="2030" x="2976" y="1120" width="32" height="160"/>
+  <object id="2031" x="2816" y="1280" width="192" height="64"/>
+  <object id="2033" x="2624" y="1376" width="64" height="64"/>
+  <object id="2034" x="2560" y="1408" width="64" height="64"/>
+  <object id="2035" x="2432" y="1440" width="128" height="32"/>
+  <object id="2036" x="2368" y="1408" width="64" height="64"/>
+  <object id="2037" x="2176" y="1376" width="192" height="96"/>
+  <object id="2038" x="2112" y="1440" width="64" height="96"/>
+  <object id="2039" x="1824" y="1504" width="288" height="32"/>
+  <object id="2040" x="2688" y="1312" width="128" height="96"/>
+  <object id="2041" x="2752" y="1088" width="224" height="85"/>
+  <object id="2044" x="2592" y="608" width="32" height="288"/>
+  <object id="2045" x="2176" y="608" width="160" height="160"/>
+  <object id="2046" x="2208" y="768" width="128" height="128"/>
+  <object id="2048" x="1376" y="768" width="832" height="32"/>
+  <object id="2049" x="2048.25" y="704" width="63.75" height="64"/>
+  <object id="2050" x="1280" y="352" width="128" height="416"/>
+  <object id="2051" x="1185" y="224" width="383" height="64"/>
+  <object id="2052" x="1536" y="288" width="416" height="368.75"/>
+  <object id="2054" x="1952" y="544" width="96" height="81"/>
+  <object id="2055" x="2048" y="480" width="32" height="80.875"/>
+  <object id="2056" x="2080" y="448" width="384" height="48.3333"/>
+  <object id="2057" x="2464" y="480" width="160" height="128"/>
+  <object id="2058" x="1664" y="656" width="192" height="33.25"/>
+  <object id="2059" x="2429.25" y="832" width="16.3864" height="55"/>
+  <object id="2060" x="2482.18" y="832" width="16.8182" height="54.7273"/>
+  <object id="2061" x="2432" y="928" width="13.8182" height="55.0682"/>
+  <object id="2062" x="2481.82" y="928" width="14.1818" height="54.9091"/>
+  <object id="2078" x="2688" y="1120">
    <polygon points="0,0 32,0 0,32"/>
   </object>
-  <object id="2079" x="2752" y="992">
+  <object id="2079" x="2752" y="1120">
    <polygon points="0,0 -32,0 0,32"/>
   </object>
-  <object id="2105" x="2560" y="960" width="128" height="85"/>
-  <object id="2113" x="1088" y="96" width="96" height="241.091"/>
-  <object id="2114" x="1056" y="128" width="32" height="112.727"/>
-  <object id="2115" x="928" y="128" width="128" height="81.0909"/>
-  <object id="2116" x="864" y="160" width="64" height="80.7273"/>
-  <object id="2117" x="832" y="160" width="32" height="352"/>
-  <object id="2118" x="864" y="480" width="96" height="64"/>
-  <object id="2119" x="832" y="544" width="224" height="112.909"/>
-  <object id="2120" x="800" y="544" width="32" height="512.5"/>
-  <object id="2121" x="544" y="992" width="288" height="81.2727"/>
-  <object id="2122" x="448" y="800" width="96" height="369.125"/>
-  <object id="2123" x="544" y="800" width="32" height="128"/>
-  <object id="2124" x="576" y="640" width="160" height="192"/>
-  <object id="2125" x="736" y="224" width="32" height="448"/>
-  <object id="2126" x="64" y="224" width="672" height="32"/>
-  <object id="2127" x="64" y="256" width="32" height="416"/>
-  <object id="2128" x="96" y="640" width="160" height="192"/>
-  <object id="2129" x="256" y="800" width="128" height="448"/>
-  <object id="2130" x="352" y="1248" width="192" height="96"/>
-  <object id="2131" x="512" y="1344" width="96" height="96"/>
-  <object id="2132" x="992" y="928" width="32" height="608"/>
-  <object id="2133" x="896" y="768" width="96" height="209.125"/>
-  <object id="2134" x="992" y="736" width="128" height="192"/>
-  <object id="2135" x="1120" y="704" width="96" height="160"/>
-  <object id="2136" x="1152" y="640" width="128" height="64"/>
-  <object id="2137" x="1184" y="576" width="96" height="64"/>
-  <object id="2138" x="1216" y="512" width="64" height="64"/>
-  <object id="2139" x="1248" y="416" width="32" height="96"/>
-  <object id="2159" x="2496" y="768">
-   <polygon points="0,0 -13.875,0.125 -0.25,11.25"/>
+  <object id="2105" x="2560" y="1088" width="128" height="85"/>
+  <object id="2113" x="1088" y="224" width="96" height="241.091"/>
+  <object id="2114" x="1056" y="256" width="32" height="112.727"/>
+  <object id="2115" x="928" y="256" width="128" height="81.0909"/>
+  <object id="2116" x="864" y="288" width="64" height="80.7273"/>
+  <object id="2117" x="832" y="288" width="32" height="352"/>
+  <object id="2118" x="864" y="608" width="96" height="64"/>
+  <object id="2119" x="832" y="672" width="224" height="112.909"/>
+  <object id="2120" x="800" y="672" width="32" height="512.5"/>
+  <object id="2121" x="544" y="1120" width="288" height="81.2727"/>
+  <object id="2122" x="448" y="928" width="96" height="400.458"/>
+  <object id="2123" x="544" y="928" width="32" height="128"/>
+  <object id="2124" x="576" y="768" width="160" height="192"/>
+  <object id="2125" x="736" y="320" width="32" height="480"/>
+  <object id="2127" x="64" y="368" width="32" height="432"/>
+  <object id="2128" x="96" y="768" width="160" height="192"/>
+  <object id="2129" x="256" y="928" width="128" height="448"/>
+  <object id="2130" x="352" y="1376" width="192" height="96"/>
+  <object id="2131" x="512" y="1472" width="96" height="96"/>
+  <object id="2132" x="992" y="1056" width="32" height="608"/>
+  <object id="2133" x="896" y="896" width="96" height="209.125"/>
+  <object id="2134" x="992" y="864" width="128" height="192"/>
+  <object id="2135" x="1120" y="832" width="96" height="160"/>
+  <object id="2136" x="1152" y="768" width="128" height="64"/>
+  <object id="2137" x="1184" y="704" width="96" height="64"/>
+  <object id="2138" x="1216" y="640" width="64" height="64"/>
+  <object id="2139" x="1248" y="544" width="32" height="96"/>
+  <object id="2171" x="64" y="320" width="288" height="48.1818"/>
+  <object id="2172" x="480" y="319.333" width="256" height="48.9167"/>
+  <object id="2173" x="352" y="288" width="45" height="48.8333"/>
+  <object id="2174" x="434.333" y="288" width="45.6667" height="48.4167"/>
+  <object id="2178" x="320" y="128" width="32" height="192"/>
+  <object id="2179" x="480" y="128" width="32" height="192"/>
+  <object id="2180" x="352" y="128" width="127.667" height="14.6667"/>
+  <object id="2182" x="352" y="352">
+   <polygon points="0,0 45.0435,-15.087 -0.181818,-15.0909"/>
   </object>
+  <object id="2183" x="480" y="352">
+   <polygon points="0,0 -45.6957,-15.5652 -0.181818,-15.6364"/>
+  </object>
+  <object id="2145" x="384" y="832" width="13.75" height="55"/>
+  <object id="2146" x="434" y="832" width="14" height="54.875"/>
+  <object id="2147" x="434" y="960" width="14" height="54.8864"/>
+  <object id="2148" x="384" y="960" width="13.75" height="54.9773"/>
+  <object id="2149" x="384" y="1088" width="13.5" height="54.7955"/>
+  <object id="2150" x="434" y="1088" width="14" height="55.2045"/>
+  <object id="2184" x="384" y="896">
+   <polygon points="0,0 14,-9 0,-8.875"/>
+  </object>
+  <object id="2185" x="448" y="896">
+   <polygon points="0,0 -14,-9 -0.0625,-9"/>
+  </object>
+  <object id="2186" x="384" y="1024">
+   <polygon points="0,0 14,-9 0,-8.875"/>
+  </object>
+  <object id="2187" x="384" y="1152">
+   <polygon points="0,0 14,-9 0,-8.875"/>
+  </object>
+  <object id="2188" x="2432" y="896">
+   <polygon points="0,0 14,-9 0,-8.875"/>
+  </object>
+  <object id="2189" x="2432" y="992">
+   <polygon points="0,0 14,-9 0,-8.875"/>
+  </object>
+  <object id="2190" x="448" y="1024">
+   <polygon points="0,0 -14,-9 -0.0625,-9"/>
+  </object>
+  <object id="2191" x="448" y="1152">
+   <polygon points="0,0 -14,-9 -0.0625,-9"/>
+  </object>
+  <object id="2192" x="2496" y="992">
+   <polygon points="0,0 -14,-9 -0.0625,-9"/>
+  </object>
+  <object id="2193" x="2496" y="896">
+   <polygon points="0,0 -14,-9 -0.0625,-9"/>
+  </object>
+  <object id="2197" x="464.501" y="159.892">
+   <polygon points="0,0 -7.81818,10.5455 -11.0909,48.3636"/>
+  </object>
+  <object id="2198" x="453.231" y="206.982">
+   <polygon points="0,0 -3.63636,7.81818 11.8182,11.0909"/>
+  </object>
+  <object id="2199" x="465.051" y="217.702">
+   <polygon points="0,0 13.6364,-4.36364 10.9091,-11.0909"/>
+  </object>
+  <object id="2200" x="475.591" y="206.612">
+   <polygon points="0,0 -4,-38.7273 -11.2727,-46.9091"/>
+  </object>
+  <object id="2201" x="368.251" y="159.892">
+   <polygon points="0,0 -7.81818,10.5455 -11.0909,48.3636"/>
+  </object>
+  <object id="2202" x="356.981" y="206.982">
+   <polygon points="0,0 -3.63636,7.81818 11.8182,11.0909"/>
+  </object>
+  <object id="2203" x="368.801" y="217.702">
+   <polygon points="0,0 13.6364,-4.36364 10.9091,-11.0909"/>
+  </object>
+  <object id="2204" x="379.341" y="206.612">
+   <polygon points="0,0 -4,-38.7273 -11.2727,-46.9091"/>
+  </object>
+  <object id="2205" x="390.023" y="179.794" width="19.6364" height="3.63636"/>
+  <object id="2206" x="422.148" y="179.919" width="19.6364" height="3.63636"/>
+  <object id="2207" x="384.091" y="127.112" width="63.8182" height="52.5455"/>
+  <object id="2225" x="992" y="768" width="64" height="49.6667"/>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
-  <object id="2042" x="2560.33" y="1093" width="416" height="11.6667"/>
-  <object id="2140" x="608.25" y="1380.75" width="20.75" height="151"/>
-  <object id="2141" x="629.227" y="1509.14" width="278.773" height="22.3636"/>
-  <object id="2142" x="907" y="1413" width="85" height="119"/>
-  <object id="2143" x="381" y="704" width="3" height="95.75"/>
-  <object id="2144" x="448" y="704" width="2.5" height="95.5"/>
-  <object id="2145" x="384" y="704" width="13.75" height="63.75"/>
-  <object id="2146" x="434" y="704" width="14" height="64"/>
-  <object id="2147" x="434" y="832" width="14" height="64.25"/>
-  <object id="2148" x="384" y="832" width="13.75" height="64.25"/>
-  <object id="2149" x="384" y="960" width="13.5" height="64.25"/>
-  <object id="2150" x="434" y="960" width="14" height="63.75"/>
-  <object id="2152" x="384" y="896">
-   <polygon points="0,0 13.75,0 0.0909091,10.7273"/>
-  </object>
-  <object id="2153" x="384" y="768">
-   <polygon points="0,0 13.75,0 0.0909091,10.7273"/>
-  </object>
-  <object id="2154" x="384" y="1024">
-   <polygon points="0,0 13.75,0 0.0909091,10.7273"/>
-  </object>
-  <object id="2155" x="448" y="896">
-   <polygon points="0,0 -13.875,0.125 -0.25,11.25"/>
-  </object>
-  <object id="2156" x="448" y="768">
-   <polygon points="0,0 -13.875,0.125 -0.25,11.25"/>
-  </object>
-  <object id="2157" x="448" y="1024">
-   <polygon points="0,0 -13.875,0.125 -0.25,11.25"/>
-  </object>
-  <object id="2158" x="2496" y="864">
-   <polygon points="0,0 -13.875,0.125 -0.25,11.25"/>
-  </object>
-  <object id="2160" x="2432" y="768">
-   <polygon points="0,0 13.75,0 0.0909091,10.7273"/>
-  </object>
-  <object id="2161" x="2432" y="864">
-   <polygon points="0,0 13.75,0 0.0909091,10.7273"/>
-  </object>
+  <object id="2042" x="2560.33" y="1221" width="416" height="11.6667"/>
+  <object id="2140" x="608.25" y="1508.75" width="20.75" height="151"/>
+  <object id="2141" x="629.227" y="1637.14" width="278.773" height="22.3636"/>
+  <object id="2142" x="907" y="1541" width="85" height="119"/>
+  <object id="2143" x="381" y="832" width="3" height="95.75"/>
+  <object id="2144" x="448" y="832" width="2.5" height="95.5"/>
  </objectgroup>
- <objectgroup id="6" name="ground_physics" locked="1">
-  <object id="2068" x="1621" y="1440" width="106.25" height="139.106">
+ <objectgroup id="6" name="ground_physics">
+  <object id="2068" x="1621" y="1568" width="106.25" height="139.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2069" x="1620.67" y="1248" width="64.5833" height="96.106">
+  <object id="2069" x="1620.67" y="1376" width="64.5833" height="96.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2070" x="1621.5" y="1130" width="105.75" height="23.106">
+  <object id="2070" x="1621.5" y="1258" width="105.75" height="23.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2071" x="1472" y="1097.5" width="149.5" height="470.606">
+  <object id="2071" x="1472" y="1225.5" width="149.5" height="470.606">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2072" x="1960.5" y="1226" width="87.0833" height="93.9393">
+  <object id="2072" x="1966.5" y="1354" width="65.4166" height="93.9393">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2073" x="1993" y="1194" width="77.25" height="64.106">
+  <object id="2073" x="1999" y="1324" width="65.25" height="62.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2074" x="2154" y="1194.5" width="85.25" height="62.106">
+  <object id="2074" x="2159.67" y="1326.5" width="79.5833" height="58.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2076" x="2506" y="1226.5" width="74.75" height="85.606">
+  <object id="2076" x="2510.67" y="1357.5" width="66.0833" height="82.606">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2080" x="2446.38" y="801.197" width="35.25" height="52.856">
+  <object id="2080" x="2446.38" y="929.197" width="35.25" height="52.856">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="2081" x="2446.38" y="705.572" width="35.25" height="52.856">
+  <object id="2081" x="2446.38" y="833.572" width="35.25" height="52.856">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="2083" x="1448.5" y="586" width="589.25" height="53.606">
+  <object id="2083" x="1453.75" y="714" width="579" height="53.606">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2084" x="1856" y="553.5" width="149.25" height="32.106">
+  <object id="2084" x="1856" y="684" width="144.25" height="29.606">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2085" x="1608.5" y="553.75" width="46" height="32.356">
+  <object id="2085" x="1614" y="681.75" width="35.75" height="32.356">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2086" x="1448.5" y="320" width="78.75" height="266.606">
+  <object id="2086" x="1453.75" y="448" width="67.5" height="266.606">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2087" x="1482" y="168.727" width="45.25" height="151.379">
+  <object id="2087" x="1486.25" y="296.727" width="34.75" height="151.379">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2088" x="1289.5" y="168.5" width="192.75" height="46.106">
+  <object id="2088" x="1294" y="296.5" width="192.25" height="46.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2092" x="2217" y="1162" width="76.75" height="86.106">
+  <object id="2092" x="2224.67" y="1294" width="66.0833" height="82.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2093" x="2250.5" y="1130" width="171.417" height="64.106">
+  <object id="2093" x="2256.17" y="1261.33" width="160.084" height="60.7727">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2162" x="398.25" y="705.072" width="35.25" height="52.856">
+  <object id="2162" x="398.25" y="833.072" width="35.25" height="52.856">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="2163" x="398.125" y="833.197" width="35.25" height="52.856">
+  <object id="2163" x="398.125" y="961.197" width="35.25" height="52.856">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="2164" x="398" y="961.072" width="35.25" height="52.856">
+  <object id="2164" x="398" y="1089.07" width="35.25" height="52.856">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="2166" x="136.625" y="296.447" width="557.75" height="290.106">
+  <object id="2166" x="151.958" y="430.447" width="529.75" height="284.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2167" x="296.625" y="586.614" width="237.417" height="30.7727">
+  <object id="2167" x="308.125" y="714.614" width="216.917" height="30.7727">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2168" x="840.958" y="1032.95" width="142.75" height="194.773">
+  <object id="2168" x="847.458" y="1164.45" width="136.25" height="191.273">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2169" x="713.625" y="1096.95" width="236.083" height="256.773">
+  <object id="2169" x="722.625" y="1229.45" width="221.083" height="252.273">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2170" x="648.958" y="1193.61" width="238.083" height="287.439">
+  <object id="2170" x="658.458" y="1324.11" width="220.583" height="284.939">
    <properties>
     <property name="ground" value="ice"/>
+   </properties>
+  </object>
+  <object id="2181" x="397.466" y="289.027" width="36.7045" height="46.5605">
+   <properties>
+    <property name="ground" value="stairs"/>
    </properties>
   </object>
  </objectgroup>

@@ -93,13 +93,24 @@ public class SoundSet implements Disposable {
 				@Override
 				public void run() {
 					if (!soundHandler.isSoundStoped()) {
-						sound.play(volume);
+						if (config.looping) {
+							sound.loop(volume);
+						}
+						else {
+							sound.play(volume);
+						}
+						
 					}
 				}
 			}, delay);
 		}
 		else {
-			sound.play(volume);
+			if (config.looping) {
+				sound.loop(volume);
+			}
+			else {
+				sound.play(volume);
+			}
 		}
 		
 		return soundHandler;

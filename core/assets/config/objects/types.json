@@ -565,6 +565,26 @@
 		maxDistanceToPlayer: 2.9f,
 	},
 	
+	ice_cube: {
+		type: DRAGGABLE,
+		
+		physicsBodySizeFactorX: 0.9f,
+		physicsBodySizeFactorY: 0.9f,
+		
+		addSensor: true,
+		sensorRadius: 1.5f,
+		
+		bodyType: DynamicBody,
+		linearDamping: 1f,
+		collisionType: MAP_OBJECT,
+		
+		texture: ice_cube,
+		
+		density: 5f,
+		
+		maxDistanceToPlayer: 1.5f,
+	},
+	
 	//**********************************
 	//*** Walls for demo 2 level 2
 	//**********************************
