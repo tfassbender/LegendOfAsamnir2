@@ -233,6 +233,17 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		moveToDirection(new Vector2(x, y));
 	}
 	
+	public void move(Vector2 delta) {
+		intendedMovement = delta;
+		
+		float force = 10f * body.getMass();
+		if (typeConfig.applyGroundPhysics) {
+			force *= groundProperties.movementSpeedFactor;
+		}
+		
+		body.applyForceToCenter(delta.x * force, delta.y * force, true);
+	}
+	
 	@Override
 	public void takeDamage(float damage, AttackType attackType) {
 		if (isAlive()) {

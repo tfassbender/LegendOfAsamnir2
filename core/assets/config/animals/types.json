@@ -232,4 +232,24 @@
 		
 		addSensor: false,
 	},
+	
+	penguin: {
+		typeName: penguin,
+		
+		animationsConfig: config/animation/animals/penguin.json,
+		stateConfig: config/animals/states/penguin.json,
+		initialState: idle,
+		aiConfig: config/animals/ai/penguin.json,
+		
+		movingSpeed: 1f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.5f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 3f,
+	},
 }

@@ -1,0 +1,38 @@
+[
+	{
+		id: idle,
+		animation: penguin_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle_2, move, run
+		]
+	},
+	{
+		id: idle_2,
+		animation: penguin_idle_2,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move, run
+		]
+	},
+	{
+		id: move,
+		animation: penguin_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			run
+		]
+	},
+	{
+		id: run,
+		animation: penguin_run,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    move
+		]
+	},
+]

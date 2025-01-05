@@ -14,6 +14,7 @@ public class ProjectileTypeConfig {
 	public boolean textureScaleGrowing;
 	public float textureInitialRotation;
 	public boolean rotateTextureToMovementDirection = false;
+	public boolean changeBodyToSensorAfterHit = false;
 	
 	public String sound;
 	

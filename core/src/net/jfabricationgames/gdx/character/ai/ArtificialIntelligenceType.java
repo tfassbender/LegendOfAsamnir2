@@ -20,6 +20,7 @@ import net.jfabricationgames.gdx.character.animal.ai.ChangeStateWhenPlayerNearAI
 import net.jfabricationgames.gdx.character.animal.ai.RandomIdleStatesAI;
 import net.jfabricationgames.gdx.character.animal.ai.RandomIdleStatesMovementAI;
 import net.jfabricationgames.gdx.character.enemy.ai.ActionAI;
+import net.jfabricationgames.gdx.character.enemy.ai.AngleRestrictedFightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.FastAttackFightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.FightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.MimicSurpriseAI;
@@ -212,6 +213,21 @@ public enum ArtificialIntelligenceType {
 			
 			TeamMovementAI ai = new TeamMovementAI(subAI, movingState, idleState, aiConfig.distanceToInformTeamMates, teamId);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			return ai;
+		}
+	},
+	ANGLE_RESTRICTED_FIGHT_AI {
+		
+		@Override
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
+			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
+			CharacterState attackState = stateMachine.getState(aiConfig.stateNameAttack);
+			AttackTimer attackTimer = createAttackTimer(aiConfig.attackTimerConfig);
+			
+			AngleRestrictedFightAI ai = new AngleRestrictedFightAI(subAI, attackState, attackTimer, //
+					aiConfig.attackDistance, aiConfig.angles, aiConfig.maxAngleDelta);
+			ai.setMinDistanceToTargetPlayer(aiConfig.minDistanceToTargetPlayer);
+			
 			return ai;
 		}
 	},

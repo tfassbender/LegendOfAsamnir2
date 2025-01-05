@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.character.ai;
 
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimerConfig;
@@ -38,6 +39,10 @@ public class ArtificialIntelligenceConfig {
 	public float distanceToInformTeamMates = 7f;
 	public float movementSpeedFactor = 1f;
 	public float movementProbability;
+	
+	// target angles for the AngleRestrictedFightAI
+	public Array<Float> angles;
+	public float maxAngleDelta;
 	
 	public AttackTimerConfig attackTimerConfig;
 	

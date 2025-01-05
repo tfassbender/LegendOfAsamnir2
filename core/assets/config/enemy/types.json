@@ -312,6 +312,7 @@
 		
 		health: 15,
 		movingSpeed: 1.5
+		applyGroundPhysics: false, // must be able to move on ice
 		
 		imageOffsetX: 0f,
 		imageOffsetY: 0.3f,
@@ -320,10 +321,16 @@
 		bodyRadius: 0.3f,
 		
 		addSensor: true,
-		sensorRadius: 6f,
+		sensorRadius: 4f,
 		
 		pushForceDamage: 45,
 		pushForceHit: 25,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.4,
+		healthBarWidthFactor: 0.5,
+		healthBarAlwaysVisible: true,
 		
 		drops: {
 			coin: 0.5,
@@ -855,5 +862,39 @@
 		
 		isBoss: true
 		bossName: "Bugbear - Champion of the Bandits",
-	}
+	},
+	
+	yeti: {
+		typeName: yeti,
+		
+		animationsConfig: config/animation/enemy/yeti.json,
+		stateConfig: config/enemy/states/yeti.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/yeti.json,
+		aiConfig: config/enemy/ai/yeti.json,
+		
+		health: 35,
+		movingSpeed: 1,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.2f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1.7f,
+		bodyHeight: 1.6f,
+		
+		addSensor: true,
+		sensorRadius: 4f,
+		
+		pushForceDamage: 5,
+		pushForceHit: 75,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.5,
+		healthBarWidthFactor: 0.6,
+		healthBarAlwaysVisible: true,
+		
+		drops: {}
+	},
 }

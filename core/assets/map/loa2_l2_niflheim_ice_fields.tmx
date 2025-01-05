@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2231">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2277">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -213,19 +213,19 @@
   </object>
   <object id="2219" name="player.startingPosition" x="864" y="1088">
    <properties>
-    <property name="startingPointId" value="13"/>
+    <property name="startingPointId" value="14"/>
    </properties>
    <point/>
   </object>
   <object id="2220" name="player.startingPosition" x="416" y="928">
    <properties>
-    <property name="startingPointId" value="14"/>
+    <property name="startingPointId" value="15"/>
    </properties>
    <point/>
   </object>
   <object id="2221" name="player.startingPosition" x="384" y="256">
    <properties>
-    <property name="startingPointId" value="15"/>
+    <property name="startingPointId" value="16"/>
    </properties>
    <point/>
   </object>
@@ -270,8 +270,96 @@
    </properties>
    <point/>
   </object>
+  <object id="2231" name="animal.penguin" x="1646.5" y="1238.5">
+   <point/>
+  </object>
+  <object id="2233" name="animal.penguin" x="1684" y="1229.5">
+   <point/>
+  </object>
+  <object id="2234" name="animal.penguin" x="1638" y="1208">
+   <point/>
+  </object>
+  <object id="2235" name="animal.penguin" x="2461.33" y="1334.67">
+   <point/>
+  </object>
+  <object id="2236" name="animal.penguin" x="2478.67" y="1368">
+   <point/>
+  </object>
+  <object id="2237" name="animal.penguin" x="2484" y="685.333">
+   <point/>
+  </object>
+  <object id="2238" name="animal.penguin" x="2536" y="714.667">
+   <point/>
+  </object>
+  <object id="2239" name="animal.penguin" x="633.333" y="1254.67">
+   <point/>
+  </object>
+  <object id="2240" name="animal.penguin" x="598.667" y="1284">
+   <point/>
+  </object>
+  <object id="2241" name="animal.penguin" x="630.667" y="1296">
+   <point/>
+  </object>
+  <object id="2271" name="enemy.ice_elemental" x="880" y="839.5">
+   <properties>
+    <property name="aiType" value="elemental_team"/>
+    <property name="teamId" value="ice_elemental_team_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2272" name="enemy.ice_elemental" x="927.5" y="865.5">
+   <properties>
+    <property name="aiType" value="elemental_team"/>
+    <property name="teamId" value="ice_elemental_team_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2264" name="enemy.ice_elemental" x="1936" y="1392.5">
+   <properties>
+    <property name="aiType" value="elemental_team"/>
+    <property name="teamId" value="ice_elemental_team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2267" name="enemy.ice_elemental" x="2008.5" y="1359.5">
+   <properties>
+    <property name="aiType" value="elemental_team"/>
+    <property name="teamId" value="ice_elemental_team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2268" name="enemy.ice_elemental" x="2040.5" y="1430.5">
+   <properties>
+    <property name="aiType" value="elemental_team"/>
+    <property name="teamId" value="ice_elemental_team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2269" name="enemy.ice_elemental" x="2389.5" y="746">
+   <properties>
+    <property name="aiType" value="elemental_team"/>
+    <property name="teamId" value="ice_elemental_team_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2270" name="enemy.ice_elemental" x="2435" y="787">
+   <properties>
+    <property name="aiType" value="elemental_team"/>
+    <property name="teamId" value="ice_elemental_team_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2273" name="player.startingPosition" x="1184" y="544">
+   <properties>
+    <property name="startingPointId" value="13"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2276" name="enemy.yeti" x="1028" y="542">
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="2011" x="1472" y="1696" width="160" height="416"/>
   <object id="2012" x="1728" y="1536" width="32" height="576"/>
   <object id="2013" x="1568" y="1472" width="256" height="113.667"/>
@@ -426,6 +514,63 @@
   <object id="2206" x="422.148" y="179.919" width="19.6364" height="3.63636"/>
   <object id="2207" x="384.091" y="127.112" width="63.8182" height="52.5455"/>
   <object id="2225" x="992" y="768" width="64" height="49.6667"/>
+  <object id="2242" x="957.333" y="503">
+   <polygon points="0,0 -5.33333,-19.3333 -30.3333,-40"/>
+  </object>
+  <object id="2243" x="926.667" y="464">
+   <polygon points="0,0 -15,-3 -41.3333,5"/>
+  </object>
+  <object id="2244" x="885" y="469">
+   <polygon points="0,0 -11.3333,12.3333 -18.6667,31.3333"/>
+  </object>
+  <object id="2245" x="866.333" y="499.333">
+   <polygon points="0,0 0,7 14.6667,18"/>
+  </object>
+  <object id="2246" x="881" y="517">
+   <polygon points="0,0 14.6667,5 46.6667,5"/>
+  </object>
+  <object id="2247" x="928" y="522.333">
+   <polygon points="0,0 19,-6 29.6667,-19"/>
+  </object>
+  <object id="2248" x="896" y="522" width="32" height="10.1818"/>
+  <object id="2249" x="1085.33" y="406.909">
+   <polygon points="0,0 -5.33333,-19.3333 -30.3333,-40"/>
+  </object>
+  <object id="2250" x="1054.67" y="367.909">
+   <polygon points="0,0 -15,-3 -41.3333,5"/>
+  </object>
+  <object id="2251" x="1013" y="372.909">
+   <polygon points="0,0 -11.3333,12.3333 -18.6667,31.3333"/>
+  </object>
+  <object id="2252" x="994.333" y="403.242">
+   <polygon points="0,0 0,7 14.6667,18"/>
+  </object>
+  <object id="2253" x="1009" y="420.909">
+   <polygon points="0,0 14.6667,5 46.6667,5"/>
+  </object>
+  <object id="2254" x="1056" y="426.242">
+   <polygon points="0,0 19,-6 29.6667,-19"/>
+  </object>
+  <object id="2255" x="1024" y="425.909" width="32" height="10.1818"/>
+  <object id="2256" x="1052.83" y="630.409">
+   <polygon points="0,0 -5.33333,-19.3333 -30.3333,-40"/>
+  </object>
+  <object id="2257" x="1022.17" y="591.409">
+   <polygon points="0,0 -15,-3 -41.3333,5"/>
+  </object>
+  <object id="2258" x="980.5" y="596.409">
+   <polygon points="0,0 -11.3333,12.3333 -18.6667,31.3333"/>
+  </object>
+  <object id="2259" x="961.833" y="626.742">
+   <polygon points="0,0 0,7 14.6667,18"/>
+  </object>
+  <object id="2260" x="976.5" y="644.409">
+   <polygon points="0,0 14.6667,5 46.6667,5"/>
+  </object>
+  <object id="2261" x="1023.5" y="649.742">
+   <polygon points="0,0 19,-6 29.6667,-19"/>
+  </object>
+  <object id="2263" x="1042" y="616.182" width="19.6364" height="27.6364"/>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="2042" x="2560.33" y="1221" width="416" height="11.6667"/>
@@ -435,7 +580,7 @@
   <object id="2143" x="381" y="832" width="3" height="95.75"/>
   <object id="2144" x="448" y="832" width="2.5" height="95.5"/>
  </objectgroup>
- <objectgroup id="6" name="ground_physics">
+ <objectgroup id="6" name="ground_physics" locked="1">
   <object id="2068" x="1621" y="1568" width="106.25" height="139.106">
    <properties>
     <property name="ground" value="ice"/>

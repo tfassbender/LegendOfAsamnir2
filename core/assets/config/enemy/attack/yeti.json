@@ -1,0 +1,19 @@
+[
+	{
+		id: attack_hit,
+		type: HIT,
+		delay: 0.3,
+		duration: 0,
+		damage: 15,
+		distFromCenter: 1,
+		hitFixtureRadius: 0.7,
+		pushForce: 50
+	},
+	{
+		id: attack_ice_breath,
+		type: ANIMATED_HIT,
+		projectileType: ice_breath,
+		delay: 0.4,
+		damage: 5,
+	},
+]

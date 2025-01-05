@@ -49,6 +49,7 @@
 				raw_images/restricted/npc/old_lady/hadouken,
 				raw_images/restricted/projectiles/bandit_slingshot,
 				raw_images/restricted/projectiles/mine_explosion,
+				raw_images/restricted/projectiles/ice_breath,
 				
 				//##############################################################
 				//### objects
@@ -341,6 +342,14 @@
 				raw_images/restricted/enemy/bugbear/bugbear_damage,
 				raw_images/restricted/enemy/bugbear/bugbear_death,
 				
+				// yeti
+				raw_images/restricted/enemy/yeti/yeti_idle,
+				raw_images/restricted/enemy/yeti/yeti_move,
+				raw_images/restricted/enemy/yeti/yeti_attack,
+				raw_images/restricted/enemy/yeti/yeti_ice_breath,
+				raw_images/restricted/enemy/yeti/yeti_damage,
+				raw_images/restricted/enemy/yeti/yeti_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################
@@ -600,6 +609,12 @@
 				raw_images/restricted/animals/horse_brown/horse_brown_idle,
 				raw_images/restricted/animals/horse_brown/horse_brown_move,
 				raw_images/restricted/animals/horse_brown/horse_brown_run,
+				
+				// penguin
+				raw_images/restricted/animals/penguin/penguin_idle,
+				raw_images/restricted/animals/penguin/penguin_idle_2,
+				raw_images/restricted/animals/penguin/penguin_move,
+				raw_images/restricted/animals/penguin/penguin_run,
 				
 				//##############################################################
 				//### Cutscenes

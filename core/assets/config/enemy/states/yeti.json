@@ -1,0 +1,64 @@
+[
+	{
+		id: idle,
+		animation: yeti_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_hit, attack_ice_breath, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: yeti_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_hit, attack_ice_breath, damage, die
+		]
+	},
+	{
+		id: attack_hit,
+		animation: yeti_attack,
+		attack: attack_hit,
+		endsWithAnimation: true,
+		followingState: idle,
+		stateEnteringSound: hit_3,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: attack_ice_breath,
+		animation: yeti_ice_breath,
+		attack: attack_ice_breath
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: yeti_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: flesh_hit_2,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: yeti_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		stateEnteringSound: minotaur_die,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

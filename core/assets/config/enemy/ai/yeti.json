@@ -1,0 +1,43 @@
+{
+	defaultAI: yeti,
+	aiConfigurations: {
+		yeti: {
+			type: ANGLE_RESTRICTED_FIGHT_AI,
+			
+			stateNameAttack: attack_ice_breath,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 5f,
+			},
+			attackDistance: 3f,
+			angles: [0, 180],
+			maxAngleDelta: 30,
+			minDistanceToTargetPlayer: 2f,
+			
+			subAI: {
+				type: FIGHT_AI,
+				
+				stateNameAttack: attack_hit,
+				
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 2f,
+				},
+				attackDistance: 2f,
+				
+				subAI: {
+					type: FOLLOW_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					minDistanceToTargetPlayer: 2f,
+					
+					subAI: {
+						type: BASE_AI,
+					}
+				}
+			}
+		}
+	}
+}

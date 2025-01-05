@@ -310,10 +310,6 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		return reflected || (attackPerformed && !typeConfig.multipleHitsPossible);
 	}
 	
-	protected void startBodyLinearDamping() {
-		body.setLinearDamping(typeConfig.dampingAfterObjectHit);
-	}
-	
 	protected void processContact(Object contactUserData) {
 		if (contactUserData instanceof ProjectileReflector) {
 			ProjectileReflector reflector = (ProjectileReflector) contactUserData;
@@ -327,7 +323,14 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		}
 		
 		startBodyLinearDamping();
+		if (typeConfig.changeBodyToSensorAfterHit) {
+			changeBodyToSensor();
+		}
 		attackPerformed = true;
+	}
+	
+	protected void startBodyLinearDamping() {
+		body.setLinearDamping(typeConfig.dampingAfterObjectHit);
 	}
 	
 	@Override

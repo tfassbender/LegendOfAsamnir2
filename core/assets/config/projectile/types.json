@@ -262,4 +262,21 @@
 		
 		speed: 20,
 	},
+	
+	ice_breath: {
+        attackType: ANIMATED_HIT,
+        
+        animation: ice_breath,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+		changeBodyToSensorAfterHit: true,
+        
+        speed: 0,
+        damping: 0,
+		distanceFromCenter: 1.1f,
+		hitFixtureRadius: 1.5f,
+		flipAnimationToAttackDirection: true,
+		
+		// TODO freezePlayer: true,
+	},
 }

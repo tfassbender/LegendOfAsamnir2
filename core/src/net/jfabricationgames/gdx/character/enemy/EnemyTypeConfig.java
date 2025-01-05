@@ -15,6 +15,7 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	
 	public float health;
 	public float movingSpeed = 1f;
+	public boolean applyGroundPhysics = true;
 	
 	public float imageOffsetX;
 	public float imageOffsetY;
