@@ -3,7 +3,7 @@ package net.jfabricationgames.gdx.projectile;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
-import net.jfabricationgames.gdx.attack.hit.Hittable;
+import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
 

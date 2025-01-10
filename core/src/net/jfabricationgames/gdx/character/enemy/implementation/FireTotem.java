@@ -3,7 +3,7 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 
-import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;

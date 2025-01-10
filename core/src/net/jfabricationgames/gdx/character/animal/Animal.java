@@ -4,8 +4,8 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 
-import net.jfabricationgames.gdx.attack.hit.AttackType;
-import net.jfabricationgames.gdx.attack.hit.Hittable;
+import net.jfabricationgames.gdx.attack.AttackType;
+import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.character.AbstractCharacter;
 import net.jfabricationgames.gdx.character.CharacterTypeConfig;
 import net.jfabricationgames.gdx.character.state.CharacterStateMachine;

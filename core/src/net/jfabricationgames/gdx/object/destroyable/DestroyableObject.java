@@ -7,7 +7,7 @@ import com.badlogic.gdx.maps.MapProperties;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
-import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;

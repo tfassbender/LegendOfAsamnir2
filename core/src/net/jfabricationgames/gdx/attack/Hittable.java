@@ -1,4 +1,4 @@
-package net.jfabricationgames.gdx.attack.hit;
+package net.jfabricationgames.gdx.attack;
 
 import com.badlogic.gdx.math.Vector2;
 
@@ -13,5 +13,9 @@ public interface Hittable {
 	
 	public default Vector2 getPushDirection(Vector2 position, Vector2 hitCenter) {
 		return position.cpy().sub(hitCenter).nor();
+	}
+	
+	public default void freeze() {
+		//default implementation does nothing
 	}
 }

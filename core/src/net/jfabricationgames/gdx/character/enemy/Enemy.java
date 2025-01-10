@@ -11,8 +11,8 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.attack.AttackHandler;
-import net.jfabricationgames.gdx.attack.hit.AttackType;
-import net.jfabricationgames.gdx.attack.hit.Hittable;
+import net.jfabricationgames.gdx.attack.AttackType;
+import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.character.AbstractCharacter;
 import net.jfabricationgames.gdx.character.CharacterTypeConfig;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;

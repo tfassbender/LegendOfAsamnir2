@@ -1,4 +1,4 @@
-package net.jfabricationgames.gdx.attack.hit;
+package net.jfabricationgames.gdx.attack;
 
 public enum AttackType {
 	

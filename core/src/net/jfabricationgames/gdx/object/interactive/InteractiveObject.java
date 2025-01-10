@@ -13,7 +13,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.animation.TextureAnimationDirector;
-import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.data.handler.MapObjectDataHandler;
 import net.jfabricationgames.gdx.data.state.MapObjectState;

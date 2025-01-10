@@ -2,7 +2,7 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 
 import com.badlogic.gdx.maps.MapProperties;
 
-import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.constants.Constants;

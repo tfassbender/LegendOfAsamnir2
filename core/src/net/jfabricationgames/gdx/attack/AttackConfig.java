@@ -1,7 +1,5 @@
 package net.jfabricationgames.gdx.attack;
 
-import net.jfabricationgames.gdx.attack.hit.AttackType;
-
 public class AttackConfig {
 	
 	public String id;

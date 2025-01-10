@@ -3,7 +3,7 @@ package net.jfabricationgames.gdx.object.interactive;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.MapProperties;
 
-import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.object.GameObjectMap;
 import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 

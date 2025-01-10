@@ -1,6 +1,6 @@
 package net.jfabricationgames.gdx.projectile;
 
-import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.AttackType;
 
 public class ProjectileTypeConfig {
 	

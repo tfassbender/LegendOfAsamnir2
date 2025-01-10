@@ -7,7 +7,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
-import net.jfabricationgames.gdx.attack.hit.AttackType;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.object.config.ConfigObject;
 import net.jfabricationgames.gdx.object.destroyable.DestroyableObject;
