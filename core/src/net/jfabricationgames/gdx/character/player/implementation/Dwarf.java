@@ -54,8 +54,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final float TIME_TILL_GAME_OVER_MENU = 3f;
 	private static final float LOW_MANA_LEVEL = 15f;
 	
-	public static final float MIN_ENDURANCE_TO_START_BLOCK = 15f;
-	public static final float MIN_ENDURANCE_TO_START_SPRINT = 15f;
+	private static final float MIN_ENDURANCE_TO_START_BLOCK = 15f;
+	private static final float MIN_ENDURANCE_TO_START_SPRINT = 15f;
+	
+	private static final float FREEZING_TIME_IN_SECONDS = 5f;
 	
 	private static final String ATTACK_CONFIG_FILE_NAME = "config/dwarf/attacks.json";
 	
@@ -90,6 +92,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	protected CharacterSoundHandler soundHandler;
 	
 	private DraggableObject draggableObject;
+	
+	private float freezingTimer; // if > 0 the player is frozen and movement is slowed down
 	
 	public Dwarf() {
 		propertiesDataHandler = CharacterPropertiesDataHandler.getInstance();
@@ -383,6 +387,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		movementHandler.move(delta);
 		
 		renderer.processDarknessFadingAnimation(delta);
+		
+		freezingTimer = Math.max(0, freezingTimer - delta);
 	}
 	
 	private void updateAction(float delta) {
@@ -670,6 +676,23 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected) {
 		bodyHandler.pushByHit(hitCenter, force, forceWhenBlocked, blockAffected);
+	}
+	
+	@Override
+	public void freeze() {
+		freezingTimer = FREEZING_TIME_IN_SECONDS;
+	}
+	
+	protected float getFreezingTimer() {
+		return freezingTimer;
+	}
+	
+	protected float getTotalFreezingTimeInSeconds() {
+		return FREEZING_TIME_IN_SECONDS;
+	}
+	
+	protected boolean isFrozen() {
+		return freezingTimer > 0;
 	}
 	
 	@Override

@@ -31,7 +31,8 @@
 	{
 		id: attack_ice_breath,
 		animation: yeti_ice_breath,
-		attack: attack_ice_breath
+		attack: attack_ice_breath,
+		stateEnteringSound: ice_breath,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

@@ -111,25 +111,39 @@ class CharacterRenderer {
 			frame.flip(true, false);
 		}
 		
-		draw(batch, frame);
+		Color color = new Color(batch.getColor()); // getColor() returns a reference to the color, so it has to be copied
+		setSpriteColor(batch);
+		
+		//use null as offset parameter to not create a new empty vector every time
+		draw(batch, frame, 0, 0, frame.getRegionWidth(), frame.getRegionHeight());
+		
+		batch.setColor(color); // reset to the original color
+	}
+	
+	private void setSpriteColor(SpriteBatch batch) {
+		if (player.isFrozen()) {
+			// blend in the frozen color by setting the oppacity
+			float progress = 1f;
+			float freezingTimer = player.getFreezingTimer();
+			float totalFreezingTime = player.getTotalFreezingTimeInSeconds();
+			float colorGradientTime = 1f; // time to blend in and out
+			
+			if (freezingTimer > totalFreezingTime - colorGradientTime) {
+				progress = ((totalFreezingTime / colorGradientTime) - freezingTimer);
+			}
+			else if (freezingTimer < colorGradientTime) {
+				progress = freezingTimer;
+			}
+			
+			Color frozenColor = new Color(0.1f, 0.7f, 1f, 1f);
+			frozenColor.lerp(Color.WHITE, 1f - progress); // linear interpolation to blend the colors (WHITE is the default color for a sprite batch)
+			
+			batch.setColor(frozenColor);
+		}
 	}
 	
 	private boolean drawingDirectionEqualsTextureDirection(TextureRegion frame) {
 		return player.movementHandler.isDrawDirectionRight() != frame.isFlipX();
-	}
-	
-	private void draw(SpriteBatch batch, TextureRegion frame) {
-		//use null as offset parameter to not create a new empty vector every time
-		draw(batch, frame, 0, 0, frame.getRegionWidth(), frame.getRegionHeight());
-	}
-	
-	private void draw(SpriteBatch batch, TextureRegion frame, Vector2 offset, float width, float height) {
-		if (offset != null) {
-			draw(batch, frame, offset.x, offset.y, width, height);
-		}
-		else {
-			draw(batch, frame, 0, 0, width, height);
-		}
 	}
 	
 	private void draw(SpriteBatch batch, TextureRegion frame, float offsetX, float offsetY, float width, float height) {
@@ -165,6 +179,15 @@ class CharacterRenderer {
 		Vector2 aimMarkerOffset = player.movementHandler.getMovingDirection().getNormalizedDirectionVector().scl(aimMarkerDistanceFactor).add(0, aimMarkerOffsetY);
 		final float aimMarkerSize = 5f;
 		draw(batch, aimMarkerSprite, aimMarkerOffset, aimMarkerSize, aimMarkerSize);
+	}
+	
+	private void draw(SpriteBatch batch, TextureRegion frame, Vector2 offset, float width, float height) {
+		if (offset != null) {
+			draw(batch, frame, offset.x, offset.y, width, height);
+		}
+		else {
+			draw(batch, frame, 0, 0, width, height);
+		}
 	}
 	
 	public void renderDarkness(SpriteBatch batch, ShapeRenderer shapeRenderer) {

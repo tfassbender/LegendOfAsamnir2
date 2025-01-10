@@ -320,6 +320,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 			//enemies define the force themselves; the force parameter is a factor for this self defined force
 			hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
 			hittable.takeDamage(damage, typeConfig.attackType);
+			
+			if (typeConfig.freezeTarget) {
+				hittable.freeze();
+			}
 		}
 		
 		startBodyLinearDamping();

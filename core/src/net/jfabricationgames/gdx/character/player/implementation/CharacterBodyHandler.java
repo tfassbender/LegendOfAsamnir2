@@ -67,7 +67,28 @@ class CharacterBodyHandler {
 				|| body.getLinearVelocity().len() > 1.5f) { // slow enough to consider the player as stopped
 			force *= groundProperties.movementSpeedFactor;
 		}
+		if (player.isFrozen()) {
+			force *= 1f - (0.7f * getFreezingMovementFactor()); // slow down till 30% of the normal speed when frozen
+		}
+		
 		body.applyForceToCenter(deltaX * force, deltaY * force, true);
+	}
+	
+	private float getFreezingMovementFactor() {
+		// start the movement reduction slowly and end slowly to adapt to the color gradient
+		float progress = 1f;
+		float freezingTimer = player.getFreezingTimer();
+		float totalFreezingTime = player.getTotalFreezingTimeInSeconds();
+		float colorGradientTime = 1f; // time to blend in and out
+		
+		if (freezingTimer > totalFreezingTime - colorGradientTime) {
+			progress = ((totalFreezingTime / colorGradientTime) - freezingTimer);
+		}
+		else if (freezingTimer < colorGradientTime) {
+			progress = freezingTimer;
+		}
+		
+		return progress;
 	}
 	
 	public void stopMovement() {

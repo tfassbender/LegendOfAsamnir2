@@ -277,6 +277,6 @@
 		hitFixtureRadius: 1.5f,
 		flipAnimationToAttackDirection: true,
 		
-		// TODO freezePlayer: true,
+		freezeTarget: true,
 	},
 }

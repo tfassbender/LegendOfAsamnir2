@@ -27,6 +27,7 @@ public class ProjectileTypeConfig {
 	
 	public float timeTillExplosion = -1f;
 	public boolean multipleHitsPossible = false;
+	public boolean freezeTarget = false;
 	
 	public float timeActive = -1f;
 	
