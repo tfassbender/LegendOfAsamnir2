@@ -43,4 +43,5 @@ public class CharacterDataContainer {
 	
 	public Vector2 respawnPoint;
 	public Vector2 position;
+	public boolean respawnWithStartingStats; // full health, full mana, half shield
 }

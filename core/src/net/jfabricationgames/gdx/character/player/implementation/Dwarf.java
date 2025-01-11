@@ -126,6 +126,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public void afterLoadMap() {
 		// fire events if stats are below half when re-added to the world, because they can't go below half anymore in this state
+		checkManaNotFull(true);
 		checkHealthBelowHalf(false);
 		checkArmorBelowHalf(false);
 		checkManaBelowHalf(false);
@@ -704,6 +705,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					if (event.parameterObject != null && event.parameterObject instanceof EventObject) {
 						EventObject respawnObject = (EventObject) event.parameterObject;
 						propertiesDataHandler.setRespawnPoint(respawnObject.getEventObjectCenterPosition());
+						propertiesDataHandler.setRespawnWithStartingStats(event.booleanValue);
 					}
 					GameStateManager.fireQuickSaveEvent();
 				}

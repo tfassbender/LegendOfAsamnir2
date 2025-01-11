@@ -189,8 +189,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		GameMapManager gameMapManager = GameMapManager.getInstance();
 		
 		if (isNewGame()) {
-			String initialMapIdentifier = gameMapManager.getInitialMapIdentifier();
-			gameMapManager.showMap(initialMapIdentifier, gameMapManager.getInitialStartingPointId());
+			gameMapManager.showMap(gameMapManager.getInitialMapIdentifier(), gameMapManager.getInitialStartingPointId());
 			StartConfigUtil.configureMapStartConfig(gameMapManager.getDebugStartConfig(), gameMapManager.getInitialStartingPointId());
 		}
 		else {

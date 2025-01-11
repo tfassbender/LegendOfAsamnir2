@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="556">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="557">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -340,6 +340,7 @@
   </object>
   <object id="387" name="object.eventObject" x="800" y="1056" width="64.6666" height="31.606">
    <properties>
+    <property name="booleanParameter" value="true"/>
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
   </object>
@@ -868,6 +869,12 @@
    <point/>
   </object>
   <object id="543" name="item.triforce_svartalfheim_dwarven_cave_castle" x="2448" y="1792">
+   <point/>
+  </object>
+  <object id="556" name="object.configObject" x="832" y="832">
+   <properties>
+    <property name="unitId" value="loa2_l1_dwarven_caves_castle__boss_movement_position_min_y"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

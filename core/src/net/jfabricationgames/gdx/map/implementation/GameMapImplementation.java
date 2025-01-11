@@ -107,13 +107,25 @@ public class GameMapImplementation implements GameMap {
 	
 	private void updateMap() {
 		String mapIdentifier = MapDataHandler.getInstance().getMapIdentifier();
-		GameMapManager.getInstance().showMap(mapIdentifier, 0);
+		int startingPointId = 0;
+		
+		GameMapManager gameMapManager = GameMapManager.getInstance();
+		if (mapIdentifier == null) {
+			Gdx.app.error(getClass().getSimpleName(), "The map identifier was not set in the map data handler. The starting map config will be used." + //
+					" This may happen during debbugging, but should not happen in a release.");
+			mapIdentifier = gameMapManager.getInitialMapIdentifier();
+			startingPointId = gameMapManager.getInitialStartingPointId();
+		}
+		
+		gameMapManager.showMap(mapIdentifier, startingPointId);
 	}
 	
 	private void updatePlayerPosition() {
 		CharacterPropertiesDataHandler characterDataHandler = CharacterPropertiesDataHandler.getInstance();
 		Vector2 playerPosition = characterDataHandler.getPlayerPosition();
-		player.setPosition(playerPosition.x, playerPosition.y);
+		if (playerPosition != null) { // can be null if no respawn checkpoint was reached yet
+			player.setPosition(playerPosition.x, playerPosition.y);
+		}
 	}
 	
 	private void updateCameraPosition() {
@@ -487,7 +499,8 @@ public class GameMapImplementation implements GameMap {
 			return player;
 		}
 		
-		for (Enemy enemy : enemies) {
+		Array<Enemy> copyOfEnemies = new Array<>(enemies); // a copy is needed to avoid a nested iteration (when an enemy tries to find a unit by id)
+		for (Enemy enemy : copyOfEnemies) {
 			if (unitId.equals(enemy.getUnitId())) {
 				return enemy;
 			}

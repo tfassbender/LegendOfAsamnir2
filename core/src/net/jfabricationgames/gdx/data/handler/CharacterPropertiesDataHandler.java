@@ -293,6 +293,13 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		properties.respawnPoint = respawnPoint;
 	}
 	
+	public boolean isRespawnWithStartingStats() {
+		return properties.respawnWithStartingStats;
+	}
+	public void setRespawnWithStartingStats(boolean respawnWithStartingStats) {
+		properties.respawnWithStartingStats = respawnWithStartingStats;
+	}
+	
 	public Vector2 getPlayerPosition() {
 		return properties.position;
 	}

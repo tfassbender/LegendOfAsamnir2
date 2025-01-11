@@ -696,6 +696,8 @@ Map properties that can be configured in the event object are:
 **Respawn Checkpoints:**  
 Respawn checkpoints are a special type of Event Objects. They are configured in the map, by adding an Event Object with the **eventParameter 'respawnCheckpoint'**. This event is received and handled by the [PlayableCharacter](core/src/net/jfabricationgames/gdx/character/player/PlayableCharacter.java) implementation [Dwarf](core/src/net/jfabricationgames/gdx/character/player/implementation/Dwarf.java).
 
+If the Event Object is configured with the **booleanParameter true** (in the map properties of the object), the player will be respawned with the starting stats (full health, full mana, half shield) when respawning from this checkpoint (which is useful e.g. for boss fights).
+
 **State Switch Objects:**  
 State switch objects are a special type of Event Objects. They can have two states: *active* and *inactive*. These states usually can be seen in the texture of the object. The state switch objects can execute events when the state changes (just like other event objects do, when they are triggered). In addition to the events that can be fired, the state of the switches can be checked from a [condition](#conditions). An example for a condition that uses state switches can be found in the configuration file [demo.json](core/assets/config/condition/condition/levels/demo.json):
 

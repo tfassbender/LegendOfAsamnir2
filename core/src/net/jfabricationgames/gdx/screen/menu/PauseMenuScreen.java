@@ -199,6 +199,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 			else if (loadGameDialog.isVisible()) {
 				closeLoadGameDialog();
 			}
+			else if (settingsDialog.isVisible()) {
+				closeSettingsDialog();
+			}
 			else {
 				backToGame();
 			}

@@ -10,6 +10,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonWriter.OutputType;
 
+import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.data.container.GameDataContainer;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -83,6 +84,10 @@ public class GameDataService implements EventListener {
 		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.UPDATE_MAP_AFTER_LOADING_GAME_STATE));
 		
 		GameDataHandler.getInstance().updateData(gameData);
+		
+		if (gameData.characterDataContainer.respawnWithStartingStats) {
+			Player.getInstance().resetAfterGameOver();
+		}
 	}
 	
 	public boolean isGameDataSlotExisting(int slot) {

@@ -25,12 +25,15 @@ import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
 public class EventObject extends GameObject implements ContactListener {
 	
-	public static final String MAP_PROPERTY_KEY_EVENT_PARAMETER = "eventParameter";
-	public static final String MAP_PROPERTY_KEY_MULTIPLE_EXECUTIONS_POSSIBLE = "singleExecution";
+	private static final String MAP_PROPERTY_KEY_EVENT_PARAMETER = "eventParameter";
+	private static final String MAP_PROPERTY_KEY_BOOLEAN_PARAMETER = "booleanParameter";
+	private static final String MAP_PROPERTY_KEY_MULTIPLE_EXECUTIONS_POSSIBLE = "singleExecution";
 	
+	// setting the booleanParameter of a respawn checkpoint to true will make the player respawn with starting stats (full health, full mana, half shield)
 	public static final String EVENT_KEY_RESPAWN_CHECKPOINT = "respawnCheckpoint";
 	
 	private String eventParameter;
+	private boolean booleanParameter;
 	private boolean singleExecution;
 	@MapObjectState
 	private boolean executed = false;
@@ -72,13 +75,18 @@ public class EventObject extends GameObject implements ContactListener {
 	public void processMapProperties() {
 		super.processMapProperties();
 		eventParameter = mapProperties.get(MAP_PROPERTY_KEY_EVENT_PARAMETER, String.class);
+		booleanParameter = Boolean.parseBoolean(mapProperties.get(MAP_PROPERTY_KEY_BOOLEAN_PARAMETER, "false", String.class));
 		singleExecution = Boolean.parseBoolean(mapProperties.get(MAP_PROPERTY_KEY_MULTIPLE_EXECUTIONS_POSSIBLE, "false", String.class));
 	}
 	
 	@Override
 	public void beginContact(Contact contact) {
 		if (isPlayableCharacterContact(contact) && canBeExecuted()) {
-			EventConfig event = new EventConfig().setEventType(EventType.EVENT_OBJECT_TOUCHED).setStringValue(eventParameter).setParameterObject(this);
+			EventConfig event = new EventConfig() //
+					.setEventType(EventType.EVENT_OBJECT_TOUCHED) //
+					.setStringValue(eventParameter) //
+					.setBooleanValue(booleanParameter) //
+					.setParameterObject(this);
 			EventHandler.getInstance().fireEvent(event);
 			executed = true;
 			MapObjectDataHandler.getInstance().addStatefulMapObject(this);

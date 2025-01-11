@@ -14,6 +14,8 @@ import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.GiantGolemAttackAI;
 import net.jfabricationgames.gdx.character.enemy.ai.GiantGolemMovementAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
+import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.state.GameStateManager;
 
 public class GiantGolem extends Enemy {
@@ -27,6 +29,7 @@ public class GiantGolem extends Enemy {
 	
 	private Vector2 startingPosition;
 	private boolean forceFieldDeactivated;
+	private boolean minYSet;
 	
 	public GiantGolem(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
@@ -111,6 +114,13 @@ public class GiantGolem extends Enemy {
 	@Override
 	public void act(float delta) {
 		super.act(delta);
+		
+		if (!minYSet) {
+			minYSet = true;
+			// set the minimum y position here, because when creating the AI the map is not loaded yet
+			CutsceneControlledUnit minY = GameMapManager.getInstance().getMap().getUnitById("loa2_l1_dwarven_caves_castle__boss_movement_position_min_y");
+			giantGolemMovementAI.setMinY(minY.getPosition().y);
+		}
 		
 		if (getPercentualHealth() > 0 && getPercentualHealth() < 0.5f && getPosition().y > startingPosition.y - 2.5f) {
 			// low health and near starting position -> heal

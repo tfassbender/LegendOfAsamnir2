@@ -41,7 +41,7 @@
             
             executionParameters: {
                 displayTextHeader: "Thorin",
-                displayText: "Yes, there is a path, but you need the rule Algiz to see it.\n\nI'll go check out the castle. You can follow me if you want.  ",
+                displayText: "Yes, there is a path, but you need the rune Algiz to see it.\n\nI'll go check out the castle. You can follow me if you want.  ",
                 showNextPageIcon: true,
 			}
             

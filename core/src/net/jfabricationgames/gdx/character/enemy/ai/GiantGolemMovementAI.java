@@ -18,6 +18,7 @@ import net.jfabricationgames.gdx.character.state.CharacterState;
 public class GiantGolemMovementAI extends PreDefinedMovementAI {
 	
 	private Supplier<Float> percentualHealthSupplier;
+	private float minY; // the minimum y position where the golem is allowed to move to (to not move out of the boss room)
 	
 	public GiantGolemMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState, Supplier<Float> percentualHealthSupplier) {
 		super(subAI, movingState, idleState, false, 0f, new Vector2(0, 0));
@@ -44,6 +45,14 @@ public class GiantGolemMovementAI extends PreDefinedMovementAI {
 			// follow the player (sub AI is a FollowAI)
 			subAI.calculateMove(delta);
 			
+			if (character.getPosition().y <= minY) {
+				AIPositionChangingMove move = getMove(MoveType.MOVE, AIPositionChangingMove.class);
+				if (move != null && move.movementTarget != null && move.movementTarget.y < character.getPosition().y) {
+					// don't move to far down to not leave the boss room
+					subAI.clearMoves(); // NOTE: clearMoves clears all moves - this only works here because the underlying AI is the lowest one (except for the BaseAI)
+				}
+			}
+			
 			// check the move that the follow AI created
 			AIPositionChangingMove move = getMove(MoveType.MOVE, AIPositionChangingMove.class);
 			if (move != null) {
@@ -58,5 +67,9 @@ public class GiantGolemMovementAI extends PreDefinedMovementAI {
 				}
 			}
 		}
+	}
+	
+	public void setMinY(float minY) {
+		this.minY = minY;
 	}
 }
