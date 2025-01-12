@@ -279,4 +279,17 @@
 		
 		freezeTarget: true,
 	},
+	
+	frost_giant_axe: {
+		attackType: FROST_GIANT_AXE_THROW,
+		
+		texture: frost_giant_axe_thrown,
+		textureScale: 1
+		
+		speed: 100,
+		range: 75,
+		removeAfterRangeExceeded: false,
+		dampingAfterRangeExceeded: 10,
+		dampingAfterObjectHit: 10,
+	},
 }

@@ -1,12 +1,12 @@
 {
-	id: loa2_l2_niflheim_main_goto_niflheim_final_cutscene,
+	id: loa2_l2_niflheim_ice_fields__goto_niflheim_main__cutscene,
 	controlledActions: {
-		move_up: {
+		move_down: {
 			startsWithCutscene: true,
 			
 			type: MOVE,
 			controlledUnitId: PLAYER,
-			controlledUnitTarget: {x: 0, y: 6},
+			controlledUnitTarget: {x: 0, y: -6},
 			cameraFollowsTarget: false,
 			
 			executes: [
@@ -20,8 +20,8 @@
 			
 			event: {
 				eventType: CHANGE_MAP,
-				stringValue: loa2_niflheim_ice_fields,
-				intValue: 0,
+                stringValue: loa2_niflheim_main,
+                intValue: 2,
 			},
 			
 			waitForEventToFinish: false,
@@ -41,23 +41,10 @@
 			},
             
             executes: [
-                reset_global_value_chickens_spawned,
-			],
-		},
-		
-		reset_global_value_chickens_spawned: {
-			type: EVENT,
-            
-            event: {
-                eventType: SET_GLOBAL_CONDITION_VALUE,
-                stringValue: "{key: loa2_l2_niflheim__chickens_spawned, value: false}",
-			},
-            
-            executes: [
                 end,
 			],
 		},
-		
+				
 		end: {
 			type: WAIT,
 			executionDelayInSeconds: 0f,

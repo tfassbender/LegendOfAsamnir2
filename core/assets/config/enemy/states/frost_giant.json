@@ -1,0 +1,112 @@
+[
+	{
+		id: idle,
+		animation: frost_giant_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_hit, attack_stomp, attack_throw, damage, die
+		]
+	},
+	{
+		id: idle_disarmed,
+		animation: frost_giant_idle, // there is no animation, but in the disarmed state, the idle state only is active between two states and is never rendered
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move_disarmed, attack_stomp_disarmed, damage_disarmed, die
+		]
+	},
+	{
+		id: move,
+		animation: frost_giant_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_hit, attack_stomp, attack_throw, damage, die
+		]
+	},
+	{
+		id: move_disarmed,
+		animation: frost_giant_move_disarmed,
+		endsWithAnimation: true,
+		followingState: idle_disarmed,
+		interruptingStates: [
+			idle, attack_stomp_disarmed, damage_disarmed, die
+		]
+	},
+	{
+		id: attack_hit,
+		animation: frost_giant_attack_hit,
+		attack: attack_hit,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    damage, die
+		]
+	},
+	{
+		id: attack_stomp,
+		animation: frost_giant_attack_stomp,
+		attack: attack_stomp,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    die // this counter attack cannot be interrupted by damage
+		]
+	},
+	{
+		id: attack_stomp_disarmed,
+		animation: frost_giant_attack_stomp_disarmed,
+		attack: attack_stomp,
+		endsWithAnimation: true,
+		followingState: idle_disarmed,
+		interruptingStates: [
+		    die // this counter attack cannot be interrupted by damage
+		]
+	},
+	{
+		id: attack_throw,
+		animation: frost_giant_attack_throw,
+		attack: attack_throw,
+		endsWithAnimation: true,
+		followingState: idle_disarmed,
+		interruptingStates: [
+		    die // must not be intrrupted by damage because otherwise we might get problems with the disarmed state
+		]
+	},
+	{
+		id: damage,
+		animation: frost_giant_damage,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 0.5f,
+		followingState: attack_stomp, // counter attack after damage
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: damage_disarmed,
+		animation: frost_giant_damage_disarmed,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 0.5f,
+		followingState: attack_stomp_disarmed, // counter attack after damage
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: frost_giant_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

@@ -46,7 +46,6 @@
 		changeStateAfterAnimationDelay: 12f,
 		followingState: idle,
 		stateEnteringSound: rock_hit,
-		followingState: idle,
 		interruptingStates: [
 			die
 		],
@@ -59,7 +58,6 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		stateEnteringSound: rock_hit,
-		followingState: idle,
 		interruptingStates: [
 			die
 		],

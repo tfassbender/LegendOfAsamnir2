@@ -61,6 +61,8 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	protected AnimationDirector<TextureRegion> animation;
 	protected Sprite sprite;
 	
+	protected String unitId;
+	
 	public Projectile(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
 		this.typeConfig = typeConfig;
 		this.sprite = sprite;
@@ -306,7 +308,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		}
 	}
 	
-	protected boolean isAttackOver() {
+	public boolean isAttackOver() {
 		return reflected || (attackPerformed && !typeConfig.multipleHitsPossible);
 	}
 	
@@ -394,6 +396,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		}
 		
 		return null;
+	}
+	
+	public String getUnitId() {
+		return unitId;
 	}
 	
 	@FunctionalInterface

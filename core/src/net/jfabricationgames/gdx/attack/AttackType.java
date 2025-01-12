@@ -21,6 +21,7 @@ public enum AttackType {
 	DWARVEN_GUARDIAN_CONSTRUCT_FIRE(PROJECTILE), //
 	ANIMATED_HIT(PROJECTILE), // a hit with an animation, that is not part of the character animation - handled as a projectile that doesn't move
 	SLINGSHOT(PROJECTILE), //
+	FROST_GIANT_AXE_THROW(PROJECTILE), //
 	WAND(MAGIC), //
 	MAGIC_WAVE(MAGIC), //
 	FORCE_FIELD(MAGIC), //

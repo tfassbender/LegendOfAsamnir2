@@ -11,6 +11,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.DwarvenGuardianConstruct;
 import net.jfabricationgames.gdx.character.enemy.implementation.FireTotem;
+import net.jfabricationgames.gdx.character.enemy.implementation.FrostGiant;
 import net.jfabricationgames.gdx.character.enemy.implementation.Gargoyle;
 import net.jfabricationgames.gdx.character.enemy.implementation.GiantGolem;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
@@ -40,6 +41,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_OGRE = "ogre";
 	private static final String ENEMY_NAME_GIANT_GOLEM = "giant_golem";
 	private static final String ENEMY_NAME_BUGBEAR = "bugbear";
+	private static final String ENEMY_NAME_FROST_GIANT = "frost_giant";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -111,6 +113,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_BUGBEAR:
 				enemy = new Bugbear(typeConfig, properties);
+				break;
+			case ENEMY_NAME_FROST_GIANT:
+				enemy = new FrostGiant(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

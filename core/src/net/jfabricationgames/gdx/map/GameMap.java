@@ -17,8 +17,7 @@ import net.jfabricationgames.gdx.object.GameObject;
 import net.jfabricationgames.gdx.object.GameObjectMap;
 import net.jfabricationgames.gdx.projectile.ProjectileMap;
 
-public interface GameMap extends EventListener, CutsceneUnitProvider, EnemyCharacterMap, NpcCharacterMap, AnimalCharacterMap, GameObjectMap, ItemMap,
-		ProjectileMap, Disposable {
+public interface GameMap extends EventListener, CutsceneUnitProvider, EnemyCharacterMap, NpcCharacterMap, AnimalCharacterMap, GameObjectMap, ItemMap, ProjectileMap, Disposable {
 	
 	enum GlobalMapPropertyKeys {
 		

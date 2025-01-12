@@ -9,4 +9,6 @@ public interface ProjectileMap {
 	public void addProjectile(Projectile projectile);
 	public void removeProjectile(Projectile projectile, Body body);
 	public GameMapGroundType getGroundTypeByName(String groundType);
+	
+	public Projectile getProjectileByUnitId(String unitId);
 }

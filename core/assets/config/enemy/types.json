@@ -894,7 +894,34 @@
 		healthBarOffsetY: -0.5,
 		healthBarWidthFactor: 0.6,
 		healthBarAlwaysVisible: true,
-		
-		drops: {}
 	},
+	
+	frost_giant: {
+		typeName: frost_giant,
+		
+		animationsConfig: config/animation/enemy/frost_giant.json,
+		stateConfig: config/enemy/states/frost_giant.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/frost_giant.json,
+		
+		health: 100,
+		movingSpeed: 1.5f,
+		applyGroundPhysics: false, // must be able to move on ice
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.3f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1.5f,
+		bodyHeight: 1.7f,
+		
+		addSensor: true,
+		sensorRadius: 8f,
+		
+		pushForceDamage: 60,
+		pushForceHit: 100,
+		
+		isBoss: true
+		bossName: "Thrym - King of the Ice Giants",
+	}
 }

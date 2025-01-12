@@ -1,0 +1,30 @@
+[
+	{
+		id: attack_hit,
+		type: HIT,
+		delay: 0.3,
+		duration: 0,
+		damage: 20,
+		distFromCenter: 2,
+		hitFixtureRadius: 1,
+		pushForce: 75
+	},
+	{
+		id: attack_stomp,
+		type: NOVA,
+		delay: 0.3,
+		damage: 5,
+		distFromCenter: 0,
+		hitFixtureRadius: 4,
+		pushForce: 75
+	},
+	{
+		id: attack_throw,
+		type: FROST_GIANT_AXE_THROW,
+		projectileType: frost_giant_axe,
+		delay: 0.3,
+		damage: 20,
+		distFromCenter: 1,
+		pushForce: 75,
+	},
+]

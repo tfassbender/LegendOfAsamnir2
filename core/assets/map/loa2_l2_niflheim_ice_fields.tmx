@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2277">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2294">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -32,7 +32,7 @@
  </layer>
  <layer id="2" name="background_2" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="5" name="terrain" width="100" height="66" locked="1">
@@ -263,7 +263,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2230" name="object.pressure_switch" x="560.25" y="1329.5">
+  <object id="2230" name="object.pressure_switch" x="559.25" y="1396.5">
    <properties>
     <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__pressure_switch__ice_pressure_switches_puzzle"/>
     <property name="stateSwitchId" value="loa2_l2_niflheim_ice_fields__pressure_switch_4__ice_pressure_switches_puzzle"/>
@@ -355,8 +355,70 @@
    </properties>
    <point/>
   </object>
-  <object id="2276" name="enemy.yeti" x="1028" y="542">
+  <object id="2276" name="enemy.yeti" x="1053" y="556">
    <point/>
+  </object>
+  <object id="2277" name="object.iced_rock" x="231" y="542">
+   <point/>
+  </object>
+  <object id="2278" name="object.iced_rock" x="351.5" y="669.5">
+   <point/>
+  </object>
+  <object id="2279" name="object.iced_rock" x="448" y="497.5">
+   <point/>
+  </object>
+  <object id="2280" name="object.iced_rock" x="598.5" y="574">
+   <point/>
+  </object>
+  <object id="2281" name="object.configObject" x="416" y="736">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_ice_fields__boss_movement_position_min_y"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2282" name="enemy.frost_giant" x="416" y="576">
+   <point/>
+  </object>
+  <object id="2283" name="object.eventObject" x="2432" y="1024" width="64" height="15">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2284" name="object.eventObject" x="1184" y="384" width="96" height="15">
+   <properties>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2285" name="object.eventObject" x="384" y="1041" width="64" height="15">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2286" name="object.eventObject" x="384" y="839" width="64" height="5">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__enter_boss_room"/>
+   </properties>
+  </object>
+  <object id="2287" name="enemy.yeti" x="926" y="422">
+   <point/>
+  </object>
+  <object id="2288" name="object.chest" x="364" y="1294">
+   <properties>
+    <property name="drop" value="{health_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2289" name="object.chest" x="364" y="1262">
+   <properties>
+    <property name="drop" value="{shield_full: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2292" name="object.eventObject" x="1632" y="1984" width="95.75" height="9">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__goto_niflheim_main"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics">
@@ -426,7 +488,7 @@
   <object id="2125" x="736" y="320" width="32" height="480"/>
   <object id="2127" x="64" y="368" width="32" height="432"/>
   <object id="2128" x="96" y="768" width="160" height="192"/>
-  <object id="2129" x="256" y="928" width="128" height="448"/>
+  <object id="2129" x="256" y="928" width="128" height="304.917"/>
   <object id="2130" x="352" y="1376" width="192" height="96"/>
   <object id="2131" x="512" y="1472" width="96" height="96"/>
   <object id="2132" x="992" y="1056" width="32" height="608"/>
@@ -571,6 +633,8 @@
    <polygon points="0,0 19,-6 29.6667,-19"/>
   </object>
   <object id="2263" x="1042" y="616.182" width="19.6364" height="27.6364"/>
+  <object id="2290" x="320" y="1312" width="64" height="64"/>
+  <object id="2291" x="320" y="1216" width="32" height="96"/>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="2042" x="2560.33" y="1221" width="416" height="11.6667"/>

@@ -50,6 +50,7 @@
 				raw_images/restricted/projectiles/bandit_slingshot,
 				raw_images/restricted/projectiles/mine_explosion,
 				raw_images/restricted/projectiles/ice_breath,
+				raw_images/restricted/projectiles/frost_giant_axe,
 				
 				//##############################################################
 				//### objects
@@ -349,6 +350,18 @@
 				raw_images/restricted/enemy/yeti/yeti_ice_breath,
 				raw_images/restricted/enemy/yeti/yeti_damage,
 				raw_images/restricted/enemy/yeti/yeti_death,
+				
+				// frost giant
+				raw_images/restricted/enemy/frost_giant/frost_giant_idle,
+				raw_images/restricted/enemy/frost_giant/frost_giant_move,
+				raw_images/restricted/enemy/frost_giant/frost_giant_move_disarmed,
+				raw_images/restricted/enemy/frost_giant/frost_giant_attack_hit,
+				raw_images/restricted/enemy/frost_giant/frost_giant_attack_stomp,
+				raw_images/restricted/enemy/frost_giant/frost_giant_attack_stomp_disarmed,
+				raw_images/restricted/enemy/frost_giant/frost_giant_attack_throw,
+				raw_images/restricted/enemy/frost_giant/frost_giant_damage,
+				raw_images/restricted/enemy/frost_giant/frost_giant_damage_disarmed,
+				raw_images/restricted/enemy/frost_giant/frost_giant_death,
 				
 				//##############################################################
 				//### NPCs

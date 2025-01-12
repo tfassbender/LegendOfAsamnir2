@@ -121,4 +121,30 @@
 		executionType: CONDITIONAL_EVENT,
 		conditionalExecutionId: loa2_l2_ice_fields__open_lock_if_all_pressure_switches_activated,
 	},
+	
+	//*******************************************
+	//*** cutscenes - event objects touched
+	//*******************************************
+	
+	loa2_l2_niflheim_ice_fields__goto_niflheim_main: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_ice_fields__goto_niflheim_main,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_ice_fields__goto_niflheim_main__cutscene,
+		}
+	},
+	
+	loa2_l2_niflheim_ice_fields__enter_boss_room: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l2_niflheim_ice_fields__enter_boss_room,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l2_niflheim_ice_fields__enter_boss_room__cutscene,
+		}
+	},
 }

@@ -534,6 +534,17 @@ public class GameMapImplementation implements GameMap {
 	}
 	
 	@Override
+	public Projectile getProjectileByUnitId(String unitId) {
+		for (Projectile projectile : projectiles) {
+			if (unitId.equals(projectile.getUnitId())) {
+				return projectile;
+			}
+		}
+		
+		return null;
+	}
+	
+	@Override
 	public void handleEvent(EventConfig event) {
 		if (event.eventType == EventType.UPDATE_MAP_OBJECT_STATES) {
 			updateMapObjectStates();

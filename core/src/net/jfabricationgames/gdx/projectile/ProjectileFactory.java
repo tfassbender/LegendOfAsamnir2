@@ -108,6 +108,9 @@ public class ProjectileFactory {
 			case HADOUKEN:
 				projectile = new Hadouken(typeConfig, animation, gameMap);
 				break;
+			case FROST_GIANT_AXE_THROW:
+				projectile = new FrostGiantAxe(typeConfig, sprite, gameMap);
+				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}

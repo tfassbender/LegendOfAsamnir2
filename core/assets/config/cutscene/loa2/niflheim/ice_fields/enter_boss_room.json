@@ -1,0 +1,53 @@
+{
+	id: loa2_l2_niflheim_ice_fields__enter_boss_room__cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l2_niflheim_ice_fields__boss_room_entered,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: start_boss_fight,
+				},
+			],
+		},
+		
+		// TODO add a cutscene - add some joke about thrym stealing the hammer mjolnir
+		
+		start_boss_fight: {
+			type: EVENT,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+			executes: [
+				set_global_value__boss_room_entered,
+			]
+		},
+		
+		set_global_value__boss_room_entered: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l2_niflheim_ice_fields__boss_room_entered, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
