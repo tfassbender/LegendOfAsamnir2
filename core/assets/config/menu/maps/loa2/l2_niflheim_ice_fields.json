@@ -1,0 +1,9 @@
+{
+	name: Ice Fields,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l2_niflheim_ice_fields,
+	},
+	textureWidth: 500,
+	textureHeight: 330,
+}

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2294">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2295">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
   <property name="building_level" value="false"/>
   <property name="dungeon_level" value="false"/>
-  <property name="mini_map_config_path" value="config/menu/maps/loa2/l2_niflheim_main.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l2_niflheim_ice_fields.json"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
  <tileset firstgid="491" source="tileset/cave.tsx"/>
@@ -37,17 +37,17 @@
  </layer>
  <layer id="5" name="terrain" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2c9JA0EUwOHpIWlAyGHB9SA2YESIDfgXrcImJIIXU0TQq51Yig34QpKL7GGE6BvI98GDPexh4AczzG4pAPD3Fl0pn132Klh57Ev5iBZf3fqZXK/98DMAsL8Ox6X0MUfj7JWwchodpjFnejThMjpcxVzrkcL+1Bb7U1vsT1DHWdKW7Vkyi7nQJN32LLmPedADoNrLQfYKAAAAAABgfy0nvx/a4T8LAADsxrO7TlOeKnrM3VP/TU2PmnfYDT3a8lbxLe1dDyqcj4aHHEMtjvVIc/Kjw23MnR5pbjYNdAAAAAC+Aa3LMgM=
+   eJztnM1OVDEUgO8DyGpmL0xcTCIm4LyAGEVfwB8QnoKZdxggYQN7t0Z2ig/hzsS9L+ELeG641dq00/b2tD1tz5ecQBi4P+e/p/fSdQzDMGE8nnbdLsiTafixHiAco3WegQ4PQJ4j6HIH0R438677Occ7HhVsPvsGPn8L8o6Qb5/tdt0d2OL3/P77TZQWk5g+m4prsMFq8u97HdvDfZV4fzF4mEAPy0n8czCMD5j9VgmsMsfgHuh5H+QpyEKjc8x+qwTOMtvjJej5EOQVyGtJ56JPodRvrZF0pcZ8itpnQ1zDMXz9AHICcipdF7U+ReSRixE2OVf+xjXmtzPqgIKPxEbY1BTztv4tdy7DJKev6XqSPvd9NOg3d02vHVN++q7Ru6lGsY3wkPPTF9Dr10HuQL5Z9Bx7/qLaWa6PWP0LRXS1QRcfMlvTtH1NizEo1xLVHmq9nkm2UHs0LGzHramH0CFqSb/e+jXca815gTqiloj1VsoZpRoLvr6/Yv/5i85uqfJ9a/rPXUddYzSkhpWy3s9dL6928p7fB93MqrXYVcntPyaw6nBoH7sVOQ9Q2xPFvp4lUqyJfDzLkJdN163OErBnhibf9fHp3LU6Jan3SFqvHTVAtf4xDHNPKTGaas+Qet1x0UNLfYkJX78uJQ6YMom5N9qvA3PFPFbcpI4/as98USLW/uRYqNRkOcZs/hrizyXUok3X2OtpjM2w7tt3zqbzd10+Ffekfvbpkb+USkzf1MVXSOyrdhLHVP0Dc59lZTiH6We1QyV3M/8jYoFarce6nhjzAtvz+C7x3WIOYHDwrb0pfE3UO+y+YMy7LykJeUdHgK0zk7115+G6nJ4WdX7puNaJOb/60aDeTawd7HFRwTq1FFzs4fI7JkJqTGn/TwWD2PYIQZ5ZlzAjxOCzwyztttA8lfM9WGr0/hzq07bnSV9M9MLEwfY8qc4W+xXaY5Nf9zlA/Tw0DpYjY2mh2OEI5LhCe8ikqKNj1zbvBxuMtUOL/ZuAYn9U8jMHfW119SefvXEx7zft1TF6ZsP7/dh6ss2oarNLqhxZm95iQSlHbrIZ7+OlgeOGYcLgGKJDi3uATFz+AGc+liw=
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt1DENACAMRNGKqCNM4F9JN8LQzjC8p+CSS34EAAAAADBZ+XoBt+0POPTpL/oEAAAAAAAAAAAAAAAAAAAAAAAA0Ctd5QGH
+   eJztnEluFTEQQBskhn3+iuEEgMSwAxaICMgOWCAihh1wgSDBEfjcgUUgZwgcAA7ADSKCWIHEICFlR1mKFWPZZZfbQ1W3n1TK1/8/3Xa5XFP372HoTIGvK7Tvvwl8f0k8Hlf2GMzjFTKGD5HjKzEPzAa+wGe7ns9d/3dmMQxnQc4t8HMqu8L0YR87ZKcl0eeuuReo5zoP+r4AchHkkqH7a/B6FeS68d53OPaPinPB1hkjdc1fZ5yb9qfUOdwAfd8EuQWytq97tab34PU6yP3FwfwOwevDgf2i/z8FW4+p68EdNU+ff3wA+n0I8gjk8b6uW+pB+XvKei4ddojZ+d/Cc6PoTo/9Mvy9YshVwjHMdZVkv5zzp9swtjuG3GU81r1AvqBQ+2HHE6sl2MwTGONTQ54ZY95hNH6qTW8zGnsJbNtajYjlOc4zN5bEmKlZL7Qec2DuNhdLjj1v67plzSud3HueQ/9o6ozxNZzzbA5Q/NP7kX2GHjPClMpJsH1A8WEhG8iZ07eOc6n2noKu41rPOYWcfVWMqdeLNra/lJJrrE2wrgrlEZLzDOlxWaLPNJHu17T+U3qRG8Lmzn2tpO/lTqdTFuq9YBxoHeNr1oLSwepB7vFzCrTeK50DpNTstfkIevlk6UZiXOr8T676wzzOxkpabanj0Lbg3moOUu4npODayyG41/2YHdessUvarD527G8MWiMlPrjWjOq/sN9X5CC3Ljn3nWpdn6oBZz1jLD334GP1YI5a8XkDfW0JWiMu9sShTmrZ4+GyDh03LWuH0rkAJ0J6rp2rxtQplDj1Ttg6xtaDknKsOfWga9ZMe4m/wwhRKy6n2EVMXJhr36mDI/mesakw1Vjgq7enSo4cWUp/USq9xqUT079qfW+Kmd/E+Bxp+VCr6yOuPmJqvMJ0njtO1NjnrW0+BXMNaud++jkZNfZeyvXgGD4jv4OW5lMU2q9oW9A9FNdcXHFAvfcT5BfIb5A/AnXAgdi9GPO9I4thOApyDOT4os31JwU1JnMh1z7Wcz4Ba3AS5BTI6RG/SxsTb0pcD4zVE4eaJmVNxzynzGfv2F60c5aXhPOHnlcprc+j45I5L9caUv2Kbw+Z7/t09VaYDnPh0kfNZ37Fniul/zK3foCdv1J8TI37AGtS65yu2OuLxzE+JiaWf+t9yKpQr6nb+zDmGZIcqHVfmYo5mN/35VH2+7aeFSHbfuH5vNU9dfZ5Xb3AFvld6ef4ajaRngtH9Pi2jF6Xz6a44bJxM0ewnzfP6dmvFDYtf2s/+8isK2L2vcvPlMKVI7jGKCGedMbzDx3O3no=
   </data>
  </layer>
  <layer id="13" name="terrain_3" width="100" height="66" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20JT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4G9nIAAB
+   eJzt2DENACAQBME3ADQoAPxrhAYHJE8xo+CS7S4CAADeqj2i9ewVXPO0WHoAAAAACYpP4itDDwAAAAAAAAAAAAAAAAAAAAAAIMEG9R8BDA==
   </data>
  </layer>
  <layer id="10" name="background_above_player" width="100" height="66" locked="1">
@@ -420,8 +420,16 @@
     <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__goto_niflheim_main"/>
    </properties>
   </object>
+  <object id="2294" name="object.key_wall" x="416" y="270">
+   <properties>
+    <property name="lockId" value="loa2_l2_niflheim_ice_fields__key_wall__boss_room"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="2011" x="1472" y="1696" width="160" height="416"/>
   <object id="2012" x="1728" y="1536" width="32" height="576"/>
   <object id="2013" x="1568" y="1472" width="256" height="113.667"/>
@@ -482,13 +490,13 @@
   <object id="2119" x="832" y="672" width="224" height="112.909"/>
   <object id="2120" x="800" y="672" width="32" height="512.5"/>
   <object id="2121" x="544" y="1120" width="288" height="81.2727"/>
-  <object id="2122" x="448" y="928" width="96" height="400.458"/>
-  <object id="2123" x="544" y="928" width="32" height="128"/>
-  <object id="2124" x="576" y="768" width="160" height="192"/>
+  <object id="2122" x="448" y="923" width="96" height="405.458"/>
+  <object id="2123" x="544" y="923" width="32" height="133"/>
+  <object id="2124" x="576" y="762.667" width="160" height="197.333"/>
   <object id="2125" x="736" y="320" width="32" height="480"/>
   <object id="2127" x="64" y="368" width="32" height="432"/>
-  <object id="2128" x="96" y="768" width="160" height="192"/>
-  <object id="2129" x="256" y="928" width="128" height="304.917"/>
+  <object id="2128" x="96" y="762.333" width="160" height="197.667"/>
+  <object id="2129" x="256" y="923" width="128" height="309.917"/>
   <object id="2130" x="352" y="1376" width="192" height="96"/>
   <object id="2131" x="512" y="1472" width="96" height="96"/>
   <object id="2132" x="992" y="1056" width="32" height="608"/>

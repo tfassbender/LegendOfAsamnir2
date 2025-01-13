@@ -36,7 +36,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			damage, die
+			die
 		]
 	},
 	{
