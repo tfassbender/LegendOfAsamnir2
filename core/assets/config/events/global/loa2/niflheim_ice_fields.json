@@ -147,4 +147,46 @@
             cutsceneId: loa2_l2_niflheim_ice_fields__enter_boss_room__cutscene,
 		}
 	},
+	
+	//*******************************************
+	//*** boss room
+	//*******************************************
+	
+	loa2_l2_niflheim_ice_fields__boss_frost_giant__defeated: {
+        event: {
+            eventType: ENEMY_DEFEATED,
+            stringValue: loa2_l2_niflheim_ice_fields__boss_frost_giant__defeated,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l2_niflheim_ice_fields__config_object__open_key_wall_after_frost_giant_defeated,
+		}
+	},
+	
+	loa2_l2_niflheim_ice_fields__key_wall__boss_room__open_gate_after_frost_giant_defeated_delayed: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l2_niflheim_ice_fields__key_wall__boss_room__open_gate_after_frost_giant_defeated_delayed,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l2_niflheim_ice_fields__key_wall__boss_room,
+		}
+	},
+	
+	//*******************************************
+	//*** rune found
+	//*******************************************
+	
+	loa2_l2_niflheim_ice_fields__rune_hagalaz_found: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: HAGALAZ,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l2_niflheim_ice_fields__rune_hagalaz_found_cutscene,
+		}
+	},
 }

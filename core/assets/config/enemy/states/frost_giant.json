@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_hit, attack_stomp, attack_throw, damage, die
+			move, attack_hit, attack_stomp, attack_stomp_wide_range, attack_throw, damage, die
 		]
 	},
 	{
@@ -64,6 +64,15 @@
 		interruptingStates: [
 		    die // this counter attack cannot be interrupted by damage
 		]
+	},
+	{
+		// only used in a cutscene
+		id: attack_stomp_wide_range,
+		animation: frost_giant_attack_stomp,
+		attack: attack_stomp_wide_range,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
 	},
 	{
 		id: attack_throw,

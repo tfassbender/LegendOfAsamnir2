@@ -7,7 +7,12 @@
 		initial: {
 			subConfigPath: config/debug/start_config/loa2/l1_dwarven_caves.json
 			subConfigName: final,
-			events: []
+			events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_asgard__chaos_wizard_castle_visisted, value: true}",
+				},
+			]
 		},
 		
 		ratatosk: {

@@ -13,21 +13,269 @@
 				},
 				{
 					// default case
-					executedStateName: start_boss_fight,
+					executedStateName: frost_giant_1,
 				},
 			],
 		},
 		
-		// TODO add a cutscene - add some joke about thrym stealing the hammer mjolnir
+		frost_giant_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "Stop right there!\n            \nWho dares to invade my kingdom?!    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				camera_multiplexer,
+			],
+		},
+		
+		camera_multiplexer: {
+			type: WAIT,
+			executionDelayInSeconds: 0.5f,
+			
+			executes: [
+				move_camera,
+				move_thorin,
+				move_frost_giant,
+			],
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: loa2_l2_niflheim_ice_fields__boss_room_central_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 3, y: 0},
+			speedFactor: 4f,
+		},
+		
+		move_thorin: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 0.75f,
+			cameraFollowsTarget: false,
+			targetPositionRelativeToUnitId: loa2_l2_niflheim_ice_fields__boss_room_central_position,
+			
+		},
+		
+		move_frost_giant: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_niflheim_ice_fields__frost_giant,
+            controlledUnitTarget: {x: 4, y: 2},
+            targetPositionRelativeToUnitId: loa2_l2_niflheim_ice_fields__boss_room_central_position,
+            
+			executes: [
+                frost_giant_2,
+			],
+		},
+		
+		frost_giant_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			executionDelayInSeconds: 1.5f,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "A dwarf?!\n                \nIt's rare to see one of your kind in these lands.           \nWhat brings you here, little one?    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_1,
+			],
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'm searching for a rune!\n            \nHave you seen any around here?    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				frost_giant_3,
+			],
+		},
+		
+		frost_giant_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "A rune?!\n           \nYou've come all this way for a mere rune?!               \nYou must be truly desperate, dwarf.    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				frost_giant_4,
+			],
+		},
+		
+		frost_giant_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "I have one of these runes ... it's called Hagalaz.\n             \nI don't really need it, so I might give it to you...       ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				frost_giant_5,
+			],
+		},
+		
+		frost_giant_5: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "But since when do dwarfs use runes?\n           \nShouldn't you be digging in a hole or something?!       ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_2,
+			],
+		},
+		
+		thorin_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I need it to get to this strange chaos wizard guy.\n           \nHe stole my axe Asamnir and I'm going to kill him and get it back!!!    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				frost_giant_6,
+			],
+		},
+		
+		frost_giant_6: {
+			type: SHOW_ON_SCREEN_TEXT,
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "... a strange chaos wizard, you say?\nAnd he stole an axe that was forged by the dwarfs?\n          \nInteresting ...       ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				frost_giant_7,
+			],
+		},
+		
+		frost_giant_7: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "I myself have a plan of stealing a weapon that was once forged by the dwarfs from one of the Aesirs...               \nDo you know where I can find this chaos wizard?       ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_3,
+			],
+		},
+		
+		thorin_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "He has a castle on the fields of Vigrid.\n            \nBut I need to ram my axe into his skull, so you can't have him!     ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				frost_giant_8,
+			],
+		},
+		
+		frost_giant_8: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thrym",
+                colorHeader: #47f3ff,
+				displayText: "Then you shouldn't have told me where to find him, dwarf.\n             \nNow I just need to get rid of you ...     ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				change_frost_giant_state,
+			],
+		},
+		
+		change_frost_giant_state: {
+			type: CHANGE_STATE,
+			executionDelayInSeconds: 0.5f,
+            
+            controlledUnitId: loa2_l2_niflheim_ice_fields__frost_giant,
+            controlledUnitState: attack_stomp_wide_range,
+			controlledUnitAttackTargetDirection: {x: 0, y: 1}, // direction doesn't matter for this attack, but a direction is required for all attacks
+            
+            executes: [
+                start_boss_fight,
+			],
+		},
 		
 		start_boss_fight: {
 			type: EVENT,
+			executionDelayInSeconds: 1f,
 			
 			event: {
 				eventType: BOSS_ENEMY_SHOW,
 			},
 			
 			executes: [
+				wait_after_boss_fight_started,
+			]
+			
+		},
+		
+		wait_after_boss_fight_started: {
+            type: WAIT,
+            executionDelayInSeconds: 1f,
+            
+            executes: [
 				set_global_value__boss_room_entered,
 			]
 		},

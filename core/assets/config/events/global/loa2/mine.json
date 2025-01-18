@@ -609,6 +609,18 @@
             eventType: ENEMY_DEFEATED,
             stringValue: loa2_l1_castle__boss_giant_golem__defeated,
 		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l1_castle__config_object__open_key_wall_after_giant_golem_defeated,
+		}
+	},
+	
+	loa2_l1_castle__key_wall__boss_room__open_gate_after_giant_golem_defeated_delayed: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l1_castle__key_wall__boss_room__open_gate_after_giant_golem_defeated_delayed,
+		},
         executionType: OPEN_LOCK,
         executionParameters: {
             lockId: loa2_l1_castle__gate_boss,
@@ -619,7 +631,7 @@
 	//*** rune found
 	//*******************************************
 	
-	demo_2_level_2_rune_raidho_found: {
+	loa2_l1_castle_rune_raidho_found: {
 		event: {
 			eventType: RUNE_FOUND,
 			stringValue: RAIDHO,

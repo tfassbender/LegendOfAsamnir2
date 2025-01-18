@@ -126,6 +126,7 @@
 	//********************************************************
 	config/cutscene/loa2/niflheim/ice_fields/goto_niflheim_main.json,
 	config/cutscene/loa2/niflheim/ice_fields/enter_boss_room.json,
+	config/cutscene/loa2/niflheim/ice_fields/rune_found.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

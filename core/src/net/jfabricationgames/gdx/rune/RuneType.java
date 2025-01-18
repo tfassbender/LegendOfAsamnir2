@@ -12,7 +12,7 @@ public enum RuneType {
 	MANNAZ(3, "rune_collected__mannaz", "MANNAZ - reflect magical attacks"), //
 	ALGIZ(4, "rune_collected__algiz", "ALGIZ - see hidden paths"), //
 	RAIDHO(5, "rune_collected__raidho", "RAIDHO - travel between the nine worlds"), //
-	HAGALAZ(6, "rune_collected__hagalaz", "HAGALAZ - gain supreme strength"), //
+	HAGALAZ(6, "rune_collected__hagalaz", "HAGALAZ - prevents damage from heat"), //
 	KENAZ(7, "rune_collected__kenaz", "KENAZ - revive after death"), //
 	LAGUZ(8, "rune_collected__laguz", "LAGUZ - access the castle of the chaos wizard"); //
 	

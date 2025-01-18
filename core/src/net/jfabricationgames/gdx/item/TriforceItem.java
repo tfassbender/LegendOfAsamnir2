@@ -25,6 +25,7 @@ public class TriforceItem extends Item {
 		TRIFORCE_SVARTALFHEIM_DWARVEN_CAVE_CASTLE(TriforceItemLocation.SVARTALFHEIM), //
 		
 		TRIFORCE_NIFLHEIM_MAIN_CHICKEN_SIDE_QUEST(TriforceItemLocation.NIFLHEIM), //
+		TRIFORCE_NIFLHEIM_ICE_FIELDS(TriforceItemLocation.NIFLHEIM), //
 		
 		TRIFORCE_ASGARD_CASTLE(TriforceItemLocation.ASGARD), //
 		TRIFORCE_ASGARD_FOREST(TriforceItemLocation.ASGARD); //

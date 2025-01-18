@@ -278,6 +278,11 @@
         texture: triforce,
         pickUpSound: pickup_5
 	},
+	triforce_niflheim_ice_fields: {
+		type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
 	
 	triforce_asgard_castle: {
 		type: TRIFORCE,

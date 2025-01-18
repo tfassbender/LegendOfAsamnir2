@@ -1,0 +1,216 @@
+{
+	id: loa2_l2_niflheim_ice_fields__rune_hagalaz_found_cutscene,
+	controlledActions: {
+		thorin_1: {
+			startsWithCutscene: true,
+			executionDelayInSeconds: 3f,
+		
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "This must be hagalaz...            \nIt seems to prevent damage from heat ...\n                     \nPretty useful in this frozen wasteland...      ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+           	],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I don't think that this will open the gate to the castle of the chaos wizard.\n            \nMaybe I should search for the next rune in Muspelheim...   ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	freydis_1,
+			],
+		},
+		
+		freydis_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Hello?! ... Thorin?! ...              \n...                     \n...                     \n... is this thing on?!     ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_3,
+			],
+		},
+		
+		thorin_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That didn't sound like the voice of the strange chaos wizard guy ...\n                 \nFreydis, is that you?           \nWhy do I hear you in my head now?!      ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	freydis_2,
+			],
+		},
+		
+		freydis_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Hey it's really working! I stole this magical ... thingy ... from the chaos wizard!\n               \nHowever, did you find the runes yet?!\nCan you get me out of here now?!     ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_4,
+			],
+		},
+		
+		thorin_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I found some runes, but they don't seem to open the gate to the castle of the strange chaos wizard guy...            \nBut I'll find the other ones soon, so I can get Asamnir and you out of there!!!      ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	freydis_3,
+			],
+		},
+		
+		freydis_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Please hurry! The chaos wizard is torturing me!!!\n     \nHe won't stop talking about his stupid video game ... for whatever that is ...    ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_1,
+			],
+		},
+		
+		chaos_wizard_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Hey! What are you doing there?!     \nGive me that!\n             \nI'm the only one who talks to the player like this!     ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_2,
+            	chaos_wizard_evil_laugh_1,
+			],
+		},
+		
+		chaos_wizard_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I mean ... \n               \nIt seems you found another rune, Thorin.\nI'm almost impressed ...        \n*evil laughter*",
+                canBeSkipped: false,
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_3,
+            	chaos_wizard_evil_laugh_2,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_1: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 4f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Don't hurry too much, Thorin!               \nFreydis and I are heaving a great time!     \nThere's still so much I need to tell her about our little game ...         \n*evil laughter*     ",
+                canBeSkipped: false,
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	freydis_4,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_2: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 6.5f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		freydis_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Noooooooooooooo!!!!!\n        \nThorin! Get me out of here!!!      ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

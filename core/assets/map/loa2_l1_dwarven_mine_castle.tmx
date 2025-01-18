@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="557">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="88" height="88" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="558">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -877,8 +877,19 @@
    </properties>
    <point/>
   </object>
+  <object id="557" name="object.configObject" x="883.333" y="511.333">
+   <properties>
+    <property name="eventDelayInSeconds" value="5"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l1_castle__key_wall__boss_room__open_gate_after_giant_golem_defeated_delayed,
+}</property>
+    <property name="unitId" value="loa2_l1_castle__config_object__open_key_wall_after_giant_golem_defeated"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="5" x="864" y="2688" width="160" height="32"/>
   <object id="6" x="992" y="2398" width="32" height="290"/>
   <object id="7" x="864" y="2397.29" width="32" height="290.708"/>

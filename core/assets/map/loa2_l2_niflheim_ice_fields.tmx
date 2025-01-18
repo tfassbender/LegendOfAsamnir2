@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2295">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="66" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="2300">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -30,9 +30,9 @@
    eJztnItNAzEMhrvDjcEGtGKF0h2AQYAdKDsAOwA7QMehJxRhLCdxEudtS78Ed6nP9pfEaYs4LpvNUaVSqVQqlUo1tF4DVDtWlUqlMrr2qHZ8s0l5tKXVqPorj3o8qJ9n4eHbH7hSHvPwmKl/KI+2pDzaUks8IAvlMScPykblEZpjKzyoOErxKrE+ODlQY1rhEZpL6zxw3hI8cu6pI/KwzTlX3Tk8SvS5mjxiGIWsBc5eoDzyKoRHi/mNyCPH2BbUW7whMY+cW0vyrXdbH2lFIfttD+oxZhsP17Ve1GPMHB6145qVB5VHzzn1HLvyaFccHj30lNbjk+LRy7krR2w+y+Uf5xRjtXm8FWbBzTullrH3V3uqzGNVyufdOXjY7PJ8bwu0Q2N9rze5UbZdxuWRMsZl+8DYYj5TrsFD8vsgqp7Y147BA5tUnrcBmoUHlmtv4TwD71tm75Kozeg8bJbCgor3EBkrtIcGOZTiYWME5z+c8+Ya9A33mruI+pdeBz3wcM1/OOf3KD5X/SmeNYRzxPnmZiHBA9Yd1vxm+VsHXB+Hha5Lal1T/NTmEeob19KVj61emJ3EHJfggdUDD1jL0PnpWzexHEbiIRF3jlqU4prCQyoXaZ+pul9+z7JGj0wOyiOP8Hu8ZwaPEnH1yiN13krwuLoYg0fqc3zG8fGy/P+/KtzvGFYGUNI8SqhFHu9nfQB9RrBQHrxn4Wumd8Oe/XXWN9BpMh6UxfDwzX/qvukVth7B1Sg8YuoqwcOsC/N7KA/8LOWRxgOfoUL/LkB5yPqFZ6iVBadnQz/KQ9YvPEOtLE7CLJRHmF94huKwcJ2blUcZfiksZuZRigV1X3nUZeGqv/Jol8UIPHx7Qyy7mH4U2itG4OEyajz1HkGShyuGUBa98fAZ9ZpTRh7SLFb9AEDxRdY=
   </data>
  </layer>
- <layer id="2" name="background_2" width="100" height="66" locked="1">
+ <layer id="2" name="background_2" width="100" height="66">
   <data encoding="base64" compression="zlib">
-   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
+   eJztXN1xG0cM5kuSAq6GOA04VvSeF489KkGWo0kjipMWJDotMEpaYNgDrQbSR27Hhwn8Gb+7e0cy5jeD0Ui6W+3iW2CxAKjV6owzzjjjjDPO+JJwN6xWv0zybjj0bE4ffwyfSwb37Pn1mY8mFP39LUgGS/ChzVOT+xPdFz342IzP/zrKb6M8NujBstEyzw8JORU+cM2PHfjYjs+/H+X3UXYVetDmsTHs7mL8/gdFLk+ED80WpP2VwX58/s9R/hrlKfkuzWknzGHL9Ip8vJ6+fz5+/YnJi1GuTpyPVrScH+SHJB73Bh9aTPfqyPiQYqVW38TXLgnCehbjYY+/DZs7h7YHjomPSAxS45vK2ix/HZXi11H/Hh9b5s9wTtIYPfmw9nZEtP3f6pvK2l53WN9VBR97xZ9JfJQ9czPKyw58ZONrSXb/Qz6sOeEYNMcefDwqvsQSiQ/vndq1f0l8rAX/GHlH4qMWD8NHobObw+OjxJzfT/LCeK4XH3fKGK18cL9fE7fj3s+OwUF83E9fOTw+Xg7/vf9qAT5Q1xIfFJd5+Tjp7JX2tZfj650nIrsgvXJ4fFyPv3szyU2Sj4JsbjjCB/oOLQaSfD3ua+1sx3lYcX0WZBc1fESh8UGI7DH0Vfw9zod31mL8b/kWLXdm+cRWe+H2Ld29luCjwNtfkg4kPgglBr5U9FkE71WXxviRuXjvREH3Lu3u9Xb4NE9EuSINmFcqcivwofllaT2SbfBniQ/0n9eDfkdF/3o9cXLH9sQh+KB7l2S7eDaSziSOuO4LpDsrn7PkQzaCjVrrRz5aQfd7GvcQfFjYCjqLxJNeTK75ZclGNdsgWDmzGsFxJf9ZywfmA7Nnf4QPqkfhnDw+JHj5EQKPPzzpkYtC1PKBsVPWljw+ynhUj8Kf1/CBQNvwdCfx0SMXheC1AFz/nHzws0WK9cp4VI/Cn1t3Vm0eaM8c/M6gCZ53kTxrDR+8FkDr1+oD0nuW7WWhxcdW3IzgfHAOEHzukZwp2nPknRo+pFqAVh+Q3rPGzgLjYzo/rLgZwfmwfDEfr5aPbK42kovitQDyV1p9QHqvR56LgHqn+dTyIcXUUk4jots59p+3Dslf94IXWxag3mk+tXxIMQP6ml1wL82x/yxE7bwWkTG1+6N1r0RE+VhKr7WI8FHT9+mNac2Hzo/MuxofFA/W1IUOAY+PNawti00FH9L9I/IegdsV5yNrE97dpBXeXZHWj7+ntVnnpIZtBR/SeVZz56U11dyTIj0Ikf2S7RfhNkx5L+33ml/+YMxrn9SDtD8iuinzLPnuN0yo15PurpFcE8/DerGXxYd3d9RiO27DlAvF31M+Wbpbk/QA+njORySmx/ou1b6xJubNgX+1oPFBPFjxdMR3bqcxsrnmq4588Hl6+Ru0B6w/tPJxMXxa30Bo5+0uoXML+2mMt8lxbjvyweHlb6x+h4JWPnBf8loU9r239JMcK5APL3/Tk48H4J7zUeqTPCdG8sCerbm/W/0aGeDcPGRiRF5P0fI35Ee89WT4WIM+OR9Sz48Wg0Ztg+b+vIKTrP4RmRgxco5GzreyztskH1yfyIcWW1o24e2XGi4KWvMo0RiR4H2uIMIH9YVk+MDvOR9WbGnZhKRzyfdF6qz0Xi0kH6XZvQXt80wWevKBPSVSH08G2p7UeGnloYCfcRya3Vt2MycfeI7zv6n9ndr4PqpXrR+iBtIZx6HZvdYHxOdIeyfSj00xuMcHnuP851581dqbOjcwr5GBZDfEUQHPQVl84N7V+OB2IZ0BkfiKj5vp+5kbkk1wu6C9Ze0jyW6II7wX9uBDswv+ey++Wnq/RxCxidoc6x542VXwocUPml3wdXnxVZaPufL2OG8rr3gx1PcGEfBeGOktJVi1Qm9dUg8v5o6jsHLUPe1M0jHP890wPnr0BmWhxQ+R+q/3uaEsHzV5+yyQj4vh83sp+YdTqJcSevNBe/GrZ6vV15N88+zjz+bkQ8rxZfo5jgVS/eod+MWoHnld5xj4IP8gxTlLnHG9gGvN8PG0EB94Jng5cA7rjPPuh4dACx+EufnAMyHLh3bGHWO835OPH0f5rjMfUi3M4yPaiy3FRTX9LT1Rywet859vV6ufwTYy42jQ4iUptuKwelcisGoQS9hODR9cT5Kvio7jjS/FS55toH/KxltWDYLnuuZClo816EnyVXcduHgSdGnZRs/PimjAXNccfYVZPrg/7+2rHgf7DmHZhuef8P+d1Pw/Asx1tfYVSsjywdcr+apa25C48HqfODz/hP/vpOXzvZZPa/VtFh+S7Um20RpXaVz06lUpILtozTtGQTYU1Yfmb3kdAO9N/Nke5ziPobLndhb3jIsl8o5kQ5o+tL5n9Le8DoD3JnpWs42CTLysxVC9baMAP7e5VN5R0ocUk5OucV5SfxjyodmG9vcRtTGUhX8BbefFjw==
   </data>
  </layer>
  <layer id="5" name="terrain" width="100" height="66" locked="1">
@@ -376,7 +376,11 @@
    </properties>
    <point/>
   </object>
-  <object id="2282" name="enemy.frost_giant" x="416" y="576">
+  <object id="2282" name="enemy.frost_giant" x="640" y="448">
+   <properties>
+    <property name="enemyDefeatedEventText" value="loa2_l2_niflheim_ice_fields__boss_frost_giant__defeated"/>
+    <property name="unitId" value="loa2_l2_niflheim_ice_fields__frost_giant"/>
+   </properties>
    <point/>
   </object>
   <object id="2283" name="object.eventObject" x="2432" y="1024" width="64" height="15">
@@ -395,7 +399,7 @@
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
   </object>
-  <object id="2286" name="object.eventObject" x="384" y="839" width="64" height="5">
+  <object id="2286" name="object.eventObject" x="384" y="804" width="64" height="5">
    <properties>
     <property name="eventParameter" value="loa2_l2_niflheim_ice_fields__enter_boss_room"/>
    </properties>
@@ -426,6 +430,26 @@
     <property name="physicsBodySizeFactorX" value="1.3f"/>
     <property name="unlockedByEvent" value="true"/>
    </properties>
+   <point/>
+  </object>
+  <object id="2295" name="object.configObject" x="458.75" y="306.75">
+   <properties>
+    <property name="eventDelayInSeconds" value="5"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l2_niflheim_ice_fields__key_wall__boss_room__open_gate_after_frost_giant_defeated_delayed,
+}</property>
+    <property name="unitId" value="loa2_l2_niflheim_ice_fields__config_object__open_key_wall_after_frost_giant_defeated"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2298" name="object.configObject" x="416" y="595">
+   <properties>
+    <property name="unitId" value="loa2_l2_niflheim_ice_fields__boss_room_central_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2299" name="item.triforce_niflheim_ice_fields" x="1714.5" y="1198">
    <point/>
   </object>
  </objectgroup>
@@ -758,12 +782,12 @@
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="2166" x="151.958" y="430.447" width="529.75" height="284.106">
+  <object id="2166" x="151.958" y="430.447" width="213.75" height="284.106">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
   </object>
-  <object id="2167" x="308.125" y="714.614" width="216.917" height="30.7727">
+  <object id="2167" x="308.125" y="623.114" width="216.917" height="122.273">
    <properties>
     <property name="ground" value="ice"/>
    </properties>
@@ -786,6 +810,16 @@
   <object id="2181" x="397.466" y="289.027" width="36.7045" height="46.5605">
    <properties>
     <property name="ground" value="stairs"/>
+   </properties>
+  </object>
+  <object id="2296" x="466.089" y="430.512" width="216.25" height="284.106">
+   <properties>
+    <property name="ground" value="ice"/>
+   </properties>
+  </object>
+  <object id="2297" x="365.541" y="430.364" width="100.917" height="122.273">
+   <properties>
+    <property name="ground" value="ice"/>
    </properties>
   </object>
  </objectgroup>
