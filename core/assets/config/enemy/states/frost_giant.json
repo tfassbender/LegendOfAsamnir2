@@ -39,6 +39,7 @@
 		id: attack_hit,
 		animation: frost_giant_attack_hit,
 		attack: attack_hit,
+		stateEnteringSound: frost_giant_attack_hit,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -49,6 +50,7 @@
 		id: attack_stomp,
 		animation: frost_giant_attack_stomp,
 		attack: attack_stomp,
+		stateEnteringSound: frost_giant_attack_stomp,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -59,6 +61,7 @@
 		id: attack_stomp_disarmed,
 		animation: frost_giant_attack_stomp_disarmed,
 		attack: attack_stomp,
+		stateEnteringSound: frost_giant_attack_stomp,
 		endsWithAnimation: true,
 		followingState: idle_disarmed,
 		interruptingStates: [
@@ -70,6 +73,7 @@
 		id: attack_stomp_wide_range,
 		animation: frost_giant_attack_stomp,
 		attack: attack_stomp_wide_range,
+		stateEnteringSound: frost_giant_attack_stomp,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: []
@@ -78,6 +82,7 @@
 		id: attack_throw,
 		animation: frost_giant_attack_throw,
 		attack: attack_throw,
+		stateEnteringSound: frost_giant_attack_hit,
 		endsWithAnimation: true,
 		followingState: idle_disarmed,
 		interruptingStates: [
@@ -113,6 +118,7 @@
 		animation: frost_giant_death,
 		endsWithAnimation: true,
 		changeStateAfterAnimationDelay: 3f,
+		stateEnteringSound: flesh_hit_1,
 		followingState: END,
 		interruptingStates: [],
 		flipAnimationToMovingDirection: false,

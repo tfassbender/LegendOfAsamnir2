@@ -436,6 +436,17 @@
 					volume: 0.4,
 					delay: 0.2,
 				},
+				// frost giant
+				frost_giant_attack_stomp: {
+					path: "sound/enemy/attack/giant_golem_stomp.mp3",
+					volume: 0.7,
+					delay: 0.3,
+				},
+				frost_giant_attack_hit: {
+					path: "sound/enemy/attack/gladiator.wav",
+					volume: 0.8,
+					delay: 0.3,
+				},
 			}
 		},
 		cutscene: {

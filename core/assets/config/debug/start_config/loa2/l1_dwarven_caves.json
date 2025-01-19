@@ -2,6 +2,7 @@
 	startingPointMapping: {
 		2: destroyable_walls,
 		3: mini_golem_arena,
+		15: final, // castle
 	},
 	eventsLists: {
 		initial: {

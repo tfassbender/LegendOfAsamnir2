@@ -80,8 +80,16 @@
 					executedStateName: demo_version
 				},
 				{
-					conditionId: common__rune_raidho_collected, // cannot be collected yet - the level is not finished
-					executedStateName: demo_version
+					conditionId: common__rune_hagalaz_collected,
+					executedStateName: thorin_needs_to_go_to_muspelheim
+				},
+				{
+					conditionId: loa2_asgard__chaos_wizard_castle_visisted,
+					executedStateName: thorin_needs_to_go_to_niflheim
+				},
+				{
+					conditionId: common__rune_raidho_collected,
+					executedStateName: thorin_needs_to_go_to_asgard_after_finding_the_rune_raidho
 				},
 				{
 					conditionId: loa2_main__bifrost_visisted,
@@ -183,6 +191,70 @@
             
             executes: [
                 thorin_question,
+			],
+		},
+		
+		thorin_needs_to_go_to_asgard_after_finding_the_rune_raidho: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "You found the rune raidho. You should be able to reach Asgard now.\nThere you will find the castle of the chaos wizard on the fields of Vigrid.  ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_needs_to_go_to_asgard_after_finding_the_rune_raidho_2,
+			],
+		},
+		
+		thorin_needs_to_go_to_asgard_after_finding_the_rune_raidho_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "Asgard can be reached through the Bifrost.\nIt's in the north, shortly after the village.  ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		thorin_needs_to_go_to_niflheim: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "If you want to find more runes, you should search in one of the other realms.\nThe pathes to Niflheim and Muspelheim should be reachable in the east of the village.  ",
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question,
+			],
+		},
+		
+		thorin_needs_to_go_to_muspelheim: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "You already found runes in svartalfheim, and niflheim.\nMaybe Muspelheim would be a good place to search for more runes.\nBut...  ", // TODO change text after the level muspelheim is released
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                demo_version, // TODO change to thorin_question after muspelheim is released
 			],
 		},
 		
