@@ -6,7 +6,7 @@
 		name: loa2_prolog,
 		map: "map/loa2_prolog.tmx",
 		initialStartingPointId: 0,
-		initial: true
+		//initial: true
 		homeMap: true,
 		homeMapStartingPointId: 0,
 	},
@@ -15,7 +15,7 @@
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
 		initialStartingPointId: 11,
-		//initial: true
+		initial: true
 	},
 	{
         name: loa2_main_tavern,
@@ -85,7 +85,7 @@
         name: loa2_niflheim_ice_fields,
         map: "map/loa2_l2_niflheim_ice_fields.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l2_niflheim_ice_fields.json,
-        initialStartingPointId: 15,
+        initialStartingPointId: 11,
 		//initial: true
 	},
 	
