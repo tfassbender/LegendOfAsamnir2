@@ -813,11 +813,6 @@
     <property name="unitId" value="loa2_l1_mine__event_object__goto_main"/>
    </properties>
   </object>
-  <object id="532" name="object.eventObject" x="742" y="256" width="179.625" height="4.75">
-   <properties>
-    <property name="eventParameter" value="loa2_unfinished_end"/>
-   </properties>
-  </object>
   <object id="534" name="object.return_point" x="847.455" y="178">
    <properties>
     <property name="condition" value="common__rune_raidho_collected"/>
