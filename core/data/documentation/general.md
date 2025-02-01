@@ -26,6 +26,7 @@
 - Some new Items need to be added (or maybe existing items can be improved ?)
   - An ice pick that is needed to get up a slippery stairway or to stop on an icy way (without the item you cannot stop or change your movement anymore) (in Niflheim)
   - A rope tool (or "grapping hook" / "hookshot") (like in the old legend of zeldas) could be used in Muspelheim to cross lava rivers
+	- The hookshot could also be in combination with the rope, to connect to things that would be out of reach otherwise
   - A compas, that can be used to find a path in an area where the lantern isn't enough to light up the path (in Helheim)
     - Could also be used to show the direction to the nearest Triforce piece (if any is present on the map)
 - Use something like ForceFields (see boss fight of level 1) in a puzzle, where a projectile weapon of the player has to be redirected (pushed by the force field) to hit a target
@@ -156,7 +157,24 @@
   - But he takes constant damage (from the heat), which is negated by the rune from level 2 (without this rune it's not possible to win this level)
 - Level is in Muspelheim (hot area in the south)
 - Map:
-    - Maybe use desert tileset (for a part of the level)?
+	- Divide into multiple parts (with unique tilesets each)
+		- Desert tileset for the first part of the level
+			- Quite small part
+			- Only the entry to the second part (in a cave) and a small puzzle to reach it
+			- Also place a part of the triforce here (a bit hidden)
+			- Only a few cobolds and a pyromancer as enemies
+		- Vocanic Lava tileset for the second part
+			- A single map of medium size
+			- One or two puzzles but more enemies
+			- Add a new item here: hookshot - lets the player cross lava rivers at some points (where a target can be reached with it)
+			- Send the player on a way is blocked by a lava river first - there should be a way to unlock a differen path where the hookshot can be found
+			- Cobolds and fire elementals as enemies (hell critter?)
+			- Add Phoenixling as an animal / enemy (like the gargoyle) - doesn't fight back; can be killed; revives from the ashes after the distance to the player is high enough
+		- Lava Dungeon for the third part
+			- Multiple small maps that are connected to a dungeon (like one of the old legend of zelda dungeons)
+			- Puzzles accross the dungeon parts (use keys)
+			- Imp and Demon as normal enemies - also some fire elementals
+			- Ifrit (Surtur) as boss enemy
 - Textures:
     - Hell Critter
 	- Imp

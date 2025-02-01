@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="56" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2011">
+ <properties>
+  <property name="above_player_layers" value="[6, 7, 8]"/>
+  <property name="background_layers" value="[0, 1, 2, 3, 4, 5]"/>
+  <property name="building_level" value="false"/>
+  <property name="dungeon_level" value="false"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_desert.json"/>
+ </properties>
+ <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
+ <tileset firstgid="491" source="tileset/cave.tsx"/>
+ <tileset firstgid="771" source="tileset/dwarven_caves.tsx"/>
+ <tileset firstgid="1247" source="tileset/town_tileset.tsx"/>
+ <tileset firstgid="2507" source="tileset/cultist_dungeon.tsx"/>
+ <tileset firstgid="2807" source="tileset/forest_prairie_tileset.tsx"/>
+ <tileset firstgid="3374" source="tileset/desert_tileset.tsx"/>
+ <tileset firstgid="3954" source="tileset/medival_house_interior.tsx"/>
+ <tileset firstgid="4467" source="tileset/medival_shop_interior.tsx"/>
+ <tileset firstgid="4847" source="tileset/arctic.tsx"/>
+ <tileset firstgid="5225" source="tileset/medival_warcamp.tsx"/>
+ <tileset firstgid="5945" source="tileset/nightmarescape.tsx"/>
+ <tileset firstgid="6554" source="tileset/magic_wasteland.tsx"/>
+ <tileset firstgid="7058" source="tileset/volcanic_lava.tsx"/>
+ <tileset firstgid="7298" source="tileset/lava_dungeon.tsx"/>
+ <tileset firstgid="7820" source="tileset/shadows.tsx"/>
+ <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
+ <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
+ <layer id="1" name="background" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt18ENwjAUA9As0B0YgFU7EssAM0CPlEPUCxJp861vpz58yRck/J+SwHwpZW6Y51TKfZ3HtOWWz6nMsvZ5rfOetpz9nSLHftpzRr/WnP3dj/qx52gntjyK01n9lh8dGfYeme2nne2nnUf3y94vOmfv1359+Xbl2TUif/t9h2HXKL862btG+tVh2TvCrw7D3lF+dbL3jvQbyfJfP3XLln7Kb2RrP9U3ck8/xTdybz+1N/JIP6V79Wg/Bhukn8pZ7OmXbYP2U3gXe/uxn8WIfsxnMapftpP97Kd4l0b2YzGzn/18f3LkiG4MTv79Oc6dGenH4uT/7+OcuV4/FhuUH4sNwi/bA+nH4IH0Y/Cwn/3O6MfigfJj8UD4ZRv05A9Rph9p
+  </data>
+ </layer>
+ <layer id="2" name="background_2" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmk1uUzEQx98CaIj0XrdAswpZAIImEheAil1Yw4I1CPUGHICv3IMWiRsAS9bAUQonwFaelcloxh5/jJOH+pdGUZNn+//z2B6nStPIdDptmnezTbyeChsORJd8w5YG39L08RHF00Lz9tJ4fDWTP+/jo3xKPNs+r6P4EOhLOgdve5+pfNDHivAJA+d66Wk3CvTlmwPI/cl4PIvk+9G3sQF9jCP9rEC7uygkfNwzFDcWt9asp/dgPjAf9unzPAavWHcCffnmAL5/tVsHlSeqrfVyPqN93CN8QlF8knac8Bw4Fipi+FKF/aRyUfKxcXzUmijpqaRS+IakofGdtWafm/jc0p9PD5vmtonZ4frvVD7cTy19NVxvTHxn+LA08leCnRv/p+H6ZeJ3IT5Y95d9ncsRN3d/2k3A50qJ43N13zKeZtYBPI5k/NB6KsE37hlXDJ90PUoZNBi5vtx9Z9Sz5dS5UnwpjFw/D9v1/WKUuTZLslGMrm6cB+oH9vKs3TCm5k6DDfPZuvENhK9+4D4cI1RMDajB5+rGlwQ+jlEiLTZuD0rqI9dHCmNtvlhPWLGMmnypjKH2lvG5kHM0QD7IGWKcKPNxHkvNT4hxMXA+CeM+rNHc9e1jnHT6nNp8PsZFt+EcMp+P0XH6cnhg4iaIkoyl+KxOPHuRy6FlOzLxAETseq7FF8ohNY5lm5t4DCJ2Pdfis/LlkMrLnBgrtrbU5Audp9Jx9pXPynee1ubj+swVxyj1FnPGSFWSz4rai1JvMWeMVCltLtrt/2H+BUw5fDFnjCbfFTTWNdA2h496dt/4qD0o8RZztuySzwrncGh8N7rtu+OtynwHxJgl+e5323fHY9D22LC9QHz43M/lO0JjSvuR6lG3fXc8CZwv+NzP4bO5m6MxS/NxonJntUD+KElqu/ve4ZMmn++e7cT5m/R7meN0bNTdHEqLj8sdFudv0e/lCfO5j630mUtJkruQ7F5eMD58edPmk+ZOS5p8u2az0uLbBzYrLb4Sey5HMXeCWD6cu138BkiLT7outZm1+HLXZYm7hOunFl9Me/cs/h2TpB38LhbyXTp/nM/Yub3w9FObDzLFrhc8tsvlE+HzJflyvGvH/86XOg+79nMZcfEP2eQJ2Q==
+  </data>
+ </layer>
+ <layer id="16" name="background_3" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztWktyEzEQncXYYYPWhrA0u/A5grFzBDgCcJKEkzichJvA3nACRlXuqqbdP6mliZ3iVaniOHZPv/6pW8ow1OPzehi+TOvXtO6n9W0dEDbhjpEDz1i8HoaH6ef34DNA3leHHNDnXtDLIwNjvz7lwHGu0bnGF6DPA6PXnvxeYjfuGZzfSnTOcn4IvmgBjx9qZXp13gu+aAHND1GZvXT+j8fB4fkw/D6uSwbmgddt+vdzNbX8HDBOPBbJ/txdh3o5B0bEDfvyD4nLzO/nBfoQ88O+XBKf9tib5gDmt5pevziul4Rfj71pDmB+N9PrN8f11pGTrXFAuaHlSgkwv830+sNxbVNcNgdar7F8yI+cG1gvmislGIXv4me1BH0eyM+8Vyg38P60S7JNLIDMZ4l/n+ZhBAdmXwXd8/uQH1Zu5O94OYLMV4l/v2UeSrECgPzYMnsW5ePlCDLfJ/79bSN+nO880PKkxI+WbSOo5ZZh5Ym3PuC9j+ZiFJztvPXfyhMvP7z30VyMQPKd1ithWHni5Yf3PpqLEUhxr/VKUk3hULN/tcxFSZbWK5XsvSU1xtKpBpIs2ithcDVFy9dSH4JOIDOCVYWtuJqi5SvnQ2lux7O7d/a1dNXigcs1rqZo+ZpBOXtiEGRGsDH4eXPNmm08/GiMg8wotBj19rlavmbQGMX+hj2dxjjIjCLbSYqFln0u9iH2N+zpVozXIttJioWWfS72IfY37Ok953d4Xkk9rekTpTwekx3jLXBjyMVxo9lC6nE0fgthtcRGkbc8xs3HaX1K+t4i1V2N31yQ/LIkcaPtLVLdPQd+Uoxyuln9K60T58APYpTmUAk/qe5K/HrOtxzGdJpDnG6l/avEj863ve/HxnSaQ5xuVv9KIfGj822L3lrDmE5ziNON1hjrXMMzK2HbRvtr7Rk0h6huBzLPwPe0cw0vPxyvPcDFnGcGKJ2TpGfjeO2BWn6lc5L32a1Ry0/rIa8En9JZvvYstgRc3a+ZwTGuz2BvB3A9TISf5Dssp+TcMQquz6b6efd24CbNdMCv152fBFoLqX4w92vA3Lh7J5xvPe78NNBaSOsFzP1YN7o4bhla7Z3r7t0zT0Mc0/MUzS4ZWu3tNbtHQM9TLLs8Rs2cE0+VH9ezPhVE7okvAXSmu2Lq7RyzO4cWvQXld83U21Z306X/XwX1gOstNO74b5TfO6betrqbtuZQqaffkc9iva3zJ8qv5LyqFLT3ku4YPecNK4ecbJfbxvy0O1LvXYbl512S+yrONi35aZ/13mV47qykvspjG0/cYHB9uQdSHEburCL3edg22mzvrZOSrSN3Vq1so8H7f0g97k5b2eYvUJJK0A==
+  </data>
+ </layer>
+ <layer id="5" name="terrain" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztmUlOAkEYhesCVBz2rBzO4LwTNXHeqSSeQCXqBVA0XkDFeBTjxlM4bHECla2zz1iVlA0CDRG6/35f8qWbn4auB9VVqW6lCCGEhIlRrVQCjsFxXb42oVvbxkZYQNsX4RJM6r9rNzGlbmOta2e9rKD9q3ADpvTv2rJTe0W2NydfHvuFJuYdRDuG4DAc8dGf0jh2C27DPbijf2q7ppaBZ873Jcz+53c2p0//NzM4zyycg/NVznmO9y/gJbyCB/AQZs3n9j21I1NPO/3WmjS/SZB4QHse4RMs+mzbOo5fg5tmmwpYtkZw+7I1E8D/rx7yyFBw+u2xMVshWzGE4y0hpPXkMHZcCx4/npHtRXC+KBDWNUWteNcUhBBCCCGEVKNNwL2vSnQJyxeldfcdtveCs74j24fgfJYOXIOdgq7Ddk+WHrzuFZSvW1AWEixO46X6wZ3/mv0MvRZO4qX6wZ3/7DN0QgiJOn0YC/vhgNAxcRK5puC00HyEkPJIWyN7kbZGjhL2HrHU+dfeI+b8S8LKF/NuXL0=
+  </data>
+ </layer>
+ <layer id="16" name="terrain_2" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt2k1OwkAUB/AJuEKGwY26ItHIBUTQI3gLD+F9PADhSqwFd10rhkkkocC0viHz9Wb+v6Rp0zbte5PpzGtTIQAAgLvhIHYENNQ4347Oe2CSXz3OkWXM70xytLUk5PU62C8p6Sghunq5UIf7P3Sc812sVS3mRcD4Vcu9poZjT4Z91zqvG73cqtNjqbN9vko0IbbR3FFb9huuI8+8vq95jTImtblzFJevea0K9Gz0PN6nqS/5RH1eQuBS053LV9+/YtxulP43ZpxfiWKMY7ZMtSGkL6X5CuJDfwCAkHy+A7bhUFfBKdSacT2j/ZMUczzj/M2EIqdvJqXV+PeF5Qtg41MKsZJ/22u9/pJx43HtW+fzs8tpo9e/meUHaZth/rFiqiVDvvP5qGXr/9rEriX/uz+lPqT+j8Gh9nL1L0ZuXjJsF+7vPpcJx980JjwmHDNADJU0bwNwsQWxXByR
+  </data>
+ </layer>
+ <layer id="13" name="terrain_3" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt17kNAjEURVEHiIyJWFpgqRqmBqAGoBlK4MeEIxDm6Rzpp5ZvYFtuDQD+13pobTP8ehffs6+2Q3Af0Idj3TOnmjH0vjlX16Xm2knfc/HZ9W7Vda95dNIHyZZ1zlbBZ21bbbvgPgAAgCTz8P9beh8A07y/D7Ow9yK9DwAAAJjuBfNVCcI=
+  </data>
+ </layer>
+ <layer id="10" name="background_above_player" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAgDcDOAAAAQ==
+  </data>
+ </layer>
+ <layer id="14" name="background_above_player_2" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAgDcDOAAAAQ==
+  </data>
+ </layer>
+ <layer id="15" name="background_above_player_3" width="56" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAgDcDOAAAAQ==
+  </data>
+ </layer>
+ <objectgroup id="3" name="objects"/>
+ <objectgroup id="4" name="physics"/>
+ <objectgroup id="5" name="unreachable_area_physics"/>
+ <objectgroup id="6" name="ground_physics"/>
+</map>
