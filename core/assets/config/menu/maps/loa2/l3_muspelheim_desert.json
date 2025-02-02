@@ -1,0 +1,9 @@
+{
+	name: Muspelheim,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l3_muspelheim_desert
+	},
+	textureWidth: 477,
+	textureHeight: 500,
+}
