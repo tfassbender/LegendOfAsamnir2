@@ -754,6 +754,10 @@ Config objects are only for configuration and don't have any other effect. Useca
 - Create an attack (which is mostly helpfull in cutscenes)
 - Fire events (that are configurable in the map properties) after a delay (also configurable in the map properties)
 
+### Force objects
+
+Force objects are objects (sensors - without a mass) that apply a force to all hittable objects that get in contact with them. They can for example be used to push away the player or drag him near. The properties **pushForce**, **pushForceWhenBlocking** and **pushForceBlockAffected** can be used to configure the force that is applied. Negative values for pushForce lead to pulling. An example can be found in the level "muspelheim desert" (quicksand).
+
 ## Maps
 
 Tiled maps are used to create a map with textures, physics and objects. Enemies, Items and game objects can be defined within the map's *objects* layer, like explained in the sections [Enemies](#enemies), [Items](#items) and [Game objects](#game-objects). Physics objects (like walls) can be defined in the physics layer of the map. **Note:** The map's physics objects have to be created by polygons with at most *8* points. The material of the physics objects must be set in the custom properties of every map object, where the key is called *material* and the name references a material name that is defined in the materials json configuration file: [materials.json](core/assets/config/map/materials.json). Within the materials configuratino file the name of the material can be defined, along with the usual box2d physics properties: *density*, *restitution* and *friction*

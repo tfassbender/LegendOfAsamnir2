@@ -107,4 +107,12 @@ public class GameObjectTypeConfig {
 	//****************************************
 	
 	public String animation;
+	
+	//****************************************
+	//*** Force Objects
+	//****************************************
+	
+	public float pushForce = 5f; // use negative values to pull objects
+	public float pushForceWhenBlocking = 2f;
+	public boolean pushForceBlockAffected = false;
 }

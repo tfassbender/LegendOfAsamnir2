@@ -65,7 +65,7 @@
    eJzt2DENAAAIBDFW9ODfGwqYySetgpuvCgAAAAAAAACyTX8XAAAAAOn8BQAAAAAAALgt74oAeQ==
   </data>
  </layer>
- <objectgroup id="3" name="objects" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="965" name="player.startingPosition" x="432" y="1715">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -398,7 +398,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="966" x="384.01" y="150">
    <polygon points="0,0 0,-22 28.9375,-21.9375"/>
   </object>

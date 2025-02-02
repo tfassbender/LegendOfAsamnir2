@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="56" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2327">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="56" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2338">
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5]"/>
@@ -60,7 +60,7 @@
    eJzt2jEKwyAAhtEMTUYvlUDaa3XIxXKxxCFgzVoo/XkPBBWXD3FzGAAAvuNdPtdbue/tzXo9589mvLqz/6zvvmxBjcncHwAAAAAAAAAA8EuP8L9KtW9sRpq+bwpqrC3JffPZsgT3VWP4+4NEB+yqCOc=
   </data>
  </layer>
- <objectgroup id="3" name="objects" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="2011" name="player.startingPosition" x="400" y="177">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -78,8 +78,30 @@
     <property name="eventParameter" value="loa2_l3_muspelheim_desert__goto_main"/>
    </properties>
   </object>
+  <object id="2329" name="object.quicksand" x="203.11" y="424.818" width="73.75" height="11.7273"/>
+  <object id="2330" name="object.quicksand" x="427.125" y="456.136" width="73.75" height="11.7273"/>
+  <object id="2331" name="object.quicksand" x="298.458" y="552.803" width="73.75" height="11.7273"/>
+  <object id="2332" name="object.quicksand" x="203.458" y="680.47" width="73.75" height="11.7273"/>
+  <object id="2333" name="object.quicksand" x="491.125" y="1736.8" width="73.75" height="11.7273"/>
+  <object id="2334" name="object.quicksand" x="651.458" y="1767.8" width="73.75" height="11.7273"/>
+  <object id="2335" name="object.eventObject" x="911.625" y="1056" width="33.1477" height="14.9091">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__goto_muspelheim_volcanic_cave"/>
+   </properties>
+  </object>
+  <object id="2336" name="object.key_wall" x="911" y="1453.75">
+   <properties>
+    <property name="lockId" value="loa2_l3_muspelheim_desert"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2337" name="item.triforce_muspelheim_desert" x="1632" y="1872">
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="2014" x="0" y="0" width="352" height="320"/>
   <object id="2015" x="0" y="320" width="160" height="256"/>
   <object id="2016" x="32" y="576" width="96" height="64"/>
@@ -526,7 +548,7 @@
    <polygon points="0,0 2.75,5 -5.25,5.75"/>
   </object>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics">
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="2119" x="16.5" y="649.25" width="38.75" height="36.25"/>
   <object id="2120" x="52.5" y="680.5" width="35.25" height="40"/>
   <object id="2121" x="86" y="713" width="33.5" height="34.25"/>
@@ -545,8 +567,8 @@
   <object id="2135" x="534.75" y="1193.25" width="32" height="130"/>
   <object id="2136" x="566.5" y="1321.75" width="32" height="95.75"/>
   <object id="2137" x="534.25" y="1418" width="32" height="64"/>
-  <object id="2138" x="498" y="1465.5" width="35.25" height="76.5"/>
-  <object id="2139" x="466.75" y="1509.25" width="34.5" height="94.5"/>
+  <object id="2138" x="498" y="1465.5" width="35.25" height="77.5909"/>
+  <object id="2139" x="466.75" y="1509.25" width="34.5" height="96.6818"/>
   <object id="2140" x="420" y="1570.5" width="49.25" height="71"/>
   <object id="2141" x="390.5" y="1617.5" width="46.75" height="54.75"/>
   <object id="2142" x="362.5" y="1657.5" width="43.25" height="75"/>
