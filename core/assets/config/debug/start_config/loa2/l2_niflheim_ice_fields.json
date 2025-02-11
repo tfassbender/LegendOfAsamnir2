@@ -34,7 +34,7 @@
 		},
 		
 		final: {
-			subConfigName: initial,
+			subConfigName: add_items,
 			events: []
 		}
 	}

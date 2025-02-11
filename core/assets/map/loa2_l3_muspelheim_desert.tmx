@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2338">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2370">
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5]"/>
@@ -32,7 +32,7 @@
  </layer>
  <layer id="2" name="background_2" width="61" height="64" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="background_3" width="61" height="64" locked="1">
@@ -42,17 +42,17 @@
  </layer>
  <layer id="5" name="terrain" width="61" height="64" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztmklOwzAYhX2BRgz7rhjOwLyjgMS8AypxAqACTgAIcQGgiKMg7sGwBQot0C0zD8mWXJdCLSKZ+n+f9CmNm6R+le0kTpQihBBC/BhNlMrBMTiefF82kYStY9osIM8iXIL5pHHZTUapUiZcPdNkBZlW4QYsJLVly1bZC/K+WpnL+FwJ/B8Mom5DcBiOeLbFLWy/Dfes/XZ12Y5zrJxe//jKa/WHEMzgt2fhHJz/pR5n+P4cXsBLeAAPYVHvt++UHVnHM23emA+Y2Yd71PMBPsKqZ53Xsf0a3NTLQotk/gumHxjdth8TZWSrWG3+WFv8IXM1knGeEBIfVxifroWNUU/I+ywss1RiutdqFvdeixBCCCGEEFJLW8Tzlo3oEpBZ+vzGLZZ3wvK/Ie+7sMyGDvTpzsj7dbuTrwfrvZFn7o48H2lNTrP1+mCfn//DOyHNcJKt1wf7/GzeCSGEEBKGPozB/XBA0Fg8iaxTcFpQZkJI+kiYd3CRMO8gHfNcQNL1gXkuwOsDIplPJfpX8A==
+   eJztmUlOwzAYhb2HRgz7rsIgwQWYdxSQmHdAJU4AVMAJACEuABRxFMQ9oGwZW6BbZl6kWDIugwItbvK/T/qUxk1Svyp2YlspQgghJBrDnlIZOAJHvc/Lxjy3daw2c8gzDxdg1vu67DKl1FXKXT2ryRIyLcM1mPM+li0aZU/I+2xkLuJzyfF/0I+6DcBBOBTxXtzA8ZtwxzhvOyzbsq6VCfffgrxGe3DBFH57Gs7A2R/qcYLvT2EBnsE9uA/z4Xm7VtmBcT19z2uzDjNH4Rb1vIP3sByxzqs4fgWuh9tcTDL/Bd0OtPa9nySKyFYy7vnD0Pw3mcsJ6ecJIcnjHP3ThbA+6gF5H4Vlloo91qqHcUetscdaetwhjW5fqQbfdS3+lyBzl7DMhBBCCCG/oUng+7EvILP0+Y1rbG+E5X9B3ldhmTUtaNOtCW/XzVa+dux3JDxzW8LzkXhynK40CubzOS5zs0fpSqNgPp+lzs0SQki90IM+uBf2CeqLx5F1Ak4KykyIJIL14M7QxhquC0uYd7CRMO8gHb0uIOn9QK8L8P2ASOYdYXZdMQ==
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="61" height="64" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2k1ugkAUB/BJdVUdqZu2K5MavYCt2iN4Cw/R+/QAxCu5buuOtR/pJJiIOuADnI83/H8JgYCB90aYeUMQAgAAoL6nnusIqqPGvrz43YhxztnYByXz+GKcd1lrQq6L3mnx3UMkREst7eh8/7eKPT7Gn2TyWDnOKSq4/lRz7EOz71nl+qKW1+j6GEdln1dIvRPbLTbYvt2cc8uK1zQ17lL6vbLe7nROU+Nu4vC5enRwz9lGff5s4FyvVmWzXu0H1r6Ue3ccWM6Q8qX/LKKreyEcPo2dwBvuJQAIjck5dBEO9SFUh9qahzn+J9Zc9qOhva+iCP19FeY5QgzRBgDW/EghfmW6/afWG+k2Hhu2KsfdMc+9Wh8akDOEYYbxsTZd7ex6zmyins9+i+Zj7XwrJko9TP0OiWtdea9vkJrgsyFtFeI8scMsp7x+Z8IsDwCfJVK/DdAk/x1mHJE=
+   eJzt2l1ugkAQB/CN9cl2RV9sn5po9AJqq0fwFh6i9+kBTK/ksx9vPPsRN0FTqisdkP2Y5f9LCAQMzKwwzCYIAQAA8LhW03UExVFjn1/9rs8453Ts7znz+GKcd15LQq6z5u/iu1okxJNa6tHf/d8q9sU5/jiVx4/jnKKM639ojo01+zoq11e1vEW3xzjK+7xCYkQct4XB8X25c25Z8Jqm3ruUupdXt6Rzmnrvxg6fq4aDe8426vNnA+d+tSib/Wo7sPGl3LuDwHKGhC/1M4uu74VwXOpPaHWVAnW1XD71YQAAZTA5h87CoT+E4tBb8zDB/8SayzqKeVV4MM8RoocxALBmJYVYy2R7o9Zb6TYeG3Yqx/05z4NaHyuQM4ThE+/Hh+l6Z9dzZhP9fPpbNB975/9iovTD1O+QuPaVZX2DVAXTioxViPPEZ2Y53as7Q2Z5APgslvptgCo5Ad5jHOM=
   </data>
  </layer>
  <layer id="13" name="terrain_3" width="61" height="64" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt17sNAjEQRVEHiIyN+LTAp2qgBqAGoBlK4MWIcAWGOUea1PINbMutAQBjWw6trYZv7+KztundFWsG/tM+d9khcyx0p53Ses5cOm5+zMZd75rWW+becTPw3jzndlHs7K7TuynWDAAAQE3Tgv/fis0A/JbXt2pS4O2q2AwAAADQoyeVqAnC
+   eJzt17ENwjAQQFEXER2pIKxAYGpgBsIMwDKwAVcjSgsc7j3pWiu/sB2XAgDUNvSlbPpff8V37aJ3n6wZ+E+HOMuOMadEZ9o5WqeYS8PNj2Xd9a7Reou5N9wMfLaKfbtOtne30TsmawbyeVb+3wMAYJ4WCd+/GZsBmJf3u6pLcHdlbAYAAABo0QujDwrA
   </data>
  </layer>
  <layer id="10" name="background_above_player" width="61" height="64" locked="1">
@@ -60,7 +60,7 @@
    eJzt2jEOQDAUgGEDRpciwbUMLuZidJBUuYC+70uaeI3lr9jaNAAAJNvwnPfhvXdk83w9L9lai3drU57Fba+8OxrfGQAAAAAAAAAAAP6tDXjnLzV32YqgbO4r70590ZrHq28K1px0Af9n4NsJURkI5w==
   </data>
  </layer>
- <objectgroup id="3" name="objects" visible="0" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="2011" name="player.startingPosition" x="496" y="177">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -83,7 +83,7 @@
   <object id="2331" name="object.quicksand" x="394.458" y="552.803" width="73.75" height="11.7273"/>
   <object id="2332" name="object.quicksand" x="299.458" y="680.47" width="73.75" height="11.7273"/>
   <object id="2333" name="object.quicksand" x="587.125" y="1736.8" width="73.75" height="11.7273"/>
-  <object id="2334" name="object.quicksand" x="747.458" y="1767.8" width="73.75" height="11.7273"/>
+  <object id="2334" name="object.quicksand" x="747.458" y="1703.8" width="73.75" height="11.7273"/>
   <object id="2335" name="object.eventObject" x="1007.63" y="1056" width="33.1477" height="14.9091">
    <properties>
     <property name="eventParameter" value="loa2_l3_muspelheim_desert__goto_muspelheim_volcanic_cave"/>
@@ -100,8 +100,68 @@
   <object id="2337" name="item.triforce_muspelheim_desert" x="1728" y="1872">
    <point/>
   </object>
+  <object id="2338" name="player.startingPosition" x="1344" y="448">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2339" name="player.startingPosition" x="1344" y="1760">
+   <properties>
+    <property name="startingPointId" value="12"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2340" name="player.startingPosition" x="1024" y="1280">
+   <properties>
+    <property name="startingPointId" value="13"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2341" name="object.magic_switch" x="496" y="1331">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__switch_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_desert__magic_switch"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2342" name="object.switch" x="1712" y="1235">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__switch_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_desert__switch_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2358" name="object.pressure_switch" x="1717.88" y="767.125">
+   <properties>
+    <property name="canBeDeactivated" value="false"/>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__switch_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_desert__pressure_switch_armadillo"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2359" name="object.pressure_switch" x="822.879" y="1838.24">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__switch_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_desert__pressure_switch_lore"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2360" name="object.wagon_horizontal" x="891.29" y="1830.68">
+   <point/>
+  </object>
+  <object id="2368" name="animal.armadillo" x="1519.33" y="668.667">
+   <point/>
+  </object>
+  <object id="2369" name="object.switch" x="608" y="271">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__switch_puzzle"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_desert__switch"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics" visible="0" locked="1">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="2014" x="96" y="0" width="352" height="320"/>
   <object id="2015" x="96" y="320" width="160" height="256"/>
   <object id="2016" x="128" y="576" width="96" height="64"/>
@@ -131,7 +191,7 @@
   <object id="2041" x="1139" y="1814" width="58" height="234"/>
   <object id="2042" x="1184" y="1910" width="32" height="138"/>
   <object id="2043" x="1088" y="1910.33" width="64" height="137.667"/>
-  <object id="2044" x="787" y="1846.33" width="313.667" height="201.667"/>
+  <object id="2044" x="915.333" y="1846.33" width="185.334" height="201.667"/>
   <object id="2045" x="915.333" y="1782" width="57" height="74"/>
   <object id="2046" x="608" y="1878.33" width="192" height="169.667"/>
   <object id="2047" x="531.091" y="1814.18" width="89.8182" height="233.818"/>
@@ -547,8 +607,40 @@
   <object id="2314" x="1535.88" y="301.625">
    <polygon points="0,0 2.75,5 -5.25,5.75"/>
   </object>
+  <object id="2344" x="1690.35" y="679.239">
+   <polygon points="0,0 -11.75,6.625 -8.75,11.75"/>
+  </object>
+  <object id="2345" x="1690.35" y="678.989">
+   <polygon points="0,0 -10.375,18.125 -9.875,28.75"/>
+  </object>
+  <object id="2346" x="1690.48" y="679.114">
+   <polygon points="0,0 -9.75,28.25 8.375,13.625"/>
+  </object>
+  <object id="2347" x="1690.48" y="678.739">
+   <polygon points="0,0 8.375,14.25 35.25,14.75"/>
+  </object>
+  <object id="2348" x="1702.6" y="683.489">
+   <polygon points="0,0 12.875,-0.375 23,10"/>
+  </object>
+  <object id="2349" x="1715.35" y="693.614">
+   <polygon points="0,0 3.875,10.625 -18.5,0"/>
+  </object>
+  <object id="2350" x="1697.1" y="693.739">
+   <polygon points="0,0 -9.25,20.375 -1.5,23.5"/>
+  </object>
+  <object id="2351" x="1696.85" y="693.489">
+   <polygon points="0,0 5.375,3.125 -0.25,14.625"/>
+  </object>
+  <object id="2352" x="1687.73" y="714.364">
+   <polygon points="0,0 2.75,9.375 7.875,3"/>
+  </object>
+  <object id="2353" x="1695.73" y="717.864">
+   <polygon points="0,0 2.75,5 -5.25,5.75"/>
+  </object>
+  <object id="2354" x="1729.5" y="771.625" width="28" height="43.75"/>
+  <object id="2364" x="787.333" y="1846.39" width="128" height="71.2727"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" visible="0" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="2119" x="112.5" y="649.25" width="38.75" height="36.25"/>
   <object id="2120" x="148.5" y="680.5" width="35.25" height="40"/>
   <object id="2121" x="182" y="713" width="33.5" height="34.25"/>
@@ -660,6 +752,12 @@
   <object id="2324" x="1742" y="1922.36">
    <polygon points="0,0 -6.72727,2.90909 -58.5455,-12.5455"/>
   </object>
+  <object id="2355" x="1708.1" y="739.66" width="40" height="15.2727"/>
+  <object id="2356" x="1707.73" y="771.43" width="40.5455" height="16.4091"/>
+  <object id="2357" x="1733.03" y="754.93" width="15.0909" height="16.4318"/>
+  <object id="2361" x="811.455" y="1795.82" width="104" height="17.4583"/>
+  <object id="2366" x="912.061" y="1819.5" width="3.93939" height="32.1667"/>
+  <object id="2367" x="811.188" y="1844.94" width="2.0625" height="1.4375"/>
  </objectgroup>
- <objectgroup id="6" name="ground_physics" visible="0" locked="1"/>
+ <objectgroup id="6" name="ground_physics" locked="1"/>
 </map>

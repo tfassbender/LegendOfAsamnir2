@@ -1,0 +1,27 @@
+{
+	//*******************************************
+	//*** locks
+	//*******************************************
+	
+    loa2_l3_muspelheim_desert__open_lock_if_all_switches_activated: {
+        conditionId: loa2_l3_muspelheim_desert__all_switches_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l3_muspelheim_desert
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l3_muspelheim_desert
+                }
+            }
+        }
+    },
+}

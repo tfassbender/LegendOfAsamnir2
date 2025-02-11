@@ -1,0 +1,56 @@
+{
+	//*******************************************
+	//*** switches
+	//*******************************************
+	
+	loa2_l3_muspelheim_desert__all_switches_activated: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: AND,
+						conditionalParameters: {
+							condition: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_desert__magic_switch,
+								}
+							},
+							condition2: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_desert__switch,
+								}
+							}
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l3_muspelheim_desert__pressure_switch_lore,
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l3_muspelheim_desert__switch_2,
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l3_muspelheim_desert__pressure_switch_armadillo,
+						}
+					}
+				}
+			}
+		}
+	},
+}

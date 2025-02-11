@@ -36,6 +36,7 @@
 	config/cutscene/loa2/main/goto_asgard.json,
 	config/cutscene/loa2/main/moving_east_above_the_river.json,
 	config/cutscene/loa2/main/goto_niflheim.json,
+	config/cutscene/loa2/main/goto_muspelheim.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main - Tavern
@@ -127,6 +128,11 @@
 	config/cutscene/loa2/niflheim/ice_fields/goto_niflheim_main.json,
 	config/cutscene/loa2/niflheim/ice_fields/enter_boss_room.json,
 	config/cutscene/loa2/niflheim/ice_fields/rune_found.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Muspelheim - Desert
+	//********************************************************
+	config/cutscene/loa2/muspelheim/desert/goto_main.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

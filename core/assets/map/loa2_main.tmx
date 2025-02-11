@@ -204,6 +204,7 @@
   <object id="10414" name="object.eventObject" x="2872.93" y="2992.31" width="7.14633" height="95.375">
    <properties>
     <property name="eventParameter" value="loa2_main_goto_muspelheim"/>
+    <property name="unitId" value="event_object__goto_muspelheim"/>
    </properties>
   </object>
   <object id="10417" name="npc.loa2_main_adventurer_in_dwarven_village" x="1408" y="1632">
@@ -5513,7 +5514,6 @@ West: Helheim.</property>
    <polygon points="0,0 -32,32 -32,0"/>
   </object>
   <object id="10413" x="1248" y="2824" width="159.667" height="24"/>
-  <object id="10415" x="2880" y="2976" width="32" height="128"/>
  </objectgroup>
  <objectgroup id="34" name="unreachable_area_physics" locked="1">
   <object id="8172" x="1328.01" y="1409">
