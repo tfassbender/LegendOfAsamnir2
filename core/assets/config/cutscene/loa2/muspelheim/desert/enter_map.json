@@ -1,0 +1,75 @@
+{
+	id: loa2_l3_muspelheim_desert__enter_map_cutscene,
+	controlledActions: {
+		thorin: {
+	    	startsWithCutscene: true,
+	    	
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "It's pretty hot here!\nBut that was to be expected from Muspelheim...   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				condition_hagalaz_collected,
+			],
+		},
+		
+		condition_hagalaz_collected: {
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__rune_hagalaz_collected,
+					executedStateName: hagalaz_collected,
+				},
+				{
+					// default case
+					executedStateName: hagalaz_not_collected,
+				},
+			],
+		},
+		
+		hagalaz_collected: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Luckily I have this rune Hagalaz with me.\nIt should be able to protect me from the heat!   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		hagalaz_not_collected: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I wonder if I'll be able to go further if it gets even hotter...\n\nMaybe I should ask ratatosk for help.    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

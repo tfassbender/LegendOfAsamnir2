@@ -1,0 +1,44 @@
+{
+	graphicsConfigFile: config/npc/graphics/squirrel.json
+	
+	aiConfig: {
+		type: RANDOM_IDLE_STATES_MOVEMENT_AI,
+		
+		useRelativePositions: true,
+	
+		stateNameMove: move,
+		stateNameIdle: idle,
+	
+		movementProbability: 0.15f,
+	    maxMoveDistance: 2f,
+		
+		idleStates: {
+			idle: {
+				probability: 0.6,
+			},
+			idle_2: {
+				probability: 0.2,
+			},
+			dig: {
+				probability: 0.1,
+				minRepetitions: 5,
+				maxRepetitions: 10,
+			},
+			eat: {
+				probability: 0.1,
+				minRepetitions: 10,
+				maxRepetitions: 15
+			}
+		}
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	movingSpeed: 2f,
+	sensorRadius: 1f,
+	
+	interactionEventId: loa2_l3_muspelheim__ratatosk,
+}

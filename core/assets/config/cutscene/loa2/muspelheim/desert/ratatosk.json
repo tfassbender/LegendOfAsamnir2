@@ -1,0 +1,150 @@
+{
+	id: loa2_l3_muspelheim_ratatosk_cutscene,
+	controlledActions: {
+	    ratatosk_1: {
+			startsWithCutscene: true,
+			
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Hey Thorin!         \nYou made it to Muspelheim!\n             \nCan I help you with anything?   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"Where should I go next?",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				ratatosk_condition,
+			],
+		},
+		
+		ratatosk_condition: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__rune_kenaz_collected,
+					executedStateName: kenaz_collected__ratatosk_1
+				},
+				{
+					conditionId: common__rune_hagalaz_collected,
+					executedStateName: hagalaz_collected__ratatosk_1
+				},
+				{
+					// default case - thorin hasn't found the chaos wizard's castle yet
+					executedStateName: first_hint__ratatosk_1
+				},
+			],
+		},
+		
+		// kenaz rune collected
+		
+		kenaz_collected__ratatosk_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "You found the rune kenaz!          \nI don't think that there are more runes to be found in this realm.\n\nIt seems only Helheim is left to search...     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		// hagalaz rune collected
+		
+		hagalaz_collected__ratatosk_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "You could search for the next rune in the lava caves of muspelheim.\n\nBut in the caves it's even hotter than here.    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hagalaz_collected__ratatosk_2,
+			],
+		},
+		
+		hagalaz_collected__ratatosk_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "You already have the rune hagalaz.\nThat's good! It will protect you from the heat.\nBut be careful! Surtur doesn't like visitors...   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		// fist hint
+		
+		first_hint__ratatosk_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "It's pretty hot in this realm and it will get even hotter if you make it to the lava caves.\nI don't think it's a good idea to go there without protection.    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	first_hint__ratatosk_2,
+			],
+		},
+		
+		first_hint__ratatosk_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Maybe a rune could help you.\n\nDid you already search the other realms for runes? They might be easier to traverse than Muspelheim.    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

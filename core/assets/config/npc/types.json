@@ -61,6 +61,11 @@
 	ratatosk_niflheim: config/npc/levels/loa2/niflheim/ratatosk.json,
 	
 	//*****************************************************************
+	//*** Legend of Asamnir 2 - Level 2 - Niflheim
+	//*****************************************************************
+	ratatosk_muspelheim: config/npc/levels/loa2/muspelheim/ratatosk.json,
+	
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Fields of Vigrid
 	//*****************************************************************
 	

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2370">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2373">
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5]"/>
@@ -158,6 +158,15 @@
     <property name="eventParameter" value="loa2_l3_muspelheim_desert__switch_puzzle"/>
     <property name="stateSwitchId" value="loa2_l3_muspelheim_desert__switch"/>
    </properties>
+   <point/>
+  </object>
+  <object id="2370" name="object.eventObject" x="448" y="247" width="95.75" height="9">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__enter_map"/>
+    <property name="singleExecution" value="true"/>
+   </properties>
+  </object>
+  <object id="2371" name="npc.ratatosk_muspelheim" x="480" y="384">
    <point/>
   </object>
  </objectgroup>

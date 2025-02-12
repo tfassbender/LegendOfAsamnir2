@@ -133,6 +133,8 @@
 	//*** Legend of Asamnir 2 - Muspelheim - Desert
 	//********************************************************
 	config/cutscene/loa2/muspelheim/desert/goto_main.json,
+	config/cutscene/loa2/muspelheim/desert/enter_map.json,
+	config/cutscene/loa2/muspelheim/desert/ratatosk.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

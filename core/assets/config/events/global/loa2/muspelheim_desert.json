@@ -13,6 +13,36 @@
 	},
 
 	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_l3_muspelheim_desert__enter_map: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l3_muspelheim_desert__enter_map,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_desert__enter_map_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_l3_muspelheim__ratatosk: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l3_muspelheim__ratatosk,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l3_muspelheim_ratatosk_cutscene,
+		}
+	},
+
+	//*******************************************
 	//*** change map
 	//*******************************************
 	
