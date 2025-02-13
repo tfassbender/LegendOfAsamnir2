@@ -1,0 +1,20 @@
+[
+	{
+		id: idle,
+		animation: medieval_merchant_cloth_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: medieval_merchant_cloth_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+]

@@ -1,0 +1,21 @@
+{
+	graphicsConfigFile: config/npc/graphics/medieval_merchant_spice.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	movingSpeed: 1f,
+	
+	interactionEventId: loa2_l3_muspelheim__medieval_merchant_spice,
+}

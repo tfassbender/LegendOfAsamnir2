@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/medieval_merchant_spice.json,
+	stateConfig: config/npc/states/medieval_merchant_spice.json,
+	initialState: idle,
+	
+	bodyWidth: 0.7f,
+	bodyHeight: 1f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.2f,
+	
+	interactionMarkerOffsetX: 0.1f,
+	interactionMarkerOffsetY: -0.1f,
+}

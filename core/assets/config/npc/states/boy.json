@@ -1,0 +1,29 @@
+[
+	{
+		id: idle,
+		animation: boy_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, run_with_stick
+		]
+	},
+	{
+		id: move,
+		animation: boy_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, run_with_stick
+		]
+	},
+	{
+		id: run_with_stick,
+		animation: boy_run_with_stick,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move
+		]
+	},
+]

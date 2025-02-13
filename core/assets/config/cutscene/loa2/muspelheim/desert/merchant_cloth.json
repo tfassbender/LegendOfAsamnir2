@@ -1,0 +1,63 @@
+{
+	id: loa2_l3_muspelheim_medieval_merchant_cloth_cutscene,
+	controlledActions: {
+		merchant: {
+	    	startsWithCutscene: true,
+	    	
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Cloth Merchant",
+				colorHeader: #5744e3,
+				displayText: "Hello, traveler!\n          \nI have the finest cloth in all of Muspelheim.\nWhat can I do for you?   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_choice,
+			],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"I'm looking for a rune...",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				rune,
+			],
+		},
+		
+		rune: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Cloth Merchant",
+				colorHeader: #5744e3,
+				displayText: "Sorry, I don't sell runes.\n        \nMaybe ask Riju. She's the chieftain of this village. She knows this desert better than anyone else.   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_choice,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

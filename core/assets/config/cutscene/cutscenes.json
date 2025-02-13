@@ -135,6 +135,9 @@
 	config/cutscene/loa2/muspelheim/desert/goto_main.json,
 	config/cutscene/loa2/muspelheim/desert/enter_map.json,
 	config/cutscene/loa2/muspelheim/desert/ratatosk.json,
+	config/cutscene/loa2/muspelheim/desert/dancer.json,
+	config/cutscene/loa2/muspelheim/desert/merchant_cloth.json,
+	config/cutscene/loa2/muspelheim/desert/merchant_spices.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

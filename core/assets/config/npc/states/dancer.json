@@ -1,0 +1,29 @@
+[
+	{
+		id: idle,
+		animation: dancer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, dance
+		]
+	},
+	{
+		id: move,
+		animation: dancer_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, dance
+		]
+	},
+	{
+		id: dance,
+		animation: dancer_dance,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move
+		]
+	},
+]

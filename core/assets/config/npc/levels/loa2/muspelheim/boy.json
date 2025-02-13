@@ -1,0 +1,30 @@
+{
+	graphicsConfigFile: config/npc/graphics/boy.json
+	
+	aiConfig: {
+		type: RANDOM_IDLE_STATES_MOVEMENT_AI,
+		
+		useRelativePositions: true,
+		
+		stateNameMove: run_with_stick,
+		stateNameIdle: idle,
+		
+		movementProbability: 0.3f,
+		maxMoveDistance: 4f,
+		
+		distanceToKeepFromPlayer: 0f,
+		
+		idleStates: {
+			idle: {
+				probability: 1f,
+			},
+		}
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: false,
+	movingSpeed: 1.5f,
+}

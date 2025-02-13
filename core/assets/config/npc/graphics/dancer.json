@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/dancer.json,
+	stateConfig: config/npc/states/dancer.json,
+	initialState: idle,
+	
+	bodyWidth: 0.6f,
+	bodyHeight: 0.9f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.3f,
+	
+	interactionMarkerOffsetX: 0.1f,
+	interactionMarkerOffsetY: -0.1f,
+}

@@ -41,6 +41,39 @@
 			cutsceneId: loa2_l3_muspelheim_ratatosk_cutscene,
 		}
 	},
+	
+	loa2_l3_muspelheim__dancer: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l3_muspelheim__dancer,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l3_muspelheim_dancer_cutscene,
+		}
+	},
+	
+	loa2_l3_muspelheim__medieval_merchant_cloth: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l3_muspelheim__medieval_merchant_cloth,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l3_muspelheim_medieval_merchant_cloth_cutscene,
+		}
+	},
+	
+	loa2_l3_muspelheim__medieval_merchant_spice: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l3_muspelheim__medieval_merchant_spice,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l3_muspelheim_medieval_merchant_spices_cutscene,
+		}
+	},
 
 	//*******************************************
 	//*** change map

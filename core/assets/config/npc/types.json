@@ -61,14 +61,17 @@
 	ratatosk_niflheim: config/npc/levels/loa2/niflheim/ratatosk.json,
 	
 	//*****************************************************************
-	//*** Legend of Asamnir 2 - Level 2 - Niflheim
+	//*** Legend of Asamnir 2 - Level 3 - Muspelheim
 	//*****************************************************************
 	ratatosk_muspelheim: config/npc/levels/loa2/muspelheim/ratatosk.json,
+	boy: config/npc/levels/loa2/muspelheim/boy.json,
+	dancer: config/npc/levels/loa2/muspelheim/dancer.json,
+	medieval_merchant_cloth: config/npc/levels/loa2/muspelheim/medieval_merchant_cloth.json,
+	medieval_merchant_spice: config/npc/levels/loa2/muspelheim/medieval_merchant_spice.json,
 	
 	//*****************************************************************
 	//*** Legend of Asamnir 2 - Fields of Vigrid
 	//*****************************************************************
-	
 	guardian_of_asgard: config/npc/levels/loa2/fields_of_vigrid/guardian_of_asgard.json,
 	heimdall: config/npc/levels/loa2/fields_of_vigrid/heimdall.json,
 	ratatosk_asgard: config/npc/levels/loa2/fields_of_vigrid/ratatosk.json,
