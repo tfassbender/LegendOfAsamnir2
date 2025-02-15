@@ -89,4 +89,16 @@
 			cutsceneId: loa2_l3_muspelheim_desert__goto_main_cutscene,
 		}
 	},
+	
+	loa2_l3_muspelheim_desert__goto_muspelheim_volcanic_cave: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_desert__goto_muspelheim_volcanic_cave,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_caves,
+			startingPointId: 0,
+		}
+	},
 }

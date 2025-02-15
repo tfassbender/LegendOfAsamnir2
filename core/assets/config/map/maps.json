@@ -95,8 +95,16 @@
         name: loa2_muspelheim_desert,
         map: "map/loa2_l3_muspelheim_desert.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim.json,
-        initialStartingPointId: 11,
+        initialStartingPointId: 13,
 		initial: true
+	},
+	
+	{
+        name: loa2_muspelheim_lava_caves,
+        map: "map/loa2_l3_muspelheim_lava_caves.tmx",
+		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_caves.json,
+        initialStartingPointId: 10,
+		//initial: true
 	},
 	
 	// loa2 - fields of vigrid
