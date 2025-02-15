@@ -42,8 +42,8 @@ public abstract class Attack implements CharacterStateAttack {
 	}
 	
 	public boolean isExecuted() {
-		if (config.type == AttackType.BOOMERANG && !isRemoved()) {
-			//there must be only one boomerang at a time
+		if ((config.type == AttackType.BOOMERANG || config.type == AttackType.HOOKSHOT) && !isRemoved()) {
+			//there must be only one boomerang or hookshot at a time
 			return false;
 		}
 		return aborted || (started && timer >= config.delay + config.duration);

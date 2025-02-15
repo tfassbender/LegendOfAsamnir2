@@ -94,6 +94,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private DraggableObject draggableObject;
 	
 	private float freezingTimer; // if > 0 the player is frozen and movement is slowed down
+	private boolean hookshotActive = false; // the player can't move while the hookshot is active
 	
 	public Dwarf() {
 		propertiesDataHandler = CharacterPropertiesDataHandler.getInstance();
@@ -210,12 +211,19 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					break;
 				case BOOMERANG:
 				case WAND:
+				case HOOKSHOT:
 					if (hasEnoughMana(activeSpecialAction) //
 							&& propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost) // 
 							&& attackHandler.allAttacksExecuted()) {
 						useMana(activeSpecialAction);
 						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
 						attackHandler.startAttack(activeSpecialAction.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
+						
+						if (activeSpecialAction == SpecialAction.HOOKSHOT) {
+							hookshotActive = true;
+							// deactivated by an event, that is fired from the hookshot
+						}
+						
 						return true;
 					}
 					break;
@@ -427,6 +435,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public void renderDarkness(SpriteBatch batch, ShapeRenderer shapeRenderer) {
 		renderer.renderDarkness(batch, shapeRenderer);
+	}
+	
+	public boolean canMove() {
+		return !hookshotActive;
 	}
 	
 	@Override
@@ -773,6 +785,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				break;
 			case BEFORE_PERSIST_STATE:
 				AnnotationUtil.executeAnnotatedMethods(BeforePersistState.class, this);
+				break;
+			case HOOKSHOT_ATTACK_FINISHED:
+				hookshotActive = false;
 				break;
 			default:
 				// do nothing, because this event type is not handled here

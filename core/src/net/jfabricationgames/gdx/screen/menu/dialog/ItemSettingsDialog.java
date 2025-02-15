@@ -159,7 +159,7 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 		screenTextWriter.setColor(Color.BLACK);
 		
 		for (int i = 0; i < notFoundItems; i++) {
-			screenTextWriter.drawText("?", 287, 232 + i * 55);
+			screenTextWriter.drawText("?", 287, 177 + i * 55);
 		}
 	}
 	
@@ -225,6 +225,15 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 				checkbox = itemCheckboxes.get(7);
 				if (SpecialAction.ICE_PICK.canBeUsed()) {
 					itemExplanationText = "[#C8441B]Ice Pick:\n[#000000]A tool that can be used to prevent slipping on ice.";
+				}
+				else {
+					itemExplanationText = "[#C8441B]???:\n[#000000]You haven't found this item yet.";
+				}
+				break;
+			case "itemsettings_dialog_checkbox_hookshot":
+				checkbox = itemCheckboxes.get(8);
+				if (SpecialAction.HOOKSHOT.canBeUsed()) {
+					itemExplanationText = "[#C8441B]Hookshot:\n[#000000]A tool that can be used to pull yourself to specific objects.";
 				}
 				else {
 					itemExplanationText = "[#C8441B]???:\n[#000000]You haven't found this item yet.";

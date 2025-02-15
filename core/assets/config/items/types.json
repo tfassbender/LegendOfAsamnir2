@@ -197,6 +197,10 @@
         type: SPECIAL_ACTION,
         texture: ice_pick,
 	},
+	hookshot: {
+        type: SPECIAL_ACTION,
+        texture: hookshot,
+	},
 	
 	//**********************************
 	//*** runes

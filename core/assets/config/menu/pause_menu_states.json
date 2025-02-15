@@ -281,6 +281,13 @@
 	
 	itemsettings_dialog_checkbox_ice_pick: {
         up: itemsettings_dialog_checkbox_rope,
+        down: itemsettings_dialog_checkbox_hookshot,
+        right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
+	},
+	
+	itemsettings_dialog_checkbox_hookshot: {
+        up: itemsettings_dialog_checkbox_ice_pick,
         right: itemsettings_dialog_button_back,
         select: toggleItemSettingsCheckbox,
 	},

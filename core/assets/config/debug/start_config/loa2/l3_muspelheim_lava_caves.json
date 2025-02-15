@@ -9,7 +9,7 @@
 	},
 	eventsLists: {
 		initial: {
-			subConfigPath: config/debug/start_config/loa2/l2_muspelheim.json
+			subConfigPath: config/debug/start_config/loa2/l3_muspelheim.json
 			subConfigName: final,
 		},
 		

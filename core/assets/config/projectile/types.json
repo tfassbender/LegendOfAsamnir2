@@ -99,6 +99,21 @@
 		
 		timeActive: 1f,
 	},
+	hookshot: {
+		attackType: HOOKSHOT,
+		
+		texture: hookshot_without_rope,
+		textureScale: 1,
+		
+		speed: 100,
+		damping: 0.25,
+		range: 50,
+		removeAfterRangeExceeded: false,
+		dampingAfterRangeExceeded: 3,
+		dampingAfterObjectHit: 10,
+		
+		timeActive: 1f,
+	},
 	wand: {
 		attackType: WAND,
 		

@@ -27,9 +27,14 @@ public class Boomerang extends Projectile {
 	
 	@Override
 	public void draw(float delta, SpriteBatch batch) {
+		rotateProjectile(delta);
+		
+		super.draw(delta, batch);
+	}
+	
+	protected void rotateProjectile(float delta) {
 		rotation += ROTATION_PER_SECOND * delta;
 		sprite.setRotation(rotation);
-		super.draw(delta, batch);
 	}
 	
 	@Override
@@ -40,7 +45,7 @@ public class Boomerang extends Projectile {
 		else {
 			moveToPlayer();
 			if (reachedPlayer()) {
-				super.removeFromMap();
+				removeAfterMovedBackToPlayer();
 			}
 		}
 	}
@@ -55,6 +60,10 @@ public class Boomerang extends Projectile {
 	
 	private boolean reachedPlayer() {
 		return playerBody.getPosition().cpy().sub(body.getPosition()).len() < 0.5f;
+	}
+	
+	protected void removeAfterMovedBackToPlayer() {
+		super.removeFromMap();
 	}
 	
 	@Override

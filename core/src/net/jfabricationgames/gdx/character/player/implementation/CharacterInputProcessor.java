@@ -104,7 +104,7 @@ class CharacterInputProcessor implements InputActionListener {
 		lastInputActionDelta += delta;
 		readInputs(delta);
 		
-		boolean move = moveUp || moveDown || moveLeft || moveRight;
+		boolean move = player.canMove() && (moveUp || moveDown || moveLeft || moveRight);
 		boolean characterActionSet = false;
 		
 		if (spinAttackCharged) {
@@ -363,7 +363,7 @@ class CharacterInputProcessor implements InputActionListener {
 	}
 	
 	public void move(float delta) {
-		if (!player.action.isMoveBlocking()) {
+		if (!player.action.isMoveBlocking() && player.canMove()) {
 			//reduce the endurance for sprinting before requesting the movement speed
 			if (sprint) {
 				//the endurance is increased at the same time (see CharacterAction.getEnduranceRecharge())

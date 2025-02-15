@@ -77,6 +77,15 @@
 		weaponType: WAND,
 	},
 	{
+		id: hookshot,
+		type: HOOKSHOT,
+		projectileType: hookshot,
+		delay: 0,
+		duration: 0,
+		damage: 5,
+		pushForce: 3,
+	},
+	{
 		//reflects the magic wave attack from a totem (so it should behave similar)
 		id: reflected_magic_wave,
 		type: MAGIC_WAVE,

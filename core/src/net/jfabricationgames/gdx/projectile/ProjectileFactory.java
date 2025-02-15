@@ -111,6 +111,9 @@ public class ProjectileFactory {
 			case FROST_GIANT_AXE_THROW:
 				projectile = new FrostGiantAxe(typeConfig, sprite, gameMap);
 				break;
+			case HOOKSHOT:
+				projectile = new Hookshot(typeConfig, sprite, gameMap);
+				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}

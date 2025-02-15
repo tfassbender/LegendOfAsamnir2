@@ -40,6 +40,7 @@ public enum EventType {
 	CHANGE_HEALTH, //
 	CHANGE_SHIELD, //
 	CHANGE_MANA, //
+	HOOKSHOT_ATTACK_FINISHED, //
 	//*******************************
 	//*** Game Objects
 	//*******************************

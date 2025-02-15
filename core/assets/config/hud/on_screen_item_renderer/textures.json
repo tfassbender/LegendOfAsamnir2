@@ -55,4 +55,8 @@
 		atlas: packed/menu/menu.atlas,
 		texture: ice_pick,
 	},
+	hookshot: {
+		atlas: packed/menu/menu.atlas,
+        texture: hookshot,
+	},
 }

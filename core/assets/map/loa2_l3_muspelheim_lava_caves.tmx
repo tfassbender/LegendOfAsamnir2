@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2602">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2603">
  <properties>
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -107,6 +107,9 @@
   <object id="2597" name="object.traverseable" x="576" y="338.75" width="64" height="109.25"/>
   <object id="2600" name="object.traverseable" x="1728" y="1298" width="64" height="78"/>
   <object id="2601" name="object.traverseable" x="1440" y="659" width="64" height="77.25"/>
+  <object id="2602" name="item.hookshot" x="512" y="907">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
   <object id="2385" x="1152" y="224" width="128" height="148"/>
