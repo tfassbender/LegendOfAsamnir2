@@ -599,4 +599,21 @@
 		pushForce: -2f,
 		pushForceBlockAffected: false,
 	},
+	
+	traverseable: {
+		type: TRAVERSEABLE,
+        
+        texture: empty,
+        
+		changeBodyToSensorEvent: {
+			//eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: test_traverseable_on,
+		},
+		changeBodyToSolidObjectEvent: {
+			//eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: test_traverseable_off,
+		},
+	},
 }

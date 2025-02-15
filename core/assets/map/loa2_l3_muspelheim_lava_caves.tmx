@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2595">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2602">
  <properties>
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -45,7 +45,7 @@
    eJztl0ESgzAMA3kIt/6A/z+ux2YoBJPYsZRor+1QYa+S6bZxcew+32HnU3nH2mcrUvOBzRXm3Vqze72jx26z5m3NHuVvy3t7Z2FxPesMKefDdo5FUPOldT4eDpbPQHE6whePZx5yWoihoJxJDOhMErOh/ttR/4UQIha0OwktT8noO+lpFrojf7yZRa9jyI560+uYHB1Dq5MoLl/liMrW6iSKy1c5ULK9BcU/Blh3LDC56546+c9d9xg7ybbfzLxs+x35P2gl2DwQNtQBO+qAmAXk3qNlQ+49cjaRB0qHMnNYfxulQ5k5UGbQw3nfKB1A5LzvGfa/AnLajsXpL1ITFhg=
   </data>
  </layer>
- <objectgroup id="3" name="objects" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="2377" name="player.startingPosition" x="1328" y="278">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -94,8 +94,21 @@
    </properties>
    <point/>
   </object>
+  <object id="2595" name="object.eventObject" x="1312" y="224" width="33.1477" height="14.9091">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__goto_muspelheim_desert"/>
+   </properties>
+  </object>
+  <object id="2596" name="object.eventObject" x="1344" y="992" width="33.1477" height="14.9091">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_desert__goto_muspelheim_lava_dungeon"/>
+   </properties>
+  </object>
+  <object id="2597" name="object.traverseable" x="576" y="338.75" width="64" height="109.25"/>
+  <object id="2600" name="object.traverseable" x="1728" y="1298" width="64" height="78"/>
+  <object id="2601" name="object.traverseable" x="1440" y="659" width="64" height="77.25"/>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="2385" x="1152" y="224" width="128" height="148"/>
   <object id="2386" x="1376" y="192" width="192" height="179"/>
   <object id="2387" x="1280" y="192" width="96" height="32"/>
@@ -187,8 +200,7 @@
   <object id="2469" x="576" y="448" width="64" height="146.333"/>
   <object id="2470" x="512" y="576" width="64" height="50.9091"/>
   <object id="2472" x="416" y="608" width="96" height="51.4545"/>
-  <object id="2473" x="320" y="640" width="96" height="79.2727"/>
-  <object id="2474" x="288" y="672" width="32" height="128"/>
+  <object id="2473" x="320" y="640" width="96" height="96.2727"/>
   <object id="2475" x="576" y="256" width="63.3333" height="82.3333"/>
   <object id="2476" x="2112" y="448" width="32" height="180"/>
   <object id="2477" x="2048" y="608" width="64" height="20"/>

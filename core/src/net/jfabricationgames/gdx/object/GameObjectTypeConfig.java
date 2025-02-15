@@ -4,6 +4,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.attack.AttackType;
+import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.object.interactive.InteractiveAction;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 
@@ -115,4 +116,11 @@ public class GameObjectTypeConfig {
 	public float pushForce = 5f; // use negative values to pull objects
 	public float pushForceWhenBlocking = 2f;
 	public boolean pushForceBlockAffected = false;
+	
+	//****************************************
+	//*** Traverseable Objects
+	//****************************************
+	
+	public EventConfig changeBodyToSensorEvent;
+	public EventConfig changeBodyToSolidObjectEvent;
 }

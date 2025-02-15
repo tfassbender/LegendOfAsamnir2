@@ -58,6 +58,8 @@ public enum EventType {
 	ACTIVATE_MOVING_OBJECT, //
 	DISSOLVE_DRAGGABLE_OBJECT_JOINTS, //
 	CONFIG_GAME_OBJECT_ACTION, //
+	TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR, //
+	TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT, //
 	//*******************************
 	//*** Items
 	//*******************************

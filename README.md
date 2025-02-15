@@ -758,6 +758,31 @@ Config objects are only for configuration and don't have any other effect. Useca
 
 Force objects are objects (sensors - without a mass) that apply a force to all hittable objects that get in contact with them. They can for example be used to push away the player or drag him near. The properties **pushForce**, **pushForceWhenBlocking** and **pushForceBlockAffected** can be used to configure the force that is applied. Negative values for pushForce lead to pulling. An example can be found in the level "muspelheim desert" (quicksand).
 
+### Traverseable objects
+
+Traverseable objects are objects that behave like simple physics objects, that the player can't get through (but projectiles can). The body of this object will change to a sensor to let the player walk through it, when a configurable event is received. Also it changes back to solid on a different configurable event. Usually the `EventType` **TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR** and **TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT** is used for this.
+
+Another use case could be to change the event object (in [config/objects/types.json](core/assets/config/objects/types.json)) to a config like the following, to make the traversable state of the object change, when the player touches event objects:
+
+
+```
+traverseable_on_event_object_touch: {
+  type: TRAVERSEABLE,
+
+  texture: empty,
+
+  changeBodyToSensorEvent: {
+    eventType: EVENT_OBJECT_TOUCHED,
+    stringValue: test_traverseable_on, // the text from the eventParameter attribute of the event object in the map config
+  },
+  changeBodyToSolidObjectEvent: {
+    eventType: EVENT_OBJECT_TOUCHED,
+    stringValue: test_traverseable_off, // the text from the eventParameter attribute of the event object in the map config
+  },
+},
+```
+
+
 ## Maps
 
 Tiled maps are used to create a map with textures, physics and objects. Enemies, Items and game objects can be defined within the map's *objects* layer, like explained in the sections [Enemies](#enemies), [Items](#items) and [Game objects](#game-objects). Physics objects (like walls) can be defined in the physics layer of the map. **Note:** The map's physics objects have to be created by polygons with at most *8* points. The material of the physics objects must be set in the custom properties of every map object, where the key is called *material* and the name references a material name that is defined in the materials json configuration file: [materials.json](core/assets/config/map/materials.json). Within the materials configuratino file the name of the material can be defined, along with the usual box2d physics properties: *density*, *restitution* and *friction*

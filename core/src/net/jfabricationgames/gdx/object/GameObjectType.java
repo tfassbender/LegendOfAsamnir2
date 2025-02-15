@@ -13,6 +13,7 @@ public enum GameObjectType {
 	ANIMATION, //
 	CONFIG_OBJECT, //
 	FORCE, //
+	TRAVERSEABLE, //
 	
 	// specialized types
 	DWARVEN_GUARDIAN_CONSTRUCT_SWITCH, //
