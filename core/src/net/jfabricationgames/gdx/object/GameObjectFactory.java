@@ -95,6 +95,9 @@ public class GameObjectFactory {
 		
 		GameObject object;
 		switch (typeConfig.type) {
+			case BASIC:
+				object = new GameObject(typeConfig, sprite, properties, gameMap);
+				break;
 			case DESTROYABLE:
 				object = new DestroyableObject(typeConfig, sprite, properties, gameMap);
 				break;

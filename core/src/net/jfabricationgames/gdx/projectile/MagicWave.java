@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.projectile;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.physics.box2d.Contact;
 
 import net.jfabricationgames.gdx.map.ground.MapObjectType;
 import net.jfabricationgames.gdx.object.GameObject;
@@ -20,8 +21,8 @@ public class MagicWave extends Projectile {
 	}
 	
 	@Override
-	protected void processContact(Object contactUserData) {
-		super.processContact(contactUserData);
+	protected void processContact(Object contactUserData, Contact contact) {
+		super.processContact(contactUserData, contact);
 		
 		if (contactUserData == MapObjectType.SOLID_OBJECT || isMovableObject(contactUserData)) {
 			removeFromMap();

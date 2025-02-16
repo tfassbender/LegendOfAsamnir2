@@ -49,7 +49,7 @@ public class ForceField extends Projectile {
 	}
 	
 	@Override
-	protected void processContact(Object contactUserData) {
+	protected void processContact(Object contactUserData, Contact contact) {
 		if (contactUserData instanceof Hittable) {
 			Hittable hittable = (Hittable) contactUserData;
 			if (!affectedObjects.contains(hittable, true)) {

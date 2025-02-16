@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2603">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2609">
  <properties>
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -70,7 +70,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2381" name="player.startingPosition" x="416" y="416">
+  <object id="2381" name="player.startingPosition" x="352" y="416">
    <properties>
     <property name="startingPointId" value="12"/>
    </properties>
@@ -108,6 +108,24 @@
   <object id="2600" name="object.traverseable" x="1728" y="1298" width="64" height="78"/>
   <object id="2601" name="object.traverseable" x="1440" y="659" width="64" height="77.25"/>
   <object id="2602" name="item.hookshot" x="512" y="907">
+   <point/>
+  </object>
+  <object id="2603" name="object.hookshot_target" x="416" y="393">
+   <point/>
+  </object>
+  <object id="2604" name="object.hookshot_target" x="704" y="393">
+   <point/>
+  </object>
+  <object id="2605" name="object.hookshot_target" x="1856" y="1350">
+   <point/>
+  </object>
+  <object id="2606" name="object.hookshot_target" x="1632" y="1350">
+   <point/>
+  </object>
+  <object id="2607" name="object.hookshot_target" x="1376" y="711">
+   <point/>
+  </object>
+  <object id="2608" name="object.hookshot_target" x="1617" y="711">
    <point/>
   </object>
  </objectgroup>

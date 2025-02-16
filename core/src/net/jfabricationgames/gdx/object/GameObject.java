@@ -281,6 +281,10 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		this.textureAtlas = textureAtlas;
 	}
 	
+	public Body getBody() {
+		return body;
+	}
+	
 	@Override
 	public Vector2 getPosition() {
 		return body != null ? body.getPosition().cpy() : null;
@@ -288,5 +292,9 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	
 	protected boolean isPlayableCharacterContact(Contact contact) {
 		return CollisionUtil.getObjectCollidingWith(this, PhysicsCollisionType.OBSTACLE_SENSOR, contact, playerObjectClass) != null;
+	}
+	
+	public boolean isHookshotConnectable() {
+		return typeConfig.hookshotConnectable;
 	}
 }

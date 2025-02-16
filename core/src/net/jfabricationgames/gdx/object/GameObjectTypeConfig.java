@@ -45,6 +45,8 @@ public class GameObjectTypeConfig {
 	public float dropPositionOffsetY;
 	public boolean renderDropsAboveObject = false;
 	
+	public boolean hookshotConnectable = false;
+	
 	//****************************************
 	//*** Destroyable Objects
 	//****************************************

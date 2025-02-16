@@ -786,6 +786,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			case BEFORE_PERSIST_STATE:
 				AnnotationUtil.executeAnnotatedMethods(BeforePersistState.class, this);
 				break;
+			case HOOKSHOT_ATTACK_STARTED:
+				// connect to the hookshot by subscribing to its events
+				event.parameterObject = bodyHandler.body;
+				break;
 			case HOOKSHOT_ATTACK_FINISHED:
 				hookshotActive = false;
 				break;

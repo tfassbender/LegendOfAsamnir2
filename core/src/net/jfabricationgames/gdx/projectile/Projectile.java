@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.projectile;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -277,6 +278,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		removeFromMap();
 	}
 	
+	public void drawShapes(float delta, ShapeRenderer shapeRenderer) {
+		// can be overridden by subclasses to draw additional shapes
+	}
+	
 	public void draw(float delta, SpriteBatch batch) {
 		if (typeConfig.textureScaleGrowing) {
 			scaleSprite();
@@ -304,7 +309,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		if (attackUserData == this && !attackedFixture.isSensor()) {
 			Object attackedUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);
 			
-			processContact(attackedUserData);
+			processContact(attackedUserData, contact);
 		}
 	}
 	
@@ -312,7 +317,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		return reflected || (attackPerformed && !typeConfig.multipleHitsPossible);
 	}
 	
-	protected void processContact(Object contactUserData) {
+	protected void processContact(Object contactUserData, Contact contact) {
 		if (contactUserData instanceof ProjectileReflector) {
 			ProjectileReflector reflector = (ProjectileReflector) contactUserData;
 			reflected = reflector.reflectProjectile(this);

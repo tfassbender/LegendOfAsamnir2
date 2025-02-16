@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.projectile;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.physics.box2d.Contact;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.attack.Hittable;
@@ -26,8 +27,8 @@ public class Hadouken extends Projectile {
 	}
 	
 	@Override
-	protected void processContact(Object contactUserData) {
-		super.processContact(contactUserData);
+	protected void processContact(Object contactUserData, Contact contact) {
+		super.processContact(contactUserData, contact);
 		
 		if (contactUserData instanceof Hittable) { // prevents the hadouken from hitting the NPC that fired it (impa)
 			removeFromMap();

@@ -606,14 +606,27 @@
         texture: empty,
         
 		changeBodyToSensorEvent: {
-			//eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
-			eventType: EVENT_OBJECT_TOUCHED,
-			stringValue: test_traverseable_on,
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
 		},
 		changeBodyToSolidObjectEvent: {
-			//eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
-			eventType: EVENT_OBJECT_TOUCHED,
-			stringValue: test_traverseable_off,
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
 		},
+	},
+	
+	hookshot_target: {
+		type: BASIC,
+		
+		hookshotConnectable: true,
+		
+        texture: hookshot_target,
+        
+		textureSizeFactorX: 0.4f,
+		textureSizeFactorY: 0.4f,
+		
+		physicsBodySizeFactorX: 0.4f,
+		physicsBodySizeFactorY: 0.3f,
+		
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.07f,
 	},
 }

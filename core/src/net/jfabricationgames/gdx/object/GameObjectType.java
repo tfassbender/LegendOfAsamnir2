@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.object;
 
 public enum GameObjectType {
+	BASIC, //
 	DESTROYABLE, //
 	INTERACTIVE, //
 	LOCKED, // 

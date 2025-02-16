@@ -237,6 +237,12 @@ class GameMapRenderer implements Disposable {
 		}
 	}
 	
+	public void renderProjectileShapes(float delta) {
+		for (Projectile projectile : gameMap.projectiles) {
+			projectile.drawShapes(delta, shapeRenderer);
+		}
+	}
+	
 	public void renderProjectiles(float delta) {
 		for (Projectile projectile : gameMap.projectiles) {
 			projectile.draw(delta, batch);

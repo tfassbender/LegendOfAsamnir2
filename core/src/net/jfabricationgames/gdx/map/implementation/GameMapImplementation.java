@@ -325,6 +325,7 @@ public class GameMapImplementation implements GameMap {
 	private void processAndRenderGameObject(float delta) {
 		renderer.beginShapeRenderer();
 		renderer.renderObjectShapes();
+		renderer.renderProjectileShapes(delta);
 		renderer.endShapeRenderer();
 		
 		renderer.beginBatch();
@@ -334,10 +335,13 @@ public class GameMapImplementation implements GameMap {
 		
 		processor.processEnemies(delta);
 		renderer.renderEnemies(delta);
+		
 		processor.processNpcs(delta);
 		renderer.renderNpcs(delta);
+		
 		processor.processAnimals(delta);
 		renderer.renderAnimals(delta);
+		
 		processor.processProjectiles(delta);
 		renderer.renderProjectiles(delta);
 		
