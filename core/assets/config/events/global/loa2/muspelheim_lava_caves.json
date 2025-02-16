@@ -14,6 +14,32 @@
 		}
 	},
 	
+	//*******************************************
+	//*** switches
+	//*******************************************
+	
+	loa2_l3_muspelheim_lava_caves__magic_switch: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__magic_switch,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l3_muspelheim_lavaLcaves__lock_1
+        }
+	},
+	
+	loa2_l3_muspelheim_lava_caves__switch_open_hookshot_puzzle_area: {
+		event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__switch_open_hookshot_puzzle_area,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l3_muspelheim_lavaLcaves__lock_hookshot_area
+        }
+	},
+	
 	//****************************************************
 	//*** hookshot puzzle
 	//****************************************************
