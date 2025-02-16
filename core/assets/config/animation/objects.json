@@ -119,5 +119,17 @@
 			frameDuration: 0.1,
 			playMode: NORMAL,
 		},
+		{
+			name: fire,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP,
+		},
+		{
+			name: smoke,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP,
+		},
 	]
 }

@@ -56,14 +56,25 @@ public class EventConfig {
 		if (getClass() != obj.getClass())
 			return false;
 		EventConfig other = (EventConfig) obj;
-		return booleanValue == other.booleanValue && eventType == other.eventType
-				&& Float.floatToIntBits(floatValue) == Float.floatToIntBits(other.floatValue) && intValue == other.intValue
-				&& Objects.equals(stringValue, other.stringValue);
+		return booleanValue == other.booleanValue && eventType == other.eventType && Float.floatToIntBits(floatValue) == Float.floatToIntBits(other.floatValue) && intValue == other.intValue && Objects.equals(stringValue, other.stringValue);
 	}
 	
 	@Override
 	public String toString() {
-		return "EventConfig [eventType=" + eventType + ", intValue=" + intValue + ", floatValue=" + floatValue + ", booleanValue=" + booleanValue
-				+ ", stringValue=" + stringValue + ", parameterObject=" + parameterObject + "]";
+		return "EventConfig [eventType=" + eventType + ", intValue=" + intValue + ", floatValue=" + floatValue + ", booleanValue=" + booleanValue + ", stringValue=" + stringValue + ", parameterObject=" + parameterObject + "]";
+	}
+	
+	/**
+	 * Creates a shallow copy of this {@link EventConfig} object.
+	 */
+	public EventConfig copy() {
+		EventConfig copy = new EventConfig();
+		copy.eventType = eventType;
+		copy.intValue = intValue;
+		copy.floatValue = floatValue;
+		copy.booleanValue = booleanValue;
+		copy.stringValue = stringValue;
+		copy.parameterObject = parameterObject;
+		return copy;
 	}
 }

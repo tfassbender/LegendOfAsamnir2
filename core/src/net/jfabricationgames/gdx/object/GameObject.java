@@ -160,7 +160,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	}
 	
 	public void draw(float delta, SpriteBatch batch) {
-		if (animation != null && !animation.isAnimationFinished()) {
+		if (animation != null && (!animation.isAnimationFinished() || animation.isAnimationLooped())) {
 			animation.increaseStateTime(delta);
 			animation.draw(batch);
 		}

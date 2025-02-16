@@ -125,4 +125,15 @@ public class GameObjectTypeConfig {
 	
 	public EventConfig changeBodyToSensorEvent;
 	public EventConfig changeBodyToSolidObjectEvent;
+	
+	public String intValueByMapProperty; // the configured map property is used as intValue of the event objects (if configured here)
+	
+	public String animationTraverseable;
+	public String animationSolid;
+	
+	public float animationTraverseableOffsetX = 0f;
+	public float animationTraverseableOffsetY = 0f;
+	
+	public float animationSolidOffsetX = 0f;
+	public float animationSolidOffsetY = 0f;
 }

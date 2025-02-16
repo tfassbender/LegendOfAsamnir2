@@ -629,4 +629,27 @@
 		physicsBodyOffsetFactorX: 0f,
 		physicsBodyOffsetFactorY: 0.07f,
 	},
+	
+	fire: {
+		type: TRAVERSEABLE,
+		
+        texture: empty,
+        animationTraverseable: smoke,
+        animationSolid: fire,
+        
+        animationTraverseableOffsetX: 0f,
+        animationTraverseableOffsetY: 0.5f,
+        
+        animationSolidOffsetX: 0f,
+        animationSolidOffsetY: 0.1f,
+        
+        intValueByMapProperty: traverseable_object_n,
+        
+		changeBodyToSensorEvent: {	
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+		},
+		changeBodyToSolidObjectEvent: {
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+		},
+	},
 }

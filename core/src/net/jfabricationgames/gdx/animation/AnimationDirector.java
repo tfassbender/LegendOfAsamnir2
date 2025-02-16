@@ -66,6 +66,8 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 	
 	public abstract boolean isAnimationFinished();
 	
+	public abstract boolean isAnimationLooped();
+	
 	public abstract float getAnimationDuration();
 	
 	public abstract void flip(boolean x, boolean y);

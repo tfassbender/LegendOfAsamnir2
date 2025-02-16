@@ -53,6 +53,11 @@ public class TextureAnimationDirector<T extends TextureRegion> extends Animation
 	}
 	
 	@Override
+	public boolean isAnimationLooped() {
+		return animation.getPlayMode() == PlayMode.LOOP;
+	}
+	
+	@Override
 	public float getAnimationDuration() {
 		return animation.getAnimationDuration();
 	}

@@ -1,0 +1,29 @@
+{
+	id: loa2_l3_muspelheim_lava_caves__hookshot_collected_cutscene,
+	controlledActions: {
+		thorin: {
+		    startsWithCutscene: true,
+		    
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "What's this?             \nA hook, attached to a rope?\n                          \nI wonder if this will come in handy in this cave...     ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

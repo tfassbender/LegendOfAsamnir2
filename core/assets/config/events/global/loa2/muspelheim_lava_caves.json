@@ -1,16 +1,203 @@
 {
+	//****************************************************
+	//*** cutscenes
+	//****************************************************
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_collected: {
+		event: {
+            eventType: SPECIAL_ACTION_ITEM_PICKED_UP,
+            stringValue: hookshot,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_lava_caves__hookshot_collected_cutscene,
+		}
+	},
+	
+	//****************************************************
+	//*** hookshot puzzle
+	//****************************************************
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_0: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_0,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 1,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_0__activate_fire_delay_0: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_0,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_1_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_1: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_1,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 2,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_1__activate_fire_delay_1: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_1,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_2_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_2: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_2,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 3,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_2__activate_fire_delay_2: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_2,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_3_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_3: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_3,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 4,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_3__activate_fire_delay_3: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_3,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_4_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_4: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_4,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 5,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_4__activate_fire_delay_4: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_4,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_5_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_5: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_5,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 6,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_5__activate_fire_delay_5: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_5,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_6_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_6: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_6,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 7,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_6__activate_fire_delay_6: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_6,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_7_after_delay,
+		}
+	},
+	
 	//*******************************************
 	//*** change map
 	//*******************************************
 	
-	loa2_l3_muspelheim_desert__goto_muspelheim_desert: {
+	loa2_l3_muspelheim_lava_caves__goto_muspelheim_desert: {
 		event: {
 			eventType: EVENT_OBJECT_TOUCHED,
-			stringValue: loa2_l3_muspelheim_desert__goto_muspelheim_desert,
+			stringValue: loa2_l3_muspelheim_lava_caves__goto_muspelheim_desert,
 		}
 		executionType: CHANGE_MAP,
 		executionParameters: {
-			map: loa2_muspelheim_lava_caves,
+			map: loa2_muspelheim_desert,
 			startingPointId: 1,
 		}
 	},

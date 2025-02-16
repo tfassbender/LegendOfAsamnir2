@@ -1,8 +1,11 @@
 package net.jfabricationgames.gdx.object.traversable;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapProperties;
 
+import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -19,10 +22,30 @@ import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
  */
 public class TraverseableObject extends GameObject implements EventListener {
 	
+	private AnimationDirector<TextureRegion> animationTraverseable;
+	private AnimationDirector<TextureRegion> animationSolid;
+	
+	private EventConfig changeBodyToSensorEvent;
+	private EventConfig changeBodyToSolidObjectEvent;
+	
 	public TraverseableObject(GameObjectTypeConfig type, Sprite sprite, MapProperties properties, GameObjectMap gameMap) {
 		super(type, sprite, properties, gameMap);
 		
 		EventHandler.getInstance().registerEventListener(this);
+		
+		initializeEvents();
+	}
+	
+	private void initializeEvents() {
+		changeBodyToSensorEvent = typeConfig.changeBodyToSensorEvent.copy();
+		changeBodyToSolidObjectEvent = typeConfig.changeBodyToSolidObjectEvent.copy();
+		
+		if (typeConfig.intValueByMapProperty != null) {
+			// change the intValue of the event objects to the value that is configured in the map properties (to not need a new event config for each object)
+			int intValue = Integer.parseInt(mapProperties.get(typeConfig.intValueByMapProperty, "0", String.class));
+			changeBodyToSensorEvent.intValue = intValue;
+			changeBodyToSolidObjectEvent.intValue = intValue;
+		}
 	}
 	
 	@Override
@@ -38,6 +61,29 @@ public class TraverseableObject extends GameObject implements EventListener {
 				.setCollisionType(PhysicsCollisionType.OBSTACLE_SENSOR);
 		body = PhysicsBodyCreator.createRectangularBody(properties);
 		body.setUserData(this);
+		
+		centerSpriteAndAnimationOnObject(x, y);
+	}
+	
+	private void centerSpriteAndAnimationOnObject(float x, float y) {
+		sprite.setPosition(x - sprite.getWidth() * 0.5f, y - sprite.getHeight() * 0.5f);
+		
+		if (typeConfig.animationTraverseable != null) {
+			animationTraverseable = animationManager.getTextureAnimationDirectorCopy(typeConfig.animationTraverseable);
+			AnimationSpriteConfig spriteConfig = AnimationSpriteConfig.fromSprite(sprite);
+			spriteConfig.setX(spriteConfig.x + typeConfig.animationTraverseableOffsetX);
+			spriteConfig.setY(spriteConfig.y + typeConfig.animationTraverseableOffsetY);
+			animationTraverseable.setSpriteConfig(spriteConfig);
+		}
+		if (typeConfig.animationSolid != null) {
+			animationSolid = animationManager.getTextureAnimationDirectorCopy(typeConfig.animationSolid);
+			AnimationSpriteConfig spriteConfig = AnimationSpriteConfig.fromSprite(sprite);
+			spriteConfig.setX(spriteConfig.x + typeConfig.animationSolidOffsetX);
+			spriteConfig.setY(spriteConfig.y + typeConfig.animationSolidOffsetY);
+			animationSolid.setSpriteConfig(spriteConfig);
+			
+			animation = animationSolid;
+		}
 	}
 	
 	@Override
@@ -46,11 +92,13 @@ public class TraverseableObject extends GameObject implements EventListener {
 			return;
 		}
 		
-		if (event.equals(typeConfig.changeBodyToSensorEvent)) {
+		if (event.equals(changeBodyToSensorEvent)) {
 			changeBodyToSensor();
+			animation = animationTraverseable;
 		}
-		else if (event.equals(typeConfig.changeBodyToSolidObjectEvent)) {
+		else if (event.equals(changeBodyToSolidObjectEvent)) {
 			changeBodyToNonSensor();
+			animation = animationSolid;
 		}
 	}
 	

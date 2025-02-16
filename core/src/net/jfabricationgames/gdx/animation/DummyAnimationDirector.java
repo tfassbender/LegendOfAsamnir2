@@ -20,4 +20,9 @@ public class DummyAnimationDirector<T extends TextureRegion> extends TextureAnim
 	public boolean isAnimationFinished() {
 		return true;
 	}
+	
+	@Override
+	public boolean isAnimationLooped() {
+		return false;
+	}
 }

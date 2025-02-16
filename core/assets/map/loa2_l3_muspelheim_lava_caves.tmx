@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2609">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2654">
  <properties>
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -30,7 +30,7 @@
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
  <layer id="1" name="background" width="75" height="50" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzNmktOG0EQhr3ILcY3SU6QHA9yAcgmuzzYY4xMdiRBtndxLoBQEokVWMq0cEk/5b8ePQ9gUbI8M91d/VVVP+u4mUyOHblr5R5kC+9uWjlv5bSVRSvXRllW5iPIKSk7tGhdxtBj1soZyJz0+7KV7zt9WFlWxtPxVyubVn5X6CllNkZZrcsQrGr0xPbEt2rKWDpew7dZvXUfo7Jaj0+7vntltB1q9SzlTpr9OLTsnGHFYjcbY2ysiHSv9ambppueOg6lPc/OqCPTk8VuJN5YkY2LiJW2Qxc90bekvcyckB0npI6sPlkRPTLxd5yww70Sr03sc2RniUtkpesv9V6ARHb/QsT7dgt63yXKRNwvmljf8t3r6WTyZlo3j2C5Balf2r8NWEm/ta6evhc7+wmrRVCmCysdWxJfb9v+vpvy95ZgOYvVqpVX04ffqN/PzarouG5luROsU+Sb0WYkUq7MCz92gqwLy6OdLh+ax3EiIv40Bx1X8GuxWu1E9F7Cs66s9LMxWOEYv1Dvo7ajOchiJfxF76OgjMS6JWzdIPzR17R98BuxlX4m/983++vZIVlZvtiF1ZkjNesGabPWd0VfYYWxsCZ20jGmv8nEwVy1/dJY4Toe90+aVS3rSLKsPvdkpeVPK39b+UeYytw/I9/Nm/357QfI1Y7VpXqeFfQJb8zA8YDZSeqxWK0CWYJ45WTuZ9+tCSvRsa9on+gT/xGroYTFPQq2L+vlIVhpX9Tte3PX10pWXXxey8/mIY6egxXzMWQR6X7V5FkNrWtXVmX/etDKYfOwjjjp0D4b766SZZ+KFfbTilGLlVX2sCe3PnYeg1WGEWOFZyEH8LysK9h57JjMWB+GYoV1Zxh5rNCWeH5knWFHzE6Vbp5venYeipU3JvVhxfSL1q6MkdW+5mX1wzvzy/oS3lmMzUrfj+g9vD7L1zzZ/YpmbLHy1lZZX8I7ixpWojc+i1jp+xHNyjo72Ki28DwB11JDsUIf2jjtd/EnKY9nbKIv3i2y+xGmi64X15lY3opbzSo6c/d8yNJpDFYz+DZzP8Li1Nr7Z1lFe5shWHn3r4wVW+fPgnatejFO5UwNz2wsVtJXrFPfm4/Byrt/ZazOm33brhO66n7p/AR55+37PN+K7BWxYj5jjWXRO4w/pqulJ7tzY/kJng9l1lZ9WXXJLfB8spaVHoesvtSwsubAZU9W3p19lJuipdQhY5XW2ZqDhNWtw0psoFlZ+3HdbjTHZll5c1JNbsq2eexTWmfPX4q9yx2hPjOMWGH9Q5zrRay8O4Ca3JR5D1aefeQb0c9iYklfVtn5O5ubIj6F8afPGFh7jL+1XpP/L5VV5v6JcWJrG8aA8e/DytuPdGGl86h0OzV5icJJxx47t2JxlWWFNvJYefZnHHV/o72ybie7dkBOXuzpPuDYh/dTHlP877FieSkRR6zfYqXjsCbfr4aTtoM39nm5CRlWpU9WHo2V34P9zbLK5vvVcNLnNc/JSs9TTA/GyhqzuvoTG8uZLUv5EnNyR2wx7coK8yTkfrjPPJjdQ9dwsmIvu+ao2csXVrJGH3vNIJwyuaZFJEenllOWVaQHY2Xlv4zFKpPHuoU+svEpOhe3zpuynDQrfQYjNmdrgT7rK10vY4O5XsJIftn4lBmLh7C52IDl7QyZx5HxpW2zHyvIiMWd5xOenZnNM+cZsiYVkbydp2QlY5FmxRhF41NX8c4zcA5luShPxUr2WsjGYjQWpyLWeYbOKT9v/HG39rythpW172ViceqrXxFrvqxllTlv8/a9Vr3iU304ZfXrKlYupdWnzHmbt+/9DzZI7cg=
+   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
   </data>
  </layer>
  <layer id="2" name="background_2" width="75" height="50" locked="1">
@@ -40,12 +40,12 @@
  </layer>
  <layer id="5" name="terrain" width="75" height="50" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="75" height="50" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztl0ESgzAMA3kIt/6A/z+ux2YoBJPYsZRor+1QYa+S6bZxcew+32HnU3nH2mcrUvOBzRXm3Vqze72jx26z5m3NHuVvy3t7Z2FxPesMKefDdo5FUPOldT4eDpbPQHE6whePZx5yWoihoJxJDOhMErOh/ttR/4UQIha0OwktT8noO+lpFrojf7yZRa9jyI560+uYHB1Dq5MoLl/liMrW6iSKy1c5ULK9BcU/Blh3LDC56546+c9d9xg7ybbfzLxs+x35P2gl2DwQNtQBO+qAmAXk3qNlQ+49cjaRB0qHMnNYfxulQ5k5UGbQw3nfKB1A5LzvGfa/AnLajsXpL1ITFhg=
+   eJztl8EVwyAMQ7NHe+sGmb/D9Rhe2lAHbCyB/jWBCFsyL9vGxf70eYedV+WMtWcrUvMDm1eYe2vV7nVGj95m1duqPcq/Lef21sLi9awZUtaHbY5FUPNLa308PFjugeLpCL947LnL00IMBWUmMaCZJGZD+bej/AshRCxodxKanpLRd9K/WuiOPLhTi16PIXvUm16PyaNjaPVkbd370banl46onLV6EsXLv3SgaLvLSrO0F9YeC0yusqdMfnOVPcZMsvU3Uy9bf0f+B60Emw+EDWXAjjIgZgE592jakHOPrE3kgZKhTB3Wb6NkKFMHSg16OPcbJQOInPs9Q/9XQJ62Y/H0B7/NFu8=
   </data>
  </layer>
  <objectgroup id="3" name="objects">
@@ -99,7 +99,7 @@
   </object>
   <object id="2595" name="object.eventObject" x="1312" y="224" width="33.1477" height="14.9091">
    <properties>
-    <property name="eventParameter" value="loa2_l3_muspelheim_desert__goto_muspelheim_desert"/>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__goto_muspelheim_desert"/>
    </properties>
   </object>
   <object id="2596" name="object.eventObject" x="1344" y="992" width="33.1477" height="14.9091">
@@ -129,6 +129,177 @@
    <point/>
   </object>
   <object id="2608" name="object.hookshot_target" x="1617" y="711">
+   <point/>
+  </object>
+  <object id="2609" name="item.triforce_muspelheim_lava_caves" x="288" y="320">
+   <point/>
+  </object>
+  <object id="2610" name="item.metal_ingot" x="529" y="512">
+   <point/>
+  </object>
+  <object id="2611" name="object.hookshot_target" x="448" y="683">
+   <point/>
+  </object>
+  <object id="2612" name="object.traverseable" x="416" y="736" width="95.75" height="21"/>
+  <object id="2627" name="object.pressure_switch" x="786" y="559.5">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_1"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2628" name="object.pressure_switch" x="657.25" y="557.5">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_0"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_0"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2629" name="object.pressure_switch" x="754.25" y="719.625">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_2"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2630" name="object.pressure_switch" x="562.375" y="719">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_3"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2631" name="object.pressure_switch" x="690.636" y="846.818">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_4"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2632" name="object.pressure_switch" x="690.5" y="622.875">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_5"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2633" name="object.pressure_switch" x="658.391" y="750.957">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_6"/>
+    <property name="stateSwitchId" value="loa2_l3_muspelheim_lava_caves__hookshot_puzzle__pressure_switch_6"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2636" name="object.fire" x="776.761" y="534.148" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="2637" name="object.fire" x="681.148" y="598.386" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="2638" name="object.fire" x="744.841" y="694.25" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="2639" name="object.fire" x="681.063" y="822.188" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="2640" name="object.fire" x="649" y="726.375" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="2641" name="object.fire" x="553.443" y="694.25" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="2642" name="object.fire" x="489.542" y="790.25" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="2643" name="object.configObject" x="864" y="512">
+   <properties>
+    <property name="eventDelayInSeconds" value="3"/>
+    <property name="eventToFire">{
+    eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+    intValue: 1,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_1_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2645" name="object.configObject" x="864" y="544">
+   <properties>
+    <property name="eventDelayInSeconds" value="3"/>
+    <property name="eventToFire">{
+    eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+    intValue: 2,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_2_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2646" name="object.configObject" x="864" y="576">
+   <properties>
+    <property name="eventDelayInSeconds" value="3"/>
+    <property name="eventToFire">{
+    eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+    intValue: 3,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_3_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2649" name="object.configObject" x="864" y="608">
+   <properties>
+    <property name="eventDelayInSeconds" value="3"/>
+    <property name="eventToFire">{
+    eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+    intValue: 4,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_4_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2650" name="object.configObject" x="864" y="640">
+   <properties>
+    <property name="eventDelayInSeconds" value="3"/>
+    <property name="eventToFire">{
+    eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+    intValue: 5,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_5_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2651" name="object.configObject" x="864" y="672">
+   <properties>
+    <property name="eventDelayInSeconds" value="3"/>
+    <property name="eventToFire">{
+    eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+    intValue: 6,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_6_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2653" name="object.configObject" x="864" y="704">
+   <properties>
+    <property name="eventDelayInSeconds" value="3"/>
+    <property name="eventToFire">{
+    eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+    intValue: 7,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_caves__config_object__reactivate_fire_7_after_delay"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
@@ -183,7 +354,7 @@
   <object id="2445" x="640" y="928" width="160" height="32"/>
   <object id="2446" x="544" y="864" width="96" height="96"/>
   <object id="2447" x="384" y="928" width="160" height="32"/>
-  <object id="2448" x="320" y="736" width="96" height="192"/>
+  <object id="2448" x="320" y="768" width="96" height="160"/>
   <object id="2455" x="160" y="448" width="192" height="19.25"/>
   <object id="2456" x="448" y="448" width="128" height="18.5"/>
   <object id="2457" x="640" y="448" width="32" height="19.625"/>
@@ -224,7 +395,7 @@
   <object id="2469" x="576" y="448" width="64" height="146.333"/>
   <object id="2470" x="512" y="576" width="64" height="50.9091"/>
   <object id="2472" x="416" y="608" width="96" height="51.4545"/>
-  <object id="2473" x="320" y="640" width="96" height="96.2727"/>
+  <object id="2473" x="320" y="640" width="96" height="127.773"/>
   <object id="2475" x="576" y="256" width="63.3333" height="82.3333"/>
   <object id="2476" x="2112" y="448" width="32" height="180"/>
   <object id="2477" x="2048" y="608" width="64" height="20"/>
@@ -481,6 +652,15 @@
   </object>
   <object id="2588" x="1367" y="1222.36">
    <polygon points="0,0 2.18182,5.09091 -4.54545,5.63636"/>
+  </object>
+  <object id="2613" x="495.25" y="774.886">
+   <polygon points="0,0 -10.9091,12.1818 12,12.3636"/>
+  </object>
+  <object id="2614" x="495.25" y="775.25">
+   <polygon points="0,0 5.45455,0.181818 11.8182,11.8182"/>
+  </object>
+  <object id="2625" x="486.273" y="840.091">
+   <polygon points="0,0 21.75,0.75 1.25,8.25"/>
   </object>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1">

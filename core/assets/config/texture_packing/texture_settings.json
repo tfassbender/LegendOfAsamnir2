@@ -79,6 +79,8 @@
 				//##############################################################
 				raw_images/restricted/objects/all,
 				raw_images/restricted/objects/animated/push_fist_attack,
+				raw_images/restricted/objects/animated/fire,
+				raw_images/restricted/objects/animated/smoke,
 				
 				//##############################################################
 				//### enemies

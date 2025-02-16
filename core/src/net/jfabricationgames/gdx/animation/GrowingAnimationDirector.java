@@ -45,6 +45,11 @@ public class GrowingAnimationDirector<T extends TextureRegion> extends Animation
 	}
 	
 	@Override
+	public boolean isAnimationLooped() {
+		return false;
+	}
+	
+	@Override
 	public float getAnimationDuration() {
 		return animationConfig.duration;
 	}
