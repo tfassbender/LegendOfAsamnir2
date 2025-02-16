@@ -4,8 +4,11 @@
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
   <property name="building_level" value="false"/>
+  <property name="continuous_damage" value="5"/>
+  <property name="continuous_damage_interval" value="3"/>
+  <property name="continuous_damage_prevention_condition" value="common__rune_hagalaz_collected"/>
   <property name="dungeon_level" value="false"/>
-  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_desert.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_caves.json"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
  <tileset firstgid="491" source="tileset/cave.tsx"/>

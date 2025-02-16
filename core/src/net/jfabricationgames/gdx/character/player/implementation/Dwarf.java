@@ -49,6 +49,9 @@ import net.jfabricationgames.gdx.util.GameUtil;
 
 public class Dwarf implements PlayableCharacter, Disposable, ContactListener, EventListener, ProjectileReflector {
 	
+	public static final float FREEZING_TIME_IN_SECONDS = 5f;
+	public static final float HEAT_DAMAGE_TIME_IN_SECONDS = 5f;
+	
 	private static final float MOVING_SPEED_CUTSCENE = 3.5f;
 	
 	private static final float TIME_TILL_GAME_OVER_MENU = 3f;
@@ -56,8 +59,6 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	private static final float MIN_ENDURANCE_TO_START_BLOCK = 15f;
 	private static final float MIN_ENDURANCE_TO_START_SPRINT = 15f;
-	
-	private static final float FREEZING_TIME_IN_SECONDS = 5f;
 	
 	private static final String ATTACK_CONFIG_FILE_NAME = "config/dwarf/attacks.json";
 	
@@ -94,6 +95,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private DraggableObject draggableObject;
 	
 	private float freezingTimer; // if > 0 the player is frozen and movement is slowed down
+	private float heatDamageTimer; // if > 0 the player is damaged by heat (from the map) so the character turns red
 	private boolean hookshotActive = false; // the player can't move while the hookshot is active
 	
 	public Dwarf() {
@@ -398,6 +400,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		renderer.processDarknessFadingAnimation(delta);
 		
 		freezingTimer = Math.max(0, freezingTimer - delta);
+		heatDamageTimer = Math.max(0, heatDamageTimer - delta);
 	}
 	
 	private void updateAction(float delta) {
@@ -597,6 +600,11 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				damage *= (1f - (weaponSkill.getSkillLevelConfig(WeaponSkillType.SHIELD).blockRateInPercent / 100f));
 			}
 			
+			if (attackType == AttackType.CONTINUOUS_MAP_DAMAGE) {
+				// turns the player character red if he is damaged by heat (from map damage)
+				heatDamageTimer = HEAT_DAMAGE_TIME_IN_SECONDS;
+			}
+			
 			boolean healthBelowHalfBeforeHit = propertiesDataHandler.getHealthPlusIncreasePercentual() < 0.5f - 1e-3f; // prevent rounding errors
 			propertiesDataHandler.takeDamage(damage);
 			checkHealthBelowHalf(healthBelowHalfBeforeHit);
@@ -700,12 +708,16 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		return freezingTimer;
 	}
 	
-	protected float getTotalFreezingTimeInSeconds() {
-		return FREEZING_TIME_IN_SECONDS;
-	}
-	
 	protected boolean isFrozen() {
 		return freezingTimer > 0;
+	}
+	
+	protected float getHeatDamageTimer() {
+		return heatDamageTimer;
+	}
+	
+	protected boolean isDamagedByHeat() {
+		return heatDamageTimer > 0;
 	}
 	
 	@Override

@@ -26,6 +26,9 @@ class CharacterRenderer {
 	private static final float DRAWING_DIRECTION_OFFSET = 0.1f;
 	private static final Vector2 DARKNESS_GRADIENT_POSITION_OFFSET = new Vector2(0f, -0.6f);
 	
+	private static final Color FROZEN_COLOR = new Color(0.1f, 0.7f, 1f, 1f);
+	private static final Color HEAT_DAMAGE_COLOR = new Color(0.6f, 0.3f, 0.3f, 1f);
+	
 	private Dwarf player;
 	
 	private AnimationManager animationManager;
@@ -123,23 +126,28 @@ class CharacterRenderer {
 	private void setSpriteColor(SpriteBatch batch) {
 		if (player.isFrozen()) {
 			// blend in the frozen color by setting the oppacity
-			float progress = 1f;
-			float freezingTimer = player.getFreezingTimer();
-			float totalFreezingTime = player.getTotalFreezingTimeInSeconds();
-			float colorGradientTime = 1f; // time to blend in and out
-			
-			if (freezingTimer > totalFreezingTime - colorGradientTime) {
-				progress = ((totalFreezingTime / colorGradientTime) - freezingTimer);
-			}
-			else if (freezingTimer < colorGradientTime) {
-				progress = freezingTimer;
-			}
-			
-			Color frozenColor = new Color(0.1f, 0.7f, 1f, 1f);
-			frozenColor.lerp(Color.WHITE, 1f - progress); // linear interpolation to blend the colors (WHITE is the default color for a sprite batch)
-			
-			batch.setColor(frozenColor);
+			calculateAndSetColor(batch, player.getFreezingTimer(), Dwarf.FREEZING_TIME_IN_SECONDS, FROZEN_COLOR);
 		}
+		else if (player.isDamagedByHeat()) {
+			// blend in the heat damage color by setting the oppacity
+			calculateAndSetColor(batch, player.getHeatDamageTimer(), Dwarf.HEAT_DAMAGE_TIME_IN_SECONDS, HEAT_DAMAGE_COLOR);
+		}
+	}
+	
+	private void calculateAndSetColor(SpriteBatch batch, float timer, float totalTime, Color color) {
+		float progress = 1f;
+		float colorGradientTime = 1f; // time to blend in and out
+		
+		if (timer > totalTime - colorGradientTime) {
+			progress = ((totalTime / colorGradientTime) - timer);
+		}
+		else if (timer < colorGradientTime) {
+			progress = timer;
+		}
+		
+		color = color.cpy().lerp(Color.WHITE, 1f - progress); // linear interpolation to blend the colors (WHITE is the default color for a sprite batch)
+		
+		batch.setColor(color);
 	}
 	
 	private boolean drawingDirectionEqualsTextureDirection(TextureRegion frame) {

@@ -27,7 +27,8 @@ public interface GameMap extends EventListener, CutsceneUnitProvider, EnemyChara
 		MAP_TILE_WIDTH_IN_PIXELS("tilewidth"), // 
 		MAP_TILE_HEIGHT_IN_PIXELS("tileheight"), //
 		MAP_CONTINUOUSE_DAMAGE("continuous_damage"), //
-		MAP_CONTINUOUSE_DAMAGE_INTERVAL("continuous_damage_interval");
+		MAP_CONTINUOUSE_DAMAGE_INTERVAL("continuous_damage_interval"), //
+		MAP_CONTINUOUSE_DAMAGE_PREVENTION_CONDITION("continuous_damage_prevention_condition");
 		
 		private final String key;
 		

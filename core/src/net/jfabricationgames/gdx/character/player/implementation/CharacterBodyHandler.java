@@ -78,7 +78,7 @@ class CharacterBodyHandler {
 		// start the movement reduction slowly and end slowly to adapt to the color gradient
 		float progress = 1f;
 		float freezingTimer = player.getFreezingTimer();
-		float totalFreezingTime = player.getTotalFreezingTimeInSeconds();
+		float totalFreezingTime = Dwarf.FREEZING_TIME_IN_SECONDS;
 		float colorGradientTime = 1f; // time to blend in and out
 		
 		if (freezingTimer > totalFreezingTime - colorGradientTime) {

@@ -18,6 +18,7 @@ import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.npc.NonPlayableCharacter;
 import net.jfabricationgames.gdx.character.player.PlayableCharacter;
 import net.jfabricationgames.gdx.character.player.Player;
+import net.jfabricationgames.gdx.condition.ConditionHandler;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.cutscene.CutsceneHandler;
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
@@ -65,6 +66,7 @@ public class GameMapImplementation implements GameMap {
 	private float continuousMapDamage;
 	private float continuousMapDamageInterval;
 	private float continuousMapDamageTimeDelta;
+	private String continuousMapDamagePreventionCondition;
 	
 	protected TiledMap map;
 	protected ObjectMap<Integer, Vector2> playerStartingPositions = new ObjectMap<>();
@@ -236,6 +238,7 @@ public class GameMapImplementation implements GameMap {
 	private void updateContinuousMapDamageProperties() {
 		continuousMapDamage = Float.parseFloat(map.getProperties().get(GameMap.GlobalMapPropertyKeys.MAP_CONTINUOUSE_DAMAGE.getKey(), "0f", String.class));
 		continuousMapDamageInterval = Float.parseFloat(map.getProperties().get(GameMap.GlobalMapPropertyKeys.MAP_CONTINUOUSE_DAMAGE_INTERVAL.getKey(), "0f", String.class));
+		continuousMapDamagePreventionCondition = map.getProperties().get(GameMap.GlobalMapPropertyKeys.MAP_CONTINUOUSE_DAMAGE_PREVENTION_CONDITION.getKey(), "", String.class);
 		continuousMapDamageTimeDelta = 0f;
 	}
 	
@@ -294,7 +297,7 @@ public class GameMapImplementation implements GameMap {
 	}
 	
 	private void handleMapContinuousDamage(float delta) {
-		if (continuousMapDamage > 0 && !preventContinuousMapDamageRuneCollected()) {
+		if (continuousMapDamage > 0 && !preventContinuousMapDamageConditionMet()) {
 			continuousMapDamageTimeDelta += delta;
 			if (continuousMapDamageTimeDelta >= continuousMapDamageInterval) {
 				continuousMapDamageTimeDelta -= continuousMapDamageInterval;
@@ -303,8 +306,8 @@ public class GameMapImplementation implements GameMap {
 		}
 	}
 	
-	private boolean preventContinuousMapDamageRuneCollected() {
-		return RuneType.KENAZ.isCollected();
+	private boolean preventContinuousMapDamageConditionMet() {
+		return ConditionHandler.getInstance().isConditionMet(continuousMapDamagePreventionCondition);
 	}
 	
 	@Override
