@@ -17,6 +17,11 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	public float movingSpeed = 1f;
 	public boolean applyGroundPhysics = true;
 	
+	public boolean takesDamageFromProjectiles = true;
+	public boolean takesDamageInBlockingState = true;
+	public String blockingStateName;
+	public String soundWhenAttackBlocked;
+	
 	public float imageOffsetX;
 	public float imageOffsetY;
 	

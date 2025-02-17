@@ -246,6 +246,15 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	@Override
 	public void takeDamage(float damage, AttackType attackType) {
+		if (!typeConfig.takesDamageFromProjectiles && attackType.isSubTypeOf(AttackType.PROJECTILE) //
+				|| !typeConfig.takesDamageInBlockingState && isInBlockingState()) {
+			if (typeConfig.soundWhenAttackBlocked != null) {
+				SOUND_SET.playSound(typeConfig.soundWhenAttackBlocked);
+			}
+			
+			return;
+		}
+		
 		if (isAlive()) {
 			health -= damage;
 			
@@ -256,6 +265,10 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 				stateMachine.setState(getDamageStateName(damage));
 			}
 		}
+	}
+	
+	private boolean isInBlockingState() {
+		return typeConfig.blockingStateName != null && stateMachine.isInState(typeConfig.blockingStateName);
 	}
 	
 	@Override

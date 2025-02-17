@@ -2,74 +2,86 @@
 	defaultAI: kobold_dragonshield,
 	aiConfigurations: {
 		kobold_dragonshield: {
-			type: FIGHT_AI,
+			type: BLOCK_PROJECTILES_AI,
 			
-			stateNameAttack: attack,
+			stateNameBlock: block,
 			
-			attackTimerConfig: {
-				type: FIXED,
-				fixedTime: 2f,
-			},
-			attackDistance: 1.25f,
-			minDistanceToTargetPlayer: 1.25f,
-				
 			subAI: {
-				type: FOLLOW_AI,
+				type: FIGHT_AI,
 				
-				stateNameMove: move,
-				stateNameIdle: idle,
+				stateNameAttack: attack,
 				
-				minDistanceToTargetPlayer: 1.5f,
-				
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 2f,
+				},
+				attackDistance: 1.25f,
+				minDistanceToTargetPlayer: 1.25f,
+					
 				subAI: {
-					type: PRE_DEFINED_MOVEMENT_AI,
+					type: FOLLOW_AI,
 					
 					stateNameMove: move,
 					stateNameIdle: idle,
 					
-					distanceToKeepFromPlayer: 4.5f,
-					
-					useRelativePositions: true,
+					minDistanceToTargetPlayer: 1.5f,
 					
 					subAI: {
-						type: BASE_AI,
+						type: PRE_DEFINED_MOVEMENT_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						distanceToKeepFromPlayer: 4.5f,
+						
+						useRelativePositions: true,
+						
+						subAI: {
+							type: BASE_AI,
+						}
 					}
 				}
 			}
 		},
 		
 		kobold_dragonshield_team: {
-			type: FIGHT_AI,
+			type: BLOCK_PROJECTILES_AI,
 			
-			stateNameAttack: attack,
-			
-			attackTimerConfig: {
-				type: FIXED,
-				fixedTime: 2f,
-			},
-			attackDistance: 1.25f,
-			minDistanceToTargetPlayer: 1.25f,
+			stateNameBlock: block,
 			
 			subAI: {
-				type: TEAM_MOVEMENT_AI,
+				type: FIGHT_AI,
 				
-				stateNameMove: move,
-				stateNameIdle: idle,
+				stateNameAttack: attack,
 				
-				minDistanceToTargetPlayer: 1.5f,
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 2f,
+				},
+				attackDistance: 1.25f,
+				minDistanceToTargetPlayer: 1.25f,
 				
 				subAI: {
-					type: PRE_DEFINED_MOVEMENT_AI,
+					type: TEAM_MOVEMENT_AI,
 					
 					stateNameMove: move,
 					stateNameIdle: idle,
 					
-					distanceToKeepFromPlayer: 4.5f,
-					
-					useRelativePositions: true,
+					minDistanceToTargetPlayer: 1.5f,
 					
 					subAI: {
-						type: BASE_AI,
+						type: PRE_DEFINED_MOVEMENT_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						distanceToKeepFromPlayer: 4.5f,
+						
+						useRelativePositions: true,
+						
+						subAI: {
+							type: BASE_AI,
+						}
 					}
 				}
 			}

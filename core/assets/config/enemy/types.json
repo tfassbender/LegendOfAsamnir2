@@ -968,6 +968,11 @@
 		health: 20,
 		movingSpeed: 1.5f,
 		
+		takesDamageFromProjectiles: false,
+		takesDamageInBlockingState: false,
+		blockingStateName: block,
+		soundWhenAttackBlocked: metal_hit_2,
+		
 		imageOffsetX: -0.1f,
 		imageOffsetY: 0.2f,
 		

@@ -31,9 +31,10 @@
 		id: block,
 		animation: kobold_dragonshield_block,
 		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
 		followingState: idle,
 		interruptingStates: [
-			attack, damage, die
+			die
 		]
 	},
 	{

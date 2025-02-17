@@ -21,6 +21,7 @@ import net.jfabricationgames.gdx.character.animal.ai.RandomIdleStatesAI;
 import net.jfabricationgames.gdx.character.animal.ai.RandomIdleStatesMovementAI;
 import net.jfabricationgames.gdx.character.enemy.ai.ActionAI;
 import net.jfabricationgames.gdx.character.enemy.ai.AngleRestrictedFightAI;
+import net.jfabricationgames.gdx.character.enemy.ai.BlockProjectilesAI;
 import net.jfabricationgames.gdx.character.enemy.ai.FastAttackFightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.FightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.MimicSurpriseAI;
@@ -28,6 +29,7 @@ import net.jfabricationgames.gdx.character.enemy.ai.RayCastFightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.TeamMovementAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateMachine;
+import net.jfabricationgames.gdx.projectile.Projectile;
 import net.jfabricationgames.gdx.util.MapUtil;
 
 public enum ArtificialIntelligenceType {
@@ -227,6 +229,18 @@ public enum ArtificialIntelligenceType {
 			AngleRestrictedFightAI ai = new AngleRestrictedFightAI(subAI, attackState, attackTimer, //
 					aiConfig.attackDistance, aiConfig.angles, aiConfig.maxAngleDelta);
 			ai.setMinDistanceToTargetPlayer(aiConfig.minDistanceToTargetPlayer);
+			
+			return ai;
+		}
+	},
+	BLOCK_PROJECTILES_AI {
+		
+		@Override
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
+			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
+			CharacterState blockState = stateMachine.getState(aiConfig.stateNameBlock);
+			
+			BlockProjectilesAI<Projectile> ai = new BlockProjectilesAI<>(subAI, blockState, Projectile.class);
 			
 			return ai;
 		}

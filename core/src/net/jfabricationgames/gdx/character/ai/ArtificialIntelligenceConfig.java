@@ -19,6 +19,7 @@ public class ArtificialIntelligenceConfig {
 	public String stateNameAttack = "attack";
 	public String stateNameWait = "waiting";
 	public String stateNameSurprise = "surprise";
+	public String stateNameBlock = "block";
 	
 	public String followCondition;
 	
