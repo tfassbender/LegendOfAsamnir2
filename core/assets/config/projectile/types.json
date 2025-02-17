@@ -307,4 +307,19 @@
 		dampingAfterRangeExceeded: 10,
 		dampingAfterObjectHit: 10,
 	},
+	
+	kobold_pyromancer_fire: {
+        attackType: ANIMATED_HIT,
+        
+        animation: kobold_pyromancer_fire,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+		changeBodyToSensorAfterHit: true,
+        
+        speed: 0,
+        damping: 0,
+		distanceFromCenter: 0.8f,
+		hitFixtureRadius: 0.5f,
+		flipAnimationToAttackDirection: true,
+	},
 }

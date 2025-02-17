@@ -1,0 +1,62 @@
+[
+	{
+		id: idle,
+		animation: kobold_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_stab, attack_throw, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: kobold_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_stab, attack_throw, damage, die
+		]
+	},
+	{
+		id: attack_stab,
+		animation: kobold_attack_stab,
+		attack: attack_stab,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: attack_throw,
+		animation: kobold_attack_throw,
+		attack: attack_throw
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: kobold_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack_stab, attack_throw, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: kobold_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: flesh_hit_1,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

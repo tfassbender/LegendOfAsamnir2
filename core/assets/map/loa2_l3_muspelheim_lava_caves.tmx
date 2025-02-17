@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2664">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2668">
  <properties>
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -336,6 +336,23 @@
    <properties>
     <property name="spawn" value="playerManaNotFull"/>
    </properties>
+   <point/>
+  </object>
+  <object id="2664" name="enemy.kobold" x="1728" y="544">
+   <properties>
+    <property name="aiType" value="kobold_team"/>
+    <property name="teamId" value="kobold_team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2665" name="enemy.kobold_dragonshield" x="1760" y="480">
+   <properties>
+    <property name="aiType" value="kobold_dragonshield_team"/>
+    <property name="teamId" value="kobold_team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2666" name="enemy.kobold_pyromancer" x="1600" y="416">
    <point/>
   </object>
  </objectgroup>

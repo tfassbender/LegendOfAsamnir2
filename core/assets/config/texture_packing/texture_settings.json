@@ -51,6 +51,7 @@
 				raw_images/restricted/projectiles/mine_explosion,
 				raw_images/restricted/projectiles/ice_breath,
 				raw_images/restricted/projectiles/frost_giant_axe,
+				raw_images/restricted/effects/kobold_pyromancer_fire,
 				
 				//##############################################################
 				//### objects
@@ -364,6 +365,31 @@
 				raw_images/restricted/enemy/frost_giant/frost_giant_damage,
 				raw_images/restricted/enemy/frost_giant/frost_giant_damage_disarmed,
 				raw_images/restricted/enemy/frost_giant/frost_giant_death,
+				
+				// kobold
+				raw_images/restricted/enemy/kobold/kobold_idle,
+				raw_images/restricted/enemy/kobold/kobold_move,
+				raw_images/restricted/enemy/kobold/kobold_attack_stab,
+				raw_images/restricted/enemy/kobold/kobold_attack_throw,
+				raw_images/restricted/enemy/kobold/kobold_damage,
+				raw_images/restricted/enemy/kobold/kobold_death,
+				
+				// kobold dragonshield
+				raw_images/restricted/enemy/kobold_dragonshield/kobold_dragonshield_idle,
+				raw_images/restricted/enemy/kobold_dragonshield/kobold_dragonshield_move,
+				raw_images/restricted/enemy/kobold_dragonshield/kobold_dragonshield_attack_straight,
+				raw_images/restricted/enemy/kobold_dragonshield/kobold_dragonshield_attack_up,
+				raw_images/restricted/enemy/kobold_dragonshield/kobold_dragonshield_block,
+				raw_images/restricted/enemy/kobold_dragonshield/kobold_dragonshield_damage,
+				raw_images/restricted/enemy/kobold_dragonshield/kobold_dragonshield_death,
+				
+				// kobold pyromancer
+				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_idle,
+				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_idle_2,
+				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_move,
+				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_charge_and_attack,
+				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_damage,
+				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_death,
 				
 				//##############################################################
 				//### NPCs

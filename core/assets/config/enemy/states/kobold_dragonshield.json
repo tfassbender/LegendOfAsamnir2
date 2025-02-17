@@ -1,0 +1,62 @@
+[
+	{
+		id: idle,
+		animation: kobold_dragonshield_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, block, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: kobold_dragonshield_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, block, damage, die
+		]
+	},
+	{
+		id: attack,
+		animation: kobold_dragonshield_attack_straight,
+		attack: attack,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: block,
+		animation: kobold_dragonshield_block,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack, damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: kobold_dragonshield_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: metal_hit_2,
+		followingState: idle,
+		interruptingStates: [
+			attack, block, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: kobold_dragonshield_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: flesh_hit_1,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

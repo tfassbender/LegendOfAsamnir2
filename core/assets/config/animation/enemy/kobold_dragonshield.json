@@ -1,0 +1,41 @@
+{
+	configList: 
+	[
+		{
+			name: kobold_dragonshield_idle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: kobold_dragonshield_move,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: kobold_dragonshield_attack_straight,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: kobold_dragonshield_block,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: kobold_dragonshield_damage,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: kobold_dragonshield_death,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		}
+	]
+}

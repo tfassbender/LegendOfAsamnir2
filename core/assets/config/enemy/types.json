@@ -923,5 +923,98 @@
 		
 		isBoss: true
 		bossName: "Thrym - King of the Ice Giants",
-	}
+	},
+	
+	kobold: {
+		typeName: kobold,
+		
+		animationsConfig: config/animation/enemy/kobold.json,
+		stateConfig: config/enemy/states/kobold.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/kobold.json,
+		aiConfig: config/enemy/ai/kobold.json,
+		
+		health: 15,
+		movingSpeed: 2,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.2f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 6f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 30,
+		
+		usesHealthBar: true,
+		healthBarAlwaysVisible: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.1,
+		healthBarWidthFactor: 0.7,
+	},
+	
+	kobold_dragonshield: {
+		typeName: kobold_dragonshield,
+		
+		animationsConfig: config/animation/enemy/kobold_dragonshield.json,
+		stateConfig: config/enemy/states/kobold_dragonshield.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/kobold_dragonshield.json,
+		aiConfig: config/enemy/ai/kobold_dragonshield.json,
+		
+		health: 20,
+		movingSpeed: 1.5f,
+		
+		imageOffsetX: -0.1f,
+		imageOffsetY: 0.2f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.5f,
+		
+		addSensor: true,
+		sensorRadius: 5f,
+		
+		pushForceDamage: 15,
+		pushForceHit: 30,
+		
+		usesHealthBar: true,
+		healthBarAlwaysVisible: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.1,
+		healthBarWidthFactor: 0.5,
+	},
+	
+	kobold_pyromancer: {
+		typeName: kobold_pyromancer,
+		
+		animationsConfig: config/animation/enemy/kobold_pyromancer.json,
+		stateConfig: config/enemy/states/kobold_pyromancer.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/kobold_pyromancer.json,
+		aiConfig: config/enemy/ai/kobold_pyromancer.json,
+		
+		health: 15,
+		movingSpeed: 2.5f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.2f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 6f,
+		
+		pushForceDamage: 15,
+		pushForceHit: 30,
+		
+		usesHealthBar: true,
+		healthBarAlwaysVisible: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.1,
+		healthBarWidthFactor: 0.7,
+	},
 }

@@ -72,5 +72,12 @@
 			playMode: NORMAL,
 			scale: 0.05,
 		},
+		{
+			name: kobold_pyromancer_fire,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 0.05,
+		},
 	]
 }

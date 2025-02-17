@@ -1,0 +1,78 @@
+{
+	defaultAI: kobold_pyromancer,
+	aiConfigurations: {
+		kobold_pyromancer: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 2f,
+			},
+			attackDistance: 1.25f,
+			minDistanceToTargetPlayer: 1.25f,
+				
+			subAI: {
+				type: FOLLOW_AI,
+				
+				stateNameMove: move,
+				stateNameIdle: idle,
+				
+				minDistanceToTargetPlayer: 1.5f,
+				
+				subAI: {
+					type: PRE_DEFINED_MOVEMENT_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					
+					distanceToKeepFromPlayer: 4.5f,
+					
+					useRelativePositions: true,
+					
+					subAI: {
+						type: BASE_AI,
+					}
+				}
+			}
+		},
+		
+		kobold_pyromancer_team: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 2f,
+			},
+			attackDistance: 1.25f,
+			minDistanceToTargetPlayer: 1.25f,
+			
+			subAI: {
+				type: TEAM_MOVEMENT_AI,
+				
+				stateNameMove: move,
+				stateNameIdle: idle,
+				
+				minDistanceToTargetPlayer: 1.5f,
+				
+				subAI: {
+					type: PRE_DEFINED_MOVEMENT_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					
+					distanceToKeepFromPlayer: 4.5f,
+					
+					useRelativePositions: true,
+					
+					subAI: {
+						type: BASE_AI,
+					}
+				}
+			}
+		}
+	}
+}

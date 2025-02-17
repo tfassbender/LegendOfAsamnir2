@@ -1,0 +1,104 @@
+{
+	defaultAI: kobold,
+	aiConfigurations: {
+		kobold: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack_stab,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 1.5f,
+			},
+			attackDistance: 1.5f,
+			minDistanceToTargetPlayer: 1.5f,
+			
+			subAI: {
+				type: FIGHT_AI,
+				
+				stateNameAttack: attack_throw,
+				
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 2.5f,
+				},
+				attackDistance: 5f,
+				minDistanceToTargetPlayer: 5f,
+				
+				subAI: {
+					type: FOLLOW_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					
+					minDistanceToTargetPlayer: 1.5f,
+					
+					subAI: {
+						type: PRE_DEFINED_MOVEMENT_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						distanceToKeepFromPlayer: 4.5f,
+						
+						useRelativePositions: true,
+						
+						subAI: {
+							type: BASE_AI,
+						}
+					}
+				}
+			}
+		},
+		
+		kobold_team: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack_stab,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 1.5f,
+			},
+			attackDistance: 2f,
+			minDistanceToTargetPlayer: 2f,
+			
+			subAI: {
+				type: FIGHT_AI,
+				
+				stateNameAttack: attack_throw,
+				
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 1.5f,
+				},
+				attackDistance: 5f,
+				minDistanceToTargetPlayer: 5f,
+				
+				subAI: {
+					type: TEAM_MOVEMENT_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					
+					minDistanceToTargetPlayer: 1.5f,
+					
+					subAI: {
+						type: PRE_DEFINED_MOVEMENT_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						distanceToKeepFromPlayer: 4.5f,
+						
+						useRelativePositions: true,
+						
+						subAI: {
+							type: BASE_AI,
+						}
+					}
+				}
+			}
+		}
+	}
+}

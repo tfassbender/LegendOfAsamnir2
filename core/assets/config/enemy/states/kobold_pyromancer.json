@@ -1,0 +1,61 @@
+[
+	{
+		id: idle,
+		animation: kobold_pyromancer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, damage, die
+		]
+	},
+	{
+		id: idle_2,
+		animation: kobold_pyromancer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: kobold_pyromancer_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, damage, die
+		]
+	},
+	{
+		id: attack,
+		animation: kobold_pyromancer_charge_and_attack,
+		attack: attack,
+		endsWithAnimation: true,
+		followingState: idle_2,
+		interruptingStates: [
+			die // charging takes long, so the attack cannot be interrupted by damage
+		]
+	},
+	{
+		id: damage,
+		animation: kobold_pyromancer_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: kobold_pyromancer_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: flesh_hit_1,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

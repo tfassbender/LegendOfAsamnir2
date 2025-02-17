@@ -1,0 +1,9 @@
+[
+	{
+		id: attack,
+		type: ANIMATED_HIT,
+		projectileType: kobold_pyromancer_fire,
+		delay: 0.8,
+		damage: 25,
+	},
+]
