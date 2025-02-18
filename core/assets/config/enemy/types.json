@@ -297,6 +297,12 @@
 		pushForceDamage: 45,
 		pushForceHit: 25,
 		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.4,
+		healthBarWidthFactor: 0.5,
+		healthBarAlwaysVisible: true,
+		
 		drops: {
 			coin: 0.5,
 		}
@@ -954,6 +960,10 @@
 		healthBarOffsetX: 0,
 		healthBarOffsetY: -0.1,
 		healthBarWidthFactor: 0.7,
+		
+		drops: {
+			coin: 0.7,
+		}
 	},
 	
 	kobold_dragonshield: {
@@ -990,6 +1000,10 @@
 		healthBarOffsetX: 0,
 		healthBarOffsetY: -0.1,
 		healthBarWidthFactor: 0.5,
+		
+		drops: {
+			coin: 0.5,
+		}
 	},
 	
 	kobold_pyromancer: {
@@ -1021,5 +1035,72 @@
 		healthBarOffsetX: 0,
 		healthBarOffsetY: -0.1,
 		healthBarWidthFactor: 0.7,
+		
+		drops: {
+			coin: 0.5,
+		}
+	},
+	
+	fire_elemental_medium: {
+		typeName: fire_elemental_medium,
+		
+		animationsConfig: config/animation/enemy/fire_elemental_medium.json,
+		stateConfig: config/enemy/states/fire_elemental_medium.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/fire_elemental_medium.json,
+		aiConfig: config/enemy/ai/elemental.json,
+		
+		
+		health: 25,
+		movingSpeed: 1,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.5f,
+		
+		addSensor: true,
+		sensorRadius: 6f,
+		
+		pushForceDamage: 30,
+		pushForceHit: 40,
+		
+		usesHealthBar: true,
+		healthBarAlwaysVisible: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.1,
+		healthBarWidthFactor: 0.7,
+		
+		drops: {
+			coin: 0.7,
+		}
+	},
+	
+	phoenixling: {
+		typeName: phoenixling,
+		
+		animationsConfig: config/animation/enemy/phoenixling.json,
+		stateConfig: config/enemy/states/phoenixling.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/empty.json,
+		
+		// the push method in the enemy implementation is overwritten to do nothing - this is just the easiest way to recognize the player is near
+		useSensorAsForceField: true, 
+		
+		health: 15,
+		movingSpeed: 1f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 5f,
+		
+		pushForceDamage: 20,
+		pushForceHit: 0,
 	},
 }

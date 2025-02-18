@@ -3,20 +3,28 @@
 		10: initial,
 		11: initial,
 		12: hookshot,
-		13: hookshow,
-		14: hookshow,
-		15: hookshow,
+		13: hookshot,
+		14: hookshot,
+		15: hookshot,
 	},
 	eventsLists: {
 		initial: {
 			subConfigPath: config/debug/start_config/loa2/l3_muspelheim.json
 			subConfigName: final,
+			events: []
 		},
 		
 		hookshot: {
             subConfigName: initial,
 			events: [
-	            // TODO add hookshot
+			    {
+					eventType: COLLECT_RUNE,
+					stringValue: othala,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: hookshot,
+				},
 			]
 		},
 		

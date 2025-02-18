@@ -17,6 +17,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.GiantGolem;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
 import net.jfabricationgames.gdx.character.enemy.implementation.Minotaur;
 import net.jfabricationgames.gdx.character.enemy.implementation.Ogre;
+import net.jfabricationgames.gdx.character.enemy.implementation.Phoenixling;
 import net.jfabricationgames.gdx.character.enemy.implementation.Totem;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.object.EnemySpawnFactory;
@@ -30,6 +31,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_TOTEM = "totem";
 	private static final String ENEMY_NAME_ALARM_CLOCK = "alarm_clock";
 	private static final String ENEMY_NAME_GARGOYLE = "gargoyle";
+	private static final String ENEMY_NAME_PHOENIXLING = "phoenixling";
 	
 	private static final String ENEMY_NAME_DUMMY = "dummy";
 	private static final String ENEMY_NAME_DWARVEN_GUARDIAN_CONSTRUCT = "dwarven_guardian_construct";
@@ -116,6 +118,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_FROST_GIANT:
 				enemy = new FrostGiant(typeConfig, properties);
+				break;
+			case ENEMY_NAME_PHOENIXLING:
+				enemy = new Phoenixling(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

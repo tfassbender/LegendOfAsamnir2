@@ -7,7 +7,7 @@ import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.GargoyleAttackAI;
-import net.jfabricationgames.gdx.character.enemy.ai.GargoyleMovementAI;
+import net.jfabricationgames.gdx.character.enemy.ai.BackToStartingPointIfPlayerOutOfSightAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
 public class Gargoyle extends Enemy {
@@ -29,16 +29,11 @@ public class Gargoyle extends Enemy {
 	}
 	
 	@Override
-	public void act(float delta) {
-		super.act(delta);
-	}
-	
-	@Override
 	protected void createAI() {
 		ai = new BaseAI();
 		
 		if (moveBackToStartingPoint) {
-			ai = new GargoyleMovementAI(ai, movingState, idleState);
+			ai = new BackToStartingPointIfPlayerOutOfSightAI(ai, movingState, idleState);
 		}
 		
 		CharacterState attackState = stateMachine.getState("attack");

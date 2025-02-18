@@ -79,5 +79,12 @@
 			playMode: NORMAL,
 			scale: 0.05,
 		},
+		{
+			name: fire_elemental_blast,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 0.05,
+		},
 	]
 }

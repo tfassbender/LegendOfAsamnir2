@@ -5,11 +5,11 @@ import net.jfabricationgames.gdx.character.ai.implementation.BackToStartingPoint
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
 /**
- * Moves the gargoyle back to the starting point if the player is out of sight.
+ * Moves the enemy back to the starting point if the player is not recognized by the sensor of the enemy.
  */
-public class GargoyleMovementAI extends BackToStartingPointMovementAI {
+public class BackToStartingPointIfPlayerOutOfSightAI extends BackToStartingPointMovementAI {
 	
-	public GargoyleMovementAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState) {
+	public BackToStartingPointIfPlayerOutOfSightAI(ArtificialIntelligence subAI, CharacterState movingState, CharacterState idleState) {
 		super(subAI, movingState, idleState, 1f);
 	}
 	

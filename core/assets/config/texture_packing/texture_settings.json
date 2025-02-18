@@ -52,6 +52,7 @@
 				raw_images/restricted/projectiles/ice_breath,
 				raw_images/restricted/projectiles/frost_giant_axe,
 				raw_images/restricted/effects/kobold_pyromancer_fire,
+				raw_images/restricted/effects/fire_elemental_blast,
 				
 				//##############################################################
 				//### objects
@@ -219,6 +220,14 @@
 				raw_images/enemy/dummy/dummy_idle,
 				raw_images/enemy/dummy/dummy_damage,
 				raw_images/enemy/dummy/dummy_damage_long,
+				
+				// phoenixling
+				raw_images/enemy/phoenixling/phoenixling_idle,
+				raw_images/enemy/phoenixling/phoenixling_move,
+				raw_images/enemy/phoenixling/phoenixling_attack,
+				raw_images/enemy/phoenixling/phoenixling_damage,
+				raw_images/enemy/phoenixling/phoenixling_death,
+				raw_images/enemy/phoenixling/phoenixling_rebirth,
 				
 				//##############################################################
 				//### enemies - restricted graphics
@@ -390,6 +399,13 @@
 				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_charge_and_attack,
 				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_damage,
 				raw_images/restricted/enemy/kobold_pyromancer/kobold_pyromancer_death,
+				
+				// fire elemental (medium)
+				raw_images/restricted/enemy/fire_elemental_medium/fire_elemental_medium_idle,
+				raw_images/restricted/enemy/fire_elemental_medium/fire_elemental_medium_move,
+				raw_images/restricted/enemy/fire_elemental_medium/fire_elemental_medium_attack,
+				raw_images/restricted/enemy/fire_elemental_medium/fire_elemental_medium_damage,
+				raw_images/restricted/enemy/fire_elemental_medium/fire_elemental_medium_death,
 				
 				//##############################################################
 				//### NPCs

@@ -322,4 +322,19 @@
 		hitFixtureRadius: 0.5f,
 		flipAnimationToAttackDirection: true,
 	},
+	
+	fire_elemental_blast: {
+        attackType: ANIMATED_HIT,
+        
+        animation: fire_elemental_blast,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+		changeBodyToSensorAfterHit: true,
+        
+        speed: 0,
+        damping: 0,
+		distanceFromCenter: 0f,
+		hitFixtureRadius: 1.5f,
+		flipAnimationToAttackDirection: true,
+	},
 }

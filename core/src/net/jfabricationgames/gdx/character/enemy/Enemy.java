@@ -61,7 +61,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	private EnemyCharacterMap gameMap;
 	private Runnable onRemoveFromMap;
 	
-	private PlayableCharacter playerToPushAway; // push away by the sensor force field (if configured)
+	protected PlayableCharacter playerToPushAway; // push away by the sensor force field (if configured)
 	
 	public Enemy(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(properties);
@@ -389,12 +389,15 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	private void endPushingPlayer(Contact contact) {
 		PlayableCharacter player = CollisionUtil.getObjectCollidingWith(this, PhysicsCollisionType.ENEMY_SENSOR, contact, PlayableCharacter.class);
-		if (player == playerToPushAway) {
+		// the collision type is checked too, because the player attack also has the player as user data
+		PhysicsCollisionType collisionType = CollisionUtil.getCollisionTypeOfObjectCollidingWith(this, PhysicsCollisionType.ENEMY_SENSOR, contact);
+		
+		if (player == playerToPushAway && collisionType == PhysicsCollisionType.PLAYER) {
 			playerToPushAway = null;
 		}
 	}
 	
-	private void pushAwayPlayer() {
+	protected void pushAwayPlayer() {
 		if (playerToPushAway != null) {
 			float force = 8f; // just enough to push the player away if he's running into the enemy
 			float forceWhenBlocked = typeConfig.ignoreForceFieldWhenBlocking ? 0 : force;

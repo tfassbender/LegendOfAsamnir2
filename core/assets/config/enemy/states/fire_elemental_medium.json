@@ -1,0 +1,54 @@
+[
+	{
+		id: idle,
+		animation: fire_elemental_medium_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: fire_elemental_medium_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, damage, die
+		]
+	},
+	{
+		id: attack,
+		animation: fire_elemental_medium_attack,
+		stateEnteringSound: fire_elemental_hit,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: fire_elemental_medium_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: hit_2,
+		followingState: idle,
+		interruptingStates: [
+			attack, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: fire_elemental_medium_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: hit_2,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

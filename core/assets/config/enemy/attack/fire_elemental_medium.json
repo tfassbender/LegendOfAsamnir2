@@ -1,0 +1,9 @@
+[
+	{
+		id: attack,
+		type: ANIMATED_HIT,
+		projectileType: fire_elemental_blast,
+		delay: 0.5,
+		damage: 20,
+	}
+]

@@ -1,0 +1,52 @@
+[
+	{
+		id: idle,
+		animation: phoenixling_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, damage, death
+		]
+	},
+	{
+		id: move,
+		animation: phoenixling_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, damage, death
+		]
+	},
+	{
+		id: damage,
+		animation: phoenixling_damage,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 0.2f,
+		followingState: idle,
+		interruptingStates: [
+			death
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: death,
+		animation: phoenixling_death,
+		endsWithAnimation: false, // has to be set by the AI
+		interruptingStates: [
+			rebirth
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: rebirth,
+		animation: phoenixling_rebirth,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 0.2f,
+		followingState: idle,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]
