@@ -12,8 +12,7 @@ public class FastAttackFightAI extends FightAI {
 	private float attackSpeedDelay;
 	private float timeSinceAttackStateEntered;
 	
-	public FastAttackFightAI(ArtificialIntelligence subAI, CharacterState attackState, AttackTimer attackTimer, float attackDistance,
-			float attackSpeedFactor, float attackSpeedDelay) {
+	public FastAttackFightAI(ArtificialIntelligence subAI, CharacterState attackState, AttackTimer attackTimer, float attackDistance, float attackSpeedFactor, float attackSpeedDelay) {
 		super(subAI, attackState, attackTimer, attackDistance);
 		this.attackSpeedFactor = attackSpeedFactor;
 		this.attackSpeedDelay = attackSpeedDelay;

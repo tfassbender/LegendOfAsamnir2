@@ -12,6 +12,7 @@ import net.jfabricationgames.gdx.character.state.CharacterState;
 public class FightAI extends AbstractAttackAI {
 	
 	private float attackDistance;
+	private boolean moveWhileAttacking = true;
 	
 	public FightAI(ArtificialIntelligence subAI, CharacterState attackState, AttackTimer attackTimer, float attackDistance) {
 		super(subAI, attackState, attackTimer);
@@ -23,7 +24,7 @@ public class FightAI extends AbstractAttackAI {
 		subAI.calculateMove(delta);
 		
 		super.calculateMove(delta);
-		if (targetInRange(attackDistance) && timeToAttack() && canSeeTarget()) {
+		if (targetInRange(attackDistance) && canSeeTarget()) {
 			AIAttackingMove move = new AIAttackingMove(this);
 			move.targetPosition = targetingPlayer.getPosition();
 			setMove(MoveType.ATTACK, move);
@@ -43,7 +44,7 @@ public class FightAI extends AbstractAttackAI {
 			}
 			if (inAttackState()) {
 				attackState.flipAnimationToDirection(directionToTarget());
-				if (distanceToTarget() > minDistanceToTargetPlayer) {
+				if (moveWhileAttacking && distanceToTarget() > minDistanceToTargetPlayer) {
 					attackMoveTo(move.targetPosition);
 				}
 			}
@@ -54,5 +55,9 @@ public class FightAI extends AbstractAttackAI {
 	
 	protected void attackMoveTo(Vector2 targetPosition) {
 		character.moveTo(targetPosition);
+	}
+	
+	public void setMoveWhileAttacking(boolean moveWhileAttacking) {
+		this.moveWhileAttacking = moveWhileAttacking;
 	}
 }

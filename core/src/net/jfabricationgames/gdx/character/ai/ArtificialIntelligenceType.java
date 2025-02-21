@@ -177,6 +177,7 @@ public enum ArtificialIntelligenceType {
 			
 			FightAI ai = new FightAI(subAI, attackState, attackTimer, aiConfig.attackDistance);
 			ai.setMinDistanceToTargetPlayer(aiConfig.minDistanceToTargetPlayer);
+			ai.setMoveWhileAttacking(aiConfig.moveWhileAttacking);
 			return ai;
 		}
 	},
@@ -190,6 +191,7 @@ public enum ArtificialIntelligenceType {
 			
 			RayCastFightAI ai = new RayCastFightAI(subAI, attackState, attackTimer, aiConfig.attackDistance);
 			ai.setMinDistanceToTargetPlayer(aiConfig.minDistanceToTargetPlayer);
+			ai.setMoveWhileAttacking(aiConfig.moveWhileAttacking);
 			return ai;
 		}
 	},
@@ -229,6 +231,7 @@ public enum ArtificialIntelligenceType {
 			AngleRestrictedFightAI ai = new AngleRestrictedFightAI(subAI, attackState, attackTimer, //
 					aiConfig.attackDistance, aiConfig.angles, aiConfig.maxAngleDelta);
 			ai.setMinDistanceToTargetPlayer(aiConfig.minDistanceToTargetPlayer);
+			ai.setMoveWhileAttacking(aiConfig.moveWhileAttacking);
 			
 			return ai;
 		}

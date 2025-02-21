@@ -14,6 +14,7 @@
 			angles: [0, 180],
 			maxAngleDelta: 30,
 			minDistanceToTargetPlayer: 2f,
+			moveWhileAttacking: false,
 			
 			subAI: {
 				type: FIGHT_AI,

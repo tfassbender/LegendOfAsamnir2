@@ -30,6 +30,7 @@ public class ArtificialIntelligenceConfig {
 	
 	public boolean useRelativePositions = true;
 	public boolean changeTargetWhenStaticBodyHit = true;
+	public boolean moveWhileAttacking;
 	
 	public float attackDistance;
 	public float attackSpeedFactor;
