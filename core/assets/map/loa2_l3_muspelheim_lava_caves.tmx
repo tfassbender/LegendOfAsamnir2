@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2689">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2696">
  <properties>
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -421,6 +421,26 @@
    <point/>
   </object>
   <object id="2688" name="enemy.phoenixling" x="1838.75" y="1014">
+   <point/>
+  </object>
+  <object id="2689" name="enemy.imp" x="1056" y="800">
+   <point/>
+  </object>
+  <object id="2690" name="enemy.hell_critter" x="928" y="1312">
+   <point/>
+  </object>
+  <object id="2693" name="enemy.imp" x="1126" y="1419">
+   <properties>
+    <property name="aiType" value="imp_team"/>
+    <property name="teamId" value="imp_team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2694" name="enemy.hell_critter" x="1322" y="1212">
+   <properties>
+    <property name="aiType" value="hell_critter_team"/>
+    <property name="teamId" value="imp_team_1"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

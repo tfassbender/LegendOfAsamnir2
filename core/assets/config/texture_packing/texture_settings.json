@@ -407,6 +407,14 @@
 				raw_images/restricted/enemy/fire_elemental_medium/fire_elemental_medium_damage,
 				raw_images/restricted/enemy/fire_elemental_medium/fire_elemental_medium_death,
 				
+				// hell critter
+				raw_images/restricted/enemy/hell_critter/hell_critter_idle,
+				raw_images/restricted/enemy/hell_critter/hell_critter_move,
+				raw_images/restricted/enemy/hell_critter/hell_critter_play,
+				raw_images/restricted/enemy/hell_critter/hell_critter_attack,
+				raw_images/restricted/enemy/hell_critter/hell_critter_damage,
+				raw_images/restricted/enemy/hell_critter/hell_critter_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

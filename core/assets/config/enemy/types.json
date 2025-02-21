@@ -366,6 +366,12 @@
 		pushForceDamage: 25,
 		pushForceHit: 30,
 		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
 		drops: {
 			coin: 0.4,
 			big_coin: 0.1,
@@ -1102,5 +1108,40 @@
 		
 		pushForceDamage: 20,
 		pushForceHit: 0,
+	},
+	
+	hell_critter: {
+		typeName: hell_critter,
+		
+		animationsConfig: config/animation/enemy/hell_critter.json,
+		stateConfig: config/enemy/states/hell_critter.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/hell_critter.json,
+		aiConfig: config/enemy/ai/hell_critter.json,
+		
+		health: 15,
+		movingSpeed: 2.5,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 6f,
+		
+		pushForceDamage: 40,
+		pushForceHit: 30,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: -0.1,
+		healthBarOffsetY: -0.3,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			coin: 0.4,
+		}
 	},
 }
