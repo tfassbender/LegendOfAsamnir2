@@ -53,6 +53,7 @@ import net.jfabricationgames.gdx.screen.menu.LoadingScreen;
 import net.jfabricationgames.gdx.screen.menu.PauseMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.ShopMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.SkillMenuScreen;
+import net.jfabricationgames.gdx.screen.menu.control.ControlledMenu;
 import net.jfabricationgames.gdx.state.GameStateManager;
 import net.jfabricationgames.gdx.util.StartConfigUtil;
 
@@ -96,7 +97,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 	private HeadsUpDisplay hud;
 	private GameMap map;
 	
-	private PauseMenuScreen pauseMenu;
+	private ControlledMenu<PauseMenuScreen> pauseMenu;
 	private ShopMenuScreen shopMenu;
 	private SkillMenuScreen skillMenu;
 	

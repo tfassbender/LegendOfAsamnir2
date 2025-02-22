@@ -37,8 +37,6 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	public static final String INPUT_CONTEXT_NAME = "pauseMenu";
 	
 	private static final String SOUND_ENTER_PAUSE_MENU = "enter_pause_menu";
-	private static final String ACTION_BACK = "back";
-	
 	private static final String STATE_PREFIX_ITEM = "item_";
 	private static final String STATE_PREFIX_BUTTON = "button_";
 	private static final String STATE_PREFIX_RUNE = "rune_";

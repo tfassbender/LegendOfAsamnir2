@@ -18,6 +18,7 @@ public abstract class ControlledMenu<T extends ControlledMenu<T>> extends Screen
 	public static final String ACTION_SELECTION_LEFT = "left";
 	public static final String ACTION_SELECTION_DOWN = "down";
 	public static final String ACTION_SELECTION_UP = "up";
+	public static final String ACTION_BACK = "back";
 	
 	public static final String SOUND_ERROR = "error";
 	

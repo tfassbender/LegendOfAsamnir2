@@ -30,7 +30,7 @@
 	button_main_menu: {
 		up: button_loadGame,
 		down: rune_1,
-		right: item_5,
+		right: item_6,
 		select: backToMainMenu,
 	},
 	button_showMap: {
@@ -80,7 +80,7 @@
 	item_6: {
 		up: item_1,
 		down: rune_6,
-		left: item_5,
+		left: button_main_menu,
 		right: item_7,
 		select: selectCurrentItem, 
 	},

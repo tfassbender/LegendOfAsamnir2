@@ -174,6 +174,20 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	}
 	
 	@Override
+	public boolean onAction(String action, Type type, Parameters parameters) {
+		if (action.equals(ACTION_BACK) && isEventTypeHandled(type)) {
+			if (loadGameDialog.isVisible()) {
+				closeLoadGameDialog();
+			}
+			else if (creditsDialog.isVisible()) {
+				closeCreditsDialog();
+			}
+		}
+		
+		return super.onAction(action, type, parameters);
+	}
+	
+	@Override
 	public void setFocusTo(String stateName, String leavingState) {
 		unfocusAll();
 		
