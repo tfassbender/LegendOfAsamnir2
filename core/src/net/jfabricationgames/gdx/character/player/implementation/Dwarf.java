@@ -69,7 +69,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private static final String SOUND_ICE_PICK = "ice_pick";
 	private static final String ATTACK_NAME_WAIT = "wait";
 	private static final String ATTACK_NAME_REFLECT_MAGIC_WAVE = "reflected_magic_wave";
-	private static final String RUNE_HAGALAZ_ANIMATION_NAME = "rune_hagalaz";
+	private static final String RUNE_KENAZ_ANIMATION_NAME = "rune_kenaz";
 	
 	private static final String GLOBAL_VALUE_KEY_ASAMNIR_STOLEN = "loa2_main__asamnir_stolen";
 	private static final String GLOBAL_VALUE_KEY_SPARE_WEAPON_GAINED = "loa2_main__spare_weapon_gained";
@@ -651,9 +651,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private void die() {
 		if (resurectionRuneCollectedAndForged()) {
 			propertiesDataHandler.increaseHealthByHalf();
-			GlobalValuesDataHandler.getInstance().put(RuneType.GLOBAL_VALUE_KEY_RUNE_HAGALAZ_FORGED, false);
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RUNE_USED).setStringValue(RUNE_HAGALAZ_ANIMATION_NAME));
-			soundHandler.playSound("rune_hagalaz_used");
+			GlobalValuesDataHandler.getInstance().put(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED, false);
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RUNE_USED).setStringValue(RUNE_KENAZ_ANIMATION_NAME));
+			soundHandler.playSound("rune_kenaz_used");
 		}
 		else {
 			soundHandler.playSound(CharacterAction.HIT);
@@ -664,7 +664,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	private boolean resurectionRuneCollectedAndForged() {
 		GlobalValuesDataHandler globalValues = GlobalValuesDataHandler.getInstance();
-		return RuneType.HAGALAZ.isCollected() && globalValues.getAsBoolean(RuneType.GLOBAL_VALUE_KEY_RUNE_HAGALAZ_FORGED);
+		return RuneType.KENAZ.isCollected() && globalValues.getAsBoolean(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED);
 	}
 	
 	@Override

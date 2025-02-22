@@ -16,9 +16,9 @@ public enum RuneType {
 	KENAZ(7, "rune_collected__kenaz", "KENAZ - revive after death"), //
 	LAGUZ(8, "rune_collected__laguz", "LAGUZ - access the castle of the chaos wizard"); //
 	
-	public static final String GLOBAL_VALUE_KEY_RUNE_HAGALAZ_FORGED = "rune_forged__hagalaz";
-	public static final String RUNE_HAGALAZ_DESCRIPTION_POSTFIX_FORGED = " (reforge after use)";
-	public static final String RUNE_HAGALAZ_DESCRIPTION_POSTFIX_UNFORGED = " (needs to be reforged)";
+	public static final String GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED = "rune_forged__kenaz";
+	public static final String RUNE_KENAZ_DESCRIPTION_POSTFIX_FORGED = " (reforge after use)";
+	public static final String RUNE_KENAZ_DESCRIPTION_POSTFIX_UNFORGED = " (needs to be reforged)";
 	
 	public static Array<String> getNamesAsList() {
 		Array<String> names = new Array<>(values().length);

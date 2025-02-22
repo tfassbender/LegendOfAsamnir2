@@ -247,8 +247,10 @@ public class GameMapImplementation implements GameMap {
 		switch (rune) {
 			case ALGIZ:
 				removePhysicsObjectsWithType(MapObjectType.INVISIBLE_PATH_BLOCKER);
-			case HAGALAZ:
-				GlobalValuesDataHandler.getInstance().put(RuneType.GLOBAL_VALUE_KEY_RUNE_HAGALAZ_FORGED, true);
+				break;
+			case KENAZ:
+				GlobalValuesDataHandler.getInstance().put(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED, true);
+				break;
 			default:
 				//other runes only set global values
 				break;

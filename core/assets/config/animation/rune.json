@@ -2,7 +2,7 @@
 	configList: 
 	[
 		{
-			name: rune_hagalaz,
+			name: rune_kenaz,
 			type: GROWING,
 			atlas: packed/demo/demo.atlas,
 			

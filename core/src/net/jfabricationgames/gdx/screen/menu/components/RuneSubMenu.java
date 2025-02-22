@@ -16,7 +16,7 @@ public class RuneSubMenu extends ItemSubMenu {
 	
 	private RuneType hoveredRune;
 	private boolean[] runeFound;
-	private boolean runeHagalazForged;
+	private boolean runeKenazForged;
 	
 	public RuneSubMenu() {
 		super(RUNE_MENU_ITEMS_PER_LINE, RUNE_MENU_LINES, RuneType.getNamesAsList());
@@ -29,7 +29,7 @@ public class RuneSubMenu extends ItemSubMenu {
 			runeFound[rune.order] = rune.isCollected();
 		}
 		
-		runeHagalazForged = GlobalValuesDataHandler.getInstance().getAsBoolean(RuneType.GLOBAL_VALUE_KEY_RUNE_HAGALAZ_FORGED);
+		runeKenazForged = GlobalValuesDataHandler.getInstance().getAsBoolean(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED);
 	}
 	
 	@Override
@@ -39,11 +39,11 @@ public class RuneSubMenu extends ItemSubMenu {
 	
 	@Override
 	protected void drawItem(SpriteBatch batch, float posX, float posY, float scaledWidth, float scaledHeight, float borderFactor, float sizeFactor, TextureRegion itemTexture, int index) {
-		if (index == RuneType.HAGALAZ.order && !runeHagalazForged) {
-			//the rune hagalaz needs to be forged after use; if it's not forged, the texture is marked in gray
+		if (index == RuneType.KENAZ.order && !runeKenazForged) {
+			//the rune kenaz needs to be forged after use; if it's not forged, the texture is marked in gray
 			batch.setColor(Color.LIGHT_GRAY);
 			super.drawItem(batch, posX, posY, scaledWidth, scaledHeight, borderFactor, sizeFactor, itemTexture, index);
-			batch.setColor(Color.WHITE);//reset to default color
+			batch.setColor(Color.WHITE); // reset to default color
 		}
 		else {
 			super.drawItem(batch, posX, posY, scaledWidth, scaledHeight, borderFactor, sizeFactor, itemTexture, index);
@@ -71,11 +71,11 @@ public class RuneSubMenu extends ItemSubMenu {
 		}
 		
 		if (hoveredRune == RuneType.KENAZ) {
-			if (runeHagalazForged) {
-				return RuneType.KENAZ.description + RuneType.RUNE_HAGALAZ_DESCRIPTION_POSTFIX_FORGED;
+			if (runeKenazForged) {
+				return RuneType.KENAZ.description + RuneType.RUNE_KENAZ_DESCRIPTION_POSTFIX_FORGED;
 			}
 			else {
-				return RuneType.KENAZ.description + RuneType.RUNE_HAGALAZ_DESCRIPTION_POSTFIX_UNFORGED;
+				return RuneType.KENAZ.description + RuneType.RUNE_KENAZ_DESCRIPTION_POSTFIX_UNFORGED;
 			}
 		}
 		

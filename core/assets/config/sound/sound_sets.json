@@ -49,8 +49,8 @@
 				boomerang_throw: {
 					path: "sound/dwarf/boomerang_throw.wav",
 				},
-				rune_hagalaz_used: {
-					path: "sound/dwarf/rune_hagalaz_used.wav",
+				rune_kenaz_used: {
+					path: "sound/dwarf/rune_kenaz_used.wav",
 				},
 				rope: {
 					path: "sound/item/rope.mp3",

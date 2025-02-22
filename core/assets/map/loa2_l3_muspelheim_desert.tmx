@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2386">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2387">
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5]"/>
@@ -181,7 +181,7 @@
   <object id="2376" name="npc.medieval_merchant_spice" x="1039.33" y="375.667">
    <point/>
   </object>
-  <object id="2377" name="player.startingPosition" x="1024" y="1105">
+  <object id="2377" name="player.startingPosition" x="1024" y="1120">
    <properties>
     <property name="startingPointId" value="1"/>
    </properties>
@@ -216,6 +216,9 @@
     <property name="aiType" value="kobold_dragonshield_team"/>
     <property name="teamId" value="kobold_team_1"/>
    </properties>
+   <point/>
+  </object>
+  <object id="2386" name="item.rune_kenaz" x="1024" y="1344">
    <point/>
   </object>
  </objectgroup>
