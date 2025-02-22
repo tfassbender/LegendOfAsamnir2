@@ -59,6 +59,29 @@ public class EventConfig {
 		return booleanValue == other.booleanValue && eventType == other.eventType && Float.floatToIntBits(floatValue) == Float.floatToIntBits(other.floatValue) && intValue == other.intValue && Objects.equals(stringValue, other.stringValue);
 	}
 	
+	public boolean equalsIgnoringDefaultConfigValues(EventConfig config) {
+		if (this == config)
+			return true;
+		if (config == null)
+			return false;
+		if (eventType != config.eventType && config.eventType != null)
+			return false;
+		if (intValue != config.intValue && config.intValue != 0)
+			return false;
+		if (Float.floatToIntBits(floatValue) != Float.floatToIntBits(config.floatValue) && config.floatValue != 0f)
+			return false;
+		if (booleanValue != config.booleanValue && config.booleanValue != false)
+			return false;
+		if (stringValue == null) {
+			if (config.stringValue != null)
+				return false;
+		}
+		else if (!stringValue.equals(config.stringValue) && config.stringValue != null)
+			return false;
+		
+		return true;
+	}
+	
 	@Override
 	public String toString() {
 		return "EventConfig [eventType=" + eventType + ", intValue=" + intValue + ", floatValue=" + floatValue + ", booleanValue=" + booleanValue + ", stringValue=" + stringValue + ", parameterObject=" + parameterObject + "]";

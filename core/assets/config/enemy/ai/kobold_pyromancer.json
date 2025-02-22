@@ -12,6 +12,7 @@
 			},
 			attackDistance: 1.25f,
 			minDistanceToTargetPlayer: 1.25f,
+			moveWhileAttacking: false,
 				
 			subAI: {
 				type: FOLLOW_AI,

@@ -1,0 +1,109 @@
+{
+	//****************************************************************************************************************
+	//*** A list of events that should lead to a quicksave
+	//***
+	//*** For runes and special action items, the exactMatch=false configuration cannot be used, because some runes
+	//*** and special action items are added on every start of the game (because they were part ofthe last game).
+	//*** Therefore, every rune and special action item of this game is configured separately.
+	//****************************************************************************************************************
+	
+	//****************************************
+	//*** special action items
+	//****************************************
+	
+	quicksave_on_special_item_pickup__rope: {
+		event: {
+			eventType: SPECIAL_ACTION_ITEM_PICKED_UP,
+            stringValue: rope,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+	
+	quicksave_on_special_item_pickup__ice_pick: {
+		event: {
+			eventType: SPECIAL_ACTION_ITEM_PICKED_UP,
+            stringValue: ice_pick,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+	
+	quicksave_on_special_item_pickup__hookshot: {
+		event: {
+            eventType: SPECIAL_ACTION_ITEM_PICKED_UP,
+            stringValue: hookshot,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+	
+	//****************************************
+	//*** runes
+	//****************************************
+	
+	quicksave_on_rune_found__raidho: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: RAIDHO,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+	
+	quicksave_on_rune_found__hagalaz: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: HAGALAZ,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+	
+	quicksave_on_rune_found__kenaz: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: KENAZ,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+	
+	quicksave_on_rune_found__laguz: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: LAGUZ,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+	
+	//****************************************
+	//*** special keys
+	//****************************************
+	
+	quicksave_on_special_key_pickup: {
+		event: {
+			eventType: SPECIAL_KEY_ITEM_PICKED_UP,
+		},
+		exactMatch: false, // all parameters but the event type are ignored
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
+}

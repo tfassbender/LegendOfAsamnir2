@@ -19,8 +19,7 @@ public class GlobalEventListener implements EventListener {
 	
 	public static void createGlobalEventListener() {
 		if (instance != null) {
-			Gdx.app.error(GlobalEventListener.class.getSimpleName(),
-					"A GlobalEventListener was already created - skipping creation of another GlobalEventListener");
+			Gdx.app.error(GlobalEventListener.class.getSimpleName(), "A GlobalEventListener was already created - skipping creation of another GlobalEventListener");
 			return;
 		}
 		
@@ -52,8 +51,7 @@ public class GlobalEventListener implements EventListener {
 		for (String eventKey : events.keySet()) {
 			for (String configuredEventKey : configuredEvents.keySet()) {
 				if (eventKey.equals(configuredEventKey)) {
-					throw new IllegalStateException(
-							"The event key '" + configuredEventKey + "' would overwrite an already known event key. The keys have to be unique");
+					throw new IllegalStateException("The event key '" + configuredEventKey + "' would overwrite an already known event key. The keys have to be unique");
 				}
 			}
 		}
@@ -62,9 +60,18 @@ public class GlobalEventListener implements EventListener {
 	@Override
 	public void handleEvent(EventConfig event) {
 		for (GlobalEventConfig eventConfig : events.values()) {
-			if (eventConfig.event.equals(event)) {
+			if (eventMatchesConfig(event, eventConfig)) {
 				eventConfig.executionType.execute(eventConfig);
 			}
+		}
+	}
+	
+	private boolean eventMatchesConfig(EventConfig event, GlobalEventConfig eventConfig) {
+		if (eventConfig.exactMatch) {
+			return eventConfig.event.equals(event);
+		}
+		else {
+			return event != null && event.equalsIgnoringDefaultConfigValues(eventConfig.event);
 		}
 	}
 }
