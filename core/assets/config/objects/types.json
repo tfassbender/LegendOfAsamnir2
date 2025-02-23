@@ -652,4 +652,64 @@
 			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
 		},
 	},
+	
+	direction_board_up: {
+		type: BASIC,
+		
+        texture: direction_board_up,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.3f,
+		physicsBodySizeFactorY: 0.2f,
+		
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.05f,
+	},
+	
+	direction_board_down: {
+		type: BASIC,
+		
+        texture: direction_board_down,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.3f,
+		physicsBodySizeFactorY: 0.2f,
+		
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.05f,
+	},
+	
+	direction_board_left: {
+		type: BASIC,
+		
+        texture: direction_board_left,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.3f,
+		physicsBodySizeFactorY: 0.2f,
+		
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.05f,
+	},
+	
+	direction_board_right: {
+		type: BASIC,
+		
+        texture: direction_board_right,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.3f,
+		physicsBodySizeFactorY: 0.2f,
+		
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.05f,
+	},
 }

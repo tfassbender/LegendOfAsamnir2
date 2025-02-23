@@ -1,0 +1,17 @@
+{
+	startingPointMapping: {
+		10: initial,
+	},
+	eventsLists: {
+		initial: {
+			subConfigPath: config/debug/start_config/loa2/l3_muspelheim_lava_caves.json
+			subConfigName: final,
+			events: []
+		},
+		
+		final: {
+			subConfigName: initial,
+			events: []
+		}
+	}
+}

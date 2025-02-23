@@ -228,15 +228,15 @@
 		}
 	},
 	
-//	loa2_l3_muspelheim_desert__goto_muspelheim_lava_dungeon: {
-//		event: {
-//			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_l3_muspelheim_desert__goto_muspelheim_lava_dungeon,
-//		}
-//		executionType: CHANGE_MAP,
-//		executionParameters: {
-//			map: loa2_muspelheim_lava_caves,
-//			startingPointId: 0,
-//		}
-//	},
+	loa2_l3_muspelheim_desert__goto_muspelheim_lava_dungeon: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_desert__goto_muspelheim_lava_dungeon,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_start,
+			startingPointId: 0,
+		}
+	},
 }

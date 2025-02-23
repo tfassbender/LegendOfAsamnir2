@@ -21,6 +21,7 @@
 	// level 3 - muspelheim
 	config/events/global/loa2/muspelheim_desert.json,
 	config/events/global/loa2/muspelheim_lava_caves.json,
+	config/events/global/loa2/muspelheim_lava_dungeon.json,
 	
 	// asgard - fields of vigrid
 	config/events/global/loa2/asgard.json,
