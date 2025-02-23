@@ -54,12 +54,12 @@
    eJxjYBgFo2DwAwU5BgZFIFYCYmUgVpEbaBeNglEwCkbBKBhKAADYmwFB
   </data>
  </layer>
- <layer id="18" name="shadows" width="26" height="22">
+ <layer id="18" name="shadows" width="26" height="22" locked="1">
   <data encoding="base64" compression="zlib">
    eJztlUsKgDAMRD1J738BcSPde4f6Az/1FmZhIUy11VQQpANv1UwnWTRtVFE0AjaiZFjhPTFmomJMN/pqBawE1wLnON8M9W8J58s5OUeS01G9YfQX/tScu/6cc+53+wr3jxPfQzYh54lv+mmOPkBp5SPNGYn6AFUrnyGSg+/YMI8De4/9p6F5Q2DvodrxpJ7P+xU7TaIBPg==
   </data>
  </layer>
- <objectgroup id="3" name="objects" visible="0">
+ <objectgroup id="3" name="objects">
   <object id="2703" name="object.hookshot_target" x="364" y="415">
    <point/>
   </object>
@@ -116,14 +116,14 @@
    </properties>
    <point/>
   </object>
-  <object id="2735" name="object.traverseable" x="234.667" y="224" width="149.333" height="127.917"/>
+  <object id="2735" name="object.traverseable" x="234.667" y="224" width="149.333" height="112.583"/>
   <object id="2763" name="object.traverseable" x="96" y="352" width="127.833" height="96.417"/>
   <object id="2766" name="object.direction_board_up" x="240.333" y="359.667">
    <point/>
   </object>
   <object id="2767" name="object.traverseable" x="225.417" y="387.125" width="28.833" height="14.7503"/>
  </objectgroup>
- <objectgroup id="4" name="physics" visible="0" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="2707" x="0" y="0" width="480" height="112.5"/>
   <object id="2708" x="576" y="0" width="256" height="96"/>
   <object id="2709" x="704" y="96" width="128" height="352"/>
@@ -156,12 +156,12 @@
    <polygon points="0,0 0,18.7273 -8.36364,0"/>
   </object>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" visible="0" locked="1">
-  <object id="2716" x="96" y="192" width="96" height="160"/>
+ <objectgroup id="5" name="unreachable_area_physics">
+  <object id="2716" x="96" y="192" width="127.667" height="160"/>
   <object id="2718" x="96.0303" y="448.583" width="127.97" height="223.417"/>
   <object id="2719" x="576" y="224" width="64" height="448"/>
   <object id="2720" x="480" y="0" width="96" height="146.591"/>
-  <object id="2724" x="192" y="224" width="43.3333" height="127.917"/>
+  <object id="2724" x="223.667" y="224" width="11.6667" height="112.583"/>
   <object id="2725" x="384" y="224" width="96" height="64"/>
   <object id="2726" x="480" y="224" width="96" height="64"/>
   <object id="2732" x="192" y="192">
@@ -176,7 +176,7 @@
   <object id="2750" x="358.688" y="500.313" width="18.375" height="31.625"/>
   <object id="2760" x="473.091" y="218" width="110.182" height="5.81818"/>
  </objectgroup>
- <objectgroup id="6" name="ground_physics" visible="0" locked="1">
+ <objectgroup id="6" name="ground_physics" locked="1">
   <object id="2761" x="193.208" y="156.419" width="32.2497" height="66.9545">
    <properties>
     <property name="ground" value="stairs"/>

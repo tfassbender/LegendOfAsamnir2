@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="2828">
+ <properties>
+  <property name="above_player_layers" value="[4]"/>
+  <property name="background_layers" value="[0, 1, 2, 3]"/>
+  <property name="building_level" value="true"/>
+  <property name="continuous_damage" value="5"/>
+  <property name="continuous_damage_interval" value="3"/>
+  <property name="continuous_damage_prevention_condition" value="common__rune_hagalaz_collected"/>
+  <property name="dungeon_level" value="false"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_dungeon_1.json"/>
+  <property name="shadow_layers" value="[5]"/>
+ </properties>
+ <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
+ <tileset firstgid="491" source="tileset/cave.tsx"/>
+ <tileset firstgid="771" source="tileset/dwarven_caves.tsx"/>
+ <tileset firstgid="1247" source="tileset/town_tileset.tsx"/>
+ <tileset firstgid="2507" source="tileset/cultist_dungeon.tsx"/>
+ <tileset firstgid="2807" source="tileset/forest_prairie_tileset.tsx"/>
+ <tileset firstgid="3374" source="tileset/desert_tileset.tsx"/>
+ <tileset firstgid="3954" source="tileset/medival_house_interior.tsx"/>
+ <tileset firstgid="4467" source="tileset/medival_shop_interior.tsx"/>
+ <tileset firstgid="4847" source="tileset/arctic.tsx"/>
+ <tileset firstgid="5225" source="tileset/medival_warcamp.tsx"/>
+ <tileset firstgid="5945" source="tileset/nightmarescape.tsx"/>
+ <tileset firstgid="6554" source="tileset/magic_wasteland.tsx"/>
+ <tileset firstgid="7058" source="tileset/volcanic_lava.tsx"/>
+ <tileset firstgid="7298" source="tileset/lava_dungeon.tsx"/>
+ <tileset firstgid="7820" source="tileset/shadows.tsx"/>
+ <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
+ <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
+ <layer id="1" name="background" width="31" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzllu9NwzAQxTMD5WP8DToCMELTEYARgBEoI7SdgRFQlWYAhNqICRDqBGlH4Cxyyuvl/CdRVCFh6alu3btf7DyfnSRJsjN+vZPOSCPSOfRHym+2/xHIZ8Xtr7MvSJeksYON40OzN2mSbEllqrNxfGj2F+V8JX072Dg+NPuZNCO9wPqyxmK8C/uK+tcgfp5trVLkzmlua1CRHo9vIJY5mP8G2BPqZ6S7WtweTaMZ5ibWJ2lVf5bAnpnjOG6c23Kmgj0Fv3BbmLaWpr1Odh5z5b8LYLAPJw52lf6u0T5165A265TBPCpPzL7Oe/Cw8/r9rD0qjM7OA3E7iJXsTKyjT5miLrHIvgWfxQq5XWPvgc0ei1UJ7xw92iWeWyU84fOL9Bv6LCaW47lJT/j8Iv2GPouJZcXWVK3GIjumhvat56dky7rl22dDst9Mu76H9ovGtnkeTFPXn0irAJvXM3bvuO4KeO5qZ2uIrdV3+f3gYc+BvezI1uq7to9cfqzqs9XOWT5jiN3HQ6jCNOxcjPnY2vnQZy8yW87DxXadLbbhnSRGrjuci+3yt23a3SQk6TMfu+vZEnN2xLBjfN1nLKaunUr/mf0D2BzU3g==
+  </data>
+ </layer>
+ <layer id="2" name="background_2" width="31" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJwTkWUYECAEtFdk1O5BbfcTGcrkKbGbmgCX3RZAMVcgdqPQXQ5A/Y5AbIbFHFx2xwDFwoE4goDdlwiEcRBQfzAQR5Fg92mgmZlA8SwK/Z0C1J8qCzGPGLu/kZBeSAHo5g7GtDZqN33txpfWCKVDUvQONn+P2j1q90DZjZ43qFXeD3Z/Dwa7qdWWIcduYtsytLAbBKjRliHFbnLrFkL5YaiktVG7qWc3ABltJvw=
+  </data>
+ </layer>
+ <layer id="5" name="terrain" width="31" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztl7EVAiEMhm8QZQLHsLza0gksrK+ycg1H0RF0B53B1pf35Bl/fwIBtPJr9A4IkPwJ3DC8uM2HD9i7Ery2pG0X+s49hc93Vn89pse+R7CF+xPuCT9tSV/P3Nq+2FqDvQmeca2b8P6LYLteM9pmyHq0P2Qs80UJbBzzteZKxuwrfM64VO5DswzvPl52WptwyqxvFexnr73IYVbWz0vOLmpf0BqN2j8n9qF1MZFc+mOzePqrVCdIzbioiQWJFdPLcW63l7Rh/dBzt9aWyWlL5h5Jv9S5kquXKdak5jOfR0rOhtY1eRlhD7rWyn/PudaKrrVW3WWxzYF51Ou8i2BufKveW7rI1WYdQ8uOxzeeWNTEzQveqxiWn1J3xZZ87HEnEmrPkByY21b8a88Hbz7ktDJm4tIjv1E/LXcfpkVLU6l6m9I061/zHfVLHnQGU5o=
+  </data>
+ </layer>
+ <layer id="16" name="terrain_2" width="31" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1MEJADAIwEC/naHgBt1/vc6gBAo2N4B+ohGSfrLy3bwN767MO/Buet503e6IXrvdEb12O7Evkei/X0H//QrvaA4b1iQXg0IEAw==
+  </data>
+ </layer>
+ <layer id="19" name="background_above_player" width="31" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20KP6AAAACAtwEPgAAB
+  </data>
+ </layer>
+ <layer id="18" name="shadows" width="31" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt0EsKgDAMRdGuxP1vQDoR5y5CUPCXXTSFDkpw8CKFIrzCHVlzaGQIYQR6tAVIHPNOLQIdoO2Zl+8i59J7a8nuQKpvNzjPY9v/7Fu/zPibXe/fs+cWdotDmzZt2rRp06ZNmzbtd3vuULZ3berQpiUSS72E
+  </data>
+ </layer>
+ <objectgroup id="3" name="objects" locked="1">
+  <object id="2768" name="player.startingPosition" x="495.091" y="286.909">
+   <properties>
+    <property name="startingPointId" value="0"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2769" name="player.startingPosition" x="494.909" y="307.455">
+   <properties>
+    <property name="startingPointId" value="10"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2770" name="player.startingPosition" x="623.5" y="192">
+   <properties>
+    <property name="startingPointId" value="1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2771" name="player.startingPosition" x="367.25" y="191.25">
+   <properties>
+    <property name="startingPointId" value="2"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="physics" locked="1">
+  <object id="2772" x="320" y="0" width="96" height="128"/>
+  <object id="2773" x="416" y="0" width="160" height="224"/>
+  <object id="2774" x="576" y="0" width="96" height="128"/>
+  <object id="2776" x="320" y="128" width="32" height="18.5625"/>
+  <object id="2777" x="384" y="128" width="32" height="18.75"/>
+  <object id="2778" x="576" y="128" width="32" height="18.5"/>
+  <object id="2779" x="640" y="128" width="32" height="18.75"/>
+  <object id="2780" x="416" y="224" width="64" height="18.4545"/>
+  <object id="2781" x="512" y="224" width="64" height="18.7273"/>
+  <object id="2782" x="608" y="128">
+   <polygon points="0,0 0,18.5455 8.18182,-0.0909091"/>
+  </object>
+  <object id="2783" x="640" y="128">
+   <polygon points="0,0 0,18.7273 -8.36364,0"/>
+  </object>
+  <object id="2784" x="480" y="224">
+   <polygon points="0,0 0,18.5455 8.18182,-0.0909091"/>
+  </object>
+  <object id="2785" x="512" y="224">
+   <polygon points="0,0 0,18.7273 -8.36364,0"/>
+  </object>
+  <object id="2786" x="352" y="128">
+   <polygon points="0,0 0,18.5455 8.18182,-0.0909091"/>
+  </object>
+  <object id="2787" x="384" y="128">
+   <polygon points="0,0 0,18.7273 -8.36364,0"/>
+  </object>
+  <object id="2789" x="0" y="0" width="32" height="1024"/>
+  <object id="2790" x="960" y="0" width="32" height="1024"/>
+ </objectgroup>
+ <objectgroup id="5" name="unreachable_area_physics">
+  <object id="2791" x="32" y="0" width="288" height="176.667"/>
+  <object id="2792" x="256.5" y="160" width="63.5" height="50.1667"/>
+  <object id="2793" x="672" y="0" width="288" height="177"/>
+  <object id="2794" x="672" y="160" width="64.3636" height="50.8485"/>
+  <object id="2795" x="576" y="288" width="320" height="48.25"/>
+  <object id="2796" x="800" y="256" width="96" height="32"/>
+  <object id="2797" x="544" y="416" width="416" height="176"/>
+  <object id="2798" x="544" y="576" width="32" height="128"/>
+  <object id="2799" x="224" y="640" width="320" height="64"/>
+  <object id="2801" x="224" y="704" width="192" height="48.5"/>
+  <object id="2802" x="416" y="704" width="352" height="82.5"/>
+  <object id="2803" x="704" y="704" width="64" height="64"/>
+  <object id="2804" x="704" y="576" width="32" height="128"/>
+  <object id="2805" x="864" y="576" width="32" height="128"/>
+  <object id="2806" x="832" y="704" width="64" height="192"/>
+  <object id="2807" x="384" y="864" width="448" height="32"/>
+  <object id="2808" x="160" y="832" width="192" height="64"/>
+  <object id="2809" x="96" y="576" width="64" height="320"/>
+  <object id="2810" x="32" y="416" width="416" height="144"/>
+  <object id="2811" x="96" y="544" width="64" height="32"/>
+  <object id="2814" x="96" y="288" width="320" height="48.5"/>
+  <object id="2815" x="96" y="256" width="96" height="32"/>
+  <object id="2816" x="352" y="864" width="32" height="32"/>
+  <object id="2817" x="352" y="832">
+   <polygon points="0,0 43.0909,31.9091 0,32"/>
+  </object>
+  <object id="2818" x="192" y="256">
+   <polygon points="0,0 43.0909,31.9091 0,32"/>
+  </object>
+  <object id="2819" x="800" y="256">
+   <polygon points="0,0 -50,31.8182 0,32"/>
+  </object>
+  <object id="2820" x="256" y="210.5">
+   <polygon points="0,0 -63.875,-33.75 0.125,-33.75"/>
+  </object>
+  <object id="2821" x="736.432" y="210.864">
+   <polygon points="0,0 63.875,-33.75 -0.125,-33.75"/>
+  </object>
+  <object id="2822" x="416" y="786.432">
+   <polygon points="0,0 -63.875,-33.75 0.125,-33.75"/>
+  </object>
+  <object id="2823" x="32" y="992" width="928" height="32"/>
+  <object id="2824" x="426" y="329">
+   <polygon points="0,0 16,4 -0.333333,5"/>
+  </object>
+  <object id="2825" x="528.333" y="451">
+   <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
+  </object>
+  <object id="2826" x="742.813" y="596.188" width="18.375" height="31.625"/>
+  <object id="2827" x="838.449" y="596.551" width="18.375" height="31.625"/>
+ </objectgroup>
+ <objectgroup id="6" name="ground_physics" locked="1"/>
+</map>
