@@ -19,18 +19,18 @@
 		}
 	},
 	
-//	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_1: {
-//		event: {
-//			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_1,
-//		}
-//		executionType: CHANGE_MAP,
-//		executionParameters: {
-//			map: loa2_muspelheim_lava_dungeon_1,
-//			startingPointId: 0,
-//		}
-//	},
-//
+	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_1: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_1,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_1,
+			startingPointId: 0,
+		}
+	},
+
 //	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room: {
 //		event: {
 //			eventType: EVENT_OBJECT_TOUCHED,
@@ -50,6 +50,46 @@
 //        executionType: START_CUTSCENE,
 //        executionParameters: {
 //            cutsceneId: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_5_cutscene,
+//		}
+//	},
+
+	//*******************************************
+	//*** room 1
+	//*******************************************
+	
+	loa2_l3_muspelheim_lava_dungeon_1__goto_muspelheim_lava_dungeon_start: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_1__goto_muspelheim_lava_dungeon_start,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_start,
+			startingPointId: 2,
+		}
+	},
+	
+//	loa2_l3_muspelheim_lava_dungeon_1__goto_muspelheim_lava_dungeon_2: {
+//		event: {
+//			eventType: EVENT_OBJECT_TOUCHED,
+//			stringValue: loa2_l3_muspelheim_lava_dungeon_1__goto_muspelheim_lava_dungeon_2,
+//		}
+//		executionType: CHANGE_MAP,
+//		executionParameters: {
+//			map: loa2_muspelheim_lava_dungeon_2,
+//			startingPointId: 0,
+//		}
+//	},
+//	
+//	loa2_l3_muspelheim_lava_dungeon_1__goto_muspelheim_lava_dungeon_3: {
+//		event: {
+//			eventType: EVENT_OBJECT_TOUCHED,
+//			stringValue: loa2_l3_muspelheim_lava_dungeon_1__goto_muspelheim_lava_dungeon_3,
+//		}
+//		executionType: CHANGE_MAP,
+//		executionParameters: {
+//			map: loa2_muspelheim_lava_dungeon_start,
+//			startingPointId: 0,
 //		}
 //	},
 }
