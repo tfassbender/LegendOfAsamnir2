@@ -100,6 +100,12 @@ public class GameObjectTypeConfig {
 	public float movingPartLifetimeInSeconds = 1f; // the moving part will be removed after this period of time
 	
 	//****************************************
+	//*** Movable Objects
+	//****************************************
+	
+	public boolean onlyMovableByPlayer = false; // increase the density of the object if no player is near - a sensor is needed for this to work
+	
+	//****************************************
 	//*** Draggable Objects
 	//****************************************
 	

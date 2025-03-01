@@ -53,4 +53,77 @@
 			}
 		}
 	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_2__all_switches_activated: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: AND,
+						conditionalParameters: {
+							condition: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_2__pressure_switch_1,
+								}
+							},
+							condition2: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_2__pressure_switch_2,
+								}
+							}
+						}
+					},
+					condition2: {
+						conditionType: AND,
+						conditionalParameters: {
+							condition: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_2__pressure_switch_3,
+								}
+							},
+							condition2: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_2__pressure_switch_4,
+								}
+							}
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: AND,
+						conditionalParameters: {
+							condition: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_2__pressure_switch_5,
+								}
+							},
+							condition2: {
+								conditionType: STATE_SWITCH_ACTIVE,
+								parameters: {
+									stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_2__pressure_switch_6,
+								}
+							}
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_2__pressure_switch_7,
+						}
+					}
+				}
+			}
+		}
+	},
 }

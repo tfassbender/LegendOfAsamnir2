@@ -59,7 +59,7 @@
    eJztlUsKgDAMRD1J738BcSPde4f6Az/1FmZhIUy11VQQpANv1UwnWTRtVFE0AjaiZFjhPTFmomJMN/pqBawE1wLnON8M9W8J58s5OUeS01G9YfQX/tScu/6cc+53+wr3jxPfQzYh54lv+mmOPkBp5SPNGYn6AFUrnyGSg+/YMI8De4/9p6F5Q2DvodrxpJ7P+xU7TaIBPg==
   </data>
  </layer>
- <objectgroup id="3" name="objects" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="2703" name="object.hookshot_target" x="364" y="415">
    <point/>
   </object>
@@ -86,7 +86,7 @@
     <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_5"/>
    </properties>
   </object>
-  <object id="2755" name="player.startingPosition" x="336.182" y="180.727">
+  <object id="2755" name="player.startingPosition" x="320.182" y="176">
    <properties>
     <property name="startingPointId" value="0"/>
    </properties>
@@ -98,7 +98,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2757" name="player.startingPosition" x="751.333" y="533.333">
+  <object id="2757" name="player.startingPosition" x="736" y="544">
    <properties>
     <property name="startingPointId" value="2"/>
    </properties>
@@ -110,7 +110,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2759" name="player.startingPosition" x="336" y="204.25">
+  <object id="2759" name="player.startingPosition" x="320" y="199.523">
    <properties>
     <property name="startingPointId" value="10"/>
    </properties>
@@ -176,7 +176,7 @@
   <object id="2750" x="358.688" y="500.313" width="18.375" height="31.625"/>
   <object id="2760" x="473.091" y="218" width="110.182" height="5.81818"/>
  </objectgroup>
- <objectgroup id="6" name="ground_physics">
+ <objectgroup id="6" name="ground_physics" locked="1">
   <object id="2761" x="193.208" y="156.419" width="32.2497" height="66.9545">
    <properties>
     <property name="ground" value="stairs"/>

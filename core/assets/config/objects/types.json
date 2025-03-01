@@ -712,4 +712,26 @@
 		physicsBodyOffsetFactorX: 0f,
 		physicsBodyOffsetFactorY: 0.05f,
 	},
+	
+	push_box: {
+		type: MOVABLE,
+		
+		bodyType: DynamicBody,
+		linearDamping: 5f,
+		collisionType: MAP_OBJECT,
+		
+		onlyMovableByPlayer: true,
+		addSensor: true,
+		sensorRadius: 0.8,
+		
+		texture: push_box,
+		
+		textureSizeFactorX: 1.2f,
+		textureSizeFactorY: 1.2f,
+		
+		physicsBodySizeFactorX: 1.2f,
+		physicsBodySizeFactorY: 1.2f,
+		
+		density: 5f,
+	},
 }

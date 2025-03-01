@@ -60,25 +60,25 @@
   </data>
  </layer>
  <objectgroup id="3" name="objects">
-  <object id="2768" name="player.startingPosition" x="495.091" y="286.909">
+  <object id="2768" name="player.startingPosition" x="480.182" y="288">
    <properties>
     <property name="startingPointId" value="0"/>
    </properties>
    <point/>
   </object>
-  <object id="2769" name="player.startingPosition" x="494.909" y="307.455">
+  <object id="2769" name="player.startingPosition" x="480" y="308.546">
    <properties>
     <property name="startingPointId" value="10"/>
    </properties>
    <point/>
   </object>
-  <object id="2770" name="player.startingPosition" x="623.5" y="192">
+  <object id="2770" name="player.startingPosition" x="640" y="192">
    <properties>
     <property name="startingPointId" value="1"/>
    </properties>
    <point/>
   </object>
-  <object id="2771" name="player.startingPosition" x="367.25" y="191.25">
+  <object id="2771" name="player.startingPosition" x="352" y="192">
    <properties>
     <property name="startingPointId" value="2"/>
    </properties>

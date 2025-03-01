@@ -24,4 +24,26 @@
             }
         }
     },
+    
+    loa2_l3_muspelheim_lava_dungeon__room_2__open_lock_if_all_switches_activated: {
+        conditionId: loa2_l3_muspelheim_lava_dungeon__room_2__all_switches_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l3_muspelheim_lava_dungeon__lock
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l3_muspelheim_lava_dungeon__lock
+                }
+            }
+        }
+    },
 }

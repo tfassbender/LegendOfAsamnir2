@@ -181,7 +181,7 @@
   <object id="2376" name="npc.medieval_merchant_spice" x="1039.33" y="375.667">
    <point/>
   </object>
-  <object id="2377" name="player.startingPosition" x="1024" y="1120">
+  <object id="2377" name="player.startingPosition" x="1005" y="1120">
    <properties>
     <property name="startingPointId" value="1"/>
    </properties>

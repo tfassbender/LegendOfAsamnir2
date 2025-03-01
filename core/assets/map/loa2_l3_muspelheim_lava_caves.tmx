@@ -49,7 +49,7 @@
   </data>
  </layer>
  <objectgroup id="3" name="objects">
-  <object id="2377" name="player.startingPosition" x="1328" y="278">
+  <object id="2377" name="player.startingPosition" x="1344" y="288">
    <properties>
     <property name="startingPointId" value="0"/>
    </properties>
