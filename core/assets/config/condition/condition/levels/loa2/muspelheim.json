@@ -126,4 +126,12 @@
 			}
 		}
 	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_3__open_gate__global_value_set: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+			key: loa2_l3_muspelheim_lava_dungeon__room_2__switch_activated,
+			expectedValue: true,
+		}
+	},
 }

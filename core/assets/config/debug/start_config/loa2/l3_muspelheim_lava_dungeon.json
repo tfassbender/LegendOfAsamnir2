@@ -1,12 +1,23 @@
 {
 	startingPointMapping: {
 		10: initial,
+		11: switch_in_room_2_activated,
 	},
 	eventsLists: {
 		initial: {
 			subConfigPath: config/debug/start_config/loa2/l3_muspelheim_lava_caves.json
 			subConfigName: final,
 			events: []
+		},
+		
+		switch_in_room_2_activated: {
+			subConfigName: initial,
+			events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_l3_muspelheim_lava_dungeon__room_2__switch_activated, value: true}",
+				},
+			]
 		},
 		
 		final: {

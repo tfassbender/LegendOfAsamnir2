@@ -32,7 +32,7 @@
             eventConfig: {
                 executionType: OPEN_LOCK,
                 executionParameters: {
-                    lockId: loa2_l3_muspelheim_lava_dungeon__lock
+                    lockId: loa2_l3_muspelheim_lava_dungeon__room_2__lock
                 }
             }
         }
@@ -41,9 +41,25 @@
             eventConfig: {
                 executionType: CLOSE_LOCK,
                 executionParameters: {
-                    lockId: loa2_l3_muspelheim_lava_dungeon__lock
+                    lockId: loa2_l3_muspelheim_lava_dungeon__room_2__lock
                 }
             }
+        }
+    },
+    
+    loa2_l3_muspelheim_lava_dungeon__room_3__open_lock_if_global_value_set: {
+        conditionId: loa2_l3_muspelheim_lava_dungeon__room_3__open_gate__global_value_set,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l3_muspelheim_lava_dungeon__room_3__lock
+                }
+            }
+        }
+        elseCase: {
+            type: NO_EXECUTION,
         }
     },
 }

@@ -8,7 +8,7 @@
   <property name="continuous_damage_interval" value="3"/>
   <property name="continuous_damage_prevention_condition" value="common__rune_hagalaz_collected"/>
   <property name="dungeon_level" value="false"/>
-  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_dungeon_1.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_dungeon_2.json"/>
   <property name="shadow_layers" value="[5]"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
@@ -31,7 +31,7 @@
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
  <layer id="1" name="background" width="18" height="30" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztk08KgkAUh+cM1XLcVacrIWit0cZtdZaQ6gARKZ6gwhP05wa9hw49hsnmvWzX4kME/WA+f5aBUiVhD3SALqEHHKznPtGmpw8MCEOh56iVygi5lnlO8N4ZSOvrRegZAWNCKDxXBMSE2Q88SUueOcOzAJaEldBz1RW3mrvme5Ctg1LgQTICved41sFrQ7idgtxj89TTMbU6T958O9/OBuwcMT2uzrtA5jHnS+q2+Rces2vzr9J9h56t6a5jq7m9bx/PQ1d7cXXnnA37omfjaM/ZtN2I08XVSNKlaZPcLk2blDj+KPUE6RnkcA==
+   eJztk00KwjAQRnMGdZnu1NOpILhuxY1b9SxS1AOI2NITqOQE/tzAGdrAEELMTLt08Sil6SPz5YtJlDKEM9AD+oQBcHHW/aJLzxAYEcZCz1UrVRBKLfPc4L87kDfPh9AzAaaEmXCuFMgIy449e2AN5C09+G0VuTdcuwG2hJ3Q89Q1r4a35nuQowcj8ITgePBcbIewOxV5j+0AOhZOznPP2XFytmDOKdPjy/mUyDx2PuxuAZQtPLbX9q7SfmP2MXeD9jpzMqf9jvV8dN0XX+6c2TBf9Bw82XO662bEycWXkSSXUCe5uYQ6KXH8UeoLVHXjtQ==
   </data>
  </layer>
  <layer id="2" name="background_2" width="18" height="30" locked="1">
@@ -111,7 +111,7 @@
   </object>
   <object id="2892" name="object.key_wall" x="272" y="657">
    <properties>
-    <property name="lockId" value="loa2_l3_muspelheim_lava_dungeon__lock"/>
+    <property name="lockId" value="loa2_l3_muspelheim_lava_dungeon__room_2__lock"/>
     <property name="physicsBodySizeFactorX" value="1.3f"/>
     <property name="unlockedByEvent" value="true"/>
    </properties>
