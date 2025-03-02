@@ -156,7 +156,7 @@
    <polygon points="0,0 0,18.7273 -8.36364,0"/>
   </object>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics">
   <object id="2716" x="96" y="192" width="127.667" height="160"/>
   <object id="2718" x="96.0303" y="448.583" width="127.97" height="223.417"/>
   <object id="2719" x="576" y="224" width="64" height="448"/>

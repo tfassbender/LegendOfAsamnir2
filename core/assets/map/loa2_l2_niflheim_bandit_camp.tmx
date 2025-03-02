@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2374">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2375">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -38,7 +38,7 @@
  </layer>
  <layer id="5" name="terrain" width="53" height="37">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="53" height="37" locked="1">
@@ -340,6 +340,12 @@
   <object id="2373" name="object.chest" x="933.636" y="199.273">
    <properties>
     <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2374" name="object.spawnPoint.mana" x="720.502" y="816.557">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
    </properties>
    <point/>
   </object>
