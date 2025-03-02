@@ -134,4 +134,21 @@
 			expectedValue: true,
 		}
 	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_activated: {
+	    conditionType: STATE_SWITCH_ACTIVE,
+        parameters: {
+            stateSwitchId: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch,
+		}
+	},
+	
+	loa2_l3_muspelheim__room_4__bomb_positioned: {
+        conditionType: OBJECT_IN_POSITION,
+        parameters: {
+        	objectId: loa2_l3_muspelheim__room_4__bomb_big,
+			targetLowerLeftObjectId: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_target_lower_left,
+			targetUpperRightObjectId: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_target_upper_right,
+			objectCanBeRemoved: true,
+        }
+	},
 }

@@ -734,4 +734,25 @@
 		
 		density: 5f,
 	},
+	
+	trap_door: {
+		type: LOCKED,
+		
+		texture: trapdoor_closed,
+		interactionSound: door_open,
+		
+		isSensor: true,
+		
+		textureSizeFactorX: 0.4f,
+		textureSizeFactorY: 0.4f,
+		physicsBodySizeFactorX: 0.4f,
+		physicsBodySizeFactorY: 0.3f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.05f,
+		
+		multipleActionExecutionsPossible: true,
+		textureAfterAction: trapdoor_opened,
+		
+		defaultLocked: true,
+	},
 }

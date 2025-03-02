@@ -50,10 +50,8 @@ public class InteractiveObject extends GameObject implements Interactive {
 	
 	private AnimationSpriteConfig createSpriteConfig() {
 		AnimationSpriteConfig spriteConfig = AnimationSpriteConfig.fromSprite(sprite);
-		spriteConfig.x += (sprite.getWidth() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X
-				+ typeConfig.interactionMarkerOffsetX);
-		spriteConfig.y += (sprite.getHeight() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y
-				+ typeConfig.interactionMarkerOffsetY);
+		spriteConfig.x += (sprite.getWidth() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X + typeConfig.interactionMarkerOffsetX);
+		spriteConfig.y += (sprite.getHeight() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y + typeConfig.interactionMarkerOffsetY);
 		return spriteConfig;
 	}
 	
@@ -113,7 +111,7 @@ public class InteractiveObject extends GameObject implements Interactive {
 						|| interactionAnimation.getAnimation().getPlayMode() == PlayMode.NORMAL); // the interaction icon appeared and is to be shown (animation finished)
 	}
 	
-	private boolean isChangeBodyToSensorAfterAction() {
+	protected boolean isChangeBodyToSensorAfterAction() {
 		return actionExecuted && typeConfig.changeBodyToSensorAfterAction && !changedBodyToSensor //
 				&& (animation == null || animation.isAnimationFinished());
 	}
@@ -128,8 +126,7 @@ public class InteractiveObject extends GameObject implements Interactive {
 	
 	@Override
 	protected boolean showHitAnimation() {
-		return typeConfig.animationHit != null
-				&& (!actionExecuted || typeConfig.hitAnimationAfterAction || typeConfig.multipleActionExecutionsPossible);
+		return typeConfig.animationHit != null && (!actionExecuted || typeConfig.hitAnimationAfterAction || typeConfig.multipleActionExecutionsPossible);
 	}
 	
 	@Override

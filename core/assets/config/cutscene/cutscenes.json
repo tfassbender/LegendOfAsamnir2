@@ -145,6 +145,11 @@
 	config/cutscene/loa2/muspelheim/lava_caves/hookshot_collected.json,
 	
 	//********************************************************
+	//*** Legend of Asamnir 2 - Muspelheim - Lava Dungeon
+	//********************************************************
+	config/cutscene/loa2/muspelheim/lava_dungeon/bomb_falling.json,
+	
+	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
 	//********************************************************
 	config/cutscene/loa2/asgard/goto_main.json,

@@ -216,8 +216,10 @@ public class LockedObject extends InteractiveObject implements EventListener {
 			sprite = createSprite(typeConfig.texture);
 		}
 		
-		changeBodyToNonSensor();
-		changedBodyToSensor = false;
+		if (isChangeBodyToSensorAfterAction()) {
+			changeBodyToNonSensor();
+			changedBodyToSensor = false;
+		}
 		
 		playInteractionSound();
 		

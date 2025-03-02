@@ -1,0 +1,61 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_falling_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l3_muspelheim__room_4__bomb_positioned,
+					executedStateName: falling_bomb_multiplexer,
+				},
+				{
+					// default case
+					executedStateName: end,
+				},
+			],
+		},
+		
+		falling_bomb_multiplexer: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+			    play_sound_fall,
+                remove_bomb,
+                set_global_value__bomb_dropped,
+			],
+		},
+		
+		play_sound_fall: {
+            type: PLAY_SOUND,
+			
+            soundEffectName: falling,
+		},
+		
+		remove_bomb: {
+			type: EVENT,
+			
+			event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l3_muspelheim__room_4__bomb_big,
+			},
+		},
+		
+		set_global_value__bomb_dropped: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_dropped, value: true}",
+			},
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

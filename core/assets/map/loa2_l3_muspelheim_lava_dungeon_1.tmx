@@ -171,7 +171,7 @@
   <object id="2833" x="575.5" y="224" width="0.5" height="63.75"/>
   <object id="2834" x="416" y="224" width="0.5" height="64"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics">
   <object id="2791" x="32" y="0" width="288" height="176.667"/>
   <object id="2792" x="256.5" y="160" width="63.5" height="50.1667"/>
   <object id="2793" x="672" y="0" width="288" height="177"/>

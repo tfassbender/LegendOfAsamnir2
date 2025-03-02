@@ -199,6 +199,12 @@
 				clock_ticking: {
 					path: "sound/object/clock_ticking.mp3",
 				},
+				door_open: {
+					path: "sound/object/door_open.mp3",
+				},
+				door_close: {
+					path: "sound/object/door_close.mp3",
+				},
 			}
 		},
 		enemy: {
@@ -488,6 +494,9 @@
 				explosion: {
 					path: "sound/cutscene/explosion.mp3",
 					volume: 0.3f,
+				},
+				falling: {
+					path: "sound/cutscene/falling.mp3",
 				},
             }
         },

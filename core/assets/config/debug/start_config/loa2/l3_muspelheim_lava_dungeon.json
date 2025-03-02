@@ -2,6 +2,7 @@
 	startingPointMapping: {
 		10: initial,
 		11: switch_in_room_2_activated,
+		12: initial,
 	},
 	eventsLists: {
 		initial: {

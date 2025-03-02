@@ -155,7 +155,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		Sprite sprite = new Sprite(textureRegion);
 		sprite.setX(this.sprite.getX());
 		sprite.setY(this.sprite.getY());
-		sprite.setScale(Constants.WORLD_TO_SCREEN);
+		sprite.setScale(typeConfig.textureSizeFactorX * Constants.WORLD_TO_SCREEN, typeConfig.textureSizeFactorY * Constants.WORLD_TO_SCREEN);
 		return sprite;
 	}
 	

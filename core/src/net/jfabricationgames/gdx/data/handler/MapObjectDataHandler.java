@@ -118,7 +118,8 @@ public class MapObjectDataHandler {
 				state.put(field.getName(), json.prettyPrint(value));
 			}
 			catch (Exception e) {
-				Gdx.app.error(getClass().getSimpleName(), "Error during serialization of field: " + field.getName(), e);
+				// NOTE: this will sometimes produce a NullPointerException in the json.prettyPrint method for unknown reasons (not reproducible)
+				Gdx.app.error(getClass().getSimpleName(), "Error during serialization of field: " + field.getName() + " (continuing game execution)", e);
 			}
 		}
 		

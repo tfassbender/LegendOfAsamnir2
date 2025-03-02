@@ -182,12 +182,14 @@ public enum ConditionType {
 		private static final String PARAMETER_OBJECT_ID = "objectId";
 		private static final String PARAMETER_TARGET_LOWER_LEFT_OBJECT_ID = "targetLowerLeftObjectId";
 		private static final String PARAMETER_TARGET_UPPER_RIGHT_OBJECT_ID = "targetUpperRightObjectId";
+		private static final String PARAMETER_OBJECT_CAN_BE_REMOVED = "objectCanBeRemoved";
 		
 		@Override
 		public boolean check(Condition condition) {
 			String objectId = condition.parameters.get(PARAMETER_OBJECT_ID);
 			String targetLowerLeftObjectId = condition.parameters.get(PARAMETER_TARGET_LOWER_LEFT_OBJECT_ID);
 			String targetUpperRightObjectId = condition.parameters.get(PARAMETER_TARGET_UPPER_RIGHT_OBJECT_ID);
+			boolean objectCanBeRemoved = Boolean.parseBoolean(condition.parameters.get(PARAMETER_OBJECT_CAN_BE_REMOVED, "false"));
 			
 			if (objectId == null || targetLowerLeftObjectId == null || targetUpperRightObjectId == null) {
 				Gdx.app.error(getDeclaringClass().getSimpleName(), "The parameters for the OBJECT_IN_POSITION condition are not set correctly: " //
@@ -199,9 +201,18 @@ public enum ConditionType {
 			CutsceneControlledUnit lowerLeftEventObject = GameMapManager.getInstance().getMap().getUnitById(targetLowerLeftObjectId);
 			CutsceneControlledUnit upperRightEventObject = GameMapManager.getInstance().getMap().getUnitById(targetUpperRightObjectId);
 			
-			if (object == null || lowerLeftEventObject == null || upperRightEventObject == null) {
+			if (lowerLeftEventObject == null || upperRightEventObject == null) {
 				Gdx.app.error(getDeclaringClass().getSimpleName(), "The object or the target area for the OBJECT_IN_POSITION condition cannot be found: " //
 						+ "object: " + object + ", lowerLeftObject: " + lowerLeftEventObject + ", upperRightObject: " + upperRightEventObject);
+				return false;
+			}
+			if (object == null) {
+				if (!objectCanBeRemoved) {
+					Gdx.app.error(getDeclaringClass().getSimpleName(), "The object for the OBJECT_IN_POSITION condition cannot be found: " + objectId //
+							+ " (maybe the parameter \"objectId\" is configured wrong? - " //
+							+ "if it can be removed during the game: set \"objectCanBeRemoved\" to true to prevent this error message)");
+				}
+				
 				return false;
 			}
 			

@@ -62,4 +62,26 @@
             type: NO_EXECUTION,
         }
     },
+    
+    loa2_l3_muspelheim_lava_dungeon__room_4__open_trap_door_if_pressure_switch_activated: {
+        conditionId: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l3_muspelheim_lava_dungeon__room_4__trap_door
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l3_muspelheim_lava_dungeon__room_4__trap_door
+                }
+            }
+        }
+    },
 }

@@ -1,0 +1,9 @@
+{
+	name: Lava Dungeon,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l3_muspelheim_lava_dungeon_4,
+	},
+	textureWidth: 500,
+	textureHeight: 500,
+}
