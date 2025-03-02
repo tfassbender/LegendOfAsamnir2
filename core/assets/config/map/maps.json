@@ -140,6 +140,13 @@
         map: "map/loa2_l3_muspelheim_lava_dungeon_4.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json,
         initialStartingPointId: 12,
+		//initial: true
+	},
+	{
+        name: loa2_muspelheim_lava_dungeon_5,
+        map: "map/loa2_l3_muspelheim_lava_dungeon_5.tmx",
+		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json,
+        initialStartingPointId: 10,
 		initial: true
 	},
 	

@@ -109,7 +109,7 @@
   <object id="2925" x="160" y="391.242" width="63.8295" height="12.3826"/>
   <object id="2926" x="256" y="390.758" width="64.0114" height="12.8674"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics">
   <object id="2913" x="320" y="0" width="32" height="544"/>
   <object id="2914" x="128" y="0" width="32" height="544"/>
   <object id="2915" x="160" y="512" width="160" height="32"/>

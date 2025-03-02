@@ -83,7 +83,7 @@
   </object>
   <object id="2754" name="object.eventObject" x="32" y="512" width="63.898" height="8.2841">
    <properties>
-    <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_5"/>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_4"/>
    </properties>
   </object>
   <object id="2755" name="player.startingPosition" x="320.182" y="176">

@@ -148,6 +148,7 @@
 	//*** Legend of Asamnir 2 - Muspelheim - Lava Dungeon
 	//********************************************************
 	config/cutscene/loa2/muspelheim/lava_dungeon/bomb_falling.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/goto_room_5.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

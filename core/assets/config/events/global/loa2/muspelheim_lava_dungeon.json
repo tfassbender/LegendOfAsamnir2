@@ -56,7 +56,179 @@
 	},
 	
 	//*******************************************
-	//*** map entered - room 3
+	//*** pressure switches - room 5
+	//*******************************************
+	
+	loa2_l3_muspelheim_lava_dungeon__room_5__path_blocking_fires__switch_0: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_0,
+		},
+		
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 5,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_5__path_blocking_fires__switch_4: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_4,
+		},
+		
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 5,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_0: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_0,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 1,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_0__activate_fire_delay_0: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_0,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__config_object__reactivate_fire_1_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_1: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_1,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 2,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_1__activate_fire_delay_1: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_1,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__config_object__reactivate_fire_2_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_2: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_2,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 3,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_2__activate_fire_delay_2: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_2,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__config_object__reactivate_fire_3_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_3: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_3,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+            intValue: 4,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_3__activate_fire_delay_3: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_3,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__config_object__reactivate_fire_4_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_3__path_blocking_fires: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_3,
+		},
+		executionType: FIRE_EVENT,
+		executionParameters: {
+            eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+            intValue: 5,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_4: {
+		event: {
+			eventType: STATE_SWITCH_ACTION,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_4,
+		},
+		executionType: OPEN_LOCK,
+		executionParameters: {
+			lockId: loa2_l3_muspelheim_lava_dungeon__room_5__lock,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_4__activate_lock_delay: {
+        event: {
+            eventType: STATE_SWITCH_ACTIVATED,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__pressure_switch_4,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l3_muspelheim_lava_dungeon__config_object__close_lock_after_delay,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_5__close_gate_after_delay: {
+		event: {
+		    eventType: CONFIG_GENERATED_EVENT,
+		    stringValue: loa2_l3_muspelheim_lava_dungeon__room_5__close_gate_after_delay,
+		},
+		executionType: CLOSE_LOCK,
+		executionParameters: {
+			lockId: loa2_l3_muspelheim_lava_dungeon__room_5__lock,
+		}
+	},
+	
+	//*******************************************
+	//*** map entered
 	//*******************************************
 	
 	loa2_l3_muspelheim_lava_dungeon__room_3__open_lock_if_global_value_set: {
@@ -110,17 +282,17 @@
 //            cutsceneId: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room_cutscene,
 //		}
 //	},
-//
-//	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_5: {
-//		event: {
-//			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_5,
-//		}
-//        executionType: START_CUTSCENE,
-//        executionParameters: {
-//            cutsceneId: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_5_cutscene,
-//		}
-//	},
+
+	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_4: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_4,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_4_cutscene,
+		}
+	},
 
 	//***********************
 	//*** room 1
@@ -210,18 +382,18 @@
 		}
 	},
 	
-//	loa2_l3_muspelheim_lava_dungeon_4__goto_muspelheim_lava_dungeon_5: {
-//		event: {
-//			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_l3_muspelheim_lava_dungeon_4__goto_muspelheim_lava_dungeon_5,
-//		}
-//		executionType: CHANGE_MAP,
-//		executionParameters: {
-//			map: loa2_muspelheim_lava_dungeon_5,
-//			startingPointId: 0,
-//		}
-//	},
-//	
+	loa2_l3_muspelheim_lava_dungeon_4__goto_muspelheim_lava_dungeon_5: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_4__goto_muspelheim_lava_dungeon_5,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_5,
+			startingPointId: 0,
+		}
+	},
+	
 //	loa2_l3_muspelheim_lava_dungeon_4__goto_muspelheim_lava_dungeon_6: {
 //		event: {
 //			eventType: EVENT_OBJECT_TOUCHED,
@@ -245,4 +417,20 @@
 //			startingPointId: 1,
 //		}
 //	},
+	
+	//***********************
+	//*** room 5
+	//***********************
+	
+	loa2_l3_muspelheim_lava_dungeon_5__goto_muspelheim_lava_dungeon_4: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_5__goto_muspelheim_lava_dungeon_4,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_4,
+			startingPointId: 2,
+		}
+	},
 }
