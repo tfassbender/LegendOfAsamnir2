@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="28" height="28" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="2927">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="28" height="28" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="2928">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -170,9 +170,9 @@
    </properties>
    <point/>
   </object>
-  <object id="2926" name="object.bomb_big" x="115" y="416">
+  <object id="2927" name="object.spawnPoint.big_bomb" x="114" y="416">
    <properties>
-    <property name="unitId" value="loa2_l3_muspelheim__room_4__bomb_big"/>
+    <property name="spawn" value="l3_muspelheim__room_4__big_bomb"/>
    </properties>
    <point/>
   </object>

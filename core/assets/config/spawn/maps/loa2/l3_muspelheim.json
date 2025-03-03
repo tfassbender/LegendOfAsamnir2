@@ -1,0 +1,23 @@
+{
+	l3_muspelheim__room_4__big_bomb: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_big,
+			}
+		]
+        spawnType: object.bomb_big,
+        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim__room_4__bomb_big\"}",
+	},
+	
+	l3_muspelheim__room_6__big_bomb: {
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT_2,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_big,
+			}
+		]
+        spawnType: object.bomb_big,
+        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__room_6__bomb_big\"}",
+	},
+}

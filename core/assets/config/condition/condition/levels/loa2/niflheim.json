@@ -110,6 +110,7 @@
         conditionType: OBJECT_IN_POSITION,
         parameters: {
         	objectId: loa2_l2_niflheim_bandit_camp__bomb_big,
+			objectCanBeRemoved: true,
 			targetLowerLeftObjectId: loa2_l2_niflheim_bandit_camp__bomb_target_lower_left,
 			targetUpperRightObjectId: loa2_l2_niflheim_bandit_camp__bomb_target_upper_right,
         }

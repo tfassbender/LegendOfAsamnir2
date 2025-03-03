@@ -151,4 +151,30 @@
 			objectCanBeRemoved: true,
         }
 	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_4__bomb_dropped: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_dropped,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_6__gate_opened: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l3_muspelheim_lava_dungeon__room_6__gate_opened,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_6__bomb_positioned: {
+        conditionType: OBJECT_IN_POSITION,
+        parameters: {
+        	objectId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_big,
+			objectCanBeRemoved: true,
+			targetLowerLeftObjectId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_target_lower_left,
+			targetUpperRightObjectId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_target_upper_right,
+        }
+	},
 }

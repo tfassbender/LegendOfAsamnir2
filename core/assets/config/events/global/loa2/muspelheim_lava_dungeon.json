@@ -240,6 +240,43 @@
 		conditionalExecutionId: loa2_l3_muspelheim_lava_dungeon__room_3__open_lock_if_global_value_set,
 	},
 	
+	loa2_l3_muspelheim_lava_dungeon__room_4__setup: {
+		event: {
+			eventType: MAP_ENTERED,
+			stringValue: loa2_muspelheim_lava_dungeon_4,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId:  loa2_l3_muspelheim_lava_dungeon__room_4__setup_cutscene,
+        }
+	},
+	
+	loa2_l3_muspelheim_lava_dungeon__room_6__setup: {
+		event: {
+			eventType: MAP_ENTERED,
+			stringValue: loa2_muspelheim_lava_dungeon_6,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId:  loa2_l3_muspelheim_lava_dungeon__room_6__setup_cutscene,
+        }
+	},
+	
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_l3_muspelheim_lava_dungeon__fire_totem_at_locked_door: {
+		event: {
+			eventType: FIRE_TOTEM_ACTIVATED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon__fire_totem_at_locked_door,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_lava_dungeon__room_6__ignite_bomb_to_open_gate_cutscene,
+        }
+	},
+	
 	//*******************************************
 	//*** change map
 	//*******************************************

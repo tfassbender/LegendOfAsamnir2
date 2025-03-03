@@ -1,0 +1,157 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__room_6__ignite_bomb_to_open_gate_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l3_muspelheim_lava_dungeon__room_6__gate_opened,
+					executedStateName: end,
+				},
+				{
+					conditionId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_positioned,
+					executedStateName: explode_bomb_multiplexer,
+				},
+				{
+					// default case
+					executedStateName: end,
+				},
+			],
+		},
+		
+		explode_bomb_multiplexer: {
+			type: WAIT,
+			executionDelayInSeconds: 1f,
+			
+			executes: [
+			    play_sound_fuse,
+                thorin_take_cover,
+                dissolve_joints,
+                thorin_move,
+                wait_before_explosion,
+			],
+		},
+		
+		play_sound_fuse: {
+            type: PLAY_SOUND,
+			
+            soundEffectName: fuse,
+		},
+		
+		thorin_take_cover: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 0f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Better take cover!",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+        },
+        
+        dissolve_joints: {
+        	// dissolves the joint to the bomb that may be still connected
+        	type: EVENT,
+        	
+        	event: {
+        		eventType: DISSOLVE_DRAGGABLE_OBJECT_JOINTS,
+			},
+        },
+        
+        thorin_move: {
+			type: MOVE,
+        	
+        	executionDelayInSeconds: 0.5f,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			targetPositionRelativeToUnitId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_cover_position,
+			cameraFollowsTarget: true,
+			
+        },
+        
+        wait_before_explosion: {
+        	type: WAIT,
+			executionDelayInSeconds: 4.5f,
+			
+			executes: [
+			    play_sound_explosion,
+			    remove_bomb,
+			    add_explosion_effect,
+                set_global_value_gate_opened,
+			]
+        },
+        
+		play_sound_explosion: {
+            type: PLAY_SOUND,
+			
+            soundEffectName: explosion,
+		},
+		
+		remove_bomb: {
+			type: EVENT,
+			
+			event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_big,
+			},
+		},
+		
+		add_explosion_effect: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT, // makes the spawn point spawn the explosion effect
+            },
+		},
+        
+        set_global_value_gate_opened: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l3_muspelheim_lava_dungeon__room_6__gate_opened, value: true}",
+			},
+			
+			executes: [
+				set_global_value__hide_effect_layer__gate,
+			],
+		},
+		
+		set_global_value__hide_effect_layer__gate: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_l3_muspelheim_lava_dungeon__room_6, value: false}",
+			},
+			
+			executes: [
+				open_locked_object_at_gate,
+			],
+		},
+		
+		open_locked_object_at_gate: {
+			type: EVENT,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_l3_muspelheim_lava_dungeon__room_6__gate,
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

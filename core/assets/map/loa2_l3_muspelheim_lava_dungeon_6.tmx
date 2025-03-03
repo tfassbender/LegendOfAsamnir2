@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="2920">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="2923">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -8,7 +8,7 @@
   <property name="continuous_damage_interval" value="3"/>
   <property name="continuous_damage_prevention_condition" value="common__rune_hagalaz_collected"/>
   <property name="dungeon_level" value="false"/>
-  <property name="effect_layers" value="{&quot;7&quot;: &quot;render_effect_layer__loa2_l3_muspelheim_lava_dungeon__room_6__locked_door&quot;}"/>
+  <property name="effect_layers" value="{&quot;7&quot;: &quot;render_effect_layer__loa2_l3_muspelheim_lava_dungeon__room_6&quot;}"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_dungeon_6.json"/>
   <property name="shadow_layers" value="[6]"/>
  </properties>
@@ -52,7 +52,7 @@
  </layer>
  <layer id="19" name="background_above_player" width="31" height="32" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjILhBxhlIZhJlrBaVllMzEmEPmqB0zIITG9wF2jnExkIPQpGwUgBCnIMDIpArATEykCsIkc/u42AdhkDsQkQmwKxGR3tHgWjYBSMglEw8AAA3UsJrQ==
+   eJxjYBgFhICI7PCxmxTzRu0etXuo2i0MNI8RipkImK0KlGfFgjmp4CZi/XVaBoGpBYi1+y7QzicyEJredtMCjFS7kdM8Iwnpn5ZgMMeFghwDgyIQKwGxMhCryNHPbiOgXcZAbALEpkBsRke7aQkG0u5RMApGwSgYSgAApdoPnA==
   </data>
  </layer>
  <layer id="20" name="terrain_above_player" width="31" height="32" locked="1">
@@ -70,7 +70,7 @@
    eJztzjEBAAAIA6AFsbtVjeExSEACQLOd7wEAQIcD+mYAvA==
   </data>
  </layer>
- <objectgroup id="3" name="objects" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="2897" name="object.eventObject" x="128" y="160" width="31.8977" height="12.2841">
    <properties>
     <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_6__goto_muspelheim_lava_dungeon_4__entry_2"/>
@@ -101,7 +101,7 @@
   </object>
   <object id="2909" name="object.path_blocker" x="463.875" y="410.222">
    <properties>
-    <property name="lockId" value="loa2_l3_muspelheim_dungeon__room_6__locked_door"/>
+    <property name="lockId" value="loa2_l3_muspelheim_lava_dungeon__room_6__gate"/>
     <property name="physicsBodySizeFactorX" value="20f"/>
     <property name="unlockedByEvent" value="true"/>
    </properties>
@@ -156,6 +156,18 @@
    <point/>
   </object>
   <object id="2919" name="enemy.imp" x="454.5" y="528">
+   <point/>
+  </object>
+  <object id="2920" name="object.configObject" x="558" y="498">
+   <properties>
+    <property name="unitId" value="loa2_l3_muspelheim_lava_dungeon__room_6__bomb_cover_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2922" name="object.spawnPoint.big_bomb" x="206" y="369">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__room_6__big_bomb"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

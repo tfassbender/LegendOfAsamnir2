@@ -1,0 +1,39 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__room_4__setup_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_dropped,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: position_bomb
+				},
+			],
+		},
+		
+		position_bomb: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_big
+            },
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

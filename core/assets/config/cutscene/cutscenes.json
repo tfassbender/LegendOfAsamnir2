@@ -149,6 +149,9 @@
 	//********************************************************
 	config/cutscene/loa2/muspelheim/lava_dungeon/bomb_falling.json,
 	config/cutscene/loa2/muspelheim/lava_dungeon/goto_room_5.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/ignite_bomb_to_open_gate.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/setup_room_4.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/setup_room_6.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

@@ -1,0 +1,69 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__room_6__setup_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l3_muspelheim_lava_dungeon__room_6__gate_opened,
+					executedStateName: open_gate
+				},
+				{
+					conditionId: loa2_l3_muspelheim_lava_dungeon__room_4__bomb_dropped,
+					executedStateName: position_bomb
+				},
+				{
+					// default case
+					executedStateName: close_gate
+				},
+			],
+		},
+		
+		open_gate: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_l3_muspelheim_lava_dungeon__room_6, value: false}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		position_bomb: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT_2,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_big
+            },
+            
+            executes: [
+                close_gate,
+			],
+		},
+		
+		close_gate: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_l3_muspelheim_lava_dungeon__room_6, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
