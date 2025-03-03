@@ -158,7 +158,7 @@
   <object id="2919" name="enemy.imp" x="454.5" y="528">
    <point/>
   </object>
-  <object id="2920" name="object.configObject" x="558" y="498">
+  <object id="2920" name="object.configObject" x="558" y="512">
    <properties>
     <property name="unitId" value="loa2_l3_muspelheim_lava_dungeon__room_6__bomb_cover_position"/>
    </properties>

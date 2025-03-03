@@ -309,16 +309,16 @@
 		}
 	},
 
-//	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room: {
-//		event: {
-//			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room,
-//		}
-//        executionType: START_CUTSCENE,
-//        executionParameters: {
-//            cutsceneId: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room_cutscene,
-//		}
-//	},
+	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room_cutscene,
+		}
+	},
 
 	loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_4: {
 		event: {
@@ -498,4 +498,32 @@
 			startingPointId: 1,
 		}
 	},
+
+	//***********************
+	//*** key room
+	//***********************
+	
+	loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_start: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_start,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_start,
+			startingPointId: 1,
+		}
+	},
+	
+//	loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_boss: {
+//		event: {
+//			eventType: EVENT_OBJECT_TOUCHED,
+//			stringValue: loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_boss,
+//		}
+//		executionType: CHANGE_MAP,
+//		executionParameters: {
+//			map: loa2_muspelheim_lava_dungeon_boss,
+//			startingPointId: 0,
+//		}
+//	},
 }

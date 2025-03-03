@@ -73,6 +73,18 @@
 			targetPositionRelativeToUnitId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_cover_position,
 			cameraFollowsTarget: true,
 			
+			executes: [
+			    thorin_turn_arround,
+			],
+        },
+        
+        thorin_turn_arround: {
+			type: MOVE,
+        	
+        	executionDelayInSeconds: 0f,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -0.1, y: 0},
+			cameraFollowsTarget: true,
         },
         
         wait_before_explosion: {

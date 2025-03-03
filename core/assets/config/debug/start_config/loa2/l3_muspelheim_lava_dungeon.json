@@ -3,6 +3,7 @@
 		10: initial,
 		11: switch_in_room_2_activated,
 		12: initial,
+		13: keys,
 	},
 	eventsLists: {
 		initial: {
@@ -20,6 +21,28 @@
 				},
 			]
 		},
+		
+		keys: {
+			subConfigName: initial,
+			events: [
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: key,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: key,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: key,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: key,
+				},
+			]
+	    },
 		
 		final: {
 			subConfigName: initial,

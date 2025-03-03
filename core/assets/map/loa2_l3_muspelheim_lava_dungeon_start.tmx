@@ -123,7 +123,7 @@
   </object>
   <object id="2767" name="object.traverseable" x="225.417" y="387.125" width="28.833" height="14.7503"/>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="2707" x="0" y="0" width="480" height="112.5"/>
   <object id="2708" x="576" y="0" width="256" height="96"/>
   <object id="2709" x="704" y="96" width="128" height="352"/>
