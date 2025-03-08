@@ -5,7 +5,7 @@
 		projectileType: imp_fire,
 		delay: 0.3,
 		duration: 0,
-		damage: 10,
+		damage: 5,
 		pushForce: 35,
 	},
 ]

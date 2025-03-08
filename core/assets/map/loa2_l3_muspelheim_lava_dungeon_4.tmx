@@ -29,7 +29,7 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="28" height="28">
+ <layer id="1" name="background" width="28" height="28" locked="1">
   <data encoding="base64" compression="zlib">
    eJztlN8NgjAQh9HEBYT41L4pb26mjACOoMzgDEYcwBj/bKDoBOoIlkDTS3MHR4ToAw9fAvHar979iisdx63AUxwUe0ZtE/zSNymhDd9J4JwVwxZ8N5GzEeY5I23JN1PMEQLZjC+biw98oSJCWDTg86SZDcc3lt/lyJNmNhzfkcgS9b/tc/nFvAJmP68gP2vwjPl07+yMh8VeVb6oZo507+DZ0pq+OjnyJJ71CPFl746ih9C3zlTmK5uN7aMyYO9TVjsowM7YtC+rS0TOiOGj7ppfw6dzOWX4qLumM035sLt2QdbYPuqupcha2Avdwx3I/r3CR901mGm4diuMB/ZhqX5bIcTAR9VQxFbvXwze4Pv5ZK6hSCSPRwG3vmqfjo5/5APg1t52
   </data>
@@ -177,7 +177,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="2854" x="384" y="0" width="224" height="128"/>
   <object id="2855" x="608" y="0" width="192" height="288"/>
   <object id="2856" x="800" y="0" width="96" height="640"/>

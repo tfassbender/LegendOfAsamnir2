@@ -57,8 +57,8 @@ public class TraverseableObject extends GameObject implements EventListener {
 		y = mapProperties.get("y", Float.class) * Constants.WORLD_TO_SCREEN + height * 0.5f;
 		
 		PhysicsBodyProperties properties = physicsBodyProperties.setX(x).setY(y).setWidth(width).setHeight(height)
-				//change the collision type to OBSTACLE_SENSOR to not interact with projectiles
-				.setCollisionType(PhysicsCollisionType.OBSTACLE_SENSOR);
+				//change the collision type to MAP_UNREACHABLE_AREA to not interact with projectiles but with the player and enemies
+				.setCollisionType(PhysicsCollisionType.MAP_UNREACHABLE_AREA);
 		body = PhysicsBodyCreator.createRectangularBody(properties);
 		body.setUserData(this);
 		

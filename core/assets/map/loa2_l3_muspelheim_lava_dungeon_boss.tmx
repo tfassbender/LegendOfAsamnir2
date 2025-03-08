@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="45" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="3028">
+ <properties>
+  <property name="above_player_layers" value="[4]"/>
+  <property name="background_layers" value="[0, 1, 2, 3]"/>
+  <property name="building_level" value="true"/>
+  <property name="continuous_damage" value="5"/>
+  <property name="continuous_damage_interval" value="3"/>
+  <property name="continuous_damage_prevention_condition" value="common__rune_hagalaz_collected"/>
+  <property name="dungeon_level" value="false"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_dungeon_key.json"/>
+  <property name="shadow_layers" value="[5]"/>
+ </properties>
+ <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
+ <tileset firstgid="491" source="tileset/cave.tsx"/>
+ <tileset firstgid="771" source="tileset/dwarven_caves.tsx"/>
+ <tileset firstgid="1247" source="tileset/town_tileset.tsx"/>
+ <tileset firstgid="2507" source="tileset/cultist_dungeon.tsx"/>
+ <tileset firstgid="2807" source="tileset/forest_prairie_tileset.tsx"/>
+ <tileset firstgid="3374" source="tileset/desert_tileset.tsx"/>
+ <tileset firstgid="3954" source="tileset/medival_house_interior.tsx"/>
+ <tileset firstgid="4467" source="tileset/medival_shop_interior.tsx"/>
+ <tileset firstgid="4847" source="tileset/arctic.tsx"/>
+ <tileset firstgid="5225" source="tileset/medival_warcamp.tsx"/>
+ <tileset firstgid="5945" source="tileset/nightmarescape.tsx"/>
+ <tileset firstgid="6554" source="tileset/magic_wasteland.tsx"/>
+ <tileset firstgid="7058" source="tileset/volcanic_lava.tsx"/>
+ <tileset firstgid="7298" source="tileset/lava_dungeon.tsx"/>
+ <tileset firstgid="7820" source="tileset/shadows.tsx"/>
+ <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
+ <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
+ <layer id="1" name="background" width="31" height="45" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztmNFNwzAQhg0jQB+dt9JZgBGAESgjQEeAzoCaDoCqNgNUVcMIgDpB6Qj8J+XEKdgmF5xUKqn0PdSx/cnWb0tnY/S/08SYMwH9b+vXg2tijUnBFJy07J7DuQDZHtxrOHPwugf3G5zP4OMP7nJuqjAA5+ACXIJ+jTnIS2tIrQ7Kl3RPlOPTYq/IvbA6KF9XGHcNbkTuNLA7tzooX5+CtXJ8LtzvVgfla077BbIid9o52C3XUJUVxm3AsuZ4dvMaNGwE2rG0V+xeleZ6AbdgCO7ArNTmw9WX2+T8y4Cbvt2DBzAqvss2H66+I8/8IfcjeAJjMR+3+XD1Hddwb4tM7Oz3fNtf8uPqu7M6dzk/mkyFxldx/+esde7O3d1r3b12aPdal7V2s9Y07Ka66Kgix8nPzMqzYRRzVX0v4HpxENgjWgvXhDHfIbhenBa5cZ1fcnNNGLMe53oxs/7zS21cE8Z2cw0YcnNNGNvNNWDIzTVhbHf57nC5+T6JnTWuF333Pd8nWeSc8x3A59vllue7ibe+XhLe8ybfug7J/QW+pg/i
+  </data>
+ </layer>
+ <layer id="2" name="background_2" width="31" height="45" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1qkRwDAMRUEXYZhRNa7B/YMUYhAUZuRjtEsE34cqBea8z+4FrFRDO1MbAOAWWf+1jO0WX7tt6Pf4X4BTDPZsBG8=
+  </data>
+ </layer>
+ <layer id="5" name="terrain" width="31" height="45" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJxjYBh6IEQdlaYnKFFHpekNDsgOjL05cqj0KKA92C+LSlMKkNMOIbYYMJ7FgVhCjnS9lAJ0u+kJBtJuDaCdmkCsNYzzmD3Qbw5E+s9ODqJ+KAMdLO7HJkaq2sFu92AAIy2tjYKBAyMtrY2WawMHBltaYwSazwTEzKPtNbqB0TYyfewjNMZAyzEIQmMMAzUGQWtAaIxhdAxiFIwCTAAAJxQhBw==
+  </data>
+ </layer>
+ <layer id="16" name="terrain_2" width="31" height="45" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1qEOgDAMhOECimcgOcdQaOD9X4zOotbQwMT/Jc3O9GZrBqBHg8xGn0k5fbNiOWu3WhTLWbt//72rPa/+Fp9N8d23Du85fa6kPgAAACDD80b+EjcygF7ddWYLHQ==
+  </data>
+ </layer>
+ <layer id="19" name="background_above_player" width="31" height="45" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20ND6AAAAAAAHg3FcwAAQ==
+  </data>
+ </layer>
+ <layer id="18" name="shadows" width="31" height="45" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt2FsKgCAQheFW0v4XEb27h65gt11kD4JIlCMmFf/AeZ3PyAkmVRaFEmYzaZ2sET1iM5m4pbE/Y/v3JiSLZ88RPdaTZ8hVGhsbGxsbGxsbGxsb+wX2aNIEpr85ZyfoNQj3RX8H9MvuhCn/Q0jfS8p9HBs7l22/Acd81xex8x06u9IzVBd5wvxjdpqF39o=
+  </data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="2955" name="player.startingPosition" x="496" y="1270">
+   <properties>
+    <property name="startingPointId" value="0"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2956" name="player.startingPosition" x="496" y="1238">
+   <properties>
+    <property name="startingPointId" value="10"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2975" name="object.eventObject" x="480" y="128" width="31.8977" height="12.2841">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune"/>
+   </properties>
+  </object>
+  <object id="2976" name="object.eventObject" x="448" y="1312" width="96.023" height="8.2841">
+   <properties>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room"/>
+   </properties>
+  </object>
+  <object id="2999" name="object.traverseable" x="192" y="800" width="607.333" height="48.4466"/>
+  <object id="3000" name="object.traverseable" x="192" y="480" width="607.333" height="48.4466"/>
+  <object id="3001" name="object.traverseable" x="288" y="384" width="64.083" height="575.78"/>
+  <object id="3002" name="object.traverseable" x="640" y="384" width="64.083" height="575.78"/>
+  <object id="3003" name="object.hookshot_target" x="399" y="914">
+   <point/>
+  </object>
+  <object id="3004" name="object.hookshot_target" x="591" y="914">
+   <point/>
+  </object>
+  <object id="3005" name="object.hookshot_target" x="751" y="914">
+   <point/>
+  </object>
+  <object id="3006" name="object.hookshot_target" x="239" y="914">
+   <point/>
+  </object>
+  <object id="3007" name="object.hookshot_target" x="239" y="754">
+   <point/>
+  </object>
+  <object id="3008" name="object.hookshot_target" x="751" y="754">
+   <point/>
+  </object>
+  <object id="3009" name="object.hookshot_target" x="399" y="754">
+   <point/>
+  </object>
+  <object id="3010" name="object.hookshot_target" x="591" y="754">
+   <point/>
+  </object>
+  <object id="3011" name="object.hookshot_target" x="399" y="594">
+   <point/>
+  </object>
+  <object id="3012" name="object.hookshot_target" x="591" y="594">
+   <point/>
+  </object>
+  <object id="3013" name="object.hookshot_target" x="239" y="434">
+   <point/>
+  </object>
+  <object id="3014" name="object.hookshot_target" x="751" y="434">
+   <point/>
+  </object>
+  <object id="3015" name="object.hookshot_target" x="399" y="434">
+   <point/>
+  </object>
+  <object id="3016" name="object.hookshot_target" x="591" y="434">
+   <point/>
+  </object>
+  <object id="3017" name="object.hookshot_target" x="241" y="593">
+   <point/>
+  </object>
+  <object id="3018" name="object.hookshot_target" x="753" y="593">
+   <point/>
+  </object>
+  <object id="3025" name="enemy.ifrit" x="496" y="593">
+   <properties>
+    <property name="enemyDefeatedEventText" value="loa2_l2_muspelheim_lava_dungeon__boss_ifrit__defeated"/>
+    <property name="unitId" value="loa2_l2_muspelheim_lava_dungeon__boss_ifrit"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3026" name="object.eventObject" x="352" y="768" width="287.667" height="5">
+   <properties>
+    <property name="eventParameter" value="loa2_l2_muspelheim_lava_dungeon__enter_boss_room"/>
+   </properties>
+  </object>
+  <object id="3027" name="object.eventObject" x="448" y="1184" width="96" height="4.5">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="physics" locked="1">
+  <object id="2957" x="32" y="32" width="416" height="320"/>
+  <object id="2958" x="544" y="32" width="416" height="320"/>
+  <object id="2959" x="0" y="32" width="32" height="1042"/>
+  <object id="2960" x="960" y="32" width="32" height="1043"/>
+  <object id="2961" x="608" y="1074" width="384" height="206"/>
+  <object id="2962" x="672" y="1280" width="320" height="160"/>
+  <object id="2963" x="608" y="1312" width="64" height="128"/>
+  <object id="2965" x="0" y="1074" width="384" height="206"/>
+  <object id="2967" x="0" y="1280" width="320" height="160"/>
+  <object id="2968" x="320" y="1312" width="64" height="128"/>
+  <object id="2969" x="448" y="32" width="96" height="96"/>
+  <object id="2970" x="447.75" y="128" width="32" height="18.4545"/>
+  <object id="2971" x="511.75" y="128" width="32" height="18.7273"/>
+  <object id="2972" x="479.75" y="128.5">
+   <polygon points="0,0 0,18.5455 8.18182,-0.0909091"/>
+  </object>
+  <object id="2973" x="511.75" y="128.5">
+   <polygon points="0,0 0,18.7273 -8.36364,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
+  <object id="2977" x="384" y="1105" width="64" height="335"/>
+  <object id="2978" x="544" y="1103.67" width="64" height="336.333"/>
+  <object id="2980" x="416" y="1440" width="160" height="32"/>
+  <object id="2981" x="32" y="960" width="448" height="96"/>
+  <object id="2982" x="512" y="960" width="448" height="96"/>
+  <object id="2983" x="32" y="352" width="448" height="32"/>
+  <object id="2984" x="512" y="352" width="448" height="32"/>
+  <object id="2985" x="512" y="256" width="32" height="96"/>
+  <object id="2986" x="448" y="256" width="32" height="96"/>
+  <object id="2987" x="32" y="384" width="160" height="576"/>
+  <object id="2988" x="800" y="384" width="160" height="576"/>
+  <object id="2989" x="384" y="1056" width="96" height="48.3333"/>
+  <object id="2990" x="512" y="1056" width="96" height="47.3333"/>
+  <object id="2991" x="475.818" y="944.364" width="6.72727" height="15.4545"/>
+  <object id="2992" x="509.636" y="944.727" width="6.90909" height="14.9091"/>
+  <object id="2993" x="475.455" y="1104.55" width="7.45455" height="22.9091"/>
+  <object id="2994" x="509.273" y="1103.45" width="7.09091" height="24"/>
+  <object id="2995" x="476.375" y="376.375" width="6.5" height="15.125"/>
+  <object id="2996" x="508.875" y="376.375" width="7.25" height="15.25"/>
+  <object id="2997" x="475.875" y="239.875" width="7.125" height="16"/>
+  <object id="2998" x="509" y="239.875" width="7.25" height="16.125"/>
+  <object id="3021" x="527.75" y="227.75">
+   <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
+  </object>
+  <object id="3022" x="464" y="227.25">
+   <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
+  </object>
+  <object id="3023" x="454.625" y="1104.25" width="18" height="38.625"/>
+  <object id="3024" x="519.375" y="1103.5" width="19.125" height="39"/>
+ </objectgroup>
+ <objectgroup id="6" name="ground_physics" locked="1"/>
+</map>

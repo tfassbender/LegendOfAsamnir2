@@ -15,6 +15,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.FrostGiant;
 import net.jfabricationgames.gdx.character.enemy.implementation.Gargoyle;
 import net.jfabricationgames.gdx.character.enemy.implementation.GiantGolem;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
+import net.jfabricationgames.gdx.character.enemy.implementation.Ifrit;
 import net.jfabricationgames.gdx.character.enemy.implementation.Minotaur;
 import net.jfabricationgames.gdx.character.enemy.implementation.Ogre;
 import net.jfabricationgames.gdx.character.enemy.implementation.Phoenixling;
@@ -44,6 +45,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_GIANT_GOLEM = "giant_golem";
 	private static final String ENEMY_NAME_BUGBEAR = "bugbear";
 	private static final String ENEMY_NAME_FROST_GIANT = "frost_giant";
+	private static final String ENEMY_NAME_IFRIT = "ifrit";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -121,6 +123,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_PHOENIXLING:
 				enemy = new Phoenixling(typeConfig, properties);
+				break;
+			case ENEMY_NAME_IFRIT:
+				enemy = new Ifrit(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

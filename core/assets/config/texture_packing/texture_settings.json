@@ -53,6 +53,7 @@
 				raw_images/restricted/projectiles/frost_giant_axe,
 				raw_images/restricted/effects/kobold_pyromancer_fire,
 				raw_images/restricted/effects/fire_elemental_blast,
+				raw_images/restricted/effects/ifrit_fire_ball,
 				
 				//##############################################################
 				//### objects
@@ -414,6 +415,16 @@
 				raw_images/restricted/enemy/hell_critter/hell_critter_attack,
 				raw_images/restricted/enemy/hell_critter/hell_critter_damage,
 				raw_images/restricted/enemy/hell_critter/hell_critter_death,
+				
+				// ifrit
+				raw_images/restricted/enemy/ifrit/ifrit_idle,
+				raw_images/restricted/enemy/ifrit/ifrit_move,
+				raw_images/restricted/enemy/ifrit/ifrit_attack_sword,
+				raw_images/restricted/enemy/ifrit/ifrit_throw_fire_ball,
+				raw_images/restricted/enemy/ifrit/ifrit_charge,
+				raw_images/restricted/enemy/ifrit/ifrit_laugh,
+				raw_images/restricted/enemy/ifrit/ifrit_damage,
+				raw_images/restricted/enemy/ifrit/ifrit_death,
 				
 				//##############################################################
 				//### NPCs

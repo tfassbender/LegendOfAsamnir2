@@ -1144,4 +1144,32 @@
 			coin: 0.4,
 		}
 	},
+	
+	ifrit: {
+		typeName: ifrit,
+		
+		animationsConfig: config/animation/enemy/ifrit.json,
+		stateConfig: config/enemy/states/ifrit.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/ifrit.json,
+		
+		health: 100,
+		movingSpeed: 1.5f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.3f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1.3f,
+		bodyHeight: 1.7f,
+		
+		addSensor: true,
+		sensorRadius: 8f,
+		
+		pushForceDamage: 20,
+		pushForceHit: 80,
+		
+		isBoss: true
+		bossName: "Surtur - Maroduer of the nine worlds",
+	},
 }

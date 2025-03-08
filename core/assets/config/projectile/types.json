@@ -337,4 +337,19 @@
 		hitFixtureRadius: 1.5f,
 		flipAnimationToAttackDirection: true,
 	},
+	
+	ifrit_fire_ball: {
+		attackType: FIREBALL,
+		
+		animation: ifrit_fire_ball,
+		removeAfterAnimationFinished: false,
+		textureScale: 0.05,
+		textureScaleGrowing: true,
+		rotateTextureToMovementDirection: true,
+		
+		range: 30,
+		removeAfterRangeExceeded: false,
+		speed: 75,
+		dampingAfterObjectHit: 15,
+	},
 }

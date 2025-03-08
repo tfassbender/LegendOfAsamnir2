@@ -1,0 +1,80 @@
+[
+	{
+		id: idle,
+		animation: ifrit_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_sword, attack_throw_fire_ball, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: ifrit_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_sword, attack_throw_fire_ball, damage, die
+		]
+	},
+	{
+		id: attack_sword,
+		animation: ifrit_attack_sword,
+		attack: attack_sword,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    damage, die
+		]
+	},
+	{
+		id: attack_throw_fire_ball,
+		animation: ifrit_throw_fire_ball,
+		attack: attack_fire_ball,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    damage, die
+		]
+	},
+	{
+		id: charge,
+		animation: ifrit_charge,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_sword, attack_throw_fire_ball, damage, die
+		]
+	},
+	{
+		id: laugh,
+		animation: ifrit_laugh,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_sword, attack_throw_fire_ball, damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: ifrit_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: ifrit_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		stateEnteringSound: flesh_hit_1,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

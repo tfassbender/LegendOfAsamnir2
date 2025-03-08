@@ -39,7 +39,7 @@
    eJxjYBgFo2AUjILBB57IDA4zRsEoGAWjYBQMPwAAj3wCAQ==
   </data>
  </layer>
- <layer id="5" name="terrain" width="32" height="22">
+ <layer id="5" name="terrain" width="32" height="22" locked="1">
   <data encoding="base64" compression="zlib">
    eJztkjEOwjAMRX2RZO1lOnbuCRg6MHXq1HPlMpwhKwIR1f5Ngl1EpAr+Yin69rMdExHdHD2VYk01jyWfe//8c/CD2zzByfeUH97UOPP8Vv7Qydiaf+1kbM0veSa/58/wdvEyjq8Ymaf3snYEPtYosSzzJ83AXnzeh6rtH/v/hmKF31LIx7+0alTmJ05u/pXVmDL1tH+s6e3T/fN9rca+Frh/fnfYK965RpqcI7eON6LhYE7pD7nvyMwP4e6s/9JKudv+Vd0BkOlmWQ==
   </data>
@@ -59,7 +59,7 @@
    eJw7KcfAcHIA8UsgvouGXxChhhAmxgyQmr1AvB+IkcETNL1P0eSJAYTM2Abkbxm1H6v9z9Di6TkZ9hMyA5/99ACj9o/aP2r/qP2j9o/aP5D2PwTiOwOEH8gRbh/SGgMArcTbIw==
   </data>
  </layer>
- <objectgroup id="3" name="objects" visible="0">
+ <objectgroup id="3" name="objects">
   <object id="2946" name="object.key_wall" x="416" y="368">
    <properties>
     <property name="physicsBodySizeFactorY" value="1.3f"/>
@@ -107,7 +107,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics" visible="0" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="2929" x="160" y="288" width="63.75" height="18.4545"/>
   <object id="2930" x="255.75" y="288" width="64.25" height="18.7273"/>
   <object id="2931" x="223.75" y="288.5">
@@ -127,7 +127,7 @@
   </object>
   <object id="2938" x="704" y="192" width="160" height="96"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" visible="0" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="2939" x="320" y="64" width="384" height="272.667"/>
   <object id="2940" x="128" y="192" width="32" height="256"/>
   <object id="2941" x="160" y="416" width="160" height="32"/>
@@ -135,5 +135,5 @@
   <object id="2944" x="704" y="416" width="160" height="32"/>
   <object id="2945" x="864" y="192" width="32" height="256.667"/>
  </objectgroup>
- <objectgroup id="6" name="ground_physics" visible="0" locked="1"/>
+ <objectgroup id="6" name="ground_physics" locked="1"/>
 </map>
