@@ -47,11 +47,7 @@ public class Phoenixling extends Enemy {
 	}
 	
 	private boolean isPlayerNear() {
-		return playerToPushAway != null; // the player is in sensor range
-	}
-	
-	protected void pushAwayPlayer() {
-		// override to do nothing - the player must not be pushed away, but this is the easiest way to recognize the player is near
+		return nearPlayer != null; // the player is in sensor range
 	}
 	
 	@Override

@@ -1091,9 +1091,6 @@
 		initialState: idle,
 		attackConfig: config/enemy/attack/empty.json,
 		
-		// the push method in the enemy implementation is overwritten to do nothing - this is just the easiest way to recognize the player is near
-		useSensorAsForceField: true, 
-		
 		health: 15,
 		movingSpeed: 1f,
 		

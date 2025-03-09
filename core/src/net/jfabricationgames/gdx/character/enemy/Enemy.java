@@ -61,7 +61,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	private EnemyCharacterMap gameMap;
 	private Runnable onRemoveFromMap;
 	
-	protected PlayableCharacter playerToPushAway; // push away by the sensor force field (if configured)
+	protected PlayableCharacter nearPlayer; // will be set if the player is in reach of the enemy's sensor (set to null if not)
 	
 	public Enemy(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(properties);
@@ -367,41 +367,37 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	public void beginContact(Contact contact) {
 		super.beginContact(contact);
 		attackHandler.handleAttackDamage(contact);
-		if (typeConfig.useSensorAsForceField) {
-			findPlayerToPushAway(contact);
-		}
+		findNearPlayer(contact);
 	}
 	
 	@Override
 	public void endContact(Contact contact) {
 		super.endContact(contact);
-		if (typeConfig.useSensorAsForceField) {
-			endPushingPlayer(contact);
-		}
+		looseNearPlayer(contact);
 	}
 	
-	private void findPlayerToPushAway(Contact contact) {
+	private void findNearPlayer(Contact contact) {
 		PlayableCharacter player = CollisionUtil.getObjectCollidingWith(this, PhysicsCollisionType.ENEMY_SENSOR, contact, PlayableCharacter.class);
 		if (player != null) {
-			playerToPushAway = player;
+			nearPlayer = player;
 		}
 	}
 	
-	private void endPushingPlayer(Contact contact) {
+	private void looseNearPlayer(Contact contact) {
 		PlayableCharacter player = CollisionUtil.getObjectCollidingWith(this, PhysicsCollisionType.ENEMY_SENSOR, contact, PlayableCharacter.class);
 		// the collision type is checked too, because the player attack also has the player as user data
 		PhysicsCollisionType collisionType = CollisionUtil.getCollisionTypeOfObjectCollidingWith(this, PhysicsCollisionType.ENEMY_SENSOR, contact);
 		
-		if (player == playerToPushAway && collisionType == PhysicsCollisionType.PLAYER) {
-			playerToPushAway = null;
+		if (player == nearPlayer && collisionType == PhysicsCollisionType.PLAYER) {
+			nearPlayer = null;
 		}
 	}
 	
 	protected void pushAwayPlayer() {
-		if (playerToPushAway != null) {
+		if (nearPlayer != null && typeConfig.useSensorAsForceField) {
 			float force = 8f; // just enough to push the player away if he's running into the enemy
 			float forceWhenBlocked = typeConfig.ignoreForceFieldWhenBlocking ? 0 : force;
-			playerToPushAway.pushByHit(getPosition(), force, forceWhenBlocked, false);
+			nearPlayer.pushByHit(getPosition(), force, forceWhenBlocked, false);
 		}
 	}
 	

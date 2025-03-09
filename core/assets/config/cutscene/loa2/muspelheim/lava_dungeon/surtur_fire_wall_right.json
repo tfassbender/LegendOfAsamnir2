@@ -35,6 +35,8 @@
 		},
 		
 		move_thorin: {
+			executionDelayInSeconds: 1f,
+			
 			type: MOVE,
 			controlledUnitId: PLAYER,
 			controlledUnitTarget: {x: 0, y: 0},
@@ -62,7 +64,20 @@
             controlledUnitState: ignite_fire_wall,
             
             executes: [
+            	fire_wall_multiplexer,
+            ],
+		},
+		
+		fire_wall_multiplexer: {
+			type: WAIT,
+            executionDelayInSeconds: 0.5f,
+            
+            executes: [
             	ignite_fire_wall,
+            	put_out_outer_fire_wall_left,
+            	put_out_outer_fire_wall_right,
+                put_out_outer_fire_wall_up,
+                put_out_outer_fire_wall_down,
             ],
 		},
 		
@@ -75,10 +90,50 @@
                 eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
                 intValue: 2,
             },
+		},
+		
+		put_out_outer_fire_wall_left: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
             
-            executes: [
-            	surtur_change_state__laugh,
-            ],
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 5,
+            },
+		},
+		
+		put_out_outer_fire_wall_right: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 6,
+            },
+		},
+		
+		put_out_outer_fire_wall_up: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 7,
+            },
+		},
+		
+		put_out_outer_fire_wall_down: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 8,
+            },
 		},
 		
 		surtur_change_state__laugh: {

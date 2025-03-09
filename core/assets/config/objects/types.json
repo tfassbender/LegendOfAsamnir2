@@ -659,6 +659,7 @@
         texture: empty,
         animationSolid: fire,
         
+        collisionType: MAP_OBJECT,
         initiallySolid: false,
         
         animationSolidOffsetX: 0f,

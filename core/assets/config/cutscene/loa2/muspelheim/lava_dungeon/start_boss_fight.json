@@ -77,7 +77,145 @@
 			
 			executionParameters: {
 				displayTextHeader: "Thorin",
-				displayText: "I'm searching for a rune to open the gate to the castle of a strange chaos wizard guy.\n                        \nHave you got one?    ",
+				displayText: "Hey, you! I'm searching for a rune to open the gate to the castle of a strange chaos wizard guy.\n                        \nHave you got one?    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				surtur_2,
+			],
+        },
+        
+		surtur_2: {
+            executionDelayInSeconds: 1.5f,
+			
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Surtur",
+                colorHeader: #a11902,
+				displayText: "...                \nA rune?! ... To find a chaos wizard?! ...\n                           \nWhat are you even talking about?!    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				surtur_3,
+			],
+		},
+        
+		surtur_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Surtur",
+                colorHeader: #a11902,
+				displayText: "Are you telling me you traversed through the lava dungeons of muspelheim and defeated my minions just to ask me for a rune?  ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				surtur_4,
+			],
+		},
+        
+		surtur_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Surtur",
+                colorHeader: #a11902,
+				displayText: "Didn't the Aesirs grant you some sense when they created your kind?   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_2,
+			],
+		},
+        
+		thorin_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 0f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "This damn chaos wizard guy has stolen my axe and I want it back!\nI don't care what dungeons I have to conquer or what minions I have to defeat to get it back!    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_3,
+			],
+		},
+        
+		thorin_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 0f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "So tell me: Will you give me the rune I'm searching for or do I have to defeat you and take it by force?    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				surtur_change_state__laugh,
+			],
+		},
+		
+		surtur_change_state__laugh: {
+            executionDelayInSeconds: 0.5f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitState: laugh,
+            
+            executes: [
+            	surtur_5,
+            ],
+		},
+        
+		surtur_5: {
+            executionDelayInSeconds: 1f,
+            
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Surtur",
+                colorHeader: #a11902,
+				displayText: "You're either very brave or very stupid, mortal.             \nBut since you made it this far, I'll grant you the honor of getting killed by me personally!   ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				surtur_6,
+			],
+		},
+        
+		surtur_6: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Surtur",
+                colorHeader: #a11902,
+				displayText: "Prepare to die!!!   ",
 				showNextPageIcon: true,
 			}
 			
@@ -86,12 +224,10 @@
 			executes: [
 				surtur_change_state__ignite_fire_wall,
 			],
-        },
-        
-        // TODO some more dialogues
+		},
 		
 		surtur_change_state__ignite_fire_wall: {
-            executionDelayInSeconds: 2f,
+            executionDelayInSeconds: 1f,
 			
             type: CHANGE_STATE,
             
@@ -99,17 +235,26 @@
             controlledUnitState: ignite_fire_wall,
             
             executes: [
-            	ignite_fire_wall_left,
-            	ignite_fire_wall_right,
-            	ignite_fire_wall_up,
-            	ignite_fire_wall_down,
+            	ignite_fire_wall_multiplexer,
             	start_boss_fight,
             ],
 		},
 		
+		ignite_fire_wall_multiplexer: {
+            executionDelayInSeconds: 0.5f,
+            
+            type: WAIT,
+            
+            executes: [
+            	ignite_fire_wall_left,
+            	ignite_fire_wall_right,
+            	ignite_fire_wall_up,
+            	ignite_fire_wall_down,
+            	stop_fire_walls_on_outer_ring,
+			],
+		},
+		
 		ignite_fire_wall_left: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {
@@ -119,8 +264,6 @@
 		},
 		
 		ignite_fire_wall_right: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {
@@ -130,8 +273,6 @@
 		},
 		
 		ignite_fire_wall_up: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {
@@ -141,8 +282,6 @@
 		},
 		
 		ignite_fire_wall_down: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {
@@ -151,9 +290,16 @@
             },
 		},
 		
+		stop_fire_walls_on_outer_ring: {
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 9,
+            },
+		},
+		
 		start_boss_fight: {
-			executionDelayInSeconds: 2f,
-			
 			type: EVENT,
 			
 			event: {

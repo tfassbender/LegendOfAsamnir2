@@ -6,6 +6,7 @@ import com.badlogic.gdx.maps.MapProperties;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -21,6 +22,8 @@ import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
  * An object that changes it's body to a sensor and back by (configurable) events, so that the player may walk through it.
  */
 public class TraverseableObject extends GameObject implements EventListener {
+	
+	private static final String MAP_PROPERTY_INITIALLY_SOLID = "initiallySolid";
 	
 	private AnimationDirector<TextureRegion> animationTraverseable;
 	private AnimationDirector<TextureRegion> animationSolid;
@@ -56,18 +59,39 @@ public class TraverseableObject extends GameObject implements EventListener {
 		x = mapProperties.get("x", Float.class) * Constants.WORLD_TO_SCREEN + width * 0.5f;
 		y = mapProperties.get("y", Float.class) * Constants.WORLD_TO_SCREEN + height * 0.5f;
 		
-		PhysicsBodyProperties properties = physicsBodyProperties.setX(x).setY(y).setWidth(width).setHeight(height)
-				//change the collision type to MAP_UNREACHABLE_AREA to not interact with projectiles but with the player and enemies
-				.setCollisionType(PhysicsCollisionType.MAP_UNREACHABLE_AREA);
+		PhysicsBodyProperties properties = physicsBodyProperties //
+				.setX(x) //
+				.setY(y) //
+				.setWidth(width) //
+				.setHeight(height) //
+				.setCollisionType(getCollisionType());
+		
 		body = PhysicsBodyCreator.createRectangularBody(properties);
 		body.setUserData(this);
 		
 		centerSpriteAndAnimationOnObject(x, y);
 		
-		if (!typeConfig.initiallySolid) {
+		if (!isInitiallySolid()) {
 			changeBodyToSensor();
 			animation = animationTraverseable;
 		}
+	}
+	
+	private PhysicsCollisionType getCollisionType() {
+		if (typeConfig.collisionType != null) {
+			return typeConfig.collisionType;
+		}
+		
+		// the default collision type is MAP_UNREACHABLE_AREA, so the object does not interact with projectiles but with the player and enemies
+		return PhysicsCollisionType.MAP_UNREACHABLE_AREA;
+	}
+	
+	private boolean isInitiallySolid() {
+		if (mapProperties.containsKey(MAP_PROPERTY_INITIALLY_SOLID)) {
+			return Boolean.parseBoolean(mapProperties.get(MAP_PROPERTY_INITIALLY_SOLID, "false", String.class));
+		}
+		
+		return typeConfig.initiallySolid;
 	}
 	
 	private void centerSpriteAndAnimationOnObject(float x, float y) {
@@ -105,6 +129,12 @@ public class TraverseableObject extends GameObject implements EventListener {
 			changeBodyToNonSensor();
 			animation = animationSolid;
 		}
+	}
+	
+	@Override
+	public void takeDamage(float damage, AttackType attackType) {
+		// overwritten to prevent changing the animation to a hit animation
+		playHitSound();
 	}
 	
 	@Override
