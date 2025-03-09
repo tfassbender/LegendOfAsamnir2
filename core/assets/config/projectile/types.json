@@ -352,4 +352,17 @@
 		speed: 75,
 		dampingAfterObjectHit: 15,
 	},
+	
+	fire_soil: {
+        attackType: ANIMATED_HIT,
+        
+        animation: medium_fire_effect,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+        
+        speed: 0,
+        damping: 0,
+		hitFixtureRadius: 0.5f,
+		flipAnimationToAttackDirection: true,
+	},
 }

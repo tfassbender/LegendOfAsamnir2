@@ -1,0 +1,182 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__start_boss_fight_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+	    	startsWithCutscene: true,
+	    	
+            type: WAIT,
+            executionDelayInSeconds: 0f,
+            
+            executes: [
+                surtur_move_to_position,
+				move_camera,
+				move_thorin,
+			],
+		},
+		
+		surtur_move_to_position: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitTarget: {x: 0, y: 0},
+            targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__surtur_up_position,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	surtur_turn_arround,
+			],
+		},
+		
+		surtur_turn_arround: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitTarget: {x: 0, y: 0.1},
+            cameraFollowsTarget: false,
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__center_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 3f,
+		},
+		
+		move_thorin: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			cameraFollowsTarget: false,
+			targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__center_position,
+			
+            executes: [
+            	surtur_1,
+			],
+		},
+		
+		surtur_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Surtur",
+                colorHeader: #a11902,
+				displayText: "Stop right there, mortal!\n                    \nHow dare you enter my kingdom?!    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_1,
+			],
+		},
+		
+		thorin_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 0f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'm searching for a rune to open the gate to the castle of a strange chaos wizard guy.\n                        \nHave you got one?    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				surtur_change_state__ignite_fire_wall,
+			],
+        },
+        
+        // TODO some more dialogues
+		
+		surtur_change_state__ignite_fire_wall: {
+            executionDelayInSeconds: 2f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitState: ignite_fire_wall,
+            
+            executes: [
+            	ignite_fire_wall_left,
+            	ignite_fire_wall_right,
+            	ignite_fire_wall_up,
+            	ignite_fire_wall_down,
+            	start_boss_fight,
+            ],
+		},
+		
+		ignite_fire_wall_left: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 5,
+            },
+		},
+		
+		ignite_fire_wall_right: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 6,
+            },
+		},
+		
+		ignite_fire_wall_up: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 7,
+            },
+		},
+		
+		ignite_fire_wall_down: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 8,
+            },
+		},
+		
+		start_boss_fight: {
+			executionDelayInSeconds: 2f,
+			
+			type: EVENT,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+            executes: [
+            	wait_after_boss_fight_started,
+            ],
+		}
+		
+		wait_after_boss_fight_started: {
+            type: WAIT,
+            executionDelayInSeconds: 3f,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

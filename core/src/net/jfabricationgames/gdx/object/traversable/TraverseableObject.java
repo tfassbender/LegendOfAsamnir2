@@ -63,6 +63,11 @@ public class TraverseableObject extends GameObject implements EventListener {
 		body.setUserData(this);
 		
 		centerSpriteAndAnimationOnObject(x, y);
+		
+		if (!typeConfig.initiallySolid) {
+			changeBodyToSensor();
+			animation = animationTraverseable;
+		}
 	}
 	
 	private void centerSpriteAndAnimationOnObject(float x, float y) {

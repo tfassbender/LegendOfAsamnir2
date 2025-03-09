@@ -153,6 +153,11 @@
 	config/cutscene/loa2/muspelheim/lava_dungeon/ignite_bomb_to_open_gate.json,
 	config/cutscene/loa2/muspelheim/lava_dungeon/setup_room_4.json,
 	config/cutscene/loa2/muspelheim/lava_dungeon/setup_room_6.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/start_boss_fight.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/surtur_fire_wall_up.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/surtur_fire_wall_down.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/surtur_fire_wall_left.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/surtur_fire_wall_right.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

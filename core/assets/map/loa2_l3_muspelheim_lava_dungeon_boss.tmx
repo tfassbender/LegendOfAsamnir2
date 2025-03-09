@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="45" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="3028">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="45" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="3114">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -41,7 +41,7 @@
  </layer>
  <layer id="5" name="terrain" width="31" height="45" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBh6IEQdlaYnKFFHpekNDsgOjL05cqj0KKA92C+LSlMKkNMOIbYYMJ7FgVhCjnS9lAJ0u+kJBtJuDaCdmkCsNYzzmD3Qbw5E+s9ODqJ+KAMdLO7HJkaq2sFu92AAIy2tjYKBAyMtrY2WawMHBltaYwSazwTEzKPtNbqB0TYyfewjNMZAyzEIQmMMAzUGQWtAaIxhdAxiFIwCTAAAJxQhBw==
+   eJxjYBh6IEQdlaYnKFFHpekNDsgOjL05cqj0KKA92C+LSlMKkNMOIbYYMJ7FgVhCjnS9lAJ0u+kJBtJuDaCdmkCsNYzzmD3Qbw5o/utTRKVhwE4Oon4oAx0s7scmRqrawW73YADY0houMBzS2igYODDS0tpouTZwYLDVoYxA85mAmHm0vUY3MNpGpo99hMYYaDkGQWiMYaDGIGgNCI0xjI5BjIJRgAkA91kjww==
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="31" height="45" locked="1">
@@ -136,20 +136,415 @@
   </object>
   <object id="3025" name="enemy.ifrit" x="496" y="593">
    <properties>
-    <property name="enemyDefeatedEventText" value="loa2_l2_muspelheim_lava_dungeon__boss_ifrit__defeated"/>
-    <property name="unitId" value="loa2_l2_muspelheim_lava_dungeon__boss_ifrit"/>
+    <property name="enemyDefeatedEventText" value="loa2_l2_muspelheim_lava_dungeon__surtur__defeated"/>
+    <property name="unitId" value="loa2_l2_muspelheim_lava_dungeon__surtur"/>
    </properties>
    <point/>
   </object>
   <object id="3026" name="object.eventObject" x="352" y="768" width="287.667" height="5">
    <properties>
     <property name="eventParameter" value="loa2_l2_muspelheim_lava_dungeon__enter_boss_room"/>
+    <property name="singleExecution" value="true"/>
    </properties>
   </object>
   <object id="3027" name="object.eventObject" x="448" y="1184" width="96" height="4.5">
    <properties>
     <property name="booleanParameter" value="true"/>
     <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="3028" name="object.spawnPoint.arrow" x="464.5" y="912.591">
+   <properties>
+    <property name="spawn" value="playerAmmoArrowBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3029" name="object.spawnPoint.mana" x="528.519" y="912.549">
+   <properties>
+    <property name="spawn" value="playerManaBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3030" name="object.spawnPoint.arrow" x="464.472" y="432.519">
+   <properties>
+    <property name="spawn" value="playerAmmoArrowBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3031" name="object.spawnPoint.mana" x="528.491" y="432.477">
+   <properties>
+    <property name="spawn" value="playerManaBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3032" name="object.fire_without_smoke" x="551" y="544" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3033" name="object.fire_without_smoke" x="551" y="576" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3034" name="object.fire_without_smoke" x="551" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3035" name="object.fire_without_smoke" x="551" y="640" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3036" name="object.fire_without_smoke" x="551" y="672" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3037" name="object.fire_without_smoke" x="551" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3038" name="object.fire_without_smoke" x="551" y="736" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3039" name="object.fire_without_smoke" x="423" y="544" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3040" name="object.fire_without_smoke" x="423" y="576" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3041" name="object.fire_without_smoke" x="423" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3042" name="object.fire_without_smoke" x="423" y="640" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3043" name="object.fire_without_smoke" x="423" y="672" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3044" name="object.fire_without_smoke" x="423" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3045" name="object.fire_without_smoke" x="423" y="736" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3046" name="object.fire_without_smoke" x="359" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3047" name="object.fire_without_smoke" x="391" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3048" name="object.fire_without_smoke" x="455" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3049" name="object.fire_without_smoke" x="487" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3050" name="object.fire_without_smoke" x="519" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3051" name="object.fire_without_smoke" x="583" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3052" name="object.fire_without_smoke" x="615" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="3"/>
+   </properties>
+  </object>
+  <object id="3053" name="object.fire_without_smoke" x="359" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3054" name="object.fire_without_smoke" x="391" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3055" name="object.fire_without_smoke" x="455" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3056" name="object.fire_without_smoke" x="487" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3057" name="object.fire_without_smoke" x="519" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3058" name="object.fire_without_smoke" x="583" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3059" name="object.fire_without_smoke" x="615" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="3060" name="object.fire_without_smoke" x="423" y="768" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3061" name="object.fire_without_smoke" x="551" y="768" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3062" name="object.fire_without_smoke" x="423" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3063" name="object.fire_without_smoke" x="551" y="608" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3064" name="object.fire_without_smoke" x="551" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="3065" name="object.fire_without_smoke" x="423" y="704" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="3066" name="object.configObject" x="496" y="576">
+   <properties>
+    <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_up_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3067" name="object.configObject" x="496" y="768">
+   <properties>
+    <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_down_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3068" name="object.configObject" x="384" y="672">
+   <properties>
+    <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_left_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3069" name="object.configObject" x="608" y="672">
+   <properties>
+    <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_right_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3070" name="object.configObject" x="496" y="672">
+   <properties>
+    <property name="unitId" value="cutscene_object__muspelheim_boss_room__center_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3071" name="object.fire_without_smoke" x="359" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3072" name="object.fire_without_smoke" x="391" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3073" name="object.fire_without_smoke" x="455" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3074" name="object.fire_without_smoke" x="487" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3075" name="object.fire_without_smoke" x="519" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3076" name="object.fire_without_smoke" x="583" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3077" name="object.fire_without_smoke" x="615" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3078" name="object.fire_without_smoke" x="423" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3079" name="object.fire_without_smoke" x="551" y="524" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="7"/>
+   </properties>
+  </object>
+  <object id="3080" name="object.fire_without_smoke" x="352" y="529" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3081" name="object.fire_without_smoke" x="352" y="561" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3082" name="object.fire_without_smoke" x="352" y="625" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3083" name="object.fire_without_smoke" x="352" y="657" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3084" name="object.fire_without_smoke" x="352" y="721" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3085" name="object.fire_without_smoke" x="352" y="753" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3086" name="object.fire_without_smoke" x="352" y="593" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3087" name="object.fire_without_smoke" x="352" y="689" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="5"/>
+   </properties>
+  </object>
+  <object id="3088" name="object.fire_without_smoke" x="622" y="529" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3089" name="object.fire_without_smoke" x="622" y="561" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3090" name="object.fire_without_smoke" x="622" y="625" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3091" name="object.fire_without_smoke" x="622" y="657" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3092" name="object.fire_without_smoke" x="622" y="721" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3093" name="object.fire_without_smoke" x="622" y="753" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3094" name="object.fire_without_smoke" x="622" y="593" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3095" name="object.fire_without_smoke" x="622" y="689" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="6"/>
+   </properties>
+  </object>
+  <object id="3105" name="object.fire_without_smoke" x="359" y="765" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3106" name="object.fire_without_smoke" x="391" y="765" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3107" name="object.fire_without_smoke" x="455" y="781" width="18" height="2">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3108" name="object.fire_without_smoke" x="487" y="781" width="18" height="2">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3109" name="object.fire_without_smoke" x="519" y="781" width="18" height="2">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3110" name="object.fire_without_smoke" x="583" y="765" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3111" name="object.fire_without_smoke" x="615" y="765" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3112" name="object.fire_without_smoke" x="551" y="765" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
+   </properties>
+  </object>
+  <object id="3113" name="object.fire_without_smoke" x="423" y="765" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
  </objectgroup>

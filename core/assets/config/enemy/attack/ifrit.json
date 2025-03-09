@@ -18,4 +18,13 @@
 		damage: 10,
 		pushForce: 35,
 	},
+	{
+		id: attack_fire_soil,
+		type: ANIMATED_HIT,
+		projectileType: fire_soil,
+		delay: 0.3,
+		duration: 0,
+		damage: 10,
+		pushForce: 35,
+	},
 ]

@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_sword, attack_throw_fire_ball, damage, die
+			move, attack_sword, attack_throw_fire_ball, ignite_fire_wall, laugh, damage, die
 		]
 	},
 	{
@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack_sword, attack_throw_fire_ball, damage, die
+			idle, attack_sword, attack_throw_fire_ball, ignite_fire_wall, laugh, damage, die
 		]
 	},
 	{
@@ -24,7 +24,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-		    damage, die
+		    die
 		]
 	},
 	{
@@ -34,17 +34,31 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-		    damage, die
+		    die
 		]
 	},
 	{
-		id: charge,
+		id: attack_fire_soil,
+		animation: ifrit_charge,
+		attack: attack_fire_soil,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_sword, attack_throw_fire_ball, die
+		]
+	},
+	{
+		// only used in cutscenes
+		
+		id: ignite_fire_wall,
 		animation: ifrit_charge,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_sword, attack_throw_fire_ball, damage, die
+			move, attack_sword, attack_throw_fire_ball, die
 		]
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
 	},
 	{
 		id: laugh,
@@ -54,6 +68,8 @@
 		interruptingStates: [
 			move, attack_sword, attack_throw_fire_ball, damage, die
 		]
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
 	},
 	{
 		id: damage,
@@ -70,8 +86,6 @@
 		id: die,
 		animation: ifrit_death,
 		endsWithAnimation: true,
-		changeStateAfterAnimationDelay: 3f,
-		stateEnteringSound: flesh_hit_1,
 		followingState: END,
 		interruptingStates: [],
 		flipAnimationToMovingDirection: false,

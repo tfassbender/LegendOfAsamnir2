@@ -1,5 +1,20 @@
 {
 	//*******************************************
+	//*** boss fight
+	//*******************************************
+	
+	loa2_l3_muspelheim_lava_dungeon__boss_fight__start: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l2_muspelheim_lava_dungeon__enter_boss_room,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_lava_dungeon__start_boss_fight_cutscene,
+        }
+	},
+	
+	//*******************************************
 	//*** switch
 	//*******************************************
 

@@ -1,0 +1,111 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__surtur_fire_wall_up_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+	    	startsWithCutscene: true,
+	    	
+            type: WAIT,
+            executionDelayInSeconds: 0f,
+            
+            executes: [
+                surtur_move_to_position,
+				move_camera,
+				move_thorin,
+			],
+		},
+		
+		surtur_move_to_position: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitTarget: {x: 0, y: 0},
+            targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__surtur_up_position,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	surtur_turn_arround,
+			],
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__center_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 3f,
+		},
+		
+		move_thorin: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			cameraFollowsTarget: false,
+			targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__center_position,
+		},
+		
+		surtur_turn_arround: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitTarget: {x: 0, y: -0.1},
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	surtur_change_state__ignite_fire_wall,
+			],
+		},
+		
+		surtur_change_state__ignite_fire_wall: {
+            executionDelayInSeconds: 2f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitState: ignite_fire_wall,
+            
+            executes: [
+            	ignite_fire_wall,
+            ],
+		},
+		
+		ignite_fire_wall: {
+			executionDelayInSeconds: 0.5f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 3,
+            },
+            
+            executes: [
+            	surtur_change_state__laugh,
+            ],
+		},
+		
+		surtur_change_state__laugh: {
+            executionDelayInSeconds: 1f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitState: laugh,
+            
+            executes: [
+            	wait_before_end,
+            ],
+		},
+		
+		wait_before_end: {
+			type: WAIT,
+			executionDelayInSeconds: 0.5f,
+			
+            executes: [
+            	end,
+            ],
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -653,6 +653,27 @@
 		},
 	},
 	
+	fire_without_smoke: {
+		type: TRAVERSEABLE,
+		
+        texture: empty,
+        animationSolid: fire,
+        
+        initiallySolid: false,
+        
+        animationSolidOffsetX: 0f,
+        animationSolidOffsetY: 0.1f,
+        
+        intValueByMapProperty: traverseable_object_n,
+        
+		changeBodyToSensorEvent: {	
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+		},
+		changeBodyToSolidObjectEvent: {
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+		},
+	},
+	
 	direction_board_up: {
 		type: BASIC,
 		
