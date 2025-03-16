@@ -125,7 +125,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2913" name="enemy.fire_totem" x="488.375" y="417.5">
+  <object id="2913" name="enemy.fire_totem_dummy" x="488.375" y="417.5">
    <properties>
     <property name="facing_left" value="true"/>
     <property name="unitId" value="loa2_l3_muspelheim_lava_dungeon__fire_totem_at_locked_door"/>

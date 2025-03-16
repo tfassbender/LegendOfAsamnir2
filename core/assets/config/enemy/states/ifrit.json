@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_sword, attack_throw_fire_ball, ignite_fire_wall, laugh, damage, die
+			move, attack_sword, attack_throw_fire_ball, attack_fire_soil, ignite_fire_wall, laugh, damage, die
 		]
 	},
 	{
@@ -14,12 +14,14 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack_sword, attack_throw_fire_ball, ignite_fire_wall, laugh, damage, die
+			idle, attack_sword, attack_throw_fire_ball, attack_fire_soil, ignite_fire_wall, laugh, damage, die
 		]
 	},
 	{
 		id: attack_sword,
 		animation: ifrit_attack_sword,
+		stateEnteringSound: dwarven_guardian_construct_fire,
+		soundDelay: 0.7,
 		attack: attack_sword,
 		endsWithAnimation: true,
 		followingState: idle,
@@ -31,6 +33,8 @@
 		id: attack_throw_fire_ball,
 		animation: ifrit_throw_fire_ball,
 		attack: attack_fire_ball,
+		stateEnteringSound: fireball,
+		soundDelay: 0.1f,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -40,11 +44,13 @@
 	{
 		id: attack_fire_soil,
 		animation: ifrit_charge,
+		stateEnteringSound: dwarven_guardian_construct_fire,
+		soundDelay: 0.8f,
 		attack: attack_fire_soil,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_sword, attack_throw_fire_ball, die
+			die
 		]
 	},
 	{
@@ -66,7 +72,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_sword, attack_throw_fire_ball, damage, die
+			move, attack_sword, attack_throw_fire_ball, attack_fire_soil, damage, die
 		]
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true

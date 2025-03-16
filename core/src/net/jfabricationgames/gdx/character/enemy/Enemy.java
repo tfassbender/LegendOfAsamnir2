@@ -246,6 +246,11 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	@Override
 	public void takeDamage(float damage, AttackType attackType) {
+		if (!typeConfig.takesDamage) {
+			stateMachine.setState(getDamageStateName(damage));
+			return;
+		}
+		
 		if (!typeConfig.takesDamageFromProjectiles && attackType.isSubTypeOf(AttackType.PROJECTILE) //
 				|| !typeConfig.takesDamageInBlockingState && isInBlockingState()) {
 			if (typeConfig.soundWhenAttackBlocked != null) {
@@ -412,6 +417,12 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 			if (typeConfig.playBossAppearedSound) {
 				SOUND_SET.playSound("boss_appeared");
 			}
+		}
+		
+		if (isAlive() && event.equalsIgnoringDefaultConfigValues(typeConfig.deathEvent) //
+				&& (getUnitId() == null || getUnitId().equals(event.stringValue))) { // if unitId is set it has to match the event's stringValue
+			health = 0;
+			die();
 		}
 	}
 }

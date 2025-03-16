@@ -93,5 +93,12 @@
 			playMode: LOOP,
 			scale: 0.05,
 		},
+		{
+			name: medium_fire_effect,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 0.05,
+		},
 	]
 }

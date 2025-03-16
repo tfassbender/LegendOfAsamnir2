@@ -29,6 +29,7 @@ public class CharacterState implements CutsceneControlledState {
 	private Array<CharacterStateAttack> attacks;
 	
 	private Supplier<Vector2> targetDirectionSupplier;
+	private Supplier<Vector2> targetPositionSupplier;
 	private Vector2 directionToTarget;
 	
 	private SoundHandler sound;
@@ -84,6 +85,10 @@ public class CharacterState implements CutsceneControlledState {
 		}
 		CharacterStateAttack attack = attackHandler.startAttack(config.attack, directionToTarget);
 		attacks.add(attack);
+		
+		if (targetPositionSupplier != null) {
+			attack.setTargetPositionSupplier(targetPositionSupplier);
+		}
 	}
 	
 	public boolean allAttacksFinished() {
@@ -130,6 +135,10 @@ public class CharacterState implements CutsceneControlledState {
 	
 	public void setTargetDirectionSupplier(Supplier<Vector2> targetDirectionSupplier) {
 		this.targetDirectionSupplier = targetDirectionSupplier;
+	}
+	
+	public void setAttackTargetPositionSupplier(Supplier<Vector2> targetPositionSupplier) {
+		this.targetPositionSupplier = targetPositionSupplier;
 	}
 	
 	public String getStateName() {

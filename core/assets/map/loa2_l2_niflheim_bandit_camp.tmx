@@ -220,7 +220,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2342" name="enemy.fire_totem" x="953.167" y="793.583">
+  <object id="2342" name="enemy.fire_totem_dummy" x="953.167" y="793.583">
    <properties>
     <property name="facing_left" value="true"/>
     <property name="unitId" value="loa2_l2_niflheim_bandit_camp__fire_totem_at_central_gate"/>

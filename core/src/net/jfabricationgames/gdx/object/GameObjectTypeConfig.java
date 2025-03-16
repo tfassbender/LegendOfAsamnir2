@@ -144,4 +144,6 @@ public class GameObjectTypeConfig {
 	
 	public float animationSolidOffsetX = 0f;
 	public float animationSolidOffsetY = 0f;
+	
+	public PhysicsCollisionType notTraversableCollisionType; // the collision type that is set when the object is solid
 }

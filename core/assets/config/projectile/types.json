@@ -342,8 +342,23 @@
 		attackType: FIREBALL,
 		
 		animation: ifrit_fire_ball,
-		removeAfterAnimationFinished: false,
-		textureScale: 0.05,
+		removeAfterAnimationFinished: true,
+		textureScale: 1,
+		textureScaleGrowing: true,
+		rotateTextureToMovementDirection: true,
+		
+		range: 30,
+		removeAfterRangeExceeded: false,
+		speed: 75,
+		dampingAfterObjectHit: 15,
+	},
+	
+	fire_ball: {
+		attackType: FIREBALL,
+		
+		animation: ifrit_fire_ball,
+		removeAfterAnimationFinished: true,
+		textureScale: 0.5,
 		textureScaleGrowing: true,
 		rotateTextureToMovementDirection: true,
 		
@@ -362,7 +377,12 @@
         
         speed: 0,
         damping: 0,
-		hitFixtureRadius: 0.5f,
+		hitFixtureRadius: 1f,
 		flipAnimationToAttackDirection: true,
+		
+		sensorBody: true,
+		hitDelayInSeconds: 0.5,
+		
+		imageOffsetY: 2f,
 	},
 }

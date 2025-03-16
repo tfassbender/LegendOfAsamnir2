@@ -10,7 +10,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Bugbear;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.DwarvenGuardianConstruct;
-import net.jfabricationgames.gdx.character.enemy.implementation.FireTotem;
+import net.jfabricationgames.gdx.character.enemy.implementation.FireTotemDummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.FrostGiant;
 import net.jfabricationgames.gdx.character.enemy.implementation.Gargoyle;
 import net.jfabricationgames.gdx.character.enemy.implementation.GiantGolem;
@@ -36,7 +36,7 @@ public class EnemyFactory {
 	
 	private static final String ENEMY_NAME_DUMMY = "dummy";
 	private static final String ENEMY_NAME_DWARVEN_GUARDIAN_CONSTRUCT = "dwarven_guardian_construct";
-	private static final String ENEMY_NAME_FIRE_TOTEM = "fire_totem";
+	private static final String ENEMY_NAME_FIRE_TOTEM_DUMMY = "fire_totem_dummy";
 	
 	private static final String ENEMY_NAME_MINOTAUR = "minotaur";
 	private static final String ENEMY_NAME_CYCLOPS = "cyclops";
@@ -85,8 +85,8 @@ public class EnemyFactory {
 			case ENEMY_NAME_TOTEM:
 				enemy = new Totem(typeConfig, properties);
 				break;
-			case ENEMY_NAME_FIRE_TOTEM:
-				enemy = new FireTotem(typeConfig, properties);
+			case ENEMY_NAME_FIRE_TOTEM_DUMMY:
+				enemy = new FireTotemDummy(typeConfig, properties);
 				break;
 			case ENEMY_NAME_MINOTAUR:
 				enemy = new Minotaur(typeConfig, properties);

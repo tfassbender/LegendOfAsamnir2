@@ -453,6 +453,11 @@
 					volume: 0.8,
 					delay: 0.3,
 				},
+				// ifrit
+				fireball: {
+					path: "sound/enemy/attack/fireball.mp3",
+					volume: 0.3,
+				},
 			}
 		},
 		cutscene: {

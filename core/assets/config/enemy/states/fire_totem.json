@@ -1,11 +1,20 @@
 [
 	{
+		id: appear,
+		animation: totem_fire_appear,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    die
+		]
+	},
+	{
 		id: idle,
 		animation: totem_fire_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			damage, attack
+			damage, die, attack
 		]
 	},
 	{
@@ -14,23 +23,37 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			damage, attack
+			damage, die, attack
 		]
 	},
 	{
 		id: attack,
 		animation: totem_fire_idle,
 		attack: attack,
-		stateEnteringSound: dwarven_guardian_construct_fire,
+		stateEnteringSound: imp_attack,
 		endsWithAnimation: true,
 		followingState: idle,
-		interruptingStates: []
+		interruptingStates: [
+			damage, die
+		]
 	},
 	{
 		id: damage,
 		animation: totem_fire_damage,
 		endsWithAnimation: true,
 		followingState: idle,
-		interruptingStates: []
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: die,
+		animation: totem_fire_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
 	},
 ]

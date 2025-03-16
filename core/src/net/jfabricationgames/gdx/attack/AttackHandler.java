@@ -80,9 +80,6 @@ public class AttackHandler implements CharacterStateAttackHandler {
 	
 	@Override
 	public Attack startAttack(String attack, Vector2 direction) {
-		return startAttack(attack, direction, collisionType);
-	}
-	public Attack startAttack(String attack, Vector2 direction, PhysicsCollisionType collisionType) {
 		return startAttack(configs.get(attack), direction, collisionType);
 	}
 	

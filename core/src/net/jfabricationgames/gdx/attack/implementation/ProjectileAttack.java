@@ -1,5 +1,7 @@
 package net.jfabricationgames.gdx.attack.implementation;
 
+import java.util.function.Supplier;
+
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
@@ -14,13 +16,15 @@ public class ProjectileAttack extends Attack {
 	
 	private Projectile projectile;
 	
+	private Supplier<Vector2> targetPositionSupplier;
+	
 	public ProjectileAttack(AttackConfig config, Vector2 direction, Body body, PhysicsCollisionType collisionType) {
 		super(config, direction, body, collisionType);
 	}
 	
 	@Override
 	protected void start() {
-		Vector2 startingPosition = body.getPosition().cpy().add(0, config.projectileStartOffsetY);
+		Vector2 startingPosition = calculateStartingPosition();
 		projectile = ProjectileFactory.createProjectileAndAddToMap(config.projectileType, startingPosition, direction, collisionType);
 		projectile.setDamage(config.damage);
 		projectile.setPushForce(config.pushForce);
@@ -32,6 +36,19 @@ public class ProjectileAttack extends Attack {
 		projectile.setPlayerBody(body);
 		
 		started = true;
+	}
+	
+	private Vector2 calculateStartingPosition() {
+		Vector2 startingPosition = body.getPosition().cpy().add(0, config.projectileStartOffsetY);
+		
+		if (targetPositionSupplier != null) {
+			Vector2 targetPosition = targetPositionSupplier.get();
+			if (targetPosition != null) {
+				startingPosition = targetPosition;
+			}
+		}
+		
+		return startingPosition;
 	}
 	
 	@Override
@@ -47,5 +64,10 @@ public class ProjectileAttack extends Attack {
 	@Override
 	protected boolean isRemoved() {
 		return projectile == null || projectile.isRemoved();
+	}
+	
+	@Override
+	public void setTargetPositionSupplier(Supplier<Vector2> targetPositionSupplier) {
+		this.targetPositionSupplier = targetPositionSupplier;
 	}
 }

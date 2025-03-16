@@ -12,7 +12,7 @@ import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
 
-public class FireTotem extends Enemy {
+public class FireTotemDummy extends Enemy {
 	
 	private static final String MAP_PROPERTY_KEY_FACING_LEFT = "facing_left";
 	
@@ -22,7 +22,7 @@ public class FireTotem extends Enemy {
 	
 	private CharacterState attack;
 	
-	public FireTotem(EnemyTypeConfig typeConfig, MapProperties properties) {
+	public FireTotemDummy(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
 		
 		unitId = properties.get("unitId", String.class);

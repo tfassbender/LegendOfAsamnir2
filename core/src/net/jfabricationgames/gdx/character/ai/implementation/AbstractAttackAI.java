@@ -43,7 +43,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 		}
 		return false;
 	}
-
+	
 	private boolean targetAlive() {
 		return targetingPlayer != null && targetingPlayer.isAlive();
 	}

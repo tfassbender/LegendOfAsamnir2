@@ -1,15 +1,15 @@
 package net.jfabricationgames.gdx.character.enemy.implementation;
 
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.ai.implementation.RayCastFollowAI;
-import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
-import net.jfabricationgames.gdx.character.enemy.ai.FightAI;
+import net.jfabricationgames.gdx.character.enemy.ai.IfritAttackAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -31,7 +31,7 @@ public class Ifrit extends Enemy {
 	public Ifrit(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
 		
-		health -= 0.1f; // reduce the health by a small value to make prevent the defense mode from being activated at the first damage
+		health -= 0.1f; // reduce the health by a small value to prevent the defense mode from being activated at the first damage
 	}
 	
 	@Override
@@ -49,22 +49,24 @@ public class Ifrit extends Enemy {
 		RayCastFollowAI followAI = new RayCastFollowAI(ai, moveState, idleState);
 		followAI.setMinDistanceToTarget(2f);
 		
-		// TODO
-		
 		return followAI;
 	}
 	
 	private ArtificialIntelligence createFightAI(ArtificialIntelligence ai) {
-		CharacterState attackSword = stateMachine.getState("attack_sword");
-		CharacterState attackFireBall = stateMachine.getState("attack_throw_fire_ball");
-		CharacterState attackFireSoil = stateMachine.getState("attack_fire_soil");
+		String attackNameSword = "attack_sword";
+		String attackNameFireBall = "attack_throw_fire_ball";
+		String attackNameFireSoil = "attack_fire_soil";
 		
-		// TODO
+		CharacterState attackSword = stateMachine.getState(attackNameSword);
+		CharacterState attackFireBall = stateMachine.getState(attackNameFireBall);
+		CharacterState attackFireSoil = stateMachine.getState(attackNameFireSoil);
 		
-		FightAI fightAi = new FightAI(ai, attackSword, new FixedAttackTimer(2f), 2f);
-		fightAi.setMoveWhileAttacking(false);
+		ArrayMap<String, CharacterState> attackStates = new ArrayMap<>();
+		attackStates.put(attackNameSword, attackSword);
+		attackStates.put(attackNameFireBall, attackFireBall);
+		attackStates.put(attackNameFireSoil, attackFireSoil);
 		
-		return fightAi;
+		return new IfritAttackAI(ai, attackStates, this::getDefenseModePosition);
 	}
 	
 	@Override
@@ -77,7 +79,10 @@ public class Ifrit extends Enemy {
 		super.takeDamage(damage, attackType);
 		int healthSegmentAfterDamage = (int) (health / typeConfig.health * (100f / healthLossForDefenseModeInPercent));
 		
-		if (healthSegmentAfterDamage < healthSegmentBeforeDamage) {
+		if (defenseMode) {
+			endDefenseMode();
+		}
+		else if (healthSegmentAfterDamage < healthSegmentBeforeDamage) {
 			changeToDefenseMode();
 		}
 	}
@@ -96,25 +101,67 @@ public class Ifrit extends Enemy {
 		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE).setStringValue(cutsceneName));
 	}
 	
+	private void endDefenseMode() {
+		defenseMode = false;
+		
+		// destroy the fire totems
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__horizontal"));
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical"));
+		
+		putOutInnerFireWalls();
+		
+		// ignite a fire wall in the direction of the player
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+				.setIntValue(defenseModePosition.outerFireWallId));
+	}
+	
+	private DefenseModePosition getDefenseModePosition() {
+		if (!defenseMode) {
+			return null;
+		}
+		
+		return defenseModePosition;
+	}
+	
+	private void putOutInnerFireWalls() {
+		for (int i = 1; i <= 4; i++) {
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR).setIntValue(i));
+		}
+	}
+	
+	private void putOutOuterFireWalls() {
+		for (int i = 5; i <= 8; i++) {
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR).setIntValue(i));
+		}
+	}
+	
 	@Override
 	protected void die() {
 		super.die();
+		
+		putOutInnerFireWalls();
+		putOutOuterFireWalls();
+		
 		GameStateManager.fireQuickSaveEvent();
 	}
 	
-	private enum DefenseModePosition {
+	public enum DefenseModePosition {
 		
-		UP(AngleDirection.DOWN), //
-		LEFT(AngleDirection.RIGHT), //
-		DOWN(AngleDirection.UP), //
-		RIGHT(AngleDirection.LEFT); //
+		UP(AngleDirection.DOWN, 7), //
+		LEFT(AngleDirection.RIGHT, 5), //
+		DOWN(AngleDirection.UP, 8), //
+		RIGHT(AngleDirection.LEFT, 6); //
 		
 		public final String cutsceneDirectionName;
+		public final int outerFireWallId;
 		private final AngleDirection angleDirection;
 		
-		private DefenseModePosition(AngleDirection angleDirection) {
+		private DefenseModePosition(AngleDirection angleDirection, int outerFireWallId) {
 			cutsceneDirectionName = name().toLowerCase();
 			this.angleDirection = angleDirection;
+			this.outerFireWallId = outerFireWallId;
 		}
 		
 		public static DefenseModePosition byAngleDirection(AngleDirection angleDirection) {

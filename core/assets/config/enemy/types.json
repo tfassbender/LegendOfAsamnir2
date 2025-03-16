@@ -574,13 +574,13 @@
 	}
 	
 	// not a real enemy, but it's easier to model it as one, because it needs to be attacked by the player
-	fire_totem: {
+	fire_totem_dummy: {
 		typeName: fire_totem,
 		
 		animationsConfig: config/animation/enemy/fire_totem.json,
 		stateConfig: config/enemy/states/fire_totem.json,
 		initialState: idle,
-		attackConfig: config/enemy/attack/fire_totem.json,
+		attackConfig: config/enemy/attack/fire_totem_dummy.json,
 		
 		health: 10, // doesn't take damage
 		movingSpeed: 0.5f,
@@ -592,6 +592,36 @@
 		bodyShape: OCTAGON,
 		bodyWidth: 0.5f,
 		bodyHeight: 0.5f,
+		
+		pushForceDamage: 0,
+		pushForceHit: 0,
+	}
+	
+	fire_totem: {
+		typeName: fire_totem,
+		
+		animationsConfig: config/animation/enemy/fire_totem.json,
+		stateConfig: config/enemy/states/fire_totem.json,
+		initialState: appear,
+		attackConfig: config/enemy/attack/fire_totem.json,
+		aiConfig: config/enemy/ai/totem.json,
+		
+		movingSpeed: 0,
+		movable: false, // the player can't push it
+		health: 1,
+		takesDamage: false,
+		deathEvent: {
+			eventType: ENEMY_DIE,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 10f,
 		
 		pushForceDamage: 0,
 		pushForceHit: 0,
@@ -1150,7 +1180,7 @@
 		initialState: idle,
 		attackConfig: config/enemy/attack/ifrit.json,
 		
-		health: 100,
+		health: 200,
 		movingSpeed: 1.5f,
 		
 		imageOffsetX: 0f,

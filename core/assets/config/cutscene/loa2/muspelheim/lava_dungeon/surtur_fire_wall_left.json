@@ -74,6 +74,7 @@
             
             executes: [
             	ignite_fire_wall,
+                spawn_fire_totems,
             	put_out_outer_fire_wall_left,
             	put_out_outer_fire_wall_right,
                 put_out_outer_fire_wall_up,
@@ -82,8 +83,6 @@
 		},
 		
 		ignite_fire_wall: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {
@@ -92,9 +91,18 @@
             },
 		},
 		
-		put_out_outer_fire_wall_left: {
-			executionDelayInSeconds: 0.5f,
+		spawn_fire_totems: {
+			executionDelayInSeconds: 2f,
 			
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical,
+            },
+		}
+		
+		put_out_outer_fire_wall_left: {
 			type: EVENT,
             
             event: {
@@ -104,8 +112,6 @@
 		},
 		
 		put_out_outer_fire_wall_right: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {
@@ -115,8 +121,6 @@
 		},
 		
 		put_out_outer_fire_wall_up: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {
@@ -126,8 +130,6 @@
 		},
 		
 		put_out_outer_fire_wall_down: {
-			executionDelayInSeconds: 0.5f,
-			
 			type: EVENT,
             
             event: {

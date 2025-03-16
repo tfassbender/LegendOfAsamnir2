@@ -38,4 +38,10 @@ public class ProjectileTypeConfig {
 	public float pushForce = 8f; // enough to push the player away if he's running
 	public float radius = 3f;
 	public boolean affectedByForceField = true;
+	
+	public boolean sensorBody = false; // if true the body is a sensor (used for delayed hits)
+	public float hitDelayInSeconds = 0; // change the body to a sensor when using delayed hits
+	
+	public float imageOffsetX = 0;
+	public float imageOffsetY = 0;
 }

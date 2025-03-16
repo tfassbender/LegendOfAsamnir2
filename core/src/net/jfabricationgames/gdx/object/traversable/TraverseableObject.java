@@ -78,8 +78,8 @@ public class TraverseableObject extends GameObject implements EventListener {
 	}
 	
 	private PhysicsCollisionType getCollisionType() {
-		if (typeConfig.collisionType != null) {
-			return typeConfig.collisionType;
+		if (typeConfig.notTraversableCollisionType != null) {
+			return typeConfig.notTraversableCollisionType;
 		}
 		
 		// the default collision type is MAP_UNREACHABLE_AREA, so the object does not interact with projectiles but with the player and enemies

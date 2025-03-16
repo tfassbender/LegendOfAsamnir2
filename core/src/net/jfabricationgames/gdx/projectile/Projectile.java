@@ -13,6 +13,7 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
+import com.badlogic.gdx.utils.Array;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.attack.AttackType;
@@ -63,6 +64,8 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	protected Sprite sprite;
 	
 	protected String unitId;
+	
+	private Array<Hittable> targetsInSensorRange = new Array<>();
 	
 	public Projectile(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
 		this.typeConfig = typeConfig;
@@ -127,6 +130,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 				.setLinearDamping(typeConfig.damping);
 		body = PhysicsBodyCreator.createBody(bodyProperties);
 		body.setUserData(this);
+		if (typeConfig.sensorBody) {
+			changeBodyToSensor();
+		}
+		
 		addAdditionalPhysicsParts();
 	}
 	
@@ -211,6 +218,9 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		if (explosionTimeReached()) {
 			explode();
 		}
+		if (delayedHitTimeReached()) {
+			hitTargetDelayed();
+		}
 		if (reflected) {
 			removeFromMap();
 		}
@@ -238,6 +248,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	
 	private boolean explosionTimeReached() {
 		return timeActive > typeConfig.timeTillExplosion && isExplosive();
+	}
+	
+	private boolean delayedHitTimeReached() {
+		return typeConfig.hitDelayInSeconds > 0 && timeActive > typeConfig.hitDelayInSeconds && !attackPerformed;
 	}
 	
 	private boolean isExplosive() {
@@ -278,6 +292,16 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		removeFromMap();
 	}
 	
+	private void hitTargetDelayed() {
+		for (Hittable target : targetsInSensorRange) {
+			//enemies define the force themselves; the force parameter is a factor for this self defined force
+			target.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
+			target.takeDamage(damage, typeConfig.attackType);
+		}
+		
+		attackPerformed = true;
+	}
+	
 	public void drawShapes(float delta, ShapeRenderer shapeRenderer) {
 		// can be overridden by subclasses to draw additional shapes
 	}
@@ -286,7 +310,8 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		if (typeConfig.textureScaleGrowing) {
 			scaleSprite();
 		}
-		sprite.setPosition(body.getPosition().x - sprite.getOriginX() + imageOffsetX, body.getPosition().y - sprite.getOriginY() + imageOffsetY);
+		sprite.setPosition(body.getPosition().x - sprite.getOriginX() + imageOffsetX + typeConfig.imageOffsetX, //
+				body.getPosition().y - sprite.getOriginY() + imageOffsetY + typeConfig.imageOffsetY);
 		sprite.draw(batch);
 	}
 	
@@ -324,6 +349,13 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		}
 		if (!reflected && contactUserData instanceof Hittable) {
 			Hittable hittable = (Hittable) contactUserData;
+			
+			if (typeConfig.sensorBody) {
+				// the body is a sensor and the hit will be triggered delayed, so the target is only stored but the attack is not yet performed
+				targetsInSensorRange.add(hittable);
+				return;
+			}
+			
 			//enemies define the force themselves; the force parameter is a factor for this self defined force
 			hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
 			hittable.takeDamage(damage, typeConfig.attackType);
@@ -345,7 +377,16 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	}
 	
 	@Override
-	public void endContact(Contact contact) {}
+	public void endContact(Contact contact) {
+		Fixture fixtureA = contact.getFixtureA();
+		Fixture fixtureB = contact.getFixtureB();
+		
+		Object attackUserData = CollisionUtil.getCollisionTypeUserData(collisionType, fixtureA, fixtureB);
+		Object attackedUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);
+		if (attackUserData == this && attackedUserData instanceof Hittable) {
+			targetsInSensorRange.removeValue((Hittable) attackedUserData, true);
+		}
+	}
 	
 	@Override
 	public void preSolve(Contact contact, Manifold oldManifold) {}

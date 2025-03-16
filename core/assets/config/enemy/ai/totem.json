@@ -1,5 +1,5 @@
 {
-	defaultAI: totem,
+	defaultAI: totem_ray_cast,
 	aiConfigurations: {
 		totem: {
 			type: FIGHT_AI,
@@ -10,7 +10,7 @@
 				type: FIXED,
 				fixedTime: 1f,
 			},
-			attackDistance: 6f,
+			attackDistance: 100f, // restricted by the sensor range
 			minDistanceToTargetPlayer: 0f,
 			
 			subAI: {
@@ -27,7 +27,7 @@
 				type: FIXED,
 				fixedTime: 1f,
 			},
-			attackDistance: 6f,
+			attackDistance: 100f, // restricted by the sensor range
 			minDistanceToTargetPlayer: 0f,
 			
 			subAI: {

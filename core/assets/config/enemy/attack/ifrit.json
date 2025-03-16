@@ -24,7 +24,7 @@
 		projectileType: fire_soil,
 		delay: 0.3,
 		duration: 0,
-		damage: 10,
+		damage: 20,
 		pushForce: 35,
 	},
 ]

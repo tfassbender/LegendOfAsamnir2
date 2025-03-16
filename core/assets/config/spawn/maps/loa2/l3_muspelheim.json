@@ -20,4 +20,30 @@
         spawnType: object.bomb_big,
         spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__room_6__bomb_big\"}",
 	},
+	
+	//*************************************
+	//*** Boss Room
+	//*************************************
+	
+	l3_muspelheim__fire_totem__inner_platform__horizontal: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__horizontal,
+			}
+		],
+        spawnType: enemy.fire_totem,
+        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__horizontal\"}",
+	},
+	
+	l3_muspelheim__fire_totem__inner_platform__vertical: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical,
+			}
+		],
+        spawnType: enemy.fire_totem,
+        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical\"}",
+	},
 }
