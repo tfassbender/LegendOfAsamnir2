@@ -13,6 +13,7 @@ public enum AttackType {
 	EXPLOSION(BOMB), //
 	WEB(PROJECTILE), //
 	FIREBALL(PROJECTILE), //
+	BLOCKABLE_FIREBALL(FIREBALL), // a fireball that can be blocked completely
 	ROCK(PROJECTILE), //
 	BOOMERANG(PROJECTILE), //
 	MAGIC(PROJECTILE), //
@@ -58,5 +59,9 @@ public enum AttackType {
 	
 	public boolean canBeBlocked() {
 		return !isSubTypeOf(BEAM) && !isSubTypeOf(MAGIC) && !isSubTypeOf(CONTINUOUS_MAP_DAMAGE);
+	}
+	
+	public boolean fullBlockPossible() {
+		return this == BLOCKABLE_FIREBALL;
 	}
 }

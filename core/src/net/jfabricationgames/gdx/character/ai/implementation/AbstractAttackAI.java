@@ -89,20 +89,28 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	public void beginContact(Contact contact) {
 		PlayableCharacter collidingPlayer = getObjectCollidingWithEnemySensor(contact, PlayableCharacter.class);
 		if (collidingPlayer != null) {
-			targetingPlayer = collidingPlayer;
+			setTargetingPlayer(collidingPlayer);
 		}
 		
 		subAI.beginContact(contact);
+	}
+	
+	protected void setTargetingPlayer(PlayableCharacter collidingPlayer) {
+		targetingPlayer = collidingPlayer;
 	}
 	
 	@Override
 	public void endContact(Contact contact) {
 		PlayableCharacter collidingPlayer = getObjectCollidingWithEnemySensor(contact, PlayableCharacter.class);
 		if (collidingPlayer != null) {
-			targetingPlayer = null;
+			resetTargetingPlayer();
 		}
 		
 		subAI.endContact(contact);
+	}
+	
+	protected void resetTargetingPlayer() {
+		targetingPlayer = null;
 	}
 	
 	public void setMinDistanceToTargetPlayer(float minDistanceToTargetPlayer) {

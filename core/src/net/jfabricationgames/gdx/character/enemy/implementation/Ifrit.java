@@ -21,6 +21,7 @@ import net.jfabricationgames.gdx.util.AngleUtil.AngleDirection;
 public class Ifrit extends Enemy {
 	
 	private boolean defenseMode;
+	private boolean meleeDamageOnly = false;
 	private DefenseModePosition defenseModePosition;
 	
 	/**
@@ -74,6 +75,9 @@ public class Ifrit extends Enemy {
 		if (defenseMode && attackType != AttackType.ARROW) { // only take damage from arrows in defense mode
 			return;
 		}
+		if (meleeDamageOnly && !attackType.isSubTypeOf(AttackType.MELEE)) {
+			return;
+		}
 		
 		int healthSegmentBeforeDamage = (int) (health / typeConfig.health * (100f / healthLossForDefenseModeInPercent));
 		super.takeDamage(damage, attackType);
@@ -81,9 +85,20 @@ public class Ifrit extends Enemy {
 		
 		if (defenseMode) {
 			endDefenseMode();
+			
+			if (healthSegmentAfterDamage == 1) {
+				// only take damage from melee attacks after this stage
+				meleeDamageOnly = true;
+			}
 		}
 		else if (healthSegmentAfterDamage < healthSegmentBeforeDamage) {
-			changeToDefenseMode();
+			System.out.println("Health segment before: " + healthSegmentBeforeDamage + "; after: " + healthSegmentAfterDamage);
+			if (healthSegmentAfterDamage == 0) {
+				startFinalPartOfBattle();
+			}
+			else {
+				changeToDefenseMode();
+			}
 		}
 	}
 	
@@ -93,12 +108,11 @@ public class Ifrit extends Enemy {
 		// abort attacks because the player can't block or dodge them when the cutscene starts
 		stateMachine.forceStateChange(STATE_NAME_IDLE);
 		
-		// start a cutscene to move surtur to the defense position and ignite the fire wall
-		AngleDirection directionToPlayer = nearPlayer != null ? AngleUtil.getDirection(getPosition(), nearPlayer.getPosition()) : AngleDirection.DOWN;
-		defenseModePosition = DefenseModePosition.byAngleDirection(directionToPlayer);
-		String cutsceneName = String.format("loa2_l3_muspelheim_lava_dungeon__surtur_fire_wall_%s_cutscene", defenseModePosition.cutsceneDirectionName);
+		startDirectionalCutscene("loa2_l3_muspelheim_lava_dungeon__surtur_fire_wall_%s_cutscene");
 		
-		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE).setStringValue(cutsceneName));
+		// destroy fire totems on the outer ring
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__outer_ring"));
 	}
 	
 	private void endDefenseMode() {
@@ -110,11 +124,34 @@ public class Ifrit extends Enemy {
 		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
 				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical"));
 		
+		// spawn fire totems on the outer ring
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__outer_ring"));
+		
 		putOutInnerFireWalls();
 		
-		// ignite a fire wall in the direction of the player
+		// ignite a fire wall in the direction of the player (to block ranged attacks)
 		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
 				.setIntValue(defenseModePosition.outerFireWallId));
+	}
+	
+	private void startFinalPartOfBattle() {
+		// abort attacks because the player can't block or dodge them when the cutscene starts
+		stateMachine.forceStateChange(STATE_NAME_IDLE);
+		
+		startDirectionalCutscene("loa2_l3_muspelheim_lava_dungeon__surtur_final_arena_%s_cutscene");
+		
+		// destroy fire totems on the outer ring
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__outer_ring"));
+	}
+	
+	private void startDirectionalCutscene(String cutsceneFormatString) {
+		// start a cutscene to move surtur to the defense position and ignite the fire wall
+		AngleDirection directionToPlayer = nearPlayer != null ? AngleUtil.getDirection(getPosition(), nearPlayer.getPosition()) : AngleDirection.DOWN;
+		defenseModePosition = DefenseModePosition.byAngleDirection(directionToPlayer);
+		String cutsceneName = String.format(cutsceneFormatString, defenseModePosition.cutsceneDirectionName);
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE).setStringValue(cutsceneName));
 	}
 	
 	private DefenseModePosition getDefenseModePosition() {
@@ -137,12 +174,29 @@ public class Ifrit extends Enemy {
 		}
 	}
 	
+	private void destroyAllFireTotems() {
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__horizontal"));
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical"));
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__outer_ring"));
+	}
+	
+	private void unlockBossGate() {
+		// this will trigger a config object that unlocks the gate after a few seconds
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CONFIG_GAME_OBJECT_ACTION) //
+				.setStringValue("loa2_l3_muspelheim__config_object__open_key_wall_after_surtur_defeated"));
+	}
+	
 	@Override
 	protected void die() {
 		super.die();
 		
 		putOutInnerFireWalls();
 		putOutOuterFireWalls();
+		destroyAllFireTotems();
+		unlockBossGate();
 		
 		GameStateManager.fireQuickSaveEvent();
 	}

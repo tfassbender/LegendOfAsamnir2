@@ -1,0 +1,158 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__surtur_final_arena_left_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+	    	startsWithCutscene: true,
+	    	
+            type: WAIT,
+            executionDelayInSeconds: 0f,
+            
+            executes: [
+                surtur_move_to_position,
+				move_camera,
+				move_thorin,
+			],
+		},
+		
+		surtur_move_to_position: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitTarget: {x: 0, y: 0},
+            targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__surtur_left_position,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	surtur_turn_arround,
+			],
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__center_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 3f,
+		},
+		
+		move_thorin: {
+			executionDelayInSeconds: 1f,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			cameraFollowsTarget: false,
+			targetPositionRelativeToUnitId: cutscene_object__muspelheim_boss_room__center_position,
+		},
+		
+		surtur_turn_arround: {
+            type: MOVE,
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitTarget: {x: 0.1, y: 0},
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	surtur_change_state__ignite_fire_wall,
+			],
+		},
+		
+		surtur_change_state__ignite_fire_wall: {
+            executionDelayInSeconds: 2f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitState: ignite_fire_wall,
+            
+            executes: [
+            	fire_wall_multiplexer,
+            ],
+		},
+		
+		fire_wall_multiplexer: {
+			type: WAIT,
+            executionDelayInSeconds: 0.5f,
+            
+            executes: [
+            	ignite_fire_wall_left,
+            	ignite_fire_wall_right,
+            	ignite_fire_wall_up,
+            	ignite_fire_wall_down,
+                spawn_fire_totems,
+            ],
+		},
+		
+		ignite_fire_wall_left: {
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 5,
+            },
+		},
+		
+		ignite_fire_wall_right: {
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 6,
+            },
+		},
+		
+		ignite_fire_wall_up: {
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 7,
+            },
+		},
+		
+		ignite_fire_wall_down: {
+			type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+                intValue: 8,
+            },
+		},
+		
+		spawn_fire_totems: {
+			executionDelayInSeconds: 2f,
+			
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical,
+            },
+		},
+		
+		surtur_change_state__laugh: {
+            executionDelayInSeconds: 1f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l2_muspelheim_lava_dungeon__surtur,
+            controlledUnitState: laugh,
+            
+            executes: [
+            	wait_before_end,
+            ],
+		},
+		
+		wait_before_end: {
+			type: WAIT,
+			executionDelayInSeconds: 0.5f,
+			
+            executes: [
+            	end,
+            ],
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

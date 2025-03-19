@@ -1,5 +1,5 @@
 {
-	defaultAI: totem_ray_cast,
+	defaultAI: totem,
 	aiConfigurations: {
 		totem: {
 			type: FIGHT_AI,

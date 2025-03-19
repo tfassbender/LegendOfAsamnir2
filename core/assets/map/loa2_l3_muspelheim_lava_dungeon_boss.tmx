@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="45" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="3141">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="49" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="3178">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -29,44 +29,44 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="31" height="45" locked="1">
+ <layer id="1" name="background" width="31" height="49" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztmNFNwzAQhg0jQB+dt9JZgBGAESgjQEeAzoCaDoCqNgNUVcMIgDpB6Qj8J+XEKdgmF5xUKqn0PdSx/cnWb0tnY/S/08SYMwH9b+vXg2tijUnBFJy07J7DuQDZHtxrOHPwugf3G5zP4OMP7nJuqjAA5+ACXIJ+jTnIS2tIrQ7Kl3RPlOPTYq/IvbA6KF9XGHcNbkTuNLA7tzooX5+CtXJ8LtzvVgfla077BbIid9o52C3XUJUVxm3AsuZ4dvMaNGwE2rG0V+xeleZ6AbdgCO7ArNTmw9WX2+T8y4Cbvt2DBzAqvss2H66+I8/8IfcjeAJjMR+3+XD1Hddwb4tM7Oz3fNtf8uPqu7M6dzk/mkyFxldx/+esde7O3d1r3b12aPdal7V2s9Y07Ka66Kgix8nPzMqzYRRzVX0v4HpxENgjWgvXhDHfIbhenBa5cZ1fcnNNGLMe53oxs/7zS21cE8Z2cw0YcnNNGNvNNWDIzTVhbHf57nC5+T6JnTWuF333Pd8nWeSc8x3A59vllue7ibe+XhLe8ybfug7J/QW+pg/i
+   eJztmNFNwzAQhk1HAB7dN+gswAjACMAI0CeeoTOglgEq1GYAhFpGANQJStmA/6QcPVl26nOdtAIifQ+NY3/N5ew4Z4z+2Gsbcyig300d+3D1rTED8Ah2G3aP4ByDYgPuCZxT8LoB9xucD+BjDbebNzF0wBE4BifgIGEM8tI9DKwOyi/p7iv7D8pYkXtsdVB+naLfGTgXeaeB3VOrg/LrUzBR9p8K97vVQfk1oniBosw77RjslvcQywv6zcBzYv+f553ATJDSn92zCIbgFjwltrto3BTbLxFrbfs6bo7tOu1MIdzuf6X4XYBLcFXGUZ4L4buWz7kxCrmp7RrcgG7ZLs+F8F3bDYxf5b4D96AnxuNzIXzX9hLc83IeLuxyvPmKOeu7duHJvyq3O2c187iqf4y76VyTa0MdueaOL91ybajD7Y7vxpyfTV1zTI6/rfO7Sfc25VrudU2Ta3WsazG59pfWtW2aY//v0GZzLURoH6zdH6e4Q/tg7f6Y3fQdvBNJKxBDjrFRjBVbH+L6QKciRnQvXAPIWXfi+sCjXb4X3LWD3FwDyFl/4fpAsWJfwzWA3G7+5q9ycw0gt5u/+avcXAPI7XbXLZ+b17LcucY1jtC7hudZkTnPeQ1otcN7qqGY33XUduX+yhfzOmubv8n9DVJsfDw=
   </data>
  </layer>
- <layer id="2" name="background_2" width="31" height="45" locked="1">
+ <layer id="2" name="background_2" width="31" height="49" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt1qkRwDAMRUEXYZhRNa7B/YMUYhAUZuRjtEsE34cqBea8z+4FrFRDO1MbAOAWWf+1jO0WX7tt6Pf4X4BTDPZsBG8=
+   eJzt1qENACAMRUGGQJJOwwzsLxgEgcKhgIQ7U/m+bEqwp5fbCzgph7a2NgAA//5r2mfVmO16od9ivQCvGPiFBTc=
   </data>
  </layer>
- <layer id="5" name="terrain" width="31" height="45" locked="1">
+ <layer id="5" name="terrain" width="31" height="49" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBh6IEQdlaYnKFFHpekNDsgOjL05cqj0KKA92C+LSlMKkNMOIbYYMJ7FgVhCjnS9lAJ0u+kJBtJuDaCdmkCsNYzzmD3Qbw5o/utTRKVhwE4Oon4oAx0s7scmRqrawW73YADY0houMBzS2igYODDS0tpouTZwYLDVoYxA85mAmHm0vUY3MNpGpo99hMYYaDkGQWiMYaDGIGgNCI0xjI5BjIJRgAkA91kjww==
+   eJxjYBh6IEQdlaYnKFFHpekNDsgOjL05cqj0KKA92C+LSlMKkNMOIbYYMJ7FgVhCjnS9lAJ0u+kJBtJuDaCdmkCsNcL8PVLDnF7AHug3BzT/9Smi0jBgJwdRP5SBDhb3YxMjVe1gt3swAGxpDRcYDmltFAwcGGlpbbRcGzgw2OpQRqD5TEDMPMLaayO1rTga5vSxj9CYEi3HnAiNKQ3UmBOtAaExpdExp1EwCjABALLUJnU=
   </data>
  </layer>
- <layer id="16" name="terrain_2" width="31" height="45" locked="1">
+ <layer id="16" name="terrain_2" width="31" height="49" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt1qEOgDAMhOECimcgOcdQaOD9X4zOotbQwMT/Jc3O9GZrBqBHg8xGn0k5fbNiOWu3WhTLWbt//72rPa/+Fp9N8d23Du85fa6kPgAAACDD80b+EjcygF7ddWYLHQ==
+   eJzt0TEKgEAMRNGolWcQplMra/X+F3P2AIKBwFr8BwNpZgPZCAB/NChidCbVvDcrN1d1m0W5uarbe/eh3FzVxTer77c5e4c7nt55OTd/CAAAAAAAXjwr8wlP
   </data>
  </layer>
- <layer id="19" name="background_above_player" width="31" height="45" locked="1">
+ <layer id="19" name="background_above_player" width="31" height="49" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20ND6AAAAAAAHg3FcwAAQ==
+   eJztwTEBAAAAwqD1T20ND6AAAAAAAIAnAxe8AAE=
   </data>
  </layer>
- <layer id="18" name="shadows" width="31" height="45" locked="1">
+ <layer id="18" name="shadows" width="31" height="49" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2FsKgCAQheFW0v4XEb27h65gt11kD4JIlCMmFf/AeZ3PyAkmVRaFEmYzaZ2sET1iM5m4pbE/Y/v3JiSLZ88RPdaTZ8hVGhsbGxsbGxsbGxsb+wX2aNIEpr85ZyfoNQj3RX8H9MvuhCn/Q0jfS8p9HBs7l22/Acd81xex8x06u9IzVBd5wvxjdpqF39o=
+   eJzt2EsKgDAMRVFX4v4XIc7dg1/wU3dhHRRKkNoULSg38KY5FRvBNGVRNMrsNp0Xk9AjNYuNXzP2Z2x5b2KyCXtN6GEuniFXzdjY2NjY2NjY2NjY2NjYme3Jpo3McHPOXtFrVO4H5D+/LLcDeHLvpH0vT+5fsLFz2e4bcM53HYib79jZ1Z6hCuQN8485AFFK5+4=
   </data>
  </layer>
  <objectgroup id="3" name="objects">
-  <object id="2955" name="player.startingPosition" x="496" y="1270">
+  <object id="2955" name="player.startingPosition" x="496" y="1398">
    <properties>
     <property name="startingPointId" value="0"/>
    </properties>
    <point/>
   </object>
-  <object id="2956" name="player.startingPosition" x="496" y="1238">
+  <object id="2956" name="player.startingPosition" x="496" y="1366">
    <properties>
     <property name="startingPointId" value="10"/>
    </properties>
@@ -77,573 +77,640 @@
     <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune"/>
    </properties>
   </object>
-  <object id="2976" name="object.eventObject" x="448" y="1312" width="96.023" height="8.2841">
+  <object id="2976" name="object.eventObject" x="448" y="1440" width="96.023" height="8.2841">
    <properties>
-    <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_start__goto_muspelheim_lava_dungeon_key_room"/>
+    <property name="eventParameter" value="loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_key_room"/>
    </properties>
   </object>
-  <object id="2999" name="object.traverseable" x="192" y="800" width="607.333" height="48.4466"/>
-  <object id="3000" name="object.traverseable" x="192" y="480" width="607.333" height="48.4466"/>
-  <object id="3001" name="object.traverseable" x="288" y="384" width="64.083" height="575.78"/>
-  <object id="3002" name="object.traverseable" x="640" y="384" width="64.083" height="575.78"/>
-  <object id="3003" name="object.hookshot_target" x="399" y="914">
+  <object id="2999" name="object.traverseable" x="192" y="896" width="607.333" height="48.4466"/>
+  <object id="3000" name="object.traverseable" x="192" y="576" width="607.333" height="48.4466"/>
+  <object id="3001" name="object.traverseable" x="288" y="480" width="64.083" height="575.78"/>
+  <object id="3002" name="object.traverseable" x="640" y="480" width="64.083" height="575.78"/>
+  <object id="3003" name="object.hookshot_target" x="399" y="1010">
    <point/>
   </object>
-  <object id="3004" name="object.hookshot_target" x="591" y="914">
+  <object id="3004" name="object.hookshot_target" x="591" y="1010">
    <point/>
   </object>
-  <object id="3005" name="object.hookshot_target" x="751" y="914">
+  <object id="3005" name="object.hookshot_target" x="751" y="1010">
    <point/>
   </object>
-  <object id="3006" name="object.hookshot_target" x="239" y="914">
+  <object id="3006" name="object.hookshot_target" x="239" y="1010">
    <point/>
   </object>
-  <object id="3007" name="object.hookshot_target" x="239" y="754">
+  <object id="3007" name="object.hookshot_target" x="239" y="850">
    <point/>
   </object>
-  <object id="3008" name="object.hookshot_target" x="751" y="754">
+  <object id="3008" name="object.hookshot_target" x="751" y="850">
    <point/>
   </object>
-  <object id="3009" name="object.hookshot_target" x="399" y="754">
+  <object id="3009" name="object.hookshot_target" x="399" y="850">
    <point/>
   </object>
-  <object id="3010" name="object.hookshot_target" x="591" y="754">
+  <object id="3010" name="object.hookshot_target" x="591" y="850">
    <point/>
   </object>
-  <object id="3011" name="object.hookshot_target" x="399" y="594">
+  <object id="3011" name="object.hookshot_target" x="399" y="690">
    <point/>
   </object>
-  <object id="3012" name="object.hookshot_target" x="591" y="594">
+  <object id="3012" name="object.hookshot_target" x="591" y="690">
    <point/>
   </object>
-  <object id="3013" name="object.hookshot_target" x="239" y="434">
+  <object id="3013" name="object.hookshot_target" x="239" y="530">
    <point/>
   </object>
-  <object id="3014" name="object.hookshot_target" x="751" y="434">
+  <object id="3014" name="object.hookshot_target" x="751" y="530">
    <point/>
   </object>
-  <object id="3015" name="object.hookshot_target" x="399" y="434">
+  <object id="3015" name="object.hookshot_target" x="399" y="530">
    <point/>
   </object>
-  <object id="3016" name="object.hookshot_target" x="591" y="434">
+  <object id="3016" name="object.hookshot_target" x="591" y="530">
    <point/>
   </object>
-  <object id="3017" name="object.hookshot_target" x="241" y="593">
+  <object id="3017" name="object.hookshot_target" x="241" y="689">
    <point/>
   </object>
-  <object id="3018" name="object.hookshot_target" x="753" y="593">
+  <object id="3018" name="object.hookshot_target" x="753" y="689">
    <point/>
   </object>
-  <object id="3025" name="enemy.ifrit" x="496" y="593">
+  <object id="3025" name="enemy.ifrit" x="496" y="689">
    <properties>
     <property name="enemyDefeatedEventText" value="loa2_l2_muspelheim_lava_dungeon__surtur__defeated"/>
     <property name="unitId" value="loa2_l2_muspelheim_lava_dungeon__surtur"/>
    </properties>
    <point/>
   </object>
-  <object id="3026" name="object.eventObject" x="352" y="768" width="287.667" height="5">
+  <object id="3026" name="object.eventObject" x="352" y="864" width="287.667" height="5">
    <properties>
     <property name="eventParameter" value="loa2_l2_muspelheim_lava_dungeon__enter_boss_room"/>
     <property name="singleExecution" value="true"/>
    </properties>
   </object>
-  <object id="3027" name="object.eventObject" x="448" y="1184" width="96" height="4.5">
+  <object id="3027" name="object.eventObject" x="448" y="1312" width="96" height="4.5">
    <properties>
     <property name="booleanParameter" value="true"/>
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
   </object>
-  <object id="3028" name="object.spawnPoint.arrow" x="464.5" y="912.591">
+  <object id="3028" name="object.spawnPoint.arrow" x="464.5" y="1008.59">
    <properties>
     <property name="spawn" value="playerAmmoArrowBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="3029" name="object.spawnPoint.mana" x="528.519" y="912.549">
+  <object id="3029" name="object.spawnPoint.mana" x="528.519" y="1008.55">
    <properties>
     <property name="spawn" value="playerManaBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="3030" name="object.spawnPoint.arrow" x="464.472" y="432.519">
+  <object id="3030" name="object.spawnPoint.arrow" x="464.472" y="528.519">
    <properties>
     <property name="spawn" value="playerAmmoArrowBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="3031" name="object.spawnPoint.mana" x="528.491" y="432.477">
+  <object id="3031" name="object.spawnPoint.mana" x="528.491" y="528.477">
    <properties>
     <property name="spawn" value="playerManaBelowHalf"/>
    </properties>
    <point/>
   </object>
-  <object id="3032" name="object.fire_without_smoke" x="551" y="544" width="18" height="30.25">
+  <object id="3032" name="object.fire_without_smoke" x="551" y="640" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3033" name="object.fire_without_smoke" x="551" y="576" width="18" height="30.25">
+  <object id="3033" name="object.fire_without_smoke" x="551" y="672" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3034" name="object.fire_without_smoke" x="551" y="608" width="18" height="30.25">
+  <object id="3034" name="object.fire_without_smoke" x="551" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3035" name="object.fire_without_smoke" x="551" y="640" width="18" height="30.25">
+  <object id="3035" name="object.fire_without_smoke" x="551" y="736" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3036" name="object.fire_without_smoke" x="551" y="672" width="18" height="30.25">
+  <object id="3036" name="object.fire_without_smoke" x="551" y="768" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3037" name="object.fire_without_smoke" x="551" y="704" width="18" height="30.25">
+  <object id="3037" name="object.fire_without_smoke" x="551" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3038" name="object.fire_without_smoke" x="551" y="736" width="18" height="30.25">
+  <object id="3038" name="object.fire_without_smoke" x="551" y="832" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3039" name="object.fire_without_smoke" x="423" y="544" width="18" height="30.25">
+  <object id="3039" name="object.fire_without_smoke" x="423" y="640" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3040" name="object.fire_without_smoke" x="423" y="576" width="18" height="30.25">
+  <object id="3040" name="object.fire_without_smoke" x="423" y="672" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3041" name="object.fire_without_smoke" x="423" y="608" width="18" height="30.25">
+  <object id="3041" name="object.fire_without_smoke" x="423" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3042" name="object.fire_without_smoke" x="423" y="640" width="18" height="30.25">
+  <object id="3042" name="object.fire_without_smoke" x="423" y="736" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3043" name="object.fire_without_smoke" x="423" y="672" width="18" height="30.25">
+  <object id="3043" name="object.fire_without_smoke" x="423" y="768" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3044" name="object.fire_without_smoke" x="423" y="704" width="18" height="30.25">
+  <object id="3044" name="object.fire_without_smoke" x="423" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3045" name="object.fire_without_smoke" x="423" y="736" width="18" height="30.25">
+  <object id="3045" name="object.fire_without_smoke" x="423" y="832" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3046" name="object.fire_without_smoke" x="359" y="608" width="18" height="30.25">
+  <object id="3046" name="object.fire_without_smoke" x="359" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3047" name="object.fire_without_smoke" x="391" y="608" width="18" height="30.25">
+  <object id="3047" name="object.fire_without_smoke" x="391" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3048" name="object.fire_without_smoke" x="455" y="608" width="18" height="30.25">
+  <object id="3048" name="object.fire_without_smoke" x="455" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3049" name="object.fire_without_smoke" x="487" y="608" width="18" height="30.25">
+  <object id="3049" name="object.fire_without_smoke" x="487" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3050" name="object.fire_without_smoke" x="519" y="608" width="18" height="30.25">
+  <object id="3050" name="object.fire_without_smoke" x="519" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3051" name="object.fire_without_smoke" x="583" y="608" width="18" height="30.25">
+  <object id="3051" name="object.fire_without_smoke" x="583" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3052" name="object.fire_without_smoke" x="615" y="608" width="18" height="30.25">
+  <object id="3052" name="object.fire_without_smoke" x="615" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="3"/>
    </properties>
   </object>
-  <object id="3053" name="object.fire_without_smoke" x="359" y="704" width="18" height="30.25">
+  <object id="3053" name="object.fire_without_smoke" x="359" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3054" name="object.fire_without_smoke" x="391" y="704" width="18" height="30.25">
+  <object id="3054" name="object.fire_without_smoke" x="391" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3055" name="object.fire_without_smoke" x="455" y="704" width="18" height="30.25">
+  <object id="3055" name="object.fire_without_smoke" x="455" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3056" name="object.fire_without_smoke" x="487" y="704" width="18" height="30.25">
+  <object id="3056" name="object.fire_without_smoke" x="487" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3057" name="object.fire_without_smoke" x="519" y="704" width="18" height="30.25">
+  <object id="3057" name="object.fire_without_smoke" x="519" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3058" name="object.fire_without_smoke" x="583" y="704" width="18" height="30.25">
+  <object id="3058" name="object.fire_without_smoke" x="583" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3059" name="object.fire_without_smoke" x="615" y="704" width="18" height="30.25">
+  <object id="3059" name="object.fire_without_smoke" x="615" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="4"/>
    </properties>
   </object>
-  <object id="3060" name="object.fire_without_smoke" x="423" y="768" width="18" height="30.25">
+  <object id="3060" name="object.fire_without_smoke" x="423" y="864" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3061" name="object.fire_without_smoke" x="551" y="768" width="18" height="30.25">
+  <object id="3061" name="object.fire_without_smoke" x="551" y="864" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3062" name="object.fire_without_smoke" x="423" y="608" width="18" height="30.25">
+  <object id="3062" name="object.fire_without_smoke" x="423" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3063" name="object.fire_without_smoke" x="551" y="608" width="18" height="30.25">
+  <object id="3063" name="object.fire_without_smoke" x="551" y="704" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3064" name="object.fire_without_smoke" x="551" y="704" width="18" height="30.25">
+  <object id="3064" name="object.fire_without_smoke" x="551" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
    </properties>
   </object>
-  <object id="3065" name="object.fire_without_smoke" x="423" y="704" width="18" height="30.25">
+  <object id="3065" name="object.fire_without_smoke" x="423" y="800" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="1"/>
    </properties>
   </object>
-  <object id="3066" name="object.configObject" x="496" y="586">
+  <object id="3066" name="object.configObject" x="496" y="682">
    <properties>
     <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_up_position"/>
    </properties>
    <point/>
   </object>
-  <object id="3067" name="object.configObject" x="496" y="758">
+  <object id="3067" name="object.configObject" x="496" y="854">
    <properties>
     <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_down_position"/>
    </properties>
    <point/>
   </object>
-  <object id="3068" name="object.configObject" x="394" y="672">
+  <object id="3068" name="object.configObject" x="394" y="768">
    <properties>
     <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_left_position"/>
    </properties>
    <point/>
   </object>
-  <object id="3069" name="object.configObject" x="598" y="672">
+  <object id="3069" name="object.configObject" x="598" y="768">
    <properties>
     <property name="unitId" value="cutscene_object__muspelheim_boss_room__surtur_right_position"/>
    </properties>
    <point/>
   </object>
-  <object id="3070" name="object.configObject" x="496" y="672">
+  <object id="3070" name="object.configObject" x="496" y="768">
    <properties>
     <property name="unitId" value="cutscene_object__muspelheim_boss_room__center_position"/>
    </properties>
    <point/>
   </object>
-  <object id="3071" name="object.fire_without_smoke" x="359" y="524" width="18" height="30.25">
+  <object id="3071" name="object.fire_without_smoke" x="359" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3072" name="object.fire_without_smoke" x="391" y="524" width="18" height="30.25">
+  <object id="3072" name="object.fire_without_smoke" x="391" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3073" name="object.fire_without_smoke" x="455" y="524" width="18" height="30.25">
+  <object id="3073" name="object.fire_without_smoke" x="455" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3074" name="object.fire_without_smoke" x="487" y="524" width="18" height="30.25">
+  <object id="3074" name="object.fire_without_smoke" x="487" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3075" name="object.fire_without_smoke" x="519" y="524" width="18" height="30.25">
+  <object id="3075" name="object.fire_without_smoke" x="519" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3076" name="object.fire_without_smoke" x="583" y="524" width="18" height="30.25">
+  <object id="3076" name="object.fire_without_smoke" x="583" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3077" name="object.fire_without_smoke" x="615" y="524" width="18" height="30.25">
+  <object id="3077" name="object.fire_without_smoke" x="615" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3078" name="object.fire_without_smoke" x="423" y="524" width="18" height="30.25">
+  <object id="3078" name="object.fire_without_smoke" x="423" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3079" name="object.fire_without_smoke" x="551" y="524" width="18" height="30.25">
+  <object id="3079" name="object.fire_without_smoke" x="551" y="620" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="7"/>
    </properties>
   </object>
-  <object id="3080" name="object.fire_without_smoke" x="352" y="529" width="18" height="30.25">
+  <object id="3080" name="object.fire_without_smoke" x="352" y="625" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3081" name="object.fire_without_smoke" x="352" y="561" width="18" height="30.25">
+  <object id="3081" name="object.fire_without_smoke" x="352" y="657" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3082" name="object.fire_without_smoke" x="352" y="625" width="18" height="30.25">
+  <object id="3082" name="object.fire_without_smoke" x="352" y="721" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3083" name="object.fire_without_smoke" x="352" y="657" width="18" height="30.25">
+  <object id="3083" name="object.fire_without_smoke" x="352" y="753" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3084" name="object.fire_without_smoke" x="352" y="721" width="18" height="30.25">
+  <object id="3084" name="object.fire_without_smoke" x="352" y="817" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3085" name="object.fire_without_smoke" x="352" y="753" width="18" height="30.25">
+  <object id="3085" name="object.fire_without_smoke" x="352" y="849" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3086" name="object.fire_without_smoke" x="352" y="593" width="18" height="30.25">
+  <object id="3086" name="object.fire_without_smoke" x="352" y="689" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3087" name="object.fire_without_smoke" x="352" y="689" width="18" height="30.25">
+  <object id="3087" name="object.fire_without_smoke" x="352" y="785" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
-  <object id="3088" name="object.fire_without_smoke" x="622" y="529" width="18" height="30.25">
+  <object id="3088" name="object.fire_without_smoke" x="622" y="625" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3089" name="object.fire_without_smoke" x="622" y="561" width="18" height="30.25">
+  <object id="3089" name="object.fire_without_smoke" x="622" y="657" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3090" name="object.fire_without_smoke" x="622" y="625" width="18" height="30.25">
+  <object id="3090" name="object.fire_without_smoke" x="622" y="721" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3091" name="object.fire_without_smoke" x="622" y="657" width="18" height="30.25">
+  <object id="3091" name="object.fire_without_smoke" x="622" y="753" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3092" name="object.fire_without_smoke" x="622" y="721" width="18" height="30.25">
+  <object id="3092" name="object.fire_without_smoke" x="622" y="817" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3093" name="object.fire_without_smoke" x="622" y="753" width="18" height="30.25">
+  <object id="3093" name="object.fire_without_smoke" x="622" y="849" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3094" name="object.fire_without_smoke" x="622" y="593" width="18" height="30.25">
+  <object id="3094" name="object.fire_without_smoke" x="622" y="689" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3095" name="object.fire_without_smoke" x="622" y="689" width="18" height="30.25">
+  <object id="3095" name="object.fire_without_smoke" x="622" y="785" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
-  <object id="3105" name="object.fire_without_smoke" x="359" y="765" width="18" height="30.25">
+  <object id="3105" name="object.fire_without_smoke" x="359" y="861" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3106" name="object.fire_without_smoke" x="391" y="765" width="18" height="30.25">
+  <object id="3106" name="object.fire_without_smoke" x="391" y="861" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3107" name="object.fire_without_smoke" x="455" y="781" width="18" height="2">
+  <object id="3107" name="object.fire_without_smoke" x="455" y="877" width="18" height="2">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3108" name="object.fire_without_smoke" x="487" y="781" width="18" height="2">
+  <object id="3108" name="object.fire_without_smoke" x="487" y="877" width="18" height="2">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3109" name="object.fire_without_smoke" x="519" y="781" width="18" height="2">
+  <object id="3109" name="object.fire_without_smoke" x="519" y="877" width="18" height="2">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3110" name="object.fire_without_smoke" x="583" y="765" width="18" height="30.25">
+  <object id="3110" name="object.fire_without_smoke" x="583" y="861" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3111" name="object.fire_without_smoke" x="615" y="765" width="18" height="30.25">
+  <object id="3111" name="object.fire_without_smoke" x="615" y="861" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3112" name="object.fire_without_smoke" x="551" y="765" width="18" height="30.25">
+  <object id="3112" name="object.fire_without_smoke" x="551" y="861" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3113" name="object.fire_without_smoke" x="423" y="765" width="18" height="30.25">
+  <object id="3113" name="object.fire_without_smoke" x="423" y="861" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="8"/>
    </properties>
   </object>
-  <object id="3114" name="object.fire_without_smoke" x="199" y="763" width="18" height="30.25">
+  <object id="3114" name="object.fire_without_smoke" x="199" y="859" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3115" name="object.fire_without_smoke" x="231" y="763" width="18" height="30.25">
+  <object id="3115" name="object.fire_without_smoke" x="231" y="859" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3116" name="object.fire_without_smoke" x="263" y="763" width="18" height="30.25">
+  <object id="3116" name="object.fire_without_smoke" x="263" y="859" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3117" name="object.fire_without_smoke" x="263" y="731" width="18" height="30.25">
+  <object id="3117" name="object.fire_without_smoke" x="263" y="827" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3118" name="object.fire_without_smoke" x="263" y="699" width="18" height="30.25">
+  <object id="3118" name="object.fire_without_smoke" x="263" y="795" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3119" name="object.fire_without_smoke" x="710" y="763" width="18" height="30.25">
+  <object id="3119" name="object.fire_without_smoke" x="710" y="859" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3120" name="object.fire_without_smoke" x="742" y="763" width="18" height="30.25">
+  <object id="3120" name="object.fire_without_smoke" x="742" y="859" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3121" name="object.fire_without_smoke" x="774" y="763" width="18" height="30.25">
+  <object id="3121" name="object.fire_without_smoke" x="774" y="859" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3122" name="object.fire_without_smoke" x="710" y="731" width="18" height="30.25">
+  <object id="3122" name="object.fire_without_smoke" x="710" y="827" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3123" name="object.fire_without_smoke" x="710" y="699" width="18" height="30.25">
+  <object id="3123" name="object.fire_without_smoke" x="710" y="795" width="18" height="30.25">
    <properties>
     <property name="initiallySolid" value="true"/>
     <property name="traverseable_object_n" value="9"/>
    </properties>
   </object>
-  <object id="3135" name="object.spawnPoint.fire_totem" x="384" y="672">
+  <object id="3135" name="object.spawnPoint.fire_totem" x="384" y="768">
    <properties>
     <property name="spawn" value="l3_muspelheim__fire_totem__inner_platform__horizontal"/>
    </properties>
    <point/>
   </object>
-  <object id="3137" name="object.spawnPoint.fire_totem" x="496" y="758">
+  <object id="3137" name="object.spawnPoint.fire_totem" x="496" y="854">
    <properties>
     <property name="spawn" value="l3_muspelheim__fire_totem__inner_platform__vertical"/>
    </properties>
    <point/>
   </object>
-  <object id="3139" name="object.spawnPoint.fire_totem" x="608" y="672">
+  <object id="3139" name="object.spawnPoint.fire_totem" x="608" y="768">
    <properties>
     <property name="spawn" value="l3_muspelheim__fire_totem__inner_platform__horizontal"/>
    </properties>
    <point/>
   </object>
-  <object id="3140" name="object.spawnPoint.fire_totem" x="496" y="582">
+  <object id="3140" name="object.spawnPoint.fire_totem" x="496" y="678">
    <properties>
     <property name="spawn" value="l3_muspelheim__fire_totem__inner_platform__vertical"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3168" name="object.spawnPoint.fire_totem" x="400" y="1122">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3169" name="object.spawnPoint.fire_totem" x="592" y="1122">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3170" name="object.spawnPoint.fire_totem" x="112" y="834">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3171" name="object.spawnPoint.fire_totem" x="112" y="674">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3172" name="object.spawnPoint.fire_totem" x="880" y="674">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3173" name="object.spawnPoint.fire_totem" x="880" y="834">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3174" name="object.spawnPoint.fire_totem" x="624" y="386">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3175" name="object.spawnPoint.fire_totem" x="368" y="386">
+   <properties>
+    <property name="spawn" value="l3_muspelheim__fire_totem__outer_ring"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3176" name="object.key_wall" x="496.5" y="231">
+   <properties>
+    <property name="lockId" value="loa2_l3_muspelheim_lava_dungeon__boss_gate"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3177" name="object.configObject" x="416" y="224">
+   <properties>
+    <property name="eventDelayInSeconds" value="5"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l3_muspelheim__key_wall__boss_room__open_gate_after_surtur_defeated_delayed,
+}</property>
+    <property name="unitId" value="loa2_l3_muspelheim__config_object__open_key_wall_after_surtur_defeated"/>
    </properties>
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
-  <object id="2957" x="32" y="32" width="416" height="320"/>
-  <object id="2958" x="544" y="32" width="416" height="320"/>
-  <object id="2959" x="0" y="32" width="32" height="1042"/>
-  <object id="2960" x="960" y="32" width="32" height="1043"/>
-  <object id="2961" x="608" y="1074" width="384" height="206"/>
-  <object id="2962" x="672" y="1280" width="320" height="160"/>
-  <object id="2963" x="608" y="1312" width="64" height="128"/>
-  <object id="2965" x="0" y="1074" width="384" height="206"/>
-  <object id="2967" x="0" y="1280" width="320" height="160"/>
-  <object id="2968" x="320" y="1312" width="64" height="128"/>
-  <object id="2969" x="448" y="32" width="96" height="96"/>
+  <object id="2957" x="32" y="-0.333333" width="416" height="349.333"/>
+  <object id="2958" x="544" y="0.666667" width="416" height="350.333"/>
+  <object id="2959" x="0" y="0.5" width="32" height="1201.5"/>
+  <object id="2960" x="960" y="-0.5" width="32" height="1202.5"/>
+  <object id="2961" x="608" y="1202" width="384" height="206"/>
+  <object id="2962" x="672" y="1408" width="320" height="160"/>
+  <object id="2963" x="608" y="1440" width="64" height="128"/>
+  <object id="2965" x="0" y="1202" width="384" height="206"/>
+  <object id="2967" x="0" y="1408" width="320" height="160"/>
+  <object id="2968" x="320" y="1440" width="64" height="128"/>
+  <object id="2969" x="448" y="1" width="96" height="127"/>
   <object id="2970" x="447.75" y="128" width="32" height="18.4545"/>
   <object id="2971" x="511.75" y="128" width="32" height="18.7273"/>
   <object id="2972" x="479.75" y="128.5">
@@ -653,26 +720,26 @@
    <polygon points="0,0 0,18.7273 -8.36364,0"/>
   </object>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics">
-  <object id="2977" x="384" y="1105" width="64" height="335"/>
-  <object id="2978" x="544" y="1103.67" width="64" height="336.333"/>
-  <object id="2980" x="416" y="1440" width="160" height="32"/>
-  <object id="2981" x="32" y="960" width="448" height="96"/>
-  <object id="2982" x="512" y="960" width="448" height="96"/>
-  <object id="2983" x="32" y="352" width="448" height="32"/>
-  <object id="2984" x="512" y="352" width="448" height="32"/>
-  <object id="2985" x="512" y="256" width="32" height="96"/>
-  <object id="2986" x="448" y="256" width="32" height="96"/>
-  <object id="2987" x="32" y="384" width="160" height="576"/>
-  <object id="2988" x="800" y="384" width="160" height="576"/>
-  <object id="2989" x="384" y="1056" width="96" height="48.3333"/>
-  <object id="2990" x="512" y="1056" width="96" height="47.3333"/>
-  <object id="2991" x="475.818" y="944.364" width="6.72727" height="15.4545"/>
-  <object id="2992" x="509.636" y="944.727" width="6.90909" height="14.9091"/>
-  <object id="2993" x="475.455" y="1104.55" width="7.45455" height="22.9091"/>
-  <object id="2994" x="509.273" y="1103.45" width="7.09091" height="24"/>
-  <object id="2995" x="476.375" y="376.375" width="6.5" height="15.125"/>
-  <object id="2996" x="508.875" y="376.375" width="7.25" height="15.25"/>
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
+  <object id="2977" x="384" y="1233" width="64" height="335"/>
+  <object id="2978" x="544" y="1231.67" width="64" height="336.333"/>
+  <object id="2980" x="416" y="1568" width="160" height="32"/>
+  <object id="2981" x="32" y="1056" width="448" height="46"/>
+  <object id="2982" x="512" y="1056" width="448" height="47"/>
+  <object id="2983" x="32" y="417" width="448" height="63"/>
+  <object id="2984" x="512" y="416" width="448" height="64"/>
+  <object id="2985" x="512" y="255.667" width="32" height="192.333"/>
+  <object id="2986" x="448" y="255.667" width="32" height="192.333"/>
+  <object id="2987" x="129" y="480" width="63" height="576"/>
+  <object id="2988" x="800" y="480" width="64" height="576"/>
+  <object id="2989" x="384" y="1184" width="96" height="48.3333"/>
+  <object id="2990" x="512" y="1184" width="96" height="47.3333"/>
+  <object id="2991" x="475.818" y="1040.36" width="6.72727" height="15.4545"/>
+  <object id="2992" x="509.636" y="1040.73" width="6.90909" height="14.9091"/>
+  <object id="2993" x="475.455" y="1232.55" width="7.45455" height="22.9091"/>
+  <object id="2994" x="509.273" y="1231.45" width="7.09091" height="24"/>
+  <object id="2995" x="476.375" y="472.375" width="6.5" height="15.125"/>
+  <object id="2996" x="508.875" y="472.375" width="7.25" height="15.25"/>
   <object id="2997" x="475.875" y="239.875" width="7.125" height="16"/>
   <object id="2998" x="509" y="239.875" width="7.25" height="16.125"/>
   <object id="3021" x="527.75" y="227.75">
@@ -681,20 +748,36 @@
   <object id="3022" x="464" y="227.25">
    <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
   </object>
-  <object id="3023" x="454.625" y="1104.25" width="18" height="38.625"/>
-  <object id="3024" x="519.375" y="1103.5" width="19.125" height="39"/>
-  <object id="3124" x="482.455" y="959.818">
+  <object id="3023" x="454.625" y="1232.25" width="18" height="38.625"/>
+  <object id="3024" x="519.375" y="1231.5" width="19.125" height="39"/>
+  <object id="3124" x="482.455" y="1055.82">
    <polygon points="0,0 -2.45455,15.4545 -2.45455,-0.0909091"/>
   </object>
-  <object id="3125" x="509.636" y="959.636">
+  <object id="3125" x="509.636" y="1055.64">
    <polygon points="0,0 2.36364,15.2727 2.36364,0"/>
   </object>
-  <object id="3126" x="509.273" y="1103.27">
+  <object id="3126" x="509.273" y="1231.27">
    <polygon points="0,0 2.63636,-15.7273 2.72727,0.181818"/>
   </object>
-  <object id="3127" x="482.818" y="1104.55">
+  <object id="3127" x="482.818" y="1232.55">
    <polygon points="0,0 -2.81818,-17.3636 -2.90909,-0.363636"/>
   </object>
+  <object id="3141" x="32" y="352" width="320" height="64"/>
+  <object id="3142" x="384" y="352" width="64" height="64"/>
+  <object id="3143" x="544" y="352" width="64" height="64"/>
+  <object id="3144" x="640" y="352" width="320" height="64"/>
+  <object id="3156" x="896" y="480" width="64" height="576"/>
+  <object id="3157" x="864" y="864" width="32" height="192"/>
+  <object id="3158" x="864" y="704" width="32" height="96"/>
+  <object id="3159" x="864" y="480" width="32" height="160"/>
+  <object id="3160" x="32" y="480" width="64" height="576"/>
+  <object id="3161" x="96" y="864" width="32" height="192"/>
+  <object id="3162" x="96" y="704" width="32" height="96"/>
+  <object id="3163" x="96" y="480" width="32" height="160"/>
+  <object id="3164" x="32" y="1088" width="352" height="96"/>
+  <object id="3165" x="416" y="1088" width="64" height="96"/>
+  <object id="3166" x="512" y="1088" width="64" height="96"/>
+  <object id="3167" x="608" y="1088" width="352" height="96"/>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1"/>
 </map>

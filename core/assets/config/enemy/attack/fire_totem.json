@@ -1,12 +1,12 @@
 [
 	{
 		id: attack,
-		type: FIREBALL,
+		type: BLOCKABLE_FIREBALL,
 		projectileType: fire_ball,
 		delay: 0.2,
 		projectileStartOffsetY: -0.2,
 		duration: 0,
-		damage: 5,
+		damage: 2,
 		distFromCenter: 0.2,
 		hitFixtureRadius: 0.5,
 		pushForce: 25

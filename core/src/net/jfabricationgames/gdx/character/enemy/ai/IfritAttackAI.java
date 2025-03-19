@@ -2,6 +2,7 @@ package net.jfabricationgames.gdx.character.enemy.ai;
 
 import java.util.function.Supplier;
 
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
@@ -11,6 +12,7 @@ import net.jfabricationgames.gdx.character.ai.move.MoveType;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.implementation.Ifrit.DefenseModePosition;
+import net.jfabricationgames.gdx.character.player.PlayableCharacter;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
 public class IfritAttackAI extends AbstractMultiAttackAI {
@@ -28,6 +30,8 @@ public class IfritAttackAI extends AbstractMultiAttackAI {
 	protected float timeSinceLastAttackSword = 0;
 	protected float timeSinceLastAttackFireBall = 0;
 	protected float timeSinceLastAttackFireSoil = 0;
+	
+	private Vector2 targetingPlayerLastKnownPosition;
 	
 	public IfritAttackAI(ArtificialIntelligence subAI, ArrayMap<String, CharacterState> attackStates, Supplier<DefenseModePosition> defenseModePositionSupplier) {
 		super(subAI, attackStates, null, new FixedAttackTimer(0f));
@@ -130,7 +134,7 @@ public class IfritAttackAI extends AbstractMultiAttackAI {
 	protected boolean changeToAttackState(CharacterState state) {
 		if (state == attackFireSoil) {
 			// the fire soil attack starts at the player's position
-			state.setAttackTargetPositionSupplier(() -> targetingPlayer.getPosition().cpy());
+			state.setAttackTargetPositionSupplier(() -> targetingPlayer != null ? targetingPlayer.getPosition().cpy() : targetingPlayerLastKnownPosition);
 		}
 		
 		boolean changedState = super.changeToAttackState(state);
@@ -147,5 +151,17 @@ public class IfritAttackAI extends AbstractMultiAttackAI {
 		}
 		
 		return changedState;
+	}
+	
+	@Override
+	protected void setTargetingPlayer(PlayableCharacter collidingPlayer) {
+		super.setTargetingPlayer(collidingPlayer);
+		targetingPlayerLastKnownPosition = null;
+	}
+	
+	@Override
+	protected void resetTargetingPlayer() {
+		targetingPlayerLastKnownPosition = targetingPlayer.getPosition().cpy();
+		super.resetTargetingPlayer();
 	}
 }

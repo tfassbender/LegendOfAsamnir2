@@ -33,7 +33,7 @@
 			}
 		],
         spawnType: enemy.fire_totem,
-        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__horizontal\"}",
+        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__horizontal\", aiType: \"totem_ray_cast\"}",
 	},
 	
 	l3_muspelheim__fire_totem__inner_platform__vertical: {
@@ -44,6 +44,17 @@
 			}
 		],
         spawnType: enemy.fire_totem,
-        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical\"}",
+        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__vertical\", aiType: \"totem_ray_cast\"}",
+	},
+	
+	l3_muspelheim__fire_totem__outer_ring: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__outer_ring,
+			}
+		],
+        spawnType: enemy.fire_totem,
+        spawnTypeMapProperties: "{unitId: \"loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__outer_ring\"}",
 	},
 }

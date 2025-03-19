@@ -293,6 +293,21 @@
 	},
 	
 	//*******************************************
+	//*** enemy defeated
+	//*******************************************
+	
+	loa2_l3_muspelheim__key_wall__boss_room__open_gate_after_surtur_defeated_delayed: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l3_muspelheim__key_wall__boss_room__open_gate_after_surtur_defeated_delayed,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l3_muspelheim_lava_dungeon__boss_gate,
+		}
+	},
+	
+	//*******************************************
 	//*** change map
 	//*******************************************
 	
@@ -530,10 +545,37 @@
 		}
 	},
 	
-//	loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_boss: {
+	loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_boss: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_boss,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_boss,
+			startingPointId: 0,
+		}
+	},
+
+	//***********************
+	//*** boss room
+	//***********************
+	
+	loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_key_room: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_key_room,
+		}
+		executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_key_room_cutscene,
+		}
+	},
+	
+//	loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune: {
 //		event: {
 //			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_l3_muspelheim_lava_dungeon_key__goto_muspelheim_lava_dungeon_boss,
+//			stringValue: loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune,
 //		}
 //		executionType: CHANGE_MAP,
 //		executionParameters: {

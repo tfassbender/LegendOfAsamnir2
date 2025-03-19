@@ -368,6 +368,21 @@
 		dampingAfterObjectHit: 15,
 	},
 	
+	blockable_fire_ball: {
+		attackType: BLOCKABLE_FIREBALL,
+		
+		animation: ifrit_fire_ball,
+		removeAfterAnimationFinished: true,
+		textureScale: 0.5,
+		textureScaleGrowing: true,
+		rotateTextureToMovementDirection: true,
+		
+		range: 30,
+		removeAfterRangeExceeded: false,
+		speed: 75,
+		dampingAfterObjectHit: 15,
+	},
+	
 	fire_soil: {
         attackType: ANIMATED_HIT,
         
@@ -377,7 +392,7 @@
         
         speed: 0,
         damping: 0,
-		hitFixtureRadius: 1f,
+		hitFixtureRadius: 0.8f,
 		flipAnimationToAttackDirection: true,
 		
 		sensorBody: true,

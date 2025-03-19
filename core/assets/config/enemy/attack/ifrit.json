@@ -15,7 +15,7 @@
 		projectileType: ifrit_fire_ball,
 		delay: 0.3,
 		duration: 0,
-		damage: 10,
+		damage: 5,
 		pushForce: 35,
 	},
 	{
@@ -24,7 +24,7 @@
 		projectileType: fire_soil,
 		delay: 0.3,
 		duration: 0,
-		damage: 20,
-		pushForce: 35,
+		damage: 10,
+		pushForce: 60,
 	},
 ]
