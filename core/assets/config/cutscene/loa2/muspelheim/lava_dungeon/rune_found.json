@@ -1,0 +1,218 @@
+{
+	id: loa2_l3_muspelheim_lava_dungeon__rune_kenaz_found_cutscene,
+	controlledActions: {
+		thorin_1: {
+			startsWithCutscene: true,
+			executionDelayInSeconds: 3f,
+		
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "This must be kenaz...            \nIt can revive one after death...               ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+           	],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That actually sounds useful!\n            \nNow I can kill the strange chaos wizard guy, revive him ... and kill him straight again!!!    ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_3,
+			],
+		},
+		
+		thorin_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "It needs to be reforged after use ... so I probably can do that only once ...\n                      \nBut it seems pretty useful anyway ...    ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_1,
+			],
+		},
+		
+		chaos_wizard_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 2f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Did you just defeat Surtur?!       \n...                \n... that was ... totally expected ... I'm not worried at all ...\nYou'll still never reach me!     ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_2,
+			],
+		},
+		
+		chaos_wizard_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "If you would excuse me ... I have to go and plan something evil ... \n                        \n... that has nothing to do with you ... or my defenses ...   ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_3,
+			],
+		},
+		
+		chaos_wizard_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "*from a distance*\n    \n... damn! I need to strengthen my defenses and set up some more traps and do ... stuff ...  ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	freydis_1,
+			],
+		},
+		
+		freydis_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            executionDelayInSeconds: 2f,
+            
+            executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Thorin might not be the brightest ... but even he understood that you're scared ...    ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                freydis_2,
+			],
+		},
+		
+		freydis_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Besides ... you left your magical speaking thingy on ...\n      \nThorin hurry up! This scared idiot is still pretty annoying ...    ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_4,
+			],
+		},
+		
+		chaos_wizard_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Oh damnit!!! ... ahem ... I mean ...\n                              \nYou fool, I was just ... joking!     ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_5,
+			],
+		},
+		
+		chaos_wizard_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I'm the all mighty chaos wizard!            \nI created this world!                \nI'm the master of this universe!!!\n              \nI'm not scared of a little dwarf ...         ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_6,
+			],
+		},
+		
+		chaos_wizard_6: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "But I still need to do some ... evil ... stuff ... \n            \n... See you later ...            \n*hang up sound*   ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_4,
+			],
+		},
+		
+		thorin_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 2f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "...                      \n... how did this idiot manage to steal my axe?! ...\n                   \nAnyway ... I better get going ...   ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

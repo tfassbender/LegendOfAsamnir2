@@ -308,6 +308,21 @@
 	},
 	
 	//*******************************************
+	//*** rune found
+	//*******************************************
+	
+	loa2_l3_muspelheim_lava_dungeon__rune_kenaz_found: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: KENAZ,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l3_muspelheim_lava_dungeon__rune_kenaz_found_cutscene,
+		}
+	},
+	
+	//*******************************************
 	//*** change map
 	//*******************************************
 	
@@ -572,15 +587,30 @@
 		}
 	},
 	
-//	loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune: {
-//		event: {
-//			eventType: EVENT_OBJECT_TOUCHED,
-//			stringValue: loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune,
-//		}
-//		executionType: CHANGE_MAP,
-//		executionParameters: {
-//			map: loa2_muspelheim_lava_dungeon_boss,
-//			startingPointId: 0,
-//		}
-//	},
+	loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_boss__goto_muspelheim_lava_dungeon_rune,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_muspelheim_lava_dungeon_rune,
+			startingPointId: 0,
+		}
+	},
+
+	//***********************
+	//*** rune room
+	//***********************
+	
+	loa2_l3_muspelheim_lava_dungeon_rune__goto_muspelheim_lava_dungeon_boss: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l3_muspelheim_lava_dungeon_rune__goto_muspelheim_lava_dungeon_boss,
+		}
+		executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l3_muspelheim_lava_dungeon_rune__goto_muspelheim_lava_dungeon_boss_room_cutscene,
+		}
+	},
 }

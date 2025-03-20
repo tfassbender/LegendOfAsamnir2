@@ -163,6 +163,8 @@
 	config/cutscene/loa2/muspelheim/lava_dungeon/surtur_final_arena_down.json,
 	config/cutscene/loa2/muspelheim/lava_dungeon/surtur_final_arena_left.json,
 	config/cutscene/loa2/muspelheim/lava_dungeon/surtur_final_arena_right.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/goto_boss_room.json,
+	config/cutscene/loa2/muspelheim/lava_dungeon/rune_found.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
