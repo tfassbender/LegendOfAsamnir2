@@ -8,7 +8,7 @@
   <property name="continuous_damage_interval" value="3"/>
   <property name="continuous_damage_prevention_condition" value="common__rune_hagalaz_collected"/>
   <property name="dungeon_level" value="false"/>
-  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_dungeon_key.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_lava_dungeon_boss.json"/>
   <property name="shadow_layers" value="[5]"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
@@ -29,9 +29,9 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="31" height="49" locked="1">
+ <layer id="1" name="background" width="31" height="49">
   <data encoding="base64" compression="zlib">
-   eJztmNFNwzAQhk1HAB7dN+gswAjACMAI0CeeoTOglgEq1GYAhFpGANQJStmA/6QcPVl26nOdtAIifQ+NY3/N5ew4Z4z+2Gsbcyig300d+3D1rTED8Ah2G3aP4ByDYgPuCZxT8LoB9xucD+BjDbebNzF0wBE4BifgIGEM8tI9DKwOyi/p7iv7D8pYkXtsdVB+naLfGTgXeaeB3VOrg/LrUzBR9p8K97vVQfk1oniBosw77RjslvcQywv6zcBzYv+f553ATJDSn92zCIbgFjwltrto3BTbLxFrbfs6bo7tOu1MIdzuf6X4XYBLcFXGUZ4L4buWz7kxCrmp7RrcgG7ZLs+F8F3bDYxf5b4D96AnxuNzIXzX9hLc83IeLuxyvPmKOeu7duHJvyq3O2c187iqf4y76VyTa0MdueaOL91ybajD7Y7vxpyfTV1zTI6/rfO7Sfc25VrudU2Ta3WsazG59pfWtW2aY//v0GZzLURoH6zdH6e4Q/tg7f6Y3fQdvBNJKxBDjrFRjBVbH+L6QKciRnQvXAPIWXfi+sCjXb4X3LWD3FwDyFl/4fpAsWJfwzWA3G7+5q9ycw0gt5u/+avcXAPI7XbXLZ+b17LcucY1jtC7hudZkTnPeQ1otcN7qqGY33XUduX+yhfzOmubv8n9DVJsfDw=
+   eJztmF9OwkAQxleOoD4ub8pZ1COoR1CPoDz5rJzBAAcgBnoAQqhHUMMJEG/gN0knTDa7badsS6M2+T2wf+bLDjPT7Rijf466xpwK6HdTzzG0htaYERiDw4a1p9CcgWQP2ktopuBtD9rv0HwBnztou3FThh44A+fgApxUsEG6dIaR1UHxJbWHyv2jzFekPbM6KL4use8KXIu408DaqdVB8fUlWCr3p0L7w+qg+JqSv0CSxZ3WBmvLM5RlgX0rMK+4n7X5DBpWAu1e8hVrLxxbPibgEbxWnJfMldq0/tuG1xbN76LNvt1lvow2+e8G3IK7zI9yLIRvLY+V1aa5e/AA+tm8HAvhW9sP2M/TfgLPYCDs8VgI39pBBe11locbu7W3LshZ39qNJ/6KYs2Xy5q8D9WCtsWarA11xJprX2rL2lCHtmvf9Tn/N3XlmLTf1vxuUrtNsRa7rmlirY66VibW/lJda1OO/b9Dm421EKF7sOZ+XFU7dA/W3I+lNn0HH5SkE/Ah+9gobJXtD3F/oJfjIzoL9wBi9p24PzC22/eCWztIm3sAMfsv3B9ICu413AOIrc3f/Hna3AOIrc3f/Hna3AOIre3WLZ8217LYscb9gdC7hvMsiRznXAM63fCdaiLyu47errxf+XxeZ2/zN2n/ALFce8w=
   </data>
  </layer>
  <layer id="2" name="background_2" width="31" height="49" locked="1">
@@ -39,9 +39,9 @@
    eJzt1qENACAMRUGGQJJOwwzsLxgEgcKhgIQ7U/m+bEqwp5fbCzgph7a2NgAA//5r2mfVmO16od9ivQCvGPiFBTc=
   </data>
  </layer>
- <layer id="5" name="terrain" width="31" height="49" locked="1">
+ <layer id="5" name="terrain" width="31" height="49">
   <data encoding="base64" compression="zlib">
-   eJxjYBh6IEQdlaYnKFFHpekNDsgOjL05cqj0KKA92C+LSlMKkNMOIbYYMJ7FgVhCjnS9lAJ0u+kJBtJuDaCdmkCsNcL8PVLDnF7AHug3BzT/9Smi0jBgJwdRP5SBDhb3YxMjVe1gt3swAGxpDRcYDmltFAwcGGlpbbRcGzgw2OpQRqD5TEDMPMLaayO1rTga5vSxj9CYEi3HnAiNKQ3UmBOtAaExpdExp1EwCjABALLUJnU=
+   eJxjYBh6IEQdlaYnKFFHpekNDsgOjL05cqj0KKA92C+LSlMKkNMOIbYYMJ7FgVhCjnS9lAJ0u+kJ6GF3HBazG4BiGkCsCcRaVLDbh0QzkP1Nql58oArJrDYc5hIT5gU0iI84AmHeQKad1Aw/YgE+t9oD5RzQ5PsUUWkYsJODqEcHVWT6iVx9lAAdLHZiEyNFLbFxiss8bHkeJI6eJ3C5c6gAbGkNF8CV1kYCIDdf4CoHyS2riNWLq+wmBWDLA6S6AxkM17SGK23QolwjFiDrhZWFtLabUHqhJ6BGHQoC+OoRfOkfPU0wAvlMQMyMJk6onURJOQEDw719jiuOiG2fw9ItvjKe1PbscA9zbIDafSJiAKExJVqOOeEaU4KlI1qPOQ1UeUtoTGmgxpwGoh83CkYBsQAAvuI7mw==
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="31" height="49" locked="1">

@@ -1,0 +1,9 @@
+{
+	name: Throne Room,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l3_muspelheim_lava_dungeon_rune,
+	},
+	textureWidth: 170,
+	textureHeight: 500,
+}

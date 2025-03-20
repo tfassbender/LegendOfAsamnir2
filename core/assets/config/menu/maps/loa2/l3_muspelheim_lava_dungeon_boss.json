@@ -1,0 +1,9 @@
+{
+	name: Surturs Arena,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l3_muspelheim_lava_dungeon_boss,
+	},
+	textureWidth: 316,
+	textureHeight: 500,
+}
