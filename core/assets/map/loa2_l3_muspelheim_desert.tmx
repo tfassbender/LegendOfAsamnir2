@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2390">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="61" height="64" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2392">
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5]"/>
@@ -235,6 +235,12 @@
    <properties>
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
+  </object>
+  <object id="2390" name="item.metal_ingot" x="1655.75" y="1928.75">
+   <point/>
+  </object>
+  <object id="2391" name="item.metal_ingot" x="1504" y="288">
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="18" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="2909">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="18" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="2910">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
