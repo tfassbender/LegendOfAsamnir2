@@ -127,6 +127,10 @@
 		}
 	},
 	
+	//*******************************************
+	//*** level setups
+	//*******************************************
+	
 	loa2_l3_muspelheim_lava_dungeon__room_3__open_gate__global_value_set: {
 		conditionType: GLOBAL_VALUE_SET,
 		parameters: {
@@ -176,5 +180,17 @@
 			targetLowerLeftObjectId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_target_lower_left,
 			targetUpperRightObjectId: loa2_l3_muspelheim_lava_dungeon__room_6__bomb_target_upper_right,
         }
+	},
+	
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_l3_muspelheim_lava_dungeon__boss_room_entered: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l3_muspelheim_lava_dungeon__boss_room_entered,
+            expectedValue: true,
+		}
 	},
 }

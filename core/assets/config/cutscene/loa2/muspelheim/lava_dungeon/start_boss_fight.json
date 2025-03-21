@@ -1,9 +1,24 @@
 {
 	id: loa2_l3_muspelheim_lava_dungeon__start_boss_fight_cutscene,
 	controlledActions: {
-		start_multiplexer: {
+		start_condition: {
 	    	startsWithCutscene: true,
-	    	
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l3_muspelheim_lava_dungeon__boss_room_entered,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: start_multiplexer,
+				},
+			],
+		},
+		
+		start_multiplexer: {
             type: WAIT,
             executionDelayInSeconds: 0f,
             
@@ -316,7 +331,20 @@
             executionDelayInSeconds: 3f,
             
             executes: [
-                end,
+                set_global_value__boss_room_entered,
+			],
+		},
+		
+		set_global_value__boss_room_entered: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l3_muspelheim_lava_dungeon__boss_room_entered, value: true}",
+			},
+			
+			executes: [
+				end,
 			],
 		},
 		
