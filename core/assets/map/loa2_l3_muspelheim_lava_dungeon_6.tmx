@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="2924">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="2934">
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -30,9 +30,9 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="31" height="32" locked="1">
+ <layer id="1" name="background" width="31" height="32">
   <data encoding="base64" compression="zlib">
-   eJztllEOwUAQhpF48IrH9YY4HI6AI+AwwgUawRFKnABHMJOQTLbzb9d223jow5dIbObrdHb+tDdoNHoF6RNH4k4kRDdCTY2RwrgCN/d3NlkuJtyt9TIC7qvJcgt0c72T0gtj1+CzU2JmMQ9851wvFT3sxG/NvSCWFqsCbtRLFW5Ur3aX42aaH1qiNtebDLJ711boFHBrfbEb7V7MbEHuVMmRL3ymaLa45mnvnUT+b2fLUJkVysq8u5SHfdfQrC5KXsV2o5y8Odz2vdfuv49by0mUlaEZgNzorJYZ/+5eExvAtmT302Bext8t98/XvScODu6ebrl/KAPQt2AeiWM+PBu5f7/mtY/74ZiPBOU1+hb0wTUbic/zvX50x37G2N6amip5A/CyXhM=
+   eJztlkEOgjAQRdHEhVvpsuzUeDj1COoR1MMYvQAxyhGUcALlCHYSF+Mw05ZQiAsWb1XsmzKdL3ESRXFDlOFqKAypYRJgT44Zw5y4p2Q9hBfOd9dVMv3rvpF123vgzsLVC+6nrpIT94OsS27F1CnVC88uDSvCmrzzjWGLsLlxnSdLvYrZF9g1cEtn6cIt7de723EDgy9D9DvYb5FU527EME6a55oibmn2XNkSwk0zAgPPSNnS1A3QucPgdZotNM99sl26Sy7oXZN6lTnyNYRbysnc8b+C7z13/33cXE5KWVn3HtSdb1tm/Lt7bzgIHFt2v7VMqf3deP583WfDxULh6cbzJ2WA9C3oIrX0B3qD569uXvu4X5b+YKS8lr4FfbD1BuNTX1nTHbrG0N6eni75AMfJbnM=
   </data>
  </layer>
  <layer id="2" name="background_2" width="31" height="32" locked="1">
@@ -42,7 +42,7 @@
  </layer>
  <layer id="5" name="terrain" width="31" height="32" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBg+oE1uoF0w/MF+WQhdQGFY58ih0vQALljswiZGCJCTzsKw6MEmhgs8kSXdTmRwkUj9F3CoixvieYuceKYWICWesQEfOrh9owyCPVBh1adIeVgRAsTmg6pBkt7Ry0ly44aQPmLKNHLjBqYPV9kiCJTnh2JcAJdeSgHITkECdtMKEFOH0iMv7scRttTIi+j5iNb1CLHmE5O/D9AozZEDkN2Ciw0D6PVFAwG/UtqWwwZwlSeDqR1BKFzQAS37F6TGASyO0f2Abg6yPHK6wGcfLdIDJYDYeCLW3YOpnwgAx7wmHw==
+   eJxjYBg+oE1uoF0wOMBlWdqZvR9qdgGOsL5ApN05cqg0ueAiCX51wWIXNjFCgJx0FoZFDzYxXOAJhXFKbDjhir+4IZ63yIlnagFS4hkb8KGD2zfKINgDFVZ9ipSHFSFAbD6oGiTpHb2cJDduCOkjpkwjN25g+nCVLYJAeX4oxgWIrVdIBSA7BQnYTSuAqw5FBvTIi/txhC018iJ6PqJ1PUKs+cTk7wM0bEeRCpDdgosNA+j1RQMBvxKTDkkFuMqTwdSOIBQu6ICW/QtS4wAWx+h+QDcHWR45XeCzjxbpgRJAbDwR6+7B1E8EAKrAKOo=
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="31" height="32" locked="1">
@@ -52,7 +52,7 @@
  </layer>
  <layer id="19" name="background_above_player" width="31" height="32" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFhICI7PCxmxTzRu0etXuo2i0MNI8RipkImK0KlGfFgjmp4CZi/XVaBoGpBYi1+y7QzicyEJredtMCjFS7kdM8Iwnpn5ZgMMeFghwDgyIQKwGxMhCryNHPbiOgXcZAbALEpkBsRke7aQkG0u5RMApGwSgYSgAApdoPnA==
+   eJxjYBgFhICILHn6hMjUR0u7STFv1O5Ru4eq3cJAcUYoZiJgtipQnhUL5kTXh2QmCAsT4WZi/XVaBoGpBYi1+y7QzicyEJredtMCjFS7hdHSJ7Hpn5ZgMMeFghwDgyIQKwGxMhCryNHPbiOgXcZAbALEpkBsRke7aQkG0u5RMApGwSgYSgAApEQRuw==
   </data>
  </layer>
  <layer id="20" name="terrain_above_player" width="31" height="32" locked="1">
@@ -62,7 +62,7 @@
  </layer>
  <layer id="18" name="shadows" width="31" height="32" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztlkEKgzAQRT1J7n8AqxvbrgWFdm8ohba2t/AXIoSYhFgnCcUZeNv/SDIzpBVF0W7kAw4ab4JMm0NaGEGt8YjgfoKQCnW7ziItd0ft9uWZGexm97+672BQ3Izsl1juEEr3L+dit73Mt/LtSmq3r1x3ktOt97yO2f8x3LH7gN153PP8hf7pqPu/Ql4p/H+mtXt8rfsIzgnmmt3s3qv7CnpwSkgHLmpvff1NQmbvBL8qoKs=
+   eJztlk0KwjAQRnuS3v8AajdW1wULuu+Pglp7i36FFoYhhKROUqoTeKuQeQn5MqRIk6T4kh7sCR+BmiZHbaADGeHN5iX28gJLxtPzLKb9Srtt9fgadat7q+4HqCZaVpv3iM7R3ZCaI/eAvcP1nL/u5nfl0tul3LaxJPOh3TTzFJ7/EO7QOVD3Ou75/bn+o6Tzf0C9XWr/M/n2cV93Ds4R3rW61f2v7hsowSkiF3Cd+tboP0Zk9g5veoRy
   </data>
  </layer>
  <layer id="21" name="effect_layer_door" width="31" height="32" locked="1">
@@ -170,7 +170,23 @@
    </properties>
    <point/>
   </object>
-  <object id="2923" name="item.metal_ingot" x="559.5" y="145">
+  <object id="2923" name="item.metal_ingot" x="736" y="224">
+   <point/>
+  </object>
+  <object id="2928" name="object.traverseable" x="576" y="116" width="95.333" height="222.25"/>
+  <object id="2931" name="item.triforce_muspelheim_lava_dungeon" x="736" y="160">
+   <point/>
+  </object>
+  <object id="2929" name="object.hookshot_target" x="528" y="288">
+   <point/>
+  </object>
+  <object id="2930" name="object.hookshot_target" x="736" y="288">
+   <point/>
+  </object>
+  <object id="2932" name="player.startingPosition" x="448" y="224">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
@@ -183,7 +199,7 @@
   <object id="2858" x="799.75" y="480.5">
    <polygon points="0,0 0,18.7273 -8.36364,0"/>
   </object>
-  <object id="2859" x="672" y="0" width="224" height="480"/>
+  <object id="2859" x="672" y="338" width="224" height="142"/>
   <object id="2860" x="896" y="0" width="96" height="736"/>
   <object id="2861" x="0" y="529" width="320" height="271"/>
   <object id="2862" x="0" y="333" width="128" height="211"/>
@@ -215,9 +231,12 @@
   <object id="2908" x="447.938" y="337">
    <polygon points="0,0 5,10 0.0625,10"/>
   </object>
+  <object id="2925" x="672" y="0" width="224" height="115.167"/>
+  <object id="2926" x="800" y="96" width="96" height="256"/>
+  <object id="2927" x="576" y="0" width="96" height="115"/>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
-  <object id="2874" x="576" y="0" width="96" height="528"/>
+  <object id="2874" x="576" y="338" width="96" height="190"/>
   <object id="2875" x="576" y="608" width="96" height="160"/>
   <object id="2876" x="672" y="736" width="320" height="32"/>
   <object id="2877" x="320" y="640" width="256" height="128"/>
@@ -254,6 +273,9 @@
   </object>
   <object id="2895" x="672" y="534" width="7.18182" height="7.45455"/>
   <object id="2896" x="568.818" y="534.091" width="7.09091" height="6.90909"/>
+  <object id="2933" x="778" y="138">
+   <polygon points="0,0 16,4 -0.333333,5"/>
+  </object>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1"/>
 </map>

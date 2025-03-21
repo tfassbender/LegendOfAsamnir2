@@ -14,7 +14,7 @@
 		name: loa2_main,
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
-		initialStartingPointId: 11,
+		initialStartingPointId: 100,
 		//initial: true
 	},
 	{
@@ -103,7 +103,7 @@
         name: loa2_muspelheim_lava_caves,
         map: "map/loa2_l3_muspelheim_lava_caves.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_caves.json,
-        initialStartingPointId: 15,
+        initialStartingPointId: 13,
 		//initial: true
 	},
 	
@@ -167,7 +167,7 @@
         name: loa2_muspelheim_lava_dungeon_boss,
         map: "map/loa2_l3_muspelheim_lava_dungeon_boss.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json,
-        initialStartingPointId: 11,
+        initialStartingPointId: 10,
 		//initial: true
 	},
 	{

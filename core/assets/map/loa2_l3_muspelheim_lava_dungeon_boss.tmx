@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="49" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="3180">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="31" height="49" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="3182">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -144,7 +144,6 @@
   <object id="3026" name="object.eventObject" x="352" y="864" width="287.667" height="5">
    <properties>
     <property name="eventParameter" value="loa2_l2_muspelheim_lava_dungeon__enter_boss_room"/>
-    <property name="singleExecution" value="true"/>
    </properties>
   </object>
   <object id="3027" name="object.eventObject" x="448" y="1312" width="96" height="4.5">
@@ -708,6 +707,12 @@
    <properties>
     <property name="startingPointId" value="11"/>
    </properties>
+   <point/>
+  </object>
+  <object id="3180" name="item.health_full" x="464" y="1296">
+   <point/>
+  </object>
+  <object id="3181" name="item.shield_full" x="528" y="1296">
    <point/>
   </object>
  </objectgroup>

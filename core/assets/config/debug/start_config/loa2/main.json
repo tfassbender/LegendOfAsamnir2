@@ -6,6 +6,8 @@
 		9: after_level_1_finished,
 		10: after_fields_of_vigrid_first_time,
 		11: after_fields_of_vigrid_first_time,
+		
+		100: before_muspelheim,
 	},
 	eventsLists: {
 		after_tavern: {
@@ -50,5 +52,58 @@
 				},
 			]
         }
+        
+        before_muspelheim: {
+			subConfigPath: config/debug/start_config/loa2/l2_niflheim_ice_fields.json
+			subConfigName: final,
+			events: [
+            	{
+					eventType: COLLECT_RUNE,
+					stringValue: hagalaz,
+				},
+				
+				// 10 metal ingots were available to find till now
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+			]
+        },
 	}
 }

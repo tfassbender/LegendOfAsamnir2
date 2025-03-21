@@ -29,6 +29,7 @@ public class TriforceItem extends Item {
 		
 		TRIFORCE_MUSPELHEIM_DESERT(TriforceItemLocation.MUSPELHEIM), //
 		TRIFORCE_MUSPELHEIM_LAVA_CAVES(TriforceItemLocation.MUSPELHEIM), //
+		TRIFORCE_MUSPELHEIM_LAVA_DUNGEON(TriforceItemLocation.MUSPELHEIM), //
 		
 		TRIFORCE_ASGARD_CASTLE(TriforceItemLocation.ASGARD), //
 		TRIFORCE_ASGARD_FOREST(TriforceItemLocation.ASGARD); //

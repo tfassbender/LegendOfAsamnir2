@@ -29,9 +29,9 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="18" height="30" locked="1">
+ <layer id="1" name="background" width="18" height="30">
   <data encoding="base64" compression="zlib">
-   eJztk00KwjAQRnMGdZnu1NOpILhuxY1b9SxS1AOI2NITqOQE/tzAGdrAEELMTLt08Sil6SPz5YtJlDKEM9AD+oQBcHHW/aJLzxAYEcZCz1UrVRBKLfPc4L87kDfPh9AzAaaEmXCuFMgIy449e2AN5C09+G0VuTdcuwG2hJ3Q89Q1r4a35nuQowcj8ITgePBcbIewOxV5j+0AOhZOznPP2XFytmDOKdPjy/mUyDx2PuxuAZQtPLbX9q7SfmP2MXeD9jpzMqf9jvV8dN0XX+6c2TBf9Bw82XO662bEycWXkSSXUCe5uYQ6KXH8UeoLVHXjtQ==
+   eJztk00KwjAQRnMGdZnu1NOpILhuxY1b9SxS1AOI2NITqOQE/tzAGdrAEELMTLt08Sil6SPz5YtJlDKEM9AD+oQBcHHW/aJLzxAYEcZCz1UrVRBKLfPc4L87kDfPh9AzAaaEmXCuFMgIy449e2AN5C09+G0VuTdcuwG2hJ3Q89Q1r4a35nuQowcj8IT2yvHgudgOYXcq8h7bAXQsnJznnrPj5GzBnFOmx5fzKZF57HzY3QIoW3hsr+1dpf3G7GPuBu115mRO+x3r+ei6L77cObNhvug5eLLn9pdmxMnFl5Ekl1AnubmEOilx/FHqC9U+45s=
   </data>
  </layer>
  <layer id="2" name="background_2" width="18" height="30" locked="1">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="2768">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="26" height="22" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="2771">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -39,9 +39,9 @@
    eJxjYBgFQxFUyzIw1Mgi+E9kaGNPL9COPlnC6igF84F2LKCDPaNgFIyCgQW0KqtGwSggBADCEgYA
   </data>
  </layer>
- <layer id="5" name="terrain" width="26" height="22" locked="1">
+ <layer id="5" name="terrain" width="26" height="22">
   <data encoding="base64" compression="zlib">
-   eJxjYBg6oE1uoF1APRBHRb/kyKHSMIAeXo9kqWcnMhAE2sMPxAJk+OkACW4C2QGzixhwkUz/FlAxbqoImIUcR8Ta24ikzgdNDzXTFSUA3V20BI0k2gULo/1Epg87oHp7IHYg0h5bOVQ9LiS4j9T4a4CqB6WdMDS96HwYICW8nmAJI3T/YPMfrnyNq6zCBoj1D70BrdI2obICHxjsdeNgcR8AQoAZ9g==
+   eJxjYBg6oE1uoF1APRBHRb/kyKHSMIAeXujy1AKCQHP5gViADPMPyBKvFmQHzC5iwEUSzEYGBVQMpyoCZiHHEbH2NiKp80HTQ810RQlAdxctQSOJdsHCaD+R6cMOqN4eiB2ItMdWDlWPCwnuIzX+GqDqQWknDE0vOh8GSAmvJ1jCCN0/2PyHK1/jKquwAWL9Q29Aq7RNqKzABwZ73ThY3AcADX4ZgQ==
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="26" height="22" locked="1">
@@ -122,8 +122,14 @@
    <point/>
   </object>
   <object id="2767" name="object.traverseable" x="225.417" y="387.125" width="28.833" height="14.7503"/>
+  <object id="2768" name="item.health_full" x="392" y="171">
+   <point/>
+  </object>
+  <object id="2769" name="item.shield_full" x="424" y="171">
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="2707" x="0" y="0" width="480" height="112.5"/>
   <object id="2708" x="576" y="0" width="256" height="96"/>
   <object id="2709" x="704" y="96" width="128" height="352"/>
@@ -157,7 +163,7 @@
   </object>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics">
-  <object id="2716" x="96" y="192" width="127.667" height="160"/>
+  <object id="2716" x="96" y="223.667" width="127.667" height="128.333"/>
   <object id="2718" x="96.0303" y="448.583" width="127.97" height="223.417"/>
   <object id="2719" x="576" y="224" width="64" height="448"/>
   <object id="2720" x="480" y="0" width="96" height="146.591"/>
@@ -175,6 +181,7 @@
   <object id="2749" x="358.688" y="435.937" width="18.375" height="31.625"/>
   <object id="2750" x="358.688" y="500.313" width="18.375" height="31.625"/>
   <object id="2760" x="473.091" y="218" width="110.182" height="5.81818"/>
+  <object id="2770" x="96" y="192" width="96" height="32"/>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1">
   <object id="2761" x="193.208" y="156.419" width="32.2497" height="66.9545">

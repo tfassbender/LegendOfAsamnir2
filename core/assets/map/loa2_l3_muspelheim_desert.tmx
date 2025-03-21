@@ -218,9 +218,6 @@
    </properties>
    <point/>
   </object>
-  <object id="2386" name="item.rune_kenaz" x="1024" y="1344">
-   <point/>
-  </object>
   <object id="2387" name="object.eventObject" x="695" y="1376" width="92.3333" height="15">
    <properties>
     <property name="eventParameter" value="respawnCheckpoint"/>

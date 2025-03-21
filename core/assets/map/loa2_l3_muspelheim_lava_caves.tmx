@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2704">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="75" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2705">
  <properties>
   <property name="above_player_layers" value="[]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -28,9 +28,9 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="75" height="50" locked="1">
+ <layer id="1" name="background" width="75" height="50">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="2" name="background_2" width="75" height="50" locked="1">
@@ -122,7 +122,7 @@
   <object id="2605" name="object.hookshot_target" x="1840" y="1350">
    <point/>
   </object>
-  <object id="2606" name="object.hookshot_target" x="1632" y="1350">
+  <object id="2606" name="object.hookshot_target" x="1664" y="1350">
    <point/>
   </object>
   <object id="2607" name="object.hookshot_target" x="1376" y="711">

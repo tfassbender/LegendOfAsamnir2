@@ -298,6 +298,11 @@
         texture: triforce,
         pickUpSound: pickup_5
 	},
+	triforce_muspelheim_lava_dungeon: {
+        type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
 	
 	triforce_asgard_castle: {
 		type: TRIFORCE,
