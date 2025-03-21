@@ -80,6 +80,10 @@
 					executedStateName: demo_version
 				},
 				{
+					conditionId: common__rune_kenaz_collected,
+					executedStateName: thorin_needs_to_go_to_helheim,
+				},
+				{
 					conditionId: common__rune_hagalaz_collected,
 					executedStateName: thorin_needs_to_go_to_muspelheim
 				},
@@ -247,14 +251,30 @@
             
             executionParameters: {
                 displayTextHeader: "Adventurer from Midgard",
-                displayText: "You already found runes in svartalfheim, and niflheim.\nMaybe Muspelheim would be a good place to search for more runes.\nBut...  ", // TODO change text after the level muspelheim is released
+                displayText: "You already found runes in svartalfheim, and niflheim.\nMaybe Muspelheim would be a good place to search for more runes.  ",
                 colorHeader: #009933,
 			}
             
             waitForEventToFinish: true,
             
             executes: [
-                demo_version, // TODO change to thorin_question after muspelheim is released
+                thorin_question,
+			],
+		},
+		
+		thorin_needs_to_go_to_helheim: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Adventurer from Midgard",
+                displayText: "You already found runes in svartalfheim, niflheim and muspelheim.\nI guess Helheim is the only realm left to search.\nBut...  ", // TODO change text after the level helheim is released
+                colorHeader: #009933,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                demo_version, // TODO change to thorin_question after helheim is released
 			],
 		},
 		
@@ -264,7 +284,7 @@
             
             executionParameters: {
                 displayTextHeader: "Adventurer from Midgard",
-                displayText: "Since this is just an unfinished demo version of the game... I think you can only explore the lands of Svartalfheim and the Dwarven caves so far. ",
+                displayText: "Since this is just an unfinished demo version of the game... I think you can only explore the realms that you already conquered so far.\nThese developers are really lazy...  ",
                 colorHeader: #009933,
 			}
             
