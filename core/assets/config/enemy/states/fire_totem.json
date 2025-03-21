@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			damage, die, attack
+			damage, die, attack, attack_dummy
 		]
 	},
 	{
@@ -23,7 +23,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			damage, die, attack
+			damage, die, attack, attack_dummy
 		]
 	},
 	{
@@ -31,6 +31,18 @@
 		animation: totem_fire_idle,
 		attack: attack,
 		stateEnteringSound: imp_attack,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		// the attack that is used by dummy fire totems (that are only used to light up something - uses a different sound)
+		id: attack_dummy,
+		animation: totem_fire_idle,
+		attack: attack,
+		stateEnteringSound: dwarven_guardian_construct_fire,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

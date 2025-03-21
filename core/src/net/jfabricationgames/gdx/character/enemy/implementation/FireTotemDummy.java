@@ -41,7 +41,7 @@ public class FireTotemDummy extends Enemy {
 		if (!initialized) {
 			initialized = true;
 			
-			attack = stateMachine.getState("attack");
+			attack = stateMachine.getState("attack_dummy");
 			
 			boolean facingLeft = Boolean.parseBoolean(properties.get(MAP_PROPERTY_KEY_FACING_LEFT, "false", String.class));
 			if (facingLeft) {
