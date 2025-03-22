@@ -12,6 +12,6 @@
 	{
 		displayName: metal ingot,
 		technicalName: metal_ingot,
-		cost: 50,
+		cost: 100,
 	}
 ]
