@@ -89,6 +89,7 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 			GameScreen.loadAndShowGameScreen(() -> {
 				EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
 				EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.PLAYER_RESPAWNED));
+				player.afterLoadMap();
 				backToGame();
 			});
 		}

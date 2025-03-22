@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="62" height="57" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="965">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="62" height="57" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="977">
  <properties>
   <property name="above_player_layers" value="[5, 6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -38,12 +38,12 @@
  </layer>
  <layer id="5" name="terrain" width="62" height="57" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="62" height="57" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt1DFOAkEUxvFXeAIRCrVYIwImSKO12tuoHEDv4DXsXO6gMVZyCIlaeRPDAfwIu3EhBGj2jc7+f8lLdmY22f0y88YMAAAAAAAAKNd3e/13a53y/iOU1/3VazHl3syyfGXZ+tr/Xmda/fbsmofHxOwp8ftevqd3ypo2zQbN6XNxzcNbYjZK/L6X7+m4cJbHc2chNqny1Q7NtlTPLbP7rF5av/NpRL2dGyrTsbKdLMidzw9Lzr2srz16fj63l2V97dHz74Xcn4651+V93/8V3vc9wgl994US+u4DAPjZbpjtqHYbof+kPA/KlqoGhYxdPR+pepHm3qvPjj80HqlOlfdMdR5p7omNuWwHGl+qrlTXEedGddyol2/rq9+LTbeCmScuKpobAAAA/98Pn/8/GQ==
+   eJzt1DFuwkAQBdApcgIIFEBhBBgiAQ3UCX0aEg4Ad+AadDF3IIqo4BCghCo3QRwg38IWxkKGxrNk/Z80ktdraf21OytCRERERERERESUrn3z9m/zrfT+w5RV7fqcTblzQZbfINsI+99tHWvUPJ/TsHBEPh299cI9nSKrVxeZ14/P0TkNG0dk6+itF+7pIXKWD7GzYBsP+fJPIo+oL1dkFtTSPb33LOrt0BqZesjWv5A7fL9OOXdSX2v0fDy3lqS+1uj570junWLuW2nf9/dC+74nc0zffaaYvvvo/vjnnSgLbL3Xk5SKImVUpWj6T9LzgWweah7J2MZzB9W1NHe1cD7+wXiLekbeF9TA0ty+h1i2BsZD1Bvq3eLclB1j9PKkcP0727QzmNn3mtHcRERERPT//QFP9kCq
   </data>
  </layer>
  <layer id="13" name="terrain_3" width="62" height="57" locked="1">
@@ -632,40 +632,40 @@ West: Secret Castle of the Chaos Wizard.</property>
   <object id="725" x="1792.01" y="1024">
    <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
   </object>
-  <object id="726" x="1824.01" y="1110">
+  <object id="726" x="1792.01" y="1110">
    <polygon points="0,0 0,-22 28.9375,-21.9375"/>
   </object>
-  <object id="727" x="1824" y="1110">
+  <object id="727" x="1792" y="1110">
    <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
   </object>
-  <object id="728" x="1824.01" y="1088">
+  <object id="728" x="1792.01" y="1088">
    <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
   </object>
-  <object id="729" x="1824.01" y="1088">
+  <object id="729" x="1792.01" y="1088">
    <polygon points="0,0 16.9219,-23.9844 0,-30"/>
   </object>
-  <object id="730" x="1824.01" y="1088">
+  <object id="730" x="1792.01" y="1088">
    <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
   </object>
-  <object id="731" x="1824.01" y="1088">
+  <object id="731" x="1792.01" y="1088">
    <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
   </object>
-  <object id="732" x="1856.01" y="1142">
+  <object id="732" x="1824.01" y="1142">
    <polygon points="0,0 0,-22 28.9375,-21.9375"/>
   </object>
-  <object id="733" x="1856" y="1142">
+  <object id="733" x="1824" y="1142">
    <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
   </object>
-  <object id="734" x="1856.01" y="1120">
+  <object id="734" x="1824.01" y="1120">
    <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
   </object>
-  <object id="735" x="1856.01" y="1120">
+  <object id="735" x="1824.01" y="1120">
    <polygon points="0,0 16.9219,-23.9844 0,-30"/>
   </object>
-  <object id="736" x="1856.01" y="1120">
+  <object id="736" x="1824.01" y="1120">
    <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
   </object>
-  <object id="737" x="1856.01" y="1120">
+  <object id="737" x="1824.01" y="1120">
    <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
   </object>
   <object id="738" x="1856.01" y="1014">
@@ -776,22 +776,22 @@ West: Secret Castle of the Chaos Wizard.</property>
   <object id="773" x="1664.01" y="960">
    <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
   </object>
-  <object id="774" x="1888.01" y="1206">
+  <object id="774" x="1824.01" y="1206">
    <polygon points="0,0 0,-22 28.9375,-21.9375"/>
   </object>
-  <object id="775" x="1888" y="1206">
+  <object id="775" x="1824" y="1206">
    <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
   </object>
-  <object id="776" x="1888.01" y="1184">
+  <object id="776" x="1824.01" y="1184">
    <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
   </object>
-  <object id="777" x="1888.01" y="1184">
+  <object id="777" x="1824.01" y="1184">
    <polygon points="0,0 16.9219,-23.9844 0,-30"/>
   </object>
-  <object id="778" x="1888.01" y="1184">
+  <object id="778" x="1824.01" y="1184">
    <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
   </object>
-  <object id="779" x="1888.01" y="1184">
+  <object id="779" x="1824.01" y="1184">
    <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
   </object>
   <object id="780" x="1952.01" y="1174">
@@ -955,6 +955,42 @@ West: Secret Castle of the Chaos Wizard.</property>
   <object id="959" x="1731.45" y="1211.2" width="88.1818" height="4.79545"/>
   <object id="960" x="1732" y="1205.09">
    <polygon points="0,0 5,8.3125 -0.28125,8.40625"/>
+  </object>
+  <object id="965" x="1920.01" y="1110">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="966" x="1920" y="1110">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="967" x="1920.01" y="1088">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="968" x="1920.01" y="1088">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="969" x="1920.01" y="1088">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="970" x="1920.01" y="1088">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
+  </object>
+  <object id="971" x="1920.01" y="1206">
+   <polygon points="0,0 0,-22 28.9375,-21.9375"/>
+  </object>
+  <object id="972" x="1920" y="1206">
+   <polygon points="0,0 0.0111111,-22 -28.9889,-22"/>
+  </object>
+  <object id="973" x="1920.01" y="1184">
+   <polygon points="0,0 28.9063,0.03125 16.9375,-24"/>
+  </object>
+  <object id="974" x="1920.01" y="1184">
+   <polygon points="0,0 16.9219,-23.9844 0,-30"/>
+  </object>
+  <object id="975" x="1920.01" y="1184">
+   <polygon points="0,0 0.0111111,-29.9889 -19,-23.9375"/>
+  </object>
+  <object id="976" x="1920.01" y="1184">
+   <polygon points="0,0 -19,-23.9297 -29.0078,-0.0078125"/>
   </object>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
