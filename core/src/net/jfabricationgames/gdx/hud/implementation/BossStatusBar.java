@@ -78,7 +78,7 @@ public class BossStatusBar implements Disposable, EventListener {
 	private float health;
 	private float drawnHealth; // slowly reduce the health bar to the actual health
 	
-	private float timeTillBossWasDefeated = 0f;
+	private float timeSinceBossWasDefeated = 0f;
 	private boolean bossSoundPlayed = false;
 	
 	public BossStatusBar(OrthographicCamera camera, float sceneWidth, float sceneHeight) {
@@ -95,7 +95,7 @@ public class BossStatusBar implements Disposable, EventListener {
 	
 	public void setBoss(Enemy boss) {
 		this.boss = boss;
-		timeTillBossWasDefeated = 0f;
+		timeSinceBossWasDefeated = 0f;
 		bossSoundPlayed = false;
 	}
 	
@@ -124,12 +124,12 @@ public class BossStatusBar implements Disposable, EventListener {
 			
 			// make the health bar disappear a view seconds after the boss was defeated
 			if (health <= 0) {
-				timeTillBossWasDefeated += delta;
-				if (timeTillBossWasDefeated > 2f && !bossSoundPlayed) {
+				timeSinceBossWasDefeated += delta;
+				if (timeSinceBossWasDefeated > 2f && !bossSoundPlayed) {
 					bossSoundPlayed = true;
 					SOUND_SET.playSound("boss_defeated");
 				}
-				if (timeTillBossWasDefeated > 5f) {
+				if (timeSinceBossWasDefeated > 5f) {
 					boss = null;
 				}
 			}

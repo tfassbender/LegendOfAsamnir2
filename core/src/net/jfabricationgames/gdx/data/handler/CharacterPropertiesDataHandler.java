@@ -276,16 +276,6 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		return properties.tokens.get(token, 0);
 	}
 	
-	public void changeStatsAfterRespawn() {
-		properties.health = 0f;
-		properties.increaseHealth = properties.maxHealth;
-		properties.armor = 0f;
-		properties.increaseArmor = properties.maxArmor * 0.5f;
-		properties.mana = 0f;
-		properties.increaseMana = properties.maxMana;
-		properties.endurance = 0f;
-	}
-	
 	public Vector2 getRespawnPoint() {
 		return properties.respawnPoint;
 	}
@@ -293,9 +283,6 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		properties.respawnPoint = respawnPoint;
 	}
 	
-	public boolean isRespawnWithStartingStats() {
-		return properties.respawnWithStartingStats;
-	}
 	public void setRespawnWithStartingStats(boolean respawnWithStartingStats) {
 		properties.respawnWithStartingStats = respawnWithStartingStats;
 	}
