@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2375">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2405">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -347,6 +347,156 @@
    <properties>
     <property name="spawn" value="playerManaNotFull"/>
    </properties>
+   <point/>
+  </object>
+  <object id="2376" name="object.chest" x="1012.67" y="236.667">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2377" name="object.chest" x="515" y="568">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2378" name="object.chest" x="1310.5" y="1014.25">
+   <properties>
+    <property name="drop" value="{big_coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2379" name="object.pot" x="1288.25" y="1010.75">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2380" name="object.pot" x="1304.75" y="993.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2381" name="object.pot" x="1314.75" y="972.75">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2382" name="object.pot" x="1270" y="1009.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2383" name="object.pot" x="1360.5" y="401">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2384" name="object.pot" x="1364.5" y="414.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2385" name="object.pot" x="1333" y="399">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2386" name="object.pot" x="997.5" y="244.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2387" name="object.pot" x="1008" y="254.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2388" name="object.pot" x="1011.5" y="304.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2389" name="object.pot" x="529.5" y="531.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2390" name="object.pot" x="552" y="510">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2391" name="object.pot" x="555.5" y="537">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2392" name="object.pot" x="541" y="552.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2393" name="object.pot" x="541" y="572.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2394" name="object.pot" x="271" y="718">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2395" name="object.pot" x="295.5" y="721.5">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2396" name="object.pot" x="314" y="709">
+   <properties>
+    <property name="drop" value="{coin: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2397" name="object.barrel" x="331" y="720.5">
+   <point/>
+  </object>
+  <object id="2398" name="object.barrel" x="352" y="715">
+   <point/>
+  </object>
+  <object id="2399" name="object.barrel" x="550.5" y="472.5">
+   <point/>
+  </object>
+  <object id="2400" name="object.barrel" x="1011" y="279.5">
+   <point/>
+  </object>
+  <object id="2401" name="object.barrel" x="1314" y="396.5">
+   <point/>
+  </object>
+  <object id="2402" name="object.barrel" x="1289.5" y="392.5">
+   <point/>
+  </object>
+  <object id="2403" name="object.barrel" x="1244.5" y="1011.5">
+   <point/>
+  </object>
+  <object id="2404" name="object.barrel" x="1217" y="1000.5">
    <point/>
   </object>
  </objectgroup>

@@ -27,7 +27,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			block, block2, damage, die
+			block, block2, die
 		]
 	},
 	{
