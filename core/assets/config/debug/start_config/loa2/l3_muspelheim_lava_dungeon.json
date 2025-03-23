@@ -46,7 +46,12 @@
 		
 		final: {
 			subConfigName: initial,
-			events: []
+			events: [
+            	{
+					eventType: COLLECT_RUNE,
+					stringValue: kenaz,
+				},
+			]
 		}
 	}
 }

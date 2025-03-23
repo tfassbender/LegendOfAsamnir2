@@ -8,6 +8,7 @@
 		11: after_fields_of_vigrid_first_time,
 		
 		100: before_muspelheim,
+		101: before_helheim,
 	},
 	eventsLists: {
 		after_tavern: {
@@ -63,6 +64,94 @@
 				},
 				
 				// 10 metal ingots were available to find till now
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+			]
+        },
+        
+        before_helheim: {
+			subConfigPath: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json
+			subConfigName: final,
+			events: [
+				// 19 metal ingots were available to find till now + 1 (assumed) that could be bought in the shop
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
 				{
 					eventType: GIVE_ITEM_TO_PLAYER,
 					stringValue: metal_ingot,

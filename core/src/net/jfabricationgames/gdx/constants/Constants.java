@@ -2,7 +2,7 @@ package net.jfabricationgames.gdx.constants;
 
 public class Constants {
 	
-	public static final String GAME_VERSION = "0.7.0";
+	public static final String GAME_VERSION = "0.8.0";
 	
 	public static final boolean DEBUG = false;
 	
