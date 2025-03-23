@@ -15,5 +15,6 @@
 		projectileType: ice_breath,
 		delay: 0.4,
 		damage: 5,
+		canBeBlocked: false,
 	},
 ]

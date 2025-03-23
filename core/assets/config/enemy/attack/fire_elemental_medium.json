@@ -5,5 +5,6 @@
 		projectileType: fire_elemental_blast,
 		delay: 0.5,
 		damage: 20,
+		canBeBlocked: false,
 	}
 ]

@@ -6,6 +6,7 @@
 		delay: 0.3,
 		duration: 0,
 		damage: 10,
+		canBeBlockedCompletely: true,
 		pushForce: 50,
 	},
 ]
