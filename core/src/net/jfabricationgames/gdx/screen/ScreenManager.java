@@ -5,12 +5,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 
 import net.jfabricationgames.gdx.character.player.Player;
+import net.jfabricationgames.gdx.music.BackgroundMusicManager;
 import net.jfabricationgames.gdx.screen.menu.MainMenuScreen;
 
 public class ScreenManager {
 	
 	public static final String ASSET_GROUP_NAME = "game";
 	public static final String INPUT_CONTEXT_NAME = "game";
+	
+	private static final String MENU_BACKGROUND_MUSIC_NAME = "main_menu";
 	
 	private static ScreenManager instance;
 	
@@ -46,6 +49,12 @@ public class ScreenManager {
 		if (showCredits) {
 			screen.showCreditsDialog();
 		}
+		
+		playMenuBackgroundMusic();
+	}
+	
+	private void playMenuBackgroundMusic() {
+		BackgroundMusicManager.getInstance().play(MENU_BACKGROUND_MUSIC_NAME);
 	}
 	
 	public void setGame(Game game) {

@@ -1,0 +1,8 @@
+[
+	{
+	    name: "main_menu",
+		file: "music/mysterious_bells_loop.wav",
+		volume: 0.2f,
+		loop: true,
+	},
+]

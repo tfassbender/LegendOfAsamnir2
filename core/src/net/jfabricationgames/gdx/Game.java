@@ -11,8 +11,8 @@ import net.jfabricationgames.gdx.assets.AssetGroupManager;
 import net.jfabricationgames.gdx.data.GameDataService;
 import net.jfabricationgames.gdx.event.global.GlobalEventListener;
 import net.jfabricationgames.gdx.input.InputManager;
+import net.jfabricationgames.gdx.music.BackgroundMusicManager;
 import net.jfabricationgames.gdx.screen.ScreenManager;
-import net.jfabricationgames.gdx.screen.game.GameScreen;
 import net.jfabricationgames.gdx.sound.SoundManager;
 import net.jfabricationgames.gdx.text.FontManager;
 
@@ -21,6 +21,7 @@ public class Game extends com.badlogic.gdx.Game {
 	public static final String ASSET_GROUP_MANAGER_CONFIG_PATH = "config/assets/asset_groups.json";
 	public static final String INPUT_PROFILE_CONFIG_PATH = "config/input/profile.xml";
 	public static final String SOUND_CONFIG_PATH = "config/sound/sound_sets.json";
+	public static final String BACKGROUND_MUSIC_CONFIG_PATH = "config/music/background_music_config.json";
 	public static final String FONT_CONFIG_PATH = "config/font/fonts.json";
 	
 	private static Game instance;
@@ -49,6 +50,7 @@ public class Game extends com.badlogic.gdx.Game {
 		initializeCdiContainer();
 		
 		AssetGroupManager.initialize(ASSET_GROUP_MANAGER_CONFIG_PATH);
+		BackgroundMusicManager.getInstance().loadConfig(BACKGROUND_MUSIC_CONFIG_PATH);
 		SoundManager.getInstance().loadConfig(SOUND_CONFIG_PATH);
 		FontManager.getInstance().loadConfig(FONT_CONFIG_PATH);
 		GameDataService.initializeEventListener();
@@ -70,13 +72,6 @@ public class Game extends com.badlogic.gdx.Game {
 		catch (CdiException | IOException e) {
 			Gdx.app.error(Game.class.getSimpleName(), "Error while creating the CDI container", e);
 		}
-	}
-	
-	public GameScreen getGameScreen() {
-		if (screen instanceof GameScreen) {
-			return (GameScreen) screen;
-		}
-		return null;
 	}
 	
 	@Override
