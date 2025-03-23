@@ -369,7 +369,7 @@
 	},
 	
 	blockable_fire_ball: {
-		attackType: BLOCKABLE_FIREBALL,
+		attackType: FIREBALL,
 		
 		animation: ifrit_fire_ball,
 		removeAfterAnimationFinished: true,

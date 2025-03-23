@@ -13,7 +13,6 @@ public enum AttackType {
 	EXPLOSION(BOMB), //
 	WEB(PROJECTILE), //
 	FIREBALL(PROJECTILE), //
-	BLOCKABLE_FIREBALL(FIREBALL), // a fireball that can be blocked completely
 	ROCK(PROJECTILE), //
 	BOOMERANG(PROJECTILE), //
 	MAGIC(PROJECTILE), //

@@ -598,12 +598,15 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		
 		if (isAlive()) {
 			if (isBlocking() && attackInfo.canBeBlocked()) {
+				if (attackInfo.shieldDamagedWhenBlocked()) {
+					takeArmorDamage(damage * 0.33f);
+				}
+				
 				if (attackInfo.canBeBlockedCompletely()) {
-					// the attack can be completely blocked without taking damage (no armor damage either)
+					// the attack can be completely blocked without taking damage - no shield hit state or animation is needed
 					return;
 				}
 				
-				takeArmorDamage(damage * 0.33f);
 				damage *= (1f - (weaponSkill.getSkillLevelConfig(WeaponSkillType.SHIELD).blockRateInPercent / 100f));
 			}
 			

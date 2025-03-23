@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.projectile;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
@@ -11,8 +12,8 @@ import net.jfabricationgames.gdx.texture.TextureLoader;
 
 public class FrostGiantAxe extends Projectile {
 	
-	public FrostGiantAxe(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
-		super(typeConfig, sprite, gameMap);
+	public FrostGiantAxe(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, sprite, gameMap);
 		setImageOffset(0f, 0f);
 		unitId = "frost_giant_axe"; // needed to find the axe on the map (so the giant can pick it up after throwing)
 	}

@@ -11,6 +11,7 @@ import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.Joint;
 import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -26,8 +27,8 @@ public class Hookshot extends Boomerang {
 	
 	private float dragTimer = 0f;
 	
-	public Hookshot(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
-		super(typeConfig, sprite, gameMap);
+	public Hookshot(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, sprite, gameMap);
 	}
 	
 	@Override

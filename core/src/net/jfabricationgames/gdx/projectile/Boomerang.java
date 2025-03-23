@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
 
@@ -16,8 +17,8 @@ public class Boomerang extends Projectile {
 	
 	private boolean moveBackToPlayer = false;
 	
-	public Boomerang(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
-		super(typeConfig, sprite, gameMap);
+	public Boomerang(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, sprite, gameMap);
 	}
 	
 	@Override

@@ -4,13 +4,14 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
 
 public class Bomb extends Projectile {
 	
-	public Bomb(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
-		super(typeConfig, sprite, gameMap);
+	public Bomb(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, sprite, gameMap);
 	}
 	
 	@Override

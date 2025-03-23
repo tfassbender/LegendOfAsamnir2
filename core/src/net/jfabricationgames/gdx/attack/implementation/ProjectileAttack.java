@@ -27,14 +27,7 @@ public class ProjectileAttack extends Attack {
 	@Override
 	protected void start() {
 		Vector2 startingPosition = calculateStartingPosition();
-		projectile = ProjectileFactory.createProjectileAndAddToMap(config.projectileType, startingPosition, direction, collisionType);
-		projectile.setDamage(config.damage);
-		projectile.setPushForce(config.pushForce);
-		projectile.setPushForceWhenBlocked(config.pushForceWhenBlocked);
-		projectile.setPushForceAffectedByBlock(config.pushForceAffectedByBlock);
-		projectile.setExplosionDamage(config.explosionDamage);
-		projectile.setExplosionPushForce(config.explosionPushForce);
-		projectile.setExplosionPushForceAffectedByBlock(config.explosionPushForceAffectedByBlock);
+		projectile = ProjectileFactory.createProjectileAndAddToMap(config, startingPosition, direction, collisionType);
 		projectile.setPlayerBody(body);
 		
 		started = true;

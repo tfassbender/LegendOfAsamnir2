@@ -16,6 +16,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.Array;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.map.PositionedObject;
@@ -33,6 +34,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	private static final String EXPLOSION_PROJECTILE_TYPE = "explosion";
 	
 	protected Body body;
+	protected AttackConfig attackConfig;
 	protected ProjectileTypeConfig typeConfig;
 	protected PhysicsCollisionType collisionType;
 	
@@ -67,8 +69,9 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	
 	private Array<Hittable> targetsInSensorRange = new Array<>();
 	
-	public Projectile(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
+	public Projectile(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
 		this.typeConfig = typeConfig;
+		this.attackConfig = attackConfig;
 		this.sprite = sprite;
 		this.gameMap = gameMap;
 		if (!typeConfig.textureScaleGrowing) {
@@ -78,8 +81,9 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		initialize();
 	}
 	
-	public Projectile(ProjectileTypeConfig typeConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
+	public Projectile(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
 		this.typeConfig = typeConfig;
+		this.attackConfig = attackConfig;
 		this.animation = animation;
 		this.gameMap = gameMap;
 		
@@ -285,7 +289,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	}
 	
 	private void explode() {
-		Projectile explosion = explosionFactory.createExplosion(EXPLOSION_PROJECTILE_TYPE, body.getPosition(), Vector2.Zero, collisionType);
+		AttackConfig explosionConfig = new AttackConfig();
+		explosionConfig.projectileType = EXPLOSION_PROJECTILE_TYPE;
+		
+		Projectile explosion = explosionFactory.createExplosion(explosionConfig, body.getPosition(), Vector2.Zero, collisionType);
 		explosion.damage = explosionDamage;
 		explosion.pushForce = explosionPushForce;
 		explosion.pushForceAffectedByBlock = explosionPushForceAffectedByBlock;
@@ -296,7 +303,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		for (Hittable target : targetsInSensorRange) {
 			//enemies define the force themselves; the force parameter is a factor for this self defined force
 			target.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
-			target.takeDamage(damage, AttackInfo.from(typeConfig));
+			target.takeDamage(damage, AttackInfo.from(typeConfig, attackConfig));
 		}
 		
 		attackPerformed = true;
@@ -358,7 +365,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 			
 			//enemies define the force themselves; the force parameter is a factor for this self defined force
 			hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
-			hittable.takeDamage(damage, AttackInfo.from(typeConfig));
+			hittable.takeDamage(damage, AttackInfo.from(typeConfig, attackConfig));
 			
 			if (typeConfig.freezeTarget) {
 				hittable.freeze();
@@ -451,6 +458,6 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	@FunctionalInterface
 	protected interface ExplosionFactory {
 		
-		public Projectile createExplosion(String type, Vector2 position, Vector2 direction, PhysicsCollisionType collisionType);
+		public Projectile createExplosion(AttackConfig attackConfig, Vector2 position, Vector2 direction, PhysicsCollisionType collisionType);
 	}
 }

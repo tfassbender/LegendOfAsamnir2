@@ -13,6 +13,9 @@ public class AttackConfig {
 	public float pushForce;
 	public float pushForceWhenBlocked = -1; // sets a different push force when blocked
 	public boolean pushForceAffectedByBlock = true; // reduces the push force by a factor when blocked
+	public boolean canBeBlocked = true;
+	public boolean canBeBlockedCompletely;
+	public boolean shieldDamagedWhenBlocked = true;
 	public float explosionDamage;
 	public float explosionPushForce;
 	public boolean explosionPushForceAffectedByBlock = false;

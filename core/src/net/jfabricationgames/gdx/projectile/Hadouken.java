@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Contact;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
@@ -12,8 +13,8 @@ public class Hadouken extends Projectile {
 	
 	private static final int ANGLE_OFFSET_SPRITE_VECTOR = 90;
 	
-	protected Hadouken(ProjectileTypeConfig typeConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
-		super(typeConfig, animation, gameMap);
+	protected Hadouken(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, animation, gameMap);
 	}
 	
 	@Override

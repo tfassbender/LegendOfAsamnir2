@@ -4,13 +4,14 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
 
 public class AnimatedHit extends Projectile {
 	
-	public AnimatedHit(ProjectileTypeConfig typeConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
-		super(typeConfig, animation, gameMap);
+	public AnimatedHit(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, animation, gameMap);
 	}
 	
 	@Override

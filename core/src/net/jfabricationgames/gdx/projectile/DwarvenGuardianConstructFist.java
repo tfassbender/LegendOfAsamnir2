@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
@@ -12,8 +13,8 @@ import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 
 public class DwarvenGuardianConstructFist extends Projectile {
 	
-	public DwarvenGuardianConstructFist(ProjectileTypeConfig typeConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
-		super(typeConfig, animation, gameMap);
+	public DwarvenGuardianConstructFist(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, animation, gameMap);
 	}
 	
 	@Override

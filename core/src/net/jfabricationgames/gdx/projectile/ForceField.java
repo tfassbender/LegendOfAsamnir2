@@ -6,6 +6,7 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.utils.Array;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.physics.CollisionUtil;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
@@ -15,8 +16,8 @@ public class ForceField extends Projectile {
 	
 	private Array<Hittable> affectedObjects = new Array<>();
 	
-	public ForceField(ProjectileTypeConfig typeConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
-		super(typeConfig, animation, gameMap);
+	public ForceField(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, animation, gameMap);
 	}
 	
 	@Override

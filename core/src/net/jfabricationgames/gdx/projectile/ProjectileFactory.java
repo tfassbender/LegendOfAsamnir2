@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.util.FactoryUtil;
 
@@ -36,7 +37,9 @@ public class ProjectileFactory {
 		ProjectileFactory.gameMap = gameMap;
 	}
 	
-	public static Projectile createProjectileAndAddToMap(String type, Vector2 position, Vector2 direction, PhysicsCollisionType collisionType) {
+	public static Projectile createProjectileAndAddToMap(AttackConfig attackConfig, Vector2 position, Vector2 direction, PhysicsCollisionType collisionType) {
+		String type = attackConfig.projectileType;
+		
 		if (type == null) {
 			throw new IllegalStateException("The 'type' parameter mussn't be null. Maybe the projectileType was not configured in the attack config file?");
 		}
@@ -62,61 +65,70 @@ public class ProjectileFactory {
 		Projectile projectile;
 		switch (typeConfig.attackType) {
 			case ARROW:
-				projectile = new Arrow(typeConfig, sprite, gameMap);
+				projectile = new Arrow(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case BOMB:
-				projectile = new Bomb(typeConfig, sprite, gameMap);
+				projectile = new Bomb(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case EXPLOSION:
-				projectile = new Explosion(typeConfig, animation, gameMap);
+				projectile = new Explosion(typeConfig, attackConfig, animation, gameMap);
 				collisionType = PhysicsCollisionType.EXPLOSION;
 				break;
 			case WEB:
-				projectile = new Web(typeConfig, animation, gameMap);
+				projectile = new Web(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case FIREBALL:
-				projectile = new ImpFireball(typeConfig, animation, gameMap);
+				projectile = new ImpFireball(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case ROCK:
-				projectile = new Rock(typeConfig, sprite, gameMap);
+				projectile = new Rock(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case BOOMERANG:
-				projectile = new Boomerang(typeConfig, sprite, gameMap);
+				projectile = new Boomerang(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case WAND:
 			case MAGIC_WAVE:
-				projectile = new MagicWave(typeConfig, sprite, gameMap);
+				projectile = new MagicWave(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case COIN_BAG:
-				projectile = new CoinBag(typeConfig, sprite, gameMap);
+				projectile = new CoinBag(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case FORCE_FIELD:
-				projectile = new ForceField(typeConfig, animation, gameMap);
+				projectile = new ForceField(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case DWARVEN_GUARDIAN_CONSTRUCT_FIST:
-				projectile = new DwarvenGuardianConstructFist(typeConfig, animation, gameMap);
+				projectile = new DwarvenGuardianConstructFist(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case DWARVEN_GUARDIAN_CONSTRUCT_FIRE:
-				projectile = new DwarvenGuardianConstructFire(typeConfig, animation, gameMap);
+				projectile = new DwarvenGuardianConstructFire(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case ANIMATED_HIT:
-				projectile = new AnimatedHit(typeConfig, animation, gameMap);
+				projectile = new AnimatedHit(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case SLINGSHOT:
-				projectile = new Slingshot(typeConfig, sprite, gameMap);
+				projectile = new Slingshot(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case HADOUKEN:
-				projectile = new Hadouken(typeConfig, animation, gameMap);
+				projectile = new Hadouken(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case FROST_GIANT_AXE_THROW:
-				projectile = new FrostGiantAxe(typeConfig, sprite, gameMap);
+				projectile = new FrostGiantAxe(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			case HOOKSHOT:
-				projectile = new Hookshot(typeConfig, sprite, gameMap);
+				projectile = new Hookshot(typeConfig, attackConfig, sprite, gameMap);
 				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}
+		
+		projectile.setDamage(attackConfig.damage);
+		projectile.setPushForce(attackConfig.pushForce);
+		projectile.setPushForceWhenBlocked(attackConfig.pushForceWhenBlocked);
+		projectile.setPushForceAffectedByBlock(attackConfig.pushForceAffectedByBlock);
+		projectile.setExplosionDamage(attackConfig.explosionDamage);
+		projectile.setExplosionPushForce(attackConfig.explosionPushForce);
+		projectile.setExplosionPushForceAffectedByBlock(attackConfig.explosionPushForceAffectedByBlock);
+		
 		projectile.setExplosionFactory(ProjectileFactory::createProjectileAndAddToMap);
 		projectile.createPhysicsBody(position, direction, collisionType);
 		projectile.startProjectile(direction);

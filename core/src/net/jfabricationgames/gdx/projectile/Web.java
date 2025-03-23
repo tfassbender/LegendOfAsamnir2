@@ -4,12 +4,13 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Fixture;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.map.ground.GameMapGroundType;
 import net.jfabricationgames.gdx.map.ground.GameMapGroundTypeContainer;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
-import net.jfabricationgames.gdx.physics.PhysicsUtil;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
+import net.jfabricationgames.gdx.physics.PhysicsUtil;
 
 public class Web extends Projectile implements GameMapGroundTypeContainer {
 	
@@ -17,8 +18,8 @@ public class Web extends Projectile implements GameMapGroundTypeContainer {
 	
 	private boolean touchingPlayer;
 	
-	public Web(ProjectileTypeConfig typeConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
-		super(typeConfig, animation, gameMap);
+	public Web(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, AnimationDirector<TextureRegion> animation, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, animation, gameMap);
 		setImageOffset(0f, 0.5f);
 	}
 	

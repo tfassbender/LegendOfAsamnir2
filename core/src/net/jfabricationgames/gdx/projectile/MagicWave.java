@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.projectile;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.Contact;
 
+import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.map.ground.MapObjectType;
 import net.jfabricationgames.gdx.object.GameObject;
 import net.jfabricationgames.gdx.object.GameObjectType;
@@ -11,8 +12,8 @@ import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
 
 public class MagicWave extends Projectile {
 	
-	public MagicWave(ProjectileTypeConfig typeConfig, Sprite sprite, ProjectileMap gameMap) {
-		super(typeConfig, sprite, gameMap);
+	public MagicWave(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
+		super(typeConfig, attackConfig, sprite, gameMap);
 	}
 	
 	@Override
