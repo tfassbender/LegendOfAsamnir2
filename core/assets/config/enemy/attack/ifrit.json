@@ -26,5 +26,6 @@
 		duration: 0,
 		damage: 10,
 		pushForce: 60,
+		startAttackAtPlayerPosition: true,
 	},
 ]

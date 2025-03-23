@@ -10,5 +10,5 @@ public interface CharacterStateAttack {
 	
 	public boolean isExecuted();
 	
-	public default void setTargetPositionSupplier(Supplier<Vector2> targetPositionSupplier) {};
+	public void setTargetPositionSupplier(Supplier<Vector2> targetPositionSupplier);
 }

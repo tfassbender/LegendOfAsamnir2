@@ -13,6 +13,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	
 	protected CharacterState attackState;
 	protected PlayableCharacter targetingPlayer;
+	protected Vector2 targetingPlayerLastKnownPosition;
 	protected AttackTimer attackTimer;
 	
 	protected float timeTillNextAttack;
@@ -33,6 +34,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	protected boolean changeToAttackState() {
 		if (timeToAttack() && targetAlive()) {
 			attackState.setAttackDirection(directionToTarget());
+			attackState.setAttackTargetPositionSupplier(this::getTargetPlayerPosition);
 			boolean changedState = stateMachine.setState(attackState);
 			if (changedState) {
 				timeSinceLastAttack = 0;
@@ -78,6 +80,10 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 		return character.getPosition().sub(targetingPlayer.getPosition()).len();
 	}
 	
+	protected Vector2 getTargetPlayerPosition() {
+		return targetingPlayer != null ? targetingPlayer.getPosition().cpy() : targetingPlayerLastKnownPosition;
+	}
+	
 	@Override
 	public void calculateMove(float delta) {
 		if (!inAttackState()) {
@@ -97,6 +103,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	
 	protected void setTargetingPlayer(PlayableCharacter collidingPlayer) {
 		targetingPlayer = collidingPlayer;
+		targetingPlayerLastKnownPosition = null;
 	}
 	
 	@Override
@@ -110,6 +117,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	}
 	
 	protected void resetTargetingPlayer() {
+		targetingPlayerLastKnownPosition = targetingPlayer.getPosition().cpy();
 		targetingPlayer = null;
 	}
 	

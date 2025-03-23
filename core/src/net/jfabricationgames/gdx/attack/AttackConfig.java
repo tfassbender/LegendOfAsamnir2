@@ -18,4 +18,5 @@ public class AttackConfig {
 	public boolean explosionPushForceAffectedByBlock = false;
 	public AttackWeaponType weaponType; // used to adapt attacks to skill levels
 	public float projectileStartOffsetY;
+	public boolean startAttackAtPlayerPosition;
 }

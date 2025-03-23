@@ -1,7 +1,5 @@
 package net.jfabricationgames.gdx.attack.implementation;
 
-import java.util.function.Supplier;
-
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
@@ -15,8 +13,6 @@ import net.jfabricationgames.gdx.projectile.ProjectileFactory;
 public class ProjectileAttack extends Attack {
 	
 	private Projectile projectile;
-	
-	private Supplier<Vector2> targetPositionSupplier;
 	
 	public ProjectileAttack(AttackConfig config, Vector2 direction, Body body, PhysicsCollisionType collisionType) {
 		super(config, direction, body, collisionType);
@@ -41,7 +37,7 @@ public class ProjectileAttack extends Attack {
 	private Vector2 calculateStartingPosition() {
 		Vector2 startingPosition = body.getPosition().cpy().add(0, config.projectileStartOffsetY);
 		
-		if (targetPositionSupplier != null) {
+		if (config.startAttackAtPlayerPosition) {
 			Vector2 targetPosition = targetPositionSupplier.get();
 			if (targetPosition != null) {
 				startingPosition = targetPosition;
@@ -64,10 +60,5 @@ public class ProjectileAttack extends Attack {
 	@Override
 	protected boolean isRemoved() {
 		return projectile == null || projectile.isRemoved();
-	}
-	
-	@Override
-	public void setTargetPositionSupplier(Supplier<Vector2> targetPositionSupplier) {
-		this.targetPositionSupplier = targetPositionSupplier;
 	}
 }

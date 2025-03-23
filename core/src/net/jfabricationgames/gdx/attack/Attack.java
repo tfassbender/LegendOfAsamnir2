@@ -1,5 +1,7 @@
 package net.jfabricationgames.gdx.attack;
 
+import java.util.function.Supplier;
+
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -25,6 +27,7 @@ public abstract class Attack implements CharacterStateAttack {
 	
 	protected Body body;
 	protected Vector2 direction;
+	protected Supplier<Vector2> targetPositionSupplier;
 	
 	protected Attack(AttackConfig config, Vector2 direction, Body body, PhysicsCollisionType collisionType) {
 		this.config = config;
@@ -68,4 +71,9 @@ public abstract class Attack implements CharacterStateAttack {
 	}
 	
 	protected abstract void dealAttackDamage(Contact contact);
+	
+	@Override
+	public void setTargetPositionSupplier(Supplier<Vector2> targetPositionSupplier) {
+		this.targetPositionSupplier = targetPositionSupplier;
+	}
 }

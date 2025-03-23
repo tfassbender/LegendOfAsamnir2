@@ -17,6 +17,7 @@ import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
+import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
 /**
  * An object that changes it's body to a sensor and back by (configurable) events, so that the player may walk through it.
@@ -126,7 +127,7 @@ public class TraverseableObject extends GameObject implements EventListener {
 			animation = animationTraverseable;
 		}
 		else if (event.equals(changeBodyToSolidObjectEvent)) {
-			changeBodyToNonSensor();
+			PhysicsWorld.getInstance().runAfterWorldStep(() -> changeBodyToNonSensor());
 			animation = animationSolid;
 		}
 	}
