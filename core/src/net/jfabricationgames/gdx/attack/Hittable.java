@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector2;
  */
 public interface Hittable {
 	
-	public void takeDamage(float damage, AttackType melee);
+	public void takeDamage(float damage, AttackInfo info);
 	
 	public void pushByHit(Vector2 hitCenter, float force, float forceWhenBlocked, boolean blockAffected);
 	

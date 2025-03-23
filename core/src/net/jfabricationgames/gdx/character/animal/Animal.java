@@ -4,7 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 
-import net.jfabricationgames.gdx.attack.AttackType;
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.character.AbstractCharacter;
 import net.jfabricationgames.gdx.character.CharacterTypeConfig;
@@ -112,7 +112,7 @@ public class Animal extends AbstractCharacter implements Hittable {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType type) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
 		if (damage > 0 && typeConfig.damageState != null) {
 			stateMachine.setState(typeConfig.damageState);
 		}

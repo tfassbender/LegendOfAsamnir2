@@ -11,6 +11,7 @@ import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.attack.Attack;
 import net.jfabricationgames.gdx.attack.AttackConfig;
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.physics.CollisionUtil;
@@ -48,7 +49,15 @@ public class BeamAttack extends Attack {
 		super(config, direction, body, collisionType);
 		
 		directionIsRight = direction.x > 0;
-		hitFixtureProperties = new PhysicsBodyProperties().setBody(body).setCollisionType(collisionType).setSensor(true).setPhysicsBodyShape(PhysicsBodyShape.RECTANGLE).setWidth(CYCLOPS_BEAM_WIDTH).setHeight(CYCLOPS_BEAM_HEIGHT).setFixturePosition(getFixturePosition(direction));
+		hitFixtureProperties = new PhysicsBodyProperties() //
+				.setBody(body) //
+				.setCollisionType(collisionType) //
+				.setSensor(true) //
+				.setPhysicsBodyShape(PhysicsBodyShape.RECTANGLE) //
+				.setWidth(CYCLOPS_BEAM_WIDTH) //
+				.setHeight(CYCLOPS_BEAM_HEIGHT) //
+				.setFixturePosition(getFixturePosition(direction));
+		
 		beamAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy(CYCLOPS_BEAM_ANIMATION_NAME);
 		updateTextureDirection(beamAnimation);
 	}
@@ -140,7 +149,7 @@ public class BeamAttack extends Attack {
 			if (attackedObjectUserData != null && attackUserData == hitFixtureProperties.body.getUserData() && attackedObjectUserData instanceof Hittable) {
 				Hittable attackedObject = ((Hittable) attackedObjectUserData);
 				attackedObject.pushByHit(hitFixture.getBody().getPosition(), config.pushForce, config.pushForceWhenBlocked, config.pushForceAffectedByBlock);
-				attackedObject.takeDamage(config.damage, AttackType.BEAM);
+				attackedObject.takeDamage(config.damage, new AttackInfo(AttackType.BEAM));
 			}
 		}
 	}

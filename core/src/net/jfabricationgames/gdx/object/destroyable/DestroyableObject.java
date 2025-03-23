@@ -7,6 +7,7 @@ import com.badlogic.gdx.maps.MapProperties;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -38,7 +39,8 @@ public class DestroyableObject extends GameObject {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		AttackType attackType = attackInfo.getAttackType();
 		if (attackType.isSubTypeOf(typeConfig.requiredAttackType)) {
 			health -= damage;
 			

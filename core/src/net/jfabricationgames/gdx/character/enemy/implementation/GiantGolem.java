@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
@@ -88,7 +89,8 @@ public class GiantGolem extends Enemy {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		AttackType attackType = attackInfo.getAttackType();
 		if (attackType.isSubTypeOf(AttackType.DWARVEN_GUARDIAN_CONSTRUCT_FIST) && !stateMachine.isInState(STATE_NAME_VULNERABLE)) {
 			// after being attacked by a dwarven guardian construct, the giant golem is vulnerable for a short time
 			stateMachine.setState(STATE_NAME_VULNERABLE);
@@ -102,7 +104,7 @@ public class GiantGolem extends Enemy {
 		else if (damage > 0 && // only if the bomb explodes - not only touches the giant golem
 				attackType.isSubTypeOf(AttackType.BOMB) && stateMachine.isInState(STATE_NAME_VULNERABLE)) {
 			// in the vulnerable state the giant golem can take damage from bombs
-			super.takeDamage(20, attackType); // always take 20 (percent) damage from bombs - no matter the upgrade level of the bombs
+			super.takeDamage(20, attackInfo); // always take 20 (percent) damage from bombs - no matter the upgrade level of the bombs
 			
 			if (!stateMachine.isInState(STATE_NAME_DIE)) {
 				// after being hit, the vulnerable state ends (to not take damage from multiple bombs at once)

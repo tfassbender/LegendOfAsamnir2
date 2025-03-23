@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.ai.implementation.FollowAI;
@@ -71,17 +72,18 @@ public class Bugbear extends Enemy {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		AttackType attackType = attackInfo.getAttackType();
 		if (attackType.isSubTypeOf(AttackType.BOMB) && damage > 0) { // damage > 0 prevents being hit by the bomb and not the explosion
 			if (!finalCutsceneStarted && getPercentualHealth() > 0.15f && getPercentualHealthAfterDamage(damage) <= 0.15f) {
 				// take damage till the health is at 10% and then start the defeat cutscene
 				float damageTillTenPercentHealth = health - typeConfig.health * 0.10f;
-				super.takeDamage(damageTillTenPercentHealth, attackType);
+				super.takeDamage(damageTillTenPercentHealth, attackInfo);
 				
 				startDefeatCutscene(); // bugbear dies in the cutscene
 			}
 			else {
-				super.takeDamage(damage, attackType);
+				super.takeDamage(damage, attackInfo);
 			}
 		}
 		else if (attackType.isSubTypeOf(AttackType.ARROW)) {
@@ -90,7 +92,7 @@ public class Bugbear extends Enemy {
 		}
 		else if (attackType.isSubTypeOf(AttackType.HADOUKEN)) {
 			// the hadouken in the final cutscene kills the bugbear
-			super.takeDamage(health, attackType);
+			super.takeDamage(health, attackInfo);
 		}
 		else {
 			// all attacks but bombs can be blocked

@@ -6,7 +6,7 @@ import com.badlogic.gdx.maps.MapProperties;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
-import net.jfabricationgames.gdx.attack.AttackType;
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -133,7 +133,7 @@ public class TraverseableObject extends GameObject implements EventListener {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
 		// overwritten to prevent changing the animation to a hit animation
 		playHitSound();
 	}

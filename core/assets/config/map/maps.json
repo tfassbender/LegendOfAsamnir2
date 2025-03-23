@@ -15,7 +15,7 @@
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
 		initialStartingPointId: 101,
-		//initial: true
+		initial: true
 	},
 	{
         name: loa2_main_tavern,
@@ -61,7 +61,7 @@
         name: loa2_dwarven_mine_castle,
         map: "map/loa2_l1_dwarven_mine_castle.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l1_dwarven_caves.json,
-        initialStartingPointId: 15,
+        initialStartingPointId: 11,
 		//initial: true
 	},
 	
@@ -168,7 +168,7 @@
         map: "map/loa2_l3_muspelheim_lava_dungeon_boss.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json,
         initialStartingPointId: 10,
-		initial: true
+		//initial: true
 	},
 	{
         name: loa2_muspelheim_lava_dungeon_rune,

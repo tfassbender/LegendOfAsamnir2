@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.attack.AttackHandler;
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.character.AbstractCharacter;
@@ -245,13 +246,13 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
 		if (!typeConfig.takesDamage) {
 			stateMachine.setState(getDamageStateName(damage));
 			return;
 		}
 		
-		if (!typeConfig.takesDamageFromProjectiles && attackType.isSubTypeOf(AttackType.PROJECTILE) //
+		if (!typeConfig.takesDamageFromProjectiles && attackInfo.getAttackType().isSubTypeOf(AttackType.PROJECTILE) //
 				|| !typeConfig.takesDamageInBlockingState && isInBlockingState()) {
 			if (typeConfig.soundWhenAttackBlocked != null) {
 				SOUND_SET.playSound(typeConfig.soundWhenAttackBlocked);

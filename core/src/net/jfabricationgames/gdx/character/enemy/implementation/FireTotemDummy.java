@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
@@ -57,9 +58,10 @@ public class FireTotemDummy extends Enemy {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
-		// the fire totem doesn't take damage
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		// the fire totem doesn't take damage, but only reacts to magic attacks
 		
+		AttackType attackType = attackInfo.getAttackType();
 		if (attackType.isSubTypeOf(AttackType.MAGIC)) {
 			stateMachine.setState(attack);
 			

@@ -17,7 +17,7 @@ import net.jfabricationgames.gdx.animation.AnimationFrame;
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
-import net.jfabricationgames.gdx.attack.AttackType;
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
@@ -181,7 +181,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
 		animation = getHitAnimation();
 		playHitSound();
 	}

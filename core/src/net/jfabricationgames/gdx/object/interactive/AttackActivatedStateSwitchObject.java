@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.object.interactive;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.MapProperties;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.object.GameObjectMap;
 import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
@@ -20,12 +21,13 @@ public class AttackActivatedStateSwitchObject extends StateSwitchObject {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
 		/*
 		 * An attack of the correct type can activate the switch but not deactivate it.
 		 * It can be deactivated by an event of type SET_STATE_SWITCH_STATE (see StateSwitchObject.handleEvent) 
 		 * if the configuration allows to deactivate the switch.
 		 */
+		AttackType attackType = attackInfo.getAttackType();
 		if (!active && attackType.isSubTypeOf(activationAttackType)) {
 			executeInteraction();
 		}

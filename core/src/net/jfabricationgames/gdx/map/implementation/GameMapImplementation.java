@@ -12,6 +12,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.animal.Animal;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
@@ -303,7 +304,7 @@ public class GameMapImplementation implements GameMap {
 			continuousMapDamageTimeDelta += delta;
 			if (continuousMapDamageTimeDelta >= continuousMapDamageInterval) {
 				continuousMapDamageTimeDelta -= continuousMapDamageInterval;
-				player.takeDamage(continuousMapDamage, AttackType.CONTINUOUS_MAP_DAMAGE);
+				player.takeDamage(continuousMapDamage, new AttackInfo(AttackType.CONTINUOUS_MAP_DAMAGE));
 			}
 		}
 	}

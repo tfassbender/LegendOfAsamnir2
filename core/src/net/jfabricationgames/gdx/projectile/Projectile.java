@@ -16,7 +16,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.Array;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
-import net.jfabricationgames.gdx.attack.AttackType;
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.Hittable;
 import net.jfabricationgames.gdx.map.PositionedObject;
 import net.jfabricationgames.gdx.physics.CollisionUtil;
@@ -296,7 +296,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		for (Hittable target : targetsInSensorRange) {
 			//enemies define the force themselves; the force parameter is a factor for this self defined force
 			target.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
-			target.takeDamage(damage, typeConfig.attackType);
+			target.takeDamage(damage, AttackInfo.from(typeConfig));
 		}
 		
 		attackPerformed = true;
@@ -358,7 +358,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 			
 			//enemies define the force themselves; the force parameter is a factor for this self defined force
 			hittable.pushByHit(body.getPosition().cpy(), pushForce, pushForceWhenBlocked, pushForceAffectedByBlock);
-			hittable.takeDamage(damage, typeConfig.attackType);
+			hittable.takeDamage(damage, AttackInfo.from(typeConfig));
 			
 			if (typeConfig.freezeTarget) {
 				hittable.freeze();
@@ -395,7 +395,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	public void postSolve(Contact contact, ContactImpulse impulse) {}
 	
 	@Override
-	public void takeDamage(float damage, AttackType melee) {
+	public void takeDamage(float damage, AttackInfo info) {
 		// do nothing here - only needed for the Hittable interface
 	}
 	

@@ -11,6 +11,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.camera.CameraMovementHandler;
 import net.jfabricationgames.gdx.character.player.PlayableCharacter;
@@ -591,12 +592,13 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	public void endContact(Contact contact) {}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		AttackType attackType = attackInfo.getAttackType();
 		damage *= difficulty.getDifficultyConfig().damageFactor; // apply a factor for the game difficulty to the damage
 		
 		if (isAlive()) {
-			if (isBlocking() && attackType.canBeBlocked()) {
-				if (attackType.fullBlockPossible()) {
+			if (isBlocking() && attackInfo.canBeBlocked()) {
+				if (attackInfo.canBeBlockedCompletely()) {
 					// the attack can be completely blocked without taking damage (no armor damage either)
 					return;
 				}
@@ -618,7 +620,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				die();
 			}
 			else {
-				if (isBlocking() && attackType.canBeBlocked()) {
+				if (isBlocking() && attackInfo.canBeBlocked()) {
 					changeAction(CharacterAction.SHIELD_HIT);
 				}
 				else {

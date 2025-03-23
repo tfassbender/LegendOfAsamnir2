@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.utils.ArrayMap;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
@@ -148,8 +149,9 @@ public class GoblinKing extends Enemy {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
-		if (attackType == AttackType.ARROW) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		AttackType attackType = attackInfo.getAttackType();
+		if (attackType.isSubTypeOf(AttackType.ARROW)) {
 			if (stateMachine.isInState(STATE_NAME_EAT)) {
 				stateMachine.setState(STATE_NAME_PANIC);
 				eatingCompleted = false;
@@ -164,7 +166,7 @@ public class GoblinKing extends Enemy {
 			return;
 		}
 		
-		super.takeDamage(damage, attackType);
+		super.takeDamage(damage, attackInfo);
 	}
 	
 	@Override

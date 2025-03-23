@@ -1,11 +1,13 @@
 package net.jfabricationgames.gdx.attack.implementation;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
 
 import net.jfabricationgames.gdx.attack.Attack;
 import net.jfabricationgames.gdx.attack.AttackConfig;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.projectile.Projectile;
 import net.jfabricationgames.gdx.projectile.ProjectileFactory;
@@ -16,6 +18,10 @@ public class ProjectileAttack extends Attack {
 	
 	public ProjectileAttack(AttackConfig config, Vector2 direction, Body body, PhysicsCollisionType collisionType) {
 		super(config, direction, body, collisionType);
+		
+		if (!config.type.isSubTypeOf(AttackType.PROJECTILE)) {
+			Gdx.app.error(getClass().getSimpleName(), "A ProjectileAttack was created with a config type that is not a projectile attack: " + config.type);
+		}
 	}
 	
 	@Override

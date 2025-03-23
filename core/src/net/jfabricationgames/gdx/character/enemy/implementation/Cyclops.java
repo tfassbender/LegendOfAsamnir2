@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.utils.ArrayMap;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
@@ -31,15 +32,16 @@ public class Cyclops extends Enemy {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		AttackType attackType = attackInfo.getAttackType();
 		if (stateMachine.isInState(Cyclops.STATE_NAME_ATTACK_BEAM)) {
 			if (attackType.isSubTypeOf(AttackType.ARROW)) {
-				super.takeDamage(DAMAGE_TAKEN_IN_STATE_ATTACK_BEAM, attackType);
+				super.takeDamage(DAMAGE_TAKEN_IN_STATE_ATTACK_BEAM, attackInfo);
 			}
 		}
 		else if (stateMachine.isInState(Cyclops.STATE_NAME_DEFENSE)) {
 			if (attackType.isSubTypeOf(AttackType.MELEE)) {
-				super.takeDamage(damage, attackType);
+				super.takeDamage(damage, attackInfo);
 			}
 		}
 	}

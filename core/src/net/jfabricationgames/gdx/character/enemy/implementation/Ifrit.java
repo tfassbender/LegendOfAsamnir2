@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.utils.ArrayMap;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
@@ -71,8 +72,9 @@ public class Ifrit extends Enemy {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
-		if (defenseMode && attackType != AttackType.ARROW) { // only take damage from arrows in defense mode
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		AttackType attackType = attackInfo.getAttackType();
+		if (defenseMode && attackType.isSubTypeOf(AttackType.ARROW)) { // only take damage from arrows in defense mode
 			return;
 		}
 		if (meleeDamageOnly && !attackType.isSubTypeOf(AttackType.MELEE)) {
@@ -80,7 +82,7 @@ public class Ifrit extends Enemy {
 		}
 		
 		int healthSegmentBeforeDamage = (int) (health / typeConfig.health * (100f / healthLossForDefenseModeInPercent));
-		super.takeDamage(damage, attackType);
+		super.takeDamage(damage, attackInfo);
 		int healthSegmentAfterDamage = (int) (health / typeConfig.health * (100f / healthLossForDefenseModeInPercent));
 		
 		if (defenseMode) {

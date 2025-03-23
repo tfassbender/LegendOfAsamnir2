@@ -2,12 +2,13 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 
 import com.badlogic.gdx.maps.MapProperties;
 
+import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
-import net.jfabricationgames.gdx.character.enemy.ai.GargoyleAttackAI;
 import net.jfabricationgames.gdx.character.enemy.ai.BackToStartingPointIfPlayerOutOfSightAI;
+import net.jfabricationgames.gdx.character.enemy.ai.GargoyleAttackAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
 public class Gargoyle extends Enemy {
@@ -47,11 +48,12 @@ public class Gargoyle extends Enemy {
 	}
 	
 	@Override
-	public void takeDamage(float damage, AttackType attackType) {
+	public void takeDamage(float damage, AttackInfo attackInfo) {
 		// gargoyles cannot take damage - but they show the damage animation
 		stateMachine.setState(getDamageStateName(damage));
 		
-		if (attackType == AttackType.MELEE) {
+		AttackType attackType = attackInfo.getAttackType();
+		if (attackType.isSubTypeOf(AttackType.MELEE)) {
 			attackAI.attack(); // attack back after taking damage
 		}
 	}

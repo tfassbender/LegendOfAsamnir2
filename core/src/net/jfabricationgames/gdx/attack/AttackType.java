@@ -56,12 +56,4 @@ public enum AttackType {
 		
 		return false;
 	}
-	
-	public boolean canBeBlocked() {
-		return !isSubTypeOf(BEAM) && !isSubTypeOf(MAGIC) && !isSubTypeOf(CONTINUOUS_MAP_DAMAGE);
-	}
-	
-	public boolean fullBlockPossible() {
-		return this == BLOCKABLE_FIREBALL;
-	}
 }
