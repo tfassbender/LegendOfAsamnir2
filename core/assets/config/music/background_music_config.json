@@ -5,4 +5,52 @@
 		volume: 0.2f,
 		loop: true,
 	},
+	{
+		name: "village",
+		file: "music/regular_house.wav",
+		volume: 0.2f,
+        loop: true,
+	},
+	{
+		name: "tavern",
+		file: "music/shop.wav",
+		volume: 0.2f,
+        loop: true,
+	},
+	{
+		name: "regular_area",
+		file: "music/mountain_village.wav",
+		volume: 0.2f,
+        loop: true,
+	},
+	{
+		name: "desert",
+		file: "music/desert_area.wav",
+		volume: 0.2f,
+        loop: true,
+	},
+	{
+		name: "dungeon",
+		file: "music/cave.wav",
+		volume: 0.2f,
+        loop: true,
+	},
+	{
+		name: "boss_entrance",
+		file: "music/boss_entrance.wav",
+		volume: 0.3f,
+        loop: false,
+	},
+	{
+		name: "boss_fight",
+		file: "music/boss_loop.wav",
+		volume: 0.2f,
+        loop: true,
+	},
+	{
+		name: "boss_enraged",
+		file: "music/boss_enraged.wav",
+		volume: 0.3f,
+        loop: true,
+	},
 ]

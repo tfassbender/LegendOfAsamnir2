@@ -1,6 +1,33 @@
 {
 	id: loa2_prolog_alarm_clock_defeated,
 	controlledActions: {
+		stop_boss_fight_music: {
+			startsWithCutscene: true,
+			
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+			}
+			
+			executes: [
+                play_map_background_music,
+			]
+		},
+		
+		play_map_background_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: PLAY_MAP_BACKGROUND_MUSIC,
+                floatValue: 5f, // delay in seconds
+			}
+            
+            executes: [
+                show_text_1,
+            ]
+        },
+		
 		show_text_1: {
 			type: SHOW_ON_SCREEN_TEXT,
 			
@@ -13,7 +40,6 @@
 			}
 			
 			waitForEventToFinish: true,
-			startsWithCutscene: true,
 			
 			executes: [
 				show_text_2,

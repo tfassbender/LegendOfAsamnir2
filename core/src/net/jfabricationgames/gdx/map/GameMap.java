@@ -65,4 +65,6 @@ public interface GameMap extends EventListener, CutsceneUnitProvider, EnemyChara
 	public void addPostAddObjectProcessing(Function<Array<GameObject>, Array<GameObject>> postAddObjectProcessingFunction);
 	
 	public void removePhysicsObjectsWithType(MapObjectType invisiblePathBlocker);
+	
+	public String getBackgroundMusicName();
 }

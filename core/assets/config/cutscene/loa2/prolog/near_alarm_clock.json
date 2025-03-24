@@ -43,13 +43,46 @@
 			waitForEventToFinish: true,
 			
 			executes: [
+				stop_background_music,
+			]
+		},
+		stop_background_music: {
+            type: EVENT,
+			
+            executionDelayInSeconds: 1.5f,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+			}
+			
+			executes: [
+				play_boss_music,
 				show_boss_health_bar,
 			]
 		},
+		play_boss_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: PLAY_BACKGROUND_MUSIC,
+                stringValue: boss_entrance,
+                floatValue: 3f, // delay in seconds
+			}
+			
+			executes: [
+                play_boss_music_loop,
+			]
+		},
+		play_boss_music_loop: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE,
+                stringValue: boss_fight,
+			}
+		},
 		show_boss_health_bar: {
 			type: EVENT,
-			
-            executionDelayInSeconds: 1.5f,
 			
 			event: {
 				eventType: BOSS_ENEMY_SHOW,

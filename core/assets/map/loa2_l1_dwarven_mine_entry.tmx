@@ -3,6 +3,7 @@
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
+  <property name="background_music" value="regular_area"/>
   <property name="dungeon_level" value="true"/>
   <property name="invisible_paths_layer" value="[9]"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/l1_cave_entrance.json"/>

@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 
 import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.music.BackgroundMusicManager;
+import net.jfabricationgames.gdx.screen.game.GameScreen;
 import net.jfabricationgames.gdx.screen.menu.MainMenuScreen;
 
 public class ScreenManager {
@@ -25,7 +26,7 @@ public class ScreenManager {
 	}
 	
 	private Game game;
-	private Screen gameScreen;
+	private GameScreen gameScreen;
 	
 	private ScreenManager() {}
 	
@@ -66,7 +67,7 @@ public class ScreenManager {
 		game.setScreen(screen);
 	}
 	
-	public void setGameScreen(Screen gameScreen) {
+	public void setGameScreen(GameScreen gameScreen) {
 		this.gameScreen = gameScreen;
 	}
 }

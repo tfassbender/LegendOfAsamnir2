@@ -118,6 +118,13 @@ public enum EventType {
 	//*******************************
 	CONFIG_GENERATED_EVENT, //
 	//*******************************
+	//*** Background Music
+	//*******************************
+	PLAY_BACKGROUND_MUSIC, // play a background music that is selected by the event
+	PLAY_MAP_BACKGROUND_MUSIC, // play the background music that is configured in the map properties
+	ADD_BACKGROUND_MUSIC_TO_QUEUE, // 
+	STOP_BACKGROUND_MUSIC, //
+	//*******************************
 	//*** Debug Config Events
 	//*******************************
 	COLLECT_RUNE, //

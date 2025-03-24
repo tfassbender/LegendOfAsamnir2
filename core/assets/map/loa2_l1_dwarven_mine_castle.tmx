@@ -3,6 +3,7 @@
  <properties>
   <property name="above_player_layers" value="[4, 5]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
+  <property name="background_music" value="dungeon"/>
   <property name="building_level" value="true"/>
   <property name="dungeon_level" value="false"/>
   <property name="effect_layers" value="{&quot;10&quot;: &quot;render_effect_layer__loa2_l1_torch_gate&quot;, &quot;11&quot;: &quot;render_effect_layer__loa2_l1_torch_boss_left&quot;, &quot;12&quot;: &quot;render_effect_layer__loa2_l1_torch_boss_right&quot;}"/>

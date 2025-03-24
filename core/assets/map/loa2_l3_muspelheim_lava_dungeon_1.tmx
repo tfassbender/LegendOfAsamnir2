@@ -3,6 +3,7 @@
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
+  <property name="background_music" value="dungeon"/>
   <property name="building_level" value="true"/>
   <property name="continuous_damage" value="5"/>
   <property name="continuous_damage_interval" value="3"/>

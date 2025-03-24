@@ -9,7 +9,13 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
 import com.badlogic.gdx.utils.Json;
 
-public class BackgroundMusicManager {
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventListener;
+import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.map.GameMapManager;
+
+public class BackgroundMusicManager implements EventListener {
 	
 	private static BackgroundMusicManager instance;
 	
@@ -36,6 +42,8 @@ public class BackgroundMusicManager {
 		for (BackgroundMusicConfig musicConfig : configList) {
 			configs.put(musicConfig.name, musicConfig);
 		}
+		
+		EventHandler.getInstance().registerEventListener(this);
 	}
 	
 	public void play(String name) {
@@ -54,11 +62,12 @@ public class BackgroundMusicManager {
 		playingMusic = new PlayingMusic(name, Gdx.audio.newMusic(Gdx.files.internal(config.file)));
 		playingMusic.music.setVolume(config.volume);
 		playingMusic.music.setLooping(config.loop);
+		
 		playingMusic.music.play();
 	}
 	
 	private boolean isPlaying(String name) {
-		return playingMusic != null && Objects.equals(name, playingMusic.name);
+		return playingMusic != null && Objects.equals(name, playingMusic.name) && playingMusic.music.isPlaying();
 	}
 	
 	public void stop() {
@@ -69,14 +78,105 @@ public class BackgroundMusicManager {
 		}
 	}
 	
+	private void addMusicToQueue(String name) {
+		BackgroundMusicConfig config = configs.get(name);
+		if (config == null) {
+			Gdx.app.error(getClass().getSimpleName(), "The background music with the name '" + name + "' doesn't exist.");
+			return;
+		}
+		
+		if (playingMusic == null) {
+			play(name);
+		}
+		else {
+			PlayingMusic last = playingMusic.getLastInQueue();
+			last.nextInQueue = new PlayingMusic(name, Gdx.audio.newMusic(Gdx.files.internal(config.file)));
+			last.nextInQueue.music.setVolume(config.volume);
+			last.nextInQueue.music.setLooping(config.loop);
+			last.addOnCompleteListenerForQueue();
+		}
+	}
+	
 	private class PlayingMusic {
 		
-		private String name;
-		private Music music;
+		public String name;
+		public Music music;
+		public PlayingMusic nextInQueue;
 		
 		public PlayingMusic(String name, Music music) {
 			this.name = name;
 			this.music = music;
+		}
+		
+		public PlayingMusic getLastInQueue() {
+			PlayingMusic last = this;
+			while (last.nextInQueue != null) {
+				last = last.nextInQueue;
+			}
+			return last;
+		}
+		
+		public void addOnCompleteListenerForQueue() {
+			if (nextInQueue != null) {
+				music.setOnCompletionListener(new Music.OnCompletionListener() {
+					
+					@Override
+					public void onCompletion(Music music) {
+						nextInQueue.music.play();
+						playingMusic = nextInQueue;
+					}
+				});
+			}
+		}
+	}
+	
+	@Override
+	public void handleEvent(EventConfig event) {
+		if (event.eventType == EventType.PLAY_BACKGROUND_MUSIC) {
+			play(event.stringValue);
+			pause();
+			delay(this::resume, event.floatValue);
+		}
+		else if (event.eventType == EventType.PLAY_MAP_BACKGROUND_MUSIC) {
+			String mapBackgroundMusic = GameMapManager.getInstance().getMap().getBackgroundMusicName();
+			play(mapBackgroundMusic);
+			pause();
+			delay(this::resume, event.floatValue);
+		}
+		else if (event.eventType == EventType.STOP_BACKGROUND_MUSIC) {
+			stop();
+		}
+		else if (event.eventType == EventType.ADD_BACKGROUND_MUSIC_TO_QUEUE) {
+			addMusicToQueue(event.stringValue);
+		}
+	}
+	
+	private void pause() {
+		if (playingMusic != null) {
+			playingMusic.music.pause();
+		}
+	}
+	
+	private void resume() {
+		if (playingMusic != null) {
+			playingMusic.music.play();
+		}
+	}
+	
+	private void delay(Runnable runnable, float delayInSeconds) {
+		if (delayInSeconds <= 0) {
+			runnable.run();
+		}
+		else {
+			new Thread(() -> {
+				try {
+					Thread.sleep((long) (delayInSeconds * 1000));
+					runnable.run();
+				}
+				catch (InterruptedException e) {
+					Gdx.app.error(getClass().getSimpleName(), "Error while delaying the execution of a runnable.", e);
+				}
+			}).start();
 		}
 	}
 }

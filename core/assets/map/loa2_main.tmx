@@ -3,6 +3,7 @@
  <properties>
   <property name="above_player_layers" value="[9, 12, 15]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14]"/>
+  <property name="background_music" value="village"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/main.json"/>
   <property name="shadow_layers" value="[16]"/>
  </properties>

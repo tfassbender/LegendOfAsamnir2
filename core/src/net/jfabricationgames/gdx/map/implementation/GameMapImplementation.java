@@ -39,6 +39,7 @@ import net.jfabricationgames.gdx.map.GameMap;
 import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.map.ground.GameMapGroundType;
 import net.jfabricationgames.gdx.map.ground.MapObjectType;
+import net.jfabricationgames.gdx.music.BackgroundMusicManager;
 import net.jfabricationgames.gdx.object.GameObject;
 import net.jfabricationgames.gdx.physics.AfterWorldStep;
 import net.jfabricationgames.gdx.physics.BeforeWorldStep;
@@ -51,6 +52,9 @@ public class GameMapImplementation implements GameMap {
 	
 	private static final String MAP_PROPERTY_KEY_DUNGEON_LEVEL = "dungeon_level";
 	private static final String MAP_PROPERTY_KEY_BUILDING_LEVEL = "building_level";
+	
+	private static final String MAP_PROPERTY_BACKGROUND_MUSIC_NAME = "background_music";
+	private static final String DEFAULT_BACKGROUND_MUSIC_NAME = "regular_area";
 	
 	@Override
 	public GameMapGroundType getGroundTypeByName(String name) {
@@ -161,6 +165,7 @@ public class GameMapImplementation implements GameMap {
 		resetLanternUsed();
 		updateContinuousMapDamageProperties();
 		updateRemovedObjects();
+		playBackgroundMusic();
 	}
 	
 	private void removeCurrentMapIfPresent() {
@@ -243,6 +248,22 @@ public class GameMapImplementation implements GameMap {
 		continuousMapDamageTimeDelta = 0f;
 	}
 	
+	private void updateRemovedObjects() {
+		if (RuneType.ALGIZ.isCollected()) {
+			// execute the picked up method again, to remove all objects that block invisible ways
+			processRunePickUp(RuneType.ALGIZ);
+		}
+	}
+	
+	private void playBackgroundMusic() {
+		BackgroundMusicManager.getInstance().play(getBackgroundMusicName());
+	}
+	
+	@Override
+	public String getBackgroundMusicName() {
+		return map.getProperties().get(MAP_PROPERTY_BACKGROUND_MUSIC_NAME, DEFAULT_BACKGROUND_MUSIC_NAME, String.class);
+	}
+	
 	@Override
 	public void processRunePickUp(RuneType rune) {
 		switch (rune) {
@@ -255,13 +276,6 @@ public class GameMapImplementation implements GameMap {
 			default:
 				//other runes only set global values
 				break;
-		}
-	}
-	
-	private void updateRemovedObjects() {
-		if (RuneType.ALGIZ.isCollected()) {
-			// execute the picked up method again, to remove all objects that block invisible ways
-			processRunePickUp(RuneType.ALGIZ);
 		}
 	}
 	
@@ -559,13 +573,13 @@ public class GameMapImplementation implements GameMap {
 		if (event.eventType == EventType.UPDATE_MAP_OBJECT_STATES) {
 			updateMapObjectStates();
 		}
-		if (event.eventType == EventType.BEFORE_PERSIST_STATE) {
+		else if (event.eventType == EventType.BEFORE_PERSIST_STATE) {
 			AnnotationUtil.executeAnnotatedMethods(BeforePersistState.class, this);
 		}
-		if (event.eventType == EventType.UPDATE_MAP_AFTER_LOADING_GAME_STATE) {
+		else if (event.eventType == EventType.UPDATE_MAP_AFTER_LOADING_GAME_STATE) {
 			updateAfterLoadingGameState();
 		}
-		if (event.eventType == EventType.CUTSCENE_REMOVE_UNIT && event.stringValue != null) {
+		else if (event.eventType == EventType.CUTSCENE_REMOVE_UNIT && event.stringValue != null) {
 			CutsceneControlledUnit unitToRemove = getUnitById(event.stringValue);
 			if (unitToRemove != null) {
 				unitToRemove.removeFromMap();
@@ -659,6 +673,5 @@ public class GameMapImplementation implements GameMap {
 	public void dispose() {
 		renderer.dispose();
 		map.dispose();
-		//PhysicsWorld.getInstance().dispose();
 	}
 }

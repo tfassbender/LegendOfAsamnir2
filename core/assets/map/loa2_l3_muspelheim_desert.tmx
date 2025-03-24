@@ -3,6 +3,7 @@
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5]"/>
+  <property name="background_music" value="desert"/>
   <property name="building_level" value="false"/>
   <property name="dungeon_level" value="false"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/l3_muspelheim_desert.json"/>
