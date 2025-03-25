@@ -8,6 +8,20 @@
             
             event: {
                 eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                clear_background_music_queue,
+			]
+		},
+		
+		clear_background_music_queue: {
+			type: EVENT,
+            
+            event: {
+            	// the queue needs to be cleared because otherwise the "fade out" parameter of the previous event (STOP_BACKGROUND_MUSIC) will start the next music after the fade out
+                eventType: CLEAR_BACKGROUND_MUSIC_QUEUE,  
 			}
 			
 			executes: [
@@ -19,8 +33,9 @@
             type: EVENT,
             
             event: {
-                eventType: PLAY_MAP_BACKGROUND_MUSIC,
-                floatValue: 5f, // delay in seconds
+                eventType: ADD_MAP_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                floatValue: 3f, // delay in seconds
+                booleanValue: true, // fade in
 			}
             
             executes: [

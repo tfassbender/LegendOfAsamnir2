@@ -55,7 +55,7 @@ public class ScreenManager {
 	}
 	
 	private void playMenuBackgroundMusic() {
-		BackgroundMusicManager.getInstance().play(MENU_BACKGROUND_MUSIC_NAME);
+		BackgroundMusicManager.getInstance().play(MENU_BACKGROUND_MUSIC_NAME, true);
 	}
 	
 	public void setGame(Game game) {

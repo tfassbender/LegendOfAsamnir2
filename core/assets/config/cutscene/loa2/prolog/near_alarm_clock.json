@@ -48,11 +48,10 @@
 		},
 		stop_background_music: {
             type: EVENT,
-			
-            executionDelayInSeconds: 1.5f,
             
             event: {
                 eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
 			}
 			
 			executes: [
@@ -64,7 +63,7 @@
             type: EVENT,
             
             event: {
-                eventType: PLAY_BACKGROUND_MUSIC,
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
                 stringValue: boss_entrance,
                 floatValue: 3f, // delay in seconds
 			}
@@ -79,10 +78,13 @@
             event: {
                 eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE,
                 stringValue: boss_fight,
+                booleanValue: true,  // fade in
 			}
 		},
 		show_boss_health_bar: {
 			type: EVENT,
+			
+            executionDelayInSeconds: 2f,
 			
 			event: {
 				eventType: BOSS_ENEMY_SHOW,

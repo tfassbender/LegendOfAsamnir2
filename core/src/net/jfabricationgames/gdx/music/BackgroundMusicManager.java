@@ -26,11 +26,47 @@ public class BackgroundMusicManager implements EventListener {
 		return instance;
 	}
 	
+	private static final float FADE_OUT_DURATION = 2f;
+	private static final float FADE_IN_DURATION = 2f;
+	private float fadeOutTimer = 0f;
+	private float fadeInTimer = 0f;
+	private boolean fadingOut = false;
+	private boolean fadingIn = false;
+	
+	private float musicVolume = 1f; // TODO should be changeable in the game settings
+	
 	private ArrayMap<String, BackgroundMusicConfig> configs;
 	private PlayingMusic playingMusic;
 	
 	private BackgroundMusicManager() {
 		configs = new ArrayMap<String, BackgroundMusicConfig>();
+	}
+	
+	/**
+	 * Called from the game loop to update the delta time (for fade in/out effects).
+	 */
+	public void update(float delta) {
+		if (fadingIn && isPlaying()) {
+			fadeInTimer += delta;
+			if (fadeInTimer >= FADE_IN_DURATION) {
+				fadingIn = false;
+				fadeInTimer = 0f;
+			}
+			else {
+				playingMusic.music.setVolume((fadeInTimer / FADE_IN_DURATION) * playingMusic.configVolume * musicVolume);
+			}
+		}
+		else if (fadingOut && isPlaying()) {
+			fadeOutTimer += delta;
+			if (fadeOutTimer >= FADE_OUT_DURATION) {
+				fadingOut = false;
+				fadeOutTimer = 0f;
+				stop(true);
+			}
+			else {
+				playingMusic.music.setVolume((1 - fadeOutTimer / FADE_OUT_DURATION) * playingMusic.configVolume * musicVolume);
+			}
+		}
 	}
 	
 	public void loadConfig(String backgroundMusicConfigPath) {
@@ -47,6 +83,10 @@ public class BackgroundMusicManager implements EventListener {
 	}
 	
 	public void play(String name) {
+		play(name, false);
+	}
+	
+	public void play(String name, boolean fadeIn) {
 		BackgroundMusicConfig config = configs.get(name);
 		if (config == null) {
 			Gdx.app.error(getClass().getSimpleName(), "The background music with the name '" + name + "' doesn't exist.");
@@ -59,11 +99,17 @@ public class BackgroundMusicManager implements EventListener {
 		
 		stop(); // stop and dispose the current music if there is one playing
 		
-		playingMusic = new PlayingMusic(name, Gdx.audio.newMusic(Gdx.files.internal(config.file)));
-		playingMusic.music.setVolume(config.volume);
-		playingMusic.music.setLooping(config.loop);
-		
+		playingMusic = new PlayingMusic(config);
 		playingMusic.music.play();
+		if (fadeIn) {
+			fadingIn = true;
+			fadeInTimer = 0f;
+			playingMusic.music.setVolume(0);
+		}
+	}
+	
+	private boolean isPlaying() {
+		return playingMusic != null && playingMusic.music.isPlaying();
 	}
 	
 	private boolean isPlaying(String name) {
@@ -71,14 +117,73 @@ public class BackgroundMusicManager implements EventListener {
 	}
 	
 	public void stop() {
+		stop(false);
+	}
+	
+	public void stop(boolean startNextInQueue) {
 		if (playingMusic != null) {
 			playingMusic.music.stop();
 			playingMusic.music.dispose();
-			playingMusic = null;
+			
+			if (startNextInQueue && playingMusic.nextInQueue != null) {
+				playingMusic.nextInQueueStarter.onCompletion(playingMusic.music);
+			}
+			else {
+				// dispose the whole queue to free the memory
+				while (playingMusic.nextInQueue != null) {
+					playingMusic.music.dispose();
+					playingMusic = playingMusic.nextInQueue;
+				}
+			}
 		}
 	}
 	
-	private void addMusicToQueue(String name) {
+	@Override
+	public void handleEvent(EventConfig event) {
+		if (event.eventType == EventType.PLAY_BACKGROUND_MUSIC) {
+			playDelayed(event.stringValue, event.floatValue, event.booleanValue);
+		}
+		else if (event.eventType == EventType.PLAY_MAP_BACKGROUND_MUSIC) {
+			String mapBackgroundMusic = GameMapManager.getInstance().getMap().getBackgroundMusicName();
+			playDelayed(mapBackgroundMusic, event.floatValue, event.booleanValue);
+		}
+		else if (event.eventType == EventType.STOP_BACKGROUND_MUSIC) {
+			if (event.booleanValue) { // the boolean value is used as "fade out" parameter
+				fadingOut = true;
+				fadeOutTimer = 0f;
+				// after fading out the music is stopped in the update method
+			}
+			else {
+				stop();
+			}
+		}
+		else if (event.eventType == EventType.ADD_BACKGROUND_MUSIC_TO_QUEUE) {
+			addMusicToQueue(event.stringValue, event.floatValue, event.booleanValue);
+		}
+		else if (event.eventType == EventType.ADD_MAP_BACKGROUND_MUSIC_TO_QUEUE) {
+			String mapBackgroundMusic = GameMapManager.getInstance().getMap().getBackgroundMusicName();
+			addMusicToQueue(mapBackgroundMusic, event.floatValue, event.booleanValue);
+		}
+		else if (event.eventType == EventType.CLEAR_BACKGROUND_MUSIC_QUEUE) {
+			disposeQueue();
+		}
+	}
+	
+	private void playDelayed(String musicName, float delayInSeconds, boolean fadeIn) {
+		// the call to the play method must not be delayed for the addMusicToQueue method to work properly
+		play(musicName);
+		pause();
+		delay(this::resume, delayInSeconds);
+		
+		fadingIn = fadeIn;
+		fadeInTimer = 0f;
+		
+		// prevent stopping the just started music because of the fade out effect of the previous music
+		fadingOut = false;
+		fadeOutTimer = 0f;
+	}
+	
+	private void addMusicToQueue(String name, float delayInSeconds, boolean fadeIn) {
 		BackgroundMusicConfig config = configs.get(name);
 		if (config == null) {
 			Gdx.app.error(getClass().getSimpleName(), "The background music with the name '" + name + "' doesn't exist.");
@@ -90,64 +195,28 @@ public class BackgroundMusicManager implements EventListener {
 		}
 		else {
 			PlayingMusic last = playingMusic.getLastInQueue();
-			last.nextInQueue = new PlayingMusic(name, Gdx.audio.newMusic(Gdx.files.internal(config.file)));
-			last.nextInQueue.music.setVolume(config.volume);
-			last.nextInQueue.music.setLooping(config.loop);
-			last.addOnCompleteListenerForQueue();
+			last.nextInQueue = new PlayingMusic(config);
+			last.addOnCompleteListenerForQueue(delayInSeconds, fadeIn);
 		}
 	}
 	
-	private class PlayingMusic {
-		
-		public String name;
-		public Music music;
-		public PlayingMusic nextInQueue;
-		
-		public PlayingMusic(String name, Music music) {
-			this.name = name;
-			this.music = music;
+	private void disposeQueue() {
+		if (playingMusic == null) {
+			return;
 		}
 		
-		public PlayingMusic getLastInQueue() {
-			PlayingMusic last = this;
-			while (last.nextInQueue != null) {
-				last = last.nextInQueue;
+		PlayingMusic queued = playingMusic;
+		while (queued.nextInQueue != null) {
+			PlayingMusic next = queued.nextInQueue;
+			
+			queued.music.setOnCompletionListener(null);
+			queued.nextInQueueStarter = null;
+			queued.nextInQueue = null;
+			
+			if (next != null) {
+				next.music.dispose();
 			}
-			return last;
-		}
-		
-		public void addOnCompleteListenerForQueue() {
-			if (nextInQueue != null) {
-				music.setOnCompletionListener(new Music.OnCompletionListener() {
-					
-					@Override
-					public void onCompletion(Music music) {
-						nextInQueue.music.play();
-						playingMusic = nextInQueue;
-					}
-				});
-			}
-		}
-	}
-	
-	@Override
-	public void handleEvent(EventConfig event) {
-		if (event.eventType == EventType.PLAY_BACKGROUND_MUSIC) {
-			play(event.stringValue);
-			pause();
-			delay(this::resume, event.floatValue);
-		}
-		else if (event.eventType == EventType.PLAY_MAP_BACKGROUND_MUSIC) {
-			String mapBackgroundMusic = GameMapManager.getInstance().getMap().getBackgroundMusicName();
-			play(mapBackgroundMusic);
-			pause();
-			delay(this::resume, event.floatValue);
-		}
-		else if (event.eventType == EventType.STOP_BACKGROUND_MUSIC) {
-			stop();
-		}
-		else if (event.eventType == EventType.ADD_BACKGROUND_MUSIC_TO_QUEUE) {
-			addMusicToQueue(event.stringValue);
+			queued = next;
 		}
 	}
 	
@@ -177,6 +246,60 @@ public class BackgroundMusicManager implements EventListener {
 					Gdx.app.error(getClass().getSimpleName(), "Error while delaying the execution of a runnable.", e);
 				}
 			}).start();
+		}
+	}
+	
+	private class PlayingMusic {
+		
+		public String name;
+		public float configVolume;
+		public Music music;
+		
+		public PlayingMusic nextInQueue;
+		public Music.OnCompletionListener nextInQueueStarter;
+		
+		public PlayingMusic(BackgroundMusicConfig config) {
+			this.name = config.name;
+			this.configVolume = config.volume;
+			this.music = Gdx.audio.newMusic(Gdx.files.internal(config.file));
+			
+			music.setVolume(config.volume);
+			music.setLooping(config.loop);
+		}
+		
+		public PlayingMusic getLastInQueue() {
+			PlayingMusic last = this;
+			while (last.nextInQueue != null) {
+				last = last.nextInQueue;
+			}
+			return last;
+		}
+		
+		public void addOnCompleteListenerForQueue(float delayInSeconds, boolean fadeIn) {
+			if (nextInQueue != null) {
+				nextInQueueStarter = new Music.OnCompletionListener() {
+					
+					@Override
+					public void onCompletion(Music music) {
+						playingMusic = nextInQueue;
+						
+						// the call to the play method must not be delayed for the addMusicToQueue method to work properly
+						nextInQueue.music.play();
+						nextInQueue.music.pause();
+						
+						delay(BackgroundMusicManager.this::resume, delayInSeconds);
+						
+						fadingIn = fadeIn;
+						fadeInTimer = 0f;
+						
+						// prevent stopping the just started music because of the fade out effect of the previous music
+						fadingOut = false;
+						fadeOutTimer = 0f;
+					}
+				};
+				
+				music.setOnCompletionListener(nextInQueueStarter);
+			}
 		}
 	}
 }

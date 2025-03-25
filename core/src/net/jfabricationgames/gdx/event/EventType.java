@@ -123,6 +123,8 @@ public enum EventType {
 	PLAY_BACKGROUND_MUSIC, // play a background music that is selected by the event
 	PLAY_MAP_BACKGROUND_MUSIC, // play the background music that is configured in the map properties
 	ADD_BACKGROUND_MUSIC_TO_QUEUE, // 
+	ADD_MAP_BACKGROUND_MUSIC_TO_QUEUE, //
+	CLEAR_BACKGROUND_MUSIC_QUEUE, // does not stop the current music
 	STOP_BACKGROUND_MUSIC, //
 	//*******************************
 	//*** Debug Config Events

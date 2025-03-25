@@ -6,7 +6,7 @@
 		name: loa2_prolog,
 		map: "map/loa2_prolog.tmx",
 		initialStartingPointId: 0,
-		initial: true
+		//initial: true
 		homeMap: true,
 		homeMapStartingPointId: 0,
 	},
@@ -119,7 +119,7 @@
         map: "map/loa2_l3_muspelheim_lava_dungeon_1.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json,
         initialStartingPointId: 11,
-		initial: true
+		//initial: true
 	},
 	{
         name: loa2_muspelheim_lava_dungeon_2,
@@ -168,7 +168,7 @@
         map: "map/loa2_l3_muspelheim_lava_dungeon_boss.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json,
         initialStartingPointId: 10,
-		//initial: true
+		initial: true
 	},
 	{
         name: loa2_muspelheim_lava_dungeon_rune,

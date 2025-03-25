@@ -26,6 +26,8 @@ public class Game extends com.badlogic.gdx.Game {
 	
 	private static Game instance;
 	
+	private BackgroundMusicManager backgroundMusicManager;
+	
 	private Runnable preGameConfigurator;
 	
 	public static synchronized Game createInstance(Runnable preGameConfigurator) {
@@ -48,9 +50,10 @@ public class Game extends com.badlogic.gdx.Game {
 		preGameConfigurator.run();
 		
 		initializeCdiContainer();
+		backgroundMusicManager = BackgroundMusicManager.getInstance();
 		
 		AssetGroupManager.initialize(ASSET_GROUP_MANAGER_CONFIG_PATH);
-		BackgroundMusicManager.getInstance().loadConfig(BACKGROUND_MUSIC_CONFIG_PATH);
+		backgroundMusicManager.loadConfig(BACKGROUND_MUSIC_CONFIG_PATH);
 		SoundManager.getInstance().loadConfig(SOUND_CONFIG_PATH);
 		FontManager.getInstance().loadConfig(FONT_CONFIG_PATH);
 		GameDataService.initializeEventListener();
@@ -72,6 +75,12 @@ public class Game extends com.badlogic.gdx.Game {
 		catch (CdiException | IOException e) {
 			Gdx.app.error(Game.class.getSimpleName(), "Error while creating the CDI container", e);
 		}
+	}
+	
+	@Override
+	public void render() {
+		super.render();
+		backgroundMusicManager.update(Gdx.graphics.getDeltaTime());
 	}
 	
 	@Override
