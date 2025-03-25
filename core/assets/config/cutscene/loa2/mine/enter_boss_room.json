@@ -22,7 +22,31 @@
 			},
 			conditionOptionExecutions: {
 				condition_met: end,
-				condition_not_met: start_boss_fight,
+				condition_not_met: stop_map_background_music,
+			}
+		},
+		
+		stop_map_background_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+			}
+			
+			executes: [
+				play_boss_music,
+				start_boss_fight,
+			]
+		},
+		
+		play_boss_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_fight,
+                floatValue: 3f, // delay in seconds
+                booleanValue: true,  // fade in
 			}
 		},
 		

@@ -97,5 +97,6 @@ public class FrostGiant extends Enemy {
 	protected void die() {
 		super.die();
 		GameStateManager.fireQuickSaveEvent();
+		playMapBackgroundMusicAfterBossDefeated();
 	}
 }

@@ -83,5 +83,6 @@ public class Ogre extends Enemy {
 	protected void die() {
 		super.die();
 		GameStateManager.fireQuickSaveEvent();
+		playMapBackgroundMusicAfterBossDefeated();
 	}
 }

@@ -186,6 +186,7 @@
 			
 			executes: [
                 start_hadouken_attack,
+				stop_boss_fight_music,
                 impa_3,
 			],
 		},
@@ -202,6 +203,42 @@
                 // attack name and direction are configured in the config object (in the tiled map)
 			},
 		},
+		
+		stop_boss_fight_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                clear_background_music_queue,
+			]
+		},
+		
+		clear_background_music_queue: {
+			type: EVENT,
+            
+            event: {
+            	// the queue needs to be cleared because otherwise the "fade out" parameter of the previous event (STOP_BACKGROUND_MUSIC) will start the next music after the fade out
+                eventType: CLEAR_BACKGROUND_MUSIC_QUEUE,  
+			}
+			
+			executes: [
+                play_map_background_music,
+			]
+		},
+		
+		play_map_background_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_MAP_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                floatValue: 3f, // delay in seconds
+                booleanValue: true, // fade in
+			}
+        },
 		
 		impa_3: {
             type: SHOW_ON_SCREEN_TEXT,

@@ -195,24 +195,6 @@ public class Ifrit extends Enemy {
 				.setStringValue("loa2_l3_muspelheim__config_object__open_key_wall_after_surtur_defeated"));
 	}
 	
-	private void changeBackgroundMusic() {
-		// stop the boss music
-		EventHandler.getInstance().fireEvent(new EventConfig() //
-				.setEventType(EventType.STOP_BACKGROUND_MUSIC) //
-				.setBooleanValue(true)); // fade out
-		
-		// clear the queue (though it should be empty) because the "fade out" parameter of the 
-		// last event will otherwise start the next music in the queue
-		EventHandler.getInstance().fireEvent(new EventConfig() //
-				.setEventType(EventType.CLEAR_BACKGROUND_MUSIC_QUEUE));
-		
-		// add to queue is needed because of the fade out of the previous music
-		EventHandler.getInstance().fireEvent(new EventConfig() //
-				.setEventType(EventType.ADD_MAP_BACKGROUND_MUSIC_TO_QUEUE) //
-				.setFloatValue(3f) // delay in seconds
-				.setBooleanValue(true)); // fade in
-	}
-	
 	@Override
 	protected void die() {
 		super.die();
@@ -221,7 +203,7 @@ public class Ifrit extends Enemy {
 		putOutOuterFireWalls();
 		destroyAllFireTotems();
 		unlockBossGate();
-		changeBackgroundMusic();
+		playMapBackgroundMusicAfterBossDefeated();
 		
 		GameStateManager.fireQuickSaveEvent();
 	}

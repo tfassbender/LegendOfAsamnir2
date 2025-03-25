@@ -309,16 +309,16 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		changeBodyToSensor();
 	}
 	
-	protected void changeBodyToSensor() {
-		for (Fixture fixture : body.getFixtureList()) {
-			fixture.setSensor(true);
-		}
-	}
-	
 	protected void fireEnemyDefeatedEvent() {
 		if (properties.containsKey(MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT)) {
 			String enemyDefeatedEventText = properties.get(MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT, "", String.class);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ENEMY_DEFEATED).setStringValue(enemyDefeatedEventText));
+		}
+	}
+	
+	protected void changeBodyToSensor() {
+		for (Fixture fixture : body.getFixtureList()) {
+			fixture.setSensor(true);
 		}
 	}
 	
@@ -367,6 +367,24 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	public void setOnRemoveFromMap(Runnable onRemoveFromMap) {
 		this.onRemoveFromMap = onRemoveFromMap;
+	}
+	
+	public void playMapBackgroundMusicAfterBossDefeated() {
+		// stop the boss music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.STOP_BACKGROUND_MUSIC) //
+				.setBooleanValue(true)); // fade out
+		
+		// clear the queue (though it should be empty) because the "fade out" parameter of the 
+		// last event will otherwise start the next music in the queue
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CLEAR_BACKGROUND_MUSIC_QUEUE));
+		
+		// add to queue is needed because of the fade out of the previous music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ADD_MAP_BACKGROUND_MUSIC_TO_QUEUE) //
+				.setFloatValue(3f) // delay in seconds
+				.setBooleanValue(true)); // fade in
 	}
 	
 	@Override

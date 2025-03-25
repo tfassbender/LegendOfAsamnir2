@@ -134,6 +134,7 @@ public class BackgroundMusicManager implements EventListener {
 					playingMusic.music.dispose();
 					playingMusic = playingMusic.nextInQueue;
 				}
+				playingMusic = null;
 			}
 		}
 	}
@@ -191,7 +192,7 @@ public class BackgroundMusicManager implements EventListener {
 		}
 		
 		if (playingMusic == null) {
-			play(name);
+			playDelayed(name, delayInSeconds, fadeIn);
 		}
 		else {
 			PlayingMusic last = playingMusic.getLastInQueue();

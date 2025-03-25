@@ -142,5 +142,6 @@ public class GiantGolem extends Enemy {
 	protected void die() {
 		super.die();
 		GameStateManager.fireQuickSaveEvent();
+		playMapBackgroundMusicAfterBossDefeated();
 	}
 }
