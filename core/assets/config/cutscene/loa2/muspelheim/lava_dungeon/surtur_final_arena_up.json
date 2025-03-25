@@ -78,6 +78,7 @@
             	ignite_fire_wall_up,
             	ignite_fire_wall_down,
                 spawn_fire_totems,
+                stop_normal_boss_music,
             ],
 		},
 		
@@ -126,6 +127,33 @@
                 eventType: CUSTCENE_SPAWN_UNIT,
                 stringValue: loa2_l3_muspelheim_lava_dungeon__boss__fire_totem__inner_platform__horizontal,
             },
+            
+            executes: [
+            	surtur_change_state__laugh,
+            ],
+		},
+		
+		stop_normal_boss_music: {
+			type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                play_boss_enraged_music,
+            ],
+		},
+		
+		play_boss_enraged_music: {
+			type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_enraged,
+                booleanValue: true, // fade in
+			}
 		},
 		
 		surtur_change_state__laugh: {

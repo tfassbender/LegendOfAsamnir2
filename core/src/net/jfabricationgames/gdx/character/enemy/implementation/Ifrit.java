@@ -74,7 +74,7 @@ public class Ifrit extends Enemy {
 	@Override
 	public void takeDamage(float damage, AttackInfo attackInfo) {
 		AttackType attackType = attackInfo.getAttackType();
-		if (defenseMode && attackType.isSubTypeOf(AttackType.ARROW)) { // only take damage from arrows in defense mode
+		if (defenseMode && !attackType.isSubTypeOf(AttackType.ARROW)) { // only take damage from arrows in defense mode
 			return;
 		}
 		if (meleeDamageOnly && !attackType.isSubTypeOf(AttackType.MELEE)) {
@@ -94,7 +94,6 @@ public class Ifrit extends Enemy {
 			}
 		}
 		else if (healthSegmentAfterDamage < healthSegmentBeforeDamage) {
-			System.out.println("Health segment before: " + healthSegmentBeforeDamage + "; after: " + healthSegmentAfterDamage);
 			if (healthSegmentAfterDamage == 0) {
 				startFinalPartOfBattle();
 			}
@@ -153,7 +152,8 @@ public class Ifrit extends Enemy {
 		AngleDirection directionToPlayer = nearPlayer != null ? AngleUtil.getDirection(getPosition(), nearPlayer.getPosition()) : AngleDirection.DOWN;
 		defenseModePosition = DefenseModePosition.byAngleDirection(directionToPlayer);
 		String cutsceneName = String.format(cutsceneFormatString, defenseModePosition.cutsceneDirectionName);
-		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE).setStringValue(cutsceneName));
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE) //
+				.setStringValue(cutsceneName));
 	}
 	
 	private DefenseModePosition getDefenseModePosition() {
@@ -166,13 +166,17 @@ public class Ifrit extends Enemy {
 	
 	private void putOutInnerFireWalls() {
 		for (int i = 1; i <= 4; i++) {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR).setIntValue(i));
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+					.setIntValue(i));
 		}
 	}
 	
 	private void putOutOuterFireWalls() {
 		for (int i = 5; i <= 8; i++) {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR).setIntValue(i));
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+					.setIntValue(i));
 		}
 	}
 	
@@ -191,6 +195,24 @@ public class Ifrit extends Enemy {
 				.setStringValue("loa2_l3_muspelheim__config_object__open_key_wall_after_surtur_defeated"));
 	}
 	
+	private void changeBackgroundMusic() {
+		// stop the boss music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.STOP_BACKGROUND_MUSIC) //
+				.setBooleanValue(true)); // fade out
+		
+		// clear the queue (though it should be empty) because the "fade out" parameter of the 
+		// last event will otherwise start the next music in the queue
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CLEAR_BACKGROUND_MUSIC_QUEUE));
+		
+		// add to queue is needed because of the fade out of the previous music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ADD_MAP_BACKGROUND_MUSIC_TO_QUEUE) //
+				.setFloatValue(3f) // delay in seconds
+				.setBooleanValue(true)); // fade in
+	}
+	
 	@Override
 	protected void die() {
 		super.die();
@@ -199,6 +221,7 @@ public class Ifrit extends Enemy {
 		putOutOuterFireWalls();
 		destroyAllFireTotems();
 		unlockBossGate();
+		changeBackgroundMusic();
 		
 		GameStateManager.fireQuickSaveEvent();
 	}

@@ -237,8 +237,33 @@
 			waitForEventToFinish: true,
 			
 			executes: [
+				stop_map_background_music,
 				surtur_change_state__ignite_fire_wall,
 			],
+		},
+		
+		stop_map_background_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+				play_boss_music,
+			]
+		},
+		
+		play_boss_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_fight,
+                floatValue: 3f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
 		},
 		
 		surtur_change_state__ignite_fire_wall: {
@@ -316,6 +341,7 @@
 		
 		start_boss_fight: {
 			type: EVENT,
+			executionDelayInSeconds: 1f,
 			
 			event: {
 				eventType: BOSS_ENEMY_SHOW,
