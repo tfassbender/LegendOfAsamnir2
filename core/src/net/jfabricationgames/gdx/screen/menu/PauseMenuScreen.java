@@ -14,6 +14,7 @@ import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.item.SpecialAction;
+import net.jfabricationgames.gdx.music.BackgroundMusicManager;
 import net.jfabricationgames.gdx.screen.ScreenManager;
 import net.jfabricationgames.gdx.screen.menu.components.AmmoSubMenu;
 import net.jfabricationgames.gdx.screen.menu.components.FocusButton;
@@ -29,8 +30,10 @@ import net.jfabricationgames.gdx.screen.menu.dialog.ItemSettingsDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.LoadGameDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.SaveGameDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.SettingsDialog;
+import net.jfabricationgames.gdx.screen.menu.dialog.SoundSettingsDialog;
 import net.jfabricationgames.gdx.skill.Difficulty;
 import net.jfabricationgames.gdx.skill.DifficultyLevel;
+import net.jfabricationgames.gdx.sound.SoundManager;
 
 public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	
@@ -49,13 +52,18 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	private static final String STATE_PREFIX_SAVE_DIALOG = "saveDialog_";
 	private static final String STATE_PREFIX_LOAD_DIALOG = "loadDialog_";
 	private static final String STATE_PREFIX_ITEM_SETTINGS_DIALOG = "itemsettings_dialog_"; // must not start with the prefix "item_" because of the STATE_PREFIX_ITEM
+	private static final String STATE_PREFIX_SOUND_SETTINGS_DIALOG = "soundsettings_dialog_";
 	
 	private SettingsDialog settingsDialog;
 	private ControlsDialog controlsDialog;
 	private ItemSettingsDialog itemSettingsDialog;
+	private SoundSettingsDialog soundSettingsDialog;
 	private GameMapDialog mapDialog;
 	private SaveGameDialog saveGameDialog;
 	private LoadGameDialog loadGameDialog;
+	
+	private BackgroundMusicManager backgroundMusicManager;
+	private SoundManager soundManager;
 	
 	private MenuBox background;
 	
@@ -88,6 +96,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	}
 	
 	private void initialize() {
+		backgroundMusicManager = BackgroundMusicManager.getInstance();
+		soundManager = SoundManager.getInstance();
+		
 		createComponents();
 		createDialogs();
 		
@@ -165,6 +176,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		settingsDialog = new SettingsDialog(camera);
 		controlsDialog = new ControlsDialog(camera);
 		itemSettingsDialog = new ItemSettingsDialog(camera);
+		soundSettingsDialog = new SoundSettingsDialog(camera);
 		mapDialog = new GameMapDialog(gameScreen, camera, this::backToGame, this::playMenuSound);
 		saveGameDialog = new SaveGameDialog(camera, this::backToGame, this::playMenuSound);
 		loadGameDialog = new LoadGameDialog(camera, this::backToGame, this::playMenuSound);
@@ -187,6 +199,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 			}
 			else if (itemSettingsDialog.isVisible()) {
 				closeItemSettingsDialog();
+			}
+			else if (soundSettingsDialog.isVisible()) {
+				closeSoundSettingsDialog();
 			}
 			else if (mapDialog.isVisible()) {
 				closeMapDialog();
@@ -259,6 +274,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		settingsDialog.draw();
 		controlsDialog.draw();
 		itemSettingsDialog.draw();
+		soundSettingsDialog.draw();
 		mapDialog.draw(delta);
 		saveGameDialog.draw();
 		loadGameDialog.draw();
@@ -365,6 +381,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		else if (stateName.startsWith(STATE_PREFIX_ITEM_SETTINGS_DIALOG)) {
 			itemSettingsDialog.setFocusTo(stateName);
 		}
+		else if (stateName.startsWith(STATE_PREFIX_SOUND_SETTINGS_DIALOG)) {
+			soundSettingsDialog.setFocusTo(stateName);
+		}
 		else if (stateName.startsWith(STATE_PREFIX_MAP_DIALOG)) {
 			if (stateName.equals(STATE_PREFIX_MAP_DIALOG + "button_mapDialogBack")) {
 				mapDialog.setFocusToBackButton();
@@ -426,6 +445,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		runeMenu.setHoveredIndex(-1);
 		
 		itemSettingsDialog.unfocusAll();
+		soundSettingsDialog.unfocusAll();
 	}
 	
 	@Override
@@ -434,6 +454,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		settingsDialog.dispose();
 		controlsDialog.dispose();
 		itemSettingsDialog.dispose();
+		soundSettingsDialog.dispose();
 		mapDialog.dispose();
 		saveGameDialog.dispose();
 		loadGameDialog.dispose();
@@ -459,6 +480,12 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		Gdx.app.debug(getClass().getSimpleName(), "'Show Item Settings' selected");
 		itemSettingsDialog.setVisible(true);
 		stateMachine.changeState("itemsettings_dialog_button_back");
+	}
+	
+	public void showSoundSettings() {
+		Gdx.app.debug(getClass().getSimpleName(), "'Show Sound Settings' selected");
+		soundSettingsDialog.setVisible(true);
+		stateMachine.changeState("soundsettings_dialog_button_back");
 	}
 	
 	public void saveGame() {
@@ -525,6 +552,11 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		stateMachine.changeState("settingsDialog_button_item_settings");
 	}
 	
+	public void closeSoundSettingsDialog() {
+		soundSettingsDialog.setVisible(false);
+		stateMachine.changeState("settingsDialog_button_sound_settings");
+	}
+	
 	public void closeMapDialog() {
 		mapDialog.setVisible(false);
 		stateMachine.changeState("button_showMap");
@@ -552,6 +584,42 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	
 	public void toggleItemSettingsCheckbox() {
 		itemSettingsDialog.toggleSelectedCheckbox();
+	}
+	
+	//*********************************************************************
+	//*** State machine methods for sound menu (called via reflection)
+	//*********************************************************************
+	
+	public void toggleMusicEnabled() {
+		backgroundMusicManager.setSoundEnabled(!backgroundMusicManager.isSoundEnabled());
+	}
+	
+	public void increaseMusicVolume() {
+		// increase the volume by 10%
+		int musicVolume = (int) (backgroundMusicManager.getMusicVolume() * 100f); // use integers to avoid floating point errors
+		musicVolume = Math.min(100, musicVolume + 10);
+		backgroundMusicManager.setMusicVolume((float) musicVolume / 100f);
+	}
+	
+	public void decreaseMusicVolume() {
+		// decrease the volume by 10%
+		int musicVolume = (int) (backgroundMusicManager.getMusicVolume() * 100f); // use integers to avoid floating point errors
+		musicVolume = Math.max(0, musicVolume - 10);
+		backgroundMusicManager.setMusicVolume((float) musicVolume / 100f);
+	}
+	
+	public void increaseEffectVolume() {
+		// increase the volume by 10%
+		int soundVolume = (int) (soundManager.getSoundVolume() * 100f); // use integers to avoid floating point errors
+		soundVolume = Math.min(100, soundVolume + 10);
+		soundManager.setSoundVolume((float) soundVolume / 100f);
+	}
+	
+	public void decreaseEffectVolume() {
+		// decrease the volume by 10%
+		int soundVolume = (int) (soundManager.getSoundVolume() * 100f); // use integers to avoid floating point errors
+		soundVolume = Math.max(0, soundVolume - 10);
+		soundManager.setSoundVolume((float) soundVolume / 100f);
 	}
 	
 	//*********************************************************************

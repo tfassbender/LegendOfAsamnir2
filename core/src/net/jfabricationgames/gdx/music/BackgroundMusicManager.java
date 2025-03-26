@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
 import com.badlogic.gdx.utils.Json;
 
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
@@ -16,6 +17,9 @@ import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.map.GameMapManager;
 
 public class BackgroundMusicManager implements EventListener {
+	
+	private static final String GLOBAL_SETTINGS_KEY_BACKGROUND_MUSIC_VOLUME = "background_music_volume_in_percent";
+	private static final String GLOBAL_SETTINGS_KEY_SOUND_ENABLED = "sound_enabled";
 	
 	private static BackgroundMusicManager instance;
 	
@@ -33,7 +37,8 @@ public class BackgroundMusicManager implements EventListener {
 	private boolean fadingOut = false;
 	private boolean fadingIn = false;
 	
-	private float musicVolume = 1f; // TODO should be changeable in the game settings
+	private float musicVolume = 1f;
+	private boolean soundEnabled = true;
 	
 	private ArrayMap<String, BackgroundMusicConfig> configs;
 	private PlayingMusic playingMusic;
@@ -53,7 +58,7 @@ public class BackgroundMusicManager implements EventListener {
 				fadeInTimer = 0f;
 			}
 			else {
-				playingMusic.music.setVolume((fadeInTimer / FADE_IN_DURATION) * playingMusic.configVolume * musicVolume);
+				playingMusic.music.setVolume((fadeInTimer / FADE_IN_DURATION) * playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
 			}
 		}
 		else if (fadingOut && isPlaying()) {
@@ -64,7 +69,7 @@ public class BackgroundMusicManager implements EventListener {
 				stop(true);
 			}
 			else {
-				playingMusic.music.setVolume((1 - fadeOutTimer / FADE_OUT_DURATION) * playingMusic.configVolume * musicVolume);
+				playingMusic.music.setVolume((1 - fadeOutTimer / FADE_OUT_DURATION) * playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
 			}
 		}
 	}
@@ -168,6 +173,9 @@ public class BackgroundMusicManager implements EventListener {
 		else if (event.eventType == EventType.CLEAR_BACKGROUND_MUSIC_QUEUE) {
 			disposeQueue();
 		}
+		else if (event.eventType == EventType.GAME_LOADED) {
+			loadSoundSettings();
+		}
 	}
 	
 	private void playDelayed(String musicName, float delayInSeconds, boolean fadeIn) {
@@ -250,6 +258,41 @@ public class BackgroundMusicManager implements EventListener {
 		}
 	}
 	
+	public float getMusicVolume() {
+		return musicVolume;
+	}
+	
+	public void setMusicVolume(float volume) {
+		musicVolume = volume;
+		if (playingMusic != null) {
+			playingMusic.music.setVolume(playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
+		}
+		
+		GlobalValuesDataHandler.getInstance().put(GLOBAL_SETTINGS_KEY_BACKGROUND_MUSIC_VOLUME, Integer.toString((int) (volume * 100)));
+	}
+	
+	public boolean isSoundEnabled() {
+		return soundEnabled;
+	}
+	
+	public void setSoundEnabled(boolean enabled) {
+		soundEnabled = enabled;
+		if (playingMusic != null) {
+			playingMusic.music.setVolume(playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
+		}
+		
+		GlobalValuesDataHandler.getInstance().put(GLOBAL_SETTINGS_KEY_SOUND_ENABLED, Boolean.toString(enabled));
+	}
+	
+	private void loadSoundSettings() {
+		GlobalValuesDataHandler dataHandler = GlobalValuesDataHandler.getInstance();
+		
+		float volumeInPercent = dataHandler.getAsInteger(GLOBAL_SETTINGS_KEY_BACKGROUND_MUSIC_VOLUME, 100);
+		setMusicVolume(volumeInPercent / 100f);
+		
+		setSoundEnabled(!dataHandler.isValueEqual(GLOBAL_SETTINGS_KEY_SOUND_ENABLED, "false")); // default is true
+	}
+	
 	private class PlayingMusic {
 		
 		public String name;
@@ -264,7 +307,7 @@ public class BackgroundMusicManager implements EventListener {
 			this.configVolume = config.volume;
 			this.music = Gdx.audio.newMusic(Gdx.files.internal(config.file));
 			
-			music.setVolume(config.volume);
+			music.setVolume(config.volume * musicVolume * (soundEnabled ? 1 : 0));
 			music.setLooping(config.loop);
 		}
 		

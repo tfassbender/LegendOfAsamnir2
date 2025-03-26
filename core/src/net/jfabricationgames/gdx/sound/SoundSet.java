@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 
+import net.jfabricationgames.gdx.music.BackgroundMusicManager;
 import net.jfabricationgames.gdx.sound.config.SoundConfig;
 
 /**
@@ -26,11 +27,17 @@ public class SoundSet implements Disposable {
 	
 	private boolean loaded = false;
 	
+	private SoundManager soundManager;
+	private BackgroundMusicManager backgroundMusicManager; // the mute state is saved in the background music manager
+	
 	public SoundSet(String name, Map<String, SoundConfig> soundConfigs) {
 		if (name == null || name.isEmpty()) {
 			throw new IllegalArgumentException("The name of a SoundSet must not be null or empty");
 		}
 		this.name = name;
+		
+		soundManager = SoundManager.getInstance();
+		backgroundMusicManager = BackgroundMusicManager.getInstance();
 		
 		loadSoundSetFromConfig(soundConfigs);
 	}
@@ -85,7 +92,9 @@ public class SoundSet implements Disposable {
 		SoundHandler soundHandler = new SoundHandler(sound);
 		
 		float delay = config.delay == SoundPlayConfig.DEFAULT_SETTING ? soundConfigs.get(name).getDelay() : config.delay;
-		float volume = config.volume == SoundPlayConfig.DEFAULT_SETTING ? soundConfigs.get(name).getVolume() : config.volume;
+		float volume = (config.volume == SoundPlayConfig.DEFAULT_SETTING ? soundConfigs.get(name).getVolume() : config.volume) //
+				* soundManager.getSoundVolume() //
+				* (backgroundMusicManager.isSoundEnabled() ? 1 : 0);
 		
 		if (delay > 0.01) {
 			Timer.schedule(new Task() {

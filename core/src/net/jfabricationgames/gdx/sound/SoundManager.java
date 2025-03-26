@@ -9,13 +9,20 @@ import com.badlogic.gdx.utils.ArrayMap;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.Json;
 
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventListener;
+import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.sound.config.SoundManagerConfig;
 import net.jfabricationgames.gdx.sound.config.SoundSetConfig;
 
 /**
  * Manages {@link SoundSet}s for all types
  */
-public class SoundManager implements Disposable {
+public class SoundManager implements Disposable, EventListener {
+	
+	private static final String GLOBAL_SETTINGS_KEY_SOUND_EFFECT_VOLUME = "sound_effect_volume_in_percent";
 	
 	private static SoundManager instance;
 	
@@ -28,7 +35,11 @@ public class SoundManager implements Disposable {
 	
 	private ArrayMap<String, SoundSet> soundSets;
 	
-	private SoundManager() {}
+	private float soundVolume = 1f;
+	
+	private SoundManager() {
+		EventHandler.getInstance().registerEventListener(this);
+	}
 	
 	public void loadConfig(String soundConfigPath) {
 		soundSets = new ArrayMap<>();
@@ -58,6 +69,30 @@ public class SoundManager implements Disposable {
 			throw new IllegalArgumentException("A sound set named '" + name + "' doesn't exist.");
 		}
 		return soundSet;
+	}
+	
+	public float getSoundVolume() {
+		return soundVolume;
+	}
+	
+	public void setSoundVolume(float volume) {
+		soundVolume = volume;
+		
+		GlobalValuesDataHandler.getInstance().put(GLOBAL_SETTINGS_KEY_SOUND_EFFECT_VOLUME, Integer.toString((int) (volume * 100)));
+	}
+	
+	@Override
+	public void handleEvent(EventConfig event) {
+		if (event.eventType == EventType.GAME_LOADED) {
+			loadSoundConfig();
+		}
+	}
+	
+	private void loadSoundConfig() {
+		GlobalValuesDataHandler dataHandler = GlobalValuesDataHandler.getInstance();
+		
+		float volumeInPercent = dataHandler.getAsInteger(GLOBAL_SETTINGS_KEY_SOUND_EFFECT_VOLUME, 100);
+		setSoundVolume(volumeInPercent / 100f);
 	}
 	
 	@Override

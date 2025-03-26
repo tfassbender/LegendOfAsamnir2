@@ -189,13 +189,13 @@
     settingsDialog_button_difficultyNormal: {
         up: settingsDialog_button_difficultyEasy,
         down: settingsDialog_button_difficultyHard,
-        left: settingsDialog_button_item_settings,
+        left: settingsDialog_button_sound_settings,
         select: setDifficultyNormal,
 	},
 	
 	settingsDialog_button_difficultyHard: {
         up: settingsDialog_button_difficultyNormal,
-        left: settingsDialog_button_item_settings,
+        left: settingsDialog_button_sound_settings,
         select: setDifficultyHard,
 	},
 	
@@ -208,8 +208,15 @@
 	
 	settingsDialog_button_item_settings: {
         up: settingsDialog_button_controls,
+        down: settingsDialog_button_sound_settings,
 		right: settingsDialog_button_difficultyEasy,
         select: showItemSettings,
+	},
+	
+	settingsDialog_button_sound_settings: {
+        up: settingsDialog_button_item_settings,
+        right: settingsDialog_button_difficultyNormal,
+        select: showSoundSettings,
 	},
 	
 	//*********************************************
@@ -290,6 +297,50 @@
         up: itemsettings_dialog_checkbox_ice_pick,
         right: itemsettings_dialog_button_back,
         select: toggleItemSettingsCheckbox,
+	},
+	
+	
+	//*********************************************
+	//*** Sound Settings Dialog
+	//*********************************************
+	
+	soundsettings_dialog_button_back: {
+        select: closeSoundSettingsDialog,
+        down: soundsettings_dialog_checkbox_sound_enabled,
+    },
+    
+	soundsettings_dialog_checkbox_sound_enabled: {
+        up: soundsettings_dialog_button_back,
+        down: soundsettings_dialog_button_music_volume_down,
+        select: toggleMusicEnabled,
+	},
+	
+	soundsettings_dialog_button_music_volume_down: {
+        up: soundsettings_dialog_checkbox_sound_enabled,
+        down: soundsettings_dialog_button_effect_volume_down,
+        right: soundsettings_dialog_button_music_volume_up,
+        select: decreaseMusicVolume,
+	},
+	
+	soundsettings_dialog_button_music_volume_up: {
+        up: soundsettings_dialog_checkbox_sound_enabled,
+        down: soundsettings_dialog_button_effect_volume_up,
+        left: soundsettings_dialog_button_music_volume_down,
+        select: increaseMusicVolume,
+	},
+	
+	soundsettings_dialog_button_effect_volume_down: {
+        up: soundsettings_dialog_button_music_volume_down,
+        down: soundsettings_dialog_button_back,
+        right: soundsettings_dialog_button_effect_volume_up,
+        select: decreaseEffectVolume,
+	},
+	
+	soundsettings_dialog_button_effect_volume_up: {
+        up: soundsettings_dialog_button_music_volume_up,
+        down: soundsettings_dialog_button_back,
+        left: soundsettings_dialog_button_effect_volume_down,
+        select: increaseEffectVolume,
 	},
 	
 	//*********************************************
