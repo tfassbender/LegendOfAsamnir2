@@ -62,7 +62,45 @@
 			
 			executes: [
 				chaos_wizard_1,
+				stop_background_music,
 			],
+		},
+		
+		stop_background_music: {
+			type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+				play_chaos_wizard_music,
+			]
+		},
+		
+		play_chaos_wizard_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: chaos_wizard_intro,
+                floatValue: 1f, // delay in seconds
+			}
+			
+			executes: [
+				play_chaos_wizard_music_loop,
+			]
+		},
+		
+		play_chaos_wizard_music_loop: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE,
+                stringValue: chaos_wizard_intro_loop,
+                booleanValue: true,  // fade in
+			}
 		},
 		
 		chaos_wizard_1: {
@@ -73,6 +111,7 @@
 				colorHeader: #000099,
 				displayText: "That hurts, Thorin.\n                       \nDon't you recognize your old friend after all we've been through together? ",
 				showNextPageIcon: true,
+                canBeSkipped: false,
 			}
 			
 			waitForEventToFinish: true,
@@ -983,7 +1022,32 @@
 			
 			executes: [
                 chaos_wizard_leaves,
+                stop_chaos_wizard_music,
 			],
+		},
+		
+		stop_chaos_wizard_music: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                clear_background_music_queue,
+			]
+		},
+		
+		clear_background_music_queue: {
+			type: EVENT,
+            
+            event: {
+            	// the queue needs to be cleared because otherwise the "fade out" parameter of the previous event (STOP_BACKGROUND_MUSIC) will start the next music after the fade out
+                eventType: CLEAR_BACKGROUND_MUSIC_QUEUE,  
+			}
 		},
 		
 		chaos_wizard_leaves: {
@@ -1065,7 +1129,17 @@
             
             executes: [
                 thorin_14,
+                play_map_background_music,
 			],
+		},
+		
+		play_map_background_music: {
+			type: EVENT,
+            
+            event: {
+                eventType: PLAY_MAP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade in
+			}
 		},
 		
 		thorin_14: {

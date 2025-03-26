@@ -473,6 +473,7 @@
                 },
                 asamnir_stolen: {
                 	path: "sound/cutscene/asamnir_stolen.wav",
+                	volume: 0.4,
                 },
                 game_title: {
                 	path: "sound/cutscene/game_title.wav",

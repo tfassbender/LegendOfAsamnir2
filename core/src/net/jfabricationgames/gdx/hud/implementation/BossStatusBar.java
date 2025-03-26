@@ -184,8 +184,8 @@ public class BossStatusBar implements Disposable, EventListener {
 			boss = (Enemy) event.parameterObject;
 			bossName = event.stringValue;
 		}
-		else if (event.eventType == EventType.UPDATE_MAP_AFTER_LOADING_GAME_STATE) {
-			boss = null; // don't show the boss status bar when the game is restarted (after the player died)
+		else if (event.eventType == EventType.HIDE_BOSS_STATUS_BAR) {
+			boss = null;
 		}
 	}
 }

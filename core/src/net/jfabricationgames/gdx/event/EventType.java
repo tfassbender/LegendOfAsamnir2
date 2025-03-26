@@ -108,6 +108,7 @@ public enum EventType {
 	GOBLIN_KING_COMMAND, //
 	BOSS_ENEMY_SHOW, //
 	BOSS_ENEMY_APPEARED, //
+	HIDE_BOSS_STATUS_BAR, //
 	//*******************************
 	//*** Conditions
 	//*******************************

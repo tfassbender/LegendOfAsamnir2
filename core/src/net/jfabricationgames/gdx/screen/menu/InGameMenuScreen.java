@@ -72,6 +72,8 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 	public void backToSvartalfheim() {
 		Gdx.app.debug(getClass().getSimpleName(), "'Back to Svartalfheim' selected");
 		
+		hideBossStatusBar();
+		
 		GameScreen.loadAndShowGameScreen(() -> {
 			// the boolean value determines that the cause of the respawn was that the player died
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.RESTART_FROM_SVARTALFHEIM).setBooleanValue(true));
@@ -82,6 +84,8 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 	
 	public void restartFromLastCheckpoint() {
 		Gdx.app.debug(getClass().getSimpleName(), "'Restart from last checkpoint' selected");
+		
+		hideBossStatusBar();
 		
 		GameDataService gameDataService = new GameDataService();
 		if (gameDataService.isQuickSaveGameDataSlotExisting()) {
@@ -96,6 +100,11 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 		else {
 			playMenuSound(ControlledMenu.SOUND_ERROR);
 		}
+	}
+	
+	private void hideBossStatusBar() {
+		// the boss status bar needs to be removed if the player died in a boss fight
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.HIDE_BOSS_STATUS_BAR));
 	}
 	
 	//*********************************************************************

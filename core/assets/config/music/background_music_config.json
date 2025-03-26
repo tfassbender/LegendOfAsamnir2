@@ -53,4 +53,22 @@
 		volume: 0.3f,
         loop: true,
 	},
+	{
+		name: "game_over",
+		file: "music/the_struggle.wav",
+		volume: 0.2f,
+        loop: true,
+	},
+	{
+		name: "chaos_wizard_intro",
+		file: "music/boss_entrance.wav",
+		volume: 0.15f,
+        loop: false,
+	},
+	{
+		name: "chaos_wizard_intro_loop",
+		file: "music/boss_loop.wav",
+		volume: 0.15f,
+        loop: true,
+	},
 ]

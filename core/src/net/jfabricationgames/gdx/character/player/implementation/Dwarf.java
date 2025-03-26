@@ -668,8 +668,22 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		else {
 			soundHandler.playSound(CharacterAction.HIT);
 			changeAction(CharacterAction.DIE);
+			stopBackgroundMusic();
 			GameUtil.runDelayed(() -> GameStateManager.getInstance().setGameOver(true), TIME_TILL_GAME_OVER_MENU);
 		}
+	}
+	
+	private void stopBackgroundMusic() {
+		// stop the current music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.STOP_BACKGROUND_MUSIC) //
+				.setBooleanValue(true)); // fade out
+		
+		// clear the queue because the "fade out" parameter of the last event will otherwise start the next music in the queue
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CLEAR_BACKGROUND_MUSIC_QUEUE));
+		
+		// the game over music will be played by the GameScreen when the game over menu is shown
 	}
 	
 	private boolean resurectionRuneCollectedAndForged() {

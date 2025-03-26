@@ -12,7 +12,6 @@ import net.jfabricationgames.gdx.screen.menu.components.MenuBox;
 public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 	
 	private static final String INPUT_CONTEXT_NAME = "simpleMenu";
-	private static final String SOUND_ENTER_GAME_OVER_MENU = "enter_game_over_menu";
 	private static final String GAME_OVER_MENU_STATE_CONFIG = "config/menu/game_over_menu_states.json";
 	
 	private MenuBox background;
@@ -55,7 +54,6 @@ public class GameOverMenuScreen extends InGameMenuScreen<GameOverMenuScreen> {
 		super.showMenu();
 		
 		takeGameSnapshot();
-		playMenuSound(SOUND_ENTER_GAME_OVER_MENU);
 	}
 	
 	@Override

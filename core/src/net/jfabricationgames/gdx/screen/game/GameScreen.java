@@ -290,11 +290,22 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		if (!gameOver && GameStateManager.getInstance().isGameOver()) {
 			gameOver = true;
 			showGameOverMenuScreen();
+			playGameOverMusic();
 		}
 	}
 	
 	private void showGameOverMenuScreen() {
 		new GameOverMenuScreen(this).showMenu();
+	}
+	
+	private void playGameOverMusic() {
+		// the previously playing music will be stopped by the Dwarf when he dies
+		
+		// add to queue is needed because of the fade out of the previous music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ADD_BACKGROUND_MUSIC_TO_QUEUE) //
+				.setStringValue("game_over") //
+				.setBooleanValue(true)); // fade in
 	}
 	
 	@Override
