@@ -22,7 +22,7 @@ public class CreditsDialog extends InGameMenuDialog {
 		buttonBackToMenu = new FocusButtonBuilder() //
 				.setNinePatchConfig(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG) //
 				.setNinePatchConfigFocused(FocusButton.BUTTON_YELLOW_NINEPATCH_CONFIG_FOCUSED) //
-				.setPosition(935, 590) //
+				.setPosition(935, 730) //
 				.setSize(110, 40) //
 				.build();
 		buttonBackToMenu.scaleBy(FocusButton.DEFAULT_BUTTON_SCALE);
@@ -34,8 +34,8 @@ public class CreditsDialog extends InGameMenuDialog {
 			batch.setProjectionMatrix(camera.combined);
 			batch.begin();
 			
-			background.draw(batch, 40, -60, 1130, 755);
-			banner.draw(batch, -30, 510, 360, 200);
+			background.draw(batch, 40, -60, 1130, 895);
+			banner.draw(batch, -30, 650, 360, 200);
 			buttonBackToMenu.draw(batch);
 			
 			drawText();
@@ -49,27 +49,29 @@ public class CreditsDialog extends InGameMenuDialog {
 		
 		screenTextWriter.setColor(Color.BLACK);
 		screenTextWriter.setScale(1.2f);
-		screenTextWriter.drawText("Credits", 50, 625);
+		screenTextWriter.drawText("Credits", 50, 765);
 		
 		screenTextWriter.setScale(0.8f);
-		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToMenu) + "Back", 970, 633);
+		screenTextWriter.drawText(getButtonTextColorEncoding(buttonBackToMenu) + "Back", 970, 773);
 		
 		screenTextWriter.setColor(Color.RED);
 		screenTextWriter.setScale(1.4f);
-		screenTextWriter.drawText("Programming", 350, 630);
-		screenTextWriter.drawText("Story", 475, 490);
-		screenTextWriter.drawText("Graphics", 425, 360);
+		screenTextWriter.drawText("Programming", 350, 770);
+		screenTextWriter.drawText("Story", 475, 630);
+		screenTextWriter.drawText("Graphics", 425, 500);
+		screenTextWriter.drawText("Sound", 465, 240);
 		screenTextWriter.drawText("Engine", 460, 100);
 		
 		screenTextWriter.setColor(Color.BLACK);
 		screenTextWriter.setScale(0.9f);
-		screenTextWriter.drawText("Tobias Fassbender", 390, 565);
-		screenTextWriter.drawText("Tobias Fassbender", 390, 430);
+		screenTextWriter.drawText("Tobias Fassbender", 390, 705);
+		screenTextWriter.drawText("Tobias Fassbender", 390, 570);
 		screenTextWriter.drawText("LibGDX (libgdx.com)", 380, 40);
 		
 		screenTextWriter.setScale(0.8f);
-		screenTextWriter.drawText("[#FF0000]Characters[#000000] - Elthen's Pixel Art Shop (elthen.itch.io)", 120, 290);
-		screenTextWriter.drawText("[#FF0000]UI[#000000] - Pixel Frog (pixelfrog-assets.itch.io)", 200, 240);
-		screenTextWriter.drawText("[#FF0000]Tilesets[#000000] - Pipoya (pipoya.itch.io) and Elthen's Pixel Art Shop (elthen.itch.io)", 200, 190, 800, Align.center, true);
+		screenTextWriter.drawText("[#FF0000]Characters[#000000] - Elthen's Pixel Art Shop (elthen.itch.io)", 120, 430);
+		screenTextWriter.drawText("[#FF0000]UI[#000000] - Pixel Frog (pixelfrog-assets.itch.io)", 200, 380);
+		screenTextWriter.drawText("[#FF0000]Tilesets[#000000] - Pipoya (pipoya.itch.io) and Elthen's Pixel Art Shop (elthen.itch.io)", 200, 330, 800, Align.center, true);
+		screenTextWriter.drawText("[#FF0000]Background Music[#000000] - Tim Beek (timbeek.com)", 200, 165);
 	}
 }
