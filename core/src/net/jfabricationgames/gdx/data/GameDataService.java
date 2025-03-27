@@ -116,7 +116,7 @@ public class GameDataService implements EventListener {
 			return "---";
 		}
 		
-		return date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm"));
+		return date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
 	}
 	
 	public LocalDateTime getSaveDate(int slot) {
