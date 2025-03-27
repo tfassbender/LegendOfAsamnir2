@@ -122,14 +122,14 @@ adventurer_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 13
 adventurer_idle
   rotate: false
   xy: 1220, 508
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 13
+  index: 1
 adventurer_idle
   rotate: false
   xy: 1220, 508
@@ -633,14 +633,14 @@ adventurer_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
+  index: 9
 adventurer_idle
   rotate: false
   xy: 1420, 340
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 9
+  index: 8
 adventurer_idle
   rotate: false
   xy: 1420, 306
@@ -1487,14 +1487,14 @@ bandit_mage_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 8
 bandit_mage_idle
   rotate: false
   xy: 2047, 790
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
+  index: 1
 bandit_mage_move
   rotate: false
   xy: 2047, 790
@@ -1781,7 +1781,7 @@ bandit_necromancer_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 8
 bandit_necromancer_idle
   rotate: false
   xy: 1454, 135
@@ -1795,14 +1795,7 @@ bandit_necromancer_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
-bandit_necromancer_move
-  rotate: false
-  xy: 1454, 135
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
+  index: 1
 bandit_necromancer_move
   rotate: false
   xy: 1454, 135
@@ -1810,6 +1803,13 @@ bandit_necromancer_move
   orig: 32, 32
   offset: 0, 0
   index: 1
+bandit_necromancer_move
+  rotate: false
+  xy: 1454, 135
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
 bandit_necromancer_cast_with_effect
   rotate: false
   xy: 1454, 101
@@ -1949,14 +1949,14 @@ bandit_necromancer_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 5
+  index: 4
 bandit_necromancer_idle
   rotate: false
   xy: 1488, 235
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 5
 bandit_necromancer_idle
   rotate: false
   xy: 1488, 201
@@ -2873,6 +2873,20 @@ boy_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
+  index: 16
+boy_idle
+  rotate: false
+  xy: 1522, 180
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
+boy_idle
+  rotate: false
+  xy: 1522, 180
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
   index: 14
 boy_idle
   rotate: false
@@ -2888,20 +2902,6 @@ boy_idle
   orig: 32, 32
   offset: 0, 0
   index: 3
-boy_idle
-  rotate: false
-  xy: 1522, 180
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 16
-boy_idle
-  rotate: false
-  xy: 1522, 180
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
 boy_move
   rotate: false
   xy: 1522, 180
@@ -2936,6 +2936,13 @@ boy_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
+  index: 5
+boy_idle
+  rotate: false
+  xy: 1522, 112
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
   index: 7
 boy_idle
   rotate: false
@@ -2944,13 +2951,6 @@ boy_idle
   orig: 32, 32
   offset: 0, 0
   index: 8
-boy_idle
-  rotate: false
-  xy: 1522, 112
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 5
 boy_idle
   rotate: false
   xy: 1522, 78
@@ -4196,13 +4196,6 @@ chicken_sleep
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 3
-chicken_sleep
-  rotate: false
-  xy: 1760, 488
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
   index: 4
 chicken_sleep
   rotate: false
@@ -4211,6 +4204,13 @@ chicken_sleep
   orig: 32, 32
   offset: 0, 0
   index: 2
+chicken_sleep
+  rotate: false
+  xy: 1760, 488
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
 chicken_sleep
   rotate: false
   xy: 1794, 522
@@ -4224,14 +4224,14 @@ chicken_sleep
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 7
+  index: 6
 chicken_sleep
   rotate: false
   xy: 1794, 522
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 6
+  index: 7
 chicken_sleep
   rotate: false
   xy: 1794, 522
@@ -4490,14 +4490,14 @@ courier_search
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 17
+  index: 19
 courier_search
   rotate: false
   xy: 1726, 318
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 19
+  index: 17
 courier_give_letter
   rotate: false
   xy: 1760, 352
@@ -5211,14 +5211,14 @@ cyclops_idle
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 1
+  index: 11
 cyclops_idle
   rotate: false
   xy: 392, 1052
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 11
+  index: 1
 cyclops_attack_beam
   rotate: false
   xy: 458, 1316
@@ -5582,14 +5582,14 @@ cyclops_idle
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 4
+  index: 13
 cyclops_idle
   rotate: false
   xy: 164, 110
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 13
+  index: 4
 cyclops_idle
   rotate: false
   xy: 164, 110
@@ -6807,14 +6807,14 @@ dwarven_farmer_idle
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 7
+  index: 8
 dwarven_farmer_idle
   rotate: false
   xy: 686, 1386
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 8
+  index: 7
 dwarven_farmer_move
   rotate: false
   xy: 686, 1386
@@ -7661,21 +7661,14 @@ dwarven_worker_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
+  index: 6
 dwarven_worker_idle
   rotate: false
   xy: 1866, 46
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 6
-dwarven_worker_move
-  rotate: false
-  xy: 1866, 46
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 1
+  index: 8
 dwarven_worker_move
   rotate: false
   xy: 1866, 46
@@ -7683,6 +7676,13 @@ dwarven_worker_move
   orig: 32, 32
   offset: 0, 0
   index: 5
+dwarven_worker_move
+  rotate: false
+  xy: 1866, 46
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
 dwarven_worker_idle
   rotate: false
   xy: 1698, 12
@@ -8242,14 +8242,14 @@ elite_mage_idle
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 1
+  index: 8
 elite_mage_idle
   rotate: false
   xy: 920, 1022
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 8
+  index: 1
 elite_mage_move
   rotate: false
   xy: 920, 1022
@@ -9733,14 +9733,14 @@ frost_giant_damage_disarmed
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 4
+  index: 1
 frost_giant_damage_disarmed
   rotate: false
   xy: 586, 1454
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 1
+  index: 4
 frost_giant_death
   rotate: false
   xy: 586, 1454
@@ -10958,6 +10958,13 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
+  index: 24
+goblin_king_eat
+  rotate: false
+  xy: 1114, 1492
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
   index: 34
 goblin_king_eat
   rotate: false
@@ -10968,25 +10975,11 @@ goblin_king_eat
   index: 14
 goblin_king_eat
   rotate: false
-  xy: 1114, 1492
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 24
-goblin_king_eat
-  rotate: false
   xy: 1180, 1492
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: 5
-goblin_king_eat
-  rotate: false
-  xy: 1180, 1492
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 15
 goblin_king_eat
   rotate: false
   xy: 1180, 1492
@@ -11001,6 +10994,13 @@ goblin_king_eat
   orig: 64, 64
   offset: 0, 0
   index: 35
+goblin_king_eat
+  rotate: false
+  xy: 1180, 1492
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 15
 goblin_king_eat
   rotate: false
   xy: 1118, 1392
@@ -11021,14 +11021,14 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 16
+  index: 26
 goblin_king_eat
   rotate: false
   xy: 1118, 1392
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 26
+  index: 16
 goblin_king_eat
   rotate: false
   xy: 1118, 1326
@@ -11042,14 +11042,14 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 27
+  index: 37
 goblin_king_eat
   rotate: false
   xy: 1118, 1326
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 37
+  index: 27
 goblin_king_eat
   rotate: false
   xy: 1118, 1326
@@ -11070,7 +11070,7 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 38
+  index: 18
 goblin_king_eat
   rotate: false
   xy: 1118, 1260
@@ -11084,7 +11084,7 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 18
+  index: 38
 goblin_king_eat
   rotate: false
   xy: 1118, 1194
@@ -11092,6 +11092,13 @@ goblin_king_eat
   orig: 64, 64
   offset: 0, 0
   index: 9
+goblin_king_eat
+  rotate: false
+  xy: 1118, 1194
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 29
 goblin_king_eat
   rotate: false
   xy: 1118, 1194
@@ -11108,18 +11115,18 @@ goblin_king_eat
   index: 19
 goblin_king_eat
   rotate: false
-  xy: 1118, 1194
+  xy: 1118, 1128
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 29
+  index: 10
 goblin_king_eat
   rotate: false
   xy: 1118, 1128
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 10
+  index: 40
 goblin_king_eat
   rotate: false
   xy: 1118, 1128
@@ -11134,13 +11141,6 @@ goblin_king_eat
   orig: 64, 64
   offset: 0, 0
   index: 30
-goblin_king_eat
-  rotate: false
-  xy: 1118, 1128
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 40
 goblin_king_eat
   rotate: false
   xy: 1118, 1062
@@ -11161,14 +11161,14 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 31
+  index: 21
 goblin_king_eat
   rotate: false
   xy: 1118, 1062
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 21
+  index: 31
 goblin_king_eat
   rotate: false
   xy: 1184, 1392
@@ -11176,13 +11176,6 @@ goblin_king_eat
   orig: 64, 64
   offset: 0, 0
   index: 12
-goblin_king_eat
-  rotate: false
-  xy: 1184, 1392
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: 42
 goblin_king_eat
   rotate: false
   xy: 1184, 1392
@@ -11199,6 +11192,13 @@ goblin_king_eat
   index: 22
 goblin_king_eat
   rotate: false
+  xy: 1184, 1392
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 42
+goblin_king_eat
+  rotate: false
   xy: 1184, 1326
   size: 64, 64
   orig: 64, 64
@@ -11210,7 +11210,7 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 33
+  index: 43
 goblin_king_eat
   rotate: false
   xy: 1184, 1326
@@ -11224,7 +11224,7 @@ goblin_king_eat
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 43
+  index: 33
 goblin_king_eat
   rotate: false
   xy: 1184, 1260
@@ -11518,14 +11518,14 @@ golem_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 2
 golem_idle
   rotate: false
   xy: 2162, 1452
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 2
+  index: 1
 golem_damage
   rotate: false
   xy: 2128, 1418
@@ -13247,14 +13247,14 @@ inn_keeper_no
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
+  index: 7
 inn_keeper_no
   rotate: false
   xy: 2142, 976
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 7
+  index: 8
 inn_keeper_idle
   rotate: false
   xy: 2108, 908
@@ -13919,14 +13919,14 @@ kobold_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 5
 kobold_idle
   rotate: false
   xy: 2312, 1044
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 5
+  index: 1
 kobold_attack_stab
   rotate: false
   xy: 2278, 1010
@@ -15907,14 +15907,14 @@ medieval_townfolk_4_move
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 6
+  index: 8
 medieval_townfolk_4_move
   rotate: false
   xy: 2372, 92
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
+  index: 6
 medieval_townfolk_4_scared
   rotate: false
   xy: 2224, 58
@@ -16789,14 +16789,14 @@ medieval_townfolk_9_move
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 5
 medieval_townfolk_9_move
   rotate: false
   xy: 2434, 1385
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 5
+  index: 1
 medieval_townfolk_9_give
   rotate: false
   xy: 2400, 1351
@@ -16859,14 +16859,14 @@ medieval_townfolk_9_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 3
 medieval_townfolk_9_idle
   rotate: false
   xy: 2570, 1453
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 3
+  index: 4
 medieval_townfolk_9_idle
   rotate: false
   xy: 2536, 1419
@@ -18413,14 +18413,14 @@ ogre_idle_2
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 7
+  index: 9
 ogre_idle_2
   rotate: false
   xy: 626, 724
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 9
+  index: 7
 ogre_idle_2
   rotate: false
   xy: 626, 658
@@ -18686,6 +18686,13 @@ old_man_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
+  index: 13
+old_man_idle
+  rotate: false
+  xy: 2876, 1351
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
   index: 15
 old_man_idle
   rotate: false
@@ -18694,13 +18701,6 @@ old_man_idle
   orig: 32, 32
   offset: 0, 0
   index: 14
-old_man_idle
-  rotate: false
-  xy: 2876, 1351
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 13
 old_man_move
   rotate: false
   xy: 2876, 1351
@@ -18763,14 +18763,14 @@ old_man_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
+  index: 10
 old_man_idle
   rotate: false
   xy: 2774, 1249
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 10
+  index: 8
 old_man_idle
   rotate: false
   xy: 3012, 1453
@@ -18840,14 +18840,14 @@ penguin_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 11
+  index: 10
 penguin_idle
   rotate: false
   xy: 3046, 1453
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 10
+  index: 11
 penguin_idle
   rotate: false
   xy: 3046, 1453
@@ -18896,14 +18896,14 @@ penguin_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 8
 penguin_idle
   rotate: false
   xy: 2978, 1385
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 8
+  index: 4
 penguin_idle
   rotate: false
   xy: 2944, 1351
@@ -20198,14 +20198,14 @@ spider_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 1
 spider_idle
   rotate: false
   xy: 2962, 1215
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 4
 spider_jump
   rotate: false
   xy: 2962, 1215

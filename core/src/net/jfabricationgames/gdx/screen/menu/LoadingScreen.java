@@ -18,29 +18,31 @@ public class LoadingScreen extends MenuScreen<LoadingScreen> {
 	private static final String ASSET_GROUP_NAME_LOADING_SCREEN = "loading_screen";
 	private static final String TEXTURE_CONFIG = "config/menu/loading_screen/loading_screen_textures.json";
 	
-	private MenuBox background;
-	private MenuBox banner;
+	private MenuBox bannerTitle;
+	private MenuBox bannerSubTitle;
 	
 	private AssetGroupManager assetManager;
 	private Runnable afterFinishedLoading;
 	
 	private AnimationDirector<TextureRegion> dwarfAnimation;
-	private TextureRegion chestTexture;
+	private AnimationDirector<TextureRegion> chaosWizardAnimation;
+	private TextureRegion backgroundImage;
 	
 	public LoadingScreen(Runnable afterFinishedLoading) {
 		this.afterFinishedLoading = afterFinishedLoading;
 		assetManager = AssetGroupManager.getInstance();
 		dwarfAnimation = AnimationManager.getInstance().getTextureAnimationDirector("dwarf_run_right");
+		chaosWizardAnimation = AnimationManager.getInstance().getTextureAnimationDirector("elite_mage_idle");
 		
 		TextureLoader textureLoader = new TextureLoader(TEXTURE_CONFIG);
-		chestTexture = textureLoader.loadTexture("chest");
+		backgroundImage = textureLoader.loadTexture("background");
 		
 		createComponents();
 	}
 	
 	private void createComponents() {
-		background = new MenuBox(10, 2, TextureType.YELLOW_BOARD);
-		banner = new MenuBox(5, 2, TextureType.BIG_BANNER);
+		bannerTitle = new MenuBox(10, 2, TextureType.BIG_BANNER);
+		bannerSubTitle = new MenuBox(8, 2, TextureType.BIG_BANNER_LOW);
 	}
 	
 	@Override
@@ -69,10 +71,11 @@ public class LoadingScreen extends MenuScreen<LoadingScreen> {
 		setProjectionMatrixBeforeRendering();
 		
 		dwarfAnimation.increaseStateTime(delta);
+		chaosWizardAnimation.increaseStateTime(delta);
 		
 		batch.begin();
 		drawBackground();
-		drawBanner();
+		drawBanners();
 		drawLoadingBar();
 		batch.end();
 		
@@ -84,34 +87,36 @@ public class LoadingScreen extends MenuScreen<LoadingScreen> {
 	}
 	
 	private void drawBackground() {
-		background.draw(batch, 300, 200, 580, 100);
+		batch.draw(backgroundImage, -80, 10, 1360, 700);
 	}
 	
-	private void drawBanner() {
-		banner.draw(batch, 280, 250, 600, 250);
+	private void drawBanners() {
+		bannerTitle.draw(batch, 145, 655, 900, 230);
+		bannerSubTitle.draw(batch, 200, 605, 800, 180);
 	}
 	
 	private void drawLoadingBar() {
 		float progress = assetManager.getProgress();
-		float positionX = 315f + 420f * progress;
-		float positionY = 220f;
-		
-		batch.draw(chestTexture, 790, 210, 80, 80);
+		float positionX = 150f + 730f * progress;
+		float positionY = 120f;
 		
 		TextureRegion dwarf = dwarfAnimation.getKeyFrame();
 		batch.draw(dwarf, positionX, positionY, 80, 80);
+		
+		TextureRegion chaosWizard = chaosWizardAnimation.getKeyFrame();
+		batch.draw(chaosWizard, 950, positionY, 150, 80);
 	}
 	
 	private void drawTexts() {
-		screenTextWriter.setColor(Color.RED);
-		screenTextWriter.setScale(2f);
-		screenTextWriter.drawText("Legend of Asamnir 2", 110, 700);
-		
-		screenTextWriter.setScale(1.3f);
-		screenTextWriter.drawText("Rise of the Chaos Wizard", 210, 600);
-		
 		screenTextWriter.setColor(Color.BLACK);
-		screenTextWriter.setScale(1.5f);
-		screenTextWriter.drawText("Loading...", 430, 393);
+		screenTextWriter.setScale(1.4f);
+		screenTextWriter.drawText("Legend of Asamnir 2", 265, 790);
+		
+		screenTextWriter.setColor(Color.RED);
+		screenTextWriter.setScale(1f);
+		screenTextWriter.drawText("Rise of the Chaos Wizard", 300, 709);
+		
+		screenTextWriter.setScale(1f);
+		screenTextWriter.drawText("Loading...", 495, 88);
 	}
 }

@@ -3,4 +3,8 @@
 		atlas: packed/loading_screen/loading_screen.atlas,
 		texture: chest
 	},
+	background: {
+        atlas: packed/loading_screen/loading_screen.atlas,
+        texture: loading_screen_background
+	},
 }
