@@ -85,6 +85,21 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		properties.endurance = 0f;
 	}
 	
+	public void increaseStatsToMinimumAfterRespawn() {
+		if (properties.health < properties.maxHealth * 0.5f) {
+			properties.increaseHealth = 0;
+			increaseHealthTo(properties.maxHealth * 0.5f);
+		}
+		if (properties.armor < properties.maxArmor * 0.25f) {
+			properties.increaseArmor = 0;
+			increaseArmorTo(properties.maxArmor * 0.25f);
+		}
+		if (properties.mana < properties.maxMana * 0.5f) {
+			properties.increaseMana = 0;
+			increaseManaTo(properties.maxMana * 0.5f);
+		}
+	}
+	
 	public boolean hasEnoughEndurance(DataCharacterAction action) {
 		return hasEnoughEndurance(action.getEnduranceCosts());
 	}

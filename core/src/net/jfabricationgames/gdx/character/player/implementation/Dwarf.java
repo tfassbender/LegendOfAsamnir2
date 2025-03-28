@@ -129,6 +129,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public void afterLoadMap() {
+		// increase the health, armor and mana to minimum values if they are below the minimum values
+		propertiesDataHandler.increaseStatsToMinimumAfterRespawn();
+		
 		// fire events if stats are below half when re-added to the world, because they can't go below half anymore in this state
 		checkManaNotFull(true);
 		checkHealthBelowHalf(false);

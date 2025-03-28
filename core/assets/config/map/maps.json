@@ -15,7 +15,7 @@
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
 		initialStartingPointId: 101,
-		initial: true
+		//initial: true
 	},
 	{
         name: loa2_main_tavern,
@@ -85,7 +85,7 @@
         name: loa2_niflheim_ice_fields,
         map: "map/loa2_l2_niflheim_ice_fields.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l2_niflheim_ice_fields.json,
-        initialStartingPointId: 15,
+        initialStartingPointId: 11,
 		//initial: true
 	},
 	
@@ -95,7 +95,7 @@
         name: loa2_muspelheim_desert,
         map: "map/loa2_l3_muspelheim_desert.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim.json,
-        //initialStartingPointId: 11,
+        initialStartingPointId: 11,
 		//initial: true
 	},
 	
@@ -104,7 +104,7 @@
         map: "map/loa2_l3_muspelheim_lava_caves.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_caves.json,
         initialStartingPointId: 13,
-		//initial: true
+		initial: true
 	},
 	
 	{
