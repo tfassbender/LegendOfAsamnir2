@@ -85,7 +85,8 @@ public class GameDataService implements EventListener {
 		
 		GameDataHandler.getInstance().updateData(gameData);
 		
-		if (gameData.characterDataContainer.respawnWithStartingStats) {
+		if (gameData.characterDataContainer.respawnWithStartingStats //
+				&& Player.isInitialized()) { // don't initialize the player if the game was not started, because the assets are not loaded
 			Player.getInstance().resetAfterGameOver();
 		}
 	}

@@ -16,5 +16,9 @@ public class Player {
 		return instance;
 	}
 	
+	public static boolean isInitialized() {
+		return instance != null;
+	}
+	
 	private Player() {}
 }
