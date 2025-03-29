@@ -2,7 +2,6 @@ package net.jfabricationgames.gdx.screen.menu.dialog;
 
 import java.util.function.Consumer;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import net.jfabricationgames.gdx.screen.menu.components.FocusButton;
@@ -57,17 +56,5 @@ public class SaveGameDialog extends GameDataServiceDialog {
 		if (button != null) {
 			button.setFocused(true);
 		}
-	}
-	
-	public void quickSave() {
-		Gdx.app.log(getClass().getSimpleName(), "'quickSave' selected");
-		gameDataService.storeGameDataToQuickSaveSlot();
-		backToGame();
-	}
-	
-	public void saveToSlot(int slot) {
-		Gdx.app.log(getClass().getSimpleName(), "'saveToSlot' " + slot + " selected");
-		gameDataService.storeGameDataToSaveSlot(slot);
-		backToGame();
 	}
 }

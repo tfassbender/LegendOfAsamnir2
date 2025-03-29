@@ -10,6 +10,7 @@ import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.animation.TextureAnimationDirector;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.data.GameDataService;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -24,6 +25,7 @@ import net.jfabricationgames.gdx.screen.menu.components.MenuBox;
 import net.jfabricationgames.gdx.screen.menu.components.RuneSubMenu;
 import net.jfabricationgames.gdx.screen.menu.components.SpecialActionItemSubMenu;
 import net.jfabricationgames.gdx.screen.menu.control.MenuStateMachine;
+import net.jfabricationgames.gdx.screen.menu.dialog.ConfirmDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.ControlsDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.GameMapDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.ItemSettingsDialog;
@@ -61,9 +63,14 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	private GameMapDialog mapDialog;
 	private SaveGameDialog saveGameDialog;
 	private LoadGameDialog loadGameDialog;
+	private ConfirmDialog confirmDialog;
+	
+	private Runnable onConfirm;
+	private Runnable onCancel;
 	
 	private BackgroundMusicManager backgroundMusicManager;
 	private SoundManager soundManager;
+	private GameDataService gameDataService;
 	
 	private MenuBox background;
 	
@@ -98,6 +105,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	private void initialize() {
 		backgroundMusicManager = BackgroundMusicManager.getInstance();
 		soundManager = SoundManager.getInstance();
+		gameDataService = new GameDataService();
 		
 		createComponents();
 		createDialogs();
@@ -180,6 +188,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		mapDialog = new GameMapDialog(gameScreen, camera, this::backToGame, this::playMenuSound);
 		saveGameDialog = new SaveGameDialog(camera, this::backToGame, this::playMenuSound);
 		loadGameDialog = new LoadGameDialog(camera, this::backToGame, this::playMenuSound);
+		confirmDialog = new ConfirmDialog(camera);
 	}
 	
 	private void initializeStateMachine() {
@@ -205,6 +214,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 			}
 			else if (mapDialog.isVisible()) {
 				closeMapDialog();
+			}
+			else if (confirmDialog.isVisible()) {
+				confirmDialogCancel();
 			}
 			else if (saveGameDialog.isVisible()) {
 				closeSaveGameDialog();
@@ -278,6 +290,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		mapDialog.draw(delta);
 		saveGameDialog.draw();
 		loadGameDialog.draw();
+		confirmDialog.draw();
 	}
 	
 	private void drawBackground() {
@@ -395,6 +408,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		else if (stateName.startsWith(STATE_PREFIX_LOAD_DIALOG)) {
 			loadGameDialog.setFocusTo(stateName);
 		}
+		else if (stateName.startsWith("confirm_dialog")) {
+			confirmDialog.setFocusTo(stateName);
+		}
 		else if (stateName.startsWith(STATE_PREFIX_BUTTON)) {
 			String buttonId = stateName.substring(STATE_PREFIX_BUTTON.length());
 			FocusButton button = null;
@@ -458,6 +474,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		mapDialog.dispose();
 		saveGameDialog.dispose();
 		loadGameDialog.dispose();
+		confirmDialog.dispose();
 	}
 	
 	//****************************************************************
@@ -627,27 +644,62 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	//*********************************************************************
 	
 	public void quickSave() {
-		saveGameDialog.quickSave();
+		Gdx.app.log(getClass().getSimpleName(), "'quickSave' selected");
+		gameDataService.storeGameDataToQuickSaveSlot();
+		backToGame();
 	}
 	
 	public void saveToSlot1() {
-		saveGameDialog.saveToSlot(1);
+		saveToSlot(1);
 	}
 	
 	public void saveToSlot2() {
-		saveGameDialog.saveToSlot(2);
+		saveToSlot(2);
 	}
 	
 	public void saveToSlot3() {
-		saveGameDialog.saveToSlot(3);
+		saveToSlot(3);
 	}
 	
 	public void saveToSlot4() {
-		saveGameDialog.saveToSlot(4);
+		saveToSlot(4);
 	}
 	
 	public void saveToSlot5() {
-		saveGameDialog.saveToSlot(5);
+		saveToSlot(5);
+	}
+	
+	private void saveToSlot(int slot) {
+		Gdx.app.log(getClass().getSimpleName(), "'saveToSlot' " + slot + " selected");
+		if (gameDataService.isGameDataSlotExisting(slot)) {
+			// show a confirm dialog to ask if the user really wants to overwrite the save slot
+			onConfirm = () -> {
+				gameDataService.storeGameDataToSaveSlot(slot);
+				backToGame();
+			};
+			onCancel = () -> {
+				confirmDialog.setVisible(false);
+				stateMachine.changeState("saveDialog_button_saveSlot" + slot);
+			};
+			stateMachine.changeState("confirm_dialog_button_cancel");
+			confirmDialog.setVisible(true);
+		}
+		else {
+			gameDataService.storeGameDataToSaveSlot(slot);
+			backToGame();
+		}
+	}
+	
+	//*********************************************************************
+	//*** State machine methods for confirm dialog (called via reflection)
+	//*********************************************************************
+	
+	public void confirmDialogConfirm() {
+		onConfirm.run();
+	}
+	
+	public void confirmDialogCancel() {
+		onCancel.run();
 	}
 	
 	//*********************************************************************

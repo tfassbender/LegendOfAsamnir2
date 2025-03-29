@@ -391,6 +391,20 @@
 	},
 	
 	//*********************************************
+	//*** Confirm Dialog
+	//*********************************************
+	
+	confirm_dialog_button_confirm: {
+        right: confirm_dialog_button_cancel,
+        select: confirmDialogConfirm,
+	},
+	
+	confirm_dialog_button_cancel: {
+        left: confirm_dialog_button_confirm,
+        select: confirmDialogCancel,
+    },
+	
+	//*********************************************
 	//*** Load Game Dialog
 	//*********************************************
 	
