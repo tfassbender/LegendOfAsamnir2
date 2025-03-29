@@ -129,9 +129,6 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public void afterLoadMap() {
-		// increase the health, armor and mana to minimum values if they are below the minimum values
-		propertiesDataHandler.increaseStatsToMinimumAfterRespawn();
-		
 		// fire events if stats are below half when re-added to the world, because they can't go below half anymore in this state
 		checkManaNotFull(true);
 		checkHealthBelowHalf(false);
@@ -751,6 +748,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	public void handleEvent(EventConfig event) {
 		float change;
 		switch (event.eventType) {
+			case PLAYER_RESPAWNED:
+				// increase the health, armor and mana to minimum values if they are below the minimum values
+				propertiesDataHandler.increaseStatsToMinimumAfterRespawn();
+				break;
 			case EVENT_OBJECT_TOUCHED:
 				if (event.stringValue.equals(EventObject.EVENT_KEY_RESPAWN_CHECKPOINT)) {
 					if (event.parameterObject != null && event.parameterObject instanceof EventObject) {
