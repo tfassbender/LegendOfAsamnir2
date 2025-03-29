@@ -28,22 +28,6 @@
 			event: {
 				eventType: RESTART_FROM_SVARTALFHEIM,
 			},
-			
-			executes: [
-				back_to_svartalfheim__event_2,
-			]
-		},
-		
-		back_to_svartalfheim__event_2: {
-            type: EVENT,
-            
-			event: {
-				eventType: PLAYER_RESPAWNED,
-			},
-			
-			executes: [
-				end,
-			]
 		},
 		
 		end: {

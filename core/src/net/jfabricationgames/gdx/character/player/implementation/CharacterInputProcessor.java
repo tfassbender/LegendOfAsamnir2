@@ -14,7 +14,7 @@ class CharacterInputProcessor implements InputActionListener {
 	private static final float SQRT_0_5 = (float) Math.sqrt(0.5f);
 	
 	private static final float TIME_TILL_IDLE_ANIMATION = 4.0f;
-	private static final float TIME_TILL_SPIN_ATTACK = 1.5f;
+	private static final float TIME_TILL_SPIN_ATTACK = 1f;
 	
 	private static final float MOVING_SPEED = 300f;
 	private static final float MOVING_SPEED_SPRINT = 425f;

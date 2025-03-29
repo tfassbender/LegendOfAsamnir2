@@ -604,6 +604,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				
 				if (attackInfo.canBeBlockedCompletely()) {
 					// the attack can be completely blocked without taking damage - no shield hit state or animation is needed
+					soundHandler.playSound(CharacterAction.SHIELD_HIT);
 					return;
 				}
 				
