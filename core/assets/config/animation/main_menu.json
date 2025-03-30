@@ -1,0 +1,47 @@
+{
+	configList: 
+	[
+		{
+			name: dwarf_run_right,
+			atlas: packed/menu/main_menu.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP
+		},
+		{
+			name: dwarf_attack_jump_right,
+			atlas: packed/menu/main_menu.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: dwarf_idle_right,
+			atlas: packed/menu/main_menu.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP
+		},
+		{
+			name: elite_mage_idle,
+			atlas: packed/menu/main_menu.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP
+		},
+		{
+			name: elite_mage_cast_with_effect,
+			atlas: packed/menu/main_menu.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: elite_mage_cast_loop_with_effect,
+			atlas: packed/menu/main_menu.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP
+		},
+		{
+			name: elite_mage_blast_with_effect,
+			atlas: packed/menu/main_menu.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+	]
+}

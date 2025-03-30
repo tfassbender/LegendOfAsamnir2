@@ -44,7 +44,7 @@ public class MainMenuAnimation {
 	private boolean dwarfFacingRight = true;
 	
 	public MainMenuAnimation() {
-		AnimationManager.getInstance().loadAnimations("config/animation/menu.json");
+		AnimationManager.getInstance().loadAnimations("config/animation/main_menu.json");
 		dwarfIdleAnimation = AnimationManager.getInstance().getTextureAnimationDirector("dwarf_idle_right");
 		dwarfRunningAnimation = AnimationManager.getInstance().getTextureAnimationDirector("dwarf_run_right");
 		dwarfAttackAnimation = AnimationManager.getInstance().getTextureAnimationDirector("dwarf_attack_jump_right");

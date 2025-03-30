@@ -50,6 +50,7 @@ import net.jfabricationgames.gdx.screen.ScreenManager;
 import net.jfabricationgames.gdx.screen.menu.GameOverMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.InGameMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.LoadingScreen;
+import net.jfabricationgames.gdx.screen.menu.MenuScreen;
 import net.jfabricationgames.gdx.screen.menu.PauseMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.ShopMenuScreen;
 import net.jfabricationgames.gdx.screen.menu.SkillMenuScreen;
@@ -69,6 +70,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		AssetGroupManager assetManager = AssetGroupManager.getInstance();
 		showLoadingScreen(afterCreatingGameScreen);
 		assetManager.loadGroup(ScreenManager.ASSET_GROUP_NAME);
+		assetManager.loadGroup(MenuScreen.DEFAULT_MENU_ASSET_GROUP_NAME);
 	}
 	
 	private static void showLoadingScreen(Runnable afterCreatingGameScreen) {

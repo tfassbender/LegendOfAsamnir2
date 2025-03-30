@@ -23,6 +23,7 @@ import net.jfabricationgames.gdx.texture.TextureLoader;
 
 public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	
+	private static final String MAIN_MENU_ASSET_GROUP_NAME = "main_menu";
 	private static final String INPUT_CONTEXT_NAME = "mainMenu";
 	private static final String MAIN_MENU_STATE_CONFIG = "config/menu/main_menu_states.json";
 	private static final String STATE_PREFIX_LOAD_DIALOG = "loadDialog_";
@@ -60,6 +61,11 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 		
 		//adapt the camera position to center the menu on the screen (instead of changing all components)
 		camera.position.y -= 20;
+	}
+	
+	@Override
+	protected String getAssetGroupName() {
+		return MAIN_MENU_ASSET_GROUP_NAME;
 	}
 	
 	private void createComponents() {

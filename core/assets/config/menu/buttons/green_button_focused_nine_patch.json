@@ -1,6 +1,6 @@
 {
 	texture: {
-		atlas: packed/menu/menu.atlas,
+		atlas: packed/menu/main_menu.atlas,
 		texture: button_green_focus
 	}
 	top: 7

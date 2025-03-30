@@ -728,8 +728,25 @@
 			outputDir: packed/menu,
 			atlasName: menu,
 			textureDirs: [
-				raw_images/menu/,
 				raw_images/menu/items,
+				
+				//runes
+				raw_images/items/runes,
+				
+				//mini maps
+				raw_images/map/mini_maps,
+				raw_images/map/mini_maps/loa2,
+				
+				//map texture
+				raw_images/objects/animated/map/idle,
+				raw_images/objects/animated/map/unfold,
+			]
+		},
+		main_menu: {
+			outputDir: packed/menu,
+			atlasName: main_menu,
+			textureDirs: [
+				raw_images/menu/,
 				raw_images/menu/buttons,
 				raw_images/menu/checkbox,
 				raw_images/menu/background/big_banner,
@@ -747,17 +764,6 @@
 				raw_images/restricted/enemy/elite_mage/elite_mage_cast_with_effect,
 				raw_images/restricted/enemy/elite_mage/elite_mage_cast_loop_with_effect,
 				raw_images/restricted/enemy/elite_mage/elite_mage_blast_with_effect,
-				
-				//runes
-				raw_images/items/runes,
-				
-				//mini maps
-				raw_images/map/mini_maps,
-				raw_images/map/mini_maps/loa2,
-				
-				//map texture
-				raw_images/objects/animated/map/idle,
-				raw_images/objects/animated/map/unfold,
 			]
 		},
 		loading_screen: {

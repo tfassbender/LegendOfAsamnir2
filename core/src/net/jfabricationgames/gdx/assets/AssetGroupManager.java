@@ -48,7 +48,7 @@ public class AssetGroupManager implements Disposable, AssetErrorListener {
 		manager.setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
 		manager.setErrorListener(this);
 		
-		loadGroups(assetFile);
+		loadGroupConfigs(assetFile);
 	}
 	
 	public AssetLoader<?, ?> getLoader(Class<?> type) {
@@ -129,7 +129,7 @@ public class AssetGroupManager implements Disposable, AssetErrorListener {
 		Gdx.app.error(getClass().getSimpleName(), "error loading: " + asset.fileName + additionalInformation, throwable);
 	}
 	
-	private void loadGroups(String assetFile) {
+	private void loadGroupConfigs(String assetFile) {
 		Gdx.app.log(getClass().getSimpleName(), "--- Loading asset groups --------------------------------------------------------------");
 		
 		groups = new ObjectMap<String, Array<Asset>>();

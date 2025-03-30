@@ -1,6 +1,6 @@
 {
 	main_menu_background: {
-		atlas: packed/menu/menu.atlas,
+		atlas: packed/menu/main_menu.atlas,
 		texture: menu_background_screen_1
 	},
 }

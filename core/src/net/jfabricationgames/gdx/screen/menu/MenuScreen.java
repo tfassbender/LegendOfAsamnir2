@@ -20,7 +20,7 @@ public abstract class MenuScreen<T extends ControlledMenu<T>> extends Controlled
 	public static final int VIRTUAL_WIDTH = 1280;
 	public static final int VIRTUAL_HEIGHT = 837;//820 seems to be smaller here than in the GameScreen...
 	
-	public static final String ASSET_GROUP_NAME = "main_menu";
+	public static final String DEFAULT_MENU_ASSET_GROUP_NAME = "menu";
 	public static final String FONT_NAME = "vikingMedium";
 	public static final String SOUND_ERROR = "error";
 	public static final String ANIMATION_CONFIG_FILE = "config/animation/menu.json";
@@ -54,7 +54,7 @@ public abstract class MenuScreen<T extends ControlledMenu<T>> extends Controlled
 	}
 	
 	protected String getAssetGroupName() {
-		return ASSET_GROUP_NAME;
+		return DEFAULT_MENU_ASSET_GROUP_NAME;
 	}
 	
 	@Override

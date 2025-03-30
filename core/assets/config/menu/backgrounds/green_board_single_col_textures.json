@@ -1,14 +1,14 @@
 {
 	up: {
-		atlas: packed/menu/menu.atlas,
+		atlas: packed/menu/main_menu.atlas,
 		texture: green_board_single_col_up,
 	},
 	mid: {
-		atlas: packed/menu/menu.atlas,
+		atlas: packed/menu/main_menu.atlas,
 		texture: green_board_single_col_mid,
 	},
 	down: {
-		atlas: packed/menu/menu.atlas,
+		atlas: packed/menu/main_menu.atlas,
 		texture: green_board_single_col_down,
 	},
 }

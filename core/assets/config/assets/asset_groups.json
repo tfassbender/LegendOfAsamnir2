@@ -2,6 +2,12 @@
 	"main_menu" : [
 		{
 			"type": "com.badlogic.gdx.graphics.g2d.TextureAtlas",
+			"path": "packed/menu/main_menu.atlas"
+		}
+	],
+	"menu" : [
+		{
+			"type": "com.badlogic.gdx.graphics.g2d.TextureAtlas",
 			"path": "packed/menu/menu.atlas"
 		}
 	],
