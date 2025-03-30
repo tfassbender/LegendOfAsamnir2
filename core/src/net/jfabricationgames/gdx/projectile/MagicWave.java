@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.projectile;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Contact;
 
 import net.jfabricationgames.gdx.attack.AttackConfig;
@@ -12,6 +13,8 @@ import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyShape;
 
 public class MagicWave extends Projectile {
 	
+	private float timeSinceCreation = 0f; // prevent the projectile from being removed immediately after creation
+	
 	public MagicWave(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
 		super(typeConfig, attackConfig, sprite, gameMap);
 	}
@@ -22,10 +25,17 @@ public class MagicWave extends Projectile {
 	}
 	
 	@Override
+	public void draw(float delta, SpriteBatch batch) {
+		super.draw(delta, batch);
+		
+		timeSinceCreation += delta;
+	}
+	
+	@Override
 	protected void processContact(Object contactUserData, Contact contact) {
 		super.processContact(contactUserData, contact);
 		
-		if (contactUserData == MapObjectType.SOLID_OBJECT || isMovableObject(contactUserData)) {
+		if ((contactUserData == MapObjectType.SOLID_OBJECT || isMovableObject(contactUserData)) && timeSinceCreation > 0.1f) {
 			removeFromMap();
 		}
 	}

@@ -93,7 +93,7 @@
 		delay: 0,
 		duration: 0,
 		damage: 5,
-		pushForce: 150,
+		pushForce: 5,
 		pushForceAffectedByBlock: false,
 	},
 	{
