@@ -65,6 +65,7 @@
 				//### objects
 				//##############################################################
 				raw_images/objects/all,
+				raw_images/objects/helheim_key,
 				raw_images/objects/animated/barrel/hit,
 				raw_images/objects/animated/barrel/break,
 				raw_images/objects/animated/box/hit,

@@ -226,7 +226,14 @@
 				- Many spiders with low damage, to make the fight a bit longer
 		- Cultist Dungeon
 			- Make sure this is the last part of the map - the order of the other two is not important
+				- The Compas could be given to the player after he adds the other two key parts to the key in Hel's temple
+				- Without the Compas one can enter this zone, but can't get far in it
 			- Not many enemies, but more puzzles in this area
+			- The Compas should be used in this zone
+				- At the beginning of the zone there should be a room full of traps with only one way through them
+				- The path cannot be seen, but the compas is needed to find it
+				- The traps all look the same but some are just dummies
+				- All traps are insta-kill traps, so the path cannot be brute forced (or at least it would be realy annoying to try that)
 			- The cultists (the small ones) are no enemies but try to block the player's path (they work as NPCs)
 			- Some cultist brutes also work as enemies (one should be able to distinguish between them because of the size and a health bar)
 			- At some points the cultists do sacrifice rituals to summon strong enemies:
@@ -251,6 +258,7 @@
 			- One cannot enter the temple without the three keys (from the three boss fights)
 			- In Hel's temple there are no fights or enemies anymore (only a fiew minion NPCs and Hel)
 	- Maybe add some shortcuts from the three zones back to the main part of the map?
+	- Each of the three Zones should contain one Triforce item
 - Textures:
     - Skeletal Warior
 	- Skeletal Archer
