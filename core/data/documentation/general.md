@@ -191,23 +191,91 @@
 
 - Thorin has gained a Rune (in level 3) that can revive him after he died, so he can pay with his live to enter Helheim (level 4)
 - Level is in Helheim (land of the dead)
+- Three boss fights should be added:
+	- Skeletal King
+		- Boss of the first area, where mainly skeletons are to be found
+	- Spider Queen
+		- Boss of the second area, where some skeletons, cultists and many spiders are to be found
+	- Lich
+		- Boss of the third area, where more cultists and ghosts (wisp, vengefull spirit, ...) are to be found
+	- After all three bosses are defeated, one can reach Hel's throne room
+		- Every boss drops a special key (with a special texture - similar to the keys in slay the spire)
+		- Hel (texture: Death) is an NPC, that does not want to fight (Hel should not be the antagonist)
+		- Tells the player where to find the last rune (in a room near her throne room) and what to do next
+		- Hel doesn't like the Chaos Wizard very much and therefore does not want to fight Thorin
+		- After Thorin gains the last rune (Laguz), the Chaos Wizard is scared, because he thaught that Thorin would never defeat Hel
+- Map:
+	- The single parts of the map should not be too big, because the focus is on the three boss fights (but also not too small - it's not only the boss fights)
+	- The map should consist of five parts:
+		- The main map, from which the three boss areas and Hel's temple can be reached
+			- This part of the map is quite small and does not contain any enemies
+			- Only used as connection between the other parts and for some NPCs
+			- Ratatosk appears in this part of the map
+		- Skelet Zone
+			- Some enemies to fight and some (easy) puzzles
+			- At the end the player reaches the vault of the Skeleton King (boss room)
+				- The player can take the key to Hel's temple before the boss fight
+				- After the player takes the key, the Skeleton King appears from the ground and has to be defeated before the player can leave the area
+				- The Skeleton King is a straight forward enemy 
+					- Not many tricks, but only much health and some heavy attacks 
+					- Maybe add a fiew minions, but not to many because that's the style of the spider queen
+		- Spider Zone
+			- Some enemies to fight and some (easy) puzzles
+			- At the end the player reaches the nest of the spider queen, where he has to defeat her to get the key to Hel's temple
+			- The Spider Queen mainly fights using the minions she spawns
+				- Many spiders with low damage, to make the fight a bit longer
+		- Cultist Dungeon
+			- Make sure this is the last part of the map - the order of the other two is not important
+			- Not many enemies, but more puzzles in this area
+			- The cultists (the small ones) are no enemies but try to block the player's path (they work as NPCs)
+			- Some cultist brutes also work as enemies (one should be able to distinguish between them because of the size and a health bar)
+			- At some points the cultists do sacrifice rituals to summon strong enemies:
+				- A ritual to summon a vengefull spirit
+					- Some cultists form a circle and sacrifice one of them
+					- Maybe use this two or even three times, because this enemy is not too hard to fight
+				- A ritual to summon the Lich (the boss) at the end of the level (just before the room, where the key to Hel's temple can be found)
+					- Some cultists form a circle where in the middle of the circle one cultist is transformed to a cultist horror
+					- The cultist horror has to be fought in the beginning of the boss fight (quite easy, straight forward enemy, but much health)
+					- When the cultist horror is almost defeated, a cutscene starts
+						- Some cultists have to somehow block Thorin from the summoning ritual (maybe using some kind of magic)
+						- The cultists come back to the summoning area in which the cultist horror already stands
+						- Some cultists sacrifice themselves to the cultist horror (use the devour animation - this should not be used before)
+						- After devouring all of the cultists the cultist horror dies and the Lich appears
+					- The Lich mainly fights with his magic (some projectiles, some novas and some attacks at the player's position - like in the fight against Surtur)
+					- Also a fiew minions could be used (totems, wisps or magical weapons - but not too many)
+					- The boss fight has to have a fiew parts, where the player has to reach the Lich first after he goes into a defense mode (like the fight agains Surtur)
+					- Also add a final part, where the Lich is almost defeated and changes his attack pattern a bit
+			- After the Lich is defeated, the player can take the key to Hel's temple and the dungeon is conquered
+		- Hel's temple
+			- Easy to reach from the main map (close to the entrance, so the player reaches it first)
+			- One cannot enter the temple without the three keys (from the three boss fights)
+			- In Hel's temple there are no fights or enemies anymore (only a fiew minion NPCs and Hel)
+	- Maybe add some shortcuts from the three zones back to the main part of the map?
 - Textures:
     - Skeletal Warior
 	- Skeletal Archer
 	- Skeletal Mage
-	- Skeleton King
+	- Skeletal Trumpetist
+	- Skeleton King (boss)
 	- Necromancer 
-	- Naga
-	- Ghoul
-	- Vargouille
-	- Lich (boss?)
-	- Black Pudding (?)
-	- Plague Doctor (?)
-	- Banshee (?)
+	- Cultist
+	- Cultist Brute
+	- Cultist Horror
+	- Mimics
+	- Spider
+	- Spider Queen (boss)
+	- Wisp
+	- Vengefull Spirit
+	- Lich (boss)
+	- Death (as Hel)
+	- Magic Wasteland Tileset
 	- Cultist Dungeon Tileset
 	- NPCs: 
 	    - Dwarf Undead (only as a joke, because thorin payed with his live to enter Helheim)
 		- Mideval Executioner
+		- Plague Doctor
+		- Succubus (maybe as enemy)
+		- Incubus (maybe as enemy)
 
 
 ### Level 5
@@ -218,6 +286,7 @@
 	- The second boss fight is against the chaos wizard (who has ~3 different forms)
 - When Thorin reaches the Chaos Wizard, they first talk (so I can add many bad jokes):
     - "The princess is an another castle" (but one can see the princess behind a wall because of the 2D graphics)
+	- The Chaos Wizard has borrowed the "Vorpal Laserblaster of Pittenweem" from a friend for the fight against Thorin
 	- When the fight beginns: "So it beginns ... " (yes, another lord of the rings reference :D )
 	- Thorin can't defeat the Chaos Wizard without asamnir 
 		- "You have no power here, Thorin the Gray!!! *evil laughter*" 
