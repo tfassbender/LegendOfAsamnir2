@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="42" nextobjectid="10470">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="42" nextobjectid="10475">
  <properties>
   <property name="above_player_layers" value="[9, 12, 15]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14]"/>
@@ -40,12 +40,12 @@
  </layer>
  <layer id="10" name="houses" width="100" height="100" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt2kFu00AUBmBDRJ3JLYAN1wAWPQdlwzWABecIFaLXCFWVc7QVqugpOhVduB47Hjdmkpbvk/6dbcnzxnE8b6oKAAAAAAAAAAAAAAB4iB8hL5SRWw+1KuMsbB+m8ztsH6aTO+YvFv1hOrn1uKi7c1nv+g6elk3zvhn1KOO8Z5zbY/583p3ZfNd3sL+WYTht7Xr8mVXV9cwzMIVVGE5b7vPR9DOkIXUehpOc84DnYx3SkHq2GE5yTuNdcDv29fxvLur+d8RVSEPqw0FVHW3Ix4PN57d/p/rUizSkbuvxaYt6tP879VnG65zEfL/L8cB1/1ef47h8i/nSk68TjdsqXmcd8+sup+oBwAB9qf2iL5Wn1HzVl8pTar7qS+UpNV9fxu/2NzGvWnltDfieUvP1bRz3w5h3rbxXj3uWjfWLE2sYO7dqrF+srWEAT8CYXutx6A7TGdNrPQ3dYTpjeq2XoTtMZ0yvdbboDtMZ853SPFZv9t8Y853SPFZvFtgHuXt9KSN3ry9l5O4tpYy+fY3sRt++RgAAAAAAAAAAAAAAHqcbmq8SPw==
+   eJzt2k1u00AYBmBDRJzJLYAN1wAWnAPYcA1gwTlCBfQaaVVyjhYBglMwEZVwPXY8bqxJaZ9HenexpXzfOM78VBUAAAAAAAAAAAAAAHAdn0JeKCO3H3pVxlnYP0zne9g/TCe35g+W/WE6uf24qLvzrT70N7hddo37ZvSjjPOeOrdrfn/Rndni0N/g5lqF4bS1+/FrVlW/Z56BKazDcNpyn4+mLyENqfMwnOSaazwfm5CG1L3lcJJrGu+Cbe3rxd9c1P3viJ8hDamX86p6tSOv57uvb/9O9amXaUht+/Fmj360/zv1WcX7HMd8vMzRwH3vqrexLh9i3vXk/UR1W8f7bGJOLnOqHwAMsC91s9iXylNqvNqXylNqvNqXylNqvD6M8/YnMY9aeWwN+IpS4/VprPuLmGetPNePK1aN9YtjaxgHt26sX2ysYQC3wJi91s+hO0xnzF7r19AdpjNmr/VH6A7TGbPXOl92h+mMmaestnPxRfxs/S9H5n2TGjNPWcfab2JOGjnVD+CAcs/6UkbuWV/KyD1bShl95xo5jL5zjQAAAAAAAAAAAAAA/J/+AE7gEh8=
   </data>
  </layer>
  <layer id="11" name="houses_2" width="100" height="100" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt3OFK20AAB/DAdakO9hbimNi3kOGGew4Z20uMKU5Qt1eYDvphPojg3sMP+hCLmNCkZu11xiSQ3w+OazhoSv65S3PXNEkAAAAAAAAAAAAAAAAYup8hrhzNbR+Erj/5sH0Ji7dplzz65Tws3v4f26G+pht7ob6mWYvOc32gfeXz/Gb8UOraaEfRB0ZpkqyPkuRlVtK02kZ7ij6wkWXwIi+babWN5/E7G4suS+PRq7VZPZ9HuY2neRPq6+ssiz+lPCZrs3o+j3Ib8Yo5kXv7+TjzLtTXt1kWd+Ok1k4pj7fp4n1O8/ZJ/r7H/3jPofu25DieNHTcrvL9fHB9iXI6fig/svI9K2fOXwAAiPI6/+68Fao13djN83gfqjVVxdzFdMk9Ou0o5i6u5AEA0Iqm1vA+W0tpxMf8OK5ynzIJj19/kkejVrlPKa/HWpsFGI6vEc+20R7PRfVLbB775oRbEZvHst810gzjVffK1/Bf8uicPtEv8ugXefSLPPrlIvI/Z+7LoewAAAAAAAAAABiov0a2QRE=
+   eJzt3G1q1EAABuDA1Gxb8BZSabG3kLKKnqMUvYS0pUr96BWqwv7QgyzoPfyhhzDLTuhkibupTZNAngeGIQybLHkzk80k2SwDAAAAAAAAAAAAAABg7K5Ds3KxsnwW+v7m4/YmrF+mW/IYls9h/fL/eBLqa/rxItTXtGvdca4PdC89zn9NlqWujW6UfWArz7KdrSzbLUqeV9voTtkHHhUZPIhlL6+2cT++FWPR92Q8erh9U6/mkbZxN/uhvv5RZPEzyeNw+6ZezSNto7lyTmThOI4zz0J9/bvI4s8kq/U0yeMoX7/NWWw/jOt99491jt3bDfvxfUv7bR6389L5pZEPk2W5Ksqnonx0/AIAQCOP42/ng1Ct6cc05vE8VGuqyrmL2YZrdLpRzl3M5QEA0Im27uG9di+lFSdxP97mOiV9Fusyfu6VPFp1m+uUqWcZAEbptMG7bXTHe1HD0jSPY3PCnWiax6bnGmmH8ap/6Tn8qzx6p08MizyGRR7DIo9h+dLwP2cW5Vx2AAAAAAAAAACM1F9tWUHd
   </data>
  </layer>
  <layer id="14" name="bridges" width="100" height="100" locked="1">
@@ -70,7 +70,7 @@
  </layer>
  <layer id="38" name="village_above_player" width="100" height="100" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt17ENgDAMRUEXFIiwCEIMEvZfgx0o2AChOER3vaVX+kcAAAAAAAAAAAAAAAAAAAAAAD05puwCgEctEWfJrhjfOre9AwD6tNmCDMq/CwDA311LdgFf2O1uAAAAAAAAAAAAAAAAAABeuAHF/gJ+
+   eJzt17EJgEAQRcENDMSzERELUbD/KuzBwFQwEfc8ZvKFH+6LAAAAAAAAAAAAAAAAAAAAAABqsnTZCwAua4nYSvaK9o39t3cAQJ0mLUij/LsAAPzdMWQv4A3zTXfvWhwAAAAAAAAAAAAAAAAAgAcnT+sCzw==
   </data>
  </layer>
  <layer id="3" name="trees" width="100" height="100" locked="1">
@@ -441,6 +441,17 @@ West: Helheim.</property>
    </properties>
    <point/>
   </object>
+  <object id="10473" name="object.eventObject" x="1696" y="2026" width="32.0625" height="1.375">
+   <properties>
+    <property name="eventParameter" value="loa2_main_goto_jail_entry"/>
+   </properties>
+  </object>
+  <object id="10474" name="player.startingPosition" x="1711.8" y="2053.09">
+   <properties>
+    <property name="startingPointId" value="8"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="33" name="physics" locked="1">
   <object id="8162" x="1022.67" y="1215.91" width="288" height="192"/>
@@ -460,7 +471,7 @@ West: Helheim.</property>
   <object id="8256" x="1856" y="1408" width="32" height="18.6667"/>
   <object id="8257" x="1920" y="1408" width="96" height="18.6667"/>
   <object id="8258" x="1888" y="1408" width="32" height="12.3674"/>
-  <object id="8259" x="1664" y="1856" width="192" height="174.5"/>
+  <object id="8259" x="1664" y="1856" width="192" height="159.864"/>
   <object id="8260" x="1312" y="1856" width="160" height="160"/>
   <object id="8261" x="1440.18" y="2016" width="31.8182" height="15.5833"/>
   <object id="8262" x="1408" y="2016" width="32" height="9.68182"/>
@@ -5527,6 +5538,9 @@ West: Helheim.</property>
    <polygon points="0,0 -32,32 -32,0"/>
   </object>
   <object id="10413" x="1248" y="2824" width="159.667" height="24"/>
+  <object id="10470" x="1664" y="2016" width="31.8182" height="15.5833"/>
+  <object id="10471" x="1728" y="2016" width="128" height="15.5833"/>
+  <object id="10472" x="1696" y="2016" width="32" height="9.68182"/>
  </objectgroup>
  <objectgroup id="34" name="unreachable_area_physics" locked="1">
   <object id="8172" x="1328.01" y="1409">
