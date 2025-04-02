@@ -36,6 +36,11 @@
 	hanarr: config/npc/levels/loa2/main/shop/hanarr.json,
 	
 	//*****************************************************************
+	//*** Legend of Asamnir 2 - Main - Jail
+	//*****************************************************************
+	loni: config/npc/levels/loa2/main/jail/loni.json,
+	
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Level 1 - Dwarven Mine
 	//*****************************************************************
 	skafid: config/npc/levels/loa2/dwarven_mine/skafid.json,

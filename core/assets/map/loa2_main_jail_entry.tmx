@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="13" height="11" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="767">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="13" height="11" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="773">
  <properties>
   <property name="above_player_layers" value="[3, 4]"/>
   <property name="background_layers" value="[0, 1, 2]"/>
   <property name="building_level" value="true"/>
-  <property name="mini_map_config_path" value="config/menu/maps/loa2/main_jail_entry.json"/>
   <property name="shadow_layers" value="[5, 6]"/>
  </properties>
  <tileset firstgid="1" source="tileset/tileset_pipoya_32.tsx"/>
@@ -114,9 +113,9 @@
 </data>
  </layer>
  <objectgroup id="10" name="objects">
-  <object id="749" name="object.eventObject" x="96" y="352" width="63.967" height="4.08333">
+  <object id="749" name="object.eventObject" x="96" y="350.909" width="63.967" height="1.17424">
    <properties>
-    <property name="eventParameter" value="loa2_main_jail_goto_main"/>
+    <property name="eventParameter" value="loa2_main_jail_entry_goto_main"/>
    </properties>
   </object>
   <object id="763" name="player.startingPosition" x="128" y="308">
@@ -131,7 +130,7 @@
    </properties>
    <point/>
   </object>
-  <object id="765" name="player.startingPosition" x="128" y="256">
+  <object id="765" name="player.startingPosition" x="288" y="224">
    <properties>
     <property name="startingPointId" value="10"/>
    </properties>
@@ -143,8 +142,13 @@
    </properties>
    <point/>
   </object>
+  <object id="762" name="object.eventObject" x="237.089" y="264.125" width="101.322" height="7.5">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail_entry_goto_jail"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup id="8" name="physics">
+ <objectgroup id="8" name="physics" locked="1">
   <object id="751" x="0" y="0" width="32" height="352"/>
   <object id="752" x="32" y="273.333" width="64" height="78.6667"/>
   <object id="753" x="160" y="208" width="32" height="144"/>
@@ -155,17 +159,14 @@
   <object id="758" x="320.227" y="67" width="31.5455" height="50"/>
   <object id="759" x="224.63" y="182.89" width="12.0727" height="100.886"/>
   <object id="760" x="338.63" y="182.89" width="12.0727" height="100.886"/>
+  <object id="767" x="64" y="352" width="128" height="3.45455"/>
+ </objectgroup>
+ <objectgroup id="9" name="unreachable_area_physics" locked="1"/>
+ <objectgroup id="12" name="ground_physics" locked="1">
   <object id="761" x="237.025" y="199.554" width="101.616" height="64.2246">
    <properties>
     <property name="ground" value="stairs"/>
    </properties>
   </object>
-  <object id="762" name="object.eventObject" x="237.089" y="264.125" width="101.322" height="7.5">
-   <properties>
-    <property name="eventParameter" value="loa2_main_jail_entry_goto_jail"/>
-   </properties>
-  </object>
  </objectgroup>
- <objectgroup id="9" name="unreachable_area_physics" locked="1"/>
- <objectgroup id="12" name="ground_physics" locked="1"/>
 </map>

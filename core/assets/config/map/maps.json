@@ -41,6 +41,19 @@
 		initialStartingPointId: 0,
 		//initial: true
 	},
+	{
+		name: loa2_main_jail_entry,
+		map: "map/loa2_main_jail_entry.tmx",
+		debugStartConfig: config/debug/start_config/loa2/main_jail.json,
+		initialStartingPointId: 10,
+		initial: true
+	},
+	{
+		name: loa2_main_jail,
+		map: "map/loa2_main_jail.tmx",
+		initialStartingPointId: 0,
+		//initial: true
+	},
 	
 	// loa2 level 1 - dwarven caves
 	

@@ -616,7 +616,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "...                    \n                 \nDid I forgett to add her to the game?!\n                              \nWell, that's embarrassing ... ",
+                displayText: "...                    \n                 \nDid I forget to add her to the game?!\n                              \nWell, that's embarrassing ... ",
                 showNextPageIcon: true,
 			}
             

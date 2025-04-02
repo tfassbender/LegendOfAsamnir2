@@ -1,0 +1,12 @@
+{
+	enemy__jail__mini_golem: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: enemy__jail__mini_golem,
+			}
+		]
+		spawnType: enemy.mini_golem,
+		spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+}

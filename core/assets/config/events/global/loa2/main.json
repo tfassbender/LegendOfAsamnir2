@@ -225,6 +225,17 @@
 		}
 	},
 	
+	loa2_main_goto_jail_entry: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_jail_entry,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_entering_jail_entry_cutscene,
+		}
+	},
+	
 	loa2_main_goto_mine: {
 		event: {
 			eventType: EVENT_OBJECT_TOUCHED,

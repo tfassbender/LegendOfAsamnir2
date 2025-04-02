@@ -14,6 +14,17 @@
         ],
 	},
 	
+	playerHealthNotFull: {
+        spawnType: item.health_full,
+        complexEvents: [
+        	{
+				eventType: PLAYER_STATS_BELOW_THRESHOLD,
+		        stringValue: HEALTH,
+        		floatValue: 1f,
+			}
+        ],
+	},
+	
 	// ***************************
 	// *** Shield
 	// ***************************
@@ -25,6 +36,17 @@
             	eventType: PLAYER_STATS_BELOW_THRESHOLD,
                 stringValue: ARMOR,
                 floatValue: 0.5f,
+            }
+        ],
+	},
+	
+	playerShieldNotFull: {
+        spawnType: item.shield_full,
+        complexEvents: [
+            {
+            	eventType: PLAYER_STATS_BELOW_THRESHOLD,
+                stringValue: ARMOR,
+                floatValue: 1f,
             }
         ],
 	},

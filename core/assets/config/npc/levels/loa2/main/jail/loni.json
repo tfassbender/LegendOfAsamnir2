@@ -1,0 +1,19 @@
+{
+	graphicsConfigFile: config/npc/graphics/dwarven_arbelest.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	interactionEventId: loa2_main_jail_loni,
+}

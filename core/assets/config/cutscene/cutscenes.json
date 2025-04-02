@@ -29,6 +29,7 @@
 	config/cutscene/loa2/main/entering_castle.json,
 	config/cutscene/loa2/main/entering_blacksmith.json,
 	config/cutscene/loa2/main/entering_shop.json,
+	config/cutscene/loa2/main/entering_jail_entry.json,
 	config/cutscene/loa2/main/guardian_at_bifroest.json,
 	config/cutscene/loa2/main/guardian_at_bifroest_stops_thorin.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
@@ -64,9 +65,16 @@
 	config/cutscene/loa2/main/forge/brokkr.json,
 	
 	//********************************************************
-	//*** Legend of Asamnir 2 - Main - Forge
+	//*** Legend of Asamnir 2 - Main - Shop
 	//********************************************************
 	config/cutscene/loa2/main/shop/hanarr.json,
+	
+	//********************************************************
+	//*** Legend of Asamnir 2 - Main - Jail
+	//********************************************************
+	config/cutscene/loa2/main/jail/loni.json,
+	config/cutscene/loa2/main/jail/level_setup.json,
+	config/cutscene/loa2/main/jail/blocked_area.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Dwarven Mine - Entry

@@ -1,0 +1,86 @@
+{
+	//*******************************************
+	//*** cutscenes - level setup
+	//*******************************************
+	
+	loa2_l3_main_jail__map_entered: {
+		event: {
+			eventType: MAP_ENTERED,
+			stringValue: loa2_main_jail,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_jail_level_setup_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_main_jail_loni: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_main_jail_loni,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_jail_loni_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** cutscenes - blocked areas
+	//*******************************************
+	
+	loa2_main_jail__blocked_area: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_jail__blocked_area,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_jail_blocked_area_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_main_jail_entry_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_jail_entry_goto_main,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main,
+			startingPointId: 8,
+		}
+	},
+	
+	loa2_main_jail_entry_goto_jail: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_jail_entry_goto_jail,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main_jail,
+			startingPointId: 0,
+		}
+	},
+	
+	loa2_main_jail_goto_jail_entry: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_jail_goto_jail_entry,
+		},
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_main_jail_entry,
+			startingPointId: 1,
+		}
+	},
+}

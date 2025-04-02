@@ -1,0 +1,285 @@
+{
+	id: loa2_main_jail_level_setup_cutscene,
+	controlledActions: {
+		initial_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__rune_laguz_collected,
+					executedStateName: level_4_finished,
+				},
+				{
+					conditionId: common__rune_kenaz_collected,
+					executedStateName: before_level_4_finished,
+				},
+				{
+					conditionId: common__rune_hagalaz_collected,
+					executedStateName: before_level_3_finished,
+				},
+				{
+					conditionId: common__rune_raidho_collected,
+					executedStateName: before_level_2_finished,
+				},
+				{
+					// default case - no level finished yet
+					executedStateName: before_level_1_finished,
+				},
+			],
+		},
+		
+		before_level_1_finished: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                before_level_1_finished_global_condition,
+			],
+		},
+		
+		before_level_2_finished: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                before_level_2_finished_global_condition,
+                level_1_finished,
+			],
+		},
+		
+		before_level_3_finished: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                before_level_3_finished_global_condition,
+                level_2_finished,
+			],
+		},
+		
+		before_level_4_finished: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                before_level_4_finished_global_condition,
+                level_3_finished,
+			],
+		},
+		
+		before_level_1_finished_global_condition: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_1, value: true}",
+			},
+			
+			executes: [
+				before_level_1_finished_close_lock,
+			],
+		},
+		
+		before_level_1_finished_close_lock: {
+            type: EVENT,
+            
+            event: {
+                eventType: CLOSE_LOCK,
+                stringValue: loa2_main_jail__path_blocker__door_1,
+			},
+            
+            executes: [
+                before_level_2_finished_global_condition,
+			],
+		},
+		
+		before_level_2_finished_global_condition: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_2, value: true}",
+			},
+			
+			executes: [
+				before_level_2_finished_close_lock,
+			],
+		},
+		
+		before_level_2_finished_close_lock: {
+            type: EVENT,
+            
+            event: {
+                eventType: CLOSE_LOCK,
+                stringValue: loa2_main_jail__path_blocker__door_2,
+			},
+            
+            executes: [
+                before_level_3_finished_global_condition,
+			],
+		},
+		
+		before_level_3_finished_global_condition: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_3, value: true}",
+			},
+			
+			executes: [
+				before_level_3_finished_close_lock,
+			],
+		},
+		
+		before_level_3_finished_close_lock: {
+            type: EVENT,
+            
+            event: {
+                eventType: CLOSE_LOCK,
+                stringValue: loa2_main_jail__path_blocker__door_3,
+			},
+            
+            executes: [
+                before_level_4_finished_global_condition,
+			],
+		},
+		
+		before_level_4_finished_global_condition: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_4, value: true}",
+			},
+			
+			executes: [
+				before_level_4_finished_close_lock,
+			],
+		},
+		
+		before_level_4_finished_close_lock: {
+            type: EVENT,
+            
+            event: {
+                eventType: CLOSE_LOCK,
+                stringValue: loa2_main_jail__path_blocker__door_4,
+			},
+            
+            executes: [
+                end,
+			],
+		},
+		
+		level_4_finished: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_4, value: false}",
+			},
+			
+			executes: [
+				level_4_finished_open_lock,
+			],
+		},
+		
+		level_4_finished_open_lock: {
+			type: EVENT,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_main_jail__path_blocker__door_4,
+			},
+			
+			executes: [
+				level_3_finished,
+			],
+		},
+		
+		level_3_finished: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_3, value: false}",
+			},
+			
+			executes: [
+				level_3_finished_open_lock,
+			],
+		},
+		
+		level_3_finished_open_lock: {
+			type: EVENT,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_main_jail__path_blocker__door_3,
+			},
+			
+			executes: [
+				level_2_finished,
+			],
+		},
+		
+		level_2_finished: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_2, value: false}",
+			},
+			
+			executes: [
+				level_2_finished_open_lock,
+			],
+		},
+		
+		level_2_finished_open_lock: {
+			type: EVENT,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_main_jail__path_blocker__door_2,
+			},
+			
+			executes: [
+				level_1_finished,
+			],
+		},
+		
+		level_1_finished: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_main_jail_door_1, value: false}",
+			},
+			
+			executes: [
+				level_1_finished_open_lock,
+			],
+		},
+		
+		level_1_finished_open_lock: {
+			type: EVENT,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_main_jail__path_blocker__door_1,
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

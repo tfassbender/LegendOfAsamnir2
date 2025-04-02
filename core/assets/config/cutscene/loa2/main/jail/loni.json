@@ -1,0 +1,78 @@
+{
+	id: loa2_main_jail_loni_cutscene,
+	controlledActions: {
+		loni_greeting: {
+			startsWithCutscene: true,
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Loni",
+				displayText: "Hey Thorin,\nDid you come to train here? ",
+				colorHeader: #850325,
+				showNextPageIcon: true,
+			}
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer,
+			],
+		},
+		
+		thorin_answer: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"How can I train here? ",
+					"I'm just passing by.",
+				],
+			},
+			choiceOptionExecutions: [
+				loni_2,
+				end,
+			],
+		},
+		
+		loni_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Loni",
+				displayText: "We captured some enemies from the other realms in the lower floor to train with them. ",
+				colorHeader: #850325,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				loni_3,
+			],
+		},
+		
+		loni_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Loni",
+				displayText: "Sindri and Brokkr forged some magical doors so they can't get out, but you can still get in if you're strong enough.\n            \nBest just check it out yourself.    ",
+				colorHeader: #850325,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

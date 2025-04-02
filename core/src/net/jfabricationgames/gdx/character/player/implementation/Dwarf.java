@@ -131,7 +131,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	public void afterLoadMap() {
 		// fire events if stats are below half when re-added to the world, because they can't go below half anymore in this state
 		checkManaNotFull(true);
+		checkHealthNotFull(false);
 		checkHealthBelowHalf(false);
+		checkArmorNotFull(false);
 		checkArmorBelowHalf(false);
 		checkManaBelowHalf(false);
 		checkAmmoBelowHalf(ItemAmmoType.ARROW, false);
@@ -616,9 +618,11 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				heatDamageTimer = HEAT_DAMAGE_TIME_IN_SECONDS;
 			}
 			
+			boolean healthNotFullBeforeHit = propertiesDataHandler.getHealthPlusIncreasePercentual() < 1f - 1e-3f; // prevent rounding errors
 			boolean healthBelowHalfBeforeHit = propertiesDataHandler.getHealthPlusIncreasePercentual() < 0.5f - 1e-3f; // prevent rounding errors
 			propertiesDataHandler.takeDamage(damage);
 			checkHealthBelowHalf(healthBelowHalfBeforeHit);
+			checkHealthNotFull(healthNotFullBeforeHit);
 			
 			if (!propertiesDataHandler.isAlive()) {
 				die();
@@ -634,6 +638,15 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		}
 	}
 	
+	private void checkHealthNotFull(boolean healthNotFullBeforeHit) {
+		if (!healthNotFullBeforeHit && propertiesDataHandler.getHealthPlusIncreasePercentual() < 1f - 1e-3f) { // prevent rounding errors
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
+					.setStringValue("HEALTH") //
+					.setFloatValue(1f));
+		}
+	}
+	
 	private void checkHealthBelowHalf(boolean healthBelowHalfBeforeHit) {
 		if (!healthBelowHalfBeforeHit && propertiesDataHandler.getHealthPlusIncreasePercentual() < 0.5f - 1e-3f) { // prevent rounding errors
 			EventHandler.getInstance().fireEvent(new EventConfig() //
@@ -645,13 +658,24 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	private void takeArmorDamage(float damage) {
 		propertiesDataHandler.reduceEnduranceForHitBlocking();
-		boolean armorBelowHalfBeforeHit = propertiesDataHandler.getArmorPlusIncreasePercentual() < 0.5f;
+		boolean armorNotFullBeforeHit = propertiesDataHandler.getArmorPlusIncreasePercentual() < 1f - 1e-3f;
+		boolean armorBelowHalfBeforeHit = propertiesDataHandler.getArmorPlusIncreasePercentual() < 0.5f - 1e-3f;
 		propertiesDataHandler.takeArmorDamage(damage);
+		checkArmorNotFull(armorNotFullBeforeHit);
 		checkArmorBelowHalf(armorBelowHalfBeforeHit);
 	}
 	
+	private void checkArmorNotFull(boolean armorNotFullBeforeHit) {
+		if (!armorNotFullBeforeHit && propertiesDataHandler.getArmorPlusIncreasePercentual() < 1f - 1e-3f) { // prevent rounding errors
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
+					.setStringValue("ARMOR") //
+					.setFloatValue(1f));
+		}
+	}
+	
 	private void checkArmorBelowHalf(boolean armorBelowHalfBeforeHit) {
-		if (!armorBelowHalfBeforeHit && propertiesDataHandler.getArmorPlusIncreasePercentual() < 0.5f) {
+		if (!armorBelowHalfBeforeHit && propertiesDataHandler.getArmorPlusIncreasePercentual() < 0.5f - 1e-3f) { // prevent rounding errors
 			EventHandler.getInstance().fireEvent(new EventConfig() //
 					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
 					.setStringValue("ARMOR") //

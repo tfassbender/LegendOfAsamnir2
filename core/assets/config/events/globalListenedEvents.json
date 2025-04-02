@@ -9,6 +9,7 @@
 	config/events/global/loa2/main_castle.json,
 	config/events/global/loa2/main_forge.json,
 	config/events/global/loa2/main_shop.json,
+	config/events/global/loa2/main_jail.json,
 	
 	// level 1 - dwarven mine
 	config/events/global/loa2/mine.json,
