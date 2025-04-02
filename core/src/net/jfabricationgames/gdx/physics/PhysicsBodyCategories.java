@@ -19,6 +19,7 @@ public class PhysicsBodyCategories {
 	public static final short CATEGORY_MAP_GROUND = 0x0800;
 	public static final short CATEGORY_EXPLOSION = 0x1000;
 	public static final short CATEGORY_CONFIG_OBJECT = 0x2000;
+	public static final short CATEGORY_OBSTACLE_ENEMY = 0x4000;
 	
 	// **********************************************************************
 	// *** masks
@@ -26,8 +27,8 @@ public class PhysicsBodyCategories {
 	public static final short MASK_EVERYTHING = -1;
 	public static final short MASK_NONE = 0;
 	
-	public static final short MASK_PLAYER = ~(CATEGORY_PLAYER | CATEGORY_PLAYER_ATTACK | CATEGORY_PLAYER_SENSOR);
-	public static final short MASK_PLAYER_SENSOR = ~(CATEGORY_PLAYER | CATEGORY_PLAYER_ATTACK | CATEGORY_PLAYER_SENSOR | CATEGORY_MAP_OBJECT);
+	public static final short MASK_PLAYER = ~(CATEGORY_PLAYER | CATEGORY_PLAYER_ATTACK | CATEGORY_PLAYER_SENSOR | CATEGORY_OBSTACLE_ENEMY);
+	public static final short MASK_PLAYER_SENSOR = ~(CATEGORY_PLAYER | CATEGORY_PLAYER_ATTACK | CATEGORY_PLAYER_SENSOR | CATEGORY_MAP_OBJECT | CATEGORY_OBSTACLE_ENEMY);
 	public static final short MASK_PLAYER_ATTACK = CATEGORY_ENEMY | CATEGORY_ENEMY_ATTACK | CATEGORY_ENEMY_SENSOR | CATEGORY_OBSTACLE | CATEGORY_MAP_OBJECT;
 	public static final short MASK_ENEMY = ~(CATEGORY_ENEMY_ATTACK | CATEGORY_ENEMY_SENSOR);
 	public static final short MASK_ENEMY_SENSOR = ~(CATEGORY_ENEMY_ATTACK | CATEGORY_PLAYER_SENSOR | CATEGORY_ENEMY_SENSOR | CATEGORY_MAP_OBJECT);
@@ -40,6 +41,7 @@ public class PhysicsBodyCategories {
 	public static final short MASK_MAP_GROUND = CATEGORY_PLAYER | CATEGORY_ENEMY;
 	public static final short MASK_EXPLOSION = CATEGORY_PLAYER | CATEGORY_ENEMY | CATEGORY_OBSTACLE;
 	public static final short MASK_CONFIG_OBJECT = MASK_NONE;
+	public static final short MASK_OBSTACLE_ENEMY = CATEGORY_ENEMY;
 	
 	private PhysicsBodyCategories() {}
 }

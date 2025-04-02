@@ -22,6 +22,7 @@ import net.jfabricationgames.gdx.object.interactive.StateSwitchObject;
 import net.jfabricationgames.gdx.object.moveable.DraggableObject;
 import net.jfabricationgames.gdx.object.moveable.MovableObject;
 import net.jfabricationgames.gdx.object.spawn.SpawnPoint;
+import net.jfabricationgames.gdx.object.traversable.EnemyPathBlockerObject;
 import net.jfabricationgames.gdx.object.traversable.TraverseableObject;
 import net.jfabricationgames.gdx.util.FactoryUtil;
 
@@ -141,6 +142,9 @@ public class GameObjectFactory {
 				break;
 			case TRAVERSEABLE:
 				object = new TraverseableObject(typeConfig, sprite, properties, gameMap);
+				break;
+			case ENEMY_PATH_BLOCKER:
+				object = new EnemyPathBlockerObject(typeConfig, sprite, properties, gameMap);
 				break;
 			// specialized types
 			case DWARVEN_GUARDIAN_CONSTRUCT_SWITCH:

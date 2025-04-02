@@ -15,6 +15,7 @@ public enum GameObjectType {
 	CONFIG_OBJECT, //
 	FORCE, //
 	TRAVERSEABLE, //
+	ENEMY_PATH_BLOCKER, //
 	
 	// specialized types
 	DWARVEN_GUARDIAN_CONSTRUCT_SWITCH, //

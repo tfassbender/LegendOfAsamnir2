@@ -16,6 +16,7 @@ public enum PhysicsCollisionType {
 	ITEM(PhysicsBodyCategories.CATEGORY_ITEM, PhysicsBodyCategories.MASK_ITEM), //
 	OBSTACLE(PhysicsBodyCategories.CATEGORY_OBSTACLE, PhysicsBodyCategories.MASK_OBSTACLE), //
 	OBSTACLE_SENSOR(PhysicsBodyCategories.CATEGORY_OBSTACLE_SENSOR, PhysicsBodyCategories.MASK_OBSTACLE_SENSOR), //
+	OBSTACLE_ENEMY(PhysicsBodyCategories.CATEGORY_OBSTACLE_ENEMY, PhysicsBodyCategories.MASK_OBSTACLE_ENEMY), //
 	MAP_OBJECT(PhysicsBodyCategories.CATEGORY_MAP_OBJECT, PhysicsBodyCategories.MASK_MAP_OBJECT), //
 	MAP_UNREACHABLE_AREA(PhysicsBodyCategories.CATEGORY_MAP_UNREACHABLE_AREA, PhysicsBodyCategories.MASK_MAP_UNREACHABLE_AREA), //
 	MAP_GROUND(PhysicsBodyCategories.CATEGORY_MAP_GROUND, PhysicsBodyCategories.MASK_MAP_GROUND), //

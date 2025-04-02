@@ -520,6 +520,12 @@
 		defaultLocked: true,
 	},
 	
+	enemy_path_blocker: {
+		type: ENEMY_PATH_BLOCKER,
+		
+		texture: empty,
+	},
+	
 	bomb_big: {
 		type: DRAGGABLE,
 		
