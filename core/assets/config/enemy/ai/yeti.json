@@ -35,7 +35,16 @@
 					minDistanceToTargetPlayer: 2f,
 					
 					subAI: {
-						type: BASE_AI,
+						type: PRE_DEFINED_MOVEMENT_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						useRelativePositions: true,
+						
+						subAI: {
+							type: BASE_AI,
+						}
 					}
 				}
 			}

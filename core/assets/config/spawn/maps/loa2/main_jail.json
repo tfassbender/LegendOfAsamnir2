@@ -1,12 +1,189 @@
 {
-	enemy__jail__mini_golem: {
+	//*************************************************
+	//*** Level 1 - Dwarven Caves
+	//*************************************************
+	
+	jail__mini_golem: {
 		complexEvents: [
 			{
-                eventType: CUSTCENE_SPAWN_UNIT,
-                stringValue: enemy__jail__mini_golem,
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l1_1,
 			}
 		]
 		spawnType: enemy.mini_golem,
 		spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__golem: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l1_2,
+			}
+		]
+        spawnType: enemy.golem,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	//*************************************************
+	//*** Level 2 - Niflheim
+	//*************************************************
+	
+	jail__bandit_leader: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l2_1,
+			}
+		]
+        spawnType: enemy.bandit_leader,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__bandit_shield: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l2_2,
+			}
+		]
+        spawnType: enemy.bandit_shield,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__bandit_slingshot: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l2_3,
+			}
+		]
+        spawnType: enemy.bandit_slingshot,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__bandit_archer: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l2_4,
+			}
+		]
+        spawnType: enemy.bandit_archer,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__bandit_mage: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l2_5,
+			}
+		]
+        spawnType: enemy.bandit_mage,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__ice_elemental: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l2_6,
+			}
+		]
+        spawnType: enemy.ice_elemental,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__yeti: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l2_7,
+			}
+		]
+        spawnType: enemy.yeti,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	//*************************************************
+	//*** Level 3 - Muspelheim
+	//*************************************************
+	
+	jail__kobold_dragonshield: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l3_1,
+			}
+		]
+        spawnType: enemy.kobold_dragonshield,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__kobold: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l3_2,
+			}
+		]
+        spawnType: enemy.kobold,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__kobold_pyromancer: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l3_3,
+			}
+		]
+        spawnType: enemy.kobold_pyromancer,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__fire_elemental: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l3_4,
+			}
+		]
+        spawnType: enemy.fire_elemental,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__fire_elemental_medium: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l3_5,
+			}
+		]
+        spawnType: enemy.fire_elemental_medium,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__imp: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l3_6,
+			}
+		]
+        spawnType: enemy.imp,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__hell_critter: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l3_7,
+			}
+		]
+        spawnType: enemy.hell_critter,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
 	},
 }
