@@ -26,7 +26,7 @@
 	{
 		name: loa2_main_castle,
 		map: "map/loa2_main_castle.tmx",
-		initialStartingPointId: 0,
+		initialStartingPointId: 10,
 		//initial: true
 	},
 	{

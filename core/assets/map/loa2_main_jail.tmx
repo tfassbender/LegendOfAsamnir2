@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="60" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="873">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="60" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="874">
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 5]"/>
@@ -583,6 +583,9 @@
     <property name="eventParameter" value="loa2_main_jail__button_l3_7"/>
     <property name="stateSwitchId" value="loa2_main_jail__button_l3_7"/>
    </properties>
+   <point/>
+  </object>
+  <object id="873" name="item.triforce_svartalfheim_jail" x="64" y="544">
    <point/>
   </object>
  </objectgroup>
