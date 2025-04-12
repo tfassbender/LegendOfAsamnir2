@@ -273,6 +273,17 @@
 			}
 		},
 		
+		// level 4 - helheim
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_l4_helheim_main.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
+		
 		// fields of vigrid
 		{
 			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
@@ -284,267 +295,267 @@
 			}
 		},
 		
-		//***************************************************
-		//*** other maps
-		//***************************************************
-		
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Linear",
-				"textureMagFilter": "Linear"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map2.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Linear",
-				"textureMagFilter": "Linear"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map3.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Linear",
-				"textureMagFilter": "Linear"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map4.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map5.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map6.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		
-		//***************************************************
-		//*** map change test
-		//***************************************************
-		
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map_change_test_1.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/map_change_test_2.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		
-		//***************************************************
-		//*** demo / tutorial
-		//***************************************************
-		
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/level_tutorial.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		
-		//***************************************************
-		//*** demo 2
-		//***************************************************
-		
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_prolog.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_tutorial.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_main.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_village_blacksmith.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_village_shop.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_village_tavern.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_castle_tavern.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_waterfall_cave.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_1.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_2_entry.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_2.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_3.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_3_top_right.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_3_top_left.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_4.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_5_entry.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_level_5.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
-		{
-			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
-			"path": "map/demo_2_end.tmx",
-			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
-			"parameters": {
-				"textureMinFilter": "Nearest",
-				"textureMagFilter": "Nearest"
-			}
-		},
+//		//***************************************************
+//		//*** other maps
+//		//***************************************************
+//		
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Linear",
+//				"textureMagFilter": "Linear"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map2.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Linear",
+//				"textureMagFilter": "Linear"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map3.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Linear",
+//				"textureMagFilter": "Linear"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map4.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map5.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map6.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		
+//		//***************************************************
+//		//*** map change test
+//		//***************************************************
+//		
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map_change_test_1.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/map_change_test_2.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		
+//		//***************************************************
+//		//*** demo / tutorial
+//		//***************************************************
+//		
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/level_tutorial.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		
+//		//***************************************************
+//		//*** demo 2
+//		//***************************************************
+//		
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_prolog.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_tutorial.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_main.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_village_blacksmith.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_village_shop.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_village_tavern.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_castle_tavern.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_waterfall_cave.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_1.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_2_entry.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_2.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_3.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_3_top_right.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_3_top_left.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_4.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_5_entry.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_level_5.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
+//		{
+//			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+//			"path": "map/demo_2_end.tmx",
+//			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+//			"parameters": {
+//				"textureMinFilter": "Nearest",
+//				"textureMagFilter": "Nearest"
+//			}
+//		},
 	]
 }

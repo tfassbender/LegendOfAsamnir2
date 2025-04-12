@@ -848,6 +848,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					useMana(-change);
 				}
 				break;
+			case KILL_PLAYER:
+				takeDamage(100, AttackInfo.dummy());
+				break;
 			case BEFORE_PERSIST_STATE:
 				AnnotationUtil.executeAnnotatedMethods(BeforePersistState.class, this);
 				break;

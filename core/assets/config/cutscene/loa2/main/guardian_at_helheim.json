@@ -1,7 +1,7 @@
 {
 	id: loa2_main_guardian_at_helheim_cutscene,
 	controlledActions: {
-		adventurer_greeting: {
+		guardian_greeting: {
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
@@ -52,25 +52,7 @@
             waitForEventToFinish: true,
             
             executes: [
-                what_are_you_doing_here_2,
-			],
-		},
-		
-		// TODO delete after the level is available
-		what_are_you_doing_here_2: {
-            type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Guardian of Helheim",
-				displayText: "But since this level is not yet available in the game...\nYou can't enter anyway. ",
-				colorHeader: #555555,
-				showNextPageIcon: true,
-			}
-		    
-            waitForEventToFinish: true,
-            
-            executes: [
-                thorin_question,
+                thorin_choice__sacrifice_life,
 			],
 		},
 		
@@ -86,8 +68,154 @@
             waitForEventToFinish: true,
             
             executes: [
-                thorin_question,
+                thorin_choice__sacrifice_life,
 			],
+		},
+		
+		thorin_choice__sacrifice_life: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest."
+					"Ok, I'll pay with my life.",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				check_access_already_granted,
+			],
+		},
+		
+		check_access_already_granted: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_main_guardian_at_helheim_has_granten_access,
+					executedStateName: guardian__access_already_granted
+				},
+				{
+					// default case
+					executedStateName: guardian_takes_thorins_life
+				},
+			],
+		},
+		
+		guardian__access_already_granted: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Guardian of Helheim",
+				displayText: "You did already pay.\n\nYou're free to enter Hel's realm.      ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_question
+			],
+		},
+		
+		guardian_takes_thorins_life: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Guardian of Helheim",
+				displayText: "As you wish, Dwarf ... ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				check_rune_kenaz_collected_and_forged,
+				guardian_takes_thorins_life__event,
+			],
+		},
+		
+		check_rune_kenaz_collected_and_forged: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__rune_kenaz_collected_and_forged,
+					executedStateName: grant_access
+				},
+				{
+					// default case
+					executedStateName: end
+				},
+			],
+		},
+		
+		grant_access: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_main__guardian_at_helheim_has_granted_access, value: true}",
+			},
+			
+			executes: [
+                grant_access_text_1,
+			],
+		},
+		
+		grant_access_text_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 3f,
+			
+			executionParameters: {
+				displayTextHeader: "Guardian of Helheim",
+				displayText: "... ?!\n           \nWhy are you still alive?!      ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				grant_access_text_2
+			],
+		},
+		
+		grant_access_text_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Guardian of Helheim",
+				displayText: "Well ... you did pay ... with your life ...\n      \nSo I guess you can enter Hel's realm now...      ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end
+			],
+		},
+		
+		guardian_takes_thorins_life__event: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 1f,
+			
+			event: {
+				eventType: KILL_PLAYER,
+			},
+			
+			executes: [
+				end,
+			]
 		},
 		
 		end: {

@@ -277,7 +277,18 @@
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_level_under_construction_cutscene,
+			cutsceneId: loa2_main_guardian_at_helheim_stops_thorin_cutscene,
+		}
+	},
+	
+	loa2_main_goto_helheim_2: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_main_goto_helheim_2,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_main_goto_helheim_cutscene,
 		}
 	},
 	

@@ -1,0 +1,9 @@
+{
+	name: Helheim,
+	texture: {
+		atlas: packed/menu/menu.atlas,
+		texture: mini_map_loa2_l3_muspelheim_lava_dungeon_start,
+	},
+	textureWidth: 500,
+	textureHeight: 423,
+}

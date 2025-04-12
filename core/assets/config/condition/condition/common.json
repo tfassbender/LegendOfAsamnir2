@@ -47,6 +47,25 @@
 		}
 	},
 	
+	common__rune_kenaz_collected_and_forged: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: RUNE_COLLECTED,
+				parameters: {
+					rune: KENAZ
+				}
+			},
+			condition2: {
+				conditionType: GLOBAL_VALUE_SET,
+				parameters: {
+		            key: rune_forged__kenaz,
+		            expectedValue: true
+				}
+			}
+		}
+	},
+	
 	//*******************************************
 	//*** triforce side quest
 	//*******************************************

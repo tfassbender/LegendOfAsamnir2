@@ -12,7 +12,7 @@
 					executedStateName: end
 				},
 				{
-					// default case - thorin hasn't spoken to mjodwitnir yet
+					// default case - thorin hasn't spoken to the guardian yet
 					executedStateName: guardian_changes_state_to_block
 				},
 			],

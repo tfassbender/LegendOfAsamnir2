@@ -22,6 +22,13 @@ public class AttackInfo {
 				.setShieldDamagedWhenBlocked(attackConfig.shieldDamagedWhenBlocked);
 	}
 	
+	public static AttackInfo dummy() {
+		return new AttackInfo(AttackType.ATTACK) //
+				.setCanBeBlocked(true) //
+				.setCanBeBlockedCompletely(true) //
+				.setShieldDamagedWhenBlocked(false);
+	}
+	
 	public AttackInfo(AttackType attackType) {
 		this.attackType = attackType;
 	}

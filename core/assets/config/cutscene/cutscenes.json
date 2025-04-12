@@ -33,11 +33,13 @@
 	config/cutscene/loa2/main/guardian_at_bifroest.json,
 	config/cutscene/loa2/main/guardian_at_bifroest_stops_thorin.json,
 	config/cutscene/loa2/main/guardian_at_helheim.json,
+	config/cutscene/loa2/main/guardian_at_helheim_stops_thorin.json,
 	config/cutscene/loa2/main/choose_game_difficulty.json,
 	config/cutscene/loa2/main/goto_asgard.json,
 	config/cutscene/loa2/main/moving_east_above_the_river.json,
 	config/cutscene/loa2/main/goto_niflheim.json,
 	config/cutscene/loa2/main/goto_muspelheim.json,
+	config/cutscene/loa2/main/goto_helheim.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Main - Tavern
