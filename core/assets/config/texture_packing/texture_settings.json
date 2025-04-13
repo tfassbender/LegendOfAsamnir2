@@ -631,6 +631,10 @@
                 // medieval merchant spices
                 raw_images/restricted/npc/medieval_merchants/medieval_merchant_spices_idle,
                 raw_images/restricted/npc/medieval_merchants/medieval_merchant_spices_move,
+                
+                // plague doctor
+                raw_images/restricted/npc/plague_doctor/plague_doctor_idle,
+                raw_images/restricted/npc/plague_doctor/plague_doctor_move,
 				
 				//##############################################################
 				//### Animals

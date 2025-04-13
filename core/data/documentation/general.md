@@ -253,7 +253,7 @@
 					- The boss fight has to have a fiew parts, where the player has to reach the Lich first after he goes into a defense mode (like the fight agains Surtur)
 					- Also add a final part, where the Lich is almost defeated and changes his attack pattern a bit
 			- After the Lich is defeated, the player can take the key to Hel's temple and the dungeon is conquered
-		- Hel's temple
+		- Hel's temple (Eljudnir)
 			- Easy to reach from the main map (close to the entrance, so the player reaches it first)
 			- One cannot enter the temple without the three keys (from the three boss fights)
 			- In Hel's temple there are no fights or enemies anymore (only a fiew minion NPCs and Hel)

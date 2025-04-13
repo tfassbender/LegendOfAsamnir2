@@ -44,7 +44,23 @@
             executionParameters: {
                 displayTextHeader: "Ratatosk",
                 colorHeader: #965a00,
-                displayText: "Good luck with defeating the chaos wizard! ",
+                displayText: "I've got one last hint for you: When the chaos wizard built his castle, I heard him say something about a secret passage through the castle.\nI think it's something like a labyrinth!        ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	laguz_collected__ratatosk_3,
+           	],
+		},
+		
+		laguz_collected__ratatosk_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Even I didn't see how it was built.\n                        \nBut ... since Alfheim is quite close to Asgard ... maybe an Elf has seen something?        ",
 			}
             
             waitForEventToFinish: true,

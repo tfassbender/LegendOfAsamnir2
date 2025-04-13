@@ -1,0 +1,322 @@
+{
+	id: loa2_l4_helheim__garmr_cutscene,
+	controlledActions: {
+		start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__rune_laguz_collected,
+					executedStateName: laguz_collected__garmr_1
+				},
+				{
+					conditionId: loa2_l4_helheim__garmrs_quest_started,
+					executedStateName: garmr_after_quest_started_1
+				},
+				{
+					// default case - garmrs quest was not started yet
+					executedStateName: garmr_1
+				},
+			],
+		},
+		
+	    garmr_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "You must be Thorin from Svartalfheim!\n       \nModgudr already told me that you want to visit Hel ...",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_2,
+           	],
+		},
+		
+		garmr_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "But unfortunately I cannot let you pass because Hel is quite busy right now ...\n                \nShe has to rule over the dead and this realm ... ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_3,
+           	],
+		},
+		
+		garmr_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "That's the whole reason why you can't visit her ...           \n... it has nothing to do with the key to Eljudnir ... that I'm guarding ... and that I didn't loose, of course ...      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"What are you talking about?",
+					"You need help finding that key?",
+				],
+			},
+			choiceOptionExecutions: [
+				garmr_answer__what_are_you_talking_about,
+				garmr_answer__you_need_help_finding_that_key,
+			],
+		},
+		
+		garmr_answer__what_are_you_talking_about: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Ok I ... might have lost the key to Eljudnir ...\nCan you please help me find it?!\n         \nI promise I will let you pass to Hel then!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_explains_quest_1,
+           	],
+		},
+		
+		garmr_answer__you_need_help_finding_that_key: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Would you do that for me?\nThat would be so helpful!\n     \nI promise I will let you pass to Hel after you found the key!    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_explains_quest_1,
+           	],
+		},
+		
+		garmr_explains_quest_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "The key consists of four parts.\n                 \nI still have one part left, but I lost the other three ...       ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_explains_quest_2,
+           	],
+		},
+		
+		garmr_explains_quest_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "All parts need to be put together on the wall behind me in order to open the gate to Eljudnir.       ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_explains_quest_3,
+           	],
+		},      
+		
+		garmr_explains_quest_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "The missing parts must be somewhere here in Helheim...\n           \nThey look like colorful stones with a rune on them.         ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_explains_quest_4,
+           	],
+		},   
+		
+		garmr_explains_quest_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "If you find a piece and bring it to me I will add it to the wall.\n           \nThank you so much for your help! And good luck on your quest!       ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	set_global_value__key_quest_started,
+           	],
+		},
+		
+		set_global_value__key_quest_started: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__garmrs_quest_started, value: true}",
+			},
+			
+			executes: [
+                end,
+			],
+		}
+		
+		garmr_after_quest_started_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Hey Thorin!\n          \nDid you find any pieces of the key yet?     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	condition_thorin_has_a_key_piece,
+			],
+		},
+		
+		condition_thorin_has_a_key_piece: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+                    conditionId: loa2_l4_helheim__any_key_piece_collected,
+                    executedStateName: thorin_choice_after_quest_started__thorin_has_a_key_piece
+				},
+				{
+					// default case - thorin has no key piece
+                    executedStateName: thorin_choice_after_quest_started__thorin_has_no_key_piece
+				},
+			],
+		},
+		
+		thorin_choice_after_quest_started__thorin_has_a_key_piece: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+				    "I'll keep looking for the key!",
+					"I found a piece of the key!",
+					"What are we searching for again?",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				garmr_answer__i_found_a_piece_of_the_key,
+				garmr_answer__what_are_we_searching_for_again,
+			],
+		},
+		
+		thorin_choice_after_quest_started__thorin_has_no_key_piece: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+				    "I'll keep looking for the key!",
+					"What are we searching for again?",
+				],
+			},
+			choiceOptionExecutions: [
+				end,
+				garmr_answer__what_are_we_searching_for_again,
+			],
+		},
+		
+		garmr_answer__i_found_a_piece_of_the_key: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Great!\nLet's add it to the wall!       ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end, // TODO conditions based on the number of pieces that were found
+			],
+		},
+		
+		garmr_answer__what_are_we_searching_for_again: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "I lost the key to Eljudnir ...\n            \nYou need to help me find the missing pieces before you can enter the temple and visit Hel.     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_explains_quest_1,
+			],
+		},
+		
+		laguz_collected__garmr_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Hey Thorin!\nI see Hel gave you the rune you were looking for.                   \nI hope it helps you on your quest! And Thanks for you help with the key again!        ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

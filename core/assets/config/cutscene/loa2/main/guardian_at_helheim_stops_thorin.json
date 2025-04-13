@@ -22,7 +22,7 @@
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "Guardian of Helheim",
+				displayTextHeader: "Modgudr",
 				displayText: "Stop! I can't let you pass!\n                \nOnly the dead may enter Helheim!   ",
 				colorHeader: #555555,
 				showNextPageIcon: true,

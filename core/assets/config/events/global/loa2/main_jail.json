@@ -56,7 +56,7 @@
 		executionType: CHANGE_MAP,
 		executionParameters: {
 			map: loa2_main,
-			startingPointId: 8,
+			startingPointId: 10,
 		}
 	},
 	

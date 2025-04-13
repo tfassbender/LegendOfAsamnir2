@@ -1,0 +1,20 @@
+[
+	{
+		id: idle,
+		animation: plague_doctor_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: plague_doctor_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+]

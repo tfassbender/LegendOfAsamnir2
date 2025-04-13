@@ -448,7 +448,7 @@ West: Helheim.</property>
   </object>
   <object id="10474" name="player.startingPosition" x="1711.8" y="2053.09">
    <properties>
-    <property name="startingPointId" value="8"/>
+    <property name="startingPointId" value="10"/>
    </properties>
    <point/>
   </object>

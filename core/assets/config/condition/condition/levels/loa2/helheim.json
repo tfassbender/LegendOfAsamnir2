@@ -1,0 +1,69 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_l4_helheim__garmrs_quest_started: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__garmrs_quest_started,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim__any_key_piece_collected: {
+		conditionType: OR,
+		conditionalParameters: {
+			condition: {
+				conditionType: OR,
+				conditionalParameters: {
+					condition: {
+						conditionType: GLOBAL_VALUE_SET,
+				        parameters: {
+				            key: loa2_l4_helheim__key_piece_collected__red,
+				            expectedValue: true,
+						}
+					},
+					condition2: {
+						conditionType: GLOBAL_VALUE_SET,
+				        parameters: {
+				            key: loa2_l4_helheim__key_piece_collected__green,
+				            expectedValue: true,
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: GLOBAL_VALUE_SET,
+		        parameters: {
+		            key: loa2_l4_helheim__key_piece_collected__blue,
+		            expectedValue: true,
+				}
+			}
+		}
+	},
+	
+	loa2_l4_helheim__key_piece_collected__red: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__key_piece_collected__red,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim__key_piece_collected__green: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__key_piece_collected__green,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim__key_piece_collected__blue: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__key_piece_collected__blue,
+            expectedValue: true,
+		}
+	},
+}

@@ -24,6 +24,9 @@
 	config/events/global/loa2/muspelheim_lava_caves.json,
 	config/events/global/loa2/muspelheim_lava_dungeon.json,
 	
+	// level 4 - helheim
+	config/events/global/loa2/helheim_main.json,
+	
 	// asgard - fields of vigrid
 	config/events/global/loa2/asgard.json,
 	

@@ -75,6 +75,12 @@
 	medieval_merchant_spice: config/npc/levels/loa2/muspelheim/medieval_merchant_spice.json,
 	
 	//*****************************************************************
+	//*** Legend of Asamnir 2 - Level 4 - Helheim
+	//*****************************************************************
+	ratatosk_helheim: config/npc/levels/loa2/helheim/ratatosk.json,
+	garmr: config/npc/levels/loa2/helheim/garmr.json,
+	
+	//*****************************************************************
 	//*** Legend of Asamnir 2 - Fields of Vigrid
 	//*****************************************************************
 	guardian_of_asgard: config/npc/levels/loa2/fields_of_vigrid/guardian_of_asgard.json,

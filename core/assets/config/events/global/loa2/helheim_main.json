@@ -1,0 +1,87 @@
+{
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+	loa2_l4_helheim__ratatosk: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l4_helheim__ratatosk,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_ratatosk_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim__garmr: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l4_helheim__garmr,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim__garmr_cutscene,
+		}
+	},
+
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l4_helheim_goto_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l4_helheim_main_goto_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_goto_main_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim_main_goto_helheim_eljudnir: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_main_goto_helheim_eljudnir,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_l4_helheim_eljudnir,
+			startingPointId: 0,
+		}
+	},
+	
+	loa2_l4_helheim_main_goto_skeleton_zone: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_main_goto_skeleton_zone,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_main_goto_skeleton_zone_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim_main_goto_spider_zone: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_main_goto_spider_zone,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_main_goto_spider_zone_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim_main_goto_cultist_zone: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_main_goto_cultist_zone,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_main_goto_cultist_zone_cutscene,
+		}
+	},
+}

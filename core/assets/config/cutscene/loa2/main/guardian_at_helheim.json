@@ -5,7 +5,7 @@
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "Guardian of Helheim",
+				displayTextHeader: "Modgudr",
 				displayText: "What are you doing here, Dwarf?\nThis is the entrance to Helheim. Only the dead may enter the realm of my queen: Hel ",
 				colorHeader: #555555,
 				showNextPageIcon: true,
@@ -43,8 +43,8 @@
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {
-                displayTextHeader: "Guardian of Helheim",
-				displayText: "I'm guarding the entrance to Helheim.\n\nTo enter you need to pay ... \n... with your life... ",
+                displayTextHeader: "Modgudr",
+				displayText: "I'm guarding the bridge Gjallarbru that leads to Helheim.\n\nTo enter you need to pay ... \n... with your life ... ",
 				colorHeader: #555555,
 				showNextPageIcon: true,
 			}
@@ -60,8 +60,8 @@
             type: SHOW_ON_SCREEN_TEXT,
             
             executionParameters: {
-                displayTextHeader: "Guardian of Helheim",
-				displayText: "Only the dead may enter Hel's realm.\n\nTo pass you must pay ... \n... with your life... ",
+                displayTextHeader: "Modgudr",
+				displayText: "Only the dead may enter Hel's realm.\n\nTo pass you must pay ... \n... with your life ... ",
 				colorHeader: #555555,
 			}
 		    
@@ -109,8 +109,8 @@
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "Guardian of Helheim",
-				displayText: "You did already pay.\n\nYou're free to enter Hel's realm.      ",
+				displayTextHeader: "Modgudr",
+				displayText: "You did already pay, Thorin from Svartalfheim.\n\nYou're free to enter Hel's realm.      ",
 				colorHeader: #555555,
 				showNextPageIcon: true,
 			}
@@ -126,7 +126,7 @@
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "Guardian of Helheim",
+				displayTextHeader: "Modgudr",
 				displayText: "As you wish, Dwarf ... ",
 				colorHeader: #555555,
 				showNextPageIcon: true,
@@ -174,7 +174,7 @@
 			executionDelayInSeconds: 3f,
 			
 			executionParameters: {
-				displayTextHeader: "Guardian of Helheim",
+				displayTextHeader: "Modgudr",
 				displayText: "... ?!\n           \nWhy are you still alive?!      ",
 				colorHeader: #555555,
 				showNextPageIcon: true,
@@ -191,8 +191,58 @@
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
-				displayTextHeader: "Guardian of Helheim",
-				displayText: "Well ... you did pay ... with your life ...\n      \nSo I guess you can enter Hel's realm now...      ",
+				displayTextHeader: "Modgudr",
+				displayText: "Well ... you did pay ... with your life ...\n      \nSo I guess you can enter Hel's realm now ...      ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				grant_access_text_3
+			],
+		},
+		
+		grant_access_text_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Modgudr",
+				displayText: "But I still need to know your name ... and where you come from ...\n                        \nThat's just the usual procedure before anyone can pass the bridge Gjallarbru ...      ",
+				colorHeader: #555555,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer
+			],
+		},
+		
+		thorin_answer: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'm Thorin from Svartalfheim.\n                    \nI'm here to find a rune that lets me enter the castle of this strange chaos wizard guy that stole my axe: Asamnir!     ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				grant_access_text_4
+			],
+		},
+		
+		grant_access_text_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Modgudr",
+				displayText: "As you wish Thorin from Svartalfheim ...\n                      \nYou may cross the bridge Gjallarbru now ...      ",
 				colorHeader: #555555,
 				showNextPageIcon: true,
 			}
