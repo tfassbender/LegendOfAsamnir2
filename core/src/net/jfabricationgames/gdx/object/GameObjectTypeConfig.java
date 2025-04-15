@@ -47,6 +47,8 @@ public class GameObjectTypeConfig {
 	
 	public boolean hookshotConnectable = false;
 	
+	public String renderingCondition; // references a configurable condition (e.g. common__rune_raidho_collected) - if null, the object is always rendered
+	
 	//****************************************
 	//*** Destroyable Objects
 	//****************************************

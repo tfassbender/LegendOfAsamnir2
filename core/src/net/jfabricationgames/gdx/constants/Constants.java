@@ -6,6 +6,8 @@ public class Constants {
 	
 	public static final boolean DEBUG = false;
 	
+	public static final boolean BACKGROUND_MUSIC_ENABLED = false;
+	
 	public static final float WORLD_TO_SCREEN = 0.04f;
 	public static final float SCREEN_TO_WORLD = 1f / WORLD_TO_SCREEN;
 	public static final float SCENE_WIDTH = 12.80f;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="58" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="968">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="58" height="59" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="976">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -42,7 +42,7 @@
  </layer>
  <layer id="16" name="terrain_2" width="58" height="59" locked="1">
   <data encoding="base64" compression="zlib">
-   eJzt0sEJwjAYgNHO4NFzrQ7kAE7gQbqFetGeXUC8dQtxFHcwkIIVPBVtSXgPfpJTyEdSFAAAQN96+X2fmzq0bVdx6q5zVn6uOWhC3yn0nMu4z1Ub2p6LOG3Gnfvq3Xmshp1xmf/2Tv9wDW2Hbm4DO1Mwdudmore/9zofI3TuEvjjAAAAAAAAAACQghdnThkk
+   eJzt0sEJwjAUgOHM4bmtDuQAncCDdAv1Uj27gHjrFuIo7mAggj14KlpJ+D548E4hP0kIAADA2Hr5eS9NF9s2qzRdwZ2n2NdXIRyrtJdqiG2POs1QcOeueXcemmlnnBffvdMvXGLb/jXXiZ05mLuz/dPb30ad9xk6txn8cQAAAAAAAAAAyMET9xgYuA==
   </data>
  </layer>
  <layer id="10" name="background_above_player" width="58" height="59" locked="1">
@@ -107,6 +107,33 @@
    <properties>
     <property name="eventParameter" value="loa2_l4_helheim_main_goto_helheim_eljudnir"/>
    </properties>
+  </object>
+  <object id="968" name="object.helheim_key_base" x="722.75" y="498">
+   <point/>
+  </object>
+  <object id="969" name="player.startingPosition" x="736" y="608">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="970" name="object.helheim_key_blue" x="717.75" y="447.5">
+   <point/>
+  </object>
+  <object id="971" name="object.helheim_key_red" x="703.5" y="465">
+   <point/>
+  </object>
+  <object id="972" name="object.helheim_key_green" x="732" y="465">
+   <point/>
+  </object>
+  <object id="973" name="item.helheim_key_red" x="864" y="608">
+   <point/>
+  </object>
+  <object id="974" name="item.helheim_key_green" x="896" y="608">
+   <point/>
+  </object>
+  <object id="975" name="item.helheim_key_blue" x="928" y="608">
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">

@@ -12,6 +12,10 @@
 					executedStateName: laguz_collected__garmr_1
 				},
 				{
+					conditionId: loa2_l4_helheim__all_key_pieces_returned,
+					executedStateName: garmr_after_all_key_pieces_returned_1
+				},
+				{
 					conditionId: loa2_l4_helheim__garmrs_quest_started,
 					executedStateName: garmr_after_quest_started_1
 				},
@@ -278,7 +282,334 @@
             waitForEventToFinish: true,
             
             executes: [
-            	end, // TODO conditions based on the number of pieces that were found
+            	take_key_pieces_from_player,
+            	garmr__after_adding_key_piece_to_wall,
+			],
+		},
+		
+		take_key_pieces_from_player: {
+			type: WAIT,
+			
+			executionDelayInSeconds: 1f,
+			
+			// multiplexer for the conditions
+			executes: [
+				take_key_piece_red_if_collected,
+				take_key_piece_green_if_collected,
+				take_key_piece_blue_if_collected,
+			],
+		},
+		
+		take_key_piece_red_if_collected: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+                    conditionId: loa2_l4_helheim__key_piece_collected__red,
+                    executedStateName: take_key_piece__red
+				}
+			],
+		},
+		
+		take_key_piece__red: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_collected__red, value: false}",
+			},
+			
+			executes: [
+                add_key_to_wall__red,
+			],
+		},
+		
+		add_key_to_wall__red: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_returned__red, value: true}",
+			},
+		},
+		
+		take_key_piece_green_if_collected: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+                    conditionId: loa2_l4_helheim__key_piece_collected__green,
+                    executedStateName: take_key_piece__green
+				}
+			],
+		},
+		
+		take_key_piece__green: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_collected__green, value: false}",
+			},
+			
+			executes: [
+                add_key_to_wall__green,
+			],
+		},
+		
+		add_key_to_wall__green: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_returned__green, value: true}",
+			},
+		},
+		
+		take_key_piece_blue_if_collected: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+                    conditionId: loa2_l4_helheim__key_piece_collected__blue,
+                    executedStateName: take_key_piece__blue
+				}
+			],
+		},
+		
+		take_key_piece__blue: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_collected__blue, value: false}",
+			},
+			
+			executes: [
+                add_key_to_wall__blue,
+			],
+		},
+		
+		add_key_to_wall__blue: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_returned__blue, value: true}",
+			},
+		},
+		
+		garmr__after_adding_key_piece_to_wall: {
+			type: SWITCH_CONDITION,
+			
+			executionDelayInSeconds: 2f,
+            
+			switchConditions: [
+				{
+                    conditionId: loa2_l4_helheim__all_key_pieces_returned,
+                    executedStateName: garmr__after_all_key_pieces_returned
+				},
+				{
+                    conditionId: loa2_l4_helheim__two_key_pieces_returned,
+                    executedStateName: garmr__after_two_key_pieces_returned
+				},
+				{
+					// default case - only one key piece was returned yet
+                    executedStateName: garmr__after_one_key_piece_returned
+				},
+			],
+		},
+		
+		garmr__after_all_key_pieces_returned: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "That was the last one!\n          \nWe can open the gate to Eljudnir now!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_all_key_pieces_returned_2,
+			],
+		},
+		
+		garmr__after_all_key_pieces_returned_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "And now I will let you pass to Hel, like I promised!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_all_key_pieces_returned_3,
+			],
+		},
+		
+		garmr__after_all_key_pieces_returned_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "But please don't tell her that I lost the key!\n           \nI don't want her to worry ...     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_all_key_pieces_returned__open_gate,
+			],
+		},
+		
+		garmr__after_all_key_pieces_returned__open_gate: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 1f,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_l4_helheim_main__gate_to_hels_temple,
+			},
+			
+			executes: [
+				garmr__after_all_key_pieces_returned__compass_not_given_condition,
+			],
+		},
+		
+		// the last key should be extremely difficult to find without the compass - but it's possible, so check whether the compass has to be handed to the player 
+		garmr__after_all_key_pieces_returned__compass_not_given_condition: {
+			type: SWITCH_CONDITION,
+			
+			executionDelayInSeconds: 2f,
+            
+			switchConditions: [
+				{
+                    conditionId: common__player_has_compass,
+                    executedStateName: end
+				},
+				{
+					// default case
+                    executedStateName: garmr__after_two_key_pieces_returned_2
+				},
+			],
+		},
+		
+		garmr__after_two_key_pieces_returned: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Two pieces are back in place!\n       \nOne more to go!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_two_key_pieces_returned_2,
+			],
+		},
+		
+		garmr__after_two_key_pieces_returned_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Oh, wait!\n        \nI almost forgot to give you this.    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_two_key_pieces_returned__give_compass_to_player,
+			],
+		},
+		
+		garmr__after_two_key_pieces_returned__give_compass_to_player: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "TODO: Implement Compass and give to player!    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_two_key_pieces_returned_3,
+			],
+		},
+		
+		garmr__after_two_key_pieces_returned_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "This compass might come in handy when you try to find the last piece.\n          \nIt can help you find a save path ... through traps or something like that ...     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_two_key_pieces_returned_4,
+			],
+		},
+		
+		garmr__after_two_key_pieces_returned_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "It can also be used to find other things like treasures or amulets if you find someone who can calibrate it for you ...     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr__after_two_key_pieces_returned_5,
+			],
+		},
+		
+		garmr__after_two_key_pieces_returned_5: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "I hope it helps you on your quest!\n          \nGood luck finding the last missing piece!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		garmr__after_one_key_piece_returned: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "That was the first one\n      \nTwo more to go!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
 			],
 		},
 		
@@ -295,6 +626,38 @@
             
             executes: [
             	garmr_explains_quest_1,
+			],
+		},
+		
+		garmr_after_all_key_pieces_returned_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "Hey Thorin!\n          \nYou found all pieces of the key!         \nThe gate to Eljudnir is open now!       ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	garmr_after_all_key_pieces_returned_2,
+			],
+		},
+		
+		garmr_after_all_key_pieces_returned_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Garmr",
+                colorHeader: #458034,
+                displayText: "You can go to Hel and ask her for the rune you're searching for!\n            \nThe gate is right there to the left of me!       ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
 			],
 		},
 		

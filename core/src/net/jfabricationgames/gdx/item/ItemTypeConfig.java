@@ -7,6 +7,8 @@ public class ItemTypeConfig {
 	public String texture;
 	public String animation;
 	public float physicsObjectRadius = 0.1f;
+	public float textureScale = 1f;
 	public String pickUpSound;
 	public int costs;
+	public String globalValue; // a global value that will be set to "true" when the item is picked up
 }

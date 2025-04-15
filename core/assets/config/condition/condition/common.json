@@ -18,6 +18,14 @@
 		}
 	},
 	
+	common__player_has_compass: {
+		conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: special_action_available__compass,
+            expectedValue: true,
+		}
+	},
+	
 	//*******************************************
 	//*** runes
 	//*******************************************

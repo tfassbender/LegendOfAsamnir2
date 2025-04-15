@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
 import com.badlogic.gdx.utils.Json;
 
+import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -58,7 +59,7 @@ public class BackgroundMusicManager implements EventListener {
 				fadeInTimer = 0f;
 			}
 			else {
-				playingMusic.music.setVolume((fadeInTimer / FADE_IN_DURATION) * playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
+				playingMusic.music.setVolume((fadeInTimer / FADE_IN_DURATION) * playingMusic.configVolume * masterVolume());
 			}
 		}
 		else if (fadingOut && isPlaying()) {
@@ -69,7 +70,7 @@ public class BackgroundMusicManager implements EventListener {
 				stop(true);
 			}
 			else {
-				playingMusic.music.setVolume((1 - fadeOutTimer / FADE_OUT_DURATION) * playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
+				playingMusic.music.setVolume((1 - fadeOutTimer / FADE_OUT_DURATION) * playingMusic.configVolume * masterVolume());
 			}
 		}
 	}
@@ -265,7 +266,7 @@ public class BackgroundMusicManager implements EventListener {
 	public void setMusicVolume(float volume) {
 		musicVolume = volume;
 		if (playingMusic != null) {
-			playingMusic.music.setVolume(playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
+			playingMusic.music.setVolume(playingMusic.configVolume * masterVolume());
 		}
 		
 		GlobalValuesDataHandler.getInstance().put(GLOBAL_SETTINGS_KEY_BACKGROUND_MUSIC_VOLUME, Integer.toString((int) (volume * 100)));
@@ -278,7 +279,7 @@ public class BackgroundMusicManager implements EventListener {
 	public void setSoundEnabled(boolean enabled) {
 		soundEnabled = enabled;
 		if (playingMusic != null) {
-			playingMusic.music.setVolume(playingMusic.configVolume * musicVolume * (soundEnabled ? 1 : 0));
+			playingMusic.music.setVolume(playingMusic.configVolume * masterVolume());
 		}
 		
 		GlobalValuesDataHandler.getInstance().put(GLOBAL_SETTINGS_KEY_SOUND_ENABLED, Boolean.toString(enabled));
@@ -291,6 +292,10 @@ public class BackgroundMusicManager implements EventListener {
 		setMusicVolume(volumeInPercent / 100f);
 		
 		setSoundEnabled(!dataHandler.isValueEqual(GLOBAL_SETTINGS_KEY_SOUND_ENABLED, "false")); // default is true
+	}
+	
+	private float masterVolume() {
+		return musicVolume * (soundEnabled ? 1 : 0) * (Constants.BACKGROUND_MUSIC_ENABLED ? 1 : 0);
 	}
 	
 	private class PlayingMusic {
@@ -307,7 +312,7 @@ public class BackgroundMusicManager implements EventListener {
 			this.configVolume = config.volume;
 			this.music = Gdx.audio.newMusic(Gdx.files.internal(config.file));
 			
-			music.setVolume(config.volume * musicVolume * (soundEnabled ? 1 : 0));
+			music.setVolume(config.volume * masterVolume());
 			music.setLooping(config.loop);
 		}
 		

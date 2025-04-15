@@ -12,7 +12,9 @@ import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.ObjectMap.Entry;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.data.handler.MapObjectDataHandler;
 import net.jfabricationgames.gdx.data.handler.type.DataItem;
 import net.jfabricationgames.gdx.data.properties.KeyItemProperties;
@@ -66,6 +68,10 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 			Gdx.app.error(getClass().getSimpleName(), "Neither an animation nor a sprite was set for this item.");
 		}
 		
+		if (sprite != null) {
+			sprite.setScale(Constants.WORLD_TO_SCREEN * typeConfig.textureScale);
+		}
+		
 		readTypeConfig();
 	}
 	
@@ -77,7 +83,13 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 	}
 	
 	protected void createPhysicsBody(float x, float y) {
-		PhysicsBodyProperties properties = new PhysicsBodyProperties().setType(BodyType.StaticBody).setX(x).setY(y).setSensor(false).setRadius(typeConfig.physicsObjectRadius).setCollisionType(PhysicsCollisionType.ITEM);
+		PhysicsBodyProperties properties = new PhysicsBodyProperties() //
+				.setType(BodyType.StaticBody) //
+				.setX(x) //
+				.setY(y) //
+				.setSensor(false) //
+				.setRadius(typeConfig.physicsObjectRadius) //
+				.setCollisionType(PhysicsCollisionType.ITEM);
 		body = PhysicsBodyCreator.createCircularBody(properties);
 		body.setUserData(this);
 	}
@@ -173,9 +185,22 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 		if (playSound) {
 			playPickUpSound();
 		}
+		setGlobalValue();
 		removeFromMap();
 		
 		MapObjectDataHandler.getInstance().addStatefulMapObject(this);
+	}
+	
+	private void playPickUpSound() {
+		if (pickUpSoundName != null) {
+			soundSet.playSound(pickUpSoundName);
+		}
+	}
+	
+	private void setGlobalValue() {
+		if (typeConfig.globalValue != null) {
+			GlobalValuesDataHandler.getInstance().put(typeConfig.globalValue, true);
+		}
 	}
 	
 	public void removeFromMap() {
@@ -189,12 +214,6 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 	
 	public void setOnRemoveFromMap(Runnable onRemoveFromMap) {
 		this.onRemoveFromMap = onRemoveFromMap;
-	}
-	
-	private void playPickUpSound() {
-		if (pickUpSoundName != null) {
-			soundSet.playSound(pickUpSoundName);
-		}
 	}
 	
 	public boolean isSpecialKey() {

@@ -1,4 +1,8 @@
 {
+	//**********************************
+	//*** common
+	//**********************************
+	
 	__default: {
 		//default fallbacks
 		pickUpSound: pickup
@@ -61,10 +65,6 @@
         texture: metal_ingot_small,
         pickUpSound: pickup_5
 	},
-	token_l1_golem: {
-        texture: token,
-        pickUpSound: pickup_5
-	},
 	
 	//**********************************
 	//*** thresholds
@@ -89,6 +89,41 @@
 	bomb_half: {
         texture: bomb,
         pickUpSound: pickup
+	},
+	
+	//*************************************
+	//*** loa2 - level 1 - dwarven mine
+	//*************************************
+	
+	token_l1_golem: {
+        texture: token,
+        pickUpSound: pickup_5
+	},
+	
+	//*************************************
+	//*** loa2 - level 4 - helheim
+	//*************************************
+	
+	helheim_key_red: {
+        texture: helheim_key_red,
+        textureScale: 0.3f,
+        physicsObjectRadius: 0.3f,
+        pickUpSound: pickup_4,
+        globalValue: loa2_l4_helheim__key_piece_collected__red,
+	},
+	helheim_key_green: {
+        texture: helheim_key_green,
+        textureScale: 0.3f,
+        physicsObjectRadius: 0.3f,
+        pickUpSound: pickup_4,
+        globalValue: loa2_l4_helheim__key_piece_collected__green,
+	},
+	helheim_key_blue: {
+        texture: helheim_key_blue,
+        textureScale: 0.3f,
+        physicsObjectRadius: 0.3f,
+        pickUpSound: pickup_4,
+        globalValue: loa2_l4_helheim__key_piece_collected__blue,
 	},
 	
 	//**********************************

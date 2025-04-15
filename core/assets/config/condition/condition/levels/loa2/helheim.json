@@ -66,4 +66,81 @@
             expectedValue: true,
 		}
 	},
+	
+	loa2_l4_helheim__key_piece_returned__red: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__key_piece_returned__red,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim__key_piece_returned__green: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__key_piece_returned__green,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim__key_piece_returned__blue: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__key_piece_returned__blue,
+            expectedValue: true,
+		}
+	},
+	
+	// after the red and green pieces are returned, garmr gives the compas to the player
+	loa2_l4_helheim__two_key_pieces_returned: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: GLOBAL_VALUE_SET,
+		        parameters: {
+		            key: loa2_l4_helheim__key_piece_returned__red,
+		            expectedValue: true,
+				}
+			},
+			condition2: {
+				conditionType: GLOBAL_VALUE_SET,
+		        parameters: {
+		            key: loa2_l4_helheim__key_piece_returned__green,
+		            expectedValue: true,
+				}
+			}
+		}
+	},
+	
+	loa2_l4_helheim__all_key_pieces_returned: {
+        conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: GLOBAL_VALUE_SET,
+				        parameters: {
+				            key: loa2_l4_helheim__key_piece_returned__red,
+				            expectedValue: true,
+						}
+					},
+					condition2: {
+						conditionType: GLOBAL_VALUE_SET,
+				        parameters: {
+				            key: loa2_l4_helheim__key_piece_returned__green,
+				            expectedValue: true,
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: GLOBAL_VALUE_SET,
+		        parameters: {
+		            key: loa2_l4_helheim__key_piece_returned__blue,
+		            expectedValue: true,
+				}
+			}
+		}
+	},
 }

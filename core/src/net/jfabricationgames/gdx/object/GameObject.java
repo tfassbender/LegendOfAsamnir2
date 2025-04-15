@@ -19,6 +19,7 @@ import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.Hittable;
+import net.jfabricationgames.gdx.condition.ConditionHandler;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.cutscene.action.CutscenePositioningUnit;
@@ -40,6 +41,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	
 	protected static final SoundSet soundSet = SoundManager.getInstance().loadSoundSet("object");
 	protected static final AssetGroupManager assetManager = AssetGroupManager.getInstance();
+	protected static final ConditionHandler conditionHandler = ConditionHandler.getInstance();
 	
 	protected Sprite sprite;
 	protected MapProperties mapProperties;
@@ -160,6 +162,10 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	}
 	
 	public void draw(float delta, SpriteBatch batch) {
+		if (!renderingConditionFulfilled()) {
+			return;
+		}
+		
 		if (animation != null && (!animation.isAnimationFinished() || animation.isAnimationLooped())) {
 			animation.increaseStateTime(delta);
 			animation.draw(batch);
@@ -167,6 +173,14 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		else {
 			sprite.draw(batch);
 		}
+	}
+	
+	private boolean renderingConditionFulfilled() {
+		if (typeConfig.renderingCondition == null) {
+			return true;
+		}
+		
+		return conditionHandler.isConditionMet(typeConfig.renderingCondition);
 	}
 	
 	/**

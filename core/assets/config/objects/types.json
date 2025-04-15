@@ -783,4 +783,55 @@
 		
 		defaultLocked: true,
 	},
+	
+	helheim_key_base: {
+		type: BASIC,
+		
+        texture: helheim_key,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.01f,
+		physicsBodySizeFactorY: 0.01f,
+	},
+	
+	helheim_key_blue: {
+		type: BASIC,
+		
+        texture: helheim_key_blue,
+        renderingCondition: loa2_l4_helheim__key_piece_returned__blue,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.01f,
+		physicsBodySizeFactorY: 0.01f,
+	},
+	
+	helheim_key_red: {
+		type: BASIC,
+		
+        texture: helheim_key_red,
+        renderingCondition: loa2_l4_helheim__key_piece_returned__red,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.01f,
+		physicsBodySizeFactorY: 0.01f,
+	},
+	
+	helheim_key_green: {
+		type: BASIC,
+		
+        texture: helheim_key_green,
+        renderingCondition: loa2_l4_helheim__key_piece_returned__green,
+        
+		textureSizeFactorX: 0.3f,
+		textureSizeFactorY: 0.3f,
+		
+		physicsBodySizeFactorX: 0.01f,
+		physicsBodySizeFactorY: 0.01f,
+	},
 }
