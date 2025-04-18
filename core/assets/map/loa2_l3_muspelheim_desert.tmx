@@ -61,7 +61,7 @@
    eJzt2jEOQDAUgGEDRpciwbUMLuZidJBUuYC+70uaeI3lr9jaNAAAJNvwnPfhvXdk83w9L9lai3drU57Fba+8OxrfGQAAAAAAAAAAAP6tDXjnLzV32YqgbO4r70590ZrHq28K1px0Af9n4NsJURkI5w==
   </data>
  </layer>
- <objectgroup id="3" name="objects">
+ <objectgroup id="3" name="objects" locked="1">
   <object id="2011" name="player.startingPosition" x="496" y="177">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -241,7 +241,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="2014" x="96" y="0" width="352" height="320"/>
   <object id="2015" x="96" y="320" width="160" height="256"/>
   <object id="2016" x="128" y="576" width="96" height="64"/>
@@ -720,7 +720,7 @@
   <object id="2354" x="1729.5" y="771.625" width="28" height="43.75"/>
   <object id="2364" x="787.333" y="1846.39" width="128" height="71.2727"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics">
   <object id="2119" x="112.5" y="649.25" width="38.75" height="36.25"/>
   <object id="2120" x="148.5" y="680.5" width="35.25" height="40"/>
   <object id="2121" x="182" y="713" width="33.5" height="34.25"/>

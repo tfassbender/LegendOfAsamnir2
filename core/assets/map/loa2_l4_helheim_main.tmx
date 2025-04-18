@@ -136,7 +136,7 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="558" x="1216" y="-1" width="16" height="488"/>
   <object id="559" x="1360.18" y="0" width="15.1515" height="484.545"/>
   <object id="560" x="1376" y="384" width="64.5" height="31"/>
@@ -771,9 +771,6 @@
   <object id="885" x="1007" y="588.75">
    <polygon points="0,0 3.25,3.25 -4.5,1.75"/>
   </object>
-  <object id="886" x="944.25" y="619">
-   <polygon points="0,0 -10.25,8.5 11,7"/>
-  </object>
   <object id="920" x="1184" y="544">
    <polygon points="0,0 0,-15.25 16,-14"/>
   </object>
@@ -844,13 +841,6 @@
    <polygon points="0,0 0,-15 -32,-15"/>
   </object>
   <object id="944" x="1317.25" y="738.5" width="22" height="18"/>
-  <object id="945" x="971.25" y="657.75" width="8.25" height="33.75"/>
-  <object id="946" x="971.25" y="670.5">
-   <polygon points="0,0 -6.75,7.25 -0.5,17.25"/>
-  </object>
-  <object id="947" x="979.5" y="671">
-   <polygon points="0,0 6.5,6.25 0.75,18.75"/>
-  </object>
   <object id="948" x="1129.25" y="1572.38">
    <polygon points="0,0 -8.625,19.875 -6.875,24.125"/>
   </object>
@@ -890,7 +880,7 @@
   <object id="960" x="405.333" y="689" width="11" height="14.6667"/>
   <object id="961" x="440.333" y="784.667" width="8" height="15.6667"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics" locked="1">
+ <objectgroup id="5" name="unreachable_area_physics">
   <object id="884" x="1045.5" y="513" width="106" height="94.75"/>
   <object id="887" x="1033.5" y="488.25">
    <polygon points="0,0 14.5,-0.25 8,11.5"/>
@@ -985,6 +975,16 @@
    <polygon points="0,0 -6.72727,2.90909 -58.5455,-12.5455"/>
   </object>
   <object id="919" x="1087.45" y="639.818" width="30.9091" height="24.9091"/>
+  <object id="945" x="971.25" y="657.75" width="8.25" height="33.75"/>
+  <object id="946" x="971.25" y="670.5">
+   <polygon points="0,0 -6.75,7.25 -0.5,17.25"/>
+  </object>
+  <object id="947" x="979.5" y="671">
+   <polygon points="0,0 6.5,6.25 0.75,18.75"/>
+  </object>
+  <object id="886" x="944.25" y="619">
+   <polygon points="0,0 -10.25,8.5 11,7"/>
+  </object>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1"/>
 </map>
