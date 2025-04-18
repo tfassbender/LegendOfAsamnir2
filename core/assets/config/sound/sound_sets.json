@@ -458,6 +458,15 @@
 					path: "sound/enemy/attack/fireball.mp3",
 					volume: 0.3,
 				},
+				// skeletons
+				bones: {
+					path: "sound/enemy/bones.mp3",
+					volume: 0.5,
+				},
+				trumpet: {
+					path: "sound/enemy/attack/trumpet.mp3",
+					volume: 0.2,
+				},
 			}
 		},
 		cutscene: {

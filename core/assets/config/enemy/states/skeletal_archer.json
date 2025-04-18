@@ -1,0 +1,52 @@
+[
+	{
+		id: idle,
+		animation: skeletal_archer_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: skeletal_archer_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, damage, die
+		]
+	},
+	{
+		id: attack,
+		animation: skeletal_archer_attack,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: skeletal_archer_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: skeletal_archer_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: bones,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

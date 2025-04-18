@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2359">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2374">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -85,6 +85,54 @@
    <point/>
   </object>
   <object id="2358" name="object.direction_board_up" x="1536" y="672">
+   <point/>
+  </object>
+  <object id="2359" name="object.key_wall" x="1056" y="1457">
+   <properties>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2360" name="object.key_wall" x="1120" y="1457">
+   <properties>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2361" name="object.key_wall" x="1184" y="1457">
+   <properties>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2362" name="item.key" x="896" y="1376">
+   <point/>
+  </object>
+  <object id="2367" name="item.key" x="928" y="1408">
+   <point/>
+  </object>
+  <object id="2368" name="item.key" x="960" y="1440">
+   <point/>
+  </object>
+  <object id="2369" name="object.key_wall" x="1231" y="1457">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_skeleton_zone__gate_boss"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+    <property name="unlockedInitially" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2370" name="enemy.skeletal_warrior" x="928" y="864">
+   <point/>
+  </object>
+  <object id="2371" name="enemy.skeletal_archer" x="736" y="832">
+   <point/>
+  </object>
+  <object id="2372" name="enemy.skeletal_mage" x="832" y="960">
+   <point/>
+  </object>
+  <object id="2373" name="enemy.skeletal_trumpetist" x="800" y="1088">
    <point/>
   </object>
  </objectgroup>

@@ -433,6 +433,45 @@
 				raw_images/restricted/enemy/ifrit/ifrit_damage,
 				raw_images/restricted/enemy/ifrit/ifrit_death,
 				
+				// skeleton archer
+				raw_images/restricted/enemy/skeletal_archer/skeletal_archer_idle,
+				raw_images/restricted/enemy/skeletal_archer/skeletal_archer_move,
+				raw_images/restricted/enemy/skeletal_archer/skeletal_archer_attack,
+				raw_images/restricted/enemy/skeletal_archer/skeletal_archer_damage,
+				raw_images/restricted/enemy/skeletal_archer/skeletal_archer_death,
+				
+				// skeleton mage
+				raw_images/restricted/enemy/skeletal_mage/skeletal_mage_idle,
+				raw_images/restricted/enemy/skeletal_mage/skeletal_mage_move,
+				raw_images/restricted/enemy/skeletal_mage/skeletal_mage_attack,
+				raw_images/restricted/enemy/skeletal_mage/skeletal_mage_damage,
+				raw_images/restricted/enemy/skeletal_mage/skeletal_mage_death,
+				
+				// skeleton trumpetist
+				raw_images/restricted/enemy/skeletal_trumpetist/skeletal_trumpetist_idle,
+				raw_images/restricted/enemy/skeletal_trumpetist/skeletal_trumpetist_move,
+				raw_images/restricted/enemy/skeletal_trumpetist/skeletal_trumpetist_sound,
+				raw_images/restricted/enemy/skeletal_trumpetist/skeletal_trumpetist_damage,
+				raw_images/restricted/enemy/skeletal_trumpetist/skeletal_trumpetist_death,
+				raw_images/restricted/enemy/skeletal_trumpetist/skeletal_trumpetist_sound_effect,
+				
+				// skeleton warrior
+				raw_images/restricted/enemy/skeletal_warrior/skeletal_warrior_idle,
+				raw_images/restricted/enemy/skeletal_warrior/skeletal_warrior_move,
+				raw_images/restricted/enemy/skeletal_warrior/skeletal_warrior_attack,
+				raw_images/restricted/enemy/skeletal_warrior/skeletal_warrior_damage,
+				raw_images/restricted/enemy/skeletal_warrior/skeletal_warrior_death,
+				
+				// skeleton king
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_appear,
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_idle,
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_move,
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_attack_leap,
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_attack_swing,
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_command,
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_damage,
+				raw_images/restricted/enemy/skeleton_king/skeleton_king_death,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

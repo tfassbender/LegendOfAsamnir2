@@ -1,0 +1,16 @@
+{
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l4_helheim_skeleton_zone_goto_helheim_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l4_helheim_skeleton_zone_goto_helheim_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_skeleton_zone_goto_helheim_main_cutscene,
+		}
+	},
+}

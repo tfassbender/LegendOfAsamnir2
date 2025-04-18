@@ -1,0 +1,11 @@
+[
+	{
+		id: attack,
+		type: NOVA,
+		delay: 0.3,
+		damage: 5,
+		distFromCenter: 0,
+		hitFixtureRadius: 3,
+		pushForce: 75
+	},
+]
