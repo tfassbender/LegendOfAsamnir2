@@ -727,6 +727,11 @@
 		health: 30,
 		movingSpeed: 1.25,
 		
+		damageModifiersByAttackType: {
+			ARROW: 0.5f,
+			BOMB: 1.5f,
+		},
+		
 		imageOffsetX: 0f,
 		imageOffsetY: 0.1f,
 		
@@ -796,6 +801,10 @@
 		
 		health: 20,
 		movingSpeed: 2,
+		
+		damageModifiersByAttackType: {
+			MAGIC: 0f,
+		},
 		
 		imageOffsetX: 0f,
 		imageOffsetY: 0.1f,
@@ -1209,8 +1218,13 @@
 		attackConfig: config/enemy/attack/skeletal_warrior.json,
 		aiConfig: config/enemy/ai/skeletal_warrior.json,
 		
-		health: 20,
+		health: 12,
 		movingSpeed: 2,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 2f,
+		},
 		
 		imageOffsetX: 0f,
 		imageOffsetY: 0.1f,
@@ -1244,8 +1258,13 @@
 		attackConfig: config/enemy/attack/skeletal_archer.json,
 		aiConfig: config/enemy/ai/skeletal_archer.json,
 		
-		health: 20,
+		health: 12,
 		movingSpeed: 2,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 2f,
+		},
 		
 		imageOffsetX: 0f,
 		imageOffsetY: 0.1f,
@@ -1279,8 +1298,14 @@
 		attackConfig: config/enemy/attack/skeletal_mage.json,
 		aiConfig: config/enemy/ai/skeletal_archer.json,
 		
-		health: 20,
+		health: 12,
 		movingSpeed: 2,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 2f,
+			MAGIC: 0f,
+		},
 		
 		imageOffsetX: 0f,
 		imageOffsetY: 0.1f,
@@ -1312,10 +1337,15 @@
 		stateConfig: config/enemy/states/skeletal_trumpetist.json,
 		initialState: idle,
 		attackConfig: config/enemy/attack/skeletal_trumpetist.json,
-		aiConfig: config/enemy/ai/skeletal_warrior.json,
+		aiConfig: config/enemy/ai/skeletal_trumpetist.json,
 		
-		health: 20,
+		health: 12,
 		movingSpeed: 2,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 2f,
+		},
 		
 		imageOffsetX: 0f,
 		imageOffsetY: 0.1f,

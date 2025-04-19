@@ -15,7 +15,7 @@
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
 		initialStartingPointId: 101,
-		//initial: true
+		initial: true
 	},
 	{
         name: loa2_main_tavern,

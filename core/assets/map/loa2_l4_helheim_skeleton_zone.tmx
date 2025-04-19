@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2374">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2376">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
-  <property name="background_music" value="regular_area"/>
+  <property name="background_music" value="dungeon"/>
+  <property name="building_level" value="true"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/l4_helheim_main.json"/>
   <property name="shadow_layers" value="[5]"/>
  </properties>
@@ -133,6 +134,12 @@
    <point/>
   </object>
   <object id="2373" name="enemy.skeletal_trumpetist" x="800" y="1088">
+   <point/>
+  </object>
+  <object id="2374" name="item.arrow" x="1472" y="416">
+   <point/>
+  </object>
+  <object id="2375" name="item.bomb" x="1504" y="416">
    <point/>
   </object>
  </objectgroup>

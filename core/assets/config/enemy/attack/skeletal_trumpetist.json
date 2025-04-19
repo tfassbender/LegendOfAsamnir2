@@ -1,11 +1,11 @@
 [
 	{
 		id: attack,
-		type: NOVA,
+		type: ANIMATED_HIT,
+		projectileType: skeletal_trumpetist_sound_effect,
 		delay: 0.3,
-		damage: 5,
-		distFromCenter: 0,
-		hitFixtureRadius: 3,
+		damage: 3,
+		canBeBlocked: false,
 		pushForce: 75
 	},
 ]

@@ -262,19 +262,32 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		}
 		
 		if (isAlive()) {
-			health -= damage;
+			float modifiedDamage = modifyDamage(damage, attackInfo.getAttackType());
+			
+			health -= modifiedDamage;
 			
 			if (!isAlive()) {
 				die();
 			}
 			else {
-				stateMachine.setState(getDamageStateName(damage));
+				stateMachine.setState(getDamageStateName(modifiedDamage));
 			}
 		}
 	}
 	
 	private boolean isInBlockingState() {
 		return typeConfig.blockingStateName != null && stateMachine.isInState(typeConfig.blockingStateName);
+	}
+	
+	private float modifyDamage(float damage, AttackType attackType) {
+		// search for the damage modifier of this attack type or the first super type that is found
+		Float modifier = null;
+		while (modifier == null && attackType != null) {
+			modifier = typeConfig.damageModifiersByAttackType.get(attackType.name());
+			attackType = attackType.getSuperType();
+		}
+		
+		return damage * (modifier == null ? 1f : modifier.floatValue());
 	}
 	
 	@Override

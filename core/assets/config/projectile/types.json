@@ -400,4 +400,19 @@
 		
 		imageOffsetY: 2f,
 	},
+	
+	skeletal_trumpetist_sound_effect: {
+        attackType: ANIMATED_HIT,
+        
+        animation: skeletal_trumpetist_sound_effect,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+		changeBodyToSensorAfterHit: true,
+        
+        speed: 0,
+        damping: 0,
+		distanceFromCenter: 0f,
+		hitFixtureRadius: 2.5f,
+		flipAnimationToAttackDirection: false,
+	},
 }

@@ -24,6 +24,9 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	public String blockingStateName;
 	public String soundWhenAttackBlocked;
 	
+	// modifies the damage an enemy takes from attack types and sub-types (keys are strings, because AttackType is not parsed correctly if used in keys)
+	public ObjectMap<String, Float> damageModifiersByAttackType = new ObjectMap<String, Float>();
+	
 	public EventConfig deathEvent; // the enemy dies when receiving this event (the string value has to be the unitId, if the unitId of this enemy is not null)
 	
 	public float imageOffsetX;
