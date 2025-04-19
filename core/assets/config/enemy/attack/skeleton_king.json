@@ -1,6 +1,8 @@
 [
+	// TODO add leap and hit attack
+	
 	{
-		id: attack,
+		id: attack, 
 		type: HIT,
 		delay: 0.1,
 		duration: 0,

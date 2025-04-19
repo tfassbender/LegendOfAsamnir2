@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2376">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2448">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -33,12 +33,12 @@
  </layer>
  <layer id="2" name="background_2" width="63" height="61" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="5" name="terrain" width="63" height="61" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztWjmP1DAUTsFWwA8g4ZAGWqgQLVQsFQhYwZYgjgWJigWWY0UFLIN2GwpuxCGK4RZXw33TcMPWHM30UAENn4WteIzjseM4ccCf9JRMxu/5Pdt5h50oCggICAgI6MSWuGoNyscNavMLQ9sX/wNj9Qw2PKd2bDW0Z5Mn9u+00OOWIe8Ibb+7Att3SPocjc1tYPgCvq+WdtiMPcNxyDgBOinIuo/fD0APuefDjsZ9RENuH9qMc+1Gc+qyAnwrKe9lXK+ArnKytuH+Legd6L2kjwH6bL/FWOyV8La6yGvj//OW478B/BtzyDD1TUXJ7M/pG02xXiKfX5N9nvjaPBDfrVWatvB8Q7jfXuMxYNissKGMfCLL11YB1++UCJmv/Z+wx5HdZc9jEThSsM5Fy3ONfYb6HkL7w/Gf3KRuuGChcx3XtgjZnO3KaVe/Jp+YX+rk1y4g288Y04zBLOeyqZNYvdItt3aJrDVs6gN04NueiGzdqXxY0evUh7z1g9D/Y0f6kBjou7/86Ll+LlBm7ViVn9fFgCP9WH4UUC3OYA7OVjAPR9HnsYrnn5xj3KxAh4vo81LFtvPnGAQu5kOW27B9u1O4nvbk/S9qPn5Axk/QL4Wsg/jvGuh6nJ6jlQlX9ejEJIomgSYn6TMxtp3D7yegp8K5QBmQnY3Y1Bi875gGm6eDZiRqHpbrtUu2XXU2kgei7/AVSwUd+Vw7Tz3fAM9M0Ky4897HPZ41Cp1U9XwWFoLn+5QomoBrD+gb7hdlyBHPHF3m00s0ZdvMEanT5lL+R7jOU6wrF+BjMx9TVxv2a7rnyr5XIHPfS+dftL0bry10YnOReyhsPZHvFdg+KKmByBhkrXcR7FsHcR9BF6pvilT14if89znjf1bHiXu7/Noi60l15qFa56JesvNyF9B991i7wTitPdnaYu+Frs5NtDvgwD6ZLU0up8jyYcvwfHkOfYrYe2jQGGjrA2+D/w7oLugeaB21eyhJ70X/Rb7nWEvaavbNn+WS7zJacec+RCtO7cmKWcNc7O+hscB2L+MleF+BXoPeUDnzcV0gkWkyZyy/JeMmO8vl3/UGZ4+sr/E4bUNif6+BP5RhUMJL5rmZ/P3MFZgvZPGN2MPqUn5fpE3jvyrnyQO+/khwP5X+FsfANZjf4+tSfl/EJPaZgrzfsyF7TknxIgusLq1LbVNXZPkv389BAopHWTmiD2DxxLfz3oCAgIAAPfwG2ozPWw==
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="63" height="61" locked="1">
@@ -106,40 +106,322 @@
    </properties>
    <point/>
   </object>
-  <object id="2362" name="item.key" x="896" y="1376">
-   <point/>
-  </object>
-  <object id="2367" name="item.key" x="928" y="1408">
-   <point/>
-  </object>
-  <object id="2368" name="item.key" x="960" y="1440">
-   <point/>
-  </object>
   <object id="2369" name="object.key_wall" x="1231" y="1457">
    <properties>
-    <property name="lockId" value="loa2_l4_helheim_skeleton_zone__gate_boss"/>
+    <property name="lockId" value="loa2_l4_helheim_skeleton_zone__gate_boss_entry"/>
     <property name="physicsBodySizeFactorY" value="1.3f"/>
     <property name="unlockedByEvent" value="true"/>
     <property name="unlockedInitially" value="true"/>
    </properties>
    <point/>
   </object>
-  <object id="2370" name="enemy.skeletal_warrior" x="928" y="864">
+  <object id="2370" name="enemy.skeletal_warrior" x="917.5" y="878.5">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
    <point/>
   </object>
-  <object id="2371" name="enemy.skeletal_archer" x="736" y="832">
+  <object id="2371" name="enemy.skeletal_archer" x="915.5" y="930.5">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
    <point/>
   </object>
-  <object id="2372" name="enemy.skeletal_mage" x="832" y="960">
+  <object id="2376" name="object.spawnPoint.arrow" x="1360.48" y="432.565">
+   <properties>
+    <property name="spawn" value="playerAmmoArrowBelowHalf"/>
+   </properties>
    <point/>
   </object>
-  <object id="2373" name="enemy.skeletal_trumpetist" x="800" y="1088">
+  <object id="2377" name="object.spawnPoint.bomb" x="1328.5" y="464.5">
+   <properties>
+    <property name="spawn" value="playerAmmoBombBelowHalf"/>
+   </properties>
    <point/>
   </object>
-  <object id="2374" name="item.arrow" x="1472" y="416">
+  <object id="2378" name="object.spawnPoint.mana" x="1296.48" y="496.565">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
+   </properties>
    <point/>
   </object>
-  <object id="2375" name="item.bomb" x="1504" y="416">
+  <object id="2379" name="enemy.skeletal_warrior" x="854" y="827.5">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2380" name="enemy.skeletal_warrior" x="860.5" y="916.5">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2381" name="enemy.skeletal_warrior" x="777.5" y="926">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2382" name="enemy.skeletal_warrior" x="755" y="859.5">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2383" name="enemy.skeletal_archer" x="806" y="969">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2384" name="object.chest" x="719" y="913.5">
+   <properties>
+    <property name="drop" value="{key: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2385" name="object.pot" x="713.5" y="883">
+   <point/>
+  </object>
+  <object id="2386" name="object.pot" x="729.75" y="864.5">
+   <point/>
+  </object>
+  <object id="2387" name="object.pot" x="975" y="783">
+   <point/>
+  </object>
+  <object id="2388" name="object.barrel" x="714.25" y="945.5">
+   <point/>
+  </object>
+  <object id="2389" name="object.pot" x="750.333" y="1099.33">
+   <point/>
+  </object>
+  <object id="2390" name="object.pot" x="744" y="1159">
+   <point/>
+  </object>
+  <object id="2391" name="object.barrel" x="892" y="1057.33">
+   <point/>
+  </object>
+  <object id="2392" name="enemy.skeletal_archer" x="521.333" y="480">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2393" name="enemy.skeletal_warrior" x="612" y="541.333">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2394" name="enemy.skeletal_warrior" x="554.667" y="398.667">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2395" name="enemy.skeletal_warrior" x="462.667" y="372.667">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2396" name="enemy.skeletal_warrior" x="570" y="502">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2397" name="enemy.skeletal_mage" x="504.667" y="370.667">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2398" name="enemy.skeletal_archer" x="438" y="309.333">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2399" name="object.pot" x="455.5" y="440.75">
+   <point/>
+  </object>
+  <object id="2400" name="object.pot" x="458.25" y="406.5">
+   <point/>
+  </object>
+  <object id="2401" name="object.pot" x="423.25" y="352.5">
+   <point/>
+  </object>
+  <object id="2402" name="object.barrel" x="396" y="260">
+   <point/>
+  </object>
+  <object id="2403" name="object.barrel" x="421" y="254.333">
+   <point/>
+  </object>
+  <object id="2404" name="enemy.mimic_chest" x="480" y="234">
+   <properties>
+    <property name="drop" value="{key: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2407" name="enemy.skeletal_archer" x="226" y="1454">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2408" name="enemy.skeletal_warrior" x="399" y="1401">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2413" name="enemy.skeletal_warrior" x="528" y="1434">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2414" name="enemy.skeletal_warrior" x="536" y="1608">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2415" name="enemy.skeletal_warrior" x="376" y="1695">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2416" name="enemy.skeletal_warrior" x="217" y="1553">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2418" name="enemy.skeletal_mage" x="445" y="1426">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2419" name="enemy.skeletal_trumpetist" x="587" y="1503">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2420" name="enemy.skeletal_trumpetist" x="272" y="1692">
+   <properties>
+    <property name="teamId" value="loa2_l4_helheim__skeletons_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2421" name="object.chest" x="271.667" y="1746.67">
+   <properties>
+    <property name="drop" value="{key: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2422" name="enemy.mimic_barrel" x="204.5" y="1653">
+   <point/>
+  </object>
+  <object id="2423" name="object.pot" x="375" y="1356">
+   <point/>
+  </object>
+  <object id="2424" name="object.pot" x="361" y="1369.5">
+   <point/>
+  </object>
+  <object id="2425" name="object.pot" x="196" y="1593.5">
+   <point/>
+  </object>
+  <object id="2426" name="object.pot" x="256" y="1570">
+   <point/>
+  </object>
+  <object id="2427" name="object.pot" x="417.5" y="1728">
+   <point/>
+  </object>
+  <object id="2428" name="object.pot" x="441" y="1715.5">
+   <point/>
+  </object>
+  <object id="2429" name="object.barrel" x="265.5" y="1347">
+   <point/>
+  </object>
+  <object id="2430" name="object.barrel" x="420" y="1629">
+   <point/>
+  </object>
+  <object id="2431" name="item.triforce_helheim_skeleton_zone" x="911" y="370">
+   <point/>
+  </object>
+  <object id="2432" name="object.chest" x="816" y="272.909">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2434" name="item.helheim_key_red" x="1792" y="1440">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim__key_red"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2435" name="object.key_wall" x="1652" y="1000">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_skeleton_zone__gate_boss_exit"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2438" name="object.enemy_path_blocker" x="1400.06" y="1128" width="13.875" height="408.5"/>
+  <object id="2439" name="object.enemy_path_blocker" x="1414.56" y="1144.25" width="384.375" height="8"/>
+  <object id="2436" name="object.spawnPoint.magic_totem" x="1600" y="1120">
+   <properties>
+    <property name="spawn" value="l4_helheim_skeleton_zone__magic_totem_boss"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2442" name="object.spawnPoint.magic_totem" x="1568" y="1344">
+   <properties>
+    <property name="spawn" value="l4_helheim_skeleton_zone__boss"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2443" name="player.startingPosition" x="1280" y="1457">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2444" name="object.eventObject" x="1206" y="1352.31" width="3.63636" height="126.375">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="2445" name="object.configObject" x="1664" y="1359">
+   <properties>
+    <property name="unitId" value="cutscene_object__helheim_boss_room__thorin_start_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2446" name="object.spawnPoint.bomb" x="1200.53" y="1424.5">
+   <properties>
+    <property name="spawn" value="playerAmmoBombBelowHalf"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="2447" name="object.configObject" x="1531.91" y="1002.09">
+   <properties>
+    <property name="eventDelayInSeconds" value="6"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l4_helheim_skeleton_zone__boss_defeated_delayed,
+}</property>
+    <property name="unitId" value="loa2_l4_helheim__config_object__open_key_wall_after_skeleton_king_defeated"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
@@ -1519,11 +1801,11 @@
   <object id="2020" x="552.545" y="648.909">
    <polygon points="0,0 14.5,-0.25 8,11.5"/>
   </object>
-  <object id="2021" x="1290.97" y="497.307" width="8.25" height="33.75"/>
-  <object id="2022" x="1290.97" y="510.057">
+  <object id="2021" x="1258.64" y="529.974" width="8.25" height="33.75"/>
+  <object id="2022" x="1258.64" y="542.724">
    <polygon points="0,0 -6.75,7.25 -0.5,17.25"/>
   </object>
-  <object id="2023" x="1299.22" y="510.557">
+  <object id="2023" x="1266.89" y="543.224">
    <polygon points="0,0 6.5,6.25 0.75,18.75"/>
   </object>
   <object id="2024" x="387.818" y="325.091">
@@ -2122,17 +2404,11 @@
   <object id="2239" x="1344" y="1504">
    <polygon points="0,0 16,-13.5 25.75,0"/>
   </object>
-  <object id="2241" x="1696" y="1472">
-   <polygon points="0,0 0,-15.25 16,-14"/>
-  </object>
   <object id="2242" x="1696" y="1472">
    <polygon points="0,0 16,-13.5 25.75,0"/>
   </object>
   <object id="2243" x="1696" y="1472">
    <polygon points="0,0 25.75,0 22.75,17"/>
-  </object>
-  <object id="2244" x="1696" y="1472">
-   <polygon points="0,0 0,-15.25 16,-14"/>
   </object>
   <object id="2245" x="1696" y="1472">
    <polygon points="0,0 16,-13.5 25.75,0"/>
@@ -2189,7 +2465,7 @@
    <polygon points="0,0 -24,-28.25 -10.75,-41"/>
   </object>
   <object id="2266" x="1696" y="1472">
-   <polygon points="0,0 -10.7273,-9.27273 10.9091,-14.7273"/>
+   <polygon points="0,0 -10.7273,-9.27273 15.9091,-13.5455"/>
   </object>
   <object id="2267" x="1600" y="1568">
    <polygon points="0,0 -24,-28.25 -10.75,-41"/>

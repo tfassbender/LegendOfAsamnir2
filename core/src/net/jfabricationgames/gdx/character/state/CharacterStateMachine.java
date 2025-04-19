@@ -51,6 +51,7 @@ public class CharacterStateMachine {
 		if (currentState == null) {
 			throw new IllegalStateException("The initialState '" + initialState + "' is unknown.");
 		}
+		currentState.playSound(); // the sound of the initial state would otherwise not be played
 	}
 	
 	private void loadStates(Array<CharacterStateConfig> stateConfig) {

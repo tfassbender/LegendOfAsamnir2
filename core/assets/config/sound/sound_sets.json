@@ -467,6 +467,14 @@
 					path: "sound/enemy/attack/trumpet.mp3",
 					volume: 0.2,
 				},
+				rocks: {
+					path: "sound/enemy/rocks.mp3",
+					volume: 0.6,
+				},
+				mine: {
+					path: "sound/enemy/mine.mp3",
+					volume: 0.5,
+				},
 			}
 		},
 		cutscene: {

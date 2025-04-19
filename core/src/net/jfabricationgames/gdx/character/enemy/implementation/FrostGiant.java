@@ -67,11 +67,6 @@ public class FrostGiant extends Enemy {
 	}
 	
 	@Override
-	public void createPhysicsBody(float x, float y) {
-		super.createPhysicsBody(x, y);
-	}
-	
-	@Override
 	public void act(float delta) {
 		super.act(delta);
 		

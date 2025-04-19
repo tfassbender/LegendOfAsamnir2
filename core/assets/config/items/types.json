@@ -105,6 +105,7 @@
 	//*************************************
 	
 	helheim_key_red: {
+		type: EVENT_ITEM,
         texture: helheim_key_red,
         textureScale: 0.3f,
         physicsObjectRadius: 0.3f,
@@ -112,6 +113,7 @@
         globalValue: loa2_l4_helheim__key_piece_collected__red,
 	},
 	helheim_key_green: {
+		type: EVENT_ITEM,
         texture: helheim_key_green,
         textureScale: 0.3f,
         physicsObjectRadius: 0.3f,
@@ -119,6 +121,7 @@
         globalValue: loa2_l4_helheim__key_piece_collected__green,
 	},
 	helheim_key_blue: {
+		type: EVENT_ITEM,
         texture: helheim_key_blue,
         textureScale: 0.3f,
         physicsObjectRadius: 0.3f,
@@ -344,6 +347,12 @@
         pickUpSound: pickup_5
 	},
 	triforce_muspelheim_lava_dungeon: {
+        type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	
+	triforce_helheim_skeleton_zone: {
         type: TRIFORCE,
         texture: triforce,
         pickUpSound: pickup_5

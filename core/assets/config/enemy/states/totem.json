@@ -1,6 +1,25 @@
 [
+{
+		id: appear,
+		animation: totem_appear,
+		stateEnteringSound: mine,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    die
+		]
+	},
 	{
 		id: idle,
+		animation: totem_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack, damage, die
+		]
+	},
+	{
+		id: move, // needed for the default AI (though the totem doesn't move)
 		animation: totem_idle,
 		endsWithAnimation: true,
 		followingState: idle,

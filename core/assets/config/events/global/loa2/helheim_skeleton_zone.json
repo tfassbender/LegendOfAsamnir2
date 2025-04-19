@@ -13,4 +13,45 @@
 			cutsceneId: loa2_l4_helheim_skeleton_zone_goto_helheim_main_cutscene,
 		}
 	},
+	
+	//*******************************************
+	//*** boss fight
+	//*******************************************
+	
+	loa2_l4_helheim_skeleton_zone__red_key_picked_up: {
+        event: {
+            eventType: EVENT_ITEM_PICKED_UP,
+            stringValue: loa2_l4_helheim__key_red,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_skeleton_zone__boss_appear_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** enemy defeated
+	//*******************************************
+	
+	loa2_l4_helheim_skeleton_zone__boss_defeated__lock_1: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l4_helheim_skeleton_zone__boss_defeated_delayed,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l4_helheim_skeleton_zone__gate_boss_exit,
+		}
+	},
+	
+	loa2_l4_helheim_skeleton_zone__boss_defeated__lock_2: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l4_helheim_skeleton_zone__boss_defeated_delayed,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l4_helheim_skeleton_zone__gate_boss_entry,
+		}
+	},
 }

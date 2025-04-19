@@ -1,0 +1,79 @@
+[
+    {
+    	id: appear,
+    	animation: skeleton_king_appear,
+		stateEnteringSound: rocks,
+    	endsWithAnimation: true,
+    	followingState: idle,
+    	interruptingStates: [],
+    },
+	{
+		id: idle,
+		animation: skeleton_king_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_leap, attack_leap, command, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: skeleton_king_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_leap, attack_leap, command, damage, die
+		]
+	},
+	{
+		id: attack_leap,
+		animation: skeleton_king_attack_leap,
+		attack: attack // TODO
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: attack_swing,
+		animation: skeleton_king_attack_swing,
+		attack: attack // TODO
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: command,
+		animation: skeleton_king_command,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: damage,
+		animation: skeleton_king_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			attack_leap, attack_leap, command, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: skeleton_king_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		stateEnteringSound: bones,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

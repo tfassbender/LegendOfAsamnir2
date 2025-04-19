@@ -2,6 +2,12 @@
 	configList: 
 	[
 		{
+			name: totem_appear,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
 			name: totem_damage,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

@@ -209,6 +209,12 @@
 		pushForceDamage: 35,
 		pushForceHit: 30,
 		
+		usesHealthBar: true,
+		healthBarOffsetX: 0f,
+		healthBarOffsetY: 0f,
+		healthBarWidthFactor: 0.7f,
+		healthBarAlwaysVisible: false,
+		
 		drops: {
 			coin: 0.7,
 			big_coin: 0.1,
@@ -238,6 +244,12 @@
 		
 		pushForceDamage: 35,
 		pushForceHit: 30,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0.05f,
+		healthBarOffsetY: -0.1f,
+		healthBarWidthFactor: 0.7f,
+		healthBarAlwaysVisible: false,
 		
 		drops: {
 			coin: 0.4,
@@ -625,6 +637,46 @@
 		
 		pushForceDamage: 0,
 		pushForceHit: 0,
+	}
+	
+	magic_totem: {
+		typeName: magic_totem,
+		
+		animationsConfig: config/animation/enemy/totem.json,
+		stateConfig: config/enemy/states/totem.json,
+		initialState: appear,
+		attackConfig: config/enemy/attack/totem.json,
+		aiConfig: config/enemy/ai/totem.json,
+		
+		movingSpeed: 0,
+		movable: false, // the player can't push it
+		health: 10,
+		
+		damageModifiersByAttackType: {
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 10f,
+		
+		pushForceDamage: 0,
+		pushForceHit: 0,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: -0.05f,
+		healthBarOffsetY: -0.2f,
+		healthBarWidthFactor: 0.7f,
+		healthBarAlwaysVisible: true,
+		
+		drops: {
+			bomb: 1,
+		}
 	}
 	
 	giant_golem: {
@@ -1368,5 +1420,39 @@
 		drops: {
 			coin: 0.7,
 		}
+	},
+	
+	skeleton_king: {
+		typeName: skeleton_king,
+		
+		animationsConfig: config/animation/enemy/skeleton_king.json,
+		stateConfig: config/enemy/states/skeleton_king.json,
+		initialState: appear,
+		attackConfig: config/enemy/attack/skeleton_king.json,
+		
+		health: 250,
+		movingSpeed: 1f,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 2f,
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0.5f,
+		imageOffsetY: -0.3f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1.3f,
+		bodyHeight: 1.3f,
+		
+		addSensor: true,
+		sensorRadius: 8f,
+		
+		pushForceDamage: 20,
+		pushForceHit: 80,
+		
+		isBoss: true
+		bossName: "Hungr - Steersman of Naglfar",
 	},
 }

@@ -190,6 +190,7 @@
 	//*** Legend of Asamnir 2 - Helheim - Skeleton Zone
 	//********************************************************
 	config/cutscene/loa2/helheim/skeleton_zone/goto_main.json,
+	config/cutscene/loa2/helheim/skeleton_zone/boss_appear.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

@@ -1,0 +1,151 @@
+{
+	id: loa2_l4_helheim_skeleton_zone__boss_appear_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+		    startsWithCutscene: true,
+		    
+            type: WAIT,
+            executionDelayInSeconds: 0f,
+            
+            executes: [
+				move_thorin,
+				move_camera,
+				thorin_comment,
+				stop_map_background_music,
+			],
+		},
+		
+		stop_map_background_music: {
+            executionDelayInSeconds: 4f,
+            
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+		},
+		
+		move_thorin: {
+            executionDelayInSeconds: 4f,
+            
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			targetPositionRelativeToUnitId: cutscene_object__helheim_boss_room__thorin_start_position,
+			
+			executes: [
+				skeleton_king_appear,
+			],
+		},
+		
+		move_camera: {
+            executionDelayInSeconds: 4f,
+            
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__helheim_boss_room__thorin_start_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: -2, y: 0},
+			speedFactor: 3f,
+		},
+		
+		thorin_comment: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "This seems to be one part of Garmr's key...\n                   \nThat was easier than I expected.    ",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+		},
+		
+		skeleton_king_appear: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: l4_helheim_skeleton_zone__boss,
+            },
+
+			executes: [
+				play_boss_music,
+			],
+        },
+		
+		play_boss_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_fight,
+                floatValue: 0f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
+			
+			executes: [
+				thorin_comment_2,
+			],
+		},
+		
+		thorin_comment_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 3f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "... Ok ... I kinda asked for this ...   ",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                start_boss_fight,
+                close_gate,
+			],
+		},
+		
+		close_gate: {
+            type: EVENT,
+			
+			event: {
+				eventType: CLOSE_LOCK,
+				stringValue: loa2_l4_helheim_skeleton_zone__gate_boss_entry,
+			},
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 3.5f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+            executes: [
+            	wait_after_boss_fight_started,
+            ],
+		}
+		
+		wait_after_boss_fight_started: {
+            type: WAIT,
+            executionDelayInSeconds: 3f,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -198,6 +198,11 @@ public class LockedObject extends InteractiveObject implements EventListener {
 	}
 	
 	private void reverseInteraction() {
+		if (actionExecuted && typeConfig.changeBodyToSensorAfterAction) {
+			changeBodyToNonSensor();
+			changedBodyToSensor = false;
+		}
+		
 		actionExecuted = false;
 		
 		if (typeConfig.animationActionReversed != null) {
@@ -214,11 +219,6 @@ public class LockedObject extends InteractiveObject implements EventListener {
 		
 		if (typeConfig.textureAfterAction != null) {
 			sprite = createSprite(typeConfig.texture);
-		}
-		
-		if (isChangeBodyToSensorAfterAction()) {
-			changeBodyToNonSensor();
-			changedBodyToSensor = false;
 		}
 		
 		playInteractionSound();
