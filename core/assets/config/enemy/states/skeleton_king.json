@@ -13,7 +13,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_leap, attack_leap, command, damage, die
+			move, attack_swing, attack_leap, command, damage, die
 		]
 	},
 	{
@@ -22,7 +22,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack_leap, attack_leap, command, damage, die
+			idle, attack_swing, attack_leap, command, damage, die
 		]
 	},
 	{
@@ -60,7 +60,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			attack_leap, attack_leap, command, die
+			attack_swing, attack_leap, command, die
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true

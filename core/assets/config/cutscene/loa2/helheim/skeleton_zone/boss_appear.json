@@ -101,7 +101,6 @@
 				displayTextHeader: "Thorin",
 				displayText: "... Ok ... I kinda asked for this ...   ",
 				showNextPageIcon: true,
-				canBeSkipped: false,
 			}
 			
 			waitForEventToFinish: true,
