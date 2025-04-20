@@ -4,8 +4,11 @@ import java.util.Random;
 
 public class RandomIntervalAttackTimer implements AttackTimer {
 	
-	private float minTimeBetweenAttacks;
-	private float maxTimeBetweenAttacks;
+	private final float minTimeBetweenAttacks;
+	private final float maxTimeBetweenAttacks;
+	
+	private float timeSinceLastAttack;
+	private float timeTillNextAttack;
 	
 	private Random random;
 	
@@ -17,7 +20,18 @@ public class RandomIntervalAttackTimer implements AttackTimer {
 	}
 	
 	@Override
-	public float getTimeTillNextAttack() {
-		return minTimeBetweenAttacks + ((maxTimeBetweenAttacks - minTimeBetweenAttacks) * random.nextFloat());
+	public void reset() {
+		timeSinceLastAttack = 0;
+		timeTillNextAttack = minTimeBetweenAttacks + ((maxTimeBetweenAttacks - minTimeBetweenAttacks) * random.nextFloat());
+	}
+	
+	@Override
+	public boolean timeToAttack() {
+		return timeSinceLastAttack >= timeTillNextAttack;
+	}
+	
+	@Override
+	public void incrementTime(float delta) {
+		timeSinceLastAttack += delta;
 	}
 }

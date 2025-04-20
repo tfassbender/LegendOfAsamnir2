@@ -16,9 +16,6 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	protected Vector2 targetingPlayerLastKnownPosition;
 	protected AttackTimer attackTimer;
 	
-	protected float timeTillNextAttack;
-	protected float timeSinceLastAttack;
-	
 	/** The distance till which the enemy follows the player (to not push him if to near) */
 	protected float minDistanceToTargetPlayer = 1f;
 	
@@ -27,18 +24,16 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 		this.attackState = attackState;
 		this.attackTimer = attackTimer;
 		
-		updateTimeTillNextAttack();
-		timeSinceLastAttack = timeTillNextAttack;
+		attackTimer.reset();
 	}
 	
 	protected boolean changeToAttackState() {
-		if (timeToAttack() && targetAlive()) {
+		if (attackTimer.timeToAttack() && targetAlive()) {
 			attackState.setAttackDirection(directionToTarget());
 			attackState.setAttackTargetPositionSupplier(this::getTargetPlayerPosition);
 			boolean changedState = stateMachine.setState(attackState);
 			if (changedState) {
-				timeSinceLastAttack = 0;
-				updateTimeTillNextAttack();
+				attackTimer.reset();
 			}
 			
 			return changedState;
@@ -48,14 +43,6 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	
 	private boolean targetAlive() {
 		return targetingPlayer != null && targetingPlayer.isAlive();
-	}
-	
-	protected void updateTimeTillNextAttack() {
-		timeTillNextAttack = attackTimer.getTimeTillNextAttack();
-	}
-	
-	protected boolean timeToAttack() {
-		return timeSinceLastAttack >= timeTillNextAttack;
 	}
 	
 	protected boolean inAttackState() {
@@ -87,7 +74,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	@Override
 	public void calculateMove(float delta) {
 		if (!inAttackState()) {
-			timeSinceLastAttack += delta;
+			attackTimer.incrementTime(delta);
 		}
 	}
 	

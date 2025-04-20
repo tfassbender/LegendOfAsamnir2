@@ -37,12 +37,11 @@ public class AlarmClockAI extends AbstractAttackAI {
 	}
 	
 	protected boolean changeToAttackState() {
-		if (timeToAttack()) {
+		if (attackTimer.timeToAttack()) {
 			attackState.setAttackDirection(new Vector2(1, 0)); // the direction doesn't matter because the attack only plays the sound and animation
 			boolean changedState = stateMachine.setState(attackState);
 			if (changedState) {
-				timeSinceLastAttack = 0;
-				updateTimeTillNextAttack();
+				attackTimer.reset();
 			}
 			
 			return changedState;

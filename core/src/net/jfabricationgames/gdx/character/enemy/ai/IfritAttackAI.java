@@ -9,7 +9,6 @@ import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttack
 import net.jfabricationgames.gdx.character.ai.move.AIAttackingMove;
 import net.jfabricationgames.gdx.character.ai.move.MoveType;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
-import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.implementation.Ifrit.DefenseModePosition;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
@@ -21,16 +20,11 @@ public class IfritAttackAI extends AbstractMultiAttackAI {
 	private CharacterState attackFireBall;
 	private CharacterState attackFireSoil;
 	
-	private AttackTimer attackTimerSword;
-	private AttackTimer attackTimerFireBall;
-	private AttackTimer attackTimerFireSoil;
-	
-	protected float timeSinceLastAttackSword = 0;
-	protected float timeSinceLastAttackFireBall = 0;
-	protected float timeSinceLastAttackFireSoil = 0;
-	
-	public IfritAttackAI(ArtificialIntelligence subAI, ArrayMap<String, CharacterState> attackStates, Supplier<DefenseModePosition> defenseModePositionSupplier) {
-		super(subAI, attackStates, null, new FixedAttackTimer(0f));
+	public IfritAttackAI(ArtificialIntelligence subAI, //
+			ArrayMap<String, CharacterState> attackStates, //
+			ArrayMap<CharacterState, AttackTimer> attackTimers, //
+			Supplier<DefenseModePosition> defenseModePositionSupplier) {
+		super(subAI, attackStates, null, attackTimers);
 		
 		this.defenseModePositionSupplier = defenseModePositionSupplier;
 		
@@ -38,39 +32,20 @@ public class IfritAttackAI extends AbstractMultiAttackAI {
 		attackFireBall = attackStates.get("attack_throw_fire_ball");
 		attackFireSoil = attackStates.get("attack_fire_soil");
 		
-		attackTimerSword = new FixedAttackTimer(3f);
-		attackTimerFireBall = new FixedAttackTimer(1.5f);
-		attackTimerFireSoil = new FixedAttackTimer(5f);
-		
 		setMoveToPlayerWhenAttacking(false);
-	}
-	
-	@Override
-	public void calculateMove(float delta) {
-		if (!inAttackState()) {
-			timeSinceLastAttackSword += delta;
-			timeSinceLastAttackFireBall += delta;
-			timeSinceLastAttackFireSoil += delta;
-		}
-		
-		super.calculateMove(delta);
 	}
 	
 	@Override
 	protected CharacterState chooseAttack() {
 		float distanceToTarget = distanceToTarget();
 		
-		if (isInRangeForAttack(attackSword, distanceToTarget) //
-				&& timeSinceLastAttackSword >= attackTimerSword.getTimeTillNextAttack()) {
+		if (isInRangeForAttack(attackSword, distanceToTarget) && attackTimers.get(attackSword).timeToAttack()) {
 			setAttackMove(attackSword);
 		}
-		else if (isInRangeForAttack(attackFireSoil, distanceToTarget) //
-				&& timeSinceLastAttackFireSoil >= attackTimerFireSoil.getTimeTillNextAttack()) {
+		else if (isInRangeForAttack(attackFireSoil, distanceToTarget) && attackTimers.get(attackFireSoil).timeToAttack()) {
 			setAttackMove(attackFireSoil);
 		}
-		else if (isInRangeForAttack(attackFireBall, distanceToTarget) //
-				&& timeSinceLastAttackFireBall >= attackTimerFireBall.getTimeTillNextAttack() //
-				&& canSeeTarget()) {
+		else if (isInRangeForAttack(attackFireBall, distanceToTarget) && attackTimers.get(attackFireBall).timeToAttack() && canSeeTarget()) {
 			setAttackMove(attackFireBall);
 		}
 		
@@ -114,11 +89,6 @@ public class IfritAttackAI extends AbstractMultiAttackAI {
 		return false;
 	}
 	
-	@Override
-	protected boolean timeToAttack() {
-		return true; // every attack uses it's own attack timer, so we choose the timeToAttack in the chooseAttack method
-	}
-	
 	private void setAttackMove(CharacterState attack) {
 		AIAttackingMove attackMove = new AIAttackingMove(this);
 		attackMove.attack = attack;
@@ -133,19 +103,6 @@ public class IfritAttackAI extends AbstractMultiAttackAI {
 			state.setAttackTargetPositionSupplier(() -> targetingPlayer != null ? targetingPlayer.getPosition().cpy() : targetingPlayerLastKnownPosition);
 		}
 		
-		boolean changedState = super.changeToAttackState(state);
-		if (changedState) {
-			if (state == attackSword) {
-				timeSinceLastAttackSword = 0;
-			}
-			else if (state == attackFireBall) {
-				timeSinceLastAttackFireBall = 0;
-			}
-			else if (state == attackFireSoil) {
-				timeSinceLastAttackFireSoil = 0;
-			}
-		}
-		
-		return changedState;
+		return super.changeToAttackState(state);
 	}
 }

@@ -8,6 +8,8 @@ import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.ai.implementation.RayCastFollowAI;
+import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
+import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.IfritAttackAI;
@@ -47,7 +49,6 @@ public class Ifrit extends Enemy {
 		CharacterState idleState = stateMachine.getState(STATE_NAME_IDLE);
 		CharacterState moveState = stateMachine.getState(STATE_NAME_MOVE);
 		
-		// follow the player if the health is high
 		RayCastFollowAI followAI = new RayCastFollowAI(ai, moveState, idleState);
 		followAI.setMinDistanceToTarget(2f);
 		
@@ -68,7 +69,12 @@ public class Ifrit extends Enemy {
 		attackStates.put(attackNameFireBall, attackFireBall);
 		attackStates.put(attackNameFireSoil, attackFireSoil);
 		
-		return new IfritAttackAI(ai, attackStates, this::getDefenseModePosition);
+		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
+		attackTimers.put(attackSword, new FixedAttackTimer(3f));
+		attackTimers.put(attackFireBall, new FixedAttackTimer(1.5f));
+		attackTimers.put(attackFireSoil, new FixedAttackTimer(5f));
+		
+		return new IfritAttackAI(ai, attackStates, attackTimers, this::getDefenseModePosition);
 	}
 	
 	@Override
