@@ -1,0 +1,41 @@
+{
+	configList: 
+	[
+		{
+			name: bloodsilk_spider_damage,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: bloodsilk_spider_death,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: bloodsilk_spider_idle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: bloodsilk_spider_attack,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: bloodsilk_spider_move,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: bloodsilk_spider_shoot_web,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+	]
+}

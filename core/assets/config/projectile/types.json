@@ -55,6 +55,22 @@
 		
 		timeActive: 5,
 	},
+	bloodsilk_spider_web: {
+		attackType: WEB,
+		
+		animation: bloodsilk_spider_web,
+		removeAfterAnimationFinished: false,
+		textureScale: 0.12,
+		textureScaleGrowing: true,
+		
+		range: 30,
+		removeAfterRangeExceeded: false,
+		speed: 60,
+		dampingAfterObjectHit: 15,
+		dampingAfterRangeExceeded: 15,
+		
+		timeActive: 1.5f,
+	},
 	imp_fire: {
 		attackType: FIREBALL,
 		

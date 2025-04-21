@@ -51,6 +51,9 @@
 				raw_images/restricted/projectiles/mine_explosion,
 				raw_images/restricted/projectiles/ice_breath,
 				raw_images/restricted/projectiles/frost_giant_axe,
+				raw_images/restricted/enemy/bloodsilk_spider/bloodsilk_spider_web,
+				raw_images/restricted/enemy/spider_queen/spider_queen_web_projectile,
+				raw_images/restricted/enemy/spider_queen/spider_queen_web_hit,
 				
 				//##############################################################
 				//### effects - restricted graphics
@@ -65,6 +68,7 @@
 				//### objects
 				//##############################################################
 				raw_images/objects/all,
+//				raw_images/objects/walls,
 				raw_images/objects/helheim_key,
 				raw_images/objects/animated/barrel/hit,
 				raw_images/objects/animated/barrel/break,
@@ -73,15 +77,15 @@
 				raw_images/objects/animated/chest/hit,
 				raw_images/objects/animated/chest/open,
 				raw_images/objects/animated/direction_board/hit,
-				raw_images/objects/animated/direction_board/break,
+//				raw_images/objects/animated/direction_board/break,
 				raw_images/objects/animated/pot/break,
 				raw_images/objects/animated/pot/hit,
 				raw_images/objects/animated/signboard/hit,
-				raw_images/objects/animated/signboard/break,
+//				raw_images/objects/animated/signboard/break,
 				raw_images/objects/animated/map/idle,
 				raw_images/objects/animated/map/unfold,
 				raw_images/objects/animated/key_wall/key_wall_open,
-				raw_images/objects/animated/door/door_open,
+//				raw_images/objects/animated/door/door_open,
 				raw_images/objects/animated/magic_switch/magic_switch_activate,
 				
 				//##############################################################
@@ -102,11 +106,11 @@
 				raw_images/enemy/bat/bat_fly,
 				
 				// gladiator
-				raw_images/enemy/gladiator/gladiator_attack,
-				raw_images/enemy/gladiator/gladiator_damage,
-				raw_images/enemy/gladiator/gladiator_die,
-				raw_images/enemy/gladiator/gladiator_idle,
-				raw_images/enemy/gladiator/gladiator_move,
+//				raw_images/enemy/gladiator/gladiator_attack,
+//				raw_images/enemy/gladiator/gladiator_damage,
+//				raw_images/enemy/gladiator/gladiator_die,
+//				raw_images/enemy/gladiator/gladiator_idle,
+//				raw_images/enemy/gladiator/gladiator_move,
 				
 				// mini_golem
 				raw_images/enemy/mini_golem/mini_golem_attack,
@@ -116,16 +120,16 @@
 				raw_images/enemy/mini_golem/mini_golem_move,
 				
 				//minotaur
-				raw_images/enemy/minotaur/minotaur_attack_hit,
-				raw_images/enemy/minotaur/minotaur_attack_knock,
-				raw_images/enemy/minotaur/minotaur_attack_spin,
-				raw_images/enemy/minotaur/minotaur_attack_stab,
-				raw_images/enemy/minotaur/minotaur_damage_high,
-				raw_images/enemy/minotaur/minotaur_damage_low,
-				raw_images/enemy/minotaur/minotaur_die,
-				raw_images/enemy/minotaur/minotaur_idle,
-				raw_images/enemy/minotaur/minotaur_move,
-				raw_images/enemy/minotaur/minotaur_taunt,
+//				raw_images/enemy/minotaur/minotaur_attack_hit,
+//				raw_images/enemy/minotaur/minotaur_attack_knock,
+//				raw_images/enemy/minotaur/minotaur_attack_spin,
+//				raw_images/enemy/minotaur/minotaur_attack_stab,
+//				raw_images/enemy/minotaur/minotaur_damage_high,
+//				raw_images/enemy/minotaur/minotaur_damage_low,
+//				raw_images/enemy/minotaur/minotaur_die,
+//				raw_images/enemy/minotaur/minotaur_idle,
+//				raw_images/enemy/minotaur/minotaur_move,
+//				raw_images/enemy/minotaur/minotaur_taunt,
 				
 				//spider
 				raw_images/enemy/spider/spider_damage,
@@ -170,9 +174,9 @@
 				raw_images/enemy/elemental_ice/elemental_ice_damage,
 				raw_images/enemy/elemental_ice/elemental_ice_die,
 				raw_images/enemy/elemental_ice/elemental_ice_idle,
-				//raw_images/enemy/elemental_ice/elemental_ice_jump,
+//				raw_images/enemy/elemental_ice/elemental_ice_jump,
 				raw_images/enemy/elemental_ice/elemental_ice_move,
-				//raw_images/enemy/elemental_ice/elemental_ice_sleep,
+//				raw_images/enemy/elemental_ice/elemental_ice_sleep,
 				
 				// imp
 				raw_images/enemy/imp/imp_attack,
@@ -183,16 +187,16 @@
 				raw_images/enemy/imp/imp_move,
 				
 				// cyclops
-				raw_images/enemy/cyclops/cyclops_attack_beam,
-				raw_images/enemy/cyclops/cyclops_beam,
-				raw_images/enemy/cyclops/cyclops_attack_stomp,
-				raw_images/enemy/cyclops/cyclops_attack_throw,
-				raw_images/enemy/cyclops/cyclops_damage_high,
-				raw_images/enemy/cyclops/cyclops_damage_low,
-				raw_images/enemy/cyclops/cyclops_defense,
-				raw_images/enemy/cyclops/cyclops_die,
-				raw_images/enemy/cyclops/cyclops_idle,
-				raw_images/enemy/cyclops/cyclops_move,
+//				raw_images/enemy/cyclops/cyclops_attack_beam,
+//				raw_images/enemy/cyclops/cyclops_beam,
+//				raw_images/enemy/cyclops/cyclops_attack_stomp,
+//				raw_images/enemy/cyclops/cyclops_attack_throw,
+//				raw_images/enemy/cyclops/cyclops_damage_high,
+//				raw_images/enemy/cyclops/cyclops_damage_low,
+//				raw_images/enemy/cyclops/cyclops_defense,
+//				raw_images/enemy/cyclops/cyclops_die,
+//				raw_images/enemy/cyclops/cyclops_idle,
+//				raw_images/enemy/cyclops/cyclops_move,
 				
 				// totem
 				raw_images/enemy/totem/totem_appear,
@@ -208,17 +212,17 @@
 				raw_images/enemy/totem_fire/totem_fire_attack,
 				
 				// goblin king
-				raw_images/enemy/goblin_king/goblin_king_coin_bag,
-				raw_images/enemy/goblin_king/goblin_king_command,
-				raw_images/enemy/goblin_king/goblin_king_die,
-				raw_images/enemy/goblin_king/goblin_king_damage,
-				raw_images/enemy/goblin_king/goblin_king_eat,
-				raw_images/enemy/goblin_king/goblin_king_idle,
-				raw_images/enemy/goblin_king/goblin_king_jump,
-				raw_images/enemy/goblin_king/goblin_king_move,
-				raw_images/enemy/goblin_king/goblin_king_panic,
-				raw_images/enemy/goblin_king/goblin_king_slam,
-				raw_images/enemy/goblin_king/goblin_king_throw,
+//				raw_images/enemy/goblin_king/goblin_king_coin_bag,
+//				raw_images/enemy/goblin_king/goblin_king_command,
+//				raw_images/enemy/goblin_king/goblin_king_die,
+//				raw_images/enemy/goblin_king/goblin_king_damage,
+//				raw_images/enemy/goblin_king/goblin_king_eat,
+//				raw_images/enemy/goblin_king/goblin_king_idle,
+//				raw_images/enemy/goblin_king/goblin_king_jump,
+//				raw_images/enemy/goblin_king/goblin_king_move,
+//				raw_images/enemy/goblin_king/goblin_king_panic,
+//				raw_images/enemy/goblin_king/goblin_king_slam,
+//				raw_images/enemy/goblin_king/goblin_king_throw,
 				
 				// alarm_clock
 				raw_images/enemy/alarm_clock/alarm_clock_idle,
@@ -472,31 +476,50 @@
 				raw_images/restricted/enemy/skeleton_king/skeleton_king_damage,
 				raw_images/restricted/enemy/skeleton_king/skeleton_king_death,
 				
+				// bloodsilk spider
+				raw_images/restricted/enemy/bloodsilk_spider/bloodsilk_spider_idle,
+				raw_images/restricted/enemy/bloodsilk_spider/bloodsilk_spider_move,
+				raw_images/restricted/enemy/bloodsilk_spider/bloodsilk_spider_attack,
+				raw_images/restricted/enemy/bloodsilk_spider/bloodsilk_spider_shoot_web,
+				raw_images/restricted/enemy/bloodsilk_spider/bloodsilk_spider_damage,
+				raw_images/restricted/enemy/bloodsilk_spider/bloodsilk_spider_death,
+				
+				// spider queen
+				raw_images/restricted/enemy/spider_queen/spider_queen_idle,
+				raw_images/restricted/enemy/spider_queen/spider_queen_move,
+				raw_images/restricted/enemy/spider_queen/spider_queen_attack,
+				raw_images/restricted/enemy/spider_queen/spider_queen_shoot_web,
+				raw_images/restricted/enemy/spider_queen/spider_queen_damage,
+				raw_images/restricted/enemy/spider_queen/spider_queen_death,
+				// spider queen cocoon
+				raw_images/restricted/enemy/spider_queen/spider_queen_cocoon_idle,
+				raw_images/restricted/enemy/spider_queen/spider_queen_cocoon_break,
+								
 				//##############################################################
 				//### NPCs
 				//##############################################################
 				
 				// adventurer
-				raw_images/npc/adventurer/adventurer_attack,
-				raw_images/npc/adventurer/adventurer_attack_2,
-				raw_images/npc/adventurer/adventurer_attack_3,
-				raw_images/npc/adventurer/adventurer_damage,
-				raw_images/npc/adventurer/adventurer_die,
+//				raw_images/npc/adventurer/adventurer_attack,
+//				raw_images/npc/adventurer/adventurer_attack_2,
+//				raw_images/npc/adventurer/adventurer_attack_3,
+//				raw_images/npc/adventurer/adventurer_damage,
+//				raw_images/npc/adventurer/adventurer_die,
 				raw_images/npc/adventurer/adventurer_idle,
-				raw_images/npc/adventurer/adventurer_jump,
+//				raw_images/npc/adventurer/adventurer_jump,
 				raw_images/npc/adventurer/adventurer_move,
 				
 				// adventurer female
-				raw_images/npc/adventurer_female/adventurer_female_attack,
-				raw_images/npc/adventurer_female/adventurer_female_attack_2,
-				raw_images/npc/adventurer_female/adventurer_female_damage,
-				raw_images/npc/adventurer_female/adventurer_female_die,
-				raw_images/npc/adventurer_female/adventurer_female_idle,
-				raw_images/npc/adventurer_female/adventurer_female_move,
+//				raw_images/npc/adventurer_female/adventurer_female_attack,
+//				raw_images/npc/adventurer_female/adventurer_female_attack_2,
+//				raw_images/npc/adventurer_female/adventurer_female_damage,
+//				raw_images/npc/adventurer_female/adventurer_female_die,
+//				raw_images/npc/adventurer_female/adventurer_female_idle,
+//				raw_images/npc/adventurer_female/adventurer_female_move,
 				
 				// archaeologist
-				raw_images/npc/archaeologist/archaeologist_idle,
-				raw_images/npc/archaeologist/archaeologist_move,
+//				raw_images/npc/archaeologist/archaeologist_idle,
+//				raw_images/npc/archaeologist/archaeologist_move,
 				
 				// builder
 				raw_images/npc/builder/builder_idle,
@@ -728,8 +751,8 @@
 				raw_images/animals/squirrel/squirrel_move,
 				
 				//twig blight
-				raw_images/animals/twig_blight/twig_blight_idle,
-				raw_images/animals/twig_blight/twig_blight_move,
+//				raw_images/animals/twig_blight/twig_blight_idle,
+//				raw_images/animals/twig_blight/twig_blight_move,
 				
 				//##############################################################
 				//### Animals - restricted graphics

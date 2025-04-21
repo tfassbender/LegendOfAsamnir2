@@ -1,0 +1,56 @@
+{
+	defaultAI: bloodsilk_spider,
+	aiConfigurations: {
+		bloodsilk_spider: {
+			type: FAST_ATTACK_FIGHT_AI,
+			
+			stateNameAttack: attack,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 1f,
+			},
+			
+			attackDistance: 2f,
+			attackSpeedFactor: 2.5f,
+			attackSpeedDelay: 0.3f,
+			
+			subAI: {
+				type: FIGHT_AI,
+				
+				stateNameAttack: shoot_web,
+				
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 4f,
+				},
+				attackDistance: 4f,
+				minDistanceToTargetPlayer: 1f,
+				
+				subAI: {
+					type: FOLLOW_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					
+					minDistanceToTargetPlayer: 1f,
+					
+					subAI: {
+						type: PRE_DEFINED_MOVEMENT_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						distanceToKeepFromPlayer: 3.5f,
+						
+						useRelativePositions: true,
+						
+						subAI: {
+							type: BASE_AI,
+						}
+					}
+				}
+			}
+		}
+	}
+}

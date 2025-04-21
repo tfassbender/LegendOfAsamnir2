@@ -151,25 +151,25 @@
 		addSensor: true,
 		sensorRadius: 5f,
 	},
-	twig_blight: {
-		typeName: twig_blight,
-		
-		animationsConfig: config/animation/animals/twig_blight.json,
-		stateConfig: config/animals/states/twig_blight.json,
-		initialState: idle,
-		aiConfig: config/animals/ai/twig_blight.json,
-		
-		movingSpeed: 2f,
-		
-		imageOffsetX: 0f,
-		imageOffsetY: 0.2f,
-		
-		bodyShape: CIRCLE,
-		bodyRadius: 0.3f,
-		
-		addSensor: true,
-		sensorRadius: 4f,
-	},
+//	twig_blight: {
+//		typeName: twig_blight,
+//		
+//		animationsConfig: config/animation/animals/twig_blight.json,
+//		stateConfig: config/animals/states/twig_blight.json,
+//		initialState: idle,
+//		aiConfig: config/animals/ai/twig_blight.json,
+//		
+//		movingSpeed: 2f,
+//		
+//		imageOffsetX: 0f,
+//		imageOffsetY: 0.2f,
+//		
+//		bodyShape: CIRCLE,
+//		bodyRadius: 0.3f,
+//		
+//		addSensor: true,
+//		sensorRadius: 4f,
+//	},
 	
 	chicken: {
 		typeName: chicken,

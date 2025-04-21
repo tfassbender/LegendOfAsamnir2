@@ -4,7 +4,7 @@
 		type: HIT,
 		delay: 0.3,
 		duration: 0,
-		damage: 10,
+		damage: 15,
 		distFromCenter: 0.5,
 		hitFixtureRadius: 0.35,
 		pushForce: 75
@@ -12,10 +12,10 @@
 	{
 		id: web,
 		type: WEB,
-		projectileType: web,
+		projectileType: bloodsilk_spider_web,
 		delay: 0.1,
 		duration: 0,
-		damage: 5,
+		damage: 10,
 		canBeBlockedCompletely: true,
 		pushForce: 25,
 	},

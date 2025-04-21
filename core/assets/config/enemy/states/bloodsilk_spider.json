@@ -1,0 +1,65 @@
+[
+	{
+		id: idle,
+		animation: bloodsilk_spider_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, shoot_web, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: bloodsilk_spider_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, shoot_web, damage, die
+		]
+	},
+	{
+		id: attack,
+		animation: bloodsilk_spider_attack,
+		stateEnteringSound: spider_attack,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: shoot_web,
+		animation: bloodsilk_spider_shoot_web,
+		stateEnteringSound: spider_web,
+		attack: web
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: damage,
+		animation: bloodsilk_spider_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: flesh_hit_1,
+		followingState: idle,
+		interruptingStates: [
+			attack, shoot_web, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: bloodsilk_spider_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		stateEnteringSound: flesh_hit_2,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

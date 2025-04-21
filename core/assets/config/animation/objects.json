@@ -55,12 +55,12 @@
 			frameDuration: 0.1,
 			playMode: NORMAL
 		},
-		{
-			name: signboard_break,
-			atlas: packed/demo/demo.atlas,
-			frameDuration: 0.1,
-			playMode: NORMAL
-		},
+//		{
+//			name: signboard_break,
+//			atlas: packed/demo/demo.atlas,
+//			frameDuration: 0.1,
+//			playMode: NORMAL
+//		},
 		{
 			name: map_idle,
 			atlas: packed/demo/demo.atlas,
@@ -86,12 +86,12 @@
 			frameDuration: 0.1,
 			playMode: REVERSED
 		},
-		{
-			name: door_open,
-			atlas: packed/demo/demo.atlas,
-			frameDuration: 0.1,
-			playMode: NORMAL
-		},
+//		{
+//			name: door_open,
+//			atlas: packed/demo/demo.atlas,
+//			frameDuration: 0.1,
+//			playMode: NORMAL
+//		},
 		{
 			alias: magic_switch_activate,
 			name: magic_switch,

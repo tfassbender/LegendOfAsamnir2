@@ -260,7 +260,7 @@
 	- Maybe add some shortcuts from the three zones back to the main part of the map?
 	- Each of the three Zones should contain one Triforce item
 - Textures:
-    - Skeletal Warior
+	- Skeletal Warior
 	- Skeletal Archer
 	- Skeletal Mage
 	- Skeletal Trumpetist
@@ -270,7 +270,9 @@
 	- Cultist Brute
 	- Cultist Horror
 	- Mimics
+	- Bat
 	- Spider
+	- Bloodsilk Spider
 	- Spider Queen (boss)
 	- Wisp
 	- Vengefull Spirit
@@ -278,8 +280,8 @@
 	- Death (as Hel)
 	- Magic Wasteland Tileset
 	- Cultist Dungeon Tileset
-	- NPCs: 
-	    - Dwarf Undead (only as a joke, because thorin payed with his live to enter Helheim)
+	- NPCs:
+		- Dwarf Undead (only as a joke, because thorin payed with his live to enter Helheim)
 		- Mideval Executioner
 		- Plague Doctor
 		- Succubus (maybe as enemy)

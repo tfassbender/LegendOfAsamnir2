@@ -27,34 +27,34 @@
 			coin: 0.3,
 		}
 	},
-	gladiator: {
-		typeName: gladiator,
-		
-		animationsConfig: config/animation/enemy/gladiator.json,
-		stateConfig: config/enemy/states/gladiator.json,
-		initialState: idle,
-		attackConfig: config/enemy/attack/gladiator.json,
-		aiConfig: config/enemy/ai/gladiator.json,
-		
-		health: 35,
-		movingSpeed: 1.5,
-		
-		imageOffsetX: 0f,
-		imageOffsetY: 0.1f,
-		
-		bodyShape: CIRCLE,
-		bodyRadius: 0.3f,
-		
-		addSensor: true,
-		sensorRadius: 4f,
-		
-		pushForceDamage: 25,
-		pushForceHit: 40,
-		
-		drops: {
-			coin: 0.5,
-		}
-	},
+//	gladiator: {
+//		typeName: gladiator,
+//		
+//		animationsConfig: config/animation/enemy/gladiator.json,
+//		stateConfig: config/enemy/states/gladiator.json,
+//		initialState: idle,
+//		attackConfig: config/enemy/attack/gladiator.json,
+//		aiConfig: config/enemy/ai/gladiator.json,
+//		
+//		health: 35,
+//		movingSpeed: 1.5,
+//		
+//		imageOffsetX: 0f,
+//		imageOffsetY: 0.1f,
+//		
+//		bodyShape: CIRCLE,
+//		bodyRadius: 0.3f,
+//		
+//		addSensor: true,
+//		sensorRadius: 4f,
+//		
+//		pushForceDamage: 25,
+//		pushForceHit: 40,
+//		
+//		drops: {
+//			coin: 0.5,
+//		}
+//	},
 	mini_golem: {
 		typeName: mini_golem,
 		
@@ -126,35 +126,35 @@
 		}
 	},
 	
-	minotaur: {
-		typeName: minotaur,
-		
-		animationsConfig: config/animation/enemy/minotaur.json,
-		stateConfig: config/enemy/states/minotaur.json,
-		initialState: idle,
-		attackConfig: config/enemy/attack/minotaur.json
-		
-		health: 150,
-		movingSpeed: 3.0,
-		
-		imageOffsetX: 0f,
-		imageOffsetY: -0.2f,
-		
-		bodyShape: OCTAGON,
-		bodyWidth: 1.2f,
-		bodyHeight: 1.8f,
-		
-		addSensor: true,
-		sensorRadius: 10f,
-		
-		pushForceDamage: 15,
-		pushForceHit: 40,
-		
-		usesHealthBar: true,
-		healthBarOffsetX: 1,
-		healthBarOffsetY: -1,
-		healthBarWidthFactor: 0.5,
-	},
+//	minotaur: {
+//		typeName: minotaur,
+//		
+//		animationsConfig: config/animation/enemy/minotaur.json,
+//		stateConfig: config/enemy/states/minotaur.json,
+//		initialState: idle,
+//		attackConfig: config/enemy/attack/minotaur.json
+//		
+//		health: 150,
+//		movingSpeed: 3.0,
+//		
+//		imageOffsetX: 0f,
+//		imageOffsetY: -0.2f,
+//		
+//		bodyShape: OCTAGON,
+//		bodyWidth: 1.2f,
+//		bodyHeight: 1.8f,
+//		
+//		addSensor: true,
+//		sensorRadius: 10f,
+//		
+//		pushForceDamage: 15,
+//		pushForceHit: 40,
+//		
+//		usesHealthBar: true,
+//		healthBarOffsetX: 1,
+//		healthBarOffsetY: -1,
+//		healthBarWidthFactor: 0.5,
+//	},
 	spider: {
 		typeName: spider,
 		
@@ -164,7 +164,7 @@
 		attackConfig: config/enemy/attack/spider.json,
 		aiConfig: config/enemy/ai/spider.json,
 		
-		health: 20,
+		health: 15,
 		movingSpeed: 2.0,
 		
 		imageOffsetX: 0f,
@@ -176,13 +176,14 @@
 		addSensor: true,
 		sensorRadius: 6f,
 		
-		pushForceDamage: 35,
+		pushForceDamage: 50,
 		pushForceHit: 30,
 		
-		drops: {
-			coin: 0.5,
-			big_coin: 0.1,
-		}
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
 	},
 	mimic_chest: {
 		typeName: mimic_chest,
@@ -389,35 +390,35 @@
 			big_coin: 0.1,
 		}
 	},
-	cyclops: {
-		typeName: cyclops,
-		
-		animationsConfig: config/animation/enemy/cyclops.json,
-		stateConfig: config/enemy/states/cyclops.json,
-		initialState: idle,
-		attackConfig: config/enemy/attack/cyclops.json
-		
-		health: 150,
-		movingSpeed: 2.0,
-		
-		imageOffsetX: 0f,
-		imageOffsetY: 0.4f,
-		
-		bodyShape: OCTAGON,
-		bodyWidth: 1.0f,
-		bodyHeight: 1.4f,
-		
-		addSensor: true,
-		sensorRadius: 12f,
-		
-		pushForceDamage: 0,
-		pushForceHit: 40,
-		
-		usesHealthBar: true,
-		healthBarOffsetX: 0.6,
-		healthBarOffsetY: -0.4,
-		healthBarWidthFactor: 0.5,
-	},
+//	cyclops: {
+//		typeName: cyclops,
+//		
+//		animationsConfig: config/animation/enemy/cyclops.json,
+//		stateConfig: config/enemy/states/cyclops.json,
+//		initialState: idle,
+//		attackConfig: config/enemy/attack/cyclops.json
+//		
+//		health: 150,
+//		movingSpeed: 2.0,
+//		
+//		imageOffsetX: 0f,
+//		imageOffsetY: 0.4f,
+//		
+//		bodyShape: OCTAGON,
+//		bodyWidth: 1.0f,
+//		bodyHeight: 1.4f,
+//		
+//		addSensor: true,
+//		sensorRadius: 12f,
+//		
+//		pushForceDamage: 0,
+//		pushForceHit: 40,
+//		
+//		usesHealthBar: true,
+//		healthBarOffsetX: 0.6,
+//		healthBarOffsetY: -0.4,
+//		healthBarWidthFactor: 0.5,
+//	},
 	totem: {
 		typeName: totem,
 		
@@ -446,35 +447,35 @@
 			coin: 0.5,
 		}
 	},
-	goblin_king: {
-		typeName: goblin_king,
-		
-		animationsConfig: config/animation/enemy/goblin_king.json,
-		stateConfig: config/enemy/states/goblin_king.json,
-		initialState: idle,
-		attackConfig: config/enemy/attack/goblin_king.json,
-		
-		health: 350,
-		movingSpeed: 1.5,
-		
-		imageOffsetX: 0f,
-		imageOffsetY: 0.3f,
-		
-		bodyShape: OCTAGON,
-		bodyWidth: 1.2f,
-		bodyHeight: 1.4f,
-		
-		addSensor: true,
-		sensorRadius: 15f,
-		
-		pushForceDamage: 0,
-		pushForceHit: 40,
-		
-		usesHealthBar: true,
-		healthBarOffsetX: 0.1,
-		healthBarOffsetY: -0.4,
-		healthBarWidthFactor: 1.0,
-	},
+//	goblin_king: {
+//		typeName: goblin_king,
+//		
+//		animationsConfig: config/animation/enemy/goblin_king.json,
+//		stateConfig: config/enemy/states/goblin_king.json,
+//		initialState: idle,
+//		attackConfig: config/enemy/attack/goblin_king.json,
+//		
+//		health: 350,
+//		movingSpeed: 1.5,
+//		
+//		imageOffsetX: 0f,
+//		imageOffsetY: 0.3f,
+//		
+//		bodyShape: OCTAGON,
+//		bodyWidth: 1.2f,
+//		bodyHeight: 1.4f,
+//		
+//		addSensor: true,
+//		sensorRadius: 15f,
+//		
+//		pushForceDamage: 0,
+//		pushForceHit: 40,
+//		
+//		usesHealthBar: true,
+//		healthBarOffsetX: 0.1,
+//		healthBarOffsetY: -0.4,
+//		healthBarWidthFactor: 1.0,
+//	},
 	alarm_clock: {
 		typeName: alarm_clock,
 		
@@ -1291,10 +1292,6 @@
 		healthBarOffsetY: 0,
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
-		
-		drops: {
-			coin: 0.7,
-		}
 	},
 	
 	skeletal_archer: {
@@ -1331,10 +1328,6 @@
 		healthBarOffsetY: -0.2,
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
-		
-		drops: {
-			coin: 0.7,
-		}
 	},
 	
 	skeletal_mage: {
@@ -1372,10 +1365,6 @@
 		healthBarOffsetY: -0.2,
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
-		
-		drops: {
-			coin: 0.7,
-		}
 	},
 	
 	skeletal_trumpetist: {
@@ -1412,10 +1401,6 @@
 		healthBarOffsetY: -0.2,
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
-		
-		drops: {
-			coin: 0.7,
-		}
 	},
 	
 	skeleton_king: {
@@ -1450,5 +1435,36 @@
 		
 		isBoss: true
 		bossName: "Hungr - Steersman of Naglfar",
+	},
+	
+	bloodsilk_spider: {
+		typeName: bloodsilk_spider,
+		
+		animationsConfig: config/animation/enemy/bloodsilk_spider.json,
+		stateConfig: config/enemy/states/bloodsilk_spider.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bloodsilk_spider.json,
+		aiConfig: config/enemy/ai/bloodsilk_spider.json,
+		
+		health: 25,
+		movingSpeed: 1.5,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.5f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 4f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
 	},
 }
