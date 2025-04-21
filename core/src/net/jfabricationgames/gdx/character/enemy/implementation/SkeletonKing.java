@@ -10,6 +10,7 @@ import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
+import net.jfabricationgames.gdx.character.enemy.ai.FastAttackFightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.SkeletonKingAttackAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.event.EventConfig;
@@ -34,7 +35,6 @@ public class SkeletonKing extends Enemy {
 		CharacterState idleState = stateMachine.getState(STATE_NAME_IDLE);
 		CharacterState moveState = stateMachine.getState(STATE_NAME_MOVE);
 		
-		// follow the player if the health is high
 		RayCastFollowAI followAI = new RayCastFollowAI(ai, moveState, idleState);
 		followAI.setMinDistanceToTarget(2f);
 		
@@ -52,20 +52,22 @@ public class SkeletonKing extends Enemy {
 		
 		ArrayMap<String, CharacterState> attackStates = new ArrayMap<>();
 		attackStates.put(stateNameAttackSwing, characterStateAttackSwing);
-		attackStates.put(stateNameAttackLeap, characterStateAttackLeap);
 		attackStates.put(stateNameCommand, characterStateCommand);
 		
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
 		attackDistances.put(characterStateAttackSwing, 2f);
-		attackDistances.put(characterStateAttackLeap, 5f);
 		attackDistances.put(characterStateCommand, 100f); // no range restriction
 		
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
-		attackTimers.put(characterStateAttackSwing, new FixedAttackTimer(2f));
-		attackTimers.put(characterStateAttackLeap, new FixedAttackTimer(10f));
+		attackTimers.put(characterStateAttackSwing, new FixedAttackTimer(1.5f));
 		attackTimers.put(characterStateCommand, new FixedAttackTimer(20f));
 		
-		return new SkeletonKingAttackAI(ai, attackStates, attackDistances, attackTimers);
+		SkeletonKingAttackAI skeletonKingAttackAI = new SkeletonKingAttackAI(ai, attackStates, attackDistances, attackTimers);
+		FastAttackFightAI fastAttackAI = new FastAttackFightAI(skeletonKingAttackAI, characterStateAttackLeap, new FixedAttackTimer(10f), 5f, 2.5f);
+		fastAttackAI.setAttackSpeedDelay(0.1f);
+		fastAttackAI.setAttackSpeedMaxTime(0.7f);
+		
+		return fastAttackAI;
 	}
 	
 	@Override

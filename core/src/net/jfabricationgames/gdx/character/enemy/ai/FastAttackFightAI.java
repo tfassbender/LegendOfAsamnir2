@@ -10,12 +10,12 @@ public class FastAttackFightAI extends FightAI {
 	
 	private float attackSpeedFactor;
 	private float attackSpeedDelay;
+	private float attackSpeedMaxTime = -1f; // -1 means no max time
 	private float timeSinceAttackStateEntered;
 	
-	public FastAttackFightAI(ArtificialIntelligence subAI, CharacterState attackState, AttackTimer attackTimer, float attackDistance, float attackSpeedFactor, float attackSpeedDelay) {
+	public FastAttackFightAI(ArtificialIntelligence subAI, CharacterState attackState, AttackTimer attackTimer, float attackDistance, float attackSpeedFactor) {
 		super(subAI, attackState, attackTimer, attackDistance);
 		this.attackSpeedFactor = attackSpeedFactor;
-		this.attackSpeedDelay = attackSpeedDelay;
 	}
 	
 	@Override
@@ -37,11 +37,19 @@ public class FastAttackFightAI extends FightAI {
 	
 	@Override
 	protected void attackMoveTo(Vector2 targetPosition) {
-		if (timeSinceAttackStateEntered >= attackSpeedDelay) {
+		if (timeSinceAttackStateEntered >= attackSpeedDelay && (attackSpeedMaxTime < 0 || timeSinceAttackStateEntered <= attackSpeedMaxTime)) {
 			character.moveTo(targetPosition, attackSpeedFactor);
 		}
 		else {
 			super.attackMoveTo(targetPosition);
 		}
+	}
+	
+	public void setAttackSpeedDelay(float attackSpeedDelay) {
+		this.attackSpeedDelay = attackSpeedDelay;
+	}
+	
+	public void setAttackSpeedMaxTime(float attackSpeedMaxTime) {
+		this.attackSpeedMaxTime = attackSpeedMaxTime;
 	}
 }

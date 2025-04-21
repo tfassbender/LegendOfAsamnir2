@@ -68,6 +68,7 @@ public enum ArtificialIntelligenceType {
 			ai.setMaxDistanceFromStart(aiConfig.maxMoveDistance);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
 			ai.setFollowCondition(aiConfig.followCondition);
+			
 			return ai;
 		}
 	},
@@ -82,6 +83,7 @@ public enum ArtificialIntelligenceType {
 			RayCastFollowAI ai = new RayCastFollowAI(subAI, movingState, idleState);
 			ai.setMinDistanceToTarget(aiConfig.minDistanceToTargetPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			
 			return ai;
 		}
 	},
@@ -98,6 +100,7 @@ public enum ArtificialIntelligenceType {
 			PreDefinedMovementAI ai = new PreDefinedMovementAI(subAI, movingState, idleState, aiConfig.useRelativePositions, idleTimeBetweenMovements, positions);
 			ai.setDistanceToKeepFromPlayer(aiConfig.distanceToKeepFromPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			
 			return ai;
 		}
 	},
@@ -119,6 +122,7 @@ public enum ArtificialIntelligenceType {
 			RandomMovementAI ai = new RandomMovementAI(subAI, movingState, idleState, maxDistance, idleTimeBetweenMovements, aiConfig.changeTargetWhenStaticBodyHit);
 			ai.setDistanceToKeepFromPlayer(aiConfig.distanceToKeepFromPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			
 			return ai;
 		}
 	},
@@ -133,6 +137,7 @@ public enum ArtificialIntelligenceType {
 			
 			BackToStartingPointMovementAI ai = new BackToStartingPointMovementAI(subAI, movingState, idleState, idleTimeBetweenMovements);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			
 			return ai;
 		}
 	},
@@ -148,6 +153,7 @@ public enum ArtificialIntelligenceType {
 			ai.setDistanceToStopRunning(aiConfig.distanceToStopRunning);
 			ai.setDistanceToKeepFromPlayer(aiConfig.distanceToKeepFromPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			
 			return ai;
 		}
 	},
@@ -156,17 +162,6 @@ public enum ArtificialIntelligenceType {
 	//*** Enemy AIs
 	//*****************************************************
 	
-	FAST_ATTACK_FIGHT_AI {
-		
-		@Override
-		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
-			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
-			CharacterState attackState = stateMachine.getState(aiConfig.stateNameAttack);
-			AttackTimer attackTimer = createAttackTimer(aiConfig.attackTimerConfig);
-			
-			return new FastAttackFightAI(subAI, attackState, attackTimer, aiConfig.attackDistance, aiConfig.attackSpeedFactor, aiConfig.attackSpeedDelay);
-		}
-	},
 	FIGHT_AI {
 		
 		@Override
@@ -178,6 +173,22 @@ public enum ArtificialIntelligenceType {
 			FightAI ai = new FightAI(subAI, attackState, attackTimer, aiConfig.attackDistance);
 			ai.setMinDistanceToTargetPlayer(aiConfig.minDistanceToTargetPlayer);
 			ai.setMoveWhileAttacking(aiConfig.moveWhileAttacking);
+			
+			return ai;
+		}
+	},
+	FAST_ATTACK_FIGHT_AI {
+		
+		@Override
+		public ArtificialIntelligence buildAI(ArtificialIntelligenceConfig aiConfig, CharacterStateMachine stateMachine, MapProperties mapProperties) {
+			ArtificialIntelligence subAI = aiConfig.subAI.buildAI(stateMachine, mapProperties);
+			CharacterState attackState = stateMachine.getState(aiConfig.stateNameAttack);
+			AttackTimer attackTimer = createAttackTimer(aiConfig.attackTimerConfig);
+			
+			FastAttackFightAI ai = new FastAttackFightAI(subAI, attackState, attackTimer, aiConfig.attackDistance, aiConfig.attackSpeedFactor);
+			ai.setAttackSpeedDelay(aiConfig.attackSpeedDelay);
+			ai.setAttackSpeedMaxTime(aiConfig.attackSpeedMaxTime);
+			
 			return ai;
 		}
 	},
@@ -192,6 +203,7 @@ public enum ArtificialIntelligenceType {
 			RayCastFightAI ai = new RayCastFightAI(subAI, attackState, attackTimer, aiConfig.attackDistance);
 			ai.setMinDistanceToTargetPlayer(aiConfig.minDistanceToTargetPlayer);
 			ai.setMoveWhileAttacking(aiConfig.moveWhileAttacking);
+			
 			return ai;
 		}
 	},
@@ -217,6 +229,7 @@ public enum ArtificialIntelligenceType {
 			
 			TeamMovementAI ai = new TeamMovementAI(subAI, movingState, idleState, aiConfig.distanceToInformTeamMates, teamId);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			
 			return ai;
 		}
 	},
@@ -290,6 +303,7 @@ public enum ArtificialIntelligenceType {
 			RandomMovementAI ai = new RandomIdleStatesMovementAI(subAI, idleStates, movementProbability, movingState, idleState, maxDistance, aiConfig.changeTargetWhenStaticBodyHit);
 			ai.setDistanceToKeepFromPlayer(aiConfig.distanceToKeepFromPlayer);
 			ai.setMovementSpeedFactor(aiConfig.movementSpeedFactor);
+			
 			return ai;
 		}
 		

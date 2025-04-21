@@ -28,21 +28,27 @@
 	{
 		id: attack_leap,
 		animation: skeleton_king_attack_leap,
-		attack: attack // TODO
+		attack: attack_leap,
+		stateEnteringSound: hit_4,
+		soundDelay: 0.6f,
+		soundVolume: 0.7f,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			damage, die
+			die
 		]
 	},
 	{
 		id: attack_swing,
 		animation: skeleton_king_attack_swing,
-		attack: attack // TODO
+		attack: attack_swing,
+		stateEnteringSound: hit_4,
+		soundDelay: 0.4f,
+		soundVolume: 0.5f,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			damage, die
+			die
 		]
 	},
 	{

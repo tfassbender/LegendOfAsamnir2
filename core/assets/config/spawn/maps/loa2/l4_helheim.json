@@ -3,16 +3,6 @@
 	//*** Boss Room
 	//*************************************
 	
-	l4_helheim_skeleton_zone__magic_totem_boss: {
-		complexEvents: [
-			{
-                eventType: CUSTCENE_SPAWN_UNIT,
-                stringValue: l4_helheim_skeleton_zone__magic_totem_boss,
-			}
-		],
-        spawnType: enemy.magic_totem,
-	},
-	
 	l4_helheim_skeleton_zone__boss: {
 		complexEvents: [
 			{
@@ -22,5 +12,46 @@
 		],
         spawnType: enemy.skeleton_king,
         spawnTypeMapProperties: "{enemyDefeatedEventText: \"loa2_l4_helheim_skeleton_zone__boss_defeated\"}",
+	},
+	
+	l4_helheim_skeleton_zone__magic_totem_boss_up: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: l4_helheim_skeleton_zone__magic_totem_boss_up,
+			}
+		],
+        spawnType: enemy.magic_totem,
+        spawnTypeMapProperties: "{drop: \"{bomb: 0.5}\", unitId: \"loa2_l4_helheim_skeleton_zone__boss_totem__up\"}",
+	},
+	l4_helheim_skeleton_zone__magic_totem_boss_up_right: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: l4_helheim_skeleton_zone__magic_totem_boss_up_right,
+			}
+		],
+        spawnType: enemy.magic_totem,
+        spawnTypeMapProperties: "{drop: \"{bomb: 0.5}\", unitId: \"loa2_l4_helheim_skeleton_zone__boss_totem__up_right\"}",
+	},
+	l4_helheim_skeleton_zone__magic_totem_boss_down_right: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: l4_helheim_skeleton_zone__magic_totem_boss_down_right,
+			}
+		],
+        spawnType: enemy.magic_totem,
+        spawnTypeMapProperties: "{drop: \"{bomb: 0.5}\", unitId: \"loa2_l4_helheim_skeleton_zone__boss_totem__down_right\"}",
+	},
+	l4_helheim_skeleton_zone__magic_totem_boss_left: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: l4_helheim_skeleton_zone__magic_totem_boss_left,
+			}
+		],
+        spawnType: enemy.magic_totem,
+        spawnTypeMapProperties: "{drop: \"{bomb: 0.5}\", unitId: \"loa2_l4_helheim_skeleton_zone__boss_totem__left\"}",
 	},
 }

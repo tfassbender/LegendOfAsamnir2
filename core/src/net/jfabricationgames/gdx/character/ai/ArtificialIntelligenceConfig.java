@@ -35,6 +35,7 @@ public class ArtificialIntelligenceConfig {
 	public float attackDistance;
 	public float attackSpeedFactor;
 	public float attackSpeedDelay;
+	public float attackSpeedMaxTime = -1f; // -1 means no max time
 	public float minDistanceToTargetPlayer = 1f;
 	public float distanceToKeepFromPlayer = 0f;
 	public float distanceToStopRunning = 2f;

@@ -24,7 +24,8 @@ public class FightAI extends AbstractAttackAI {
 		subAI.calculateMove(delta);
 		
 		super.calculateMove(delta);
-		if (targetInRange(attackDistance) && canSeeTarget()) {
+		if ((attackTimer.timeToAttack() || inAttackState()) // in the attack state the movement needs to be controlled by this AI
+				&& targetInRange(attackDistance) && canSeeTarget()) {
 			AIAttackingMove move = new AIAttackingMove(this);
 			move.targetPosition = targetingPlayer.getPosition();
 			setMove(MoveType.ATTACK, move);

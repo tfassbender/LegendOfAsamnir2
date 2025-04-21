@@ -39,20 +39,6 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 		this.attackTimers = attackTimers;
 	}
 	
-	protected boolean changeToAttackState(CharacterState state) {
-		boolean stateApplied = setAndApplyAttackState(state);
-		if (stateApplied) {
-			if (attackTimers != null) {
-				attackTimers.get(state).reset();
-			}
-			else {
-				attackTimer.reset();
-			}
-		}
-		
-		return stateApplied;
-	}
-	
 	protected boolean setAndApplyAttackState(CharacterState state) {
 		attackState = state;
 		return super.changeToAttackState();
@@ -82,12 +68,20 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 					return;
 				}
 				
-				AIAttackingMove attackMove = new AIAttackingMove(this);
-				attackMove.attack = attack;
-				attackMove.targetPosition = targetingPlayer.getPosition();
-				setMove(MoveType.ATTACK, attackMove);
+				createAttackingMove(attack);
 			}
 		}
+		else if (inAttackState()) {
+			// control the movement in the attack state
+			createAttackingMove(stateMachine.getCurrentState());
+		}
+	}
+	
+	private void createAttackingMove(CharacterState attack) {
+		AIAttackingMove attackMove = new AIAttackingMove(this);
+		attackMove.attack = attack;
+		attackMove.targetPosition = targetingPlayer.getPosition();
+		setMove(MoveType.ATTACK, attackMove);
 	}
 	
 	private void updateAttackTimers(float delta) {
@@ -138,6 +132,20 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 		}
 		
 		subAI.executeMove(delta);
+	}
+	
+	protected boolean changeToAttackState(CharacterState state) {
+		boolean stateApplied = setAndApplyAttackState(state);
+		if (stateApplied) {
+			if (attackTimers != null) {
+				attackTimers.get(state).reset();
+			}
+			else {
+				attackTimer.reset();
+			}
+		}
+		
+		return stateApplied;
 	}
 	
 	protected boolean isInRangeForAttack(CharacterState attack, float distanceToTarget) {

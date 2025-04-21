@@ -1,18 +1,22 @@
 package net.jfabricationgames.gdx.character.enemy.ai;
 
+import java.util.Objects;
+import java.util.stream.IntStream;
+
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
-import net.jfabricationgames.gdx.character.ai.move.AIAttackingMove;
-import net.jfabricationgames.gdx.character.ai.move.MoveType;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.state.CharacterState;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.map.GameMapManager;
 
 public class SkeletonKingAttackAI extends AbstractMultiAttackAI {
 	
 	private CharacterState attackSwing;
-	private CharacterState attackLeap;
 	private CharacterState stateCommand;
 	
 	public SkeletonKingAttackAI(ArtificialIntelligence subAI, //
@@ -23,8 +27,9 @@ public class SkeletonKingAttackAI extends AbstractMultiAttackAI {
 		super(subAI, attackStates, attackDistances, attackTimers);
 		
 		attackSwing = attackStates.get("attack_swing");
-		attackLeap = attackStates.get("attack_leap");
 		stateCommand = attackStates.get("command");
+		
+		setMoveToPlayerWhenAttacking(false);
 	}
 	
 	@Override
@@ -32,27 +37,57 @@ public class SkeletonKingAttackAI extends AbstractMultiAttackAI {
 		float distanceToTarget = distanceToTarget();
 		
 		if (isInRangeForAttack(attackSwing, distanceToTarget) && attackTimers.get(attackSwing).timeToAttack()) {
-			setAttackMove(attackSwing);
-		}
-		else if (isInRangeForAttack(attackLeap, distanceToTarget) && attackTimers.get(attackLeap).timeToAttack()) {
-			setAttackMove(attackLeap);
+			return attackSwing;
 		}
 		else if (isInRangeForAttack(stateCommand, distanceToTarget) && attackTimers.get(stateCommand).timeToAttack()) {
-			setAttackMove(stateCommand);
+			return stateCommand;
 		}
 		
 		return null;
 	}
 	
 	@Override
-	protected boolean timeToAttack() {
-		return true; // every attack uses it's own attack timer, so we choose the timeToAttack in the chooseAttack method
+	protected boolean changeToAttackState(CharacterState state) {
+		boolean stateChanged = super.changeToAttackState(state);
+		
+		if (stateChanged && Objects.equals(state, stateCommand)) {
+			// spawn a random magic totem in the command state
+			String totemToSpawn = chooseRandomTotemPosition();
+			if (totemToSpawn != null) { // can be null if all positions are already occupied
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+						.setStringValue(totemToSpawn));
+			}
+		}
+		
+		return stateChanged;
 	}
 	
-	private void setAttackMove(CharacterState attack) {
-		AIAttackingMove attackMove = new AIAttackingMove(this);
-		attackMove.attack = attack;
-		attackMove.targetPosition = targetingPlayer.getPosition();
-		setMove(MoveType.ATTACK, attackMove);
+	private String chooseRandomTotemPosition() {
+		String totemUnitIdPrefix = "loa2_l4_helheim_skeleton_zone__boss_totem__";
+		String totemSpawnPrefix = "l4_helheim_skeleton_zone__magic_totem_boss_";
+		String[] totemPositionEndings = {"up", "up_right", "down_right", "left"};
+		boolean[] stillExist = new boolean[totemPositionEndings.length];
+		
+		// check whether the totems still exist
+		for (String position : totemPositionEndings) {
+			if (GameMapManager.getInstance().getMap().getUnitById(totemUnitIdPrefix + position) != null) {
+				stillExist[totemPositionEndings.length] = true;
+			}
+		}
+		
+		// check whether all positions are already occupied
+		boolean allOccupied = IntStream.range(0, stillExist.length).allMatch(idx -> stillExist[idx]);
+		if (allOccupied) {
+			return null;
+		}
+		
+		// spawn a totem at a random position that is not occupied
+		int randomPosition = (int) (Math.random() * totemPositionEndings.length);
+		while (stillExist[randomPosition]) {
+			randomPosition = (int) (Math.random() * totemPositionEndings.length);
+		}
+		
+		return totemSpawnPrefix + totemPositionEndings[randomPosition];
 	}
 }

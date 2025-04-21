@@ -1,14 +1,22 @@
 [
-	// TODO add leap and hit attack
-	
 	{
-		id: attack, 
+		id: attack_swing, 
 		type: HIT,
-		delay: 0.1,
+		delay: 0.4,
 		duration: 0,
-		damage: 10,
-		distFromCenter: 0.5,
-		hitFixtureRadius: 0.35,
+		damage: 15,
+		distFromCenter: 1.0,
+		hitFixtureRadius: 0.6,
 		pushForce: 100
+	}
+	{
+		id: attack_leap, 
+		type: HIT,
+		delay: 0.6,
+		duration: 0,
+		damage: 20,
+		distFromCenter: 1.2,
+		hitFixtureRadius: 0.8,
+		pushForce: 150
 	}
 ]

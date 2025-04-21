@@ -673,10 +673,6 @@
 		healthBarOffsetY: -0.2f,
 		healthBarWidthFactor: 0.7f,
 		healthBarAlwaysVisible: true,
-		
-		drops: {
-			bomb: 1,
-		}
 	}
 	
 	giant_golem: {
@@ -1431,7 +1427,7 @@
 		attackConfig: config/enemy/attack/skeleton_king.json,
 		
 		health: 250,
-		movingSpeed: 1f,
+		movingSpeed: 2f,
 		
 		damageModifiersByAttackType: {
 			ARROW: 0f,
@@ -1439,7 +1435,7 @@
 			MAGIC: 0f,
 		},
 		
-		imageOffsetX: 0.5f,
+		imageOffsetX: 0f,
 		imageOffsetY: -0.3f,
 		
 		bodyShape: OCTAGON,
@@ -1447,7 +1443,7 @@
 		bodyHeight: 1.3f,
 		
 		addSensor: true,
-		sensorRadius: 8f,
+		sensorRadius: 12f,
 		
 		pushForceDamage: 20,
 		pushForceHit: 80,
