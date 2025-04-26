@@ -55,7 +55,7 @@
    eJztz0ENACAMALEpmX8DBA24QsDgT0abnICLeM/Kc93cPn967WZkraOZNQAAAAAAAAAAAAAAgE42Q+QZbg==
   </data>
  </layer>
- <objectgroup id="3" name="objects">
+ <objectgroup id="3" name="objects" locked="1">
   <object id="868" name="object.eventObject" x="1232.59" y="192.313" width="127.48" height="7.375">
    <properties>
     <property name="eventParameter" value="loa2_l4_helheim_main_goto_main"/>
@@ -904,7 +904,7 @@
   <object id="960" x="405.333" y="689" width="11" height="14.6667"/>
   <object id="961" x="440.333" y="784.667" width="8" height="15.6667"/>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics">
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="884" x="1045.5" y="513" width="106" height="94.75"/>
   <object id="887" x="1033.5" y="488.25">
    <polygon points="0,0 14.5,-0.25 8,11.5"/>

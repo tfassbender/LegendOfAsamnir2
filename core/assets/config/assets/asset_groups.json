@@ -292,6 +292,15 @@
 				"textureMagFilter": "Nearest"
 			}
 		},
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_l4_helheim_spider_zone.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
 		
 		// fields of vigrid
 		{
