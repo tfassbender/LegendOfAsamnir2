@@ -61,7 +61,7 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 	}
 	
 	private void initializeStates() {
-		stateMachine = new CharacterStateMachine(typeConfig.graphicsConfig.stateConfig, typeConfig.graphicsConfig.initialState, null);
+		stateMachine = new CharacterStateMachine(typeConfig.graphicsConfig.stateConfig, typeConfig.graphicsConfig.initialState, null, properties);
 	}
 	
 	private void createAI() {

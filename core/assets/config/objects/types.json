@@ -318,10 +318,24 @@
 		physicsBodyOffsetFactorX: 0f,
 		physicsBodyOffsetFactorY: 0f,
 		
-		interactionMarkerOffsetX: 0.15f,
-		interactionMarkerOffsetY: 0.1f,
+		addSensor: false, // activated by attack
+		pressureActivated: true,
+		activateByAttack: true,
+	},
+	attack_pressure_switch_bottom: {
+		type: STATE_SWITCH,
 		
-		addSensor: false, // activated by a player attack
+		texture: button_floor_up,
+		textureAfterAction: button_floor_down,
+		interactionSound: switch_activated,
+		
+		physicsBodySizeFactorX: 0.6f,
+		physicsBodySizeFactorY: 0.6f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0f,
+		
+		addSensor: false, // activated by attack
+		isSensor: true,
 		pressureActivated: true,
 		activateByAttack: true,
 	},

@@ -19,4 +19,14 @@
 		canBeBlockedCompletely: true,
 		pushForce: 25,
 	},
+	{
+		id: web_big_hit_zone,
+		type: WEB,
+		projectileType: web_big_hit_zone,
+		delay: 0.1,
+		duration: 0,
+		damage: 5,
+		canBeBlockedCompletely: true,
+		pushForce: 25,
+	},
 ]

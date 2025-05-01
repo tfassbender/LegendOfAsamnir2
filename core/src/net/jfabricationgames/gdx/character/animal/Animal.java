@@ -53,7 +53,7 @@ public class Animal extends AbstractCharacter implements Hittable {
 	}
 	
 	private void initializeStates() {
-		stateMachine = new CharacterStateMachine(typeConfig.stateConfig, typeConfig.initialState, null);
+		stateMachine = new CharacterStateMachine(typeConfig.stateConfig, typeConfig.initialState, null, properties);
 	}
 	
 	protected void createAI() {

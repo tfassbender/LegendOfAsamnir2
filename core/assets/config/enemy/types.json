@@ -174,7 +174,7 @@
 		bodyRadius: 0.3f,
 		
 		addSensor: true,
-		sensorRadius: 6f,
+		sensorRadius: 7f,
 		
 		pushForceDamage: 50,
 		pushForceHit: 30,

@@ -42,6 +42,7 @@
 	web: {
 		attackType: WEB,
 		
+		radius: 0.1f,
 		animation: spider_web,
 		removeAfterAnimationFinished: false,
 		textureScale: 0.12,
@@ -54,6 +55,23 @@
 		dampingAfterRangeExceeded: 15,
 		
 		timeActive: 5,
+	},
+	web_big_hit_zone: { // looks like a normal web, but the radius of the physics body (not the sensor) is bigger, so it can hit targets like switches easier
+		attackType: WEB,
+		
+		radius: 0.5f,
+		animation: spider_web,
+		removeAfterAnimationFinished: false,
+		textureScale: 0.12,
+		textureScaleGrowing: true,
+		
+		range: 50,
+		removeAfterRangeExceeded: false,
+		speed: 50,
+		dampingAfterObjectHit: 15,
+		dampingAfterRangeExceeded: 15,
+		
+		timeActive: 10,
 	},
 	bloodsilk_spider_web: {
 		attackType: WEB,

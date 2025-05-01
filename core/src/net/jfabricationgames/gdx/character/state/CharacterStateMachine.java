@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.character.state;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
@@ -35,7 +36,7 @@ public class CharacterStateMachine {
 	
 	private String configFileName;
 	
-	public CharacterStateMachine(String stateConfigFile, String initialState, CharacterStateAttackHandler attackHandler) {
+	public CharacterStateMachine(String stateConfigFile, String initialState, CharacterStateAttackHandler attackHandler, MapProperties properties) {
 		this.attackHandler = attackHandler;
 		animationManager = AnimationManager.getInstance();
 		
@@ -45,7 +46,7 @@ public class CharacterStateMachine {
 		Json json = new Json();
 		@SuppressWarnings("unchecked")
 		Array<CharacterStateConfig> config = json.fromJson(Array.class, CharacterStateConfig.class, stateConfigFileHandle);
-		loadStates(config);
+		loadStates(config, properties);
 		
 		currentState = states.get(initialState);
 		if (currentState == null) {
@@ -54,15 +55,20 @@ public class CharacterStateMachine {
 		currentState.playSound(); // the sound of the initial state would otherwise not be played
 	}
 	
-	private void loadStates(Array<CharacterStateConfig> stateConfig) {
+	private void loadStates(Array<CharacterStateConfig> stateConfig, MapProperties properties) {
 		states = new ArrayMap<>();
 		
-		initializeStates(stateConfig);
+		initializeStates(stateConfig, properties);
 		linkStates(stateConfig);
 	}
 	
-	private void initializeStates(Array<CharacterStateConfig> stateConfig) {
+	private void initializeStates(Array<CharacterStateConfig> stateConfig, MapProperties properties) {
 		for (CharacterStateConfig config : stateConfig) {
+			if (config.attackAlternative != null && properties.containsKey(config.attackAlternative)) {
+				// let the alternative attack from the map properties overwrite the attack from the state config
+				config.attack = properties.get(config.attackAlternative, String.class);
+			}
+			
 			CharacterState state = new CharacterState(animationManager.getTextureAnimationDirectorCopy(config.animation), config, attackHandler);
 			states.put(config.id, state);
 		}

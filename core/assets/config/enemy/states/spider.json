@@ -33,6 +33,7 @@
 		animation: spider_shoot,
 		stateEnteringSound: spider_web,
 		attack: web
+		attackAlternative: attack_alternative_web,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

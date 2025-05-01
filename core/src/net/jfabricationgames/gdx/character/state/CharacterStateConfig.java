@@ -9,6 +9,7 @@ public class CharacterStateConfig {
 	public String id;
 	public String animation;
 	public String attack;
+	public String attackAlternative; // if configured in the map properties, this attack will be used instead of the normal attack
 	
 	public String stateEnteringSound;
 	public float soundDelay = SoundPlayConfig.DEFAULT_SETTING; // will overwrite the delay of the sound config (does not add up)

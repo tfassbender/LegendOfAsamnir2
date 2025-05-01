@@ -71,7 +71,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		healthBarRenderer = new EnemyHealthBarRenderer();
 		
 		readTypeConfig();
-		readMapProperties(properties);
+		readMapProperties();
 		createPhysicsBodyProperties();
 		initializeAttackHandler();
 		initializeStates();
@@ -91,8 +91,8 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		movingSpeed = typeConfig.movingSpeed;
 	}
 	
-	private void readMapProperties(MapProperties mapProperties) {
-		dropTypes = ItemDropUtil.processMapProperties(mapProperties, typeConfig.drops);
+	private void readMapProperties() {
+		dropTypes = ItemDropUtil.processMapProperties(properties, typeConfig.drops);
 	}
 	
 	protected void createPhysicsBodyProperties() {
@@ -114,7 +114,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	}
 	
 	private void initializeStates() {
-		stateMachine = new CharacterStateMachine(typeConfig.stateConfig, typeConfig.initialState, attackHandler);
+		stateMachine = new CharacterStateMachine(typeConfig.stateConfig, typeConfig.initialState, attackHandler, properties);
 	}
 	
 	/**

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3247">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3279">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -38,12 +38,12 @@
  </layer>
  <layer id="5" name="terrain" width="89" height="58" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="89" height="58" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztzjENADAIAEF04F9K8cWAg4aE5W759SMAAAAAAAAAAAAAAAAAAAB2vJxW3n4AAAAAAP8a5cIBvg==
+   eJzt2sENQEAQBdCpY1tHCegAB+5sReagBZGV95J/n/z840QAAAAAAF2J6DND+fqS/xqz2ykz65iGLbnfNbPZ8WvO7PbKVB0DAAAAAAAAAECz9uf/5/AHBAAAAADNugHAAguE
   </data>
  </layer>
  <layer id="10" name="background_above_player" width="89" height="58" locked="1">
@@ -104,6 +104,107 @@
   <object id="2625" name="object.hookshot_target" x="1776" y="1265">
    <point/>
   </object>
+  <object id="3247" name="object.attack_pressure_switch_bottom" x="2048" y="409">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3248" name="enemy.spider" x="2131" y="226">
+   <properties>
+    <property name="aiType" value="spider_long_range"/>
+    <property name="attack_alternative_web" value="web_big_hit_zone"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3249" name="player.startingPosition" x="2129.5" y="446.5">
+   <properties>
+    <property name="startingPointId" value="11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3250" name="object.attack_pressure_switch_bottom" x="2208" y="409">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3251" name="object.attack_pressure_switch_bottom" x="2129" y="512">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3270" name="object.key_wall" x="2228.33" y="490.667">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_switch_2"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3271" name="object.key_wall" x="848" y="773.667">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_boss_entry"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3272" name="object.key_wall" x="448" y="736">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_boss_exit"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3273" name="object.bottom_switch_2" x="1553" y="167">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__switch_boss_gate"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__switch_boss_gate_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3274" name="object.bottom_switch_2" x="2288.5" y="496">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__switch_boss_gate"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__switch_boss_gate_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3275" name="object.magic_switch" x="1999.63" y="1358.13">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__switch_boss_gate"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__switch_boss_gate_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3276" name="object.key_wall" x="1999.09" y="1393.64">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_switch_3"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3277" name="enemy.spider" x="2240" y="1521">
+   <properties>
+    <property name="aiType" value="spider_long_range"/>
+    <property name="attack_alternative_web" value="web_big_hit_zone"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3278" name="object.pressure_switch" x="2048" y="1009">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch__puzzle_3"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch__puzzle_3"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
   <object id="3201" x="1943" y="1279.5" width="132" height="33"/>
@@ -155,29 +256,17 @@
   </object>
   <object id="3233" x="806.75" y="973.25" width="15" height="28.75"/>
   <object id="3234" x="550.75" y="782.5" width="14.75" height="27.25"/>
-  <object id="3235" x="1663.5" y="619.25">
-   <polygon points="0,0 -52.25,13.25 -53.25,29"/>
-  </object>
-  <object id="3236" x="1663.25" y="619.25">
-   <polygon points="0,0 -53,29 -24.5,32.5"/>
-  </object>
-  <object id="3237" x="1663" y="619">
-   <polygon points="0,0 -23.75,32.25 25,31.25"/>
-  </object>
-  <object id="3238" x="1662.25" y="619">
-   <polygon points="0,0 16,9.75 17.5,20.25"/>
-  </object>
-  <object id="3239" x="1920.34" y="672.785">
-   <polygon points="0,0 18.6667,20.3333 -1.33333,22"/>
-  </object>
-  <object id="3240" x="1920" y="672.125">
-   <polygon points="0,0 -16.3333,10 -1,22.6667"/>
-  </object>
-  <object id="3241" x="1971.69" y="1065.33">
-   <polygon points="0,0 8,12 -17.0909,10.1818"/>
-  </object>
   <object id="3242" x="1971.33" y="1065.33">
    <polygon points="0,0 -11.2727,2.36364 -16.5455,9.81818"/>
+  </object>
+  <object id="3253" x="2019.67" y="422">
+   <polygon points="0,0 30.5,-4.5 58,17.5"/>
+  </object>
+  <object id="3254" x="2208.15" y="415.575">
+   <polygon points="0,0 18.6667,20.3333 -1.33333,22"/>
+  </object>
+  <object id="3255" x="2207.82" y="414.909">
+   <polygon points="0,0 -16.3333,10 -1,22.6667"/>
   </object>
  </objectgroup>
  <objectgroup id="5" name="unreachable_area_physics" locked="1">
@@ -1493,9 +1582,6 @@
   <object id="3093" x="512" y="768">
    <polygon points="0,0 -23.6875,14.0625 -8.5625,17.5625"/>
   </object>
-  <object id="3095" x="512" y="768">
-   <polygon points="0,0 -23.7188,0 -4.72727,-18.6364"/>
-  </object>
   <object id="3096" x="264.75" y="832.25" width="14" height="16.75"/>
   <object id="3097" x="224.5" y="896" width="25" height="113.25"/>
   <object id="3098" x="373.818" y="1136.91" width="10.3636" height="6"/>
@@ -1706,6 +1792,66 @@
   </object>
   <object id="3222" x="359.75" y="803.75">
    <polygon points="0,0 5.25,5.75 -17.25,21"/>
+  </object>
+  <object id="3258" x="2226.64" y="533.143">
+   <polygon points="0,0 -3.45455,10.9091 26.5455,29.2727"/>
+  </object>
+  <object id="3259" x="2226.64" y="532.963">
+   <polygon points="0,0 28.7273,-12 50.5455,-5.09091"/>
+  </object>
+  <object id="3260" x="2226.45" y="532.783">
+   <polygon points="0,0 26.7273,29.4545 37.2727,10.1818"/>
+  </object>
+  <object id="3261" x="2226.45" y="532.603">
+   <polygon points="0,0 50.3636,-4.90909 58.3636,12.5455"/>
+  </object>
+  <object id="3262" x="2285" y="545.333">
+   <polygon points="0,0 -6.72727,2.90909 -58.5455,-12.5455"/>
+  </object>
+  <object id="3263" x="2271.98" y="428.432">
+   <polygon points="0,0 -52.25,13.25 -53.25,29"/>
+  </object>
+  <object id="3264" x="2271.73" y="428.432">
+   <polygon points="0,0 -53,29 -24.5,32.5"/>
+  </object>
+  <object id="3265" x="2271.48" y="428.182">
+   <polygon points="0,0 -23.75,32.25 25,31.25"/>
+  </object>
+  <object id="3266" x="2270.73" y="428.182">
+   <polygon points="0,0 16,9.75 17.5,20.25"/>
+  </object>
+  <object id="3241" x="1971.69" y="1065.33">
+   <polygon points="0,0 8,12 -17.0909,10.1818"/>
+  </object>
+  <object id="3235" x="1663.5" y="619.25">
+   <polygon points="0,0 -52.25,13.25 -53.25,29"/>
+  </object>
+  <object id="3236" x="1663.25" y="619.25">
+   <polygon points="0,0 -53,29 -24.5,32.5"/>
+  </object>
+  <object id="3237" x="1663" y="619">
+   <polygon points="0,0 -23.75,32.25 25,31.25"/>
+  </object>
+  <object id="3238" x="1662.25" y="619">
+   <polygon points="0,0 16,9.75 17.5,20.25"/>
+  </object>
+  <object id="3239" x="1920.34" y="672.785">
+   <polygon points="0,0 18.6667,20.3333 -1.33333,22"/>
+  </object>
+  <object id="3240" x="1920" y="672.125">
+   <polygon points="0,0 -16.3333,10 -1,22.6667"/>
+  </object>
+  <object id="3256" x="883.735" y="489.125">
+   <polygon points="0,0 8,12 -17.0909,10.1818"/>
+  </object>
+  <object id="3257" x="883.375" y="489.125">
+   <polygon points="0,0 -11.2727,2.36364 -16.5455,9.81818"/>
+  </object>
+  <object id="3267" x="2217.33" y="516.18">
+   <polygon points="0,0 -7.81818,22 19.6364,14.9091"/>
+  </object>
+  <object id="3268" x="2217.33" y="516">
+   <polygon points="0,0 13.6364,2.18182 18.9091,14.7273"/>
   </object>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1"/>

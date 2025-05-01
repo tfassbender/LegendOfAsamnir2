@@ -59,5 +59,64 @@
 				}
 			}
 		}
+		
+		spider_long_range: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack_jump,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 1f,
+			},
+			attackDistance: 1.5f,
+			
+			subAI: {
+				type: FIGHT_AI,
+				
+				stateNameAttack: attack,
+				
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 2.5f,
+				},
+				attackDistance: 6f,
+				minDistanceToTargetPlayer: 6f,
+				
+				subAI: {
+					type: RUN_AWAY_AI,
+					
+					stateNameMove: move,
+					stateNameIdle: idle,
+					
+					distanceToKeepFromPlayer: 3.5f,
+					distanceToStopRunning: 1.5f,
+				
+					subAI: {
+						type: FOLLOW_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						minDistanceToTargetPlayer: 6f,
+						
+						subAI: {
+							type: PRE_DEFINED_MOVEMENT_AI,
+							
+							stateNameMove: move,
+							stateNameIdle: idle,
+							
+							distanceToKeepFromPlayer: 3.5f,
+							
+							useRelativePositions: true,
+							
+							subAI: {
+								type: BASE_AI,
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

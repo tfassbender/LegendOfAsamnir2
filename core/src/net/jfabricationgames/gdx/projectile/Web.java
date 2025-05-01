@@ -25,7 +25,7 @@ public class Web extends Projectile implements GameMapGroundTypeContainer {
 	
 	@Override
 	protected PhysicsBodyProperties createShapePhysicsBodyProperties() {
-		return new PhysicsBodyProperties().setPhysicsBodyShape(PhysicsBodyShape.CIRCLE).setRadius(0.1f);
+		return new PhysicsBodyProperties().setPhysicsBodyShape(PhysicsBodyShape.CIRCLE).setRadius(typeConfig.radius);
 	}
 	
 	@Override
