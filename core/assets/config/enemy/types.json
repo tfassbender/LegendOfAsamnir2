@@ -23,6 +23,12 @@
 		pushForceDamage: 50,
 		pushForceHit: 25,
 		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
 		drops: {
 			coin: 0.3,
 		}

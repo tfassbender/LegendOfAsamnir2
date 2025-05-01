@@ -1,6 +1,22 @@
 {
 	//*************************************
-	//*** Boss Room
+	//*** Spider Zone
+	//*************************************
+	
+	enemy__spider__pressure_switches: {
+		events: [NEW_GAME_STARTED, GAME_LOADED, PLAYER_RESPAWNED, MAP_ENTERED],
+		complexEvents: [
+			{
+				eventType: ENEMY_DEFEATED,
+				stringValue: loa2_l4_helheim_spider_zone__spider__pressure_switches__defeated,
+			}
+		]
+		spawnType: enemy.spider,
+		spawnTypeMapProperties: "{drop: \"{}\", enemyDefeatedEventText: \"loa2_l4_helheim_spider_zone__spider__pressure_switches__defeated\", aiType: \"spider_long_range\", attack_alternative_web: \"web_big_hit_zone\"}",
+	},
+
+	//*************************************
+	//*** Skeleton Zone - Boss Room
 	//*************************************
 	
 	l4_helheim_skeleton_zone__boss: {

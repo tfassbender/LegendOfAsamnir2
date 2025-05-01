@@ -1,0 +1,43 @@
+{
+	//*******************************************
+	//*** locks
+	//*******************************************
+	
+    loa2_l4_helheim_spider_zone__open_boss_gate_if_all_switches_activated: {
+        conditionId: loa2_l4_helheim_spider_zone__boss_gate__all_switches_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l4_helheim_spider_zone__gate_boss_entry
+                }
+            }
+        }
+        elseCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: CLOSE_LOCK,
+                executionParameters: {
+                    lockId: loa2_l4_helheim_spider_zone__gate_boss_entry
+                }
+            }
+        }
+    },
+    
+    loa2_l4_helheim_spider_zone__open_gate_puzzle_2_if_all_pressure_switches_activated: {
+        conditionId: loa2_l4_helheim_spider_zone__gate_puzzle_2__all_pressure_switches_activated,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l4_helheim_spider_zone__gate_switch_2
+				}
+			}
+		}
+        elseCase: {
+            type: NO_EXECUTION, // don't close the gate again, to not lock the player
+		}
+	},
+}

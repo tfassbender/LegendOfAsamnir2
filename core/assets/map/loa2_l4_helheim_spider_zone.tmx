@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3279">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3305">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -38,7 +38,7 @@
  </layer>
  <layer id="5" name="terrain" width="89" height="58" locked="1">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="89" height="58" locked="1">
@@ -107,18 +107,11 @@
   <object id="3247" name="object.attack_pressure_switch_bottom" x="2048" y="409">
    <properties>
     <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch"/>
-    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch_1"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch_2"/>
    </properties>
    <point/>
   </object>
-  <object id="3248" name="enemy.spider" x="2131" y="226">
-   <properties>
-    <property name="aiType" value="spider_long_range"/>
-    <property name="attack_alternative_web" value="web_big_hit_zone"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="3249" name="player.startingPosition" x="2129.5" y="446.5">
+  <object id="3249" name="player.startingPosition" x="1760" y="704">
    <properties>
     <property name="startingPointId" value="11"/>
    </properties>
@@ -127,7 +120,7 @@
   <object id="3250" name="object.attack_pressure_switch_bottom" x="2208" y="409">
    <properties>
     <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch"/>
-    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch_1"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch_3"/>
    </properties>
    <point/>
   </object>
@@ -138,7 +131,7 @@
    </properties>
    <point/>
   </object>
-  <object id="3270" name="object.key_wall" x="2228.33" y="490.667">
+  <object id="3270" name="object.key_wall" x="2240" y="489">
    <properties>
     <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_switch_2"/>
     <property name="physicsBodySizeFactorY" value="1.3f"/>
@@ -183,7 +176,7 @@
    </properties>
    <point/>
   </object>
-  <object id="3276" name="object.key_wall" x="1999.09" y="1393.64">
+  <object id="3276" name="object.key_wall" x="2001.09" y="1393.64">
    <properties>
     <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_switch_3"/>
     <property name="physicsBodySizeFactorY" value="1.3f"/>
@@ -192,25 +185,120 @@
    <point/>
   </object>
   <object id="3277" name="enemy.spider" x="2240" y="1521">
-   <properties>
-    <property name="aiType" value="spider_long_range"/>
-    <property name="attack_alternative_web" value="web_big_hit_zone"/>
-   </properties>
    <point/>
   </object>
   <object id="3278" name="object.pressure_switch" x="2048" y="1009">
    <properties>
-    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch__puzzle_3"/>
-    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch__puzzle_3"/>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__pressure_switch__puzzle_magic_switch"/>
+    <property name="stateSwitchId" value="loa2_l4_helheim_spider_zone__pressure_switch__puzzle_magic_switch"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3279" name="enemy.spider" x="992" y="480">
+   <point/>
+  </object>
+  <object id="3280" name="enemy.bat" x="973" y="426">
+   <point/>
+  </object>
+  <object id="3281" name="enemy.bat" x="1038" y="448">
+   <point/>
+  </object>
+  <object id="3282" name="enemy.bat" x="1495" y="509">
+   <point/>
+  </object>
+  <object id="3283" name="enemy.bat" x="1450" y="320">
+   <point/>
+  </object>
+  <object id="3284" name="enemy.bat" x="1597" y="284">
+   <point/>
+  </object>
+  <object id="3285" name="enemy.spider" x="1523" y="270">
+   <point/>
+  </object>
+  <object id="3286" name="enemy.bloodsilk_spider" x="1572" y="401">
+   <point/>
+  </object>
+  <object id="3287" name="enemy.bloodsilk_spider" x="1452" y="408">
+   <point/>
+  </object>
+  <object id="3288" name="enemy.bat" x="1517" y="403">
+   <point/>
+  </object>
+  <object id="3289" name="enemy.bloodsilk_spider" x="1949" y="627">
+   <point/>
+  </object>
+  <object id="3290" name="enemy.bat" x="2053" y="553">
+   <point/>
+  </object>
+  <object id="3291" name="enemy.bat" x="2139" y="583">
+   <point/>
+  </object>
+  <object id="3292" name="enemy.bat" x="2156" y="381">
+   <point/>
+  </object>
+  <object id="3293" name="enemy.bloodsilk_spider" x="2097" y="374">
+   <point/>
+  </object>
+  <object id="3294" name="enemy.bloodsilk_spider" x="1955" y="1005">
+   <point/>
+  </object>
+  <object id="3295" name="enemy.bloodsilk_spider" x="1858" y="1210">
+   <point/>
+  </object>
+  <object id="3296" name="enemy.bat" x="1942" y="901">
+   <point/>
+  </object>
+  <object id="3297" name="enemy.bat" x="1926" y="1111">
+   <point/>
+  </object>
+  <object id="3298" name="enemy.bat" x="2030" y="1059">
+   <point/>
+  </object>
+  <object id="3299" name="enemy.bat" x="2401" y="1170">
+   <point/>
+  </object>
+  <object id="3300" name="enemy.bat" x="2522" y="1511">
+   <point/>
+  </object>
+  <object id="3301" name="enemy.bat" x="1770" y="1468">
+   <point/>
+  </object>
+  <object id="3302" name="object.configObject" x="544" y="736">
+   <properties>
+    <property name="eventDelayInSeconds" value="6"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l4_helheim_spider_zone__boss_defeated_delayed,
+}</property>
+    <property name="unitId" value="loa2_l4_helheim__config_object__open_key_wall_after_spider_queen_defeated"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3303" name="object.configObject" x="2112" y="1376">
+   <properties>
+    <property name="eventDelayInSeconds" value="13"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l4_helheim_spider_zone__magic_switch_puzzle__close_gate_after_delay,
+}</property>
+    <property name="playClockTickingSoundForDelay" value="true"/>
+    <property name="unitId" value="loa2_l4_helheim_spider_zone__config_object__close_key_wall_after_delay"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3304" name="object.spawnPoint.enemy__spider__pressure_switches" x="2128.33" y="32.3333">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:-8}]"/>
+    <property name="spawn" value="enemy__spider__pressure_switches"/>
    </properties>
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="3201" x="1943" y="1279.5" width="132" height="33"/>
-  <object id="3202" x="1942.5" y="1311.5" width="38.5" height="96"/>
+  <object id="3202" x="1942.5" y="1311.5" width="28.5" height="96"/>
   <object id="3203" x="2041" y="1311.5" width="35" height="95.5"/>
-  <object id="3204" x="2024" y="1384.5" width="15.5" height="22.5"/>
+  <object id="3204" x="2029.67" y="1384.5" width="9.83333" height="22.5"/>
   <object id="3205" x="273.031" y="338.818">
    <polygon points="0,0 -1.81818,-35.8182 3.45455,-40.5455"/>
   </object>

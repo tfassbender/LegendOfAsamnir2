@@ -3,6 +3,7 @@
     config/condition/execution/levels/loa2/mine.json,
     config/condition/execution/levels/loa2/niflheim.json,
     config/condition/execution/levels/loa2/muspelheim.json,
+    config/condition/execution/levels/loa2/helheim.json,
     
 //	config/condition/execution/levels/demo.json,
 //	config/condition/execution/levels/demo_2/prolog.json,

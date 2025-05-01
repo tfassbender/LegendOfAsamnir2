@@ -76,6 +76,7 @@
 	bloodsilk_spider_web: {
 		attackType: WEB,
 		
+		radius: 0.1f,
 		animation: bloodsilk_spider_web,
 		removeAfterAnimationFinished: false,
 		textureScale: 0.12,

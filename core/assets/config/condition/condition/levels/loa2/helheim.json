@@ -1,6 +1,68 @@
 {
 	//*******************************************
-	//*** cutscenes
+	//*** spider zone - switches
+	//*******************************************
+	
+	loa2_l4_helheim_spider_zone__boss_gate__all_switches_activated: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: AND,
+				conditionalParameters: {
+					condition: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l4_helheim_spider_zone__switch_boss_gate_1,
+						}
+					},
+					condition2: {
+						conditionType: STATE_SWITCH_ACTIVE,
+						parameters: {
+							stateSwitchId: loa2_l4_helheim_spider_zone__switch_boss_gate_2,
+						}
+					}
+				}
+			},
+			condition2: {
+				conditionType: STATE_SWITCH_ACTIVE,
+				parameters: {
+					stateSwitchId: loa2_l4_helheim_spider_zone__switch_boss_gate_3,
+				}
+			}
+		}
+	},
+	
+	loa2_l4_helheim_spider_zone__gate_puzzle_2__all_pressure_switches_activated: {
+        conditionType: AND,
+        conditionalParameters: {
+            condition: {
+                conditionType: AND,
+                conditionalParameters: {
+                    condition: {
+                        conditionType: STATE_SWITCH_ACTIVE,
+                        parameters: {
+                            stateSwitchId: loa2_l4_helheim_spider_zone__pressure_switch_1,
+						}
+					},
+                    condition2: {
+                        conditionType: STATE_SWITCH_ACTIVE,
+                        parameters: {
+                            stateSwitchId: loa2_l4_helheim_spider_zone__pressure_switch_2,
+						}
+					}
+				}
+			},
+            condition2: {
+                conditionType: STATE_SWITCH_ACTIVE,
+                parameters: {
+                    stateSwitchId: loa2_l4_helheim_spider_zone__pressure_switch_3,
+				}
+			}
+		}
+	},
+	
+	//*******************************************
+	//*** main - garm cutscene
 	//*******************************************
 	
 	loa2_l4_helheim__garmrs_quest_started: {
