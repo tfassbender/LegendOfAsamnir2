@@ -193,6 +193,11 @@
 	config/cutscene/loa2/helheim/skeleton_zone/boss_appear.json,
 	
 	//********************************************************
+	//*** Legend of Asamnir 2 - Helheim - Spider Zone
+	//********************************************************
+	config/cutscene/loa2/helheim/spider_zone/goto_main.json,
+	
+	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
 	//********************************************************
 	config/cutscene/loa2/asgard/goto_main.json,

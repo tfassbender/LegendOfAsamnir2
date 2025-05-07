@@ -1,0 +1,87 @@
+[
+	{
+		id: idle,
+		animation: spider_queen_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_melee, attack_web, attack_cocoon, attack_cocoon_projectile, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: spider_queen_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_melee, attack_web, attack_cocoon, attack_cocoon_projectile, damage, die
+		]
+	},
+	{
+		id: attack_melee,
+		animation: spider_queen_attack,
+		stateEnteringSound: spider_attack,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_web,
+		animation: spider_queen_shoot_web,
+		stateEnteringSound: spider_web,
+		attack: web_big
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_cocoon,
+		animation: spider_queen_shoot_web,
+		stateEnteringSound: spider_web,
+		attack: cocoon
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_cocoon_projectile,
+		animation: spider_queen_shoot_web,
+		stateEnteringSound: spider_web,
+		attack: cocoon_projectile
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: damage,
+		animation: spider_queen_damage,
+		endsWithAnimation: true,
+		stateEnteringSound: flesh_hit_1,
+		followingState: idle,
+		interruptingStates: [
+			attack_melee, attack_web, attack_cocoon, attack_cocoon_projectile, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: spider_queen_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		stateEnteringSound: flesh_hit_2,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

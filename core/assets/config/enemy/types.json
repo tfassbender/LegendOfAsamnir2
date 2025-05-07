@@ -1473,4 +1473,32 @@
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
 	},
+	
+	spider_queen: {
+		typeName: spider_queen,
+		
+		animationsConfig: config/animation/enemy/spider_queen.json,
+		stateConfig: config/enemy/states/spider_queen.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/spider_queen.json,
+		
+		health: 150,
+		movingSpeed: 4f,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 2f,
+		bodyHeight: 1.4f,
+		
+		addSensor: true,
+		sensorRadius: 12f,
+		
+		pushForceDamage: 10,
+		pushForceHit: 60,
+		
+		isBoss: true
+		bossName: "Sultr - Queen of Spiders",
+	},
 }

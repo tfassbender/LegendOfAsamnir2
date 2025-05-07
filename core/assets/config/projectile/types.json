@@ -56,6 +56,23 @@
 		
 		timeActive: 5,
 	},
+	web_big: {
+		attackType: WEB,
+		
+		radius: 0.3f,
+		animation: spider_web,
+		removeAfterAnimationFinished: false,
+		textureScale: 0.2,
+		textureScaleGrowing: true,
+		
+		range: 60,
+		removeAfterRangeExceeded: false,
+		speed: 40,
+		dampingAfterObjectHit: 15,
+		dampingAfterRangeExceeded: 15,
+		
+		timeActive: 5,
+	},
 	web_big_hit_zone: { // looks like a normal web, but the radius of the physics body (not the sensor) is bigger, so it can hit targets like switches easier
 		attackType: WEB,
 		
@@ -89,6 +106,33 @@
 		dampingAfterRangeExceeded: 15,
 		
 		timeActive: 1.5f,
+	},
+	cocoon: {
+		attackType: COCOON,
+		
+		animation: spider_queen_web_projectile,
+		removeAfterAnimationFinished: false,
+		textureScale: 0.1,
+		
+		range: 60,
+		removeAfterRangeExceeded: false,
+		speed: 30,
+		dampingAfterObjectHit: 15,
+		dampingAfterRangeExceeded: 15,
+		
+		timeActive: 3,
+	},
+	cocoon_projectile: {
+		attackType: COCOON_PROJECTILE,
+		
+		animation: spider_queen_web_projectile,
+		removeAfterAnimationFinished: false,
+		textureScale: 0.1,
+		
+		range: 80,
+		removeAfterRangeExceeded: true,
+		speed: 60,
+		dampingAfterObjectHit: 15,
 	},
 	imp_fire: {
 		attackType: FIREBALL,

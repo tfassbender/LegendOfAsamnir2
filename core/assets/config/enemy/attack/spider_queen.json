@@ -1,0 +1,43 @@
+[
+	{
+		id: attack,
+		type: HIT,
+		delay: 0.4,
+		duration: 0,
+		damage: 10,
+		distFromCenter: 0.5,
+		hitFixtureRadius: 0.35,
+		pushForce: 75
+	},
+	{
+		id: cocoon,
+		type: COCOON,
+		projectileType: cocoon,
+		delay: 0.4,
+		duration: 0,
+		damage: 10,
+		distFromCenter: 0.5,
+		hitFixtureRadius: 0.35,
+		pushForce: 75
+	},
+	{
+		id: cocoon_projectile,
+		type: COCOON_PROJECTILE,
+		projectileType: cocoon_projectile,
+		delay: 0.4,
+		duration: 0,
+		damage: 15,
+		canBeBlockedCompletely: true,
+		pushForce: 75,
+	},
+	{
+		id: web_big,
+		type: WEB,
+		projectileType: web_big,
+		delay: 0.4,
+		duration: 0,
+		damage: 5,
+		canBeBlockedCompletely: true,
+		pushForce: 25,
+	},
+]
