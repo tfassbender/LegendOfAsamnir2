@@ -26,6 +26,8 @@ public class ProjectileFactory {
 	
 	private static ProjectileMap gameMap;
 	
+	private static ProjectileSpawnFactory spawnFactory;
+	
 	static {
 		config = FactoryUtil.loadConfig(Config.class, CONFIG_FILE);
 		typeConfigs = FactoryUtil.loadTypeConfigs(config.typesConfig, ProjectileTypeConfig.class);
@@ -35,6 +37,10 @@ public class ProjectileFactory {
 	
 	public static void setGameMap(ProjectileMap gameMap) {
 		ProjectileFactory.gameMap = gameMap;
+	}
+	
+	public static void setSpawnFactory(ProjectileSpawnFactory spawnFactory) {
+		ProjectileFactory.spawnFactory = spawnFactory;
 	}
 	
 	public static Projectile createProjectileAndAddToMap(AttackConfig attackConfig, Vector2 position, Vector2 direction, PhysicsCollisionType collisionType) {
@@ -117,6 +123,12 @@ public class ProjectileFactory {
 			case HOOKSHOT:
 				projectile = new Hookshot(typeConfig, attackConfig, sprite, gameMap);
 				break;
+			case COCOON:
+				projectile = new CocoonProjectile(typeConfig, attackConfig, animation, gameMap, true);
+				break;
+			case COCOON_PROJECTILE:
+				projectile = new CocoonProjectile(typeConfig, attackConfig, animation, gameMap, false);
+				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}
@@ -130,6 +142,7 @@ public class ProjectileFactory {
 		projectile.setExplosionPushForceAffectedByBlock(attackConfig.explosionPushForceAffectedByBlock);
 		
 		projectile.setExplosionFactory(ProjectileFactory::createProjectileAndAddToMap);
+		projectile.setSpawnFactory(spawnFactory);
 		projectile.createPhysicsBody(position, direction, collisionType);
 		projectile.startProjectile(direction);
 		

@@ -51,6 +51,10 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	public float healthBarOffsetY;
 	public float healthBarWidthFactor;
 	
+	public boolean usesTimerBar = false; // with and offset of the health bar will be used
+	public String spawnEnemyTypeAfterTimerExceeded;
+	public float timerInSeconds;
+	
 	public ObjectMap<String, Float> drops;
 	public float dropPositionOffsetX;
 	public float dropPositionOffsetY;

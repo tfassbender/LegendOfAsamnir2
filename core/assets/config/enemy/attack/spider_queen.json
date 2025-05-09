@@ -5,8 +5,8 @@
 		delay: 0.4,
 		duration: 0,
 		damage: 10,
-		distFromCenter: 0.5,
-		hitFixtureRadius: 0.35,
+		distFromCenter: 1,
+		hitFixtureRadius: 1,
 		pushForce: 75
 	},
 	{

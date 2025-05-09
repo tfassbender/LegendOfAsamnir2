@@ -21,8 +21,6 @@ public class SpiderQueen extends Enemy {
 	
 	public SpiderQueen(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
-		
-		health = 1f; // TODO remove after tests
 	}
 	
 	@Override
@@ -63,12 +61,12 @@ public class SpiderQueen extends Enemy {
 		attackDistances.put(characterStateAttackMelee, 2f);
 		attackDistances.put(characterStateAttackWeb, 8f);
 		attackDistances.put(characterStateAttackCocoon, 100f); // no distance restriction because it's not a direct attack
-		attackDistances.put(characterStateAttackCocoonProjectile, -1f); // 6f); TODO this attack is not yet implemented
+		attackDistances.put(characterStateAttackCocoonProjectile, 6f);
 		
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
 		attackTimers.put(characterStateAttackMelee, new FixedAttackTimer(2.5f));
 		attackTimers.put(characterStateAttackWeb, new FixedAttackTimer(6f));
-		attackTimers.put(characterStateAttackCocoon, new FixedAttackTimer(20f));
+		attackTimers.put(characterStateAttackCocoon, new FixedAttackTimer(15f));
 		attackTimers.put(characterStateAttackCocoonProjectile, new FixedAttackTimer(4f));
 		
 		return new SpiderQueenAttackAI(ai, attackStates, attackDistances, attackTimers);

@@ -1501,4 +1501,41 @@
 		isBoss: true
 		bossName: "Sultr - Queen of Spiders",
 	},
+	
+	cocoon: {
+		typeName: cocoon,
+        
+        animationsConfig: config/animation/enemy/cocoon.json,
+        stateConfig: config/enemy/states/cocoon.json,
+        initialState: idle,
+        attackConfig: config/enemy/attack/empty.json,
+        aiConfig: config/enemy/ai/empty.json,
+        
+        health: 10,
+        movingSpeed: 0f,
+        movable: false, // the player can't push it
+        
+        imageOffsetX: 0f,
+        imageOffsetY: 0f,
+        
+        bodyShape: CIRCLE,
+        bodyRadius: 0.3f,
+        
+        pushForceDamage: 0,
+        pushForceHit: 0,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+		
+		usesTimerBar: true,
+		timerInSeconds: 5f,
+		spawnEnemyTypeAfterTimerExceeded: bloodsilk_spider,
+		
+		drops: {
+			arrow: 1,
+		}
+	},
 }

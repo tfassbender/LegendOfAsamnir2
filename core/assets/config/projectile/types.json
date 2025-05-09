@@ -111,27 +111,30 @@
 		attackType: COCOON,
 		
 		animation: spider_queen_web_projectile,
+		rotateTextureToMovementDirection: true,
 		removeAfterAnimationFinished: false,
 		textureScale: 0.1,
 		
 		range: 60,
-		removeAfterRangeExceeded: false,
-		speed: 30,
+		removeAfterRangeExceeded: true,
+		speed: 50,
 		dampingAfterObjectHit: 15,
-		dampingAfterRangeExceeded: 15,
 		
-		timeActive: 3,
+		spawnEnemyTypeWhenRemoved: cocoon,
+		
+		timeActive: 2,
 	},
 	cocoon_projectile: {
 		attackType: COCOON_PROJECTILE,
 		
 		animation: spider_queen_web_projectile,
+		rotateTextureToMovementDirection: true,
 		removeAfterAnimationFinished: false,
 		textureScale: 0.1,
 		
 		range: 80,
 		removeAfterRangeExceeded: true,
-		speed: 60,
+		speed: 80,
 		dampingAfterObjectHit: 15,
 	},
 	imp_fire: {

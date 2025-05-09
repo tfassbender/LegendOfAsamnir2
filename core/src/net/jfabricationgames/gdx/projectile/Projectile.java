@@ -39,6 +39,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	protected PhysicsCollisionType collisionType;
 	
 	protected ExplosionFactory explosionFactory;
+	protected ProjectileSpawnFactory spawnFactory;
 	protected ProjectileMap gameMap;
 	
 	protected Body playerBody;
@@ -122,6 +123,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	
 	protected void setExplosionFactory(ExplosionFactory explosionFactory) {
 		this.explosionFactory = explosionFactory;
+	}
+	
+	protected void setSpawnFactory(ProjectileSpawnFactory spawnFactory) {
+		this.spawnFactory = spawnFactory;
 	}
 	
 	protected void createPhysicsBody(Vector2 position, Vector2 direction, PhysicsCollisionType collisionType) {

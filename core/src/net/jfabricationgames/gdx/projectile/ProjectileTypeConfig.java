@@ -44,4 +44,6 @@ public class ProjectileTypeConfig {
 	
 	public float imageOffsetX = 0;
 	public float imageOffsetY = 0;
+	
+	public String spawnEnemyTypeWhenRemoved;
 }

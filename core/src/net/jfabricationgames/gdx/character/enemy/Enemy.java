@@ -18,6 +18,8 @@ import net.jfabricationgames.gdx.character.AbstractCharacter;
 import net.jfabricationgames.gdx.character.CharacterTypeConfig;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.enemy.statsbar.EnemyHealthBarRenderer;
+import net.jfabricationgames.gdx.character.enemy.statsbar.EnemyStatsBarRenderer;
+import net.jfabricationgames.gdx.character.enemy.statsbar.EnemyTimerBarRenderer;
 import net.jfabricationgames.gdx.character.player.PlayableCharacter;
 import net.jfabricationgames.gdx.character.state.CharacterStateMachine;
 import net.jfabricationgames.gdx.constants.Constants;
@@ -47,11 +49,13 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	protected PhysicsBodyProperties physicsBodyProperties;
 	
 	protected EnemyHealthBarRenderer healthBarRenderer;
+	protected EnemyStatsBarRenderer statsBarRenderer;
 	
 	protected EnemyTypeConfig typeConfig;
 	protected AttackHandler attackHandler;
 	
 	protected float health;
+	protected float timeAlive = 0.01f; // prevent division by zero
 	
 	protected ObjectMap<String, Float> dropTypes;
 	@MapObjectState
@@ -69,6 +73,9 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		this.typeConfig = typeConfig;
 		
 		healthBarRenderer = new EnemyHealthBarRenderer();
+		if (typeConfig.usesTimerBar) {
+			statsBarRenderer = new EnemyTimerBarRenderer();
+		}
 		
 		readTypeConfig();
 		readMapProperties();
@@ -175,6 +182,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	public void act(float delta) {
 		stateMachine.updateState(delta);
 		attackHandler.handleAttacks(delta);
+		timeAlive += delta;
 		
 		if (!isAlive()) {
 			if (!droppedItems) {
@@ -192,6 +200,26 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 			}
 			
 			pushAwayPlayer();
+			
+			if (typeConfig.timerInSeconds > 0 && timeAlive >= typeConfig.timerInSeconds) {
+				spawnNextEnemy();
+			}
+		}
+	}
+	
+	private void spawnNextEnemy() {
+		if (typeConfig.spawnEnemyTypeAfterTimerExceeded != null) {
+			// position needs to be collected before removing from the map (which will set the body to null)
+			float x = body.getPosition().x * Constants.SCREEN_TO_WORLD;
+			float y = body.getPosition().y * Constants.SCREEN_TO_WORLD;
+			
+			PhysicsWorld.getInstance().runAfterWorldStep(() -> {
+				EnemyFactory.asInstance().createAndAddEnemy(typeConfig.spawnEnemyTypeAfterTimerExceeded, x, y, new MapProperties());
+			});
+			
+			droppedItems = true; // don't drop items
+			health = 0;
+			die();
 		}
 	}
 	
@@ -220,6 +248,9 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	protected void drawStatsBar(ShapeRenderer shapeRenderer, float x, float y, float width) {
 		healthBarRenderer.drawStatsBar(shapeRenderer, getPercentualHealth(), x, y, width);
+		if (statsBarRenderer != null) {
+			statsBarRenderer.drawStatsBar(shapeRenderer, getPercentualTimer(), x, y - 0.05f, width);
+		}
 	}
 	
 	protected boolean drawStatsBar() {
@@ -228,6 +259,11 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	public float getPercentualHealth() {
 		return health / typeConfig.health;
+	}
+	
+	private float getPercentualTimer() {
+		// 1 if timeAlive is zero, 0 if time alive is >= typeConfig.timer
+		return Math.max(1f - timeAlive / typeConfig.timerInSeconds, 0);
 	}
 	
 	public void moveToDirection(float x, float y) {

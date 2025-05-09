@@ -117,7 +117,7 @@
 			name: spider_queen_web_projectile,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
-			playMode: NORMAL,
+			playMode: LOOP,
 			scale: 0.05,
 		},
 		{

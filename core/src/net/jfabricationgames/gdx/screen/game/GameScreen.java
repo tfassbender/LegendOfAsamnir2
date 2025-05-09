@@ -184,6 +184,7 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 		ItemFactory.setPlayerCoinsSupplier(Player.getInstance()::getCoins);
 		
 		ProjectileFactory.setGameMap(gameMap);
+		ProjectileFactory.setSpawnFactory(EnemyFactory.asInstance());
 		
 		CutsceneActionFactory.setHudCamera(cameraHud);
 	}

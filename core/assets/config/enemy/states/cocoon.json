@@ -1,0 +1,42 @@
+[
+	{
+		id: idle,
+		animation: spider_queen_cocoon_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: move, // needed for the default AI (though the cocoon doesn't move)
+		animation: spider_queen_cocoon_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			damage, die
+		]
+	},
+	{
+		id: damage,
+		animation: spider_queen_cocoon_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: spider_queen_cocoon_break,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 0f,
+		followingState: END,
+		stateEnteringSound: flesh_hit_2,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

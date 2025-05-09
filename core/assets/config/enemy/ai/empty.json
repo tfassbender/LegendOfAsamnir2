@@ -1,0 +1,8 @@
+{
+	defaultAI: empty,
+	aiConfigurations: {
+		empty: {
+			type: BASE_AI,
+		}
+	}
+}

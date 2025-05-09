@@ -24,6 +24,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.SpiderQueen;
 import net.jfabricationgames.gdx.character.enemy.implementation.Totem;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.object.EnemySpawnFactory;
+import net.jfabricationgames.gdx.projectile.ProjectileSpawnFactory;
 import net.jfabricationgames.gdx.util.FactoryUtil;
 
 public class EnemyFactory {
@@ -151,7 +152,12 @@ public class EnemyFactory {
 		return new EnemyFactoryInstance();
 	}
 	
-	public static class EnemyFactoryInstance implements EnemySpawnFactory {
+	public static class EnemyFactoryInstance implements EnemySpawnFactory, ProjectileSpawnFactory {
+		
+		@Override
+		public void createAndAddEnemy(String type, float x, float y, MapProperties mapProperties) {
+			createAndAddEnemy(type, x, y, mapProperties, null);
+		}
 		
 		@Override
 		public void createAndAddEnemy(String type, float x, float y, MapProperties mapProperties, Runnable onRemoveFromMap) {

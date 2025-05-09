@@ -48,13 +48,4 @@ public class SpiderQueenAttackAI extends AbstractMultiAttackAI {
 		
 		return null;
 	}
-	
-	@Override
-	protected void createAttackingMove(CharacterState attack) {
-		if (attackCocoon.equals(attack)) {
-			// TODO target the opposite direction of the player
-		}
-		
-		super.createAttackingMove(attack);
-	}
 }
