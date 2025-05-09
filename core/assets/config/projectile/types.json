@@ -115,7 +115,7 @@
 		removeAfterAnimationFinished: false,
 		textureScale: 0.1,
 		
-		range: 60,
+		range: 30,
 		removeAfterRangeExceeded: true,
 		speed: 50,
 		dampingAfterObjectHit: 15,

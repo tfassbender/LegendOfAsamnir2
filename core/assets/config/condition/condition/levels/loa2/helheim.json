@@ -62,6 +62,18 @@
 	},
 	
 	//*******************************************
+	//*** spider zone - boss fight
+	//*******************************************
+	
+	loa2_l4_helheim_spider_zone__boss_room_entered: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim_spider_zone__boss_room_entered,
+            expectedValue: true,
+		}
+	},
+	
+	//*******************************************
 	//*** main - garm cutscene
 	//*******************************************
 	

@@ -1474,6 +1474,37 @@
 		healthBarAlwaysVisible: true,
 	},
 	
+	bloodsilk_spider__big_sensor: { // used for the boss fight where the spiders need to operate in a large area
+		typeName: bloodsilk_spider,
+		
+		animationsConfig: config/animation/enemy/bloodsilk_spider.json,
+		stateConfig: config/enemy/states/bloodsilk_spider.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bloodsilk_spider.json,
+		aiConfig: config/enemy/ai/bloodsilk_spider.json,
+		
+		health: 25,
+		movingSpeed: 1.5,
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.5f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 15f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+	},
+	
 	spider_queen: {
 		typeName: spider_queen,
 		
@@ -1532,7 +1563,7 @@
 		
 		usesTimerBar: true,
 		timerInSeconds: 5f,
-		spawnEnemyTypeAfterTimerExceeded: bloodsilk_spider,
+		spawnEnemyTypeAfterTimerExceeded: bloodsilk_spider__big_sensor,
 		
 		drops: {
 			arrow: 1,

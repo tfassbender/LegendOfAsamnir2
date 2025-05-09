@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3320">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3323">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -288,7 +288,41 @@
   <object id="3306" name="enemy.spider_queen" x="640" y="960">
    <point/>
   </object>
-  <object id="3319" name="item.arrow" x="784" y="815.333">
+  <object id="3320" name="item.helheim_key_green" x="271.833" y="400.083">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim__key_red"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3321" name="object.eventObject" x="1676.85" y="650.57" width="3.63636" height="103.284">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="3305" name="player.startingPosition" x="944.667" y="817.333">
+   <properties>
+    <property name="startingPointId" value="12"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3307" name="object.eventObject" x="818.667" y="786" width="70.167" height="5">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__enter_boss_room"/>
+   </properties>
+  </object>
+  <object id="3271" name="object.key_wall" x="848" y="773.667">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_boss_entry"/>
+    <property name="physicsBodySizeFactorX" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3322" name="object.configObject" x="756.333" y="919">
+   <properties>
+    <property name="unitId" value="cutscene_object__helheim_boss_room__thorin_start_position"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
@@ -353,25 +387,6 @@
   </object>
   <object id="3255" x="2207.82" y="414.909">
    <polygon points="0,0 -16.3333,10 -1,22.6667"/>
-  </object>
-  <object id="3271" name="object.key_wall" x="848" y="773.667">
-   <properties>
-    <property name="lockId" value="loa2_l4_helheim_spider_zone__gate_boss_entry"/>
-    <property name="physicsBodySizeFactorX" value="1.3f"/>
-    <property name="unlockedByEvent" value="true"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="3305" name="player.startingPosition" x="944.667" y="817.333">
-   <properties>
-    <property name="startingPointId" value="12"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="3307" name="object.eventObject" x="818.667" y="786" width="70.167" height="5">
-   <properties>
-    <property name="eventParameter" value="loa2_l4_helheim_spider_zone__enter_boss_room"/>
-   </properties>
   </object>
   <object id="2631" x="800" y="768">
    <polygon points="0,0 0,-15.25 16,-14"/>

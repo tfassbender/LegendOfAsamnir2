@@ -1,0 +1,173 @@
+{
+	id: loa2_l4_helheim_spider_zone__enter_boss_room_cutscene,
+	controlledActions: {
+		start_condition: {
+	    	startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim_spider_zone__boss_room_entered,
+					executedStateName: end
+				},
+				{
+					// default case
+					executedStateName: start_multiplexer,
+				},
+			],
+		},
+		
+		start_multiplexer: {
+            type: WAIT,
+            executionDelayInSeconds: 0f,
+            
+            executes: [
+				move_thorin,
+				move_camera,
+				sultr_comment,
+			],
+		},
+		
+		move_thorin: {
+            executionDelayInSeconds: 1f,
+            
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0},
+			targetPositionRelativeToUnitId: cutscene_object__helheim_boss_room__thorin_start_position,
+		},
+		
+		move_camera: {
+            executionDelayInSeconds: 1f,
+            
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__helheim_boss_room__thorin_start_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: -2, y: -1.5},
+			speedFactor: 3f,
+		},
+		
+		sultr_comment: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 4f,
+			
+			executionParameters: {
+			    colorHeader: #856862
+				displayTextHeader: "Sultr",
+				displayText: "Hm... looks like another tasty hobbit has found his way to my lair...     ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                thorin_answer,
+			],
+		},
+		
+		thorin_answer: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "I'm not a hobbit!                          \n... For whatever that is ...\n                \nI'm Thorin!!!               \nI'm a dwarf from Svartalfheim!       ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                sultr_comment_2,
+			],
+		},
+		
+		sultr_comment_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+			    colorHeader: #856862
+				displayTextHeader: "Sultr",
+				displayText: "A dwarf?!\n              \nI've never tasted one of your kind ...\n             \nI hope you're as yummy as you look ...       ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                stop_map_background_music,
+			],
+		},
+		
+		stop_map_background_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                start_boss_fight,
+			],
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 2f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+            executes: [
+                play_boss_music,
+            ],
+		}
+		
+		play_boss_music: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_fight,
+                floatValue: 0f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
+			
+			executes: [
+            	wait_after_boss_fight_started,
+			],
+		},
+		
+		wait_after_boss_fight_started: {
+            type: WAIT,
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+                set_global_value__boss_room_entered,
+			],
+		},
+		
+		set_global_value__boss_room_entered: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim_spider_zone__boss_room_entered, value: true}",
+			},
+			
+			executes: [
+				end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

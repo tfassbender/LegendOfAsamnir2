@@ -18,14 +18,14 @@
 	//*** boss fight
 	//*******************************************
 	
-	loa2_l4_helheim_skeleton_zone__red_key_picked_up: {
+	loa2_l4_helheim_spider_zone__enter_boss_room: {
         event: {
-            eventType: EVENT_ITEM_PICKED_UP,
-            stringValue: loa2_l4_helheim__key_red,
-		}
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_spider_zone__enter_boss_room,
+		},
         executionType: START_CUTSCENE,
         executionParameters: {
-            cutsceneId: loa2_l4_helheim_skeleton_zone__boss_appear_cutscene,
+            cutsceneId: loa2_l4_helheim_spider_zone__enter_boss_room_cutscene,
 		}
 	},
 	

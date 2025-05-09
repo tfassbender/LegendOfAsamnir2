@@ -196,6 +196,7 @@
 	//*** Legend of Asamnir 2 - Helheim - Spider Zone
 	//********************************************************
 	config/cutscene/loa2/helheim/spider_zone/goto_main.json,
+	config/cutscene/loa2/helheim/spider_zone/enter_boss_room.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
