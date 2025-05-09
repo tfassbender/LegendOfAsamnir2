@@ -3,85 +3,55 @@
 	//*** change map
 	//*******************************************
 	
-	loa2_l4_helheim_spider_zone_goto_helheim_main: {
+	loa2_l4_helheim_skeleton_zone_goto_helheim_main: {
 		event: {
 			eventType: EVENT_OBJECT_TOUCHED,
-			stringValue: loa2_l4_helheim_spider_zone_goto_helheim_main,
+			stringValue: loa2_l4_helheim_skeleton_zone_goto_helheim_main,
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {
-			cutsceneId: loa2_l4_helheim_spider_zone_goto_helheim_main_cutscene,
+			cutsceneId: loa2_l4_helheim_skeleton_zone_goto_helheim_main_cutscene,
 		}
 	},
 	
 	//*******************************************
-	//*** switches
+	//*** boss fight
 	//*******************************************
 	
-	loa2_l4_helheim_spider_zone__pressure_switch: {
-		event: {
-			eventType: STATE_SWITCH_ACTION,
-			stringValue: loa2_l4_helheim_spider_zone__pressure_switch,
-		},
-		executionType: CONDITIONAL_EVENT,
-		conditionalExecutionId: loa2_l4_helheim_spider_zone__open_gate_puzzle_2_if_all_pressure_switches_activated,
-	},
-	
-	loa2_l4_helheim_spider_zone__pressure_switch__puzzle_magic_switch__open_gate: {
-		event: {
-            eventType: STATE_SWITCH_ACTIVATED,
-            stringValue: loa2_l4_helheim_spider_zone__pressure_switch__puzzle_magic_switch,
-		},
-        executionType: OPEN_LOCK,
-        executionParameters: {
-            lockId: loa2_l4_helheim_spider_zone__gate_switch_3,
-		}
-	},
-	
-	loa2_l4_helheim_spider_zone__pressure_switch__puzzle_magic_switch__start_close_delay: {
-		event: {
-            eventType: STATE_SWITCH_ACTIVATED,
-            stringValue: loa2_l4_helheim_spider_zone__pressure_switch__puzzle_magic_switch,
-		},
-        executionType: FIRE_EVENT,
-        executionParameters: {
-            eventType: CONFIG_GAME_OBJECT_ACTION,
-            stringValue: loa2_l4_helheim_spider_zone__config_object__close_key_wall_after_delay,
-		}
-	},
-	
-	loa2_l4_helheim_spider_zone__magic_switch_puzzle__close_gate_after_delay: {
+	loa2_l4_helheim_skeleton_zone__red_key_picked_up: {
         event: {
-            eventType: CONFIG_GENERATED_EVENT,
-            stringValue: loa2_l4_helheim_spider_zone__magic_switch_puzzle__close_gate_after_delay,
-		},
-        executionType: CLOSE_LOCK,
-        executionParameters: {
-            lockId: loa2_l4_helheim_spider_zone__gate_switch_3,
+            eventType: EVENT_ITEM_PICKED_UP,
+            stringValue: loa2_l4_helheim__key_red,
 		}
-	},
-	
-	loa2_l4_helheim_spider_zone__switch_boss_gate: {
-		event: {
-			eventType: STATE_SWITCH_ACTION,
-			stringValue: loa2_l4_helheim_spider_zone__switch_boss_gate,
-		},
-		executionType: CONDITIONAL_EVENT,
-		conditionalExecutionId: loa2_l4_helheim_spider_zone__open_boss_gate_if_all_switches_activated,
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_skeleton_zone__boss_appear_cutscene,
+		}
 	},
 	
 	//*******************************************
 	//*** enemy defeated
 	//*******************************************
 	
-	loa2_l4_helheim_spider_zone__boss_defeated__lock: {
+	loa2_l4_helheim_skeleton_zone__boss_defeated__lock_1: {
         event: {
             eventType: CONFIG_GENERATED_EVENT,
-            stringValue: loa2_l4_helheim_spider_zone__boss_defeated_delayed,
+            stringValue: loa2_l4_helheim_skeleton_zone__boss_defeated_delayed,
 		},
         executionType: OPEN_LOCK,
         executionParameters: {
-            lockId: loa2_l4_helheim_spider_zone__gate_boss_exit,
+            lockId: loa2_l4_helheim_skeleton_zone__gate_boss_exit,
+		}
+	},
+	
+	loa2_l4_helheim_skeleton_zone__boss_defeated__lock_2: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l4_helheim_skeleton_zone__boss_defeated_delayed,
+		},
+        executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l4_helheim_skeleton_zone__gate_boss_entry,
 		}
 	},
 }

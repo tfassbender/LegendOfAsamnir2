@@ -204,14 +204,14 @@
 		name: loa2_l4_helheim_skeleton_zone,
 		map: "map/loa2_l4_helheim_skeleton_zone.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l4_helheim.json,
-		initialStartingPointId: 12,
+		initialStartingPointId: 11,
 		//initial: true
 	},
 	{
 		name: loa2_l4_helheim_spider_zone,
 		map: "map/loa2_l4_helheim_spider_zone.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l4_helheim.json,
-		initialStartingPointId: 12,
+		initialStartingPointId: 13,
 		initial: true
 	},
 	

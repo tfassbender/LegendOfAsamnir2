@@ -1,0 +1,25 @@
+{
+	id: loa2_l4_helheim_spider_zone__key_found_cutscene,
+	controlledActions: {
+		thorin_comment: {
+			startsWithCutscene: true,
+			
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "This seems to be a part of Garmr's key...\n                   \nI should probably bring it back to Garmr...\nMaybe he has a hint where I can find the other parts...",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
