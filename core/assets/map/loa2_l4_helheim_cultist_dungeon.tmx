@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="72" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3326">
+ <properties>
+  <property name="above_player_layers" value="[4]"/>
+  <property name="background_layers" value="[0, 1, 2, 3]"/>
+  <property name="background_music" value="dungeon"/>
+  <property name="building_level" value="true"/>
+  <property name="effect_layers" value="{&quot;6&quot;: &quot;render_effect_layer__loa2_l4_cultist_dungeon__orb_left&quot;, &quot;7&quot;: &quot;render_effect_layer__loa2_l4_cultist_dungeon__orb_left&quot;}"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l4_helheim_cultist_dungeon.json"/>
+  <property name="shadow_layers" value="[5]"/>
+ </properties>
+ <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
+ <tileset firstgid="491" source="tileset/cave.tsx"/>
+ <tileset firstgid="771" source="tileset/dwarven_caves.tsx"/>
+ <tileset firstgid="1247" source="tileset/town_tileset.tsx"/>
+ <tileset firstgid="2507" source="tileset/cultist_dungeon.tsx"/>
+ <tileset firstgid="2807" source="tileset/forest_prairie_tileset.tsx"/>
+ <tileset firstgid="3374" source="tileset/desert_tileset.tsx"/>
+ <tileset firstgid="3954" source="tileset/medival_house_interior.tsx"/>
+ <tileset firstgid="4467" source="tileset/medival_shop_interior.tsx"/>
+ <tileset firstgid="4847" source="tileset/arctic.tsx"/>
+ <tileset firstgid="5225" source="tileset/medival_warcamp.tsx"/>
+ <tileset firstgid="5945" source="tileset/nightmarescape.tsx"/>
+ <tileset firstgid="6554" source="tileset/magic_wasteland.tsx"/>
+ <tileset firstgid="7058" source="tileset/volcanic_lava.tsx"/>
+ <tileset firstgid="7298" source="tileset/lava_dungeon.tsx"/>
+ <tileset firstgid="7820" source="tileset/shadows.tsx"/>
+ <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
+ <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
+ <layer id="1" name="background" width="72" height="34" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztmV9OAyEQxvdNuwfQ+5+n2gNQPQDVl7619UWIkpAtf4aPGdhVvoSMaXQc4McwTKdpyGq/m6YXM149e9j1joquUPyc89n6+igT69GMt4R9r5hPyH+Nv9bSJtaTGR8J+1kxn5D/Gn+tNfhJ62JivZpxi9in+X/zk5PqxA/l3ii1EveC7pR/dCYnIlbiXNfyc/k9q/acPs8/Z/aL4E9lciJiJc51LT+on9b87MGzWctPzE8uVzzMbflRmfWNrYEUP5xcUO3jjO9HbA2k+OHkgmpd/gvVMjY/SvMTupPdsPvj9u8QiK80Xu78k7sPYuzZeVH5obxVTsT11gL8pP5vrk7mqJ8pb5VjZh99X3+t/tkyP6hK8g8nP66uRJiPWUpdWqpe/GxFvfhZk5a1tV9LD37u7wp/PQY/93eFvx6DHz5+Qr0Mf0jeI05oXy3VO1vyY2tppH72/fViBO2LlNbWNf1nrjctIrSvhsaLzLUnP+i7BI0XmWtPftB3SSt+lr2M1t8rn0F+zo340QJ7VKK186MEzniJ1p5/tsrPMh+EaqRY/9Cvh3J/Z3+/Jz81fZHYz6nPOK1fN38De+9UGA==
+  </data>
+ </layer>
+ <layer id="2" name="background_2" width="72" height="34" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztmluOwjAMRQN/Yf8rm5kNlDL/nccCoFItucF2nIQ8AF8pCAF10xPHdl2cew5d/O3l5NyPvx+H7fNvX2Y/tFtir7VmxVynguuh7JfYay3jI8v4yDI+sv5uc/0Uxpfvw4fLGwcml1DjeKqfF+ZOfDR+naoafmt8ZJXygf277tOP7f3/gHygTuP2L7c3S/lwdqg54Hjz25hPbD24Y2vx6aGFWAeI47H1eAc+JXoEH5yTYR9Djl3XB9av1/0XxD+ujpFE+Z7b/E7LRxtTp0jNpZlvjkriT67dnHOMmN9jdfIj6udn5pOrlPhjfOK/1UhjL9ffpaGpS1PVi89ICmtrnH+Nz/11TcZnJ+Mj65X4XPy+L+ZQzDj7/fMUfK8u1fThdUEtfUysn6leRqs8AuLWaNr4SN+n2tQcy9nrtYdq8JFqjZz+86vxiZ3P+MjnSzl2jX+4l4H7HC36GqPzkWJZC5+aIW8hkb3c4Pt34pMj4yNr8ft+NPd/Fqp/uIS+SfS3Nc8dRuYzglrwqdEXaTVw3XwFDZeEKA==
+  </data>
+ </layer>
+ <layer id="5" name="terrain" width="72" height="34" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhagJWLMJsS0Aw0p4VKZg0kEKWyHwKg5k0D0tOBeAYXQmwUMDDEA8PCGIiXAvEyIF7OBREbBQwM64HhwMYFoUFgI5B+zjmwbhoFo2AUjIJRMAooBdjantRqj1IbqAxSd9EC0KJ/MAqoD4Zj3MD8RK7fiGkfvxhtQw9J4DQM0/tQBnuA8bEXiPeNxgtWcBoYLmeA+Oxo+GAFt4DhchuI74yGD1bwEhgur4D49Wj4jIIRDvy5UOmhCrYgtW9z5BA0DGwF8rdx4ZbHBeK4UGmYHbQAxjSMg8NIZrMhsWFt9iNAsaNcqPIjeUz8ADAMDuKJD0LyMDBc+0TngX6/gMf/hOSHOwgk4HdC8iMFwPqe1J4fHooAvT4ilT8KMMFwLX+pDYidMyB1bmE4jqWOgsELAEjALlE=
+  </data>
+ </layer>
+ <layer id="16" name="terrain_2" width="72" height="34" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt2LkNgDAQRNFNvb3SARk0wFEARwEcHSE3woSQEOAAC/0n/cCZNXJkM1xVblb717fIU6NdWtWpno1uYjAbtMmoJjWrI3x9q7ws2mRVm9p5PwAAAAAAAACQpcjf9iP2QarC085/V3raGQAAvHMCU4oQyA==
+  </data>
+ </layer>
+ <layer id="10" name="background_above_player" width="72" height="34" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztybENACAMBLGvsznKBGwLM9Ch2NJVlwAAAAAAAAAA/G1Vsm9dbx9gqgOyygOX
+  </data>
+ </layer>
+ <layer id="3" name="shadows" width="72" height="34" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAPBoJkAAAQ==
+  </data>
+ </layer>
+ <layer id="13" name="effect_layer_orb_left" width="72" height="34" visible="0" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt0DENAAAIwDBu1OEA/y4QwQFHq2BZBAAAAAAAABuV1wW/tT8AAPDWAHMDAMQ=
+  </data>
+ </layer>
+ <layer id="14" name="effect_layer_orb_right" width="72" height="34" visible="0" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt0DENAAAIwDBu1OEA/y4wQQJHq2BZBAAAAAAAABsqrwt+a38AAOCdAWzrAMQ=
+  </data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="3324" name="player.startingPosition" x="128" y="416">
+   <properties>
+    <property name="startingPointId" value="0"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3325" name="player.startingPosition" x="160" y="416">
+   <properties>
+    <property name="startingPointId" value="10"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="physics" locked="1"/>
+ <objectgroup id="5" name="unreachable_area_physics" locked="1"/>
+ <objectgroup id="6" name="ground_physics" locked="1"/>
+</map>
