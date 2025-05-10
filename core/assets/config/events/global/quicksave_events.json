@@ -93,8 +93,19 @@
 	},
 	
 	//****************************************
-	//*** special keys
+	//*** keys
 	//****************************************
+	
+	quicksave_on_key_pickup: {
+        event: {
+            eventType: ITEM_PICKED_UP,
+            stringValue: key,
+		},
+        executionType: FIRE_EVENT,
+        executionParameters: {
+            eventType: QUICKSAVE,
+		}
+	},
 	
 	quicksave_on_special_key_pickup: {
 		event: {

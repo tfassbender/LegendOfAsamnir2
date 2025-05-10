@@ -66,6 +66,7 @@ public enum EventType {
 	//*******************************
 	//*** Items
 	//*******************************
+	ITEM_PICKED_UP, //
 	EVENT_ITEM_PICKED_UP, //
 	SPECIAL_KEY_ITEM_PICKED_UP, //
 	SET_ITEM, //

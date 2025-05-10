@@ -21,6 +21,9 @@ import net.jfabricationgames.gdx.data.properties.KeyItemProperties;
 import net.jfabricationgames.gdx.data.state.BeforeAddStatefulObject;
 import net.jfabricationgames.gdx.data.state.MapObjectState;
 import net.jfabricationgames.gdx.data.state.StatefulMapObject;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
@@ -189,6 +192,8 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 		removeFromMap();
 		
 		MapObjectDataHandler.getInstance().addStatefulMapObject(this);
+		
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.ITEM_PICKED_UP).setStringValue(itemName));
 	}
 	
 	private void playPickUpSound() {
