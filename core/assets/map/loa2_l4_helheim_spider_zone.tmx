@@ -5,7 +5,7 @@
   <property name="background_layers" value="[0, 1, 2, 3]"/>
   <property name="background_music" value="dungeon"/>
   <property name="building_level" value="true"/>
-  <property name="mini_map_config_path" value="config/menu/maps/loa2/l4_helheim_main.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l4_helheim_spider_zone.json"/>
   <property name="shadow_layers" value="[5]"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>

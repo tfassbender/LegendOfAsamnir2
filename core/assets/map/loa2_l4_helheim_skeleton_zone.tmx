@@ -5,7 +5,7 @@
   <property name="background_layers" value="[0, 1, 2, 3]"/>
   <property name="background_music" value="dungeon"/>
   <property name="building_level" value="true"/>
-  <property name="mini_map_config_path" value="config/menu/maps/loa2/l4_helheim_main.json"/>
+  <property name="mini_map_config_path" value="config/menu/maps/loa2/l4_helheim_skeleton_zone.json"/>
   <property name="shadow_layers" value="[5]"/>
  </properties>
  <tileset firstgid="1" source="tileset/arcane_dungeon.tsx"/>
@@ -568,7 +568,7 @@
    <polygon points="0,0 -6.75,-31 0,-38"/>
   </object>
  </objectgroup>
- <objectgroup id="5" name="unreachable_area_physics">
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
   <object id="1327" x="671.606" y="1504" width="124.727" height="32"/>
   <object id="1336" x="255.333" y="1792" width="160.667" height="32"/>
   <object id="1352" x="640" y="1536" width="32" height="32"/>
