@@ -215,7 +215,7 @@ public class InteractiveObject extends GameObject implements Interactive {
 	
 	@Override
 	public void endContact(Contact contact) {
-		if (isPlayableCharacterContact(contact)) {
+		if (!typeConfig.interactByContact && isPlayableCharacterContact(contact)) {
 			InteractionManager.getInstance().movedOutOfRange(this);
 			playInteractionAnimationDisappear();
 		}

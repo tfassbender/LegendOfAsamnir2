@@ -86,6 +86,20 @@
 			frameDuration: 0.1,
 			playMode: REVERSED
 		},
+		{
+		    alias: cultist_dungeon_gate_open,
+			name: cultist_dungeon_gate,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			alias: cultist_dungeon_gate_close,
+			name: cultist_dungeon_gate,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: REVERSED
+		},
 //		{
 //			name: door_open,
 //			atlas: packed/demo/demo.atlas,
@@ -130,6 +144,12 @@
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
 			playMode: LOOP,
+		},
+		{
+			name: spikes_trap,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
 		},
 	]
 }

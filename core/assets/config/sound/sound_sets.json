@@ -205,6 +205,10 @@
 				door_close: {
 					path: "sound/object/door_close.mp3",
 				},
+				spikes_trap: {
+					path: "sound/object/hit_slash.mp3",
+					volume: 0.8,
+				}
 			}
 		},
 		enemy: {

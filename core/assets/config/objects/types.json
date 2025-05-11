@@ -166,6 +166,33 @@
 		
 		defaultLocked: true,
 	},
+	cultist_dungeon_gate: {
+		type: LOCKED,
+		
+		texture: cultist_dungeon_gate_1,
+		hitSound: rock_hit,
+		interactionSound: key_wall_opening,
+		
+		// has to be reduced in size to fit into the tiled map
+		textureSizeFactorX: 0.95f,
+		textureSizeFactorY: 0.95f,
+		
+		// only the center part is covered by the physics body, because it will be changed to a sensor when opened
+		physicsBodySizeFactorX: 0.5f,
+		physicsBodySizeFactorY: 0.25f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: -0.1f,
+		
+		// no sensor, because it can only be opened by events
+		
+		multipleActionExecutionsPossible: false,
+		textureAfterAction: cultist_dungeon_gate_28,
+		changeBodyToSensorAfterAction: true,
+		animationAction: cultist_dungeon_gate_open,
+		animationActionReversed: cultist_dungeon_gate_close,
+		
+		defaultLocked: true,
+	},
 	destroyable_wall: {
 		type: DESTROYABLE,
 		
@@ -847,5 +874,42 @@
 		
 		physicsBodySizeFactorX: 0.01f,
 		physicsBodySizeFactorY: 0.01f,
+	},
+	
+	spikes_trap: {
+		type: INTERACTIVE,
+		
+		texture: spikes_trap,
+		textureAfterAction: spikes_trap,
+		interactionSound: spikes_trap,
+		animationAction: spikes_trap,
+		
+		interactByContact: true,
+		multipleActionExecutionsPossible: true,
+		interactiveAction: DEAL_DAMAGE_TO_PLAYER,
+		
+		collisionType: OBSTACLE_SENSOR,
+		
+		physicsBodySizeFactorX: 1f,
+		physicsBodySizeFactorY: 0.3f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.2f,
+		
+		addSensor: false,
+		isSensor: true,
+		pressureActivated: true,
+	},
+	
+	spikes_trap_dummy: {
+		type: BASIC,
+		
+		texture: spikes_trap,
+		
+		addSensor: false,
+		isSensor: true,
+		
+		// the different size makes them distinguishable in debug mode
+		physicsBodySizeFactorX: 0.1f,
+		physicsBodySizeFactorY: 0.1f,
 	},
 }

@@ -122,6 +122,19 @@ public enum InteractiveAction {
 			String cutsceneId = object.getMapProperties().get(MAP_PROPERTY_KEY_CUTSCENE_ID, String.class);
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE).setStringValue(cutsceneId));
 		}
+	},
+	DEAL_DAMAGE_TO_PLAYER {
+		
+		private static final String MAP_PROPERTY_KEY_DAMAGE = "damage";
+		
+		@Override
+		public void execute(InteractiveObject object) {
+			// if not configured in the map, the trap is an insta-kill trap, so the damage is 100
+			float damage = object.getMapProperties().get(MAP_PROPERTY_KEY_DAMAGE, 100f, Float.class);
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.CHANGE_HEALTH) //
+					.setFloatValue(-damage));
+		}
 	};
 	
 	private static final String MAP_PROPERTY_KEY_COLOR_HEADER = "colorHeader";

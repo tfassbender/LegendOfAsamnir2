@@ -684,6 +684,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	private void die() {
+		propertiesDataHandler.resetIncreaseHealth(); // prevent reviving because the health still gets increased
+		
 		if (resurectionRuneCollectedAndForged()) {
 			propertiesDataHandler.increaseHealthByHalf();
 			GlobalValuesDataHandler.getInstance().put(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED, false);
@@ -828,6 +830,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				}
 				else if (change < 0) {
 					propertiesDataHandler.takeDamage(-change);
+					if (!propertiesDataHandler.isAlive()) {
+						die();
+					}
 				}
 				break;
 			case CHANGE_SHIELD:
