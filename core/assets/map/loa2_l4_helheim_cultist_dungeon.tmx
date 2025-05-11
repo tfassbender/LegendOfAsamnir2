@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3586">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3667">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -67,7 +67,7 @@
    eJzt0EEJAAAIADHfprOB/VvYQhG2BMdFAAAAAAAAAFsqrwt+at8AAIBjAy9qAMQ=
   </data>
  </layer>
- <objectgroup id="3" name="objects">
+ <objectgroup id="3" name="objects" locked="1">
   <object id="3324" name="player.startingPosition" x="320" y="416">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -804,7 +804,101 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1"/>
- <objectgroup id="5" name="unreachable_area_physics" locked="1"/>
+ <objectgroup id="4" name="physics">
+  <object id="3586" x="0" y="160" width="454" height="176"/>
+  <object id="3587" x="448" y="160" width="704" height="50"/>
+  <object id="3588" x="1145.67" y="160.333" width="204" height="209.333"/>
+  <object id="3589" x="0" y="472.667" width="453.818" height="135.333"/>
+  <object id="3590" x="448" y="600.5" width="704" height="39.5"/>
+  <object id="3591" x="1146.5" y="440" width="204" height="200"/>
+  <object id="3592" x="1344" y="504" width="454" height="123"/>
+  <object id="3593" x="1722.36" y="608" width="75.6364" height="146.727"/>
+  <object id="3594" x="1627" y="184" width="170.5" height="250"/>
+  <object id="3595" x="1344" y="184" width="288" height="122"/>
+  <object id="3596" x="1472" y="0" width="69" height="192"/>
+  <object id="3597" x="1536" y="0" width="320" height="18.5"/>
+  <object id="3598" x="1850.5" y="0" width="37.5" height="1010"/>
+  <object id="3599" x="1888" y="960" width="292.875" height="50.5"/>
+  <object id="3600" x="2144" y="760.125" width="37" height="199.875"/>
+  <object id="3601" x="2176" y="760" width="37.875" height="59.25"/>
+  <object id="3602" x="2112" y="352" width="37.9091" height="448"/>
+  <object id="3603" x="2266" y="760.5" width="230" height="58.5"/>
+  <object id="3604" x="2298.25" y="800" width="197.75" height="83.5"/>
+  <object id="3605" x="2490.25" y="864" width="5.75" height="224"/>
+  <object id="3606" x="896" y="1080.13" width="1599.33" height="7.875"/>
+  <object id="3607" x="864" y="736" width="37.5" height="352"/>
+  <object id="3609" x="864" y="704" width="544" height="51"/>
+  <object id="3610" x="1370" y="736" width="38" height="274.5"/>
+  <object id="3611" x="1408" y="960" width="389.5" height="50.5"/>
+  <object id="3612" x="1568" y="824.5" width="229.5" height="135.5"/>
+  <object id="3613" x="1536" y="608" width="37" height="256"/>
+  <object id="3614" x="2272" y="0" width="37.4545" height="288"/>
+  <object id="3615" x="2272" y="280.125" width="101.75" height="58.75"/>
+  <object id="3616" x="2426.18" y="280.182" width="69.8182" height="59.2727"/>
+  <object id="3617" x="2458.55" y="320" width="37.4545" height="83.0909"/>
+  <object id="3618" x="2144" y="320" width="198" height="83.125"/>
+  <object id="3619" x="2304" y="0" width="192" height="19.2727"/>
+  <object id="3620" x="2490.55" y="0.181818" width="5.45455" height="287.818"/>
+  <object id="3621" x="2490.13" y="384" width="5.875" height="384"/>
+  <object id="3622" x="1114.33" y="736" width="43" height="205.333"/>
+  <object id="3623" x="1050.67" y="928" width="171.333" height="32"/>
+  <object id="3624" x="1306.67" y="928" width="69.3333" height="32"/>
+  <object id="3625" x="896" y="928" width="69.3333" height="32"/>
+  <object id="3629" x="1019.33" y="948.424" width="31.3125" height="11.5758"/>
+  <object id="3630" x="1184" y="864" width="28" height="15.9545"/>
+  <object id="3631" x="1312" y="864" width="33" height="15.8636"/>
+  <object id="3632" x="1283.5" y="872" width="25.25" height="5.63636"/>
+  <object id="3633" x="1280" y="800" width="63" height="20.2424"/>
+  <object id="3634" x="1024" y="800" width="63.3333" height="20.6667"/>
+  <object id="3636" x="896" y="736" width="30.3333" height="55"/>
+  <object id="3637" x="1166" y="743.667" width="34.3333" height="44.6667"/>
+  <object id="3638" x="1327" y="769">
+   <polygon points="0,0 -16.3333,20.3333 16,20"/>
+  </object>
+  <object id="3639" x="928" y="864" width="28" height="15.5909"/>
+  <object id="3640" x="1056" y="864" width="33" height="15.1364"/>
+  <object id="3641" x="1027.5" y="872" width="25.25" height="5.63636"/>
+  <object id="3642" x="1603.09" y="733.091" width="25.2727" height="22.7273"/>
+  <object id="3643" x="1666.73" y="733.455" width="25.4545" height="22.9091"/>
+  <object id="3651" x="2309.25" y="19.25" width="56.75" height="64.25"/>
+  <object id="3652" x="2433.5" y="18.75" width="56.75" height="64.5"/>
+  <object id="3653" x="2366" y="19" width="67.5" height="44.75"/>
+  <object id="3654" x="2352.25" y="83.5" width="14.25" height="6.75"/>
+  <object id="3655" x="2433.75" y="83.25" width="13.5" height="6.5"/>
+  <object id="3656" x="1568" y="608" width="49.4545" height="71.6364"/>
+  <object id="3657" x="1680.91" y="608" width="47.0909" height="71.6364"/>
+  <object id="3658" x="2176" y="800" width="34.2273" height="71"/>
+  <object id="3659" x="2269.18" y="800" width="34.8182" height="71.5"/>
+  <object id="3660" x="2336" y="320" width="34.375" height="71"/>
+  <object id="3661" x="2430" y="320" width="34" height="71.5"/>
+  <object id="3662" x="965.364" y="948.364" width="31.5852" height="11.5758"/>
+  <object id="3663" x="1275.87" y="948.485" width="31.3125" height="11.5758"/>
+  <object id="3664" x="1221.91" y="948.425" width="31.5852" height="11.5758"/>
+ </objectgroup>
+ <objectgroup id="5" name="unreachable_area_physics" locked="1">
+  <object id="3644" x="2191.5" y="419.5">
+   <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
+  </object>
+  <object id="3645" x="2447.75" y="100.25">
+   <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
+  </object>
+  <object id="3646" x="2345.38" y="42.875">
+   <polygon points="0,0 16,4 -0.333333,5"/>
+  </object>
+  <object id="3647" x="1162.36" y="907.091">
+   <polygon points="0,0 16,4 -0.333333,5"/>
+  </object>
+  <object id="3648" x="1673.64" y="43.0909">
+   <polygon points="0,0 16,4 -0.333333,5"/>
+  </object>
+  <object id="3649" x="1612.5" y="331.938" width="8.8125" height="6.875"/>
+  <object id="3650" x="2475.59" y="746.381" width="8.8125" height="6.875"/>
+  <object id="3665" x="1391.25" y="490.25">
+   <polygon points="0,0 -9.25,7.75 9.25,5.25"/>
+  </object>
+  <object id="3666" x="1103.45" y="906.182">
+   <polygon points="0,0 -9.25,7.75 9.25,5.25"/>
+  </object>
+ </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1"/>
 </map>
