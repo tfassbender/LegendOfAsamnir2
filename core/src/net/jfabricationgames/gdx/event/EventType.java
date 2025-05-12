@@ -63,6 +63,8 @@ public enum EventType {
 	CONFIG_GAME_OBJECT_ACTION, //
 	TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR, //
 	TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT, //
+	ROTATING_PUZZLE_INTERACTION, //
+	ROTATING_PUZZLE_STATE_REQUEST, //
 	//*******************************
 	//*** Items
 	//*******************************

@@ -74,6 +74,23 @@
 	},
 	
 	//*******************************************
+	//*** cultist dungeon
+	//*******************************************
+	
+	loa2_l4_helheim__cultist_dungeon__rotating_puzzle_solved: { 
+		conditionType: ROTATING_PUZZLE_COMBINATION,
+		parameters: {
+		
+			// TODO choose a better lock combination after testing
+			
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_1: 0,
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_2: 1,
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_3: 2,
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_4: 3,
+		},
+	},
+	
+	//*******************************************
 	//*** main - garm cutscene
 	//*******************************************
 	

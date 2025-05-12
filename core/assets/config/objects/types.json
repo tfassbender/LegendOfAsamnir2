@@ -937,8 +937,8 @@
 		addSensor: true,
 		sensorRadius: 1.1f,
 		
-		interactionMarkerOffsetX: -0.25f,
-		interactionMarkerOffsetY: 0f,
+		interactionMarkerOffsetX: 0.1f,
+		interactionMarkerOffsetY: -0.5f,
 		
 		physicsBodySizeFactorX: 1f,
 		physicsBodySizeFactorY: 0.7f,

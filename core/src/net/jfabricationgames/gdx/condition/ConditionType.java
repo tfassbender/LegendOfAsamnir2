@@ -4,12 +4,16 @@ import java.util.function.Function;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.ObjectMap.Entry;
 
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.cutscene.variable.CutsceneVariable;
 import net.jfabricationgames.gdx.data.handler.CharacterItemDataHandler;
 import net.jfabricationgames.gdx.data.handler.CharacterPropertiesDataHandler;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.item.TriforceItem;
 import net.jfabricationgames.gdx.item.TriforceItem.TriforceItemType;
 import net.jfabricationgames.gdx.map.GameMapManager;
@@ -221,6 +225,34 @@ public enum ConditionType {
 			
 			return object.getPosition().x >= lowerLeft.x && object.getPosition().x <= upperRight.x //
 					&& object.getPosition().y >= lowerLeft.y && object.getPosition().y <= upperRight.y;
+		}
+	},
+	ROTATING_PUZZLE_COMBINATION {
+		
+		// all parameters are checked, so no specific key is needed (keys are the ids of the rotating puzzle, values are the expected values)
+		
+		@Override
+		public boolean check(Condition condition) {
+			EventHandler eventHandler = EventHandler.getInstance();
+			for (Entry<String, String> pair : condition.parameters.entries()) {
+				String objectId = pair.key;
+				int expectedValue = Integer.parseInt(pair.value);
+				
+				// the rotating puzzle sets the result into the boolean value of the event
+				// (if an object with the id is not found, the boolean value remains false and the condition fails)
+				EventConfig requestEvent = new EventConfig() //
+						.setEventType(EventType.ROTATING_PUZZLE_STATE_REQUEST) //
+						.setStringValue(objectId) //
+						.setIntValue(expectedValue);
+				
+				eventHandler.fireEvent(requestEvent);
+				
+				if (!requestEvent.booleanValue) {
+					return false; // all conditions have to match
+				}
+			}
+			
+			return true;
 		}
 	};
 	

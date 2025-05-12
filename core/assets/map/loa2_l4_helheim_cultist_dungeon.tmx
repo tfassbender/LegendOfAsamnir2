@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3671">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3675">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -798,22 +798,47 @@
    <point/>
   </object>
   <object id="3584" name="object.cultist_dungeon_gate" x="2240" y="847">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim__cultist_dungeon__gate_boss_entry"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
    <point/>
   </object>
   <object id="3585" name="object.cultist_dungeon_gate" x="2400" y="371">
    <point/>
   </object>
   <object id="3667" name="object.rotating_puzzle" x="2336" y="913">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle"/>
+    <property name="rotatingPuzzleId" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_1"/>
+   </properties>
    <point/>
   </object>
-  <object id="3668" name="object.rotating_puzzle" x="2368" y="913">
+  <object id="3671" name="object.rotating_puzzle" x="2368" y="913">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle"/>
+    <property name="rotatingPuzzleId" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_2"/>
+   </properties>
    <point/>
   </object>
-  <object id="3669" name="object.rotating_puzzle" x="2400" y="913">
+  <object id="3672" name="object.rotating_puzzle" x="2400" y="913">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle"/>
+    <property name="rotatingPuzzleId" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_3"/>
+   </properties>
    <point/>
   </object>
-  <object id="3670" name="object.rotating_puzzle" x="2432" y="913">
+  <object id="3673" name="object.rotating_puzzle" x="2432" y="913">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle"/>
+    <property name="rotatingPuzzleId" value="loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_4"/>
+   </properties>
    <point/>
+  </object>
+  <object id="3674" name="object.eventObject" x="256" y="337.333" width="6.98" height="135.708">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon_goto_helheim_main"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics">

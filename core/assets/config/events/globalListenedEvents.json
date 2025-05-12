@@ -28,6 +28,7 @@
 	config/events/global/loa2/helheim_main.json,
 	config/events/global/loa2/helheim_skeleton_zone.json,
 	config/events/global/loa2/helheim_spider_zone.json,
+	config/events/global/loa2/helheim_cultist_dungeon.json,
 	
 	// asgard - fields of vigrid
 	config/events/global/loa2/asgard.json,

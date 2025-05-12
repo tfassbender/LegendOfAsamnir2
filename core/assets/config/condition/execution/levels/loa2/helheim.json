@@ -1,6 +1,6 @@
 {
 	//*******************************************
-	//*** locks
+	//*** spider zone
 	//*******************************************
 	
     loa2_l4_helheim_spider_zone__open_boss_gate_if_all_switches_activated: {
@@ -38,6 +38,26 @@
 		}
         elseCase: {
             type: NO_EXECUTION, // don't close the gate again, to not lock the player
+		}
+	},
+	
+	//*******************************************
+	//*** cultist dungeon
+	//*******************************************
+	
+    loa2_l4_helheim__cultist_dungeon__open_boss_gate_if_rotating_puzzle_solved: {
+        conditionId: loa2_l4_helheim__cultist_dungeon__rotating_puzzle_solved,
+        thenCase: {
+            type: EVENT,
+            eventConfig: {
+                executionType: OPEN_LOCK,
+                executionParameters: {
+                    lockId: loa2_l4_helheim__cultist_dungeon__gate_boss_entry
+				}
+			}
+		}
+        elseCase: {
+            type: NO_EXECUTION,
 		}
 	},
 }

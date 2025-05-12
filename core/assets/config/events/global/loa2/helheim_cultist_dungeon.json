@@ -1,0 +1,41 @@
+{
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l4_helheim_cultist_dungeon_goto_helheim_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l4_helheim_cultist_dungeon_goto_helheim_main,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_cultist_dungeon_goto_helheim_main_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon_goto_helheim_main_hels_temple: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l4_helheim_cultist_dungeon_goto_helheim_main_hels_temple,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_l4_helheim_main,
+			startingPointId: 4,
+		}
+	},
+	
+	//*******************************************
+	//*** rotating puzzle
+	//*******************************************
+	
+	loa2_l4_helheim__cultist_dungeon__rotating_puzzle_interaction: {
+		event: {
+			eventType: ROTATING_PUZZLE_INTERACTION,
+			stringValue: loa2_l4_helheim__cultist_dungeon__rotating_puzzle,
+		},
+		executionType: CONDITIONAL_EVENT,
+		conditionalExecutionId: loa2_l4_helheim__cultist_dungeon__open_boss_gate_if_rotating_puzzle_solved,
+	},
+}
