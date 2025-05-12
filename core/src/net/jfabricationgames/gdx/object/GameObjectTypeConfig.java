@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.object;
 
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.attack.AttackType;
@@ -148,4 +149,12 @@ public class GameObjectTypeConfig {
 	public float animationSolidOffsetY = 0f;
 	
 	public PhysicsCollisionType notTraversableCollisionType; // the collision type that is set when the object is solid
+	
+	//****************************************
+	//*** Rotating Puzzle
+	//****************************************
+	
+	public Array<String> additionalTextures;
+	public float additionalTexturesOffsetX = 0f;
+	public float additionalTexturesOffsetY = 0f;
 }

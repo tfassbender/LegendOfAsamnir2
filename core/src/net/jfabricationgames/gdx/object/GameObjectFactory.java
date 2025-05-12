@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.object;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationManager;
@@ -18,6 +19,7 @@ import net.jfabricationgames.gdx.object.interactive.AttackActivatedStateSwitchOb
 import net.jfabricationgames.gdx.object.interactive.InteractiveObject;
 import net.jfabricationgames.gdx.object.interactive.LockedObject;
 import net.jfabricationgames.gdx.object.interactive.MovingObject;
+import net.jfabricationgames.gdx.object.interactive.RotatingPuzzle;
 import net.jfabricationgames.gdx.object.interactive.StateSwitchObject;
 import net.jfabricationgames.gdx.object.moveable.DraggableObject;
 import net.jfabricationgames.gdx.object.moveable.MovableObject;
@@ -153,6 +155,10 @@ public class GameObjectFactory {
 			case DWARVEN_GUARDIAN_CONSTRUCT_TORCH:
 				object = new AttackActivatedStateSwitchObject(typeConfig, sprite, properties, gameMap, AttackType.DWARVEN_GUARDIAN_CONSTRUCT_FIRE);
 				break;
+			case ROTATING_PUZZLE:
+				object = new RotatingPuzzle(typeConfig, sprite, properties, gameMap);
+				((RotatingPuzzle) object).setAdditionalTextures(loadAdditionalTextures(typeConfig.additionalTextures, x, y, typeConfig));
+				break;
 			default:
 				throw new IllegalStateException("Unknown GameObjectType \"" + typeConfig.type + "\" of object type \"" + type + "\"");
 		}
@@ -165,6 +171,21 @@ public class GameObjectFactory {
 		object.setTextureAtlas(atlas);
 		
 		return object;
+	}
+	
+	private static Array<Sprite> loadAdditionalTextures(Array<String> additionalTextures, float x, float y, GameObjectTypeConfig typeConfig) {
+		Array<Sprite> additionalSprites = new Array<Sprite>();
+		
+		for (String texture : additionalTextures) {
+			Sprite sprite = FactoryUtil.createSprite(atlas, // 
+					x + (typeConfig.additionalTexturesOffsetX / Constants.WORLD_TO_SCREEN), // divide by WORLD_TO_SCREEN to get the offset in the same unit as all other offsets
+					y + (typeConfig.additionalTexturesOffsetY / Constants.WORLD_TO_SCREEN), // divide by WORLD_TO_SCREEN to get the offset in the same unit as all other offsets
+					texture);
+			sprite.setScale(Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN);
+			additionalSprites.add(sprite);
+		}
+		
+		return additionalSprites;
 	}
 	
 	public static class Config {

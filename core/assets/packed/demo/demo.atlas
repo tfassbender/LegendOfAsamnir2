@@ -11514,7 +11514,7 @@ inn_keeper_yes
   index: 3
 interrogation
   rotate: false
-  xy: 3742, 856
+  xy: 3886, 856
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
@@ -17819,6 +17819,62 @@ rotating_puzzle
   orig: 32, 64
   offset: 0, 0
   index: 4
+rotating_puzzle_symbol_1_
+  rotate: false
+  xy: 3562, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rotating_puzzle_symbol_2_
+  rotate: false
+  xy: 3580, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rotating_puzzle_symbol_3_
+  rotate: false
+  xy: 3598, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rotating_puzzle_symbol_4_
+  rotate: false
+  xy: 3616, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rotating_puzzle_symbol_5_
+  rotate: false
+  xy: 3634, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rotating_puzzle_symbol_6_
+  rotate: false
+  xy: 3652, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rotating_puzzle_symbol_7_
+  rotate: false
+  xy: 3670, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+rotating_puzzle_symbol_8_
+  rotate: false
+  xy: 3688, 852
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
 royal_guard_block
   rotate: false
   xy: 1038, 985
@@ -17947,14 +18003,14 @@ rune_raidho
   index: -1
 scroll
   rotate: false
-  xy: 3562, 852
+  xy: 3706, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 shield
   rotate: false
-  xy: 3580, 852
+  xy: 3724, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -19281,14 +19337,14 @@ skeleton_king_command
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
-  index: 8
+  index: 7
 skeleton_king_command
   rotate: false
   xy: 481, 1522
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
-  index: 7
+  index: 8
 skeleton_king_command
   rotate: false
   xy: 98, 919
@@ -19480,7 +19536,7 @@ smoke
   index: 4
 spare_weapon
   rotate: false
-  xy: 3598, 852
+  xy: 3742, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -19792,14 +19848,14 @@ spider_queen_cocoon_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 1
 spider_queen_cocoon_idle
   rotate: false
   xy: 2643, 870
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 4
 spider_queen_cocoon_break
   rotate: false
   xy: 2677, 870
@@ -20397,7 +20453,7 @@ stone
   index: -1
 switch_floor_down
   rotate: false
-  xy: 3616, 852
+  xy: 3760, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -20418,28 +20474,28 @@ switch_floor_right
   index: -1
 switch_floor_up
   rotate: false
-  xy: 3634, 852
+  xy: 3778, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_wall_down
   rotate: false
-  xy: 3652, 852
+  xy: 3796, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 switch_wall_up
   rotate: false
-  xy: 3670, 852
+  xy: 3814, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 sword
   rotate: false
-  xy: 3688, 852
+  xy: 3832, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -20908,14 +20964,14 @@ wagon_vertical
   index: -1
 wand
   rotate: false
-  xy: 3706, 852
+  xy: 3850, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 wand_alt
   rotate: false
-  xy: 3724, 852
+  xy: 3868, 852
   size: 16, 16
   orig: 16, 16
   offset: 0, 0

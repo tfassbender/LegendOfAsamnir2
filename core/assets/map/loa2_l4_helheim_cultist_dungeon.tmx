@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3667">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3671">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -29,12 +29,12 @@
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
  <layer id="1" name="background" width="78" height="34">
   <data encoding="base64" compression="zlib">
-   eJztml1uwjAMx/u2tQfY7n+eAgco2wEKvPAG7GWJRrQo2PmwnWKq/KXICEFaJ786tqHrmmIa+67bmLH17K5/9l3xBfkl6eda120yPuzN+IrYb4af0Pyc+bRoNj4czDhG7InhJzQ/Zz4tarzRdDE+XM24IfZjaLxRNCnjLeccK7U1zqlZWXybE7GYYmvEDS5vl/szb5/3z+Hv2f9h8huLxRRbI25weasxz5K8jcRnnMub76+/btRY9DYsy9uUWHdsbSQ4Ge/+vg//+yPJC9fa+6LuE7Y2ErzN/eNZKskL17q4C+ViNi7X5g3KEbYBX25vYzljzKb8kI5vqXMIY9VymstbTs12KNgH7BpLxrdUXSBRL+TUbPvE/uZcY2352xp549ynJt5cHk2Nj5Dl5OGYtPH2KtLGmyaFtYRfOzTecIVnlL9OjTdc4Rnlr1PjDZcUb1DPyB81z6+UqP3OWE8z5M3WDpR6wUmqhyIpav+ptJbg/L4g1WuTFLXfSd3/UnagnpEGUesz6v6XsgP1jDSIWp8txZt/proei4b/OZyJvJ2fwFuN37Gp0s7bVDFmcPRK8W0NvIX9XCjHw/q9fj6X+p79vEbeOP0n7HXsvRrW1gu/p1J6KQ==
+   eJztmVFOwzAMhvsG6wHg/ucp4wAdHKCDl70NeCEWq4iC7aS205oqvxR5mra0Tr7asdt1TZyGQ9c9hXGM7PNh67vSC/PL0s+9rtsYfDiF8cLYV4Wf2Pya+bxoCj6cw3hj7LvCT2x+zXxe1HiT6Rp8+Ajjk7APfeNNotEZbyV5bKmtkacmZ/FtysRiia0RN7S8XW/PPDzvj/3Ps/+l5JeLxRJbI25oeasxz5q8DcJnXMtb7G+8btJYdNevy9uYWXdqbSw4GW7+3ve/+2PJi9bCfUn3iVobC96mw99casmL1s5xFzuLQVyuzRt2RjgmfM17y50ZOZvzwzq+5fIQxSpwWspbSc12XrAP1DXWjG+5usCiXiip2U6Z/S25xt7Ob3vkTXOfnnibz9HS+IhZzTmckjfe/ou88eZJaS0R1w6NN1ppjorXqfFGK81R8To13mhZ8Yb1jOJRM3/lxPU7QVQvgetpprxB7SCpF2ZZ9VAsxfWfQJJ3UlgtoXm/YNVrsxRXZ4Ks30ktZQfrGXkQV5+BrN+BLmUH6xl5EFefgbbmLc6pc4+lNM7W1IXhjbOXDXjzdHaT9gPW4m3M7OFW+ULaf9oivu2Bt7Sfi53xqH5vfJ7L/Q9+75E3Tf+J+sx9V6vX9Q3Cr3AX
   </data>
  </layer>
- <layer id="2" name="background_2" width="78" height="34">
+ <layer id="2" name="background_2" width="78" height="34" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztms1uwyAMx2kvFXn/J9t6Wy9Z0kt3odseYKkEGlDMhwnEpPwlqrZRHPEDjG3CWNua+fIxMHbnz+0g/7/yPPu23Rx7VDRF9GHM6KfLfo49KurccOrccOrccPpZ+vDuaWdOixu0jx2Avc3VjkP5fWoixi1mfaSqxPzv3HDK5ab8wGO9v8nvvw1xU/En5AegNZ7LDbIT64vulj/7rswtNE7QvWtwm2V/BdFcQTjGR+0foXEqyU0fsz3EILrW4KbHCMof2GNGcc4pvwvFYT655iqTfY7lBvmC02D+HgMxYyieXFs5/g1rF/OMluKQUF6wRr6wR25Ypfi3zu1f1Lhh142v5cThkKhxoyQ7l9DjhM4Nlt3fsXOLUueG0ytwm7lZr2SaT/rk5rmbXvvw5TZ2f1XucEzMF1w1o1r7V0jQmI6Sm+96qs2YeyF71NZiCW6+mCj1fIFqzagEt9DzUu6lWjNqiZvgZj1py/ccWuIGaYt5OKl9VJOzJm9dr8ntY2kXzz1bccOoJrfb0r52wk1w87wBem/LVe8V9lx2nF+knDe1xI2StuBWov5Uuz3yhT/JD5ah
+   eJztms1uwyAMx2kvFXn/J9t2Wy9Rsst2oV0foJkUNEIxHzZQk/KXqPqhOOUHGNtEiLY1y+VlEOIiH9th/f5L0uzbdin2uGiK6MNI6KfLPsUeF3VuOHVuOHVuOP0ufXj3tA/Jixu0jx2Avc3VjkP5fWpixi1mfaSqxPzv3HCictN+4G+9v63vbw1x0/En5AegNU7lBtmJ9UUXy59dK3MLjRN0bQ5u89pfxTRXUI7x0ftHaJxKcjPHbA8xiKkc3MwYQfsDe8w4zjntd6E4zCfXXBVrn2O5Qb7gNGw/j4GYMRRP5hbFv2HtYu7RUhwSygty5At75IZVin/r3P7FjRt23fgaJQ6HxI0bJ9m5hBkndG6w7P6OnVuUOjecXoHbLLf1SmH5JPPczax9+HIbu786dzgm5guumlGt/SskaEx130K/p9iMuRayx20tluDmi4lSzxe41oxKcAvdL+VarjWjlrgpua0nPfMZh5a45fwfVE16HzXkrMlbv9fk9rm0c+bxowpbD6jJ7XtpPzvhpuT2vAF6bstV71X2XHacX8SeN7XGjYuexa1E/alm07nCHaFIj0k=
   </data>
  </layer>
  <layer id="5" name="terrain" width="78" height="34" locked="1">
@@ -67,7 +67,7 @@
    eJzt0EEJAAAIADHfprOB/VvYQhG2BMdFAAAAAAAAAFsqrwt+at8AAIBjAy9qAMQ=
   </data>
  </layer>
- <objectgroup id="3" name="objects" locked="1">
+ <objectgroup id="3" name="objects">
   <object id="3324" name="player.startingPosition" x="320" y="416">
    <properties>
     <property name="startingPointId" value="0"/>
@@ -779,7 +779,7 @@
    </properties>
    <point/>
   </object>
-  <object id="3581" name="player.startingPosition" x="1824" y="480">
+  <object id="3581" name="player.startingPosition" x="1824" y="800">
    <properties>
     <property name="startingPointId" value="12"/>
    </properties>
@@ -803,6 +803,18 @@
   <object id="3585" name="object.cultist_dungeon_gate" x="2400" y="371">
    <point/>
   </object>
+  <object id="3667" name="object.rotating_puzzle" x="2336" y="913">
+   <point/>
+  </object>
+  <object id="3668" name="object.rotating_puzzle" x="2368" y="913">
+   <point/>
+  </object>
+  <object id="3669" name="object.rotating_puzzle" x="2400" y="913">
+   <point/>
+  </object>
+  <object id="3670" name="object.rotating_puzzle" x="2432" y="913">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="physics">
   <object id="3586" x="0" y="160" width="454" height="176"/>
@@ -823,9 +835,9 @@
   <object id="3601" x="2176" y="760" width="37.875" height="59.25"/>
   <object id="3602" x="2112" y="352" width="37.9091" height="448"/>
   <object id="3603" x="2266" y="760.5" width="230" height="58.5"/>
-  <object id="3604" x="2298.25" y="800" width="197.75" height="83.5"/>
-  <object id="3605" x="2490.25" y="864" width="5.75" height="224"/>
-  <object id="3606" x="896" y="1080.13" width="1599.33" height="7.875"/>
+  <object id="3604" x="2298.25" y="800" width="165.75" height="83.5"/>
+  <object id="3605" x="2458.25" y="864" width="5.75" height="224"/>
+  <object id="3606" x="896" y="1080.13" width="1567.33" height="7.875"/>
   <object id="3607" x="864" y="736" width="37.5" height="352"/>
   <object id="3609" x="864" y="704" width="544" height="51"/>
   <object id="3610" x="1370" y="736" width="38" height="274.5"/>

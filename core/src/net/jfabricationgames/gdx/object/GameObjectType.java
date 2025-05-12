@@ -16,6 +16,7 @@ public enum GameObjectType {
 	FORCE, //
 	TRAVERSEABLE, //
 	ENEMY_PATH_BLOCKER, //
+	ROTATING_PUZZLE, //
 	
 	// specialized types
 	DWARVEN_GUARDIAN_CONSTRUCT_SWITCH, //

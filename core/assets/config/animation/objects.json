@@ -151,5 +151,11 @@
 			frameDuration: 0.1,
 			playMode: NORMAL,
 		},
+		{
+			name: rotating_puzzle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: REVERSED,
+		},
 	]
 }

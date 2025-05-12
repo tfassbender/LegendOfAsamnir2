@@ -166,13 +166,17 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 			return;
 		}
 		
-		if (animation != null && (!animation.isAnimationFinished() || animation.isAnimationLooped())) {
+		if (drawAnimation()) {
 			animation.increaseStateTime(delta);
 			animation.draw(batch);
 		}
 		else {
 			sprite.draw(batch);
 		}
+	}
+	
+	protected boolean drawAnimation() {
+		return animation != null && (!animation.isAnimationFinished() || animation.isAnimationLooped());
 	}
 	
 	private boolean renderingConditionFulfilled() {

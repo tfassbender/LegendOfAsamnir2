@@ -912,4 +912,37 @@
 		physicsBodySizeFactorX: 0.1f,
 		physicsBodySizeFactorY: 0.1f,
 	},
+	
+	rotating_puzzle: {
+		type: ROTATING_PUZZLE,
+		
+		texture: rotating_puzzle_1,
+		textureAfterAction: rotating_puzzle_1,
+		animationAction: rotating_puzzle,
+		
+		additionalTextures: [
+			rotating_puzzle_symbol_1_,
+			rotating_puzzle_symbol_2_,
+			rotating_puzzle_symbol_3_,
+			rotating_puzzle_symbol_4_,
+			rotating_puzzle_symbol_5_,
+			rotating_puzzle_symbol_6_,
+			rotating_puzzle_symbol_7_,
+			rotating_puzzle_symbol_8_,
+		],
+		additionalTexturesOffsetX: 0f,
+		additionalTexturesOffsetY: -0.65f,
+		
+		multipleActionExecutionsPossible: true,
+		addSensor: true,
+		sensorRadius: 1.1f,
+		
+		interactionMarkerOffsetX: -0.25f,
+		interactionMarkerOffsetY: 0f,
+		
+		physicsBodySizeFactorX: 1f,
+		physicsBodySizeFactorY: 0.7f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0f,
+	}
 }
