@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3675">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3683">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -37,9 +37,9 @@
    eJztms1uwyAMx2kvFXn/J9t2Wy9Rsst2oV0foJkUNEIxHzZQk/KXqPqhOOUHGNtEiLY1y+VlEOIiH9th/f5L0uzbdin2uGiK6MNI6KfLPsUeF3VuOHVuOHVuOP0ufXj3tA/Jixu0jx2Avc3VjkP5fWpixi1mfaSqxPzv3HCictN+4G+9v63vbw1x0/En5AegNU7lBtmJ9UUXy59dK3MLjRN0bQ5u89pfxTRXUI7x0ftHaJxKcjPHbA8xiKkc3MwYQfsDe8w4zjntd6E4zCfXXBVrn2O5Qb7gNGw/j4GYMRRP5hbFv2HtYu7RUhwSygty5At75IZVin/r3P7FjRt23fgaJQ6HxI0bJ9m5hBkndG6w7P6OnVuUOjecXoHbLLf1SmH5JPPczax9+HIbu786dzgm5guumlGt/SskaEx130K/p9iMuRayx20tluDmi4lSzxe41oxKcAvdL+VarjWjlrgpua0nPfMZh5a45fwfVE16HzXkrMlbv9fk9rm0c+bxowpbD6jJ7XtpPzvhpuT2vAF6bstV71X2XHacX8SeN7XGjYuexa1E/alm07nCHaFIj0k=
   </data>
  </layer>
- <layer id="5" name="terrain" width="78" height="34" locked="1">
+ <layer id="5" name="terrain" width="78" height="34">
   <data encoding="base64" compression="zlib">
-   eJztmktOwzAURTtpJd6cKaNCF8BnARTGwAbKBtgFLIIFIDFElWhHLQIBoxa1Y35T/nvgosjCgcZOGqdJ3HukK8d+khNfJ6mf00rFD6piP07DIfo5ctRXEVl0PLZdCfp8gp6hYwnaiJl9eHQCfUJf0KkEbSSaM/hTk6D8oY3yZSHfayKEEEJ8ZNK6Om5bEagX9LpmiSlPWkZ9RVODfsViDT6ta9rI0LeiPlvTYPNNjXXaMcfJB15LmDM04ceWpm2P7oms2KRHpaCHeepDF5yvRAzg1xC6o2+JuIdfD9AjfUvEG/x6hz7oGyFO2JFw6Rvn2nr+YOm3VHRQ70p0PIqWhEt1jixYzWFurrVz1rRjlbvcoO1WwnF+C/nPJby5MsyfLa4oY86YhhE8GRt8scXnlT2LJ7b4vKNydtf/U/CJv7+PSeskPnm9933Zl0/z/ci0nouKzXJf3ie4v+yWbzusOKk=
+   eJztmj9OwzAYxbtQiW9nRUICegCgBwA6Fy4AF+AWMDNzAKSOFRIwASoCJkAwU2Dl/x14KLLqALaTxmkS9/2kJ8f+JCd+TlJ/Tmu1MJgQ93EWttHPjqe+ysiU57GtSdTnE/QM7UnURuxswqN96BP6gjoStREzXfhTl6j84QDly2Sx10QIIYSEyH/r6qRtZWC2pNc1Smx50hzq85oa9CsRi/BpSVMzR9/K+mwNg8s3NdZhx5wkH3itYM6wAj9WNbUCuifyYpkeVYITzNMpdMb5SsU1/LqBbulbKh7gVx96pG+peINf79AHfSPEC22Jl6FxqK3nt6YHpeII9WMxx01sSLxU58iDhQLm5kI7Z107VrnLJdquJB7nt5C/9ODNuWX+XHFFFXPGLNzBk3uLL674uLLu8MQVH3dUzu77fwoh8fv3MW2dxNmdMceKeu+Hsi+f5fuRbT1nio1yXz4kuL/sl28xJDlY
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="78" height="34" locked="1">
@@ -787,13 +787,13 @@
   </object>
   <object id="3582" name="player.startingPosition" x="2240" y="800">
    <properties>
-    <property name="startingPointId" value="13"/>
+    <property name="startingPointId" value="14"/>
    </properties>
    <point/>
   </object>
   <object id="3583" name="player.startingPosition" x="2400" y="224">
    <properties>
-    <property name="startingPointId" value="14"/>
+    <property name="startingPointId" value="15"/>
    </properties>
    <point/>
   </object>
@@ -840,8 +840,54 @@
     <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon_goto_helheim_main"/>
    </properties>
   </object>
+  <object id="3675" name="player.startingPosition" x="1248" y="1024">
+   <properties>
+    <property name="startingPointId" value="13"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3676" name="npc.azraesha" x="1248" y="841">
+   <properties>
+    <property name="unitId" value="loa2_l4_helheim__azraesha"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3677" name="npc.cultist" x="1295.68" y="853.364">
+   <properties>
+    <property name="unitId" value="loa2_l4_helheim__cultist_in_azraeshas_dungeon"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3678" name="object.eventObject" x="1157.58" y="755.292" width="212.209" height="188.333">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__enter_azraeshas_dungeon"/>
+   </properties>
+  </object>
+  <object id="3679" name="object.eventObject" x="902.062" y="756.167" width="211.542" height="187.667">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__enter_beeleths_dungeon"/>
+   </properties>
+  </object>
+  <object id="3680" name="npc.beeleth" x="992.653" y="842.303">
+   <properties>
+    <property name="unitId" value="loa2_l4_helheim__beeleth"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3681" name="npc.cultist" x="1039.33" y="854.667">
+   <properties>
+    <property name="unitId" value="loa2_l4_helheim__cultist_in_beeleths_dungeon"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3682" name="object.spawnPoint.health" x="1136.33" y="977">
+   <properties>
+    <property name="spawn" value="restore_health_after_succubus_or_incubus_dungeon"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="3586" x="0" y="160" width="454" height="176"/>
   <object id="3587" x="448" y="160" width="704" height="50"/>
   <object id="3588" x="1145.67" y="160.333" width="204" height="209.333"/>

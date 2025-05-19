@@ -33,7 +33,7 @@
 	},
 	{
 		id: damage,
-		animation: cultist_worship,
+		animation: cultist_damage,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: []

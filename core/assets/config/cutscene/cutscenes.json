@@ -200,6 +200,13 @@
 	config/cutscene/loa2/helheim/spider_zone/key_found.json,
 	
 	//********************************************************
+	//*** Legend of Asamnir 2 - Helheim - Cultist Dungeon
+	//********************************************************
+	config/cutscene/loa2/helheim/cultist_dungeon/goto_main.json,
+	config/cutscene/loa2/helheim/cultist_dungeon/enter_azraeshas_dungeon.json,
+	config/cutscene/loa2/helheim/cultist_dungeon/enter_beeleths_dungeon.json,
+	
+	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
 	//********************************************************
 	config/cutscene/loa2/asgard/goto_main.json,

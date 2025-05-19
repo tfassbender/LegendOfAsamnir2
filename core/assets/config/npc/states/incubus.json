@@ -1,0 +1,29 @@
+[
+	{
+		id: idle,
+		animation: incubus_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack
+		]
+	},
+	{
+		id: move,
+		animation: incubus_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack
+		]
+	},
+	{
+		id: attack,
+		animation: incubus_attack,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move
+		]
+	},
+]

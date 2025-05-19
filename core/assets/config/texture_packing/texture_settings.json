@@ -700,6 +700,21 @@
                 // plague doctor
                 raw_images/restricted/npc/plague_doctor/plague_doctor_idle,
                 raw_images/restricted/npc/plague_doctor/plague_doctor_move,
+                
+                // succubus
+                raw_images/restricted/enemy/succubus/succubus_idle,
+                raw_images/restricted/enemy/succubus/succubus_move,
+                raw_images/restricted/enemy/succubus/succubus_attack,
+//                raw_images/restricted/enemy/succubus/succubus_damage,
+//                raw_images/restricted/enemy/succubus/succubus_death,
+                raw_images/restricted/enemy/succubus/succubus_kiss,
+                
+                // incubus
+                raw_images/restricted/enemy/incubus/incubus_idle,
+                raw_images/restricted/enemy/incubus/incubus_move,
+                raw_images/restricted/enemy/incubus/incubus_attack,
+//                raw_images/restricted/enemy/incubus/incubus_damage,
+//                raw_images/restricted/enemy/incubus/incubus_death,
 				
 				//##############################################################
 				//### Animals

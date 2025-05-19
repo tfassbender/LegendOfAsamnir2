@@ -835,6 +835,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					}
 				}
 				break;
+			case SET_HEALTH:
+				propertiesDataHandler.setHealth(event.floatValue);
+				break;
 			case CHANGE_SHIELD:
 				change = event.floatValue;
 				if (change > 0) {

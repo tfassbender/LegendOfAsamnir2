@@ -1,0 +1,289 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__enter_beeleths_dungeon_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+	        type: WAIT,
+	        
+			startsWithCutscene: true,
+            
+            executes: [
+                move_camera,
+                beeleth_greeting,
+			],
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: PLAYER,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 1},
+			speedFactor: 2f,
+		},
+	
+		beeleth_greeting: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+			    colorHeader: #eb345b,
+				displayTextHeader: "Beeleth",
+				displayText: "Oh my, a new customer!\n                   \nWhat can I do for you dear?      ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                thorin_choice,
+			],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"What are you doing here?",
+					"...?!",
+					"I gotta go!",
+				],
+			},
+			
+			choiceOptionExecutions: [
+				beeleth_change_state_attack,
+				beeleth_tease,
+				move_back,
+			],
+		},
+		
+		beeleth_tease: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                colorHeader: #eb345b,
+                displayTextHeader: "Beeleth",
+                displayText: "Oh dear, are you at a loss of words?\n                         \nI know my beauty can be quite stunning!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_choice,
+			],
+		},
+		
+		beeleth_change_state_attack: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l4_helheim__beeleth,
+            controlledUnitState: attack,
+            
+            executes: [
+            	beeleth_what_are_you_doing_here,
+            	cultist_change_state_damage,
+            ],
+		},
+		
+		// can be reused, because it has no following state
+		cultist_change_state_damage: {
+			executionDelayInSeconds: 0.3f,
+			
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_in_beeleths_dungeon,
+            controlledUnitState: damage,
+		},
+		
+		beeleth_what_are_you_doing_here: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+			    colorHeader: #eb345b,
+				displayTextHeader: "Beeleth",
+				displayText: "What does it look like I'm doing?\n            \nThese cultists were very rude, so I got to teach them a lesson!          \nWouldn't you like to join me dear?      ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                beeleth_change_state_attack_2,
+                cultist_change_state_damage,
+			],
+		},
+		
+		beeleth_change_state_attack_2: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l4_helheim__beeleth,
+            controlledUnitState: attack,
+            
+            executes: [
+            	thorin_choice_2,
+            ],
+		},
+		
+		thorin_choice_2: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I'm always willing to help!",
+					"I gotta go!",
+				],
+			},
+			
+			choiceOptionExecutions: [
+				join_beeleth_multiplexer,
+				move_back,
+			],
+		},
+		
+		join_beeleth_multiplexer: {
+            type: WAIT,
+            
+			executes: [
+                join_beeleth_move,
+                join_beeleth_fade_black,
+			]
+		},
+		
+		join_beeleth_move: {
+			executionDelayInSeconds: 1f,
+		
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 2},
+		},
+		
+		join_beeleth_fade_black: {
+            type: COLOR_TRANSITION,
+			fadeIntoColor: true,
+			colorTransitionDelayInSeconds: 0f,
+			colorTransitionDurationInSeconds: 3f,
+			delayAfterColorTransitionInSeconds: 5f,
+			
+			cameraFollowsTarget: true,
+	
+			waitForEventToFinish: true,
+			
+			executes: [
+				join_beeleth_fade_in,
+				join_beeleth_move_back,
+				set_health,
+				spawn_health_item,
+			],
+		},
+		
+		set_health: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_HEALTH,
+				floatValue: 10f, // set the health to 10%
+			},
+		},
+		
+		spawn_health_item: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                // the only thing that is spawned on this map, so it doesn't has to be specified further
+            },
+		},
+		
+		join_beeleth_fade_in: {
+            type: COLOR_TRANSITION,
+            fadeIntoColor: false,
+            colorTransitionDelayInSeconds: 0f,
+            colorTransitionDurationInSeconds: 3f,
+            delayAfterColorTransitionInSeconds: 0f,
+            
+            cameraFollowsTarget: true,
+		},
+		
+		join_beeleth_move_back: {
+			executionDelayInSeconds: 2f,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -3},
+			
+			executes: [
+                beeleth_give_hint,
+			]
+		},
+		
+		beeleth_give_hint: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+			    colorHeader: #eb345b,
+				displayTextHeader: "Beeleth",
+				displayText: "Oh wait, dear!\n                              \nI almost forgot to tell you: The fourth symbol for the lock is a circle with a point in it.      ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                beeleth_goodbye,
+			],
+		},
+		
+		beeleth_goodbye: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                colorHeader: #eb345b,
+                displayTextHeader: "Beeleth",
+                displayText: "Good luck on your quest, dear!\n               \nYou can come visit me again any time...\n... if you need some more ... help ... <3      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_thanks,
+			],
+		},
+		
+		thorin_thanks: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Thank you, beeleth!\n               \nI'll make sure to remember that!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		move_back: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -3},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	graphicsConfigFile: config/npc/graphics/cultist.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: false,
+	movingSpeed: 0.75f,
+}

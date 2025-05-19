@@ -162,6 +162,10 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 		return (properties.health + properties.increaseHealth) / properties.maxHealth;
 	}
 	
+	public void setHealth(float health) {
+		properties.health = health;
+	}
+	
 	public void takeDamage(float damage) {
 		properties.health -= damage;
 		if (properties.health < 0) {

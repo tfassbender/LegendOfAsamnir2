@@ -70,4 +70,13 @@
         spawnType: enemy.magic_totem,
         spawnTypeMapProperties: "{drop: \"{bomb: 0.5}\", unitId: \"loa2_l4_helheim_skeleton_zone__boss_totem__left\"}",
 	},
+	
+	//*************************************
+	//*** Cultist Dungeon
+	//*************************************
+	
+	restore_health_after_succubus_or_incubus_dungeon: {
+		spawnType: item.health_full,
+		events: [CUSTCENE_SPAWN_UNIT],
+	},
 }

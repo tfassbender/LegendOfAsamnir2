@@ -1,0 +1,38 @@
+[
+	{
+		id: idle,
+		animation: succubus_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack, kiss
+		]
+	},
+	{
+		id: move,
+		animation: succubus_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, kiss
+		]
+	},
+	{
+		id: attack,
+		animation: succubus_attack,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move, kiss
+		]
+	},
+	{
+		id: kiss,
+		animation: succubus_kiss,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move, attack
+		]
+	},
+]

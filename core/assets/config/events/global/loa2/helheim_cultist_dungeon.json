@@ -1,5 +1,31 @@
 {
 	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_l4_helheim_cultist_dungeon__enter_azraeshas_dungeon: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l4_helheim_cultist_dungeon__enter_azraeshas_dungeon,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_cultist_dungeon__enter_azraeshas_dungeon_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__enter_beeleths_dungeon: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l4_helheim_cultist_dungeon__enter_beeleths_dungeon,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_cultist_dungeon__enter_beeleths_dungeon_cutscene,
+		}
+	},
+	
+	//*******************************************
 	//*** change map
 	//*******************************************
 	
