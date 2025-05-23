@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3683">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3692">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -39,7 +39,7 @@
  </layer>
  <layer id="5" name="terrain" width="78" height="34">
   <data encoding="base64" compression="zlib">
-   eJztmj9OwzAYxbtQiW9nRUICegCgBwA6Fy4AF+AWMDNzAKSOFRIwASoCJkAwU2Dl/x14KLLqALaTxmkS9/2kJ8f+JCd+TlJ/Tmu1MJgQ93EWttHPjqe+ysiU57GtSdTnE/QM7UnURuxswqN96BP6gjoStREzXfhTl6j84QDly2Sx10QIIYSEyH/r6qRtZWC2pNc1Smx50hzq85oa9CsRi/BpSVMzR9/K+mwNg8s3NdZhx5wkH3itYM6wAj9WNbUCuifyYpkeVYITzNMpdMb5SsU1/LqBbulbKh7gVx96pG+peINf79AHfSPEC22Jl6FxqK3nt6YHpeII9WMxx01sSLxU58iDhQLm5kI7Z107VrnLJdquJB7nt5C/9ODNuWX+XHFFFXPGLNzBk3uLL674uLLu8MQVH3dUzu77fwoh8fv3MW2dxNmdMceKeu+Hsi+f5fuRbT1nio1yXz4kuL/sl28xJDlY
+   eJxjYBgegJWLMJsS0Aw0p4VKZg0WIIjkH1Eq+y2AC2LmXSC+B8QzuCBiowA/iAeG0RIgfgPEb4F4ORdEbBTgBuuB4cPGBaFBYCOQfs45sG4aBaNgFIyCUTAKhiPA1q4mVmyggTDQTSqD0F30Bvj6SapAvhoSVh8NL6KACTCcTJGwGQ3DbTDmLXIBoXCD+ZVcPxPTH3gxBPsMzsDwcEHCrsMoTdAKOI2G0ZAAe4DxtBeI943GF0ngNDC8zgDx2dFwIwncAobXbSC+MxpuJIGXwPB6BcSvh3m4KQ1z/42CwQP8uVDp4Qa2ILXnc+QQNAxsBfK3ceGWxwXiuFBpmB20AMYDEDeHkexkQ2LD+i5HgGJHuVDlR+dCMMEBYNgcxBN/hORhYCj2GSkB54FhcgFPuBCSH6kgkECYEJIf6QDWZ6f2OoXhBNDrR1L5owAV9Cnilhuocn+4jMtTMn+Erz2HS46e4/LDCYyOL1MXAABglDm8
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="78" height="34" locked="1">
@@ -770,7 +770,7 @@
   <object id="3577" name="object.spikes_trap" x="944" y="273">
    <point/>
   </object>
-  <object id="3578" name="object.cultist_dungeon_gate" x="1648" y="656">
+  <object id="3578" name="object.cultist_dungeon_gate" x="1648" y="640">
    <point/>
   </object>
   <object id="3579" name="player.startingPosition" x="1120" y="416">
@@ -886,8 +886,35 @@
    </properties>
    <point/>
   </object>
+  <object id="3684" name="object.signboard" x="1554.25" y="41.25">
+   <properties>
+    <property name="displayText" value=""/>
+    <property name="displayTextHeader" value="Sign 2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3685" name="object.signboard" x="1593" y="682.25">
+   <properties>
+    <property name="displayText" value=""/>
+    <property name="displayTextHeader" value="Sign 3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3686" name="object.signboard" x="1551.45" y="325.636">
+   <properties>
+    <property name="displayText" value=""/>
+    <property name="displayTextHeader" value="Sign 1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3688" name="item.token_l4_statue" x="1600" y="800">
+   <properties>
+    <property name="eventParameter" value="token_l4_statue"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics" locked="1">
+ <objectgroup id="4" name="physics">
   <object id="3586" x="0" y="160" width="454" height="176"/>
   <object id="3587" x="448" y="160" width="704" height="50"/>
   <object id="3588" x="1145.67" y="160.333" width="204" height="209.333"/>
@@ -948,8 +975,8 @@
   <object id="3653" x="2366" y="19" width="67.5" height="44.75"/>
   <object id="3654" x="2352.25" y="83.5" width="14.25" height="6.75"/>
   <object id="3655" x="2433.75" y="83.25" width="13.5" height="6.5"/>
-  <object id="3656" x="1568" y="608" width="49.4545" height="71.6364"/>
-  <object id="3657" x="1680.91" y="608" width="47.0909" height="71.6364"/>
+  <object id="3656" x="1568" y="592" width="49.4545" height="71.6364"/>
+  <object id="3657" x="1680.91" y="592" width="47.0909" height="71.6364"/>
   <object id="3658" x="2176" y="800" width="34.2273" height="71"/>
   <object id="3659" x="2269.18" y="800" width="34.8182" height="71.5"/>
   <object id="3660" x="2336" y="320" width="34.375" height="71"/>

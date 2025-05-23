@@ -4799,6 +4799,13 @@ cultist_dungeon_gate
   orig: 128, 96
   offset: 0, 0
   index: 28
+cultist_dungeon_token_statue
+  rotate: false
+  xy: 579, 1706
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
 cultist_idle
   rotate: false
   xy: 885, 496
@@ -5960,21 +5967,14 @@ dwarven_farmer_idle
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 7
+  index: 8
 dwarven_farmer_idle
   rotate: false
   xy: 2044, 1258
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 8
-dwarven_farmer_move
-  rotate: false
-  xy: 2044, 1258
-  size: 64, 32
-  orig: 64, 32
-  offset: 0, 0
-  index: 5
+  index: 7
 dwarven_farmer_move
   rotate: false
   xy: 2044, 1258
@@ -5982,6 +5982,13 @@ dwarven_farmer_move
   orig: 64, 32
   offset: 0, 0
   index: 1
+dwarven_farmer_move
+  rotate: false
+  xy: 2044, 1258
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: 5
 dwarven_farmer_throw_seeds
   rotate: false
   xy: 2044, 1258
@@ -6184,14 +6191,14 @@ dwarven_guardian_construct_attack_fist
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 1
+  index: 12
 dwarven_guardian_construct_attack_fist
   rotate: false
   xy: 392, 82
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 12
+  index: 1
 dwarven_guardian_construct_attack_stomp
   rotate: false
   xy: 392, 82
@@ -7395,14 +7402,14 @@ elite_mage_idle
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 1
+  index: 8
 elite_mage_idle
   rotate: false
   xy: 2374, 1252
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 8
+  index: 1
 elite_mage_move
   rotate: false
   xy: 2374, 1252
@@ -8886,14 +8893,14 @@ frost_giant_damage_disarmed
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 1
+  index: 4
 frost_giant_damage_disarmed
   rotate: false
   xy: 2066, 1292
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 4
+  index: 1
 frost_giant_death
   rotate: false
   xy: 2066, 1292
@@ -9887,14 +9894,14 @@ hedgehog_move
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 3
+  index: 1
 hedgehog_move
   rotate: false
   xy: 2943, 1192
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 3
 hedgehog_idle
   rotate: false
   xy: 2943, 1158
@@ -11448,14 +11455,14 @@ inn_keeper_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 11
+  index: 1
 inn_keeper_idle
   rotate: false
   xy: 2690, 1090
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 11
 inn_keeper_no
   rotate: false
   xy: 2690, 1090
@@ -12463,14 +12470,14 @@ kobold_dragonshield_idle
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 5
+  index: 1
 kobold_dragonshield_idle
   rotate: false
   xy: 1134, 1077
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
-  index: 1
+  index: 5
 kobold_dragonshield_block
   rotate: false
   xy: 1200, 1077
@@ -14213,6 +14220,13 @@ medieval_townfolk_4_move
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
+  index: 7
+medieval_townfolk_4_move
+  rotate: false
+  xy: 2652, 886
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
   index: 6
 medieval_townfolk_4_move
   rotate: false
@@ -14221,13 +14235,6 @@ medieval_townfolk_4_move
   orig: 32, 32
   offset: 0, 0
   index: 8
-medieval_townfolk_4_move
-  rotate: false
-  xy: 2652, 886
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
 medieval_townfolk_4_scared
   rotate: false
   xy: 2686, 920
@@ -15074,20 +15081,6 @@ medieval_townfolk_9_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 6
-medieval_townfolk_9_idle
-  rotate: false
-  xy: 3298, 852
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 7
-medieval_townfolk_9_idle
-  rotate: false
-  xy: 3298, 852
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
   index: 1
 medieval_townfolk_9_idle
   rotate: false
@@ -15096,13 +15089,20 @@ medieval_townfolk_9_idle
   orig: 32, 32
   offset: 0, 0
   index: 8
-medieval_townfolk_9_move
+medieval_townfolk_9_idle
   rotate: false
   xy: 3298, 852
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 5
+  index: 6
+medieval_townfolk_9_idle
+  rotate: false
+  xy: 3298, 852
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
 medieval_townfolk_9_move
   rotate: false
   xy: 3298, 852
@@ -15110,6 +15110,13 @@ medieval_townfolk_9_move
   orig: 32, 32
   offset: 0, 0
   index: 1
+medieval_townfolk_9_move
+  rotate: false
+  xy: 3298, 852
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
 medieval_townfolk_9_give
   rotate: false
   xy: 3332, 886
@@ -15172,14 +15179,14 @@ medieval_townfolk_9_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 3
 medieval_townfolk_9_idle
   rotate: false
   xy: 3400, 920
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 3
+  index: 4
 medieval_townfolk_9_idle
   rotate: false
   xy: 3434, 954
@@ -16313,14 +16320,14 @@ ogre_idle_2
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 9
+  index: 7
 ogre_idle_2
   rotate: false
   xy: 3181, 1392
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
-  index: 7
+  index: 9
 ogre_idle_2
   rotate: false
   xy: 3247, 1392
@@ -16432,14 +16439,14 @@ old_lady_no
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 5
+  index: 1
 old_lady_no
   rotate: false
   xy: 3876, 886
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 5
 old_lady_yes
   rotate: false
   xy: 3876, 886
@@ -16586,13 +16593,6 @@ old_man_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 13
-old_man_idle
-  rotate: false
-  xy: 3910, 818
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
   index: 14
 old_man_idle
   rotate: false
@@ -16601,6 +16601,13 @@ old_man_idle
   orig: 32, 32
   offset: 0, 0
   index: 15
+old_man_idle
+  rotate: false
+  xy: 3910, 818
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 13
 old_man_move
   rotate: false
   xy: 3910, 818
@@ -16628,14 +16635,14 @@ old_man_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 7
+  index: 9
 old_man_idle
   rotate: false
   xy: 3978, 886
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 9
+  index: 7
 old_man_idle
   rotate: false
   xy: 3944, 818
@@ -16656,6 +16663,13 @@ old_man_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
+  index: 6
+old_man_idle
+  rotate: false
+  xy: 3944, 818
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
   index: 10
 old_man_idle
   rotate: false
@@ -16664,13 +16678,6 @@ old_man_idle
   orig: 32, 32
   offset: 0, 0
   index: 8
-old_man_idle
-  rotate: false
-  xy: 3944, 818
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 6
 old_man_idle
   rotate: false
   xy: 3978, 852
@@ -16740,7 +16747,7 @@ penguin_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 12
+  index: 11
 penguin_idle
   rotate: false
   xy: 2822, 784
@@ -16754,7 +16761,7 @@ penguin_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 11
+  index: 12
 penguin_idle_2
   rotate: false
   xy: 2822, 784
@@ -16789,6 +16796,13 @@ penguin_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
+  index: 8
+penguin_idle
+  rotate: false
+  xy: 2890, 784
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
   index: 4
 penguin_idle
   rotate: false
@@ -16797,13 +16811,6 @@ penguin_idle
   orig: 32, 32
   offset: 0, 0
   index: 7
-penguin_idle
-  rotate: false
-  xy: 2890, 784
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: 8
 penguin_idle
   rotate: false
   xy: 2924, 784
@@ -18294,14 +18301,14 @@ skeletal_archer_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 6
+  index: 1
 skeletal_archer_idle
   rotate: false
   xy: 3558, 716
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 6
 skeletal_archer_damage
   rotate: false
   xy: 3592, 750
@@ -19400,14 +19407,14 @@ skeleton_king_move
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
-  index: 1
+  index: 5
 skeleton_king_move
   rotate: false
   xy: 3889, 1952
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
-  index: 5
+  index: 1
 skeleton_king_attack_swing
   rotate: false
   xy: 3861, 1854
@@ -19729,14 +19736,14 @@ spider_idle
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 1
+  index: 4
 spider_idle
   rotate: false
   xy: 1920, 680
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
-  index: 4
+  index: 1
 spider_jump
   rotate: false
   xy: 1920, 680

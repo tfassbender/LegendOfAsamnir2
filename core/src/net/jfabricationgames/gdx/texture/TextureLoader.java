@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.ObjectMap;
+import com.badlogic.gdx.utils.ObjectMap.Keys;
 
 import net.jfabricationgames.gdx.animation.AnimationFrame;
 import net.jfabricationgames.gdx.assets.AssetGroupManager;
@@ -41,8 +42,7 @@ public class TextureLoader {
 	 */
 	public TextureRegion loadTexture(String texture) {
 		if (!textureConfigs.containsKey(texture)) {
-			throw new IllegalArgumentException(
-					"The texture '" + texture + "' doesn't exist in this configuration. Configuration file was: " + configFile);
+			throw new IllegalArgumentException("The texture '" + texture + "' doesn't exist in this configuration. Configuration file was: " + configFile);
 		}
 		
 		TextureConfig config = textureConfigs.get(texture);
@@ -61,13 +61,16 @@ public class TextureLoader {
 		}
 		
 		if (region == null) {
-			Gdx.app.error(getClass().getSimpleName(), "The loaded texture region is null. Maybe it was not packed yet? Config file is: \""
-					+ configFile + "\"; Requested Texture is: \"" + texture + "\"");
+			Gdx.app.error(getClass().getSimpleName(), "The loaded texture region is null. Maybe it was not packed yet? Config file is: \"" + configFile + "\"; Requested Texture is: \"" + texture + "\"");
 		}
 		return region;
 	}
 	
 	public TextureRegion loadDefaultTexture() {
 		return loadTexture(DEFAULT_TEXTURE_NAME);
+	}
+	
+	public Keys<String> getTextureNames() {
+		return textureConfigs.keys();
 	}
 }

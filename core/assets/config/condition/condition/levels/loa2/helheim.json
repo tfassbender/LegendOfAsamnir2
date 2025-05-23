@@ -80,14 +80,19 @@
 	loa2_l4_helheim__cultist_dungeon__rotating_puzzle_solved: { 
 		conditionType: ROTATING_PUZZLE_COMBINATION,
 		parameters: {
-		
-			// TODO choose a better lock combination after testing
-			
-			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_1: 0,
-			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_2: 1,
-			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_3: 2,
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_1: 2,
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_2: 0,
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_3: 6,
 			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_4: 3,
 		},
+	},
+	
+	loa2_l4_helheim__token_side_quest_started: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: active_token_quest,
+            expectedValue: l4_statue,
+		}
 	},
 	
 	//*******************************************

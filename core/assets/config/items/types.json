@@ -129,6 +129,12 @@
         globalValue: loa2_l4_helheim__key_piece_collected__blue,
 	},
 	
+	token_l4_statue: {
+		type: EVENT_ITEM,
+        texture: cultist_dungeon_token_statue,
+        pickUpSound: pickup_5,
+	},
+	
 	//**********************************
 	//*** demo
 	//**********************************

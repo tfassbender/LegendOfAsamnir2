@@ -26,6 +26,22 @@
 	},
 	
 	//*******************************************
+	//*** tokens
+	//*******************************************
+	
+	loa2_l4_helheim_cultist_dungeon__start_token_side_quest: {
+		// the token side quest is started when the player picks up the first a token (conditions are configured in the cutscene)
+		event: {
+			eventType: EVENT_ITEM_PICKED_UP,
+			stringValue: token_l4_statue,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_cultist_dungeon__start_token_side_quest_cutscene,
+		}
+	},
+	
+	//*******************************************
 	//*** change map
 	//*******************************************
 	

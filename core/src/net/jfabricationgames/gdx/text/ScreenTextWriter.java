@@ -69,19 +69,16 @@ public class ScreenTextWriter {
 		return drawText(CallType.DRAW_START_END, str, x, y, start, end, targetWidth, halign, wrap, null);
 	}
 	
-	public GlyphLayout drawText(CharSequence str, float x, float y, int start, int end, float targetWidth, int halign, boolean wrap,
-			String truncate) {
+	public GlyphLayout drawText(CharSequence str, float x, float y, int start, int end, float targetWidth, int halign, boolean wrap, String truncate) {
 		return drawText(CallType.DRAW_START_END_TARGET_WIDTH_ALIGN_WRAP_TRUNCATE, str, x, y, start, end, targetWidth, halign, wrap, truncate);
 	}
 	
-	private GlyphLayout drawText(CallType callType, CharSequence str, float x, float y, int start, int end, float targetWidth, int halign,
-			boolean wrap, String truncate) {
+	private GlyphLayout drawText(CallType callType, CharSequence str, float x, float y, int start, int end, float targetWidth, int halign, boolean wrap, String truncate) {
 		TextDrawCall drawCall = createDrawCall(callType, str, x, y, start, end, targetWidth, halign, wrap, truncate);
 		return drawCall.invoke(batch, font);
 	}
 	
-	private TextDrawCall createDrawCall(CallType callType, CharSequence str, float x, float y, int start, int end, float targetWidth, int halign,
-			boolean wrap, String truncate) {
+	private TextDrawCall createDrawCall(CallType callType, CharSequence str, float x, float y, int start, int end, float targetWidth, int halign, boolean wrap, String truncate) {
 		TextDrawCall drawCall = new TextDrawCall();
 		drawCall.callType = callType;
 		drawCall.str = str;
@@ -135,6 +132,10 @@ public class ScreenTextWriter {
 		public Color color;
 		
 		public GlyphLayout invoke(SpriteBatch batch, BitmapFont font) {
+			if (str == null || str.isEmpty()) {
+				return glyphLayout;
+			}
+			
 			batch.begin();
 			font.setColor(color);
 			font.getData().markupEnabled = true;

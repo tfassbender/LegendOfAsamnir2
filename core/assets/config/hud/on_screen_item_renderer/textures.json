@@ -15,6 +15,10 @@
 		atlas: packed/demo/demo.atlas,
         texture: token
 	},
+	token_cultist_dungeon_statue: {
+		atlas: packed/demo/demo.atlas,
+        texture: cultist_dungeon_token_statue
+	},
 	jump: {
 		atlas: packed/demo/demo.atlas,
 		texture: jump,

@@ -30,6 +30,7 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 	
 	private static final String GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_NAME = "active_token_quest";
 	private static final String GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_MAP_EXCLUSIVE = "active_token_quest_map_exclusive";
+	private static final String GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_ICON = "active_token_quest_token_icon";
 	
 	private static final String TEXTURE_CONFIG = "config/hud/on_screen_item_renderer/textures.json";
 	private static final float TEXT_SCALE = 0.9f;
@@ -50,7 +51,7 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 	private TextureRegion coinIcon;
 	private TextureRegion keyIcon;
 	private TextureRegion metalIngotIcon;
-	private TextureRegion tokenIcon;
+	private ObjectMap<String, TextureRegion> tokenIcons;
 	private ObjectMap<String, TextureRegion> specialActionIcons;
 	
 	private boolean renderSaveInfo;
@@ -77,7 +78,15 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		coinIcon = textureLoader.loadTexture("coin");
 		keyIcon = textureLoader.loadTexture("key");
 		metalIngotIcon = textureLoader.loadTexture("metal_ingot");
-		tokenIcon = textureLoader.loadTexture("token");
+		
+		tokenIcons = new ObjectMap<>();
+		tokenIcons.put("token", textureLoader.loadTexture("token")); // the default token icon
+		// load all other token icons that start with the prefix token_
+		for (String textureName : textureLoader.getTextureNames()) {
+			if (textureName.startsWith("token_")) {
+				tokenIcons.put(textureName, textureLoader.loadTexture(textureName));
+			}
+		}
 		
 		specialActionIcons = new ObjectMap<>();
 		for (String specialAction : character.getActionList()) {
@@ -106,9 +115,18 @@ public class OnScreenInfoRenderer implements EventListener, Disposable {
 		batch.draw(metalIngotIcon, tileUpperRight.x - 40f, tileUpperRight.y - 225f, 35f, 35f);
 		batch.draw(activeSpecialActionIcon, tileUpperRight.x - 40f, tileUpperRight.y - 275f, 35f, 35f);
 		if (isTokenQuestActive()) {
-			batch.draw(tokenIcon, tileUpperRight.x - 35f, tileUpperRight.y - 320f, 25f, 25f);
+			batch.draw(chooseTokenIcon(), tileUpperRight.x - 35f, tileUpperRight.y - 320f, 25f, 25f);
 		}
 		batch.end();
+	}
+	
+	private TextureRegion chooseTokenIcon() {
+		String tokenIcon = globalValuesDataHandler.get(GLOBAL_VALUES_KEY_ACTIVE_TOKEN_QUEST_ICON);
+		if (tokenIcon == null) {
+			tokenIcon = "token";
+		}
+		
+		return tokenIcons.get(tokenIcon);
 	}
 	
 	private void drawIconText() {

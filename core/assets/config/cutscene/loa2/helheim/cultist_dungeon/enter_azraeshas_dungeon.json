@@ -26,7 +26,7 @@
 			executionParameters: {
 			    colorHeader: #ff0073,
 				displayTextHeader: "Azraesha",
-				displayText: "Oh my, a new customer!\n                   \nWhat can I do for you dear?      ",
+				displayText: "Oh my, a new customer!\n                   \nWhat can I do for you, dear?      ",
 				showNextPageIcon: true,
 			}
 			

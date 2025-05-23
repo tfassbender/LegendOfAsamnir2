@@ -1,0 +1,85 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__start_token_side_quest_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim__token_side_quest_started,
+					executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: thorin_comment,
+				},
+			],
+		},
+		
+		thorin_comment: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Hm... I wander what this is?\n                 \nI'll take it with me. Maybe it will be useful later...      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                start_token_quest,
+			],
+		},
+		
+		start_token_quest: {
+			type: EVENT,
+			
+			// set the global value to start the token quest
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest, value: l4_statue}",
+			},
+			
+			executes: [
+                start_token_quest_2,
+			]
+		},
+		
+		start_token_quest_2: {
+			type: EVENT,
+			
+			// set the global value to restict the token quest to the current map (on other maps, the token icons will not be shown in the HUD)
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest_map_exclusive, value: loa2_l4_helheim_cultist_dungeon}",
+			},
+			
+			executes: [
+                start_token_quest_3,
+			]
+		},
+		
+		start_token_quest_3: {
+			type: EVENT,
+			
+			// set the global value to choose the token icon that is displayed in the hud
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest_token_icon, value: token_cultist_dungeon_statue}",
+			},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
