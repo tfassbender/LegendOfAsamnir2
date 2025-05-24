@@ -869,6 +869,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			case HOOKSHOT_ATTACK_FINISHED:
 				hookshotActive = false;
 				break;
+			case SET_TOKENS_RELATIVE:
+				int tokens = Math.max(0, propertiesDataHandler.getTokens(event.stringValue) + event.intValue);
+				propertiesDataHandler.setTokens(event.stringValue, tokens);
+				break;
 			default:
 				// do nothing, because this event type is not handled here
 				break;

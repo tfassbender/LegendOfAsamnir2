@@ -82,7 +82,7 @@
 		parameters: {
 			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_1: 2,
 			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_2: 0,
-			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_3: 6,
+			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_3: 5,
 			loa2_l4_helheim__cultist_dungeon__rotating_puzzle_lock_4: 3,
 		},
 	},
@@ -92,6 +92,66 @@
         parameters: {
             key: active_token_quest,
             expectedValue: l4_statue,
+		}
+	},
+	
+	loa2_l4_helheim__can_add_orb_to_statue_left: {
+		conditionType: AND,
+        conditionalParameters: {
+            condition: {
+                conditionType: TOKENS_COLLECTED,
+		        parameters: {
+		            tokenName: l4_statue,
+					neededAmount: 1,
+				}
+            },
+            condition2: {
+                conditionType: GLOBAL_VALUE_SET_OR_NULL,
+                parameters: {
+                    key: loa2_l4_helheim__statue_left_orb_added,
+                    expectedValue: false,
+				}
+			}
+		}
+	},
+	
+	loa2_l4_helheim__can_add_orb_to_statue_right: {
+		conditionType: AND,
+        conditionalParameters: {
+            condition: {
+                conditionType: TOKENS_COLLECTED,
+		        parameters: {
+		            tokenName: l4_statue,
+					neededAmount: 1,
+				}
+            },
+            condition2: {
+                conditionType: GLOBAL_VALUE_SET_OR_NULL,
+                parameters: {
+                    key: loa2_l4_helheim__statue_right_orb_added,
+                    expectedValue: false,
+				}
+			}
+		}
+	},
+	
+	loa2_l4_helheim__statues__both_orbs_added: {
+        conditionType: AND,
+        conditionalParameters: {
+            condition: {
+                conditionType: GLOBAL_VALUE_SET,
+                parameters: {
+                    key: loa2_l4_helheim__statue_left_orb_added,
+                    expectedValue: true,
+				}
+			},
+            condition2: {
+                conditionType: GLOBAL_VALUE_SET,
+                parameters: {
+                    key: loa2_l4_helheim__statue_right_orb_added,
+                    expectedValue: true,
+				}
+			}
 		}
 	},
 	

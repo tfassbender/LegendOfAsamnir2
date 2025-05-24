@@ -1,0 +1,132 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__orb_statue_right_cutscene,
+	controlledActions: {
+		start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim__can_add_orb_to_statue_right,
+					executedStateName: add_orb_to_statue,
+				},
+				{
+					// default case
+					executedStateName: end,
+				},
+			],
+		},
+		
+		add_orb_to_statue: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__statue_right_orb_added, value: true}",
+			},
+			
+			executes: [
+                show_event_layer,
+			]
+		},
+		
+		show_event_layer: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_l4_cultist_dungeon__orb_right, value: true}",
+			},
+			
+			executes: [
+                take_orb_token,
+			]
+		},
+		
+		take_orb_token: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_TOKENS_RELATIVE,
+				stringValue: l4_statue,
+				intValue: -1,
+			},
+			
+			executes: [
+                check_all_orbs_placed,
+			]
+		},
+		
+		check_all_orbs_placed: {
+            type: SWITCH_CONDITION,
+            
+            switchConditions: [
+				{
+                    conditionId: loa2_l4_helheim__statues__both_orbs_added,
+                    executedStateName: open_gate,
+				},
+				{
+					// default case
+                    executedStateName: end,
+				},
+			],
+		},
+		
+		open_gate: {
+            type: EVENT,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_l4_helheim__cultist_dungeon__gate_sign_3,
+			},
+			
+			executes: [
+                stop_token_quest,
+			]
+		},
+		
+		stop_token_quest: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest, value: ''}",
+			},
+			
+			executes: [
+                stop_token_quest_2,
+			]
+		},
+		
+		stop_token_quest_2: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest_map_exclusive, value: ''}",
+			},
+			
+			executes: [
+                stop_token_quest_3,
+			]
+		},
+		
+		stop_token_quest_3: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: active_token_quest_token_icon, value: ''}",
+			},
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

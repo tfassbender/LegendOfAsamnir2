@@ -944,5 +944,19 @@
 		physicsBodySizeFactorY: 0.7f,
 		physicsBodyOffsetFactorX: 0f,
 		physicsBodyOffsetFactorY: 0f,
-	}
+	},
+	
+	orb_statue: {
+		type: INTERACTIVE,
+		
+		texture: empty,
+		interactionMarkerOffsetX: 0.4f,
+		interactionMarkerOffsetY: 0.6f,
+		
+		addSensor: true,
+		sensorRadius: 0.8f,
+		
+		multipleActionExecutionsPossible: true,
+		interactiveAction: FIRE_EVENT,
+	},
 }

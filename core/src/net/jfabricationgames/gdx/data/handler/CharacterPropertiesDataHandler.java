@@ -292,6 +292,9 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 	public void increaseToken(String token) {
 		properties.tokens.put(token, properties.tokens.get(token, 0) + 1);
 	}
+	public void setTokens(String token, int amount) {
+		properties.tokens.put(token, amount);
+	}
 	public void resetTokens(String token) {
 		properties.tokens.put(token, 0);
 	}

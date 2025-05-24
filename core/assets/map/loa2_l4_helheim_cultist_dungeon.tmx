@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3692">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3696">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
   <property name="background_music" value="dungeon"/>
   <property name="building_level" value="true"/>
-  <property name="effect_layers" value="{&quot;6&quot;: &quot;render_effect_layer__loa2_l4_cultist_dungeon__orb_left&quot;, &quot;7&quot;: &quot;render_effect_layer__loa2_l4_cultist_dungeon__orb_left&quot;}"/>
+  <property name="effect_layers" value="{&quot;6&quot;: &quot;render_effect_layer__loa2_l4_cultist_dungeon__orb_left&quot;, &quot;7&quot;: &quot;render_effect_layer__loa2_l4_cultist_dungeon__orb_right&quot;}"/>
   <property name="mini_map_config_path" value="config/menu/maps/loa2/l4_helheim_cultist_dungeon.json"/>
   <property name="shadow_layers" value="[5]"/>
  </properties>
@@ -27,7 +27,7 @@
  <tileset firstgid="7820" source="tileset/shadows.tsx"/>
  <tileset firstgid="7932" source="tileset/royal_dungeon.tsx"/>
  <tileset firstgid="8328" source="tileset/tileset_pipoya_32.tsx"/>
- <layer id="1" name="background" width="78" height="34">
+ <layer id="1" name="background" width="78" height="34" locked="1">
   <data encoding="base64" compression="zlib">
    eJztmVFOwzAMhvsG6wHg/ucp4wAdHKCDl70NeCEWq4iC7aS205oqvxR5mra0Tr7asdt1TZyGQ9c9hXGM7PNh67vSC/PL0s+9rtsYfDiF8cLYV4Wf2Pya+bxoCj6cw3hj7LvCT2x+zXxe1HiT6Rp8+Ajjk7APfeNNotEZbyV5bKmtkacmZ/FtysRiia0RN7S8XW/PPDzvj/3Ps/+l5JeLxRJbI25oeasxz5q8DcJnXMtb7G+8btJYdNevy9uYWXdqbSw4GW7+3ve/+2PJi9bCfUn3iVobC96mw99casmL1s5xFzuLQVyuzRt2RjgmfM17y50ZOZvzwzq+5fIQxSpwWspbSc12XrAP1DXWjG+5usCiXiip2U6Z/S25xt7Ob3vkTXOfnnibz9HS+IhZzTmckjfe/ou88eZJaS0R1w6NN1ppjorXqfFGK81R8To13mhZ8Yb1jOJRM3/lxPU7QVQvgetpprxB7SCpF2ZZ9VAsxfWfQJJ3UlgtoXm/YNVrsxRXZ4Ks30ktZQfrGXkQV5+BrN+BLmUH6xl5EFefgbbmLc6pc4+lNM7W1IXhjbOXDXjzdHaT9gPW4m3M7OFW+ULaf9oivu2Bt7Sfi53xqH5vfJ7L/Q9+75E3Tf+J+sx9V6vX9Q3Cr3AX
   </data>
@@ -39,7 +39,7 @@
  </layer>
  <layer id="5" name="terrain" width="78" height="34">
   <data encoding="base64" compression="zlib">
-   eJxjYBgegJWLMJsS0Aw0p4VKZg0WIIjkH1Eq+y2AC2LmXSC+B8QzuCBiowA/iAeG0RIgfgPEb4F4ORdEbBTgBuuB4cPGBaFBYCOQfs45sG4aBaNgFIyCUTAKhiPA1q4mVmyggTDQTSqD0F30Bvj6SapAvhoSVh8NL6KACTCcTJGwGQ3DbTDmLXIBoXCD+ZVcPxPTH3gxBPsMzsDwcEHCrsMoTdAKOI2G0ZAAe4DxtBeI943GF0ngNDC8zgDx2dFwIwncAobXbSC+MxpuJIGXwPB6BcSvh3m4KQ1z/42CwQP8uVDp4Qa2ILXnc+QQNAxsBfK3ceGWxwXiuFBpmB20AMYDEDeHkexkQ2LD+i5HgGJHuVDlR+dCMMEBYNgcxBN/hORhYCj2GSkB54FhcgFPuBCSH6kgkECYEJIf6QDWZ6f2OoXhBNDrR1L5owAV9Cnilhuocn+4jMtTMn+Erz2HS46e4/LDCYyOL1MXAABglDm8
+   eJxjYBgegJWLMJsS0Aw0p4VKZg0WIIjkH1Eq+y2AC2LmXSC+B8QzuCBiowA/iAeG0RIgfgPEb4F4ORdEbBTgBuuB4cPGBaFBYCOQfs45sG4aBaNgFIyCUTAKhiPA1q4mVmyggTDQTSqD0F30Bvj6SapAvhoSVh8NL6KACTCcTJGwGQ3DbTDmLXIBoXCD+ZVcPxPTH3gxBPsMzsDwcEHCrsMoTdAKOI2G0ZAAe4DxtBeI943GF0ngNDC8zgDx2dFwIwncAobXbSC+MxpuJIGXwPB6BcSvh3m4KQ5z/42CwQP8uVDp4Qa2ILXnc+QQNAxsBfK3ceGWxwXiuFBpmB20AMYDEDeHkexkQ2LD+i5HgGJHuVDlR+dCMMEBYNgcxBN/hORhYCj2GSkB54FhcgFPuBCSH6kgkECYEJIf6QDWZ6f2OoXhBNDrR1L5owAV9Cnilhuocn+4jMtTMn+Erz2HS46e4/LDCYyOL1MXAABQUDm7
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="78" height="34" locked="1">
@@ -770,7 +770,11 @@
   <object id="3577" name="object.spikes_trap" x="944" y="273">
    <point/>
   </object>
-  <object id="3578" name="object.cultist_dungeon_gate" x="1648" y="640">
+  <object id="3578" name="object.cultist_dungeon_gate" x="1648" y="652">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim__cultist_dungeon__gate_sign_3"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
    <point/>
   </object>
   <object id="3579" name="player.startingPosition" x="1120" y="416">
@@ -893,7 +897,7 @@
    </properties>
    <point/>
   </object>
-  <object id="3685" name="object.signboard" x="1593" y="682.25">
+  <object id="3685" name="object.signboard" x="1593" y="694.25">
    <properties>
     <property name="displayText" value=""/>
     <property name="displayTextHeader" value="Sign 3"/>
@@ -908,6 +912,30 @@
    <point/>
   </object>
   <object id="3688" name="item.token_l4_statue" x="1600" y="800">
+   <properties>
+    <property name="eventParameter" value="token_l4_statue"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3692" name="object.orb_statue" x="1615" y="749">
+   <properties>
+    <property name="event">{
+  eventType: &quot;CONFIG_GAME_OBJECT_ACTION&quot;,
+  stringValue: &quot;loa2_l4_helheim_cultist_dungeon__orb_statue_left__interaction&quot;
+}</property>
+   </properties>
+   <point/>
+  </object>
+  <object id="3694" name="object.orb_statue" x="1679" y="749">
+   <properties>
+    <property name="event">{
+  eventType: &quot;CONFIG_GAME_OBJECT_ACTION&quot;,
+  stringValue: &quot;loa2_l4_helheim_cultist_dungeon__orb_statue_right__interaction&quot;
+}</property>
+   </properties>
+   <point/>
+  </object>
+  <object id="3695" name="item.token_l4_statue" x="1632" y="800">
    <properties>
     <property name="eventParameter" value="token_l4_statue"/>
    </properties>
@@ -975,8 +1003,8 @@
   <object id="3653" x="2366" y="19" width="67.5" height="44.75"/>
   <object id="3654" x="2352.25" y="83.5" width="14.25" height="6.75"/>
   <object id="3655" x="2433.75" y="83.25" width="13.5" height="6.5"/>
-  <object id="3656" x="1568" y="592" width="49.4545" height="71.6364"/>
-  <object id="3657" x="1680.91" y="592" width="47.0909" height="71.6364"/>
+  <object id="3656" x="1568" y="604" width="49.4545" height="71.6364"/>
+  <object id="3657" x="1680.91" y="604" width="47.0909" height="71.6364"/>
   <object id="3658" x="2176" y="800" width="34.2273" height="71"/>
   <object id="3659" x="2269.18" y="800" width="34.8182" height="71.5"/>
   <object id="3660" x="2336" y="320" width="34.375" height="71"/>

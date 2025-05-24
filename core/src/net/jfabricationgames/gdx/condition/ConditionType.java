@@ -100,6 +100,19 @@ public enum ConditionType {
 			return GlobalValuesDataHandler.getInstance().isValueEqual(key, expectedValue);
 		}
 	},
+	GLOBAL_VALUE_SET_OR_NULL {
+		
+		private static final String PARAMETER_VALUE_KEY = "key";
+		private static final String PARAMETER_EXPECTED_VALUE = "expectedValue";
+		
+		@Override
+		public boolean check(Condition condition) {
+			String key = condition.parameters.get(PARAMETER_VALUE_KEY);
+			String expectedValue = condition.parameters.get(PARAMETER_EXPECTED_VALUE);
+			
+			return GlobalValuesDataHandler.getInstance().isValueEqual(key, expectedValue) || GlobalValuesDataHandler.getInstance().get(key) == null;
+		}
+	},
 	GATE_OPENED {
 		
 		private static final String PARAMETER_GATE_ID = "gateId";
@@ -132,9 +145,9 @@ public enum ConditionType {
 			String token = condition.parameters.get(PARAMETER_TOKEN_NAME, "<token_name_not_set>");
 			int amount = Integer.parseInt(condition.parameters.get(PARAMETER_TOKEN_AMOUNT, "-1"));
 			
-			Gdx.app.debug(getClass().getSimpleName(), "Checking if the player has collected at least " + amount + " tokens of type " + token);
+			Gdx.app.debug(ConditionType.class.getSimpleName(), "Checking if the player has collected at least " + amount + " tokens of type " + token);
 			if (amount < 0) {
-				Gdx.app.error(getClass().getSimpleName(), "The amount of tokens (of type: " + token //
+				Gdx.app.error(ConditionType.class.getSimpleName(), "The amount of tokens (of type: " + token //
 						+ ") for the condition is not set correctly or not set at all. Using -1 as fallback.");
 			}
 			

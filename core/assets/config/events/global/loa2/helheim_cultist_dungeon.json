@@ -41,6 +41,28 @@
 		}
 	},
 	
+	loa2_l4_helheim_cultist_dungeon__orb_statue_left__interaction: {
+        event: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l4_helheim_cultist_dungeon__orb_statue_left__interaction,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_cultist_dungeon__orb_statue_left_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__orb_statue_right__interaction: {
+        event: {
+            eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l4_helheim_cultist_dungeon__orb_statue_right__interaction,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_cultist_dungeon__orb_statue_right_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** change map
 	//*******************************************

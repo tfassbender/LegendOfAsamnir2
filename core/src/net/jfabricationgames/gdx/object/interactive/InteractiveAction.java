@@ -1,7 +1,9 @@
 package net.jfabricationgames.gdx.object.interactive;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.utils.Json;
 
 import net.jfabricationgames.gdx.condition.ConditionHandler;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
@@ -134,6 +136,22 @@ public enum InteractiveAction {
 			EventHandler.getInstance().fireEvent(new EventConfig() //
 					.setEventType(EventType.CHANGE_HEALTH) //
 					.setFloatValue(-damage));
+		}
+	},
+	FIRE_EVENT {
+		
+		private static final String MAP_PROPERTY_KEY_EVENT = "event";
+		
+		@Override
+		public void execute(InteractiveObject object) {
+			String event = object.getMapProperties().get(MAP_PROPERTY_KEY_EVENT, "", String.class);
+			if (event == null || event.isEmpty()) {
+				Gdx.app.error(getClass().getSimpleName(), "InteractiveAction - FIRE_EVENT: Event is null or empty. No event fired. MapObjectId is " + object.getMapObjectId());
+				return;
+			}
+			
+			EventConfig eventConfig = new Json().fromJson(EventConfig.class, event);
+			EventHandler.getInstance().fireEvent(eventConfig);
 		}
 	};
 	
