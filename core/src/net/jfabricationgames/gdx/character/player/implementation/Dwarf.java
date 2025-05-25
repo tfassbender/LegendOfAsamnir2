@@ -259,6 +259,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				case FEATHER:
 					//do nothing here - the action will be executed in InteractiveAction.SHOW_OR_CHANGE_TEXT
 					break;
+				case COMPASS:
+					//do nothing here - the compass is shown when it's selected as active action, but cannot be activated
+					break;
 				default:
 					throw new IllegalStateException("Unexpected SpecialAction: " + activeSpecialAction);
 			}
@@ -432,9 +435,12 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	@Override
-	public void render(float delta, SpriteBatch batch) {
+	public void render(float delta, SpriteBatch batch, ShapeRenderer shapeRenderer) {
 		renderer.drawDwarf(batch);
 		renderer.drawAimMarker(batch);
+		if (activeSpecialAction == SpecialAction.COMPASS) {
+			renderer.drawCompassMarker(shapeRenderer);
+		}
 		attackHandler.renderAttacks(delta, batch);
 	}
 	

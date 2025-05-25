@@ -250,7 +250,7 @@ class GameMapRenderer implements Disposable {
 	}
 	
 	public void renderPlayer(float delta) {
-		gameMap.player.render(delta, batch);
+		gameMap.player.render(delta, batch, shapeRenderer);
 	}
 	
 	public void beginShapeRenderer() {

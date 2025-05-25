@@ -11,6 +11,16 @@
 		initial: {
 			subConfigPath: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json
 			subConfigName: final,
+			events: [
+			    {
+					eventType: COLLECT_RUNE, // needed to collect special action items
+					stringValue: othala,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: compass,
+				},
+			],
 		},
 		
 		final: {

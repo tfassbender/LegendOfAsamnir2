@@ -245,6 +245,10 @@
         type: SPECIAL_ACTION,
         texture: hookshot,
 	},
+	compass: {
+        type: SPECIAL_ACTION,
+        texture: compass,
+	},
 	
 	//**********************************
 	//*** runes

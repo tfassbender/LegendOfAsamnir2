@@ -63,4 +63,8 @@
 		atlas: packed/menu/menu.atlas,
         texture: hookshot,
 	},
+	compass: {
+		atlas: packed/menu/menu.atlas,
+		texture: compass,
+	}
 }

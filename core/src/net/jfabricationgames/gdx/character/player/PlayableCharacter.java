@@ -12,7 +12,7 @@ import net.jfabricationgames.gdx.object.InteractivePlayer;
 public interface PlayableCharacter extends StatsCharacter, CutsceneMoveableUnit, Hittable, InteractivePlayer {
 	
 	public void process(float delta);
-	public void render(float delta, SpriteBatch batch);
+	public void render(float delta, SpriteBatch batch, ShapeRenderer shapeRenderer);
 	public void renderDarkness(SpriteBatch batch, ShapeRenderer shapeRenderer);
 	
 	public boolean isAlive();

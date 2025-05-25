@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3696">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3697">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -37,7 +37,7 @@
    eJztms1uwyAMx2kvFXn/J9t2Wy9Rsst2oV0foJkUNEIxHzZQk/KXqPqhOOUHGNtEiLY1y+VlEOIiH9th/f5L0uzbdin2uGiK6MNI6KfLPsUeF3VuOHVuOHVuOP0ufXj3tA/Jixu0jx2Avc3VjkP5fWpixi1mfaSqxPzv3HCictN+4G+9v63vbw1x0/En5AegNU7lBtmJ9UUXy59dK3MLjRN0bQ5u89pfxTRXUI7x0ftHaJxKcjPHbA8xiKkc3MwYQfsDe8w4zjntd6E4zCfXXBVrn2O5Qb7gNGw/j4GYMRRP5hbFv2HtYu7RUhwSygty5At75IZVin/r3P7FjRt23fgaJQ6HxI0bJ9m5hBkndG6w7P6OnVuUOjecXoHbLLf1SmH5JPPczax9+HIbu786dzgm5guumlGt/SskaEx130K/p9iMuRayx20tluDmi4lSzxe41oxKcAvdL+VarjWjlrgpua0nPfMZh5a45fwfVE16HzXkrMlbv9fk9rm0c+bxowpbD6jJ7XtpPzvhpuT2vAF6bstV71X2XHacX8SeN7XGjYuexa1E/alm07nCHaFIj0k=
   </data>
  </layer>
- <layer id="5" name="terrain" width="78" height="34">
+ <layer id="5" name="terrain" width="78" height="34" locked="1">
   <data encoding="base64" compression="zlib">
    eJxjYBgegJWLMJsS0Aw0p4VKZg0WIIjkH1Eq+y2AC2LmXSC+B8QzuCBiowA/iAeG0RIgfgPEb4F4ORdEbBTgBuuB4cPGBaFBYCOQfs45sG4aBaNgFIyCUTAKhiPA1q4mVmyggTDQTSqD0F30Bvj6SapAvhoSVh8NL6KACTCcTJGwGQ3DbTDmLXIBoXCD+ZVcPxPTH3gxBPsMzsDwcEHCrsMoTdAKOI2G0ZAAe4DxtBeI943GF0ngNDC8zgDx2dFwIwncAobXbSC+MxpuJIGXwPB6BcSvh3m4KQ5z/42CwQP8uVDp4Qa2ILXnc+QQNAxsBfK3ceGWxwXiuFBpmB20AMYDEDeHkexkQ2LD+i5HgGJHuVDlR+dCMMEBYNgcxBN/hORhYCj2GSkB54FhcgFPuBCSH6kgkECYEJIf6QDWZ6f2OoXhBNDrR1L5owAV9Cnilhuocn+4jMtTMn+Erz2HS46e4/LDCYyOL1MXAABQUDm7
   </data>
@@ -941,8 +941,11 @@
    </properties>
    <point/>
   </object>
+  <object id="3696" name="object.compass_target" x="512" y="561">
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="4" name="physics">
+ <objectgroup id="4" name="physics" locked="1">
   <object id="3586" x="0" y="160" width="454" height="176"/>
   <object id="3587" x="448" y="160" width="704" height="50"/>
   <object id="3588" x="1145.67" y="160.333" width="204" height="209.333"/>

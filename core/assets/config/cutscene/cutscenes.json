@@ -182,7 +182,7 @@
 	config/cutscene/loa2/helheim/main/goto_main.json,
 	config/cutscene/loa2/helheim/main/goto_skeleton_zone.json,
 	config/cutscene/loa2/helheim/main/goto_spider_zone.json,
-	config/cutscene/loa2/helheim/main/goto_cultist_zone.json,
+	config/cutscene/loa2/helheim/main/goto_cultist_dungeon.json,
 	config/cutscene/loa2/helheim/main/ratatosk.json,
 	config/cutscene/loa2/helheim/main/garmr.json,
 	

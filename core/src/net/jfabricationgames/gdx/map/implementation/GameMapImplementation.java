@@ -365,10 +365,10 @@ public class GameMapImplementation implements GameMap {
 		processor.processProjectiles(delta);
 		renderer.renderProjectiles(delta);
 		
+		renderer.beginShapeRenderer();
 		renderer.renderPlayer(delta);
 		renderer.endBatch();
 		
-		renderer.beginShapeRenderer();
 		renderer.renderEnemyHealthBars();
 		renderer.endShapeRenderer();
 	}

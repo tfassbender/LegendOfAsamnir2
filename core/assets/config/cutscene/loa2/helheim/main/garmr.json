@@ -282,9 +282,18 @@
             waitForEventToFinish: true,
             
             executes: [
+                move_camera_to_wall,
             	take_key_pieces_from_player,
             	garmr__after_adding_key_piece_to_wall,
 			],
+		},
+		
+		move_camera_to_wall: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__garmr__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 3f,
 		},
 		
 		take_key_pieces_from_player: {
@@ -534,18 +543,15 @@
 		},
 		
 		garmr__after_two_key_pieces_returned__give_compass_to_player: {
-			type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Garmr",
-                colorHeader: #458034,
-                displayText: "TODO: Implement Compass and give to player!    ",
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
-            	garmr__after_two_key_pieces_returned_3,
+			type: EVENT,
+			
+			event: {
+                eventType: PLAYER_BUY_ITEM, // the item isn't actually bought, but the player receives it the same way as if it was bought
+                stringValue: compass,
+			},
+			
+			executes: [
+                garmr__after_two_key_pieces_returned_3,
 			],
 		},
 		

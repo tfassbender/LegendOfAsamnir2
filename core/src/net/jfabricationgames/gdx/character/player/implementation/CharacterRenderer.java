@@ -29,6 +29,8 @@ class CharacterRenderer {
 	private static final Color FROZEN_COLOR = new Color(0.1f, 0.7f, 1f, 1f);
 	private static final Color HEAT_DAMAGE_COLOR = new Color(0.6f, 0.3f, 0.3f, 1f);
 	
+	private static final Color COMPASS_ARROW_COLOR = new Color(202f / 255f, 43f / 255f, 1f / 255f, 1f);
+	
 	private Dwarf player;
 	
 	private AnimationManager animationManager;
@@ -196,6 +198,50 @@ class CharacterRenderer {
 		else {
 			draw(batch, frame, 0, 0, width, height);
 		}
+	}
+	
+	public void drawCompassMarker(ShapeRenderer shapeRenderer) {
+		final float aimMarkerDistanceFactor = 0.8f;
+		
+		Vector2 normalizedDirection = player.movementHandler.getMovingDirection().getNormalizedDirectionVector(); // TODO change to the compass target direction
+		Vector2 aimMarkerOffset = normalizedDirection.cpy().scl(aimMarkerDistanceFactor);
+		
+		final float arrowSize = 0.2f;
+		final float arrowBaseWidth = 0.2f;
+		shapeRenderer.setColor(COMPASS_ARROW_COLOR);
+		drawArrow(shapeRenderer, //
+				player.bodyHandler.body.getPosition().x + aimMarkerOffset.x, //
+				player.bodyHandler.body.getPosition().y + aimMarkerOffset.y, //
+				normalizedDirection.angleRad(), //
+				arrowSize, //
+				arrowBaseWidth);
+		
+		// opposite direction (to make it look like a compass needle)
+		shapeRenderer.setColor(Color.WHITE);
+		drawArrow(shapeRenderer, //
+				player.bodyHandler.body.getPosition().x + aimMarkerOffset.x, //
+				player.bodyHandler.body.getPosition().y + aimMarkerOffset.y, //
+				normalizedDirection.angleRad(), //
+				-arrowSize, //
+				arrowBaseWidth);
+	}
+	
+	private void drawArrow(ShapeRenderer shapeRenderer, float x, float y, float angle, float size, float baseWidth) {
+		// Calculate direction vector
+		float tipX = x + (float) Math.cos(angle) * size;
+		float tipY = y + (float) Math.sin(angle) * size;
+		
+		// Perpendicular vector for the base
+		float perpAngle = angle + (float) Math.PI / 2f;
+		float halfBase = baseWidth / 2f;
+		
+		float base1X = x + (float) Math.cos(perpAngle) * halfBase;
+		float base1Y = y + (float) Math.sin(perpAngle) * halfBase;
+		
+		float base2X = x - (float) Math.cos(perpAngle) * halfBase;
+		float base2Y = y - (float) Math.sin(perpAngle) * halfBase;
+		
+		shapeRenderer.triangle(tipX, tipY, base1X, base1Y, base2X, base2Y);
 	}
 	
 	public void renderDarkness(SpriteBatch batch, ShapeRenderer shapeRenderer) {
