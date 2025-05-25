@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.item;
 
 import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.utils.Array;
 
 import net.jfabricationgames.gdx.rune.RuneType;
 
@@ -11,4 +12,6 @@ public interface ItemMap {
 	public void removeItem(Item item, Body body);
 	
 	public void processRunePickUp(RuneType type);
+	
+	public Array<Item> getItemsInMap();
 }

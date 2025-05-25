@@ -113,6 +113,10 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 		this.position = position;
 	}
 	
+	public ItemType getType() {
+		return typeConfig.type;
+	}
+	
 	@BeforeAddStatefulObject
 	public void updateMapProperties() {
 		if (!isConfiguredInMap()) {

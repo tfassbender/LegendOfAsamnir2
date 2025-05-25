@@ -403,6 +403,11 @@ public class GameMapImplementation implements GameMap {
 		removePhysicsBody(body);
 	}
 	
+	@Override
+	public Array<Item> getItemsInMap() {
+		return items;
+	}
+	
 	private void removePhysicsBody(Body body) {
 		PhysicsWorld.getInstance().removeBodyWhenPossible(body);
 	}

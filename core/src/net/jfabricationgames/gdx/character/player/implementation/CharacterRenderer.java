@@ -6,13 +6,19 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Array.ArrayIterator;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.animation.DummyAnimationDirector;
 import net.jfabricationgames.gdx.animation.GrowingAnimationDirector;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
+import net.jfabricationgames.gdx.item.Item;
+import net.jfabricationgames.gdx.item.ItemType;
+import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.texture.TextureLoader;
 
 class CharacterRenderer {
@@ -30,6 +36,8 @@ class CharacterRenderer {
 	private static final Color HEAT_DAMAGE_COLOR = new Color(0.6f, 0.3f, 0.3f, 1f);
 	
 	private static final Color COMPASS_ARROW_COLOR = new Color(202f / 255f, 43f / 255f, 1f / 255f, 1f);
+	private static final String GLOBAL_VALUE_KEY_COMPASS_TARGET_UNIT_ID = "compass_target_unit_id";
+	private static final String GLOBAL_VALUE_KEY_COMPASS_SEARCH_FOR_TRIFORCE_PIECES = "compass_search_for_triforce_pieces";
 	
 	private Dwarf player;
 	
@@ -201,9 +209,17 @@ class CharacterRenderer {
 	}
 	
 	public void drawCompassMarker(ShapeRenderer shapeRenderer) {
+		GameMapManager.getInstance().getMap().getUnitById(ANIMATION_DWARF_CONFIG_FILE);
+		
 		final float aimMarkerDistanceFactor = 0.8f;
 		
-		Vector2 normalizedDirection = player.movementHandler.getMovingDirection().getNormalizedDirectionVector(); // TODO change to the compass target direction
+		Vector2 compassTargetPosition = getCompassTargetPosition();
+		if (compassTargetPosition == null) {
+			// no target position available, so do not draw the compass marker
+			return;
+		}
+		
+		Vector2 normalizedDirection = compassTargetPosition.sub(player.bodyHandler.body.getPosition()).nor();
 		Vector2 aimMarkerOffset = normalizedDirection.cpy().scl(aimMarkerDistanceFactor);
 		
 		final float arrowSize = 0.2f;
@@ -224,6 +240,41 @@ class CharacterRenderer {
 				normalizedDirection.angleRad(), //
 				-arrowSize, //
 				arrowBaseWidth);
+	}
+	
+	private Vector2 getCompassTargetPosition() {
+		// check if a global value is configured that defines the target unit for the compass
+		String compassTargetUnitId = GlobalValuesDataHandler.getInstance().get(GLOBAL_VALUE_KEY_COMPASS_TARGET_UNIT_ID);
+		if (compassTargetUnitId != null && !compassTargetUnitId.isEmpty()) {
+			CutsceneControlledUnit unit = GameMapManager.getInstance().getMap().getUnitById(compassTargetUnitId);
+			if (unit != null) {
+				return unit.getPosition();
+			}
+		}
+		
+		// if no target unit is configured, but the compass can search for triforce pieces, target the nearest triforce piece
+		if (GlobalValuesDataHandler.getInstance().getAsBoolean(GLOBAL_VALUE_KEY_COMPASS_SEARCH_FOR_TRIFORCE_PIECES)) {
+			Array<Item> items = GameMapManager.getInstance().getMap().getItemsInMap();
+			ArrayIterator<Item> iterator = items.iterator();
+			while (iterator.hasNext()) {
+				Item item = iterator.next();
+				if (item.getType() != ItemType.TRIFORCE) {
+					iterator.remove(); // remove all items that are not triforce pieces
+				}
+			}
+			
+			if (!items.isEmpty()) {
+				// sort the items by distance to the player
+				items.sort((item1, item2) -> {
+					float distance1 = item1.getPosition().dst(player.bodyHandler.body.getPosition());
+					float distance2 = item2.getPosition().dst(player.bodyHandler.body.getPosition());
+					return Float.compare(distance1, distance2);
+				});
+				return items.first().getPosition(); // return the position of the nearest triforce piece
+			}
+		}
+		
+		return null; // nothing to target
 	}
 	
 	private void drawArrow(ShapeRenderer shapeRenderer, float x, float y, float angle, float size, float baseWidth) {

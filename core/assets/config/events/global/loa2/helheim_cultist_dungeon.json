@@ -102,4 +102,260 @@
 		executionType: CONDITIONAL_EVENT,
 		conditionalExecutionId: loa2_l4_helheim__cultist_dungeon__open_boss_gate_if_rotating_puzzle_solved,
 	},
+	
+	//*******************************************
+	//*** mine field puzzle
+	//*******************************************
+	
+	loa2_l4_helheim_cultist_dungeon__enter_mine_field: {
+	    event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__enter_mine_field,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_1,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_1: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_1,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_2,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_2: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_2,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_3,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_3: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_3,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_4,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_4: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_4,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_5,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_5: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_5,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_6,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_6: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_6,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_7,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_7: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_7,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_8,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_8: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_8,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_9,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_9: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_9,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_10,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_10: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_10,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_11,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_11: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_11,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_12,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_12: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_12,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_13,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_13: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_13,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_14,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_14: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_14,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_15,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_15: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_15,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_16,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_16: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_16,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_17,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_17: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_17,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_18,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_18: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_18,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_19,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_19: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_19,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: loa2_l4_helheim_cultist_dungeon__compass_target_exit,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__compass_target_exit: {
+	    event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__compass_target_exit,
+		}
+        executionType: SET_GLOBAL_VALUE,
+		executionParameters: {
+			globalValueKey: compass_target_unit_id,
+			globalValue: "",
+		}
+	},
 }

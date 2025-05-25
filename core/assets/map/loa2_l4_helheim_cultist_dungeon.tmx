@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3697">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3722">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -941,7 +941,149 @@
    </properties>
    <point/>
   </object>
-  <object id="3696" name="object.compass_target" x="512" y="561">
+  <object id="3696" name="object.eventObject" x="527.875" y="561">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_1"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3698" name="object.eventObject" x="431.562" y="335.993" width="15.8753" height="136.638">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__enter_mine_field"/>
+   </properties>
+  </object>
+  <object id="3703" name="object.eventObject" x="592.011" y="561.125">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_2"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3704" name="object.eventObject" x="591.932" y="497.045">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_3"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3705" name="object.eventObject" x="655.875" y="497">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_4"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3706" name="object.eventObject" x="656" y="401.091">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_5"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3707" name="object.eventObject" x="591.977" y="400.875">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_6"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_6"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3708" name="object.eventObject" x="592.125" y="304.83">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_7"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_7"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3709" name="object.eventObject" x="752.102" y="305.125">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_8"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_8"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3710" name="object.eventObject" x="752" y="497.284">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_9"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_9"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3711" name="object.eventObject" x="720.136" y="496.966">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_10"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_10"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3712" name="object.eventObject" x="719.909" y="561.227">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_11"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_11"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3713" name="object.eventObject" x="944.159" y="561">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_12"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_12"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3714" name="object.eventObject" x="943.886" y="401.023">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_13"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_13"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3715" name="object.eventObject" x="911.92" y="401.159">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_14"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_14"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3716" name="object.eventObject" x="912.034" y="240.909">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_15"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_15"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3717" name="object.eventObject" x="975.989" y="241">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_16"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_16"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3718" name="object.eventObject" x="976.091" y="336.909">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_17"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_17"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3719" name="object.eventObject" x="1007.91" y="337.125">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_18"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_18"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3720" name="object.eventObject" x="1008.03" y="433.125">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_19"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_19"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3721" name="object.eventObject" x="1079" y="433">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_exit"/>
+    <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_exit"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
