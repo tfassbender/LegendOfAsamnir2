@@ -6,7 +6,6 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
@@ -365,12 +364,6 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 		}
 	}
 	
-	protected void changeBodyToSensor() {
-		for (Fixture fixture : body.getFixtureList()) {
-			fixture.setSensor(true);
-		}
-	}
-	
 	/**
 	 * Returns the name of the state that shows the enemy dying. Override this method if the state is not named "die".
 	 */
@@ -485,6 +478,10 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 			if (typeConfig.playBossAppearedSound) {
 				SOUND_SET.playSound("boss_appeared");
 			}
+		}
+		
+		if (event.eventType == EventType.ENEMY_TAKE_DAMAGE && event.stringValue.equals(getUnitId())) {
+			takeDamage(event.floatValue, AttackInfo.dummy());
 		}
 		
 		if (isAlive() && event.equalsIgnoringDefaultConfigValues(typeConfig.deathEvent) //

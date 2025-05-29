@@ -47,25 +47,17 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 		
 		movingSpeed = typeConfig.movingSpeed;
 		
-		initializeStates();
+		stateMachine = new CharacterStateMachine(typeConfig.graphicsConfig.stateConfig, typeConfig.graphicsConfig.initialState, null, properties);
 		initializeMovingState();
 		initializeIdleState();
 		
-		createAI();
+		ai = typeConfig.aiConfig.buildAI(stateMachine, properties);
 		ai.setCharacter(this);
 		initializeInteractionAnimation();
 		
 		setImageOffset(typeConfig.graphicsConfig.imageOffsetX, typeConfig.graphicsConfig.imageOffsetY);
 		
 		EventHandler.getInstance().registerEventListener(this);
-	}
-	
-	private void initializeStates() {
-		stateMachine = new CharacterStateMachine(typeConfig.graphicsConfig.stateConfig, typeConfig.graphicsConfig.initialState, null, properties);
-	}
-	
-	private void createAI() {
-		ai = typeConfig.aiConfig.buildAI(stateMachine, properties);
 	}
 	
 	private void initializeInteractionAnimation() {
@@ -87,6 +79,15 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 		}
 		
 		return null;
+	}
+	
+	@Override
+	public void createPhysicsBody(float x, float y) {
+		super.createPhysicsBody(x, y);
+		
+		if (typeConfig.isSensor) {
+			changeBodyToSensor();
+		}
 	}
 	
 	private void updateInteractionAnimationSpriteConfig() {
@@ -271,7 +272,7 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 	public void handleEvent(EventConfig event) {
 		if (event.eventType == EventType.CUTSCENE_REMOVE_UNIT) {
 			boolean canBeRemovedByCutsceneEvent = Boolean.parseBoolean(properties.get(MAP_PROPERTIES_KEY_REMOVABLE_BY_CUTSCENE_EVENT, "false", String.class));
-			if (canBeRemovedByCutsceneEvent) {
+			if (canBeRemovedByCutsceneEvent && (event.stringValue == null || event.stringValue.equals(getUnitId()))) {
 				removeFromMap();
 			}
 		}

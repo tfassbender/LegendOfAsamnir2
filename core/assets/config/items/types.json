@@ -133,6 +133,9 @@
 		type: EVENT_ITEM,
         texture: cultist_dungeon_token_statue,
         pickUpSound: pickup_5,
+        defaultMapProperties: {
+        	eventParameter: "token_l4_statue",
+        },
 	},
 	
 	//**********************************

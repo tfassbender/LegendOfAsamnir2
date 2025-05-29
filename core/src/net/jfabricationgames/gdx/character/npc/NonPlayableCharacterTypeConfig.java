@@ -15,6 +15,7 @@ public class NonPlayableCharacterTypeConfig extends CharacterTypeConfig {
 	public boolean interactByContact = false;
 	public String interactionEventId;
 	
+	public boolean isSensor = false; // set to true if the NPC should not get into contact by any other objects 
 	public boolean addSensor = true;
 	public float sensorRadius = 1f;
 	

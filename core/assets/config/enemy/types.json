@@ -1604,4 +1604,44 @@
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
 	},
+	
+	vengeful_spirit: {
+		typeName: vengeful_spirit,
+		
+		animationsConfig: config/animation/enemy/vengeful_spirit.json,
+		stateConfig: config/enemy/states/vengeful_spirit.json,
+		initialState: cultist_idle, // starts as a cultist that is sacrificed
+		attackConfig: config/enemy/attack/vengeful_spirit.json,
+		
+		health: 50,
+		movingSpeed: 0.5f,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 0f,
+			MAGIC: 2f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.7f,
+		
+		addSensor: true,
+		sensorRadius: 8f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0f,
+		healthBarOffsetY: -0.4f,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: false, // not visible when still a cultist
+		
+		drops: {
+			token_l4_statue: 1,
+		}
+	},
 }

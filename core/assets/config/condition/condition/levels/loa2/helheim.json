@@ -155,6 +155,22 @@
 		}
 	},
 	
+	loa2_l4_helheim__vengeful_spirit_1__cutscene_triggered: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__vengeful_spirit_1__cutscene_triggered,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim__vengeful_spirit_2__cutscene_triggered: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__vengeful_spirit_2__cutscene_triggered,
+            expectedValue: true,
+		}
+	},
+	
 	//*******************************************
 	//*** main - garm cutscene
 	//*******************************************

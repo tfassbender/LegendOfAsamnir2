@@ -1,0 +1,12 @@
+[
+	{
+		id: attack,
+		type: SPECTRAL_SWORD,
+		projectileType: spectral_sword,
+		delay: 0.3,
+		duration: 0,
+		damage: 10,
+		canBeBlockedCompletely: false,
+		pushForce: 50,
+	},
+]

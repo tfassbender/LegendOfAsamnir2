@@ -497,4 +497,18 @@
 		hitFixtureRadius: 2.5f,
 		flipAnimationToAttackDirection: false,
 	},
+	
+	spectral_sword: {
+		attackType: SPECTRAL_SWORD,
+		
+		animation: vengeful_spirit_spectral_sword_move,
+		textureInitialRotation: 225,
+		rotateTextureToMovementDirection: true,
+		
+		sound: bow,
+		
+		range: 100,
+		speed: 60,
+		dampingAfterObjectHit: 5,
+	},
 }

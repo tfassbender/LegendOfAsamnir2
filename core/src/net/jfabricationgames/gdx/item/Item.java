@@ -83,6 +83,14 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 		if (pickUpSoundName == null && defaultTypeConfig != null) {
 			pickUpSoundName = defaultTypeConfig.pickUpSound;
 		}
+		
+		if (typeConfig.defaultMapProperties != null) {
+			for (Entry<String, String> entry : typeConfig.defaultMapProperties.entries()) {
+				if (!properties.containsKey(entry.key)) {
+					properties.put(entry.key, entry.value);
+				}
+			}
+		}
 	}
 	
 	protected void createPhysicsBody(float x, float y) {

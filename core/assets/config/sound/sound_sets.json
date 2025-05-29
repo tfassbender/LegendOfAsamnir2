@@ -479,6 +479,19 @@
 					path: "sound/enemy/mine.mp3",
 					volume: 0.5,
 				},
+				// vengeful spirit
+				vengeful_spirit_summon: {
+					path: "sound/enemy/ghost_laughing.mp3",
+					volume: 0.3,
+				},
+				vengeful_spirit_death: {
+					path: "sound/enemy/ghost_death.mp3",
+					volume: 0.3,
+				},
+				vengeful_spirit_spectral_sword: {
+					path: "sound/enemy/attack/vengeful_spirit_spectral_sword.mp3",
+					volume: 0.2,
+				},
 			}
 		},
 		cutscene: {
@@ -525,6 +538,10 @@
 				falling: {
 					path: "sound/cutscene/falling.mp3",
 				},
+				cultist_sacrifice: {
+					path: "sound/object/hit_slash.mp3",
+					volume: 0.6f,
+				}
             }
         },
 		menu: {

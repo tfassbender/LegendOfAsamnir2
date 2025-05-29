@@ -1,0 +1,91 @@
+[
+	{
+		id: cultist_idle,
+		animation: cultist_idle,
+		endsWithAnimation: true,
+		followingState: cultist_idle,
+		interruptingStates: [
+			cultist_kneel,
+		]
+	},
+	{
+		id: cultist_kneel,
+		animation: cultist_kneel,
+		endsWithAnimation: false, // will be ended by a cutscene
+		changeStateAfterAnimationDelay: 3f,
+		followingState: summon,
+		interruptingStates: [
+			summon,
+		]
+	},
+	
+	{
+        id: idle,
+        animation: vengeful_spirit_idle,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	move, summon_spectral_shield, attack, damage, die
+        ]
+	},
+	{
+        id: move,
+        animation: vengeful_spirit_idle, // same animation because it's floating
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	idle, summon_spectral_shield, attack, damage, die
+        ]
+	},
+	{
+        id: summon,
+        animation: vengeful_spirit_summon,
+        endsWithAnimation: true,
+        stateEnteringSound: vengeful_spirit_summon,
+        followingState: idle,
+        interruptingStates: []
+	},
+	{
+        id: summon_spectral_shield,
+        animation: vengeful_spirit_summon,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: []
+	},
+	{
+		id: attack,
+		animation: vengeful_spirit_attack,
+		stateEnteringSound: vengeful_spirit_spectral_sword,
+		soundDelay: 0.3f,
+		soundVolume: 0.3f,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: damage,
+		animation: vengeful_spirit_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: vengeful_spirit_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 5f,
+		followingState: END,
+		stateEnteringSound: vengeful_spirit_death,
+		soundDelay: 0.5f,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

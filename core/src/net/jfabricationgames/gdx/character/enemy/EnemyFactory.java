@@ -22,6 +22,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Phoenixling;
 import net.jfabricationgames.gdx.character.enemy.implementation.SkeletonKing;
 import net.jfabricationgames.gdx.character.enemy.implementation.SpiderQueen;
 import net.jfabricationgames.gdx.character.enemy.implementation.Totem;
+import net.jfabricationgames.gdx.character.enemy.implementation.VengefulSpirit;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.object.EnemySpawnFactory;
 import net.jfabricationgames.gdx.projectile.ProjectileSpawnFactory;
@@ -51,6 +52,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_IFRIT = "ifrit";
 	private static final String ENEMY_NAME_SKELETON_KING = "skeleton_king";
 	private static final String ENEMY_NAME_SPIDER_QUEEN = "spider_queen";
+	private static final String ENEMY_NAME_VENGEFUL_SPIRIT = "vengeful_spirit";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -137,6 +139,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_SPIDER_QUEEN:
 				enemy = new SpiderQueen(typeConfig, properties);
+				break;
+			case ENEMY_NAME_VENGEFUL_SPIRIT:
+				enemy = new VengefulSpirit(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

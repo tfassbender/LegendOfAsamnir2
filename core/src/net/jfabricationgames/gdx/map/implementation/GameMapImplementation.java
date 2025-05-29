@@ -353,11 +353,11 @@ public class GameMapImplementation implements GameMap {
 		renderer.renderObjects(delta);
 		renderer.renderItemsAboveGameObjects(delta);
 		
-		processor.processEnemies(delta);
-		renderer.renderEnemies(delta);
-		
 		processor.processNpcs(delta);
 		renderer.renderNpcs(delta);
+		
+		processor.processEnemies(delta);
+		renderer.renderEnemies(delta);
 		
 		processor.processAnimals(delta);
 		renderer.renderAnimals(delta);

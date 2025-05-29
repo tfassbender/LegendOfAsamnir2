@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3735">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3747">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -911,12 +911,6 @@
    </properties>
    <point/>
   </object>
-  <object id="3688" name="item.token_l4_statue" x="1600" y="800">
-   <properties>
-    <property name="eventParameter" value="token_l4_statue"/>
-   </properties>
-   <point/>
-  </object>
   <object id="3692" name="object.orb_statue" x="1615" y="749">
    <properties>
     <property name="event">{
@@ -932,12 +926,6 @@
   eventType: &quot;CONFIG_GAME_OBJECT_ACTION&quot;,
   stringValue: &quot;loa2_l4_helheim_cultist_dungeon__orb_statue_right__interaction&quot;
 }</property>
-   </properties>
-   <point/>
-  </object>
-  <object id="3695" name="item.token_l4_statue" x="1632" y="800">
-   <properties>
-    <property name="eventParameter" value="token_l4_statue"/>
    </properties>
    <point/>
   </object>
@@ -1086,9 +1074,6 @@
    </properties>
    <point/>
   </object>
-  <object id="3722" name="enemy.cultist_brute" x="1280" y="416">
-   <point/>
-  </object>
   <object id="3726" name="enemy.cultist_brute" x="1654.33" y="82.6667">
    <properties>
     <property name="aiType" value="cultist_brute_team"/>
@@ -1110,13 +1095,41 @@
    </properties>
    <point/>
   </object>
-  <object id="3731" name="enemy.cultist_brute" x="1824" y="384">
+  <object id="3731" name="enemy.cultist_brute" x="1824" y="352">
    <point/>
   </object>
   <object id="3732" name="enemy.cultist_brute" x="1696" y="800">
    <point/>
   </object>
   <object id="3733" name="enemy.cultist_brute" x="1696" y="1056">
+   <point/>
+  </object>
+  <object id="3735" name="object.enemy_path_blocker" x="1332.65" y="369.688" width="13.875" height="70.3021"/>
+  <object id="3736" name="object.enemy_path_blocker" x="1634.73" y="434.417" width="13.875" height="69.8333"/>
+  <object id="3737" name="object.enemy_path_blocker" x="1797.73" y="423.75" width="52.875" height="6.8333"/>
+  <object id="3738" name="object.enemy_path_blocker" x="2176" y="864" width="14.375" height="215.833"/>
+  <object id="3740" name="npc.cultist" x="1489.17" y="411.667">
+   <properties>
+    <property name="removableByCutsceneEvent" value="true"/>
+    <property name="unitId" value="loa2_l4_helheim__cultist_summoner_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3742" name="enemy.vengeful_spirit" x="1487" y="416">
+   <properties>
+    <property name="unitId" value="loa2_l4_helheim__cultist_sacrifice_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3744" name="object.eventObject" x="1324.19" y="369.682" width="8.34882" height="70.2727">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_1"/>
+   </properties>
+  </object>
+  <object id="3745" name="object.configObject" x="1408" y="416">
+   <properties>
+    <property name="unitId" value="cutscene_object__helheim__vengefull_spirit_1__camera_position"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

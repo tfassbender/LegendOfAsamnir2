@@ -277,6 +277,7 @@
 				raw_images/restricted/enemy/cultist/cultist_move,
 				raw_images/restricted/enemy/cultist/cultist_sacrifice,
 				raw_images/restricted/enemy/cultist/cultist_worship,
+				raw_images/restricted/enemy/cultist/cultist_kneel,
 				raw_images/restricted/enemy/cultist/cultist_damage,
 				
 				// cultist brute
@@ -502,7 +503,21 @@
 				// spider queen cocoon
 				raw_images/restricted/enemy/spider_queen/spider_queen_cocoon_idle,
 				raw_images/restricted/enemy/spider_queen/spider_queen_cocoon_break,
-								
+				
+				// vengeful spirit
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_idle,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_attack,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_damage,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_death,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_summon,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_shield_appear,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_shield_idle,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_shield_damage,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_shield_break,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_sword_appear,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_sword_move,
+				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_sword_hit,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

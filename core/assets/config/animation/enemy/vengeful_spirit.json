@@ -1,0 +1,73 @@
+{
+	configList: 
+	[
+		{
+			name: cultist_idle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: cultist_kneel,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		
+		
+		{
+			name: vengeful_spirit_idle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_attack,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_damage,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_death,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_summon,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_spectral_shield_appear,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_spectral_shield_idle,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_spectral_shield_damage,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: vengeful_spirit_spectral_shield_break,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		}
+	]
+}

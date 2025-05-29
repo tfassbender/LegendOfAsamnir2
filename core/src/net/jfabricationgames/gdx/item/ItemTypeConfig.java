@@ -1,5 +1,7 @@
 package net.jfabricationgames.gdx.item;
 
+import com.badlogic.gdx.utils.ObjectMap;
+
 public class ItemTypeConfig {
 	
 	public ItemType type = ItemType.ITEM;
@@ -11,4 +13,5 @@ public class ItemTypeConfig {
 	public String pickUpSound;
 	public int costs;
 	public String globalValue; // a global value that will be set to "true" when the item is picked up
+	public ObjectMap<String, String> defaultMapProperties;
 }
