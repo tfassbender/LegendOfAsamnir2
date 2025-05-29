@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3722">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3735">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1084,6 +1084,39 @@
     <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__compass_target_exit"/>
     <property name="unitId" value="loa2_l4_helheim_cultist_dungeon__compass_target_exit"/>
    </properties>
+   <point/>
+  </object>
+  <object id="3722" name="enemy.cultist_brute" x="1280" y="416">
+   <point/>
+  </object>
+  <object id="3726" name="enemy.cultist_brute" x="1654.33" y="82.6667">
+   <properties>
+    <property name="aiType" value="cultist_brute_team"/>
+    <property name="teamId" value="cultist_brute__team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3727" name="enemy.cultist_brute" x="1711.33" y="150">
+   <properties>
+    <property name="aiType" value="cultist_brute_team"/>
+    <property name="teamId" value="cultist_brute__team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3728" name="enemy.cultist_brute" x="1775" y="98.3333">
+   <properties>
+    <property name="aiType" value="cultist_brute_team"/>
+    <property name="teamId" value="cultist_brute__team_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3731" name="enemy.cultist_brute" x="1824" y="384">
+   <point/>
+  </object>
+  <object id="3732" name="enemy.cultist_brute" x="1696" y="800">
+   <point/>
+  </object>
+  <object id="3733" name="enemy.cultist_brute" x="1696" y="1056">
    <point/>
   </object>
  </objectgroup>

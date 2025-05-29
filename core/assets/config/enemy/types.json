@@ -1569,4 +1569,39 @@
 			arrow: 1,
 		}
 	},
+	
+	cultist_brute: {
+		typeName: cultist_brute,
+		
+		animationsConfig: config/animation/enemy/cultist_brute.json,
+		stateConfig: config/enemy/states/cultist_brute.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/cultist_brute.json,
+		aiConfig: config/enemy/ai/cultist_brute.json,
+		
+		health: 30,
+		movingSpeed: 1.5f,
+		
+		damageModifiersByAttackType: {
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.3f,
+		
+		addSensor: true,
+		sensorRadius: 4f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: -0.1,
+		healthBarOffsetY: 0,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+	},
 }

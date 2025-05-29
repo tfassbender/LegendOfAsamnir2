@@ -890,7 +890,7 @@
 		
 		collisionType: OBSTACLE_SENSOR,
 		
-		physicsBodySizeFactorX: 1f,
+		physicsBodySizeFactorX: 0.8f,
 		physicsBodySizeFactorY: 0.3f,
 		physicsBodyOffsetFactorX: 0f,
 		physicsBodyOffsetFactorY: 0.2f,
