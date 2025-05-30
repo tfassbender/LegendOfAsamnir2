@@ -1613,7 +1613,7 @@
 		initialState: cultist_idle, // starts as a cultist that is sacrificed
 		attackConfig: config/enemy/attack/vengeful_spirit.json,
 		
-		health: 50,
+		health: 75,
 		movingSpeed: 0.5f,
 		
 		damageModifiersByAttackType: {
