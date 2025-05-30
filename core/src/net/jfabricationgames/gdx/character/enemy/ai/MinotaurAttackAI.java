@@ -5,11 +5,11 @@ import java.util.Random;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
-import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
-public class MinotaurAttackAI extends AbstractMultiAttackAI {
+public class MinotaurAttackAI extends MultiAttackAI {
 	
 	private static final float HIT_IF_IN_RANGE = 0.5f;
 	private static final float SPIN_IF_IN_RANGE = 0.25f;

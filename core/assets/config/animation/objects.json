@@ -136,6 +136,12 @@
 			playMode: NORMAL,
 		},
 		{
+			name: arcane_floor_magic_circle_effect,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+		},
+		{
 			name: fire,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

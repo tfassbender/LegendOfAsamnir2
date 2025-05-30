@@ -1,5 +1,5 @@
 {
-	id: loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_1_cutscene,
+	id: loa2_l4_helheim_cultist_dungeon__summon_vengeful_spirit_1_cutscene,
 	controlledActions: {
 	    start_condition: {
 			type: SWITCH_CONDITION,
@@ -162,14 +162,34 @@
             waitForEventToFinish: true,
             
             executes: [
+                spawn_summoning_circle_effect,
+                play_sound_effect_summon,
                 summon_vengeful_spirit,
 			],
+		},
+		
+		spawn_summoning_circle_effect: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 0.5f,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+			},
+		},
+		
+		play_sound_effect_summon: {
+            type: PLAY_SOUND,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            soundEffectName: summon,
 		},
 		
 		summon_vengeful_spirit: {
 			type: CHANGE_STATE,
 			
-			executionDelayInSeconds: 1f,
+			executionDelayInSeconds: 1.5f,
             
             controlledUnitId: loa2_l4_helheim__cultist_sacrifice_1,
             controlledUnitState: summon,

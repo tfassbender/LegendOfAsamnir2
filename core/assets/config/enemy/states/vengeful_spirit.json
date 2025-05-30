@@ -25,7 +25,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-        	move, summon_spectral_shield, attack, damage, die
+        	move, summon_spectral_shield, attack, attack_arcane_shower, damage, die
         ]
 	},
 	{
@@ -34,14 +34,13 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-        	idle, summon_spectral_shield, attack, damage, die
+        	idle, summon_spectral_shield, attack, attack_arcane_shower, damage, die
         ]
 	},
 	{
         id: summon,
         animation: vengeful_spirit_summon,
         endsWithAnimation: true,
-        stateEnteringSound: vengeful_spirit_summon,
         followingState: idle,
         interruptingStates: []
 	},
@@ -57,8 +56,18 @@
 		animation: vengeful_spirit_attack,
 		stateEnteringSound: vengeful_spirit_spectral_sword,
 		soundDelay: 0.3f,
-		soundVolume: 0.3f,
+		soundVolume: 0.1f,
 		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_arcane_shower,
+		animation: vengeful_spirit_summon,
+		attack: attack_arcane_shower
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

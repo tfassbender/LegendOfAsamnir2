@@ -12,7 +12,7 @@ import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.DummyAttackTimer;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
-public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
+public class MultiAttackAI extends AbstractAttackAI {
 	
 	protected ArrayMap<String, CharacterState> attackStates;
 	protected ArrayMap<CharacterState, Float> attackDistances;
@@ -20,7 +20,7 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 	
 	private boolean moveToPlayerWhenAttacking = true;
 	
-	public AbstractMultiAttackAI(ArtificialIntelligence subAI, //
+	public MultiAttackAI(ArtificialIntelligence subAI, //
 			ArrayMap<String, CharacterState> attackStates, //
 			ArrayMap<CharacterState, Float> attackDistances, //
 			AttackTimer attackTimer) {
@@ -29,7 +29,7 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 		this.attackDistances = attackDistances;
 	}
 	
-	public AbstractMultiAttackAI(ArtificialIntelligence subAI, //
+	public MultiAttackAI(ArtificialIntelligence subAI, //
 			ArrayMap<String, CharacterState> attackStates, //
 			ArrayMap<CharacterState, Float> attackDistances, //
 			ArrayMap<CharacterState, AttackTimer> attackTimers) {
@@ -114,7 +114,17 @@ public abstract class AbstractMultiAttackAI extends AbstractAttackAI {
 		return attackTimer.timeToAttack();
 	}
 	
-	protected abstract CharacterState chooseAttack();
+	protected CharacterState chooseAttack() {
+		float distanceToTarget = distanceToTarget();
+		
+		for (CharacterState attackState : attackStates.values()) {
+			if (isInRangeForAttack(attackState, distanceToTarget) && attackTimers.get(attackState).timeToAttack()) {
+				return attackState;
+			}
+		}
+		
+		return null;
+	}
 	
 	@Override
 	public void executeMove(float delta) {

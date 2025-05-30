@@ -3,13 +3,13 @@ package net.jfabricationgames.gdx.character.enemy.ai;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
-import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.move.AIAttackingMove;
 import net.jfabricationgames.gdx.character.ai.move.MoveType;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
-public class GiantGolemAttackAI extends AbstractMultiAttackAI {
+public class GiantGolemAttackAI extends MultiAttackAI {
 	
 	private static final float STOMP_ANGLE_DELTA = 30f;
 	

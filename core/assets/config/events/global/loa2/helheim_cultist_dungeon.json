@@ -32,7 +32,7 @@
 		}
         executionType: START_CUTSCENE,
         executionParameters: {
-            cutsceneId: loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_1_cutscene,
+            cutsceneId: loa2_l4_helheim_cultist_dungeon__summon_vengeful_spirit_1_cutscene,
 		}
 	},
 	

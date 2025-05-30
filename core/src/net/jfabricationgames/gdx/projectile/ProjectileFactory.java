@@ -129,6 +129,9 @@ public class ProjectileFactory {
 			case COCOON_PROJECTILE:
 				projectile = new CocoonProjectile(typeConfig, attackConfig, animation, gameMap, false);
 				break;
+			case SPECTRAL_SWORD:
+				projectile = new SpectralSword(typeConfig, attackConfig, animation, gameMap);
+				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}

@@ -7,12 +7,12 @@ import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.attack.AttackHandler;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
-import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
-public class GoblinKingAttackAI extends AbstractMultiAttackAI {
+public class GoblinKingAttackAI extends MultiAttackAI {
 	
 	private static final float ENDURANCE_COST_SLAM_ATTACK = 25f;
 	private static final float ENCURANCE_COST_COIN_BAG_ATTACK = 10f;

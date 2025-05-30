@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
-import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.event.EventConfig;
@@ -14,7 +14,7 @@ import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.map.GameMapManager;
 
-public class SkeletonKingAttackAI extends AbstractMultiAttackAI {
+public class SkeletonKingAttackAI extends MultiAttackAI {
 	
 	private CharacterState attackSwing;
 	private CharacterState stateCommand;

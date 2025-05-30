@@ -596,6 +596,16 @@
 		texture: empty,
 		animationAction: mine_explosion,
 		changeBodyToSensorAfterAction: true,
+		isSensor: true,
+	},
+	
+	summoning_circle: {
+		type: ANIMATION,
+		
+		texture: empty,
+		animationAction: arcane_floor_magic_circle_effect,
+		changeBodyToSensorAfterAction: true,
+		isSensor: true,
 	},
 	
 	iced_rock: {

@@ -131,8 +131,15 @@
 			name: vengeful_spirit_spectral_sword_move,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
-			playMode: NORMAL,
+			playMode: LOOP,
 			scale: 0.05,
+		},
+		{
+			name: arcane_shower_effect,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 0.03,
 		},
 	]
 }

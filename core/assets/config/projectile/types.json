@@ -483,6 +483,24 @@
 		imageOffsetY: 2f,
 	},
 	
+	arcane_shower: {
+        attackType: ANIMATED_HIT,
+        
+        animation: arcane_shower_effect,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+        
+        speed: 0,
+        damping: 0,
+		hitFixtureRadius: 0.8f,
+		flipAnimationToAttackDirection: true,
+		
+		sensorBody: true,
+		hitDelayInSeconds: 0.3f,
+		
+		imageOffsetY: 1f,
+	},
+	
 	skeletal_trumpetist_sound_effect: {
         attackType: ANIMATED_HIT,
         
@@ -502,7 +520,8 @@
 		attackType: SPECTRAL_SWORD,
 		
 		animation: vengeful_spirit_spectral_sword_move,
-		textureInitialRotation: 225,
+		removeAfterAnimationFinished: false,
+		textureInitialRotation: -45,
 		rotateTextureToMovementDirection: true,
 		
 		sound: bow,

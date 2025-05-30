@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3747">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3748">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1129,6 +1129,12 @@
   <object id="3745" name="object.configObject" x="1408" y="416">
    <properties>
     <property name="unitId" value="cutscene_object__helheim__vengefull_spirit_1__camera_position"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3747" name="object.spawnPoint.summoning_circle" x="1487" y="427">
+   <properties>
+    <property name="spawn" value="summoning_circle"/>
    </properties>
    <point/>
   </object>

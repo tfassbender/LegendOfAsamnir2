@@ -3,11 +3,11 @@ package net.jfabricationgames.gdx.character.enemy.ai;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
-import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
-public class SpiderQueenAttackAI extends AbstractMultiAttackAI {
+public class SpiderQueenAttackAI extends MultiAttackAI {
 	
 	private CharacterState attackMelee;
 	private CharacterState attackWeb;

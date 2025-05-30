@@ -542,6 +542,9 @@
 					path: "sound/object/hit_slash.mp3",
 					volume: 0.6f,
 				}
+				summon: {
+					path: "sound/cutscene/summon.mp3",
+				},
             }
         },
 		menu: {

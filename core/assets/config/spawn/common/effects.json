@@ -1,0 +1,11 @@
+{
+	explosion: {
+		spawnType: object.explosion,
+        events: [CUSTCENE_SPAWN_UNIT],
+	},
+	
+	summoning_circle: {
+        spawnType: object.summoning_circle,
+        events: [CUSTCENE_SPAWN_UNIT],
+	},
+}

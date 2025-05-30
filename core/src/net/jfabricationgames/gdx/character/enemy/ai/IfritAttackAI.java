@@ -5,14 +5,14 @@ import java.util.function.Supplier;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
-import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.move.AIAttackingMove;
 import net.jfabricationgames.gdx.character.ai.move.MoveType;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.enemy.implementation.Ifrit.DefenseModePosition;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
-public class IfritAttackAI extends AbstractMultiAttackAI {
+public class IfritAttackAI extends MultiAttackAI {
 	
 	private Supplier<DefenseModePosition> defenseModePositionSupplier;
 	

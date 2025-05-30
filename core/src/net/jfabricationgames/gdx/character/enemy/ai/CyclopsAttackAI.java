@@ -5,12 +5,12 @@ import java.util.Random;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
-import net.jfabricationgames.gdx.character.ai.implementation.AbstractMultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 
-public class CyclopsAttackAI extends AbstractMultiAttackAI {
+public class CyclopsAttackAI extends MultiAttackAI {
 	
 	private static final float STOMP_IF_IN_RANGE = 0.5f;
 	private static final float THROW_IF_IN_STOMP_RANGE = 0.3f;
