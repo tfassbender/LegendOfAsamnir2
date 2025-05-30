@@ -1,0 +1,235 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__summon_vengeful_spirit_2_cutscene,
+	controlledActions: {
+	    start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim__vengeful_spirit_2__cutscene_triggered,
+					executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: start_multiplexer,
+				},
+			],
+		},
+	    
+		start_multiplexer: {
+	        type: WAIT,
+	        
+            executes: [
+                set_cutscene_triggered,
+                move_camera,
+                move_thorin,
+                change_direction_cultist_summoner,
+                change_direction_cultist_sacrifice,
+			],
+		},
+		
+		set_cutscene_triggered: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__vengeful_spirit_2__cutscene_triggered, value: true}",
+			},
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__helheim__vengefull_spirit_2__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 3f,
+			
+			executes: [
+				thorin_threaten_cultists,
+			],
+		},
+		
+		move_thorin: {
+			executionDelayInSeconds: 1f,
+		
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: cutscene_object__helheim__vengefull_spirit_2__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: -1, y: 0},
+		},
+		
+		change_direction_cultist_summoner: {
+			type: MOVE,
+			controlledUnitId: loa2_l4_helheim__cultist_summoner_2,
+			controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		change_direction_cultist_sacrifice: {
+			type: MOVE,
+			controlledUnitId: loa2_l4_helheim__cultist_sacrifice_2,
+			controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		thorin_threaten_cultists: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Not these fools again!\n\n                         \nCan't you just put away the knives and run away?!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                sacrifice__kneel,
+			],
+		},
+		
+		sacrifice__kneel: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_2,
+            controlledUnitState: cultist_kneel,
+            
+            executes: [
+            	sacrifice__sacrifice,
+            	sacrifice__play_sound_effect_sacrifice,
+            ],
+		},
+		
+		sacrifice__sacrifice: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 1.5f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_2,
+            controlledUnitState: sacrifice,
+            
+            executes: [
+            	sacrifice__summoner_cultist_leave_1,
+            	thorin_comment,
+            ],
+		},
+		
+		sacrifice__play_sound_effect_sacrifice: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 1.7f,
+			
+            soundEffectName: cultist_sacrifice,
+		},
+		
+		sacrifice__summoner_cultist_leave_1: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_2,
+            controlledUnitTarget: {x: -2, y: -2},
+            
+            executes: [
+                sacrifice__summoner_cultist_leave_2,
+			],
+		},
+		
+		sacrifice__summoner_cultist_leave_2: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_2,
+            controlledUnitTarget: {x: -12, y: 0},
+            
+            executes: [
+                sacrifice__summoner_cultist_remove,
+			],
+		},
+		
+		sacrifice__summoner_cultist_remove: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l4_helheim__cultist_summoner_2,
+            },
+		},
+		
+		thorin_comment: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 2.5f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "It was worth a try ...      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                spawn_summoning_circle_effect,
+                play_sound_effect_summon,
+                summon_vengeful_spirit,
+			],
+		},
+		
+		spawn_summoning_circle_effect: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 0.5f,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+			},
+		},
+		
+		play_sound_effect_summon: {
+            type: PLAY_SOUND,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            soundEffectName: summon,
+		},
+		
+		summon_vengeful_spirit: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 1.5f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_2,
+            controlledUnitState: summon,
+            
+            executes: [
+                vengefull_spirit_show_health_bar,
+            ],
+		},
+		
+		vengefull_spirit_show_health_bar: {
+			type: EVENT,
+			
+			// let the vengeful spirit take a small amout of damage, so the health bar is shown
+			event: {
+				eventType: ENEMY_TAKE_DAMAGE,
+				stringValue: "loa2_l4_helheim__cultist_sacrifice_2",
+				floatValue: 0.1f,
+			},
+			
+			executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

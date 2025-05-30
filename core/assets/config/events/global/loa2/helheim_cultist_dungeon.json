@@ -36,6 +36,17 @@
 		}
 	},
 	
+	loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_2: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_2,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_cultist_dungeon__summon_vengeful_spirit_2_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** tokens
 	//*******************************************
