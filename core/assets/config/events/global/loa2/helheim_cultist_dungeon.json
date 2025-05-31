@@ -47,6 +47,17 @@
 		}
 	},
 	
+	loa2_l4_helheim_cultist_dungeon__enter_boss_room: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__enter_boss_room,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_cultist_dungeon__enter_boss_room_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** tokens
 	//*******************************************

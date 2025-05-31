@@ -1,0 +1,365 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__enter_boss_room_cutscene,
+	controlledActions: {
+	    start_condition: {
+			type: SWITCH_CONDITION,
+			startsWithCutscene: true,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim__enter_boss_room__cutscene_triggered,
+					executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: start_multiplexer,
+				},
+			],
+		},
+	    
+		start_multiplexer: {
+	        type: WAIT,
+	        
+            executes: [
+                set_cutscene_triggered,
+                close_gate,
+                move_camera,
+                move_thorin,
+                change_direction_cultist_summoner_top_right,
+                change_direction_cultist_summoner_bottom_right,
+                change_direction_cultist_summoner,
+                change_direction_cultist_sacrifice,
+			],
+		},
+		
+		set_cutscene_triggered: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__enter_boss_room__cutscene_triggered, value: true}",
+			},
+		},
+		
+		//**********************************************
+		//*** setup
+		//**********************************************
+		
+		close_gate: {
+			executionDelayInSeconds: 0.5f,
+			
+            type: EVENT,
+			
+			event: {
+				eventType: CLOSE_LOCK,
+				stringValue: loa2_l4_helheim__cultist_dungeon__gate_boss_entry,
+			},
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__helheim__boss__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 3f,
+			
+			executes: [
+				thorin_threaten_cultists,
+			],
+		},
+		
+		move_thorin: {
+			executionDelayInSeconds: 1f,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: cutscene_object__helheim__boss__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: -1, y: 0},
+		},
+		
+		change_direction_cultist_summoner_top_right: {
+			type: MOVE,
+			controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_top_right,
+			controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		change_direction_cultist_summoner_bottom_right: {
+			type: MOVE,
+			controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_bottom_right,
+			controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		change_direction_cultist_summoner: {
+			type: MOVE,
+			controlledUnitId: loa2_l4_helheim__cultist_summoner_boss,
+			controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		change_direction_cultist_sacrifice: {
+			type: MOVE,
+			controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+			controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		//**********************************************
+		//*** summoning ritual
+		//**********************************************
+		
+		thorin_threaten_cultists: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Could you just stay dead this time?\n                 \nThat would save us all some time...      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                cultist_top_left_worship,
+                cultist_top_right_worship,
+                cultist_bottom_left_worship,
+                cultist_bottom_right_worship,
+                sacrifice__kneel,
+			],
+		},
+		
+		cultist_top_left_worship: {
+			type: CHANGE_STATE,
+            
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_top_left,
+            controlledUnitState: worship,
+		},
+		
+		cultist_top_right_worship: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_top_right,
+            controlledUnitState: worship,
+		},
+		
+		cultist_bottom_left_worship: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_bottom_left,
+            controlledUnitState: worship,
+		},
+		
+		cultist_bottom_right_worship: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_bottom_right,
+            controlledUnitState: worship,
+		},
+		
+		sacrifice__kneel: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 3f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+            controlledUnitState: cultist_kneel,
+            
+            executes: [
+            	sacrifice__sacrifice,
+            	sacrifice__play_sound_effect_sacrifice,
+            ],
+		},
+		
+		sacrifice__sacrifice: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 1.5f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss,
+            controlledUnitState: sacrifice,
+            
+            executes: [
+            	sacrifice__summoner_cultist_leave,
+            	sacrifice__cultist_top_left_leave,
+            	sacrifice__cultist_top_right_leave,
+            	sacrifice__cultist_bottom_left_leave,
+            	sacrifice__cultist_bottom_right_leave,
+            	spawn_summoning_circle_effect,
+                play_sound_effect_summon,
+                summon_lich_form_1,
+            ],
+		},
+		
+		sacrifice__play_sound_effect_sacrifice: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 1.7f,
+			
+            soundEffectName: cultist_sacrifice,
+		},
+		
+		//**********************************************
+		//*** summoners leave
+		//**********************************************
+		
+		sacrifice__summoner_cultist_leave: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss,
+            controlledUnitTarget: {x: 2, y: 10},
+            
+            executes: [
+            	sacrifice__summoner_cultist_remove,
+            ],
+		},
+		
+		sacrifice__cultist_top_left_leave: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_top_left,
+            controlledUnitTarget: {x: 4, y: 10},
+            
+            executes: [
+            	sacrifice__cultist_top_left_remove,
+			],
+		},
+		
+		sacrifice__cultist_top_right_leave: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_top_right,
+            controlledUnitTarget: {x: 0, y: 10},
+            
+            executes: [
+            	sacrifice__cultist_top_right_remove,
+            ],
+		},
+		
+		sacrifice__cultist_bottom_left_leave: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_bottom_left,
+            controlledUnitTarget: {x: 4, y: 10},
+            
+            executes: [
+            	sacrifice__cultist_bottom_left_remove,
+			],
+		},
+		
+		sacrifice__cultist_bottom_right_leave: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_summoner_boss_bottom_right,
+            controlledUnitTarget: {x: 0, y: 10},
+            
+            executes: [
+            	sacrifice__cultist_bottom_right_remove,
+            ],
+		},
+		
+		sacrifice__summoner_cultist_remove: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l4_helheim__cultist_summoner_boss,
+            },
+		},
+		
+		sacrifice__cultist_top_left_remove: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l4_helheim__cultist_summoner_boss_top_left,
+			},
+		},
+		
+		sacrifice__cultist_top_right_remove: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l4_helheim__cultist_summoner_boss_top_right,
+			},
+		},
+		
+		sacrifice__cultist_bottom_left_remove: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l4_helheim__cultist_summoner_boss_bottom_left,
+			},
+		},
+		
+		sacrifice__cultist_bottom_right_remove: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: loa2_l4_helheim__cultist_summoner_boss_bottom_right,
+			},
+		},
+		
+		//**********************************************
+		//*** summon form 1
+		//**********************************************
+		
+		spawn_summoning_circle_effect: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+			},
+		},
+		
+		play_sound_effect_summon: {
+            type: PLAY_SOUND,
+            
+            executionDelayInSeconds: 3f,
+            
+            soundEffectName: summon,
+		},
+		
+		summon_lich_form_1: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 3f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+            controlledUnitState: summon, // TODO change after the lich is implemented (it's a vengeful spirit for now)
+            
+            executes: [
+                end,
+            ],
+		},
+		
+		// TODO start the boss fight and show the boss health bar
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

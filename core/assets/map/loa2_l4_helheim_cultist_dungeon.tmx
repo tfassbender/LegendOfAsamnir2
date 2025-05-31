@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3753">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3767">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1168,6 +1168,65 @@
     <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_2"/>
    </properties>
   </object>
+  <object id="3753" name="object.enemy_path_blocker" x="2213.88" y="760.021" width="52.1875" height="3.708"/>
+  <object id="3754" name="object.eventObject" x="2213.83" y="763.864" width="52.0988" height="3.5227">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__enter_boss_room"/>
+   </properties>
+  </object>
+  <object id="3759" name="npc.cultist" x="2368" y="608">
+   <properties>
+    <property name="removableByCutsceneEvent" value="true"/>
+    <property name="unitId" value="loa2_l4_helheim__cultist_summoner_boss_bottom_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3760" name="npc.cultist" x="2272" y="608">
+   <properties>
+    <property name="removableByCutsceneEvent" value="true"/>
+    <property name="unitId" value="loa2_l4_helheim__cultist_summoner_boss_bottom_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3761" name="npc.cultist" x="2272" y="534">
+   <properties>
+    <property name="removableByCutsceneEvent" value="true"/>
+    <property name="unitId" value="loa2_l4_helheim__cultist_summoner_boss_top_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3762" name="npc.cultist" x="2368" y="534">
+   <properties>
+    <property name="removableByCutsceneEvent" value="true"/>
+    <property name="unitId" value="loa2_l4_helheim__cultist_summoner_boss_top_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3763" name="npc.cultist" x="2322.53" y="564.298">
+   <properties>
+    <property name="removableByCutsceneEvent" value="true"/>
+    <property name="unitId" value="loa2_l4_helheim__cultist_summoner_boss"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3764" name="enemy.vengeful_spirit" x="2320.36" y="568.631">
+   <properties>
+    <property name="unitId" value="loa2_l4_helheim__cultist_sacrifice_boss"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3765" name="object.spawnPoint.summoning_circle" x="2320.36" y="579.636">
+   <properties>
+    <property name="spawn" value="summoning_circle"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3766" name="object.configObject" x="2240" y="601">
+   <properties>
+    <property name="unitId" value="cutscene_object__helheim__boss__camera_position"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
   <object id="3586" x="0" y="160" width="454" height="176"/>
@@ -1187,7 +1246,7 @@
   <object id="3600" x="2144" y="760.125" width="37" height="199.875"/>
   <object id="3601" x="2176" y="760" width="37.875" height="59.25"/>
   <object id="3602" x="2112" y="352" width="37.9091" height="448"/>
-  <object id="3603" x="2266" y="760.5" width="230" height="58.5"/>
+  <object id="3603" x="2266" y="760.136" width="230" height="58.8636"/>
   <object id="3604" x="2298.25" y="800" width="165.75" height="83.5"/>
   <object id="3605" x="2458.25" y="864" width="5.75" height="224"/>
   <object id="3606" x="896" y="1080.13" width="1567.33" height="7.875"/>

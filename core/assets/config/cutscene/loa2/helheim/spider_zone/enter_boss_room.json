@@ -25,6 +25,7 @@
             executes: [
 				move_thorin,
 				move_camera,
+				close_gate,
 				sultr_comment,
 			],
 		},
@@ -46,6 +47,17 @@
 			updatePositionRelativeToTarget: true,
 			controlledUnitTarget: {x: -2, y: -1.5},
 			speedFactor: 3f,
+		},
+		
+		close_gate: {
+			executionDelayInSeconds: 0.5f,
+			
+            type: EVENT,
+			
+			event: {
+				eventType: CLOSE_LOCK,
+				stringValue: loa2_l4_helheim_spider_zone__gate_boss_entry,
+			},
 		},
 		
 		sultr_comment: {

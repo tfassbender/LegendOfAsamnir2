@@ -28,8 +28,10 @@
 		id: worship,
 		animation: cultist_worship,
 		endsWithAnimation: true,
-		followingState: idle,
-		interruptingStates: []
+		followingState: worship, // continue to worship, till stopped by a cutscene
+		interruptingStates: [
+			idle, move, sacrifice, damage
+		]
 	},
 	{
 		id: damage,
