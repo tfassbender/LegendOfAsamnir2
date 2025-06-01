@@ -1663,11 +1663,11 @@
 		},
 		
 		imageOffsetX: 0f,
-		imageOffsetY: 0.1f,
+		imageOffsetY: -0.1f,
 		
 		bodyShape: OCTAGON,
-		bodyWidth: 2f,
-		bodyHeight: 1.4f,
+		bodyWidth: 1f,
+		bodyHeight: 1.8f,
 		
 		addSensor: true,
 		sensorRadius: 15f,

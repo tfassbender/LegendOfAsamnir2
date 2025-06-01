@@ -113,7 +113,7 @@
 			
             executionParameters: {
                 displayTextHeader: "Thorin",
-                displayText: "Could you just stay dead this time?\n                 \nThat would save us all some time...      ",
+                displayText: "Another summoning ritual?!\n                                 \nWe're gonna do this till you run out of idiots to sacrifice, right?      ",
                 showNextPageIcon: true,
 			}
             
@@ -342,11 +342,79 @@
             controlledUnitState: cultist_horror_appear,
             
             executes: [
-                end,
+                thorin_comment,
             ],
 		},
 		
-		// TODO start the boss fight and show the boss health bar
+		thorin_comment: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 2f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Oh no ... they summoned an even uglier ...\n                         \n... whatever you're supposed to be!        ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	stop_map_background_music
+			],
+		},
+		
+		stop_map_background_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                start_boss_fight,
+			],
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 2f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+            executes: [
+                play_boss_music,
+            ],
+		}
+		
+		play_boss_music: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_fight,
+                floatValue: 0f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
+			
+			executes: [
+            	wait_after_boss_fight_started,
+			],
+		},
+		
+		wait_after_boss_fight_started: {
+            type: WAIT,
+            executionDelayInSeconds: 2f,
+            
+            executes: [
+                end,
+			],
+		},
 		
 		end: {
 			type: WAIT,

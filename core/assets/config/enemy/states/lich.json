@@ -159,8 +159,6 @@
 		endsWithAnimation: true,
 		changeStateAfterAnimationDelay: 5f,
 		followingState: END,
-		stateEnteringSound: vengeful_spirit_death,
-		soundDelay: 0.5f,
 		interruptingStates: [],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true

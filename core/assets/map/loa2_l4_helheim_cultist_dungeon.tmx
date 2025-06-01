@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3767">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3770">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1209,7 +1209,7 @@
    </properties>
    <point/>
   </object>
-  <object id="3764" name="enemy.lich" x="2320.36" y="563.631">
+  <object id="3764" name="enemy.lich" x="2320.36" y="558.631">
    <properties>
     <property name="unitId" value="loa2_l4_helheim__cultist_sacrifice_boss"/>
    </properties>
@@ -1226,6 +1226,24 @@
     <property name="unitId" value="cutscene_object__helheim__boss__camera_position"/>
    </properties>
    <point/>
+  </object>
+  <object id="3767" name="object.eventObject" x="1242.18" y="369.858" width="12.3864" height="70.284">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="3768" name="object.eventObject" x="2144.68" y="1010.86" width="9.13636" height="69.284">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="3769" name="object.eventObject" x="2213.68" y="778.233" width="52.1364" height="4.534">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
