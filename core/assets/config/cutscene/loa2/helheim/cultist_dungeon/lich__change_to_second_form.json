@@ -1,0 +1,427 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__lich_change_to_second_form_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+			startsWithCutscene: true,
+			
+	        type: WAIT,
+	        
+            executes: [
+                move_thorin,
+                move_cultist_abomination,
+			],
+		},
+		
+		//**********************************************
+		//*** setup
+		//**********************************************
+		
+		move_thorin: {
+			executionDelayInSeconds: 1f,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: cutscene_object__helheim__boss__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: -1, y: 0},
+			
+			executes: [
+				spawn_cultist_sacrifices,
+				turn_around_thorin,
+				move_camera,
+			],
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__helheim__boss__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 3f,
+		},
+		
+		turn_around_thorin: { // makes thorin face the cultist abomination
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0.1, y: 0},
+		},
+		
+		move_cultist_abomination: {
+            executionDelayInSeconds: 2f,
+            
+            type: MOVE,
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 0, y: 0},
+		},
+		
+		// spawns all cultist sacrifices at once
+		spawn_cultist_sacrifices: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT_2,
+			},
+			
+			executes: [
+                move_cultist_sacrifice_1,
+                move_cultist_sacrifice_2,
+                move_cultist_sacrifice_3,
+                move_cultist_sacrifice_4,
+                move_cultist_sacrifice_5,
+			],
+		},
+		
+		//**********************************************
+		//*** line up cultist sacrifices
+		//**********************************************
+		
+		move_cultist_sacrifice_1: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 0.5f, // the delay is needed, because the units cannot be moved in the same world step they are spawned
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_1,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 2, y: 0},
+		},
+		
+		move_cultist_sacrifice_2: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 0.5f, // the delay is needed, because the units cannot be moved in the same world step they are spawned
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_2,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 3, y: 0},
+		},
+		
+		move_cultist_sacrifice_3: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 0.5f, // the delay is needed, because the units cannot be moved in the same world step they are spawned
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_3,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 4, y: 0},
+		},
+		
+		move_cultist_sacrifice_4: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 0.5f, // the delay is needed, because the units cannot be moved in the same world step they are spawned
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_4,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 5, y: 0},
+		},
+		
+		move_cultist_sacrifice_5: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 0.5f, // the delay is needed, because the units cannot be moved in the same world step they are spawned
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_5,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 6, y: 0},
+            
+            executes: [
+				thorin_comment
+			],
+		},
+		
+		thorin_comment: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "More idiots in black robes ...\n              \n... that's never a good sign!        ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	turn_cultist_abomination_to_sacrifices,
+                cultist_sacrifice_1__move_to_pentagram,
+			],
+		},
+		
+		turn_cultist_abomination_to_sacrifices: {
+            type: MOVE,
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+            controlledUnitTarget: {x: 0.1, y: 0},
+		},
+		
+		//**********************************************
+		//*** summoning ritual
+		//**********************************************
+		
+		cultist_sacrifice_1__move_to_pentagram: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 2f,
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_1,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 1, y: -0.5},
+            
+            executes: [
+            	cultist_abomination_change_state_devour,
+            	cultist_sacrifice_1__remove,
+            ],
+		},
+		
+		cultist_abomination_change_state_devour: {
+			type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+            controlledUnitState: cultist_horror_devour,
+		},
+		
+		cultist_sacrifice_1__remove: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 0.7f,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: l4_helheim_cultist_dungeon__sacrificing_cultist_1,
+            },
+            
+            executes: [
+            	cultist_sacrifice_2__move_to_pentagram,
+            ],
+		},
+		
+		cultist_sacrifice_2__move_to_pentagram: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_2,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 1, y: -0.5},
+            
+            executes: [
+            	cultist_abomination_change_state_devour,
+            	cultist_sacrifice_2__remove,
+            ],
+		},
+		
+		cultist_sacrifice_2__remove: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 0.7f,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: l4_helheim_cultist_dungeon__sacrificing_cultist_2,
+            },
+            
+            executes: [
+            	cultist_sacrifice_3__move_to_pentagram,
+            ],
+		},
+		
+		cultist_sacrifice_3__move_to_pentagram: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_3,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 1, y: -0.5},
+            
+            executes: [
+            	cultist_abomination_change_state_devour,
+            	cultist_sacrifice_3__remove,
+            ],
+		},
+		
+		cultist_sacrifice_3__remove: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 0.7f,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: l4_helheim_cultist_dungeon__sacrificing_cultist_3,
+            },
+            
+            executes: [
+            	cultist_sacrifice_4__move_to_pentagram,
+            ],
+		},
+		
+		cultist_sacrifice_4__move_to_pentagram: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_4,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 1, y: -0.5},
+            
+            executes: [
+            	cultist_abomination_change_state_devour,
+            	cultist_sacrifice_4__remove,
+            ],
+		},
+		
+		cultist_sacrifice_4__remove: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 0.7f,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: l4_helheim_cultist_dungeon__sacrificing_cultist_4,
+            },
+            
+            executes: [
+            	cultist_sacrifice_5__move_to_pentagram,
+            ],
+		},
+		
+		cultist_sacrifice_5__move_to_pentagram: {
+            type: MOVE,
+            
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: l4_helheim_cultist_dungeon__sacrificing_cultist_5,
+            targetPositionRelativeToUnitId: cutscene_object__helheim__boss__pentagram_center,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 1, y: -0.5},
+            
+            executes: [
+            	cultist_abomination_change_state_devour,
+            	cultist_sacrifice_5__remove,
+            ],
+		},
+		
+		cultist_sacrifice_5__remove: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 0.7f,
+            
+            event: {
+                eventType: CUTSCENE_REMOVE_UNIT,
+                stringValue: l4_helheim_cultist_dungeon__sacrificing_cultist_5,
+            },
+            
+            executes: [
+            	spawn_summoning_circle_effect,
+            	turn_cultist_abomination_to_thorin
+            	summon_lich_form_2,
+			],
+		},
+		
+		//**********************************************
+		//*** summon lich form 2
+		//**********************************************
+		
+		spawn_summoning_circle_effect: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 6f,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+			},
+		},
+		
+		turn_cultist_abomination_to_thorin: {
+			executionDelayInSeconds: 1f,
+			
+            type: MOVE,
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		summon_lich_form_2: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 3f,
+            
+            controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
+            controlledUnitState: cultist_horror_death,
+            
+            executes: [
+                stop_boss_background_music,
+                fire_config_event__lich_form_2_summoned,
+            ],
+		},
+		
+		fire_config_event__lich_form_2_summoned: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 4f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l4_helheim_cultist_dungeon__lich_form_2_summoned",
+			},
+		},
+		
+		stop_boss_background_music: {
+            type: EVENT,
+			
+			executionDelayInSeconds: 1f,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                play_boss_enraged_music,
+			],
+		},
+		
+		play_boss_enraged_music: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 3f,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_enraged,
+                floatValue: 0f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
+			
+			executes: [
+            	wait_after_second_form_summoned,
+			],
+		},
+		
+		wait_after_second_form_summoned: {
+            type: WAIT,
+            executionDelayInSeconds: 3f,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

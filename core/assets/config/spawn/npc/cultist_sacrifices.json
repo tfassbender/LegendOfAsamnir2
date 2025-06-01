@@ -1,0 +1,36 @@
+{
+	l4_helheim_cultist_dungeon__sacrificing_cultist_1: {
+		spawnType: npc.cultist,
+		events: [CUSTCENE_SPAWN_UNIT_2],
+		
+		spawnTypeMapProperties: "{unitId: \"l4_helheim_cultist_dungeon__sacrificing_cultist_1\", removableByCutsceneEvent: \"true\"}",
+	},
+	
+	l4_helheim_cultist_dungeon__sacrificing_cultist_2: {
+		spawnType: npc.cultist,
+		events: [CUSTCENE_SPAWN_UNIT_2],
+		
+		spawnTypeMapProperties: "{unitId: \"l4_helheim_cultist_dungeon__sacrificing_cultist_2\", removableByCutsceneEvent: \"true\"}",
+	},
+	
+	l4_helheim_cultist_dungeon__sacrificing_cultist_3: {
+        spawnType: npc.cultist,
+        events: [CUSTCENE_SPAWN_UNIT_2],
+        
+        spawnTypeMapProperties: "{unitId: \"l4_helheim_cultist_dungeon__sacrificing_cultist_3\", removableByCutsceneEvent: \"true\"}",
+	},
+	
+	l4_helheim_cultist_dungeon__sacrificing_cultist_4: {
+        spawnType: npc.cultist,
+        events: [CUSTCENE_SPAWN_UNIT_2],
+        
+        spawnTypeMapProperties: "{unitId: \"l4_helheim_cultist_dungeon__sacrificing_cultist_4\", removableByCutsceneEvent: \"true\"}",
+	},
+	
+	l4_helheim_cultist_dungeon__sacrificing_cultist_5: {
+        spawnType: npc.cultist,
+        events: [CUSTCENE_SPAWN_UNIT_2],
+        
+        spawnTypeMapProperties: "{unitId: \"l4_helheim_cultist_dungeon__sacrificing_cultist_5\", removableByCutsceneEvent: \"true\"}",
+	},
+}

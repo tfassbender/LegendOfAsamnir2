@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3770">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3777">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -809,6 +809,10 @@
    <point/>
   </object>
   <object id="3585" name="object.cultist_dungeon_gate" x="2400" y="371">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim__cultist_dungeon__gate_boss_exit"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
    <point/>
   </object>
   <object id="3667" name="object.rotating_puzzle" x="2336" y="913">
@@ -1244,6 +1248,42 @@
     <property name="booleanParameter" value="true"/>
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
+  </object>
+  <object id="3770" name="object.configObject" x="2320.33" y="565.636">
+   <properties>
+    <property name="unitId" value="cutscene_object__helheim__boss__pentagram_center"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3771" name="object.spawnPoint.cultist_2" x="2464" y="384">
+   <properties>
+    <property name="spawn" value="l4_helheim_cultist_dungeon__sacrificing_cultist_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3772" name="object.spawnPoint.cultist_1" x="2432" y="416">
+   <properties>
+    <property name="spawn" value="l4_helheim_cultist_dungeon__sacrificing_cultist_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3773" name="object.spawnPoint.cultist_3" x="2496" y="352">
+   <properties>
+    <property name="spawn" value="l4_helheim_cultist_dungeon__sacrificing_cultist_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3774" name="object.spawnPoint.cultist_4" x="2528" y="320">
+   <properties>
+    <property name="spawn" value="l4_helheim_cultist_dungeon__sacrificing_cultist_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3775" name="object.spawnPoint.cultist_5" x="2560" y="288">
+   <properties>
+    <property name="spawn" value="l4_helheim_cultist_dungeon__sacrificing_cultist_5"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">

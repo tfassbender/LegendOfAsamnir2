@@ -1,0 +1,62 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__lich_defeated_cutscene,
+	controlledActions: {
+		thorin_comment: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			startsWithCutscene: true,
+            
+			executionDelayInSeconds: 5f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Is it dead?\n                        \nNo more idiots in black robes who want to sacrifice themselves?        ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	open_boss_gate,
+			],
+		},
+		
+		open_boss_gate: {
+			executionDelayInSeconds: 1f,
+			
+            type: EVENT,
+			
+			event: {
+				eventType: OPEN_LOCK,
+				stringValue: loa2_l4_helheim__cultist_dungeon__gate_boss_exit,
+			},
+			
+			executes: [
+				thorin_comment_2,
+			]
+		},
+		
+		thorin_comment_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 4f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "It almost seems like it's over now...\n                         \nOk ... I guess I'll get going then ...     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

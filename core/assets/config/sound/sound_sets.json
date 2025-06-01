@@ -493,6 +493,10 @@
 					volume: 0.2,
 				},
 				// lich
+				devour: {
+					path: "sound/enemy/devour.mp3",
+					volume: 0.5,
+				},
 				nazgul_scream: {
 					path: "sound/enemy/nazgul_scream.mp3",
 					volume: 0.8,

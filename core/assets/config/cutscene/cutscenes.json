@@ -211,6 +211,8 @@
 	config/cutscene/loa2/helheim/cultist_dungeon/summon_vengeful_spirit_1.json,
 	config/cutscene/loa2/helheim/cultist_dungeon/summon_vengeful_spirit_2.json,
 	config/cutscene/loa2/helheim/cultist_dungeon/enter_boss_room.json,
+	config/cutscene/loa2/helheim/cultist_dungeon/lich__change_to_second_form.json,
+	config/cutscene/loa2/helheim/cultist_dungeon/boss_defeated.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard

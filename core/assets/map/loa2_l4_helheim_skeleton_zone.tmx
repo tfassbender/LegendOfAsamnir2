@@ -383,7 +383,7 @@
    </properties>
    <point/>
   </object>
-  <object id="2442" name="object.spawnPoint.magic_totem" x="1568" y="1344">
+  <object id="2442" name="object.spawnPoint.skeleton_king" x="1568" y="1344">
    <properties>
     <property name="spawn" value="l4_helheim_skeleton_zone__boss"/>
    </properties>

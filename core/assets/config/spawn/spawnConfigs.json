@@ -24,6 +24,7 @@
 	config/spawn/npc/modsognir_position_2.json,
 	config/spawn/npc/asamnir.json,
 	config/spawn/npc/impa.json,
+	config/spawn/npc/cultist_sacrifices.json,
 	
 	//******************
 	//*** enemies

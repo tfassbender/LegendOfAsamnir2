@@ -23,4 +23,9 @@ public class AnimationObject extends InteractiveObject {
 		// there is no body yet (because this is called from the executeInteraction method from the constructor)
 		// therefore this method needs to be empty
 	}
+	
+	@Override
+	protected void changeBodyToSensor() {
+		removeFromMap(); // remove the object after the animation is played, so spawn points can add the object again if needed
+	}
 }

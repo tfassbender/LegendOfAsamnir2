@@ -26,6 +26,12 @@
 			playMode: NORMAL
 		},
 		{
+			name: cultist_kneel,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
 			name: cultist_damage,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

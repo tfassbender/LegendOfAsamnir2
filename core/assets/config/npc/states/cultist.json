@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, sacrifice, worship, damage
+			move, sacrifice, worship, damage, die
 		]
 	},
 	{
@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, sacrifice, worship, damage
+			idle, sacrifice, worship, damage, die
 		]
 	},
 	{
@@ -30,7 +30,7 @@
 		endsWithAnimation: true,
 		followingState: worship, // continue to worship, till stopped by a cutscene
 		interruptingStates: [
-			idle, move, sacrifice, damage
+			idle, move, sacrifice, damage, die
 		]
 	},
 	{
@@ -38,6 +38,14 @@
 		animation: cultist_damage,
 		endsWithAnimation: true,
 		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: die,
+		animation: cultist_kneel,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
 		interruptingStates: []
 	},
 ]
