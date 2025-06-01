@@ -19,6 +19,7 @@ public class CharacterState implements CutsceneControlledState {
 	private static final SoundSet SOUND_SET = SoundManager.getInstance().loadSoundSet("enemy");
 	
 	protected AnimationDirector<TextureRegion> animation;
+	private int animationRepeatCount = 0;
 	
 	protected CharacterStateConfig config;
 	
@@ -43,6 +44,22 @@ public class CharacterState implements CutsceneControlledState {
 	
 	public AnimationDirector<TextureRegion> getAnimation() {
 		return animation;
+	}
+	
+	public boolean isAnimationFinished() {
+		// this method will be called on every world step, so we can increase the animationRepeatCount here
+		if (animation.isAnimationFinished()) {
+			animationRepeatCount++;
+			if (animationRepeatCount >= config.repeatAnimationTimes) {
+				return true;
+			}
+			else {
+				animation.resetStateTime();
+				return false;
+			}
+		}
+		
+		return false;
 	}
 	
 	public void leaveState() {

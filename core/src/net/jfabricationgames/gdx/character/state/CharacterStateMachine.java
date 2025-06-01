@@ -137,7 +137,7 @@ public class CharacterStateMachine {
 	}
 	
 	private boolean isChangeStateAfterAnimation(float delta) {
-		return currentState.config.endsWithAnimation && currentState.getAnimation().isAnimationFinished() && afterAnimationDelayEnded(delta);
+		return currentState.config.endsWithAnimation && currentState.isAnimationFinished() && afterAnimationDelayEnded(delta);
 	}
 	
 	private boolean isChangeStateAfterAttackFinishes(float delta) {

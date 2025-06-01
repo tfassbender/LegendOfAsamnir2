@@ -17,6 +17,7 @@ public class CharacterStateConfig {
 	public boolean abortSoundWhenStateInterrupted = false;
 	
 	public boolean endsWithAnimation = true;
+	public int repeatAnimationTimes = 1;
 	public boolean endsAfterAttackFinishes = false;
 	public float changeStateAfterAnimationDelay = 0f;
 	public String followingState;

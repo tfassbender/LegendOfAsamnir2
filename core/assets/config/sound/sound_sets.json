@@ -492,6 +492,11 @@
 					path: "sound/enemy/attack/vengeful_spirit_spectral_sword.mp3",
 					volume: 0.2,
 				},
+				// lich
+				nazgul_scream: {
+					path: "sound/enemy/nazgul_scream.mp3",
+					volume: 0.8,
+				},
 			}
 		},
 		cutscene: {

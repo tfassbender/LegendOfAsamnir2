@@ -127,6 +127,8 @@
 		id: rage, // no attack because it's used as summoning animation
 		animation: lich_rage,
 		endsWithAnimation: true,
+		repeatAnimationTimes: 3,
+		stateEnteringSound: nazgul_scream,
 		followingState: idle,
 		interruptingStates: []
 	},
