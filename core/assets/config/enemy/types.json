@@ -1644,4 +1644,38 @@
 			token_l4_statue: 1,
 		}
 	},
+	
+	lich: {
+		typeName: lich,
+		
+		animationsConfig: config/animation/enemy/lich.json,
+		stateConfig: config/enemy/states/lich.json,
+		initialState: cultist_idle, // starts as a cultist that is sacrificed
+		attackConfig: config/enemy/attack/lich.json,
+		
+		health: 50, // first form (cultist abomination) has only 50 health - will be set to 250 for the second form (lich) by the implementing class
+		movingSpeed: 1f,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 0f,
+			MAGIC: 2f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 2f,
+		bodyHeight: 1.4f,
+		
+		addSensor: true,
+		sensorRadius: 15f,
+		
+		pushForceDamage: 10,
+		pushForceHit: 60,
+		
+		isBoss: true
+		bossName: "Cultist Abomination - The devouring Husk", // first form - will be changed to "Lich - Herald of the Void" by the implementing class
+	},
 }

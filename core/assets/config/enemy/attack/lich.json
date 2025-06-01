@@ -1,0 +1,38 @@
+[
+	{
+	    // TODO nova attack
+	    
+		id: cultist_abomination_knives,
+		type: HIT,
+		delay: 0.3,
+		duration: 0,
+		damage: 15,
+		distFromCenter: 0.5,
+		hitFixtureRadius: 0.35,
+		pushForce: 100
+	},
+	{
+	    // TODO 
+	    
+		id: attack_cast,
+		type: HIT,
+		delay: 0.3,
+		duration: 0,
+		damage: 15,
+		distFromCenter: 0.5,
+		hitFixtureRadius: 0.35,
+		pushForce: 100
+	},
+	{
+	    // TODO 
+	    
+		id: attack_rage,
+		type: HIT,
+		delay: 0.3,
+		duration: 0,
+		damage: 15,
+		distFromCenter: 0.5,
+		hitFixtureRadius: 0.35,
+		pushForce: 100
+	},
+]

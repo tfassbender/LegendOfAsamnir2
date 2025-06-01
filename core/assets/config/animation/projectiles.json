@@ -141,5 +141,27 @@
 			playMode: NORMAL,
 			scale: 0.03,
 		},
+		
+		{
+            name: lich_spell_projectile_create,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL,
+            scale: 0.05,
+		},
+		{
+            name: lich_spell_projectile_hit,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL,
+            scale: 0.05,
+		},
+		{
+            name: lich_spell_projectile_move,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: LOOP,
+            scale: 0.05,
+		},
 	]
 }

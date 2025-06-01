@@ -1,0 +1,166 @@
+[
+	{
+		id: cultist_idle,
+		animation: cultist_idle,
+		endsWithAnimation: true,
+		followingState: cultist_idle,
+		interruptingStates: [
+			cultist_kneel
+		]
+	},
+	{
+		id: cultist_kneel,
+		animation: cultist_kneel,
+		endsWithAnimation: false, // will be ended by a cutscene
+		changeStateAfterAnimationDelay: 3f,
+		followingState: cultist_horror_appear,
+		interruptingStates: [
+			cultist_horror_appear
+		]
+	},
+	
+	{
+        id: cultist_horror_appear,
+        animation: cultist_horror_appear,
+        endsWithAnimation: true,
+        followingState: cultist_horror_idle,
+        interruptingStates: []
+	},
+	{
+        id: cultist_horror_idle,
+        animation: cultist_horror_idle,
+        endsWithAnimation: true,
+        followingState: cultist_horror_idle,
+        interruptingStates: [
+        	cultist_horror_move, cultist_horror_attack_devour, cultist_horror_attack_knifes, cultist_horror_damage, cultist_horror_death
+		]
+	},
+	{
+        id: cultist_horror_move,
+        animation: cultist_horror_move,
+        endsWithAnimation: true,
+        followingState: cultist_horror_idle,
+        interruptingStates: [
+        	cultist_horror_idle, cultist_horror_attack_devour, cultist_horror_attack_knifes, cultist_horror_damage, cultist_horror_death
+		]
+	},
+	{
+		// not a real attack - only used in cutscenes
+        id: cultist_horror_attack_devour,
+        animation: cultist_horror_attack_devour,
+        endsWithAnimation: true,
+        followingState: cultist_horror_idle,
+        interruptingStates: [
+        	cultist_horror_death
+		]
+	},
+	{
+        id: cultist_horror_attack_knifes,
+        animation: cultist_horror_knifes,
+        endsWithAnimation: true,
+        followingState: cultist_horror_idle,
+        interruptingStates: [
+        	cultist_horror_death
+		]
+	},
+	{
+        id: cultist_horror_damage,
+        animation: cultist_horror_damage,
+        endsWithAnimation: true,
+        followingState: cultist_horror_idle,
+        interruptingStates: [
+        	cultist_horror_death
+		],
+        flipAnimationToMovingDirection: false,
+        flipAnimationOnEnteringOnly: true
+	},
+	{
+        id: cultist_horror_death,
+        animation: cultist_horror_death,
+        endsWithAnimation: true,
+        changeStateAfterAnimationDelay: 3f,
+        followingState: rage,
+        interruptingStates: [],
+        flipAnimationToMovingDirection: false,
+        flipAnimationOnEnteringOnly: true
+	},
+	
+	
+	{
+        id: idle,
+        animation: lich_idle,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	move, attack_charge, attack_rage, damage, die
+        ]
+	},
+	{
+        id: move,
+        animation: lich_idle, // same animation because it's floating
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+            idle, attack_charge, attack_rage, damage, die
+        ]
+	},
+	{
+        id: attack_cast,
+        animation: lich_cast,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die
+        ]
+	},
+	{
+        id: attack_charge, // prepare the cast attack
+        animation: lich_charge,
+		attack: attack_cast,
+        endsWithAnimation: true,
+        followingState: attack_cast,
+        interruptingStates: [
+        	die
+        ]
+	},
+	{
+		id: rage, // no attack because it's used as summoning animation
+		animation: lich_rage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: attack_rage,
+		animation: lich_rage,
+		attack: attack_rage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: damage,
+		animation: lich_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: lich_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 5f,
+		followingState: END,
+		stateEnteringSound: vengeful_spirit_death,
+		soundDelay: 0.5f,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

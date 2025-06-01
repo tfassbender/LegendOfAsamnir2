@@ -520,6 +520,28 @@
 				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_sword_move,
 				raw_images/restricted/enemy/vengeful_spirit/vengeful_spirit_spectral_sword_hit,
 				
+				// cultist horror
+//				raw_images/restricted/enemy/cultist_horror/cultist_horror_appear_fall,
+				raw_images/restricted/enemy/cultist_horror/cultist_horror_appear,
+				raw_images/restricted/enemy/cultist_horror/cultist_horror_attack_devour,
+				raw_images/restricted/enemy/cultist_horror/cultist_horror_damage,
+				raw_images/restricted/enemy/cultist_horror/cultist_horror_death,
+				raw_images/restricted/enemy/cultist_horror/cultist_horror_idle,
+				raw_images/restricted/enemy/cultist_horror/cultist_horror_knifes,
+				raw_images/restricted/enemy/cultist_horror/cultist_horror_move,
+				
+				// lich
+				raw_images/restricted/enemy/lich/lich_cast,
+				raw_images/restricted/enemy/lich/lich_charge,
+				raw_images/restricted/enemy/lich/lich_damage,
+				raw_images/restricted/enemy/lich/lich_death,
+				raw_images/restricted/enemy/lich/lich_idle,
+				raw_images/restricted/enemy/lich/lich_rage,
+				raw_images/restricted/enemy/lich/lich_soul_storm_effect,
+				raw_images/restricted/enemy/lich/lich_spell_projectile_create,
+				raw_images/restricted/enemy/lich/lich_spell_projectile_hit,
+				raw_images/restricted/enemy/lich/lich_spell_projectile_move,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

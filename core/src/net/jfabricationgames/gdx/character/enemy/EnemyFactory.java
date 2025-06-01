@@ -16,6 +16,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Gargoyle;
 import net.jfabricationgames.gdx.character.enemy.implementation.GiantGolem;
 import net.jfabricationgames.gdx.character.enemy.implementation.GoblinKing;
 import net.jfabricationgames.gdx.character.enemy.implementation.Ifrit;
+import net.jfabricationgames.gdx.character.enemy.implementation.Lich;
 import net.jfabricationgames.gdx.character.enemy.implementation.Minotaur;
 import net.jfabricationgames.gdx.character.enemy.implementation.Ogre;
 import net.jfabricationgames.gdx.character.enemy.implementation.Phoenixling;
@@ -53,6 +54,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_SKELETON_KING = "skeleton_king";
 	private static final String ENEMY_NAME_SPIDER_QUEEN = "spider_queen";
 	private static final String ENEMY_NAME_VENGEFUL_SPIRIT = "vengeful_spirit";
+	private static final String ENEMY_NAME_LICH = "lich";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -142,6 +144,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_VENGEFUL_SPIRIT:
 				enemy = new VengefulSpirit(typeConfig, properties);
+				break;
+			case ENEMY_NAME_LICH:
+				enemy = new Lich(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

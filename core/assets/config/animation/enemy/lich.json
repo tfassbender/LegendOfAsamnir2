@@ -1,0 +1,100 @@
+{
+	configList: 
+	[
+		// cultist - before summoning
+		{
+			name: cultist_idle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		{
+			name: cultist_kneel,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
+		
+		// cultist horror - form 1
+		{
+            name: cultist_horror_appear,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: cultist_horror_attack_devour,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: cultist_horror_damage,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: cultist_horror_death,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: cultist_horror_idle,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: cultist_horror_knifes,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: cultist_horror_move,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		
+		// lich - form 2
+		{
+            name: lich_cast,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: lich_charge,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: lich_damage,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: lich_death,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: lich_idle,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: lich_rage,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+	]
+}

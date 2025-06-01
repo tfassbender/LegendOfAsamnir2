@@ -1202,20 +1202,20 @@
    </properties>
    <point/>
   </object>
-  <object id="3763" name="npc.cultist" x="2322.53" y="564.298">
+  <object id="3763" name="npc.cultist" x="2322.53" y="559.298">
    <properties>
     <property name="removableByCutsceneEvent" value="true"/>
     <property name="unitId" value="loa2_l4_helheim__cultist_summoner_boss"/>
    </properties>
    <point/>
   </object>
-  <object id="3764" name="enemy.vengeful_spirit" x="2320.36" y="568.631">
+  <object id="3764" name="enemy.lich" x="2320.36" y="563.631">
    <properties>
     <property name="unitId" value="loa2_l4_helheim__cultist_sacrifice_boss"/>
    </properties>
    <point/>
   </object>
-  <object id="3765" name="object.spawnPoint.summoning_circle" x="2320.36" y="579.636">
+  <object id="3765" name="object.spawnPoint.summoning_circle" x="2320.36" y="574.636">
    <properties>
     <property name="spawn" value="summoning_circle"/>
    </properties>

@@ -193,7 +193,6 @@
             	sacrifice__cultist_bottom_left_leave,
             	sacrifice__cultist_bottom_right_leave,
             	spawn_summoning_circle_effect,
-                play_sound_effect_summon,
                 summon_lich_form_1,
             ],
 		},
@@ -334,21 +333,13 @@
 			},
 		},
 		
-		play_sound_effect_summon: {
-            type: PLAY_SOUND,
-            
-            executionDelayInSeconds: 3f,
-            
-            soundEffectName: summon,
-		},
-		
 		summon_lich_form_1: {
 			type: CHANGE_STATE,
 			
 			executionDelayInSeconds: 3f,
             
             controlledUnitId: loa2_l4_helheim__cultist_sacrifice_boss,
-            controlledUnitState: summon, // TODO change after the lich is implemented (it's a vengeful spirit for now)
+            controlledUnitState: cultist_horror_appear,
             
             executes: [
                 end,
