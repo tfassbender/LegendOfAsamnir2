@@ -1,0 +1,25 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__key_found_cutscene,
+	controlledActions: {
+		thorin_comment: {
+			startsWithCutscene: true,
+			
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Another part of Garmr's key.\n                   \nI should probably bring all pieces that I collected back to Garmr.          \nI just need to find the way out of here...",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

@@ -126,15 +126,6 @@
   <object id="972" name="object.helheim_key_green" x="732" y="465">
    <point/>
   </object>
-  <object id="973" name="item.helheim_key_red" x="864" y="608">
-   <point/>
-  </object>
-  <object id="974" name="item.helheim_key_green" x="896" y="608">
-   <point/>
-  </object>
-  <object id="975" name="item.helheim_key_blue" x="928" y="608">
-   <point/>
-  </object>
   <object id="976" name="player.startingPosition" x="224" y="1344">
    <properties>
     <property name="startingPointId" value="1"/>

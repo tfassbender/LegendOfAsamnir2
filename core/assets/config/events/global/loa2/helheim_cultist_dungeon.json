@@ -58,6 +58,17 @@
 		}
 	},
 	
+	loa2_l4_helheim_cultist_dungeon__enter_portal: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_cultist_dungeon__enter_portal,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_cultist_dungeon__enter_portal_cutscene,
+		}
+	},
+	
 	//*******************************************
 	//*** tokens
 	//*******************************************
@@ -134,6 +145,21 @@
 		},
 		executionType: CONDITIONAL_EVENT,
 		conditionalExecutionId: loa2_l4_helheim__cultist_dungeon__open_boss_gate_if_rotating_puzzle_solved,
+	},
+	
+	//*******************************************
+	//*** key found
+	//*******************************************
+	
+	loa2_l4_helheim_cultist_dungeon__blue_key_picked_up: {
+        event: {
+            eventType: EVENT_ITEM_PICKED_UP,
+            stringValue: loa2_l4_helheim__key_blue,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_cultist_dungeon__key_found_cutscene,
+		}
 	},
 	
 	//*******************************************

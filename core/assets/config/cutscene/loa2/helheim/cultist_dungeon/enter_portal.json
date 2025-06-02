@@ -1,0 +1,114 @@
+{
+	id: loa2_l4_helheim_cultist_dungeon__enter_portal_cutscene,
+	controlledActions: {
+		start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim__key_piece_collected__blue,
+					executedStateName: thorin_comment__enter_portal,
+				},
+				{
+					// default case - key piece not collected
+					executedStateName: thorin_comment__key_piece_missing,
+				},
+			],
+		},
+		
+		thorin_comment__key_piece_missing: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "This doesn't look like a piece of garms key.\n                     \nI should look somewhere else.        ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                move_down,
+			],
+		},
+		
+		move_down: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: -2},
+			cameraFollowsTarget: false,
+			
+			executes: [
+                end,
+			]
+		},
+		
+		thorin_comment__enter_portal: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "A strange portal in an even stranger dungeon full of the strangest idiots in black robes that constantly try to kill me...      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_comment__enter_portal_2,
+			],
+		},
+		
+		thorin_comment__enter_portal_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "What could possibly go wrong?      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                move_up,
+			],
+		},
+		
+		move_up: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 0, y: 0.25},
+			cameraFollowsTarget: false,
+			
+			executes: [
+                change_map,
+			]
+		},
+		
+		change_map: {
+			executionDelayInSeconds: 0.5f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+                stringValue: loa2_l4_helheim_main,
+                intValue: 4,
+			},
+			
+			waitForEventToFinish: false,
+			cameraFollowsTarget: false,
+			
+			executes: [
+                end,
+			]
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

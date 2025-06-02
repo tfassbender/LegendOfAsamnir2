@@ -213,6 +213,8 @@
 	config/cutscene/loa2/helheim/cultist_dungeon/enter_boss_room.json,
 	config/cutscene/loa2/helheim/cultist_dungeon/lich__change_to_second_form.json,
 	config/cutscene/loa2/helheim/cultist_dungeon/boss_defeated.json,
+	config/cutscene/loa2/helheim/cultist_dungeon/key_found.json,
+	config/cutscene/loa2/helheim/cultist_dungeon/enter_portal.json,
 	
 	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
