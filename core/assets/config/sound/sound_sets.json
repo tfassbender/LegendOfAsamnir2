@@ -493,6 +493,10 @@
 					volume: 0.2,
 				},
 				// lich
+				sword_1: {
+					path: "sound/enemy/attack/sword_1.mp3",
+					volume: 0.8,
+				},
 				devour: {
 					path: "sound/enemy/devour.mp3",
 					volume: 0.5,

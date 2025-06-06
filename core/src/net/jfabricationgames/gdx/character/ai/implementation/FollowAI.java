@@ -93,7 +93,7 @@ public class FollowAI extends AbstractRelativeMovementAI {
 		subAI.endContact(contact);
 	}
 	
-	protected void followTarget(PlayableCharacter player) {
+	public void followTarget(PlayableCharacter player) {
 		targetToFollow = player;
 	}
 	protected void stopFollowingPlayer() {

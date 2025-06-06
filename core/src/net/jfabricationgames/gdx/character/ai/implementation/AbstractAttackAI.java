@@ -88,7 +88,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 		subAI.beginContact(contact);
 	}
 	
-	protected void setTargetingPlayer(PlayableCharacter collidingPlayer) {
+	public void setTargetingPlayer(PlayableCharacter collidingPlayer) {
 		targetingPlayer = collidingPlayer;
 		targetingPlayerLastKnownPosition = null;
 	}
