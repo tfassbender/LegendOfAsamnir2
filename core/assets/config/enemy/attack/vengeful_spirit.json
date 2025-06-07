@@ -11,7 +11,7 @@
 	},
 	{
 		id: attack_arcane_shower,
-		type: SPECTRAL_SWORD,
+		type: ANIMATED_HIT,
 		projectileType: arcane_shower,
 		delay: 0.5,
 		duration: 0,

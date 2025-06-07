@@ -105,7 +105,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-        	move, attack_charge, attack_rage_nova, damage, die
+        	move, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
         ]
 	},
 	{
@@ -114,7 +114,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-            idle, attack_charge, attack_rage_nova, damage, die
+            idle, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
         ]
 	},
 	
@@ -124,7 +124,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			die, attack_charge, attack_rage_nova
+			die, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
@@ -200,5 +200,41 @@
 		interruptingStates: [
 			die
 		]
+	},
+	
+	// arcane shower attack - starts at the players position
+	{
+        id: attack_arcane_shower,
+        animation: lich_rage,
+        attack: attack_arcane_shower,
+        endsWithAnimation: true,
+		repeatAnimationTimes: 3,
+        followingState: idle,
+        interruptingStates: [
+            die
+		]
+	},
+	
+	
+	// prepare the magic blast attack
+	{
+        id: attack_charge_magic_blast, 
+        animation: lich_charge,
+        endsWithAnimation: true,
+        followingState: attack_cast_magic_blast,
+        interruptingStates: [
+        	die
+        ]
+	},
+	// magic blast attack that follows the player
+	{
+        id: attack_cast_magic_blast,
+        animation: lich_cast,
+		attack: attack_homing_magic_blast,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die
+        ]
 	},
 ]

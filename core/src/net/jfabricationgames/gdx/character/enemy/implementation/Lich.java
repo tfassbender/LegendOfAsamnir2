@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
@@ -33,6 +34,7 @@ public class Lich extends Enemy {
 	
 	private boolean firstForm = true; // form 1: cultist abomination - form 2: lich
 	private boolean increaseHealthTillFull = false; // increase the health when the second form is summoned (so the health bar fills slowly)
+	private float healthLossForInverseControlSpellInPercent = 30f; // fire a spell that inverts the controls when the health is reduced by multiples this percentage 
 	
 	private AnimationDirector<TextureRegion> spellAnimation;
 	
@@ -104,7 +106,9 @@ public class Lich extends Enemy {
 			damage = Math.max(1f, damage);
 		}
 		
+		int healthSegmentBeforeDamage = (int) (health / typeConfig.health * (100f / healthLossForInverseControlSpellInPercent));
 		super.takeDamage(damage, attackInfo);
+		int healthSegmentAfterDamage = (int) (health / typeConfig.health * (100f / healthLossForInverseControlSpellInPercent));
 		
 		if (firstForm && getPercentualHealth() <= FIRST_FORM_CRITICAL_HEALTH_PERCENTAGE) {
 			health = typeConfig.health * FIRST_FORM_CRITICAL_HEALTH_PERCENTAGE; // prevent the victory sound that is played in the BossStatusBar when the boss health reaches 0
@@ -112,7 +116,18 @@ public class Lich extends Enemy {
 			// start the cutscene to summon the second form (the lich) instead of removing the enemy
 			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE) //
 					.setStringValue("loa2_l4_helheim_cultist_dungeon__lich_change_to_second_form_cutscene"));
+			
+			// abort attacks because the player can't block or dodge them when the cutscene starts
+			stateMachine.forceStateChange("cultist_horror_idle");
+			
 			firstForm = false;
+		}
+		
+		if (healthSegmentAfterDamage < healthSegmentBeforeDamage) {
+			// change the state to fire a spell that inverts the controls of the player
+			CharacterState attackState = stateMachine.getState("attack_rage_nova");
+			attackState.setAttackDirection(Vector2.Zero); // a direction must be set, but since it's a nova, the value doesn't matter
+			stateMachine.forceStateChange(attackState); // the spell state follows automatically
 		}
 	}
 	
@@ -165,23 +180,27 @@ public class Lich extends Enemy {
 	
 	private ArtificialIntelligence createLichAttackAI(ArtificialIntelligence ai) {
 		String stateNameAttackMelee = "attack_charge";
-		String stateNameAttackSpellInvertControls = "attack_rage_nova";
+		String stateNameAttackArcaneShower = "attack_arcane_shower";
+		String stateNameAttackMagicBlast = "attack_charge_magic_blast";
 		
 		CharacterState characterStateAttackMelee = stateMachine.getState(stateNameAttackMelee);
-		CharacterState characterStateAttackSpellInvertControls = stateMachine.getState(stateNameAttackSpellInvertControls);
+		CharacterState characterStateAttackArcaneShower = stateMachine.getState(stateNameAttackArcaneShower);
+		CharacterState characterStateAttackMagicBlast = stateMachine.getState(stateNameAttackMagicBlast);
 		
 		ArrayMap<String, CharacterState> attackStates = new ArrayMap<>();
 		attackStates.put(stateNameAttackMelee, characterStateAttackMelee);
-		attackStates.put(stateNameAttackSpellInvertControls, characterStateAttackSpellInvertControls);
+		attackStates.put(stateNameAttackArcaneShower, characterStateAttackArcaneShower);
+		attackStates.put(stateNameAttackMagicBlast, characterStateAttackMagicBlast);
 		
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
-		attackDistances.put(characterStateAttackMelee, 2f);
-		attackDistances.put(characterStateAttackSpellInvertControls, 100f); // no distance - the attack cannot be dodged
+		attackDistances.put(characterStateAttackMelee, 2.5f);
+		attackDistances.put(characterStateAttackArcaneShower, 100f); // no distance - can strike from anywhere
+		attackDistances.put(characterStateAttackMagicBlast, 10f);
 		
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
-		// TODO rework attack timers
-		attackTimers.put(characterStateAttackMelee, new FixedAttackTimer(4f));
-		attackTimers.put(characterStateAttackSpellInvertControls, new FixedAttackTimer(6f));
+		attackTimers.put(characterStateAttackMelee, new FixedAttackTimer(2f)); // melee attack must be fast to not let the player stand down and attack
+		attackTimers.put(characterStateAttackArcaneShower, new RandomIntervalAttackTimer(5f, 7f));
+		attackTimers.put(characterStateAttackMagicBlast, new RandomIntervalAttackTimer(4f, 5f));
 		
 		MultiAttackAI attackAI = new MultiAttackAI(ai, attackStates, attackDistances, attackTimers);
 		attackAI.setMoveToPlayerWhileAttacking(false);

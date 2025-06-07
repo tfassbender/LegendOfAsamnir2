@@ -31,6 +31,8 @@ public enum AttackType {
 	FORCE_FIELD(MAGIC), //
 	HADOUKEN(MAGIC), //
 	SPECTRAL_SWORD(MAGIC), //
+	HOMING_PROJECTILE(PROJECTILE), // a projectile that follows the player
+	HOMING_MAGIC_BLAST(HOMING_PROJECTILE), //
 	BEAM(ATTACK), //
 	CONTINUOUS_MAP_DAMAGE(ATTACK); // 
 	

@@ -158,11 +158,16 @@ public class CharacterStateMachine {
 	}
 	
 	/**
-	 * Changes the state to the given state id without checking if this is possible in the state configuration.<br>
-	 * Should only be used in Cutscenes.
+	 * Changes the state to the given state id without checking if this is possible in the state configuration.
 	 */
 	public void forceStateChange(String id) {
-		changeState(getState(id));
+		forceStateChange(getState(id));
+	}
+	/**
+	 * Changes the state to the given state without checking if this is possible in the state configuration.
+	 */
+	public void forceStateChange(CharacterState state) {
+		changeState(state);
 	}
 	
 	public boolean setState(String id) {

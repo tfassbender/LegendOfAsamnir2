@@ -530,4 +530,18 @@
 		speed: 60,
 		dampingAfterObjectHit: 5,
 	},
+	
+	homing_magic_blast: {
+		attackType: HOMING_MAGIC_BLAST,
+		
+		animation: lich_spell_projectile_move,
+		textureScale: 1,
+		removeAfterAnimationFinished: false,
+		
+		dampingAfterObjectHit: 0,
+		affectedByForceField: false,
+		multipleHitsPossible: false,
+		
+		speed: 5,
+	},
 }

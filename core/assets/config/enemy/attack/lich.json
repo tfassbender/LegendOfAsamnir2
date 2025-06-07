@@ -41,4 +41,24 @@
 			spellDuration: 10f,
 		}
 	},
+	{
+        id: attack_arcane_shower,
+		type: ANIMATED_HIT,
+		projectileType: arcane_shower,
+		delay: 0.6,
+		duration: 0,
+		damage: 10,
+		canBeBlockedCompletely: false,
+		pushForce: 0,
+		startAttackAtPlayerPosition: true,
+	},
+	{
+		id: attack_homing_magic_blast,
+        type: HOMING_PROJECTILE,
+		projectileType: homing_magic_blast,
+		delay: 0.1,
+        damage: 10,
+		canBeBlockedCompletely: false,
+		pushForce: 150,
+	},
 ]
