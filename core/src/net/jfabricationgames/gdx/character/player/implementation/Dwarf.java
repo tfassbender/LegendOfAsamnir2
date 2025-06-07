@@ -97,6 +97,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	private float freezingTimer; // if > 0 the player is frozen and movement is slowed down
 	private float heatDamageTimer; // if > 0 the player is damaged by heat (from the map) so the character turns red
+	private float invertedControlsTimer; // if > 0 the player has inverted controls (from a spell attack)
 	private boolean hookshotActive = false; // the player can't move while the hookshot is active
 	
 	public Dwarf() {
@@ -407,6 +408,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		
 		freezingTimer = Math.max(0, freezingTimer - delta);
 		heatDamageTimer = Math.max(0, heatDamageTimer - delta);
+		invertedControlsTimer = Math.max(0, invertedControlsTimer - delta);
 	}
 	
 	private void updateAction(float delta) {
@@ -630,6 +632,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			checkHealthBelowHalf(healthBelowHalfBeforeHit);
 			checkHealthNotFull(healthNotFullBeforeHit);
 			
+			if (attackType == AttackType.SPELL) {
+				handleSpellAttackHit(attackInfo);
+			}
+			
 			if (!propertiesDataHandler.isAlive()) {
 				die();
 			}
@@ -686,6 +692,12 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					.setEventType(EventType.PLAYER_STATS_BELOW_THRESHOLD) //
 					.setStringValue("ARMOR") //
 					.setFloatValue(0.5f));
+		}
+	}
+	
+	private void handleSpellAttackHit(AttackInfo attackInfo) {
+		if ("invert_controls".equals(attackInfo.getProperties().get("spellType"))) {
+			invertedControlsTimer = Float.parseFloat(attackInfo.getProperties().get("spellDuration", "10f"));
 		}
 	}
 	
@@ -775,6 +787,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	protected boolean isDamagedByHeat() {
 		return heatDamageTimer > 0;
+	}
+	
+	protected boolean hasInvertedControls() {
+		return invertedControlsTimer > 0;
 	}
 	
 	@Override

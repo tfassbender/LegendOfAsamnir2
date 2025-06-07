@@ -18,7 +18,7 @@ public class MultiAttackAI extends AbstractAttackAI {
 	protected ArrayMap<CharacterState, Float> attackDistances;
 	protected ArrayMap<CharacterState, AttackTimer> attackTimers; // if used it overrules the inherited attackTimer for the specific attack
 	
-	private boolean moveToPlayerWhenAttacking = true;
+	private boolean moveToPlayerWhileAttacking = true;
 	
 	public MultiAttackAI(ArtificialIntelligence subAI, //
 			ArrayMap<String, CharacterState> attackStates, //
@@ -133,7 +133,7 @@ public class MultiAttackAI extends AbstractAttackAI {
 			if (changeToAttackState(move.attack)) {
 				move.executed();
 			}
-			if (inAttackState() && moveToPlayerWhenAttacking) {
+			if (inAttackState() && moveToPlayerWhileAttacking) {
 				attackState.flipAnimationToDirection(directionToTarget());
 				if (distanceToTarget() > minDistanceToTargetPlayer) {
 					character.moveTo(move.targetPosition);
@@ -163,7 +163,7 @@ public class MultiAttackAI extends AbstractAttackAI {
 		return distanceToTarget <= attackDistance;
 	}
 	
-	public void setMoveToPlayerWhenAttacking(boolean moveToPlayerWhenAttacking) {
-		this.moveToPlayerWhenAttacking = moveToPlayerWhenAttacking;
+	public void setMoveToPlayerWhileAttacking(boolean moveToPlayerWhileAttacking) {
+		this.moveToPlayerWhileAttacking = moveToPlayerWhileAttacking;
 	}
 }

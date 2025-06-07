@@ -78,5 +78,12 @@
 			maxScale: 20,
 			duration: 2,
 		}
+		
+		{
+            name: arcane_swirl_loop,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: LOOP
+		}
 	]
 }

@@ -29,7 +29,7 @@ public class SkeletonKingAttackAI extends MultiAttackAI {
 		attackSwing = attackStates.get("attack_swing");
 		stateCommand = attackStates.get("command");
 		
-		setMoveToPlayerWhenAttacking(false);
+		setMoveToPlayerWhileAttacking(false);
 	}
 	
 	@Override

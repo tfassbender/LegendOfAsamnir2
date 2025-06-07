@@ -89,6 +89,7 @@ public class CharacterState implements CutsceneControlledState {
 		}
 		
 		animation.resetStateTime();
+		animationRepeatCount = 0;
 		playSound();
 	}
 	

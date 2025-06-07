@@ -104,6 +104,15 @@ class CharacterInputProcessor implements InputActionListener {
 		lastInputActionDelta += delta;
 		readInputs(delta);
 		
+		if (player.hasInvertedControls()) {
+			boolean temp = moveUp;
+			moveUp = moveDown;
+			moveDown = temp;
+			temp = moveLeft;
+			moveLeft = moveRight;
+			moveRight = temp;
+		}
+		
 		boolean move = player.canMove() && (moveUp || moveDown || moveLeft || moveRight);
 		boolean characterActionSet = false;
 		

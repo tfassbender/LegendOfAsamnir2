@@ -84,7 +84,7 @@ public class GoblinKing extends Enemy {
 		GoblinKingAttackAI attackAI = new GoblinKingAttackAI(ai, attackStates, attackDistances, new RandomIntervalAttackTimer(minTimeBetweenAttacks, maxTimeBetweenAttacks));
 		attackAI.setEnduranceConsumer(change -> enduranceDecrease = change);
 		attackAI.setAttackHandler(attackHandler);
-		attackAI.setMoveToPlayerWhenAttacking(false);
+		attackAI.setMoveToPlayerWhileAttacking(false);
 		
 		return attackAI;
 	}

@@ -1,5 +1,7 @@
 package net.jfabricationgames.gdx.attack;
 
+import com.badlogic.gdx.utils.ObjectMap;
+
 import net.jfabricationgames.gdx.projectile.ProjectileTypeConfig;
 
 public class AttackInfo {
@@ -8,6 +10,7 @@ public class AttackInfo {
 	private boolean canBeBlocked;
 	private boolean canBeBlockedCompletely;
 	private boolean shieldDamagedWhenBlocked;
+	private ObjectMap<String, String> properties;
 	
 	public static AttackInfo from(ProjectileTypeConfig projectileTypeConfig, AttackConfig attackConfig) {
 		return AttackInfo.from(attackConfig)
@@ -19,7 +22,8 @@ public class AttackInfo {
 		return new AttackInfo(attackConfig.type) //
 				.setCanBeBlocked(attackConfig.canBeBlocked) //
 				.setCanBeBlockedCompletely(attackConfig.canBeBlockedCompletely) //
-				.setShieldDamagedWhenBlocked(attackConfig.shieldDamagedWhenBlocked);
+				.setShieldDamagedWhenBlocked(attackConfig.shieldDamagedWhenBlocked) //
+				.setProperties(attackConfig.properties);
 	}
 	
 	public static AttackInfo dummy() {
@@ -70,6 +74,15 @@ public class AttackInfo {
 	
 	public AttackInfo setShieldDamagedWhenBlocked(boolean shieldDamagedWhenBlocked) {
 		this.shieldDamagedWhenBlocked = shieldDamagedWhenBlocked;
+		return this;
+	}
+	
+	public ObjectMap<String, String> getProperties() {
+		return properties;
+	}
+	
+	public AttackInfo setProperties(ObjectMap<String, String> properties) {
+		this.properties = properties;
 		return this;
 	}
 }

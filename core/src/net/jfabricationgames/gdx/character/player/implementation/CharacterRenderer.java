@@ -1,5 +1,6 @@
 package net.jfabricationgames.gdx.character.player.implementation;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -44,6 +45,7 @@ class CharacterRenderer {
 	private AnimationManager animationManager;
 	
 	protected AnimationDirector<TextureRegion> animation;
+	private AnimationDirector<TextureRegion> invertedControlsAnimation;
 	
 	private TextureLoader textureLoader;
 	protected TextureRegion idleDwarfSprite;
@@ -68,6 +70,8 @@ class CharacterRenderer {
 		darknessAnimation = animationManager.getGrowingAnimationDirector("darkness_fade");
 		
 		animation = getAnimation();
+		
+		invertedControlsAnimation = animationManager.getTextureAnimationDirector("arcane_swirl_loop");
 	}
 	
 	private AnimationDirector<TextureRegion> getAnimation() {
@@ -131,6 +135,8 @@ class CharacterRenderer {
 		draw(batch, frame, 0, 0, frame.getRegionWidth(), frame.getRegionHeight());
 		
 		batch.setColor(color); // reset to the original color
+		
+		drawEffects(batch);
 	}
 	
 	private void setSpriteColor(SpriteBatch batch) {
@@ -180,6 +186,17 @@ class CharacterRenderer {
 				Constants.WORLD_TO_SCREEN, // scaleX
 				Constants.WORLD_TO_SCREEN, // scaleY
 				0.0f); // rotation
+	}
+	
+	private void drawEffects(SpriteBatch batch) {
+		if (player.hasInvertedControls()) {
+			invertedControlsAnimation.increaseStateTime(Gdx.graphics.getDeltaTime());
+			TextureRegion region = invertedControlsAnimation.getKeyFrame();
+			invertedControlsAnimation.getSpriteConfig() //
+					.setX((player.bodyHandler.body.getPosition().x - region.getRegionWidth() * 0.5f + PHYSICS_BODY_POSITION_OFFSET.x)) //
+					.setY((player.bodyHandler.body.getPosition().y - region.getRegionHeight() * 0.5f + PHYSICS_BODY_POSITION_OFFSET.y));
+			invertedControlsAnimation.draw(batch);
+		}
 	}
 	
 	private float getDrawingDirectionOffset() {

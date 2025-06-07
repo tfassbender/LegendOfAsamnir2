@@ -1,13 +1,20 @@
 package net.jfabricationgames.gdx.character.enemy.implementation;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.utils.ArrayMap;
 
+import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.ai.implementation.FollowAI;
+import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
+import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
+import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.RandomIntervalAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
@@ -27,8 +34,12 @@ public class Lich extends Enemy {
 	private boolean firstForm = true; // form 1: cultist abomination - form 2: lich
 	private boolean increaseHealthTillFull = false; // increase the health when the second form is summoned (so the health bar fills slowly)
 	
+	private AnimationDirector<TextureRegion> spellAnimation;
+	
 	public Lich(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
+		
+		spellAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy("lich_soul_storm_effect");
 		
 		health = 10f; // TODO remove this after tests
 	}
@@ -54,6 +65,7 @@ public class Lich extends Enemy {
 		CharacterState attackState = stateMachine.getState("cultist_horror_attack_knifes");
 		
 		FightAI fightAI = new FightAI(ai, attackState, new RandomIntervalAttackTimer(3f, 4f), 2f);
+		fightAI.setMoveToPlayerWhileAttacking(false);
 		
 		return fightAI;
 	}
@@ -71,6 +83,17 @@ public class Lich extends Enemy {
 				// fill the health bar in 3 seconds (using delta time)
 				health += typeConfig.health / (3f / delta);
 			}
+		}
+		
+		// draw the spell animation in the state "attack_rage_spell_invert_controls"
+		if ("attack_rage_spell_invert_controls".equals(stateMachine.getCurrentState().getStateName())) {
+			spellAnimation.increaseStateTime(delta);
+			TextureRegion region = spellAnimation.getKeyFrame();
+			spellAnimation.getSpriteConfig() //
+					.setX((body.getPosition().x - region.getRegionWidth() * 0.5f + imageOffsetX)) //
+					.setY((body.getPosition().y - region.getRegionHeight() * 0.5f + imageOffsetY));
+			spellAnimation.draw(batch);
+			// spell animation is a loop, so it doesn't need to be restarted
 		}
 	}
 	
@@ -141,14 +164,30 @@ public class Lich extends Enemy {
 	}
 	
 	private ArtificialIntelligence createLichAttackAI(ArtificialIntelligence ai) {
-		CharacterState attackState = stateMachine.getState("attack_charge");
-		// TODO rage attack state
+		String stateNameAttackMelee = "attack_charge";
+		String stateNameAttackSpellInvertControls = "attack_rage_nova";
 		
-		FightAI fightAI = new FightAI(ai, attackState, new RandomIntervalAttackTimer(3f, 4f), 2f);
-		fightAI.setMoveWhileAttacking(false);
-		fightAI.setTargetingPlayer(Player.getInstance()); // the player is already inside the sensor range, so set the target immediately
+		CharacterState characterStateAttackMelee = stateMachine.getState(stateNameAttackMelee);
+		CharacterState characterStateAttackSpellInvertControls = stateMachine.getState(stateNameAttackSpellInvertControls);
 		
-		return fightAI;
+		ArrayMap<String, CharacterState> attackStates = new ArrayMap<>();
+		attackStates.put(stateNameAttackMelee, characterStateAttackMelee);
+		attackStates.put(stateNameAttackSpellInvertControls, characterStateAttackSpellInvertControls);
+		
+		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
+		attackDistances.put(characterStateAttackMelee, 2f);
+		attackDistances.put(characterStateAttackSpellInvertControls, 100f); // no distance - the attack cannot be dodged
+		
+		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
+		// TODO rework attack timers
+		attackTimers.put(characterStateAttackMelee, new FixedAttackTimer(4f));
+		attackTimers.put(characterStateAttackSpellInvertControls, new FixedAttackTimer(6f));
+		
+		MultiAttackAI attackAI = new MultiAttackAI(ai, attackStates, attackDistances, attackTimers);
+		attackAI.setMoveToPlayerWhileAttacking(false);
+		attackAI.setTargetingPlayer(Player.getInstance()); // the player is already inside the sensor range, so set the target immediately
+		
+		return attackAI;
 	}
 	
 	@Override

@@ -70,7 +70,7 @@ public class VengefulSpirit extends Enemy {
 		attackTimers.put(attackArcaneShower, new FixedAttackTimer(5f));
 		
 		MultiAttackAI attackAi = new MultiAttackAI(ai, attackStates, attackDistances, attackTimers);
-		attackAi.setMoveToPlayerWhenAttacking(false);
+		attackAi.setMoveToPlayerWhileAttacking(false);
 		
 		return attackAi;
 	}

@@ -1,4 +1,7 @@
 [
+	//*****************************************************
+	//*** Cultist - before summoning form 1
+	//*****************************************************
 	{
 		id: cultist_idle,
 		animation: cultist_idle,
@@ -19,6 +22,9 @@
 		]
 	},
 	
+	//*****************************************************
+	//*** Cultist horror - form 1
+	//*****************************************************
 	{
         id: cultist_horror_appear,
         animation: cultist_horror_appear,
@@ -90,14 +96,16 @@
         flipAnimationOnEnteringOnly: true
 	},
 	
-	
+	//*****************************************************
+	//*** Lich - form 2 - common states
+	//*****************************************************
 	{
         id: idle,
         animation: lich_idle,
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-        	move, attack_charge, attack_rage, damage, die
+        	move, attack_charge, attack_rage_nova, damage, die
         ]
 	},
 	{
@@ -106,54 +114,17 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-            idle, attack_charge, attack_rage, damage, die
+            idle, attack_charge, attack_rage_nova, damage, die
         ]
 	},
-	{
-        id: attack_cast,
-        animation: lich_cast,
-        endsWithAnimation: true,
-        followingState: idle,
-        interruptingStates: [
-        	die
-        ]
-	},
-	{
-        id: attack_charge, // prepare the cast attack
-        animation: lich_charge,
-		attack: attack_cast,
-        endsWithAnimation: true,
-        followingState: attack_cast,
-        interruptingStates: [
-        	die
-        ]
-	},
-	{
-		id: rage, // no attack because it's used as summoning animation
-		animation: lich_rage,
-		endsWithAnimation: true,
-		repeatAnimationTimes: 3,
-		stateEnteringSound: nazgul_scream,
-		followingState: idle,
-		interruptingStates: []
-	},
-	{
-		id: attack_rage,
-		animation: lich_rage,
-		attack: attack_rage,
-		endsWithAnimation: true,
-		followingState: idle,
-		interruptingStates: [
-			die
-		]
-	},
+	
 	{
 		id: damage,
 		animation: lich_damage,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			die
+			die, attack_charge, attack_rage_nova
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
@@ -167,5 +138,67 @@
 		interruptingStates: [],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
+	},
+	
+	//*****************************************************
+	//*** Lich - form 2 - attack states
+	//*****************************************************
+	
+	{
+	    // no attack because it's used as summoning animation
+		id: rage, 
+		animation: lich_rage,
+		endsWithAnimation: true,
+		repeatAnimationTimes: 3,
+		stateEnteringSound: nazgul_scream,
+		followingState: idle,
+		interruptingStates: []
+	},
+	
+	// prepare the cast attack
+	{
+        id: attack_charge, 
+        animation: lich_charge,
+        endsWithAnimation: true,
+        followingState: attack_cast,
+        interruptingStates: [
+        	die
+        ]
+	},
+	// melee attack
+	{
+        id: attack_cast,
+        animation: lich_cast,
+		attack: attack_cast,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die
+        ]
+	},
+	
+	// nova attack to prepare a spell attack
+	{
+		id: attack_rage_nova,
+		animation: lich_rage,
+		attack: attack_rage_nova,
+		endsWithAnimation: true,
+		followingState: attack_rage_spell_invert_controls,
+		interruptingStates: [
+			die
+		]
+	},
+	// spell attack after the nova - cannot be dodged - inverts the player's controls
+	{
+		id: attack_rage_spell_invert_controls,
+		animation: lich_rage,
+		attack: attack_rage_spell_invert_controls,
+		endsWithAnimation: true,
+		repeatAnimationTimes: 5,
+		stateEnteringSound: nazgul_scream,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
 	},
 ]

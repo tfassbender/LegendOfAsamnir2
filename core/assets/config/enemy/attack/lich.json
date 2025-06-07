@@ -1,4 +1,5 @@
 [
+	// form 1 - cultist abomination
 	{
 		id: cultist_abomination_knives,
 		type: NOVA,
@@ -6,30 +7,38 @@
 		duration: 0,
 		damage: 10,
 		hitFixtureRadius: 2.2,
-		pushForce: 100
+		pushForce: 50
 	},
+	
+	// form 2 - lich
 	{
-	    // TODO 
-	    
 		id: attack_cast,
 		type: HIT,
-		delay: 0.3,
+		delay: 0.1,
 		duration: 0,
 		damage: 15,
-		distFromCenter: 0.5,
-		hitFixtureRadius: 0.35,
-		pushForce: 100
+		distFromCenter: 2f,
+		hitFixtureRadius: 2f,
+		pushForce: 200
 	},
 	{
-	    // TODO 
-	    
-		id: attack_rage,
-		type: HIT,
+		id: attack_rage_nova,
+		type: NOVA,
 		delay: 0.3,
 		duration: 0,
-		damage: 15,
-		distFromCenter: 0.5,
-		hitFixtureRadius: 0.35,
-		pushForce: 100
+		damage: 5,
+		hitFixtureRadius: 4,
+		pushForce: 300
+	},
+	{
+		id: attack_rage_spell_invert_controls,
+		type: SPELL,
+		delay: 2,
+		damage: 0,
+		hitFixtureRadius: 20, // cannot be dodged
+		properties: {
+			spellType: invert_controls,
+			spellDuration: 10f,
+		}
 	},
 ]

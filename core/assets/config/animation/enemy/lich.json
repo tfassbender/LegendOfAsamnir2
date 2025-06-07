@@ -96,5 +96,13 @@
             frameDuration: 0.1,
             playMode: NORMAL
 		},
+		
+		// effects
+		{
+            name: lich_soul_storm_effect,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: LOOP
+		},
 	]
 }

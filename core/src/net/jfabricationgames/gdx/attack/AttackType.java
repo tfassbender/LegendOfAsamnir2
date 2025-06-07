@@ -6,6 +6,7 @@ public enum AttackType {
 	MELEE(ATTACK), //
 	HIT(MELEE), //
 	SPIN_ATTACK(HIT), //
+	SPELL(MELEE), // magic would make more sense, but the spell is no projectile
 	NOVA(MELEE), //
 	PROJECTILE(ATTACK), //
 	ARROW(PROJECTILE), //

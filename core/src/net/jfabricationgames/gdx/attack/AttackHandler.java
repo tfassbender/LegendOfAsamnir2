@@ -80,7 +80,13 @@ public class AttackHandler implements CharacterStateAttackHandler {
 	
 	@Override
 	public Attack startAttack(String attack, Vector2 direction) {
-		return startAttack(configs.get(attack), direction, collisionType);
+		AttackConfig attackConfig = configs.get(attack);
+		if (attackConfig == null) {
+			Gdx.app.error(getClass().getSimpleName(), "No attack config found for attack '" + attack + "'. Available attacks: " + configs.keys());
+			return null;
+		}
+		
+		return startAttack(attackConfig, direction, collisionType);
 	}
 	
 	private Attack startAttack(AttackConfig config, Vector2 direction, PhysicsCollisionType collisionType) {

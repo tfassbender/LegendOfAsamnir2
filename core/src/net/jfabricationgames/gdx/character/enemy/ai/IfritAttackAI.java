@@ -32,7 +32,7 @@ public class IfritAttackAI extends MultiAttackAI {
 		attackFireBall = attackStates.get("attack_throw_fire_ball");
 		attackFireSoil = attackStates.get("attack_fire_soil");
 		
-		setMoveToPlayerWhenAttacking(false);
+		setMoveToPlayerWhileAttacking(false);
 	}
 	
 	@Override

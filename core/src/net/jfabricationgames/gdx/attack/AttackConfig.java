@@ -1,5 +1,7 @@
 package net.jfabricationgames.gdx.attack;
 
+import com.badlogic.gdx.utils.ObjectMap;
+
 public class AttackConfig {
 	
 	public String id;
@@ -22,4 +24,5 @@ public class AttackConfig {
 	public AttackWeaponType weaponType; // used to adapt attacks to skill levels
 	public float projectileStartOffsetY;
 	public boolean startAttackAtPlayerPosition;
+	public ObjectMap<String, String> properties = new ObjectMap<>(); // additional properties that will be added and can be read by the target that gets hit by the attack
 }

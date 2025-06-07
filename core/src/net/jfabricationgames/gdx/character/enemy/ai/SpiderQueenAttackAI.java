@@ -26,7 +26,7 @@ public class SpiderQueenAttackAI extends MultiAttackAI {
 		attackCocoon = attackStates.get("attack_cocoon");
 		attackCocoonProjectile = attackStates.get("attack_cocoon_projectile");
 		
-		setMoveToPlayerWhenAttacking(false);
+		setMoveToPlayerWhileAttacking(false);
 	}
 	
 	@Override
