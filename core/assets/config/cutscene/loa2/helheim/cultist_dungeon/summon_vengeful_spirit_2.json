@@ -7,6 +7,11 @@
 			
 			switchConditions: [
 				{
+				    // the enemy doesn't exist if it was defeated and the respawn checkpoint was triggered afterwards
+					conditionId: loa2_l4_helheim__vengeful_spirit_2__unit_not_existing_on_map,
+					executedStateName: sacrifice__summoner_cultist_remove, // skip the cutscene and remove the summoner
+				},
+				{
 					conditionId: loa2_l4_helheim__vengeful_spirit_2__cutscene_triggered,
 					executedStateName: end,
 				},

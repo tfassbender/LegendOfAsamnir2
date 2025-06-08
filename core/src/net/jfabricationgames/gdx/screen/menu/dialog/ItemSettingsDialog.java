@@ -239,6 +239,15 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 					itemExplanationText = "[#C8441B]???:\n[#000000]You haven't found this item yet.";
 				}
 				break;
+			case "itemsettings_dialog_checkbox_compass":
+				checkbox = itemCheckboxes.get(9);
+				if (SpecialAction.COMPASS.canBeUsed()) {
+					itemExplanationText = "[#C8441B]Compass:\n[#000000]A magical item that can show the direction to objectives or points of interest.";
+				}
+				else {
+					itemExplanationText = "[#C8441B]???:\n[#000000]You haven't found this item yet.";
+				}
+				break;
 			default:
 				throw new IllegalStateException("Unexpected button state identifier: " + stateName);
 		}

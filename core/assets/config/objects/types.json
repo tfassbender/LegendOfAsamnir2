@@ -901,9 +901,9 @@
 		collisionType: OBSTACLE_SENSOR,
 		
 		physicsBodySizeFactorX: 0.8f,
-		physicsBodySizeFactorY: 0.3f,
+		physicsBodySizeFactorY: 0.2f,
 		physicsBodyOffsetFactorX: 0f,
-		physicsBodyOffsetFactorY: 0.2f,
+		physicsBodyOffsetFactorY: 0.15f,
 		
 		addSensor: false,
 		isSensor: true,

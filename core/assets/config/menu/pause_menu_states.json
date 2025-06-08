@@ -295,10 +295,16 @@
 	
 	itemsettings_dialog_checkbox_hookshot: {
         up: itemsettings_dialog_checkbox_ice_pick,
+        down: itemsettings_dialog_checkbox_compass,
         right: itemsettings_dialog_button_back,
         select: toggleItemSettingsCheckbox,
 	},
 	
+	itemsettings_dialog_checkbox_compass: {
+        up: itemsettings_dialog_checkbox_hookshot,
+        right: itemsettings_dialog_button_back,
+        select: toggleItemSettingsCheckbox,
+	},
 	
 	//*********************************************
 	//*** Sound Settings Dialog

@@ -163,11 +163,35 @@
 		}
 	},
 	
+	loa2_l4_helheim__vengeful_spirit_1__unit_not_existing_on_map: {
+		conditionType: NOT,
+		conditionalParameters: {
+            condition: {
+                conditionType: UNIT_EXISTING_ON_MAP,
+				parameters: {
+		            unitId: loa2_l4_helheim__cultist_sacrifice_1,
+				}
+			},
+		}
+	},
+	
 	loa2_l4_helheim__vengeful_spirit_2__cutscene_triggered: {
         conditionType: GLOBAL_VALUE_SET,
         parameters: {
             key: loa2_l4_helheim__vengeful_spirit_2__cutscene_triggered,
             expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim__vengeful_spirit_2__unit_not_existing_on_map: {
+		conditionType: NOT,
+		conditionalParameters: {
+            condition: {
+                conditionType: UNIT_EXISTING_ON_MAP,
+				parameters: {
+		            unitId: loa2_l4_helheim__cultist_sacrifice_2,
+				}
+			},
 		}
 	},
 	

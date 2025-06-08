@@ -112,6 +112,7 @@ public class VengefulSpirit extends Enemy {
 		AttackType attackType = attackInfo.getAttackType();
 		if (defenseMode && !attackType.isSubTypeOf(AttackType.MAGIC)) { // only take damage from magic in defense mode
 			spectralShieldAnimation = SpectralShieldState.DAMAGE.animation;
+			spectralShieldAnimation.resetStateTime();
 			return;
 		}
 		
@@ -124,12 +125,14 @@ public class VengefulSpirit extends Enemy {
 			// end the defense mode when attacked by a magic attack
 			spectralShieldState = SpectralShieldState.BREAK;
 			spectralShieldAnimation = SpectralShieldState.BREAK.animation;
+			spectralShieldAnimation.resetStateTime();
 			defenseMode = false;
 		}
 		else if (healthSegmentAfterDamage < healthSegmentBeforeDamage && !fullHealthBeforeDamage) {
 			defenseMode = true;
 			spectralShieldState = SpectralShieldState.APPEAR;
 			spectralShieldAnimation = SpectralShieldState.APPEAR.animation;
+			spectralShieldAnimation.resetStateTime();
 		}
 	}
 	

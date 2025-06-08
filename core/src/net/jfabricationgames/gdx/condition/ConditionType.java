@@ -267,6 +267,21 @@ public enum ConditionType {
 			
 			return true;
 		}
+	},
+	UNIT_EXISTING_ON_MAP {
+		
+		private static final String PARAMETER_UNIT_ID = "unitId";
+		
+		@Override
+		public boolean check(Condition condition) {
+			String unitId = condition.parameters.get(PARAMETER_UNIT_ID);
+			if (unitId == null) {
+				Gdx.app.error(getDeclaringClass().getSimpleName(), "The parameter for the UNIT_ID_EXISTING_ON_MAP condition is not set correctly: unitId: " + unitId);
+				return false;
+			}
+			return GameMapManager.getInstance().getMap().getUnitById(unitId) != null;
+		}
+		
 	};
 	
 	private static final String CONDITIONAL_PARAMETERS_KEY_CONDITION_1 = "condition";

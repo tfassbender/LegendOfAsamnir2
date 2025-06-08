@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3784">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3787">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1242,7 +1242,7 @@
     <property name="eventParameter" value="respawnCheckpoint"/>
    </properties>
   </object>
-  <object id="3768" name="object.eventObject" x="2144.68" y="1010.86" width="9.13636" height="69.284">
+  <object id="3768" name="object.eventObject" x="2048.68" y="1010.86" width="9.13636" height="69.284">
    <properties>
     <property name="booleanParameter" value="true"/>
     <property name="eventParameter" value="respawnCheckpoint"/>
@@ -1317,6 +1317,18 @@
    <point/>
   </object>
   <object id="3783" name="item.shield_full" x="2256" y="815">
+   <point/>
+  </object>
+  <object id="3784" name="object.eventObject" x="1760" y="434" width="12.3864" height="70.284">
+   <properties>
+    <property name="booleanParameter" value="true"/>
+    <property name="eventParameter" value="respawnCheckpoint"/>
+   </properties>
+  </object>
+  <object id="3785" name="item.health_full" x="2336" y="192">
+   <point/>
+  </object>
+  <object id="3786" name="item.shield_full" x="2336" y="160">
    <point/>
   </object>
  </objectgroup>

@@ -84,6 +84,7 @@
             executes: [
             	beeleth_what_are_you_doing_here,
             	cultist_change_state_damage,
+            	play_sound_whip,
             ],
 		},
 		
@@ -97,13 +98,21 @@
             controlledUnitState: damage,
 		},
 		
+		play_sound_whip: {
+            type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 0.2f,
+			
+            soundEffectName: whip,
+		},
+		
 		beeleth_what_are_you_doing_here: {
 			type: SHOW_ON_SCREEN_TEXT,
 			
 			executionParameters: {
 			    colorHeader: #eb345b,
 				displayTextHeader: "Beeleth",
-				displayText: "What does it look like I'm doing?\n            \nThese cultists were very rude, so I got to teach them a lesson!          \nWouldn't you like to join me dear?      ",
+				displayText: "What does it look like I'm doing?\n            \nThese cultists were very rude, so I got to teach them a lesson!          \nWouldn't you like to join me, dear?      ",
 				showNextPageIcon: true,
 			}
 			
@@ -123,6 +132,7 @@
             
             executes: [
             	thorin_choice_2,
+            	play_sound_whip,
             ],
 		},
 		
