@@ -535,13 +535,17 @@
 		attackType: HOMING_MAGIC_BLAST,
 		
 		animation: lich_spell_projectile_move,
+		animationHit: lich_spell_projectile_hit,
+		textureInitialRotation: 0,
 		textureScale: 1,
 		removeAfterAnimationFinished: false,
+		removeAfterHit: true,
 		
-		dampingAfterObjectHit: 0,
-		affectedByForceField: false,
 		multipleHitsPossible: false,
 		
 		speed: 5,
+		damping: 10,
+		dampingAfterObjectHit: 10,
+		timeActive: 5,
 	},
 }

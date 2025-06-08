@@ -2,8 +2,8 @@
 	name: Helheim,
 	texture: {
 		atlas: packed/menu/menu.atlas,
-		texture: mini_map_loa2_l4_helheim_spider_zone, // TODO change to the correct texture
+		texture: mini_map_loa2_l4_helheim_cultist_dungeon,
 	},
 	textureWidth: 500,
-	textureHeight: 326,
+	textureHeight: 218,
 }

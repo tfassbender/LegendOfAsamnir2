@@ -8,8 +8,10 @@ public class ProjectileTypeConfig {
 	
 	public String texture;
 	public String animation;
+	public String animationHit;
 	public boolean textureAnimation = true;
 	public boolean removeAfterAnimationFinished = true;
+	public boolean removeAfterHit = false;
 	public float textureScale = 1f;
 	public boolean textureScaleGrowing;
 	public float textureInitialRotation;

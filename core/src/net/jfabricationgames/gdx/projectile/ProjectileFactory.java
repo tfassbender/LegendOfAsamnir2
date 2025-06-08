@@ -133,7 +133,7 @@ public class ProjectileFactory {
 				projectile = new SpectralSword(typeConfig, attackConfig, animation, gameMap);
 				break;
 			case HOMING_MAGIC_BLAST:
-				projectile = new HomingMagicBlast(typeConfig, attackConfig, animation, gameMap);
+				projectile = new HomingProjectile(typeConfig, attackConfig, animation, gameMap);
 				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);

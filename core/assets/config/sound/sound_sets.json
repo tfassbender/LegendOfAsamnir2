@@ -505,6 +505,10 @@
 					path: "sound/enemy/nazgul_scream.mp3",
 					volume: 0.8,
 				},
+				lich_death: {
+					path: "sound/enemy/ghost_death_2.mp3",
+					volume: 1,
+				},
 			}
 		},
 		cutscene: {

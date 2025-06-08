@@ -42,8 +42,6 @@ public class Lich extends Enemy {
 		super(typeConfig, properties);
 		
 		spellAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy("lich_soul_storm_effect");
-		
-		health = 10f; // TODO remove this after tests
 	}
 	
 	@Override
@@ -66,7 +64,7 @@ public class Lich extends Enemy {
 	private ArtificialIntelligence createCultistAbominationAttackAI(ArtificialIntelligence ai) {
 		CharacterState attackState = stateMachine.getState("cultist_horror_attack_knifes");
 		
-		FightAI fightAI = new FightAI(ai, attackState, new RandomIntervalAttackTimer(3f, 4f), 2f);
+		FightAI fightAI = new FightAI(ai, attackState, new RandomIntervalAttackTimer(2f, 3f), 2f);
 		fightAI.setMoveToPlayerWhileAttacking(false);
 		
 		return fightAI;
@@ -123,7 +121,8 @@ public class Lich extends Enemy {
 			firstForm = false;
 		}
 		
-		if (healthSegmentAfterDamage < healthSegmentBeforeDamage) {
+		if (!firstForm && healthSegmentAfterDamage < healthSegmentBeforeDamage //
+				&& healthSegmentBeforeDamage < 3) { // don't fire the spell on the first health segment change
 			// change the state to fire a spell that inverts the controls of the player
 			CharacterState attackState = stateMachine.getState("attack_rage_nova");
 			attackState.setAttackDirection(Vector2.Zero); // a direction must be set, but since it's a nova, the value doesn't matter
@@ -142,7 +141,7 @@ public class Lich extends Enemy {
 	}
 	
 	private void changeToSecondForm() {
-		typeConfig.health = 150f; // increase the maximum health
+		typeConfig.health = 200f; // increase the maximum health
 		increaseHealthTillFull = true; // increase the health to full in the next few seconds
 		// set the health to the same percentage value as in the first form, to prevent a flickering effect in the health bar
 		health = FIRST_FORM_CRITICAL_HEALTH_PERCENTAGE * typeConfig.health;
@@ -200,7 +199,7 @@ public class Lich extends Enemy {
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
 		attackTimers.put(characterStateAttackMelee, new FixedAttackTimer(2f)); // melee attack must be fast to not let the player stand down and attack
 		attackTimers.put(characterStateAttackArcaneShower, new RandomIntervalAttackTimer(5f, 7f));
-		attackTimers.put(characterStateAttackMagicBlast, new RandomIntervalAttackTimer(4f, 5f));
+		attackTimers.put(characterStateAttackMagicBlast, new FixedAttackTimer(12f)); // magic blast projectiles are active for 5 seconds
 		
 		MultiAttackAI attackAI = new MultiAttackAI(ai, attackStates, attackDistances, attackTimers);
 		attackAI.setMoveToPlayerWhileAttacking(false);

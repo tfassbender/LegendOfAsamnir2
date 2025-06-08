@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="15" nextobjectid="3779">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3784">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -39,7 +39,7 @@
  </layer>
  <layer id="5" name="terrain" width="78" height="34" locked="1">
   <data encoding="base64" compression="zlib">
-   eJxjYBgegJWLMJsS0Aw0p4VKZg0WIIjkH1Eq+y2AC2LmXSC+B8QzuCBiowA/iAeG0RIgfgPEb4F4ORdEbBTgBuuB4cPGBaFBYCOQfs45sG4aBaNgFIyCUTAKhiPA1q4mVmyggTDQTSqD0F30Bvj6SapAvhoSVh8NL6KACTCcTJGwGQ3DbTDmLXIBoXCD+ZVcPxPTH3gxBPsMzsDwcEHCrsMoTdAKOI2G0ZAAe4DxtBeI943GF0ngNDC8zgDx2dFwIwncAobXbSC+MxpuJIGXwPB6BcSvh3m4KQ5z/42CwQP8uVDp4Qa2ILXnc+QQNAxsBfK3ceGWxwXiuFBpmB20AMYDEDeHkexkQ2LD+i5HgGJHuVDlR+dCMMEBYNgcxBN/hORhYCj2GSkB54FhcgFPuBCSH6kgkECYEJIf6QDWZ6f2OoXhBNDrR1L5owAV9Cnilhuocn+4jMtTMn+Erz2HS46e4/LDCYyOL1MXAABQUDm7
+   eJztmklOwzAYhbuhEv8OIbZIlRgOwHAAhjVwAbgAt4A1aw6AxBIhQVctAgErQLBm2jLfoQ9FFg7UdkKcunHfJz059i858XOS+ndaq8XBkLiPi7CFfrY99dUvjGjjGfM8tlVJ+nyCnqFdSdqInQ14tAd9Ql/QviRtxMwB/KlLUn5ziPJlOOw1EUIIITHSbV2dta1X7DS6t4/imia4prLmSZOoT2mapl+ZmIVPc5rmS/Qt5LPlG5dvaqz/HXOWfOC1gjnDIvxY0rQc0T1RFgv0qBK0ME9t6ITzlYsr+HUN3dC3XNzDrwfokb7l4g1+vUMfkfvWiHx8pH9YkXQZG0faen5z/KdUHKPeFHPcxLqkS3WOMpgJMDfn2jnr2rHKXS7QdinpOL+F/OUU3pxZ5s8VV1QxZyzCLTy5s/jiig8qaw5PXPFBR+Xsvv+nUATT/nIofv8+5q2TNLb5DfXej2Vfvsj3I9t6zhTr5b58THB/2S8dGC47GQ==
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="78" height="34" locked="1">
@@ -65,6 +65,11 @@
  <layer id="14" name="effect_layer_orb_right" width="78" height="34" locked="1">
   <data encoding="base64" compression="zlib">
    eJzt0EEJAAAIADHfprOB/VvYQhG2BMdFAAAAAAAAAFsqrwt+at8AAIBjAy9qAMQ=
+  </data>
+ </layer>
+ <layer id="15" name="mini_map_objects" width="78" height="34" visible="0" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt1jEKg1AMgOE3vyO1eoCqOFvF+1/DjFYEJUsRvg/+PWRJSgEAACDrVUt5R03U1n9P8xyf2FUX9dFgb7dNsatvNEeLvQEAO/7SHH9pjr8U4JrbnOM25xxv83iIe9b6GwCc2QDBoQ7f
   </data>
  </layer>
  <objectgroup id="3" name="objects">
@@ -1294,6 +1299,24 @@
    <properties>
     <property name="eventParameter" value="loa2_l4_helheim__key_blue"/>
    </properties>
+   <point/>
+  </object>
+  <object id="3780" name="object.spawnPoint.mana" x="2288.5" y="912.547">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3781" name="object.spawnPoint.mana" x="1392.53" y="336.511">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3782" name="item.health_full" x="2224" y="815">
+   <point/>
+  </object>
+  <object id="3783" name="item.shield_full" x="2256" y="815">
    <point/>
   </object>
  </objectgroup>

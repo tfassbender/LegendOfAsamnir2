@@ -1653,7 +1653,7 @@
 		initialState: cultist_idle, // starts as a cultist that is sacrificed
 		attackConfig: config/enemy/attack/lich.json,
 		
-		health: 50, // first form (cultist abomination) has only 50 health - will be set to 150 for the second form (lich) by the implementing class
+		health: 75, // first form (cultist abomination) has only 75 health - will be set to 200 for the second form (lich) by the implementing class
 		movingSpeed: 1f,
 		
 		damageModifiersByAttackType: {

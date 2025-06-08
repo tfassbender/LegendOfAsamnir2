@@ -16,6 +16,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.Array;
 
 import net.jfabricationgames.gdx.animation.AnimationDirector;
+import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.attack.AttackConfig;
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.Hittable;
@@ -48,6 +49,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	protected float timeActive;
 	protected boolean attackPerformed;
 	protected boolean reflected;
+	protected boolean removeAfterAnimationFinished; // can override the typeConfig.removeAfterAnimationFinished e.g. for the hit animation
 	
 	protected float damage;
 	protected float pushForce;
@@ -208,7 +210,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 			// scaling the sprite is needed if the animation is a growing animation instead of a multiple-texture animation
 			animation.scaleSprite(sprite);
 			
-			if (animation.isAnimationFinished() && typeConfig.removeAfterAnimationFinished) {
+			if (animation.isAnimationFinished() && (typeConfig.removeAfterAnimationFinished || removeAfterAnimationFinished)) {
 				removeFromMap();
 			}
 		}
@@ -381,6 +383,20 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		if (typeConfig.changeBodyToSensorAfterHit) {
 			changeBodyToSensor();
 		}
+		
+		if (typeConfig.removeAfterHit && typeConfig.animationHit == null) {
+			removeFromMap();
+		}
+		if (typeConfig.animationHit != null) {
+			// remove after the hit animation is finished
+			changeBodyToSensor();
+			animation = AnimationManager.getInstance().getTextureAnimationDirectorCopy(typeConfig.animationHit);
+			removeAfterAnimationFinished = true;
+		}
+		else if (typeConfig.removeAfterHit) {
+			removeFromMap();
+		}
+		
 		attackPerformed = true;
 	}
 	

@@ -133,7 +133,8 @@
 		id: die,
 		animation: lich_death,
 		endsWithAnimation: true,
-		changeStateAfterAnimationDelay: 5f,
+		changeStateAfterAnimationDelay: 10f,
+		stateEnteringSound: lich_death,
 		followingState: END,
 		interruptingStates: [],
 		flipAnimationToMovingDirection: false,
@@ -208,7 +209,7 @@
         animation: lich_rage,
         attack: attack_arcane_shower,
         endsWithAnimation: true,
-		repeatAnimationTimes: 3,
+		repeatAnimationTimes: 4,
         followingState: idle,
         interruptingStates: [
             die

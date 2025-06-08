@@ -13,84 +13,84 @@ arrow
   index: -1
 axe
   rotate: false
-  xy: 1196, 1156
+  xy: 1233, 902
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 bomb
   rotate: false
-  xy: 1451, 620
+  xy: 1265, 936
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 boomerang
   rotate: false
-  xy: 2000, 1206
+  xy: 4082, 1630
   size: 14, 11
   orig: 14, 11
   offset: 0, 0
   index: -1
 bow
   rotate: false
-  xy: 1483, 654
+  xy: 66, 16
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 compass
   rotate: false
-  xy: 4032, 1739
+  xy: 981, 1021
   size: 13, 15
   orig: 13, 15
   offset: 0, 0
   index: -1
 feather
   rotate: false
-  xy: 1498, 1176
+  xy: 1149, 794
   size: 27, 27
   orig: 27, 27
   offset: 0, 0
   index: -1
 health
   rotate: false
-  xy: 1773, 959
+  xy: 518, 59
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 hookshot
   rotate: false
-  xy: 1805, 993
+  xy: 550, 93
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 ice_pick
   rotate: false
-  xy: 66, 18
+  xy: 4082, 1643
   size: 14, 14
   orig: 14, 14
   offset: 0, 0
   index: -1
 jump
   rotate: false
-  xy: 1857, 1056
+  xy: 4032, 1607
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 lantern
   rotate: false
-  xy: 1601, 673
+  xy: 1181, 827
   size: 22, 28
   orig: 22, 28
   offset: 0, 0
   index: -1
 mana
   rotate: false
-  xy: 1889, 1090
+  xy: 4064, 1641
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -111,98 +111,98 @@ map_unfold
   index: 5
 map_idle
   rotate: false
-  xy: 996, 1043
+  xy: 4000, 1625
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 2
 map_idle
   rotate: false
-  xy: 1283, 541
+  xy: 981, 629
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 3
 map_idle
   rotate: false
-  xy: 1164, 1140
+  xy: 1065, 726
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 4
 map_idle
   rotate: false
-  xy: 1451, 638
+  xy: 1149, 823
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 5
 map_idle
   rotate: false
-  xy: 1773, 977
+  xy: 1233, 920
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 6
 map_idle
   rotate: false
-  xy: 1857, 1074
+  xy: 34, 0
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 7
 map_idle
   rotate: false
-  xy: 1941, 1171
+  xy: 486, 43
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 8
 map_idle
   rotate: false
-  xy: 4000, 1722
+  xy: 518, 77
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 9
 map_idle
   rotate: false
-  xy: 34, 0
+  xy: 4000, 1591
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 10
 map_idle
   rotate: false
-  xy: 486, 43
+  xy: 4032, 1625
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 11
 map_unfold
   rotate: false
-  xy: 518, 77
+  xy: 981, 595
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 1
 map_unfold
   rotate: false
-  xy: 1028, 1043
+  xy: 1013, 629
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 2
 map_unfold
   rotate: false
-  xy: 1315, 541
+  xy: 1065, 692
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
   index: 3
 map_unfold
   rotate: false
-  xy: 1164, 1106
+  xy: 1097, 726
   size: 30, 32
   orig: 30, 32
   offset: 0, 0
@@ -307,21 +307,21 @@ mini_map_loa2_l3_muspelheim_lava_dungeon
   index: 5
 mini_map_loa2_l3_muspelheim_lava_dungeon
   rotate: false
-  xy: 981, 536
-  size: 300, 500
-  orig: 300, 500
-  offset: 0, 0
-  index: 2
-mini_map_loa2_l3_muspelheim_lava_dungeon
-  rotate: false
-  xy: 988, 34
+  xy: 1498, 703
   size: 341, 500
   orig: 341, 500
   offset: 0, 0
   index: 3
+mini_map_loa2_l3_muspelheim_lava_dungeon
+  rotate: false
+  xy: 1841, 703
+  size: 300, 500
+  orig: 300, 500
+  offset: 0, 0
+  index: 2
 mini_map_loa2_l3_muspelheim_lava_dungeon_boss
   rotate: false
-  xy: 1283, 672
+  xy: 2143, 717
   size: 316, 500
   orig: 316, 500
   offset: 0, 0
@@ -335,7 +335,7 @@ mini_map_loa2_l3_muspelheim_lava_dungeon_key
   index: -1
 mini_map_loa2_l3_muspelheim_lava_dungeon_rune
   rotate: false
-  xy: 1601, 703
+  xy: 2461, 717
   size: 170, 500
   orig: 170, 500
   offset: 0, 0
@@ -345,6 +345,13 @@ mini_map_loa2_l3_muspelheim_lava_dungeon_start
   xy: 486, 111
   size: 500, 423
   orig: 500, 423
+  offset: 0, 0
+  index: -1
+mini_map_loa2_l4_helheim_cultist_dungeon
+  rotate: false
+  xy: 996, 954
+  size: 500, 218
+  orig: 500, 218
   offset: 0, 0
   index: -1
 mini_map_loa2_l4_helheim_main
@@ -384,7 +391,7 @@ mini_map_loa2_prolog
   index: -1
 ring
   rotate: false
-  xy: 1941, 1153
+  xy: 981, 577
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -398,77 +405,77 @@ rope
   index: -1
 rune_algiz
   rotate: false
-  xy: 996, 1077
+  xy: 4000, 1853
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_ansuz
   rotate: false
-  xy: 1283, 575
+  xy: 4000, 1756
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_gebo
   rotate: false
-  xy: 1773, 1108
+  xy: 4000, 1659
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_hagalaz
   rotate: false
-  xy: 4000, 1853
+  xy: 981, 857
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_kenaz
   rotate: false
-  xy: 1080, 1077
+  xy: 981, 760
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_laguz
   rotate: false
-  xy: 1367, 575
+  xy: 1065, 857
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_mannaz
   rotate: false
-  xy: 1773, 1011
+  xy: 981, 663
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_othala
   rotate: false
-  xy: 1857, 1108
+  xy: 1065, 760
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 rune_raidho
   rotate: false
-  xy: 4000, 1756
+  xy: 1149, 857
   size: 82, 95
   orig: 82, 95
   offset: 0, 0
   index: -1
 shield
   rotate: false
-  xy: 1973, 1187
+  xy: 1013, 611
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 wand
   rotate: false
-  xy: 4000, 1704
+  xy: 1045, 645
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
