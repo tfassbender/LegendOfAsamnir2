@@ -217,6 +217,13 @@
 	config/cutscene/loa2/helheim/cultist_dungeon/enter_portal.json,
 	
 	//********************************************************
+	//*** Legend of Asamnir 2 - Helheim - Eljudnir
+	//********************************************************
+	config/cutscene/loa2/helheim/eljudnir/hel.json,
+	config/cutscene/loa2/helheim/eljudnir/hel_interaction.json,
+	config/cutscene/loa2/helheim/eljudnir/rune_found.json,
+	
+	//********************************************************
 	//*** Legend of Asamnir 2 - Asgard
 	//********************************************************
 	config/cutscene/loa2/asgard/goto_main.json,

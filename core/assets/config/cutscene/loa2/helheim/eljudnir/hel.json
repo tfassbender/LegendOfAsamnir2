@@ -1,0 +1,301 @@
+{
+	id: loa2_l4_helheim__hel_cutscene,
+	controlledActions: {
+		start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim__eljudnir__hel_cutscene_started,
+					executedStateName: hel_appear,
+				},
+				{
+					// default case
+					executedStateName: start_multiplexer
+				},
+			],
+		},
+		
+		start_multiplexer: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                set_cutscene_triggered,
+                move_camera,
+                move_thorin,
+			],
+		},
+		
+		set_cutscene_triggered: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__eljudnir__hel_cutscene_started, value: true}",
+			},
+		},
+		
+		move_camera: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__helheim_eljudnir__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 0},
+			speedFactor: 2f,
+			
+			executes: [
+				thorin_comment_1,
+			],
+		},
+		
+		move_thorin: {
+			executionDelayInSeconds: 1f,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: cutscene_object__helheim_eljudnir__camera_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: -1},
+		},
+		
+	    thorin_comment_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That looks like the rune I'm searching for...\n                 \n... maybe I'm just getting paranoid, but this seems a bit too easy ...      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                hel_appear_delay,
+                hel_appear_sound,
+				thorin_turn_to_hel,
+				hel_greeting,
+			],
+		},
+		
+		hel_appear_delay: {
+			type: WAIT,
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+            	hel_appear,
+            ]
+		},
+		
+		hel_appear: {
+		    // if hel is already there on the map, the state machine will not allow the state transition - therefore this can be used without a condition
+			
+			type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l4_helheim__hel,
+            controlledUnitState: appear,
+		},
+		
+		hel_appear_sound: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 1.3f,
+			
+            soundEffectName: hel_appear,
+		},
+		
+		thorin_turn_to_hel: {
+			executionDelayInSeconds: 2f,
+			
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		hel_greeting: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 4f,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "A dwarf?\n                          \n                  \nOh, you must be Thorin!          \nModgudr has already told me about you.      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hel_2,
+           	],
+		},
+		
+		hel_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "If I remember correctly Modgudr said that you want to find a way into the castle of the chaos wizard, right?      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+           	],
+		},
+		
+	    thorin_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That's right!\n           \nThis strange chaos wizard guy has stolen my axe Asamnir and I will get it back!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_3,
+			],
+		},
+		
+	    thorin_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "To enter his castle I need this rune, right here.\n               \nYou probably won't need it anymore and will give it to me, right?      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                hel_3,
+			],
+		},
+		
+		hel_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Well, like you probably already guessed, the chaos wizard told me to kill you as soon as you enter my realm...     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_4,
+           	],
+		},
+		
+	    thorin_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Yeah, thought so ...      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                hel_4,
+			],
+		},
+		
+		hel_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "But actually I'm quite busy with ruling my realm, overseeing the construction of Naglfar, welcoming the poor dead souls that arrive here all the time, ...   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hel_5,
+           	],
+		},
+		
+		hel_5: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "And since I don't give a damn about what this chaos wizard tells me to do ... and because I don't like him very much ...\n                        \nYeah, you can have the rune.    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hel_6,
+           	],
+		},
+		
+		hel_6: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Just take it.\nAnd maybe you can silence this stupid chaos wizard with his annoying magic device, that makes his voice appear out of nowhere all the time...      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_5,
+           	],
+		},
+		
+	    thorin_5: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Realy?!\n             \nWell, thanks!\n           \nThat was easier than I expected.      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                hel_7,
+			],
+		},
+		
+		hel_7: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "You're welcome.\n           \nI hope the rune will help you on your quest.      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

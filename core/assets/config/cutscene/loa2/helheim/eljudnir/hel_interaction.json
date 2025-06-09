@@ -1,0 +1,163 @@
+{
+	id: loa2_l4_helheim__hel_interaction_cutscene,
+	controlledActions: {
+	    hel_greeting: {
+			startsWithCutscene: true,
+	    
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Hey Thorin,\n           \nCan I help you with something?      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"How are you?",
+					"Can I help you with something?",
+				],
+			},
+			choiceOptionExecutions: [
+				hel_godbye,
+				hel__how_are_you_1,
+				hel__can_i_help_you,
+			],
+		},
+		
+		hel_godbye: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Good luck defeating the chaos wizard!",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		hel__how_are_you_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Oh, it's nice of you to ask, Thorin.\n            \nI'm quite busy, but I like my job here ... ruling my realm, guarding the dead and so on...      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hel__how_are_you_2,
+           	],
+		},
+		
+		hel__how_are_you_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Sometimes I even find the time to visit my family in Midgard.      \nThey are a bit lonely since the Aesir cast out my sister Jormungandr into the ocean and chained my brother Fenrir to a rock. ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		hel__can_i_help_you: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "It's nice of you to ask, Thorin, but I got everything here under control.\n               \nAnd you already helped Garmr find the key to my temple. Thank you for that!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice_2,
+           	],
+		},
+		
+		thorin_choice_2: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+				    "Don't mention it.",
+					"You know that Garmr lost the key?",
+					"I have no idea what you're talking about...",
+				],
+			},
+			choiceOptionExecutions: [
+				thorin_choice,
+				hel__garmr_lost_key,
+				hel__no_idea_what_you_talking_about,
+			],
+		},
+		
+		hel__garmr_lost_key: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "I know about everything that happens in Helheim, Thorin.     \nAlso about things that might have happened in a specific part of a cultist dungeon ... if you know what I mean.    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		hel__no_idea_what_you_talking_about: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Haha! Don't worry, Thorin. I always pretend I don't know about it when Garmr looses the key again...    \nHe's a bit clumsy, but he's doing his best to guard my temple.     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

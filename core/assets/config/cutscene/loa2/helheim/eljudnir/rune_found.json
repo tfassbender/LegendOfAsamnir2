@@ -1,0 +1,238 @@
+{
+	id: loa2_l4_helheim_eljudnir__rune_laguz_found_cutscene,
+	controlledActions: {
+		thorin_1: {
+			startsWithCutscene: true,
+			executionDelayInSeconds: 3f,
+		
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "This is laguz...            \nIt seems that this is the rune I was searching for all the time!\nIt opens the gate to the castle of the strange chaos wizard guy!!!               ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+           	],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "You hear that, strange chaos wizard guy?!               \nI found the rune and now I'm coming for you!              \nPrepare to meet the valkyries!!!      ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_1,
+			],
+		},
+		
+		chaos_wizard_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 2f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "What?!\n                      \nIt should be impossible for you to defeat Hel!               \nHow did you reach this rune?!!     ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hel_1,
+			],
+		},
+		
+		hel_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "He asked nicely, so I just gave him the rune.\n                  \nI don't care about your stupid plans anyway!      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_2,
+           	],
+		},
+		
+		chaos_wizard_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "What?!\n                    \nWhy does everything I create turn against me?!       ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_3,
+            	chaos_wizard_evil_laugh_1,
+			],
+		},
+		
+		chaos_wizard_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I mean ...\n                   \nThat's still part if my devious plan!       \n*evil laughter*",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_4,
+            	chaos_wizard_evil_laugh_2,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_1: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 3f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Ok Thorin ...               \nCome find me in my castle on the fields of Vigrid and you will experience the true power of the almighty chaos wizard!!!\n*evil laughter*     ",
+				showNextPageIcon: true,
+				canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_5,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_2: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 6f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Our fight will be legendary!!!\n             \nWorthy of recognition in the archives of the Jedi Order!      ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_6,
+			],
+		},
+		
+		chaos_wizard_6: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "And till you arrive here, Freydis will help me prepare my ultimate villain speech!\n      \nRight Freydis?     ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	freydis_1,
+			],
+		},
+		
+		freydis_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Thorin!\nHurry up and kill this annoying idiot, or I'll break out of this cage and do it myself!!!    ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                hel_2,
+			],
+		},
+		
+		hel_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Hel",
+                colorHeader: #8094ad,
+                displayText: "Your friend Freydis sounds really nice, Thorin. I think I like her!\n                   \nBut you should get going now. Don't let the lady wait!     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_3,
+           	],
+		},
+		
+		thorin_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That sounds reasonable.\n             \nI'll get going then. See you later Hel!      ",
+				showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

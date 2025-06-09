@@ -566,6 +566,10 @@
 					path: "sound/cutscene/whip.mp3",
 					volume: 0.6f,
 				},
+				hel_appear: {
+					path: "sound/cutscene/hel_appear.mp3",
+					volume: 1f,
+				},
             }
         },
 		menu: {

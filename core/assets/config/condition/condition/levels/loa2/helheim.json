@@ -347,4 +347,16 @@
 			}
 		}
 	},
+	
+	//*******************************************
+	//*** eljudnir
+	//*******************************************
+	
+	loa2_l4_helheim__eljudnir__hel_cutscene_started: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__eljudnir__hel_cutscene_started,
+            expectedValue: true,
+		}
+	},
 }

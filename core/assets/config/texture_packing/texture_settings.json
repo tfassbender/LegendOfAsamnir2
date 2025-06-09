@@ -78,6 +78,7 @@
 				raw_images/objects/all,
 //				raw_images/objects/walls,
 				raw_images/objects/helheim_key,
+				raw_images/objects/animated/empty,
 				raw_images/objects/animated/barrel/hit,
 				raw_images/objects/animated/barrel/break,
 				raw_images/objects/animated/box/hit,
@@ -760,6 +761,16 @@
                 raw_images/restricted/enemy/incubus/incubus_attack,
 //                raw_images/restricted/enemy/incubus/incubus_damage,
 //                raw_images/restricted/enemy/incubus/incubus_death,
+
+                // death
+                raw_images/restricted/enemy/death/death_idle,
+                raw_images/restricted/enemy/death/death_move,
+                raw_images/restricted/enemy/death/death_face,
+                raw_images/restricted/enemy/death/death_appear,
+//                raw_images/restricted/enemy/death/death_appear_with_scythe,
+//                raw_images/restricted/enemy/death/death_attack_scythe,
+//                raw_images/restricted/enemy/death/death_damage,
+//                raw_images/restricted/enemy/death/death_dissapear,
 				
 				//##############################################################
 				//### Animals

@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/hel.json,
+	stateConfig: config/npc/states/hel.json,
+	initialState: before_appear,
+	
+	bodyWidth: 2f,
+	bodyHeight: 2f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 0.2f,
+	
+	interactionMarkerOffsetX: 0f,
+	interactionMarkerOffsetY: 0f,
+}

@@ -82,6 +82,7 @@
 	azraesha: config/npc/levels/loa2/helheim/azraesha.json,
 	beeleth: config/npc/levels/loa2/helheim/beeleth.json,
 	cultist: config/npc/levels/loa2/helheim/cultist.json,
+	hel: config/npc/levels/loa2/helheim/hel.json,
 	
 	//*****************************************************************
 	//*** Legend of Asamnir 2 - Fields of Vigrid

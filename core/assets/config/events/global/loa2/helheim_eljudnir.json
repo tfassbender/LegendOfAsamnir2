@@ -1,0 +1,54 @@
+{
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
+	loa2_l4_helheim_eljudnir__meet_hel: {
+		event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_eljudnir__meet_hel,
+		},
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim__hel_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim__hel_interaction: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l4_helheim__hel,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim__hel_interaction_cutscene,
+		}
+	},
+	
+	loa2_l4_helheim_eljudnir__rune_laguz_found: {
+		event: {
+			eventType: RUNE_FOUND,
+			stringValue: LAGUZ,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l4_helheim_eljudnir__rune_laguz_found_cutscene,
+		}
+	},
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l4_helheim_eljudnir_goto_helheim_main: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l4_helheim_eljudnir_goto_helheim_main,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_l4_helheim_main,
+			startingPointId: 5,
+		}
+	},
+}

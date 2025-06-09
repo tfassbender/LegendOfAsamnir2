@@ -1,0 +1,22 @@
+{
+	graphicsConfigFile: config/npc/graphics/hel.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	interactionEventId: loa2_l4_helheim__hel,
+	
+	sensorRadius: 1.8f,
+	movingSpeed: 1f,
+}

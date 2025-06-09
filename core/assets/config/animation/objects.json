@@ -165,5 +165,13 @@
 			frameDuration: 0.1,
 			playMode: REVERSED,
 		},
+		
+		// a dummy animation that is used in character states if the character should not be visible
+		{
+			name: empty,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
+		},
 	]
 }

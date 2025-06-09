@@ -1,0 +1,36 @@
+[
+	{
+		id: before_appear,
+		animation: empty,
+		endsWithAnimation: false,
+		followingState: before_appear, // state will be changed in a cutscene
+		interruptingStates: [
+            appear
+		]
+	},
+	{
+		id: appear,
+		animation: death_appear,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: idle,
+		animation: death_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: death_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+		    idle
+		]
+	},
+]

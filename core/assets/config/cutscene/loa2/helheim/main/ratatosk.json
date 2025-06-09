@@ -66,22 +66,6 @@
             waitForEventToFinish: true,
             
             executes: [
-            	thorin_choice,
-			],
-		},
-		
-		laguz_collected__ratatosk_1: {
-            type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Ratatosk",
-                colorHeader: #965a00,
-                displayText: "You found the rune laguz!\n          \nNow you should be able to enter the castle of the chaos wizard!     ",
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
             	laguz_collected__ratatosk_2,
 			],
 		},
