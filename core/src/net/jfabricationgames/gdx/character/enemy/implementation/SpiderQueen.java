@@ -78,12 +78,12 @@ public class SpiderQueen extends Enemy {
 		GameStateManager.fireQuickSaveEvent();
 		playMapBackgroundMusicAfterBossDefeated();
 		
-		unlockBossGates();
-	}
-	
-	private void unlockBossGates() {
-		// this will trigger a config object that unlocks the gates after a few seconds
+		// triggers a config object that unlocks the gates after a few seconds
 		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CONFIG_GAME_OBJECT_ACTION) //
 				.setStringValue("loa2_l4_helheim__config_object__open_key_wall_after_spider_queen_defeated"));
+		
+		// kill all spawned bloodsilk spiders when the spider queen is defeated
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE));
 	}
 }

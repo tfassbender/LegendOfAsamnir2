@@ -258,7 +258,7 @@
 			
 			event: {
 				eventType: SET_GLOBAL_CONDITION_VALUE,
-				stringValue: "{key: rune_forged__hagalaz, value: true}",
+				stringValue: "{key: rune_forged__kenaz, value: true}",
 			},
 			
 			executes: [

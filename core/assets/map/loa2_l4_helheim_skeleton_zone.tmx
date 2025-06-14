@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2464">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2466">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -253,7 +253,7 @@
   <object id="2401" name="object.pot" x="423.25" y="352.5">
    <point/>
   </object>
-  <object id="2402" name="object.barrel" x="396" y="260">
+  <object id="2402" name="object.barrel" x="396" y="255">
    <point/>
   </object>
   <object id="2403" name="object.barrel" x="421" y="254.333">
@@ -481,6 +481,12 @@
    <properties>
     <property name="startingPointId" value="12"/>
    </properties>
+   <point/>
+  </object>
+  <object id="2464" name="item.health_full" x="1649" y="704">
+   <point/>
+  </object>
+  <object id="2465" name="item.shield_full" x="1552" y="704">
    <point/>
   </object>
  </objectgroup>

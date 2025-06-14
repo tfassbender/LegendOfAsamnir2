@@ -159,7 +159,7 @@ public class ItemSettingsDialog extends InGameMenuDialog {
 		screenTextWriter.setColor(Color.BLACK);
 		
 		for (int i = 0; i < notFoundItems; i++) {
-			screenTextWriter.drawText("?", 287, 177 + i * 55);
+			screenTextWriter.drawText("?", 287, 122 + i * 55);
 		}
 	}
 	

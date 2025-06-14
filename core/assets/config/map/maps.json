@@ -212,7 +212,7 @@
 		map: "map/loa2_l4_helheim_spider_zone.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l4_helheim.json,
 		initialStartingPointId: 12,
-		//initial: true
+		initial: true
 	},
 	{
 		name: loa2_l4_helheim_cultist_dungeon,
@@ -226,7 +226,7 @@
 		map: "map/loa2_l4_helheim_eljudnir.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l4_helheim.json,
 		initialStartingPointId: 0,
-		initial: true
+		//initial: true
 	},
 	
 	// loa2 - fields of vigrid

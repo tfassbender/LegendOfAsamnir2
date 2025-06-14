@@ -1503,6 +1503,11 @@
 		healthBarOffsetY: -0.2,
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
+		
+		// makes all spawned enemies die when the spider queen (the boss) dies
+		deathEvent: {
+            eventType: ENEMY_DIE,
+		},
 	},
 	
 	spider_queen: {
