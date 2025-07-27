@@ -663,6 +663,10 @@
 			MAGIC: 0f,
 		},
 		
+		deathEvent: {
+			eventType: ENEMY_DIE,
+		},
+		
 		imageOffsetX: 0f,
 		imageOffsetY: 0f,
 		

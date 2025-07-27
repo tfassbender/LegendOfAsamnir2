@@ -19,6 +19,17 @@
 	//*** Skeleton Zone - Boss Room
 	//*************************************
 	
+	l4_helheim_skeleton_zone__key_red: {
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: l4_helheim_skeleton_zone__red_key,
+			}
+		],
+        spawnType: item.helheim_key_red,
+        spawnTypeMapProperties: "{eventParameter: \"loa2_l4_helheim__key_red\"}",
+	},
+	
 	l4_helheim_skeleton_zone__boss: {
 		complexEvents: [
 			{
@@ -27,7 +38,7 @@
 			}
 		],
         spawnType: enemy.skeleton_king,
-        spawnTypeMapProperties: "{enemyDefeatedEventText: \"loa2_l4_helheim_skeleton_zone__boss_defeated\"}",
+        spawnTypeMapProperties: "{unitId: \"loa2_l4_helheim_skeleton_zone__skeleton_king\", enemyDefeatedEventText: \"loa2_l4_helheim_skeleton_zone__boss_defeated\"}",
 	},
 	
 	l4_helheim_skeleton_zone__magic_totem_boss_up: {

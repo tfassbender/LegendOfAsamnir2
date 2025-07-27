@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2466">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="63" height="61" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="2469">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -361,12 +361,6 @@
    </properties>
    <point/>
   </object>
-  <object id="2434" name="item.helheim_key_red" x="1792" y="1440">
-   <properties>
-    <property name="eventParameter" value="loa2_l4_helheim__key_red"/>
-   </properties>
-   <point/>
-  </object>
   <object id="2435" name="object.key_wall" x="1652" y="1000">
    <properties>
     <property name="lockId" value="loa2_l4_helheim_skeleton_zone__gate_boss_exit"/>
@@ -487,6 +481,17 @@
    <point/>
   </object>
   <object id="2465" name="item.shield_full" x="1552" y="704">
+   <point/>
+  </object>
+  <object id="2467" name="object.eventObject" x="1414.42" y="1351" width="8.167" height="186">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_skeleton_zone__spawn_red_key"/>
+   </properties>
+  </object>
+  <object id="2468" name="object.spawnPoint.red_key" x="1792" y="1440">
+   <properties>
+    <property name="spawn" value="l4_helheim_skeleton_zone__key_red"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

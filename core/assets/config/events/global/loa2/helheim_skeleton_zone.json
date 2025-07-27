@@ -18,6 +18,17 @@
 	//*** boss fight
 	//*******************************************
 	
+	loa2_l4_helheim_skeleton_zone__spawn_red_key: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l4_helheim_skeleton_zone__spawn_red_key,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l4_helheim_skeleton_zone__spawn_red_key_cutscene,
+		}
+	},
+	
 	loa2_l4_helheim_skeleton_zone__red_key_picked_up: {
         event: {
             eventType: EVENT_ITEM_PICKED_UP,

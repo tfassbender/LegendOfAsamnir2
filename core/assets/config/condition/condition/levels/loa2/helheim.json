@@ -1,5 +1,24 @@
 {
 	//*******************************************
+	//*** skeleton zone - boss fight
+	//*******************************************
+	
+	loa2_l4_helheim_skeleton_zone__skeleton_king_defeated: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l4_helheim__skeleton_king_defeated,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l4_helheim_skeleton_zone__skeleton_king_existing_on_map: {
+        conditionType: UNIT_EXISTING_ON_MAP,
+		parameters: {
+            unitId: loa2_l4_helheim_skeleton_zone__skeleton_king,
+		}
+	},
+	
+	//*******************************************
 	//*** spider zone - switches
 	//*******************************************
 	

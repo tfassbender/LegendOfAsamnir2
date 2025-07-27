@@ -70,9 +70,9 @@ public class SkeletonKingAttackAI extends MultiAttackAI {
 		boolean[] stillExist = new boolean[totemPositionEndings.length];
 		
 		// check whether the totems still exist
-		for (String position : totemPositionEndings) {
-			if (GameMapManager.getInstance().getMap().getUnitById(totemUnitIdPrefix + position) != null) {
-				stillExist[totemPositionEndings.length] = true;
+		for (int i = 0; i < totemPositionEndings.length; i++) {
+			if (GameMapManager.getInstance().getMap().getUnitById(totemUnitIdPrefix + totemPositionEndings[i]) != null) {
+				stillExist[i] = true;
 			}
 		}
 		

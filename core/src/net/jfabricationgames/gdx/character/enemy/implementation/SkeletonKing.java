@@ -13,6 +13,7 @@ import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.FastAttackFightAI;
 import net.jfabricationgames.gdx.character.enemy.ai.SkeletonKingAttackAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
+import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -20,8 +21,12 @@ import net.jfabricationgames.gdx.state.GameStateManager;
 
 public class SkeletonKing extends Enemy {
 	
+	public static final String GLOBAL_VALUE_KEY_SKELETON_KING_DEFEATED = "loa2_l4_helheim__skeleton_king_defeated";
+	
 	public SkeletonKing(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
+		
+		health = 1f; // TODO remove after tests
 	}
 	
 	@Override
@@ -73,13 +78,27 @@ public class SkeletonKing extends Enemy {
 	@Override
 	protected void die() {
 		super.die();
+		
+		// set the global value that indicates that the skeleton king was defeated, so the red key is not spawned anymore
+		GlobalValuesDataHandler.getInstance().put(GLOBAL_VALUE_KEY_SKELETON_KING_DEFEATED, true);
+		
+		// kill all remaining magic totems that the skeleton king summoned
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l4_helheim_skeleton_zone__boss_totem__up"));
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l4_helheim_skeleton_zone__boss_totem__up_right"));
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l4_helheim_skeleton_zone__boss_totem__down_right"));
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l4_helheim_skeleton_zone__boss_totem__left"));
+		
 		GameStateManager.fireQuickSaveEvent();
 		playMapBackgroundMusicAfterBossDefeated();
 		
-		unlockBossGates();
-	}
-	
-	private void unlockBossGates() {
 		// this will trigger a config object that unlocks the gates after a few seconds
 		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CONFIG_GAME_OBJECT_ACTION) //
 				.setStringValue("loa2_l4_helheim__config_object__open_key_wall_after_skeleton_king_defeated"));

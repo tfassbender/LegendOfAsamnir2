@@ -1,0 +1,39 @@
+{
+	id: loa2_l4_helheim_skeleton_zone__spawn_red_key_cutscene,
+	controlledActions: {
+		start_condition: {
+		    startsWithCutscene: true,
+		    
+		    type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l4_helheim_skeleton_zone__skeleton_king_defeated,
+					executedStateName: end,
+				},
+				{
+					conditionId: loa2_l4_helheim_skeleton_zone__skeleton_king_existing_on_map,
+					executedStateName: end,
+				},
+				{
+					// default case skeleton king was not yet defeated
+					executedStateName: spawn_red_key,
+				},
+			],
+		},
+		
+		spawn_red_key: {
+            type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: l4_helheim_skeleton_zone__red_key,
+            },
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
