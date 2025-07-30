@@ -4,7 +4,8 @@
 			sounds: {
 				hit: {
 					path: "sound/dwarf/hit.wav",
-					volume: 0.5
+					volume: 0.5,
+					delay: 0.1
 				},
 				hit2: {
 					path: "sound/dwarf/hit.wav",

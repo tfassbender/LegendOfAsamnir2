@@ -62,6 +62,7 @@ class CharacterInputProcessor implements InputActionListener {
 	private boolean sprint = false;
 	private boolean block = false;
 	private boolean startBlock = false;
+	private boolean blockInitialized = false; // like start block, but this flag is reset every execution step
 	private boolean changeSprint = false;
 	private boolean spinAttack = false;
 	
@@ -129,9 +130,15 @@ class CharacterInputProcessor implements InputActionListener {
 		
 		if (player.isAlive()) {
 			if (!characterActionSet && spinAttack) {
-				//hit and shield hit can only be interrupted by spin attacks (to free from near enemies)
+				// hit and shield hit can only be interrupted by spin attacks (to free from near enemies)
 				if (player.action.isInterruptable() || player.action == CharacterAction.HIT || player.action == CharacterAction.SHIELD_HIT) {
 					player.changeAction(CharacterAction.ATTACK_SPIN);
+				}
+			}
+			if (!characterActionSet && blockInitialized) {
+				// the normal attack state can be interrupted by a block (although it is configured to be non-interruptable)
+				if ((player.action.isInterruptable() || player.action == CharacterAction.ATTACK) && player.hasEnoughEnduranceToBlock()) {
+					characterActionSet = player.changeAction(CharacterAction.BLOCK);
 				}
 			}
 			if (!characterActionSet && attack) {
@@ -247,6 +254,8 @@ class CharacterInputProcessor implements InputActionListener {
 			
 			actionCooldown += delta;
 		}
+		
+		resetInputFlagsAfterHandleInputs();
 	}
 	
 	private void readInputs(float delta) {
@@ -321,9 +330,15 @@ class CharacterInputProcessor implements InputActionListener {
 		jump = false;
 		special = false;
 		block = false;
+		// blockInitialized needs to be reset after the execution of the handleInputs method (because it is set by an action, not by a state)
 		spinAttack = false;
 		//attack is not reset, because the attackReleased flag does this
 		//sprint is not reset here, but in the handleInputs method (when idle)
+	}
+	
+	private void resetInputFlagsAfterHandleInputs() {
+		// flags that are set by actions (instead of states) need to be reset after the execution
+		blockInitialized = false;
 	}
 	
 	/**
@@ -510,6 +525,7 @@ class CharacterInputProcessor implements InputActionListener {
 			}
 			else if (action.equals(ACTION_BLOCK)) {
 				startBlock = true;
+				blockInitialized = true;
 			}
 			else if (action.equals(ACTION_PREVIOUS_SPECIAL_ACTION)) {
 				selectNextSpecialAction(-1);

@@ -44,6 +44,7 @@ import net.jfabricationgames.gdx.skill.Difficulty;
 import net.jfabricationgames.gdx.skill.PlayerAttackHandler;
 import net.jfabricationgames.gdx.skill.WeaponSkill;
 import net.jfabricationgames.gdx.skill.WeaponSkillType;
+import net.jfabricationgames.gdx.sound.SoundHandler;
 import net.jfabricationgames.gdx.state.GameStateManager;
 import net.jfabricationgames.gdx.util.AnnotationUtil;
 import net.jfabricationgames.gdx.util.GameUtil;
@@ -60,6 +61,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	private static final float MIN_ENDURANCE_TO_START_BLOCK = 15f;
 	private static final float MIN_ENDURANCE_TO_START_SPRINT = 15f;
+	private static final float ENDURANCE_LOSS_FOR_BLOCKING_DAMAGE = 10f;
 	
 	private static final String ATTACK_CONFIG_FILE_NAME = "config/dwarf/attacks.json";
 	
@@ -82,6 +84,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	protected CharacterAction action;
 	protected SpecialAction activeSpecialAction;
+	private SoundHandler actionSound;
 	
 	protected CharacterInputProcessor movementHandler;
 	
@@ -162,7 +165,13 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			
 			propertiesDataHandler.reduceEnduranceForAction(action);
 			
-			soundHandler.playSound(action);
+			if (actionSound != null && !actionSound.isSoundStoped()) {
+				actionSound.stop(); // stop the previous action sound if it is still playing
+			}
+			actionSound = soundHandler.playSound(action);
+			
+			// abort attacks that are still in progress
+			attackHandler.abortAllAttacks();
 			
 			if (action.isAttack()) {
 				attackHandler.startAttack(action.getAttack(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
@@ -619,6 +628,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				}
 				
 				damage *= (1f - (weaponSkill.getSkillLevelConfig(WeaponSkillType.SHIELD).blockRateInPercent / 100f));
+				
+				// loose endurance for blocking the attack
+				propertiesDataHandler.reduceEndurance(ENDURANCE_LOSS_FOR_BLOCKING_DAMAGE);
 			}
 			
 			if (attackType == AttackType.CONTINUOUS_MAP_DAMAGE) {

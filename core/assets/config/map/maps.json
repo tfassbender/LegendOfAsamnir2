@@ -167,7 +167,7 @@
         map: "map/loa2_l3_muspelheim_lava_dungeon_6.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l3_muspelheim_lava_dungeon.json,
         initialStartingPointId: 10,
-		//initial: true
+		initial: true
 	},
 	{
         name: loa2_muspelheim_lava_dungeon_key,
@@ -205,7 +205,7 @@
 		map: "map/loa2_l4_helheim_skeleton_zone.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l4_helheim.json,
 		initialStartingPointId: 11,
-		initial: true
+		//initial: true
 	},
 	{
 		name: loa2_l4_helheim_spider_zone,

@@ -95,6 +95,13 @@ public class AttackHandler implements CharacterStateAttackHandler {
 		return attack;
 	}
 	
+	public void abortAllAttacks() {
+		for (Attack attack : attacks) {
+			attack.abort();
+		}
+		attacks.clear();
+	}
+	
 	/**
 	 * Set the body that gets the hit fixtures, because the body might not have been created when the {@link AttackHandler} was initialised.
 	 */

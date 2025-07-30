@@ -1,5 +1,6 @@
 package net.jfabricationgames.gdx.character.player.implementation;
 
+import net.jfabricationgames.gdx.sound.SoundHandler;
 import net.jfabricationgames.gdx.sound.SoundManager;
 import net.jfabricationgames.gdx.sound.SoundSet;
 
@@ -13,14 +14,15 @@ class CharacterSoundHandler {
 		soundSet = SoundManager.getInstance().loadSoundSet(SOUND_SET_KEY);
 	}
 	
-	public void playSound(CharacterAction action) {
+	public SoundHandler playSound(CharacterAction action) {
 		if (action.getSound() != null) {
-			playSound(action.getSound());
+			return playSound(action.getSound());
 		}
+		return SoundHandler.noSound();
 	}
 	
-	public void playSound(String sound) {
-		soundSet.playSound(sound);
+	public SoundHandler playSound(String sound) {
+		return soundSet.playSound(sound);
 	}
 	
 	public void dispose() {
