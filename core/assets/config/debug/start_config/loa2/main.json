@@ -9,6 +9,7 @@
 		
 		100: before_muspelheim,
 		101: before_helheim,
+		102: after_helheim,
 	},
 	eventsLists: {
 		after_tavern: {
@@ -191,6 +192,17 @@
 				{
 					eventType: GIVE_ITEM_TO_PLAYER,
 					stringValue: metal_ingot,
+				},
+			]
+        },
+        
+        after_helheim: {
+            subConfigPath: config/debug/start_config/loa2/l4_helheim.json
+			subConfigName: final,
+			events: [
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: compass_search_for_triforce_pieces, value: true}",
 				},
 			]
         },

@@ -259,7 +259,7 @@
 				],
 			},
 			choiceOptionExecutions: [
-				end,
+				check_compass,
 				elf_explain_side_quest,
 				missing_pieces,
 			],
@@ -347,6 +347,134 @@
 				thorin_question,
 			],
 		},
+		
+		check_compass: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_main__elven_warrior_can_configure_compass_for_triforce_items,
+					executedStateName: configure_compass_for_triforce_items_1,
+				},
+				{
+					// default case - the player hasn't found the compass yet or it was already configured for triforce items
+					executedStateName: end,
+				},
+			],
+		},
+		
+		configure_compass_for_triforce_items_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "Wait a minute Thorin!\n        \nThe compass you found looks very interesting...    ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				configure_compass_for_triforce_items_2,
+			],
+		},
+		
+		configure_compass_for_triforce_items_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "I think I could configure it to search for pieces of the amulet.\n                   \nThen it would point you to the nearest piece of the amulet if you forgot any.      ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				configure_compass_for_triforce_items_3,
+			],
+		},
+		
+		configure_compass_for_triforce_items_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "It will only work if there is a piece of the amulet in the same realm as you, though.     ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				configure_compass_for_triforce_items__thorin,
+			],
+		},
+		
+		configure_compass_for_triforce_items__thorin: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That sounds great!\n        \nLet's do that!   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                configure_compass_for_triforce_items__working,
+			],
+        },
+		
+		configure_compass_for_triforce_items__working: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "...          \n...          \n...          \nThat should do! The compass now points to the nearest piece of the amulet.",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				configure_compass_for_triforce_items__event,
+			],
+		},
+        
+		configure_compass_for_triforce_items__event: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: compass_search_for_triforce_pieces, value: true}",
+			},
+			
+			executes: [
+				configure_compass_for_triforce_items__throin_2,
+			],
+		},
+		
+		configure_compass_for_triforce_items__throin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Thanks!\n               \nI'll continue to search for the amulet pieces!    ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                end,
+			],
+        },
 		
 		end: {
 			type: WAIT,

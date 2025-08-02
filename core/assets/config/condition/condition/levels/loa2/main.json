@@ -51,6 +51,26 @@
 		},
 	},
 	
+	loa2_main__elven_warrior_can_configure_compass_for_triforce_items: {
+		conditionType: AND,
+		conditionalParameters: {
+			condition: {
+				conditionType: GLOBAL_VALUE_SET,
+				parameters: {
+					key:  special_action_available__compass,
+                    expectedValue: true,
+				}
+			},
+			condition2: {
+				conditionType: GLOBAL_VALUE_SET_OR_NULL,
+                parameters: {
+                    key: compass_search_for_triforce_pieces,
+                    expectedValue: false,
+				}
+			}
+		}
+	},
+	
 	loa2_main__guardian_at_bifrost_has_seen_thorins_rune_raidho: {
         conditionType: GLOBAL_VALUE_SET,
         parameters: {
