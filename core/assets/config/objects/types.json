@@ -687,6 +687,17 @@
 		physicsBodyOffsetFactorY: 0.07f,
 	},
 	
+	hookshot_target_invisible: {
+		type: BASIC,
+		
+		hookshotConnectable: true,
+		
+        texture: empty,
+        
+		physicsBodySizeFactorX: 10f,
+		physicsBodySizeFactorY: 10f,
+	},
+	
 	fire: {
 		type: TRAVERSEABLE,
 		

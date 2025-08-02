@@ -317,6 +317,11 @@
         texture: triforce,
         pickUpSound: pickup_5
 	},
+	triforce_svartalfheim_main_island: {
+        type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
 	triforce_svartalfheim_dwarven_cave_main: {
 		type: TRIFORCE,
         texture: triforce,
