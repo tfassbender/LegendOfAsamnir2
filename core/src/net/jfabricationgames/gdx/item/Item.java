@@ -113,8 +113,13 @@ public class Item implements StatefulMapObject, CutsceneControlledUnit, DataItem
 		this.itemTextBox = itemTextBox;
 	}
 	
+	@Override
 	public Vector2 getPosition() {
-		return position;
+		if (position != null) {
+			return position;
+		}
+		
+		return body != null && body.getPosition() != null ? body.getPosition().cpy() : new Vector2();
 	}
 	
 	public void setPosition(Vector2 position) {

@@ -56,6 +56,8 @@ class CharacterRenderer {
 	private GrowingAnimationDirector<TextureRegion> darknessAnimation;
 	private boolean darknessFading;
 	
+	private Vector2 compassRotationVector = new Vector2(0, 1);
+	
 	public CharacterRenderer(Dwarf player) {
 		this.player = player;
 		
@@ -228,35 +230,35 @@ class CharacterRenderer {
 	public void drawCompassMarker(ShapeRenderer shapeRenderer) {
 		GameMapManager.getInstance().getMap().getUnitById(ANIMATION_DWARF_CONFIG_FILE);
 		
-		final float aimMarkerDistanceFactor = 0.8f;
-		
+		Color compassColor = COMPASS_ARROW_COLOR;
 		Vector2 compassTargetPosition = getCompassTargetPosition();
 		if (compassTargetPosition == null) {
-			// no target position available, so do not draw the compass marker
-			return;
+			// if no target unit is configured, but the compass can search for triforce pieces, target the nearest triforce piece
+			compassTargetPosition = getClosestTriforcePiecePosition();
+			
+			if (compassTargetPosition != null) {
+				// change the color to yellow if the compass is searching for triforce pieces
+				compassColor = Color.YELLOW;
+			}
 		}
 		
-		Vector2 normalizedDirection = compassTargetPosition.sub(player.bodyHandler.body.getPosition()).nor();
-		Vector2 aimMarkerOffset = normalizedDirection.cpy().scl(aimMarkerDistanceFactor);
+		Vector2 direction = null;
+		Vector2 needleDirection = null;
+		if (compassTargetPosition != null) {
+			direction = compassTargetPosition.sub(player.bodyHandler.body.getPosition());
+			needleDirection = direction.cpy();
+		}
+		else {
+			// no target position available -> draw the compass on top of the player and rotate it over time
+			direction = new Vector2(0, 1); // default direction upwards
+			
+			// rotate the compass needle over time (1 rotation per second)
+			float angle = -Gdx.graphics.getDeltaTime() * 2f * (float) Math.PI; // convert seconds to radians
+			compassRotationVector.rotateRad(angle);
+			needleDirection = compassRotationVector;
+		}
 		
-		final float arrowSize = 0.2f;
-		final float arrowBaseWidth = 0.2f;
-		shapeRenderer.setColor(COMPASS_ARROW_COLOR);
-		drawArrow(shapeRenderer, //
-				player.bodyHandler.body.getPosition().x + aimMarkerOffset.x, //
-				player.bodyHandler.body.getPosition().y + aimMarkerOffset.y, //
-				normalizedDirection.angleRad(), //
-				arrowSize, //
-				arrowBaseWidth);
-		
-		// opposite direction (to make it look like a compass needle)
-		shapeRenderer.setColor(Color.WHITE);
-		drawArrow(shapeRenderer, //
-				player.bodyHandler.body.getPosition().x + aimMarkerOffset.x, //
-				player.bodyHandler.body.getPosition().y + aimMarkerOffset.y, //
-				normalizedDirection.angleRad(), //
-				-arrowSize, //
-				arrowBaseWidth);
+		drawCompassMarker(shapeRenderer, compassColor, direction, needleDirection);
 	}
 	
 	private Vector2 getCompassTargetPosition() {
@@ -269,7 +271,10 @@ class CharacterRenderer {
 			}
 		}
 		
-		// if no target unit is configured, but the compass can search for triforce pieces, target the nearest triforce piece
+		return null; // nothing to target
+	}
+	
+	private Vector2 getClosestTriforcePiecePosition() {
 		if (GlobalValuesDataHandler.getInstance().getAsBoolean(GLOBAL_VALUE_KEY_COMPASS_SEARCH_FOR_TRIFORCE_PIECES)) {
 			Array<Item> items = GameMapManager.getInstance().getMap().getItemsInMap();
 			ArrayIterator<Item> iterator = items.iterator();
@@ -291,7 +296,33 @@ class CharacterRenderer {
 			}
 		}
 		
-		return null; // nothing to target
+		return null;
+	}
+	
+	private void drawCompassMarker(ShapeRenderer shapeRenderer, Color compassColor, Vector2 direction, Vector2 needleDirection) {
+		final float aimMarkerDistanceFactor = 0.8f;
+		
+		Vector2 normalizedDirection = direction.cpy().nor(); // ensure the direction is normalized
+		Vector2 aimMarkerOffset = normalizedDirection.cpy().scl(aimMarkerDistanceFactor);
+		
+		final float arrowSize = 0.2f;
+		final float arrowBaseWidth = 0.2f;
+		shapeRenderer.setColor(compassColor);
+		drawArrow(shapeRenderer, //
+				player.bodyHandler.body.getPosition().x + aimMarkerOffset.x, //
+				player.bodyHandler.body.getPosition().y + aimMarkerOffset.y, //
+				needleDirection.angleRad(), //
+				arrowSize, //
+				arrowBaseWidth);
+		
+		// opposite direction (to make it look like a compass needle)
+		shapeRenderer.setColor(Color.WHITE);
+		drawArrow(shapeRenderer, //
+				player.bodyHandler.body.getPosition().x + aimMarkerOffset.x, //
+				player.bodyHandler.body.getPosition().y + aimMarkerOffset.y, //
+				needleDirection.angleRad(), //
+				-arrowSize, //
+				arrowBaseWidth);
 	}
 	
 	private void drawArrow(ShapeRenderer shapeRenderer, float x, float y, float angle, float size, float baseWidth) {
