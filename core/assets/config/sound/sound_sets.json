@@ -510,6 +510,10 @@
 					path: "sound/enemy/ghost_death_2.mp3",
 					volume: 1,
 				},
+				arcane_shower: {
+					path: "sound/enemy/attack/arcane_shower.mp3",
+					volume: 0.6,
+				}
 			}
 		},
 		cutscene: {

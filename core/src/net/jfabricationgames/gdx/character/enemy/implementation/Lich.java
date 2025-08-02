@@ -16,6 +16,7 @@ import net.jfabricationgames.gdx.character.ai.implementation.FollowAI;
 import net.jfabricationgames.gdx.character.ai.implementation.MultiAttackAI;
 import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
+import net.jfabricationgames.gdx.character.ai.util.timer.MultipleAttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.RandomIntervalAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
@@ -42,6 +43,8 @@ public class Lich extends Enemy {
 		super(typeConfig, properties);
 		
 		spellAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy("lich_soul_storm_effect");
+		
+		health = 10f; // TODO remove after tests
 	}
 	
 	@Override
@@ -105,8 +108,10 @@ public class Lich extends Enemy {
 		}
 		
 		int healthSegmentBeforeDamage = (int) (health / typeConfig.health * (100f / healthLossForInverseControlSpellInPercent));
+		float healthInPercentageBeforeDamage = (health / typeConfig.health) * 100f;
 		super.takeDamage(damage, attackInfo);
 		int healthSegmentAfterDamage = (int) (health / typeConfig.health * (100f / healthLossForInverseControlSpellInPercent));
+		float healthInPercentageAfterDamage = (health / typeConfig.health) * 100f;
 		
 		if (firstForm && getPercentualHealth() <= FIRST_FORM_CRITICAL_HEALTH_PERCENTAGE) {
 			health = typeConfig.health * FIRST_FORM_CRITICAL_HEALTH_PERCENTAGE; // prevent the victory sound that is played in the BossStatusBar when the boss health reaches 0
@@ -127,6 +132,14 @@ public class Lich extends Enemy {
 			CharacterState attackState = stateMachine.getState("attack_rage_nova");
 			attackState.setAttackDirection(Vector2.Zero); // a direction must be set, but since it's a nova, the value doesn't matter
 			stateMachine.forceStateChange(attackState); // the spell state follows automatically
+		}
+		
+		if (!firstForm && healthInPercentageBeforeDamage > 20f && healthInPercentageAfterDamage <= 20f) {
+			// change the AI to the final stage with two magic blast attacks at the same time
+			ai = new BaseAI();
+			ai = createLichMovementAI(ai);
+			ai = createLichAttackAI(ai, true);
+			ai.setCharacter(this);
 		}
 	}
 	
@@ -162,7 +175,7 @@ public class Lich extends Enemy {
 		// create a new AI for the second form
 		ai = new BaseAI();
 		ai = createLichMovementAI(ai);
-		ai = createLichAttackAI(ai);
+		ai = createLichAttackAI(ai, false);
 		ai.setCharacter(this);
 	}
 	
@@ -177,7 +190,7 @@ public class Lich extends Enemy {
 		return followAI;
 	}
 	
-	private ArtificialIntelligence createLichAttackAI(ArtificialIntelligence ai) {
+	private ArtificialIntelligence createLichAttackAI(ArtificialIntelligence ai, boolean finalStage) {
 		String stateNameAttackMelee = "attack_charge";
 		String stateNameAttackArcaneShower = "attack_arcane_shower";
 		String stateNameAttackMagicBlast = "attack_charge_magic_blast";
@@ -194,12 +207,19 @@ public class Lich extends Enemy {
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
 		attackDistances.put(characterStateAttackMelee, 2.5f);
 		attackDistances.put(characterStateAttackArcaneShower, 100f); // no distance - can strike from anywhere
-		attackDistances.put(characterStateAttackMagicBlast, 10f);
+		attackDistances.put(characterStateAttackMagicBlast, 15f);
 		
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
 		attackTimers.put(characterStateAttackMelee, new FixedAttackTimer(2f)); // melee attack must be fast to not let the player stand down and attack
 		attackTimers.put(characterStateAttackArcaneShower, new RandomIntervalAttackTimer(5f, 7f));
-		attackTimers.put(characterStateAttackMagicBlast, new FixedAttackTimer(12f)); // magic blast projectiles are active for 5 seconds
+		if (finalStage) {
+			// use 2 magic blasts in the final stage (health below 20%)
+			AttackTimer multiAttackTimer = new MultipleAttackTimer(new FixedAttackTimer(8f), new RandomIntervalAttackTimer(6f, 8f));
+			attackTimers.put(characterStateAttackMagicBlast, multiAttackTimer); // magic blast projectiles are active for 5 seconds
+		}
+		else {
+			attackTimers.put(characterStateAttackMagicBlast, new FixedAttackTimer(10f)); // magic blast projectiles are active for 5 seconds
+		}
 		
 		MultiAttackAI attackAI = new MultiAttackAI(ai, attackStates, attackDistances, attackTimers);
 		attackAI.setMoveToPlayerWhileAttacking(false);

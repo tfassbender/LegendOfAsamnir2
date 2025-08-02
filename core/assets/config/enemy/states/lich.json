@@ -171,6 +171,8 @@
         id: attack_cast,
         animation: lich_cast,
 		attack: attack_cast,
+		stateEnteringSound: hit_4,
+		soundDelay: 0.1f,
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
@@ -208,6 +210,8 @@
         id: attack_arcane_shower,
         animation: lich_rage,
         attack: attack_arcane_shower,
+        stateEnteringSound: arcane_shower,
+        soundDelay: 0.2f,
         endsWithAnimation: true,
 		repeatAnimationTimes: 4,
         followingState: idle,
