@@ -170,8 +170,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			}
 			actionSound = soundHandler.playSound(action);
 			
-			// abort attacks that are still in progress
-			attackHandler.abortAllAttacks();
+			if (action == CharacterAction.BLOCK || action == CharacterAction.BLOCK_MOVE) {
+				// abort attacks that are still in progress
+				attackHandler.abortAllAttacks();
+			}
 			
 			if (action.isAttack()) {
 				attackHandler.startAttack(action.getAttack(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
