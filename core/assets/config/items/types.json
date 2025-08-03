@@ -375,6 +375,16 @@
         texture: triforce,
         pickUpSound: pickup_5
 	},
+	triforce_helheim_cultist_dungeon: {
+        type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
+	triforce_helheim_eljudnir: {
+        type: TRIFORCE,
+        texture: triforce,
+        pickUpSound: pickup_5
+	},
 	
 	triforce_asgard_castle: {
 		type: TRIFORCE,

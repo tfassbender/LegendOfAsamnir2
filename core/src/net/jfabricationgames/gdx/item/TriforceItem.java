@@ -35,6 +35,8 @@ public class TriforceItem extends Item {
 		TRIFORCE_MUSPELHEIM_LAVA_DUNGEON(TriforceItemLocation.MUSPELHEIM), //
 		
 		TRIFORCE_HELHEIM_SKELETON_ZONE(TriforceItemLocation.HELHEIM), //
+		TRIFORCE_HELHEIM_CULTIST_DUNGEON(TriforceItemLocation.HELHEIM), //
+		TRIFORCE_HELHEIM_ELJUDNIR(TriforceItemLocation.HELHEIM), //
 		
 		TRIFORCE_ASGARD_CASTLE(TriforceItemLocation.ASGARD), //
 		TRIFORCE_ASGARD_FOREST(TriforceItemLocation.ASGARD); //

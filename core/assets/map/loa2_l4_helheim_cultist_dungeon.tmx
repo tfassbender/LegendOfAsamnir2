@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3787">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3788">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1329,6 +1329,9 @@
    <point/>
   </object>
   <object id="3786" name="item.shield_full" x="2336" y="160">
+   <point/>
+  </object>
+  <object id="3787" name="item.triforce_helheim_cultist_dungeon" x="1672.64" y="655.545">
    <point/>
   </object>
  </objectgroup>
