@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3332">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="89" height="58" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="3334">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -340,6 +340,15 @@
    <point/>
   </object>
   <object id="3331" name="item.shield_full" x="433" y="306">
+   <point/>
+  </object>
+  <object id="3332" name="item.metal_ingot" x="401" y="306">
+   <point/>
+  </object>
+  <object id="3333" name="object.chest" x="1936.63" y="719.75">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

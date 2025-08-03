@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3788">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3809">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1332,6 +1332,75 @@
    <point/>
   </object>
   <object id="3787" name="item.triforce_helheim_cultist_dungeon" x="1672.64" y="655.545">
+   <point/>
+  </object>
+  <object id="3788" name="item.metal_ingot" x="2336" y="224">
+   <point/>
+  </object>
+  <object id="3789" name="item.metal_ingot" x="2336" y="256">
+   <point/>
+  </object>
+  <object id="3790" name="object.chest" x="928" y="1024">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3791" name="object.chest" x="1568" y="160">
+   <properties>
+    <property name="drop" value="{metal_ingot: 1}"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3792" name="enemy.mimic_barrel" x="420.182" y="356.364">
+   <point/>
+  </object>
+  <object id="3793" name="object.barrel" x="388.182" y="358.364">
+   <point/>
+  </object>
+  <object id="3794" name="object.pot" x="402.727" y="367.091">
+   <point/>
+  </object>
+  <object id="3795" name="object.pot" x="1575.5" y="329.25">
+   <point/>
+  </object>
+  <object id="3796" name="object.pot" x="1593" y="330.75">
+   <point/>
+  </object>
+  <object id="3797" name="object.pot" x="1581" y="341.25">
+   <point/>
+  </object>
+  <object id="3798" name="object.pot" x="1593" y="347">
+   <point/>
+  </object>
+  <object id="3799" name="object.barrel" x="1738" y="42.6667">
+   <point/>
+  </object>
+  <object id="3800" name="object.barrel" x="1763.33" y="48">
+   <point/>
+  </object>
+  <object id="3801" name="object.pot" x="1627.33" y="173.333">
+   <point/>
+  </object>
+  <object id="3802" name="object.pot" x="1651.33" y="174">
+   <point/>
+  </object>
+  <object id="3803" name="object.barrel" x="1616" y="1036">
+   <point/>
+  </object>
+  <object id="3804" name="object.pot" x="1596.67" y="1032.67">
+   <point/>
+  </object>
+  <object id="3805" name="object.pot" x="1173.33" y="972">
+   <point/>
+  </object>
+  <object id="3806" name="object.pot" x="1070.67" y="970.667">
+   <point/>
+  </object>
+  <object id="3807" name="object.pot" x="1094.67" y="977.333">
+   <point/>
+  </object>
+  <object id="3808" name="enemy.mimic_barrel" x="920" y="975.333">
    <point/>
   </object>
  </objectgroup>

@@ -21,7 +21,7 @@ public class DesktopLauncher {
 		config.width = 1200;
 		config.height = 800;
 		config.vSyncEnabled = true;
-		config.fullscreen = false;
+		config.fullscreen = true;
 		config.addIcon("packed/icon/asamnir.png", Files.FileType.Internal);
 		return config;
 	}

@@ -25,8 +25,6 @@ public class SkeletonKing extends Enemy {
 	
 	public SkeletonKing(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
-		
-		health = 1f; // TODO remove after tests
 	}
 	
 	@Override

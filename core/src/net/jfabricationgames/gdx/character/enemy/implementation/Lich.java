@@ -42,9 +42,10 @@ public class Lich extends Enemy {
 	public Lich(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
 		
-		spellAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy("lich_soul_storm_effect");
+		// update the boss name (in case the player was killed by the lich)
+		typeConfig.bossName = "Cultist Abomination - The devouring Husk";
 		
-		health = 10f; // TODO remove after tests
+		spellAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy("lich_soul_storm_effect");
 	}
 	
 	@Override

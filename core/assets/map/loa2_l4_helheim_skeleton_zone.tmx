@@ -151,18 +151,6 @@
    </properties>
    <point/>
   </object>
-  <object id="2380" name="enemy.skeletal_warrior" x="860.5" y="916.5">
-   <properties>
-    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="2381" name="enemy.skeletal_warrior" x="777.5" y="926">
-   <properties>
-    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
-   </properties>
-   <point/>
-  </object>
   <object id="2382" name="enemy.skeletal_warrior" x="755" y="859.5">
    <properties>
     <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
@@ -209,12 +197,6 @@
    <point/>
   </object>
   <object id="2393" name="enemy.skeletal_warrior" x="612" y="541.333">
-   <properties>
-    <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="2394" name="enemy.skeletal_warrior" x="554.667" y="398.667">
    <properties>
     <property name="teamId" value="loa2_l4_helheim__skeletons_2"/>
    </properties>
@@ -274,12 +256,6 @@
   <object id="2408" name="enemy.skeletal_warrior" x="399" y="1401">
    <properties>
     <property name="teamId" value="loa2_l4_helheim__skeletons_3"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="2413" name="enemy.skeletal_warrior" x="528" y="1434">
-   <properties>
-    <property name="teamId" value="loa2_l4_helheim__skeletons_1"/>
    </properties>
    <point/>
   </object>

@@ -218,5 +218,132 @@
 //				},
 			]
         },
+        
+        after_helheim_with_metal_ingots: {
+        	subConfigName: after_helheim,
+        	events: [
+        		// 28 metal ingots were available to find till now + 2 (assumed) that could be bought in the shop
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+				{
+					eventType: GIVE_ITEM_TO_PLAYER,
+					stringValue: metal_ingot,
+				},
+        	]
+        },
 	}
 }
