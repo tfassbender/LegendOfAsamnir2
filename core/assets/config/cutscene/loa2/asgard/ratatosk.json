@@ -7,6 +7,10 @@
 			type: SWITCH_CONDITION,
 			
 			switchConditions: [
+			    {
+			    	conditionId: loa2_asgard__chaos_wizard_defeated,
+					executedStateName: nothing_more_to_do_here,
+				},
 				{
 					conditionId: common__rune_laguz_collected,
 					executedStateName: laguz_collected__ratatosk_1
@@ -19,6 +23,22 @@
 					// default case - thorin hasn't found the chaos wizard's castle yet
 					executedStateName: first_met__ratatosk_1
 				},
+			],
+		},
+		
+		nothing_more_to_do_here: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Ratatosk",
+                colorHeader: #965a00,
+                displayText: "Hey Thorin!           \nYou defeated the chaos wizard! Congratulations!\n                  \nGuess we'll meet again in the sequel!   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
 			],
 		},
 		

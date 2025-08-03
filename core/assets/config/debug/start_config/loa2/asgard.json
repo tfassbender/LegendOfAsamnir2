@@ -1,0 +1,21 @@
+{
+	startingPointMapping: {
+		10: before_entering_the_castle,
+	},
+	eventsLists: {
+		before_entering_the_castle: {
+			subConfigPath: config/debug/start_config/loa2/l4_helheim.json
+			subConfigName: final,
+			events: [
+				{
+					eventType: COLLECT_RUNE,
+					stringValue: laguz,
+				},
+//				{
+//					eventType: SET_GLOBAL_CONDITION_VALUE,
+//					stringValue: "{key: loa2_asgard__chaos_wizard_defeated, value: true}",
+//				},
+			]
+        },
+	}
+}

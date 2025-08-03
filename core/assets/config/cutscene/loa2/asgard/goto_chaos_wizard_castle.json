@@ -7,25 +7,22 @@
 			
 			executionDelayInSeconds: 1f,
 			
-			condition: {
-				conditionId: common__rune_laguz_collected,
-				thenCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_met,
-					}
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+			    {
+			    	conditionId: loa2_asgard__chaos_wizard_defeated,
+					executedStateName: change_map,
 				},
-				elseCase: {
-					type: CUTSCENE,
-					executionParameters: {
-						conditionCase: condition_not_met,
-					}
-				}
-			},
-			conditionOptionExecutions: {
-				condition_met: chaos_wizard_comment_entering,
-				condition_not_met: chaos_wizard_1,
-			}
+			    {
+			    	conditionId: common__rune_laguz_collected,
+					executedStateName: chaos_wizard_comment_entering,
+				},
+				{
+					// default case - thorin hasn't found the rune Laguz yet
+					executedStateName: chaos_wizard_1
+				},
+			],
 		},
 		
 		chaos_wizard_1: {
@@ -239,12 +236,88 @@
             waitForEventToFinish: true,
             
             executes: [
-                change_map,
+                demo_version_end,
 			],
 		},
 		
+		demo_version_end: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Oh ... wait a second ...\n                  \nIt seems this is just an unfinished demo version of the game.     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                demo_version_end_2,
+			],
+		},
+		
+		demo_version_end_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I guess we'll have to postpone our epic final battle until the full version of the game is released.      \nYou just wait here! I'll talk to this lazy developer and tell him to finish the game!     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                demo_version_end_3,
+			],
+		},
+		
+		demo_version_end_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Tobias (Developer)",
+                colorHeader: #ff00ff,
+                displayText: "I'm already working on it! I promise!\n             \nThe game will be finished in a few months!    ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                demo_version_end_4,
+			],
+		},
+		
+		demo_version_end_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Tobias (Developer)",
+                colorHeader: #ff00ff,
+                displayText: "So far: Thanks for playing the demo version of Legend of Asamnir 2!\nAnd congratulations for getting this far!\nI hope you enjoyed it and you didn't suffer too much from all the terrible jokes :)",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		wait_before_change_map: {
+            type: WAIT,
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+                change_map,
+            ],
+		},
+		
 		change_map: {
-			executionDelayInSeconds: 1f,
 			type: EVENT,
 			
 			event: {

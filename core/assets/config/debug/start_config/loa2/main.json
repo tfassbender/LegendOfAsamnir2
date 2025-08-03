@@ -208,10 +208,10 @@
 					eventType: SET_GLOBAL_CONDITION_VALUE,
 					stringValue: "{key: compass_search_for_triforce_pieces, value: true}",
 				},
-//				{
-//					eventType: SET_GLOBAL_CONDITION_VALUE,
-//					stringValue: "{key: loa2_asgard__chaos_wizard_castle_entered, value: true}",
-//				},
+				{
+					eventType: SET_GLOBAL_CONDITION_VALUE,
+					stringValue: "{key: loa2_asgard__chaos_wizard_castle_entered, value: true}",
+				},
 //				{
 //					eventType: SET_GLOBAL_CONDITION_VALUE,
 //					stringValue: "{key: loa2_asgard__chaos_wizard_defeated, value: true}",
