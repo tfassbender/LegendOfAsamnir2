@@ -336,7 +336,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Elven Warrior (with a funny hat)",
-				displayText: "TODO add crucial information for the player here (path to take in the final dungeon)  ",
+				displayText: "Or ... at least I would if this wasn't just an unfinished demo version of the game ...\n        \nSorry Thorin, please come back later.      ",
 				colorHeader: #00d420,
 				showNextPageIcon: true,
 			}

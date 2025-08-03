@@ -10,4 +10,20 @@
 			expectedValue: true,
 		}
 	},
+	
+	loa2_asgard__chaos_wizard_castle_entered: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+			key: loa2_asgard__chaos_wizard_castle_entered,
+			expectedValue: true,
+		}
+	},
+	
+	loa2_asgard__chaos_wizard_defeated: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_asgard__chaos_wizard_defeated,
+            expectedValue: true,
+		}
+	},
 }
