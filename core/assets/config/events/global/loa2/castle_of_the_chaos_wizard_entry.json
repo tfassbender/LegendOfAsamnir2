@@ -1,0 +1,54 @@
+{
+	//*******************************************
+	//*** cutscenes - npc interaction
+	//*******************************************
+	
+//	loa2_l5_castle_entry_skali: {
+//		event: {
+//			eventType: NPC_INTERACTION,
+//			stringValue: loa2_l5_castle_entry_skali,
+//		},
+//		executionType: START_CUTSCENE,
+//		executionParameters: {
+//			cutsceneId: loa2_l5_castle_entry_skali_cutscene,
+//		}
+//	},
+//	
+//	loa2_l5_castle_entry_hati: {
+//		event: {
+//			eventType: NPC_INTERACTION,
+//			stringValue: loa2_l5_castle_entry_hati,
+//		},
+//		executionType: START_CUTSCENE,
+//		executionParameters: {
+//			cutsceneId: loa2_l5_castle_entry_hati_cutscene,
+//		}
+//	},
+	
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l5_castle_entry_goto_fields_of_vigrid: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_entry_goto_fields_of_vigrid,
+		}
+		executionType: CHANGE_MAP,
+		executionParameters: {
+			map: loa2_fields_of_vigrid,
+			startingPointId: 1,
+		}
+	},
+	
+	loa2_l5_castle_entry_goto_labyrinth: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_entry_goto_labyrinth,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_entry_goto_labyrinth_cutscene,
+		}
+	},
+}

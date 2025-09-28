@@ -236,75 +236,7 @@
             waitForEventToFinish: true,
             
             executes: [
-                demo_version_end,
-			],
-		},
-		
-		demo_version_end: {
-			type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Strange Chaos Wizard Guy",
-                colorHeader: #850085,
-                displayText: "Oh ... wait a second ...\n                  \nIt seems this is just an unfinished demo version of the game.     ",
-                showNextPageIcon: true,
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
-                demo_version_end_2,
-			],
-		},
-		
-		demo_version_end_2: {
-			type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Strange Chaos Wizard Guy",
-                colorHeader: #850085,
-                displayText: "I guess we'll have to postpone our epic final battle until the full version of the game is released.      \nYou just wait here! I'll talk to this lazy developer and tell him to finish the game!     ",
-                showNextPageIcon: true,
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
-                demo_version_end_3,
-			],
-		},
-		
-		demo_version_end_3: {
-			type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Tobias (Developer)",
-                colorHeader: #ff00ff,
-                displayText: "I'm already working on it! I promise!\n             \nThe game will be finished in a few months!    ",
-                showNextPageIcon: true,
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
-                demo_version_end_4,
-			],
-		},
-		
-		demo_version_end_4: {
-			type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Tobias (Developer)",
-                colorHeader: #ff00ff,
-                displayText: "So far: Thanks for playing the demo version of Legend of Asamnir 2!\nAnd congratulations for getting this far!\nI hope you enjoyed it and you didn't suffer too much from all the terrible jokes :)",
-                showNextPageIcon: true,
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
-                end,
+                wait_before_change_map,
 			],
 		},
 		
@@ -322,7 +254,7 @@
 			
 			event: {
 				eventType: CHANGE_MAP,
-                stringValue: loa2_chaos_wizard_castle_entry,
+                stringValue: loa2_l5_chaos_wizard_castle_entry,
                 intValue: 0,
 			},
 			

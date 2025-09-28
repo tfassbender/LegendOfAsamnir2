@@ -244,7 +244,8 @@
 	{
         name: loa2_l5_chaos_wizard_castle_entry,
         map: "map/loa2_l5_chaos_wizard_castle_entry.tmx",
-        initialStartingPointId: 1,
+		debugStartConfig: config/debug/start_config/loa2/l5_castle_of_the_chaos_wizard.json,
+        initialStartingPointId: 10,
 		initial: true
 	},
 	

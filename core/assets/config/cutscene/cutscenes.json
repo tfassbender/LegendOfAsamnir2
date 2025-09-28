@@ -232,6 +232,11 @@
 	config/cutscene/loa2/asgard/guardian_of_asgard.json,
 	config/cutscene/loa2/asgard/goto_chaos_wizard_castle.json,
 	config/cutscene/loa2/asgard/ratatosk.json,
+	
+	//****************************************************************
+	//*** Legend of Asamnir 2 - Castle of the Chaos Wizard - Entry
+	//****************************************************************
+	config/cutscene/loa2/castle_of_the_chaos_wizard/entry/goto_labyrinth.json,
 
 //	//********************************************************
 //	//*** Demo Level

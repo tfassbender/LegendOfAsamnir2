@@ -1,0 +1,12 @@
+{
+	startingPointMapping: {
+		10: after_all_runes_collected,
+	},
+	eventsLists: {
+		after_all_runes_collected: {
+			subConfigPath: config/debug/start_config/loa2/main.json
+			subConfigName: all_triforce_pieces_collected,
+			events: []
+		},
+	}
+}
