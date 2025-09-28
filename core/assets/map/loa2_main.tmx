@@ -482,7 +482,7 @@ West: Helheim.</property>
    <point/>
   </object>
   <object id="10641" name="object.traverseable" x="2239.75" y="1760.79" width="29.1664" height="63.4167"/>
-  <object id="10642" name="player.startingPosition" x="2048" y="1824">
+  <object id="10642" name="player.startingPosition" x="1408" y="1536">
    <properties>
     <property name="startingPointId" value="103"/>
    </properties>

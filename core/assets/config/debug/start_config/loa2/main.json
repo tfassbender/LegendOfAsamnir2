@@ -10,6 +10,7 @@
 		100: before_muspelheim,
 		101: before_helheim,
 		102: after_helheim,
+		103: all_triforce_pieces_collected,
 	},
 	eventsLists: {
 		after_tavern: {
@@ -345,5 +346,78 @@
 				},
         	]
         },
+        all_triforce_pieces_collected: {
+        	subConfigName: after_helheim,
+        	events: [
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_svartalfheim_main_north,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_svartalfheim_main_south,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_svartalfheim_main_island,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_svartalfheim_dwarven_cave_main,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_svartalfheim_dwarven_cave_castle,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_svartalfheim_castle,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_svartalfheim_jail,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_niflheim_main_chicken_side_quest,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_niflheim_ice_fields,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_muspelheim_desert,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_muspelheim_lava_caves,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_muspelheim_lava_dungeon,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_helheim_skeleton_zone,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_helheim_cultist_dungeon,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_helheim_eljudnir,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_asgard_castle,
+				},
+				{
+                    eventType: GIVE_ITEM_TO_PLAYER,
+                    stringValue: triforce_asgard_forest,
+				},
+			]
+		}
 	}
 }

@@ -108,6 +108,11 @@ public class TriforceItem extends Item {
 				GlobalValuesDataHandler.getInstance().put(type.globalValueKeyCollected, false);
 			}
 		}
+		
+		if (getNumDeliveredTriforcePieces() == TriforceItemType.values().length) {
+			// all triforce pieces delivered
+			GlobalValuesDataHandler.getInstance().put("triforce__all_pieces_collected", true);
+		}
 	}
 	
 	public static int getNumTriforcePiecesLeftInLocation(TriforceItemLocation location) {

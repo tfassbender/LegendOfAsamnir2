@@ -9,7 +9,7 @@
 			switchConditions: [
 				{
 					conditionId: common__triforce__all_pieces_collected,
-					executedStateName: elf_all_pieces_collected,
+					executedStateName: elf_greeting_after_all_pieces_collected,
 				},
 				{
 					conditionId: loa2_main__elven_warrior_in_dwarven_village_met,
@@ -154,6 +154,23 @@
 			],
 		},
 		
+		elf_greeting_after_all_pieces_collected: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Elven Warrior (with a funny hat)",
+                displayText: "Hello Thorin.        \nThanks again for finding all pieces of the amulet!\n             \nDid you already find the Chaos Wizard?              ",
+                colorHeader: #00d420,
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_question_after_all_pieces_collected,
+			],
+		},
+		
 		thorin_answer_amulet_pieces__condition: {
 	    	type: SWITCH_CONDITION,
 			
@@ -193,7 +210,7 @@
 			},
 			
 			executes: [
-				elf_answer_amulet_pieces_found,
+				elf_condition_final_piece_delivered,
 			],
 		},
 		
@@ -265,6 +282,26 @@
 			],
 		},
 		
+		thorin_question_after_all_pieces_collected: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"What are you doing here?",
+					"What was the hint you wanted to give me?",
+				],
+			},
+			choiceOptionExecutions: [
+				check_compass,
+				elf_explain_side_quest,
+				elf_all_pieces_collected_2,
+			],
+		},
+		
 		missing_pieces: {
 			type: SWITCH_CONDITION,
 			
@@ -319,7 +356,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Elven Warrior (with a funny hat)",
-				displayText: "You found all pieces of the amulet!          \nThank you so much!\n             \nI'll tell you what I know about your quest now.  ",
+				displayText: "You found all pieces of the amulet!          \nThank you so much!\n             \nI'll tell you what I know about your quest now.              ",
 				colorHeader: #00d420,
 				showNextPageIcon: true,
 			}
@@ -336,7 +373,7 @@
 			
 			executionParameters: {
 				displayTextHeader: "Elven Warrior (with a funny hat)",
-				displayText: "Or ... at least I would if this wasn't just an unfinished demo version of the game ...\n        \nSorry Thorin, please come back later.      ",
+				displayText: "From my village in Alfheim I saw that the Chaos Wizard used some powerful magic to build a labyrinth in the center of his castle.         ",
 				colorHeader: #00d420,
 				showNextPageIcon: true,
 			}
@@ -344,7 +381,74 @@
 			waitForEventToFinish: true,
 			
 			executes: [
-				thorin_question,
+				elf_all_pieces_collected_3,
+			],
+		},
+		
+		elf_all_pieces_collected_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "His throne room can only be reached by taking the right path trough the labyrinth.           \nLuckily, I saw him built it and I know the correct path.        ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				elf_all_pieces_collected_4,
+			],
+		},
+		
+		elf_all_pieces_collected_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "After you enter the labyrinth, follow the path that goes:\nright, up, left, right, right, down, left, up, right                   \nYou need to remember that!         ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				elf_all_pieces_collected_5,
+			],
+		},
+		
+		elf_all_pieces_collected_5: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Elven Warrior (with a funny hat)",
+				displayText: "If you follow that path you should reach the throne room and find the Chaos Wizard.\n                     \nI hope that helps you on your quest!        ",
+				colorHeader: #00d420,
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				thorin_answer__path_revieled,
+			],
+		},
+	    
+	    thorin_answer__path_revieled: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+				displayTextHeader: "Thorin",
+				displayText: "Thank you!    \nI'll try to remember that path.\n           \nIf you would excuse me now, I need to ram my axe into someone's skull.    ",
+				showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				end,
 			],
 		},
 		
