@@ -331,6 +331,17 @@
 			}
 		},
 		
+		// level 5 - castle of the chaos wizard
+		{
+			"type": "com.badlogic.gdx.maps.tiled.TiledMap",
+			"path": "map/loa2_l5_chaos_wizard_castle_entry.tmx",
+			"parametersType": "com.badlogic.gdx.maps.tiled.TmxMapLoader$Parameters",
+			"parameters": {
+				"textureMinFilter": "Nearest",
+				"textureMagFilter": "Nearest"
+			}
+		},
+		
 //		//***************************************************
 //		//*** other maps
 //		//***************************************************

@@ -15,7 +15,7 @@
 		map: "map/loa2_main.tmx",
 		debugStartConfig: config/debug/start_config/loa2/main.json,
 		initialStartingPointId: 103,
-		initial: true
+		//initial: true
 	},
 	{
         name: loa2_main_tavern,
@@ -237,6 +237,15 @@
 		debugStartConfig: config/debug/start_config/loa2/asgard.json,
 		initialStartingPointId: 10,
 		//initial: true
+	},
+	
+	// loa2 level 5 - castle of the chaos wizard
+	
+	{
+        name: loa2_l5_chaos_wizard_castle_entry,
+        map: "map/loa2_l5_chaos_wizard_castle_entry.tmx",
+        initialStartingPointId: 1,
+		initial: true
 	},
 	
 	//****************************************
