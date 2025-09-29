@@ -88,7 +88,10 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 				.setRestitution(typeConfig.restitution) //
 				.setLinearDamping(typeConfig.linearDamping) //
 				.setCollisionType(typeConfig.collisionType);
-		physicsBodySizeFactor = new Vector2(typeConfig.physicsBodySizeFactorX, typeConfig.physicsBodySizeFactorY);
+		
+		float physicsBodySizeFactorX = MapUtil.getMapPropertyConfigValueAsFloat(mapProperties, "_typeConfig_physicsBodySizeFactorX").orElse(typeConfig.physicsBodySizeFactorX);
+		float physicsBodySizeFactorY = MapUtil.getMapPropertyConfigValueAsFloat(mapProperties, "_typeConfig_physicsBodySizeFactorY").orElse(typeConfig.physicsBodySizeFactorY);
+		physicsBodySizeFactor = new Vector2(physicsBodySizeFactorX, physicsBodySizeFactorY);
 		physicsBodyOffsetFactor = new Vector2(typeConfig.physicsBodyOffsetFactorX, typeConfig.physicsBodyOffsetFactorY);
 		
 		float mapConfiguredBodySizeFactorX = Float.parseFloat(mapProperties.get(MAP_PROPERTY_KEY_PHYSICS_BODY_SIZE_FACTOR_X, "1f", String.class));
@@ -145,7 +148,12 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		body.setUserData(this);
 		
 		if (typeConfig.addSensor) {
-			PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties().setBody(body).setSensor(true).setRadius(typeConfig.sensorRadius).setCollisionType(PhysicsCollisionType.OBSTACLE_SENSOR);
+			float sensorRadius = MapUtil.getMapPropertyConfigValueAsFloat(mapProperties, "_typeConfig_sensorRadius").orElse(typeConfig.sensorRadius);
+			PhysicsBodyProperties sensorProperties = new PhysicsBodyProperties() //
+					.setBody(body) //
+					.setSensor(true) //
+					.setRadius(sensorRadius) //
+					.setCollisionType(PhysicsCollisionType.OBSTACLE_SENSOR);
 			PhysicsBodyCreator.addCircularFixture(sensorProperties);
 		}
 	}

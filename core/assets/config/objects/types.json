@@ -77,6 +77,14 @@
 		multipleActionExecutionsPossible: true,
 		interactiveAction: SHOW_ON_SCREEN_TEXT,
 	},
+	exhibit: {
+		type: INTERACTIVE,
+		
+		addSensor: true,
+		
+		multipleActionExecutionsPossible: true,
+		interactiveAction: SHOW_ON_SCREEN_TEXT,
+	},
 	changeable_signboard: {
 		type: INTERACTIVE,
 		

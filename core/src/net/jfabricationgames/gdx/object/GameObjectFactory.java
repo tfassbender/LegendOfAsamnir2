@@ -27,6 +27,7 @@ import net.jfabricationgames.gdx.object.spawn.SpawnPoint;
 import net.jfabricationgames.gdx.object.traversable.EnemyPathBlockerObject;
 import net.jfabricationgames.gdx.object.traversable.TraverseableObject;
 import net.jfabricationgames.gdx.util.FactoryUtil;
+import net.jfabricationgames.gdx.util.MapUtil;
 
 public class GameObjectFactory {
 	
@@ -93,8 +94,11 @@ public class GameObjectFactory {
 			throw new IllegalStateException("No type config known for type: '" + type + "'. Either the type name is wrong or you have to add it to the objectTypesConfig (see \"" + CONFIG_FILE + "\")");
 		}
 		
-		Sprite sprite = FactoryUtil.createSprite(atlas, x, y, typeConfig.texture);
-		sprite.setScale(typeConfig.textureSizeFactorX * Constants.WORLD_TO_SCREEN, typeConfig.textureSizeFactorY * Constants.WORLD_TO_SCREEN);
+		String texture = getTextureName(properties, typeConfig);
+		float textureSizeFactorX = getTextureSizeFactorX(properties, typeConfig);
+		float textureSizeFactorY = getTextureSizeFactorY(properties, typeConfig);
+		Sprite sprite = FactoryUtil.createSprite(atlas, x, y, texture);
+		sprite.setScale(textureSizeFactorX * Constants.WORLD_TO_SCREEN, textureSizeFactorY * Constants.WORLD_TO_SCREEN);
 		
 		GameObject object;
 		switch (typeConfig.type) {
@@ -171,6 +175,18 @@ public class GameObjectFactory {
 		object.setTextureAtlas(atlas);
 		
 		return object;
+	}
+	
+	private static String getTextureName(MapProperties properties, GameObjectTypeConfig typeConfig) {
+		return MapUtil.getMapPropertyConfigValue(properties, "_typeConfig_texture").orElse(typeConfig.texture);
+	}
+	
+	private static float getTextureSizeFactorX(MapProperties properties, GameObjectTypeConfig typeConfig) {
+		return MapUtil.getMapPropertyConfigValueAsFloat(properties, "_typeConfig_textureSizeFactorX").orElse(typeConfig.textureSizeFactorX);
+	}
+	
+	private static float getTextureSizeFactorY(MapProperties properties, GameObjectTypeConfig typeConfig) {
+		return MapUtil.getMapPropertyConfigValueAsFloat(properties, "_typeConfig_textureSizeFactorY").orElse(typeConfig.textureSizeFactorY);
 	}
 	
 	private static Array<Sprite> loadAdditionalTextures(Array<String> additionalTextures, float x, float y, GameObjectTypeConfig typeConfig) {

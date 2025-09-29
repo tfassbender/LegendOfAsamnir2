@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="18" height="49" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="424">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="18" height="49" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="434">
  <properties>
   <property name="above_player_layers" value="[3, 4]"/>
   <property name="background_layers" value="[0, 1, 2]"/>
@@ -417,60 +417,108 @@
    </properties>
    <point/>
   </object>
-  <object id="407" name="object.signboard" x="496" y="880">
+  <object id="407" name="object.exhibit" x="80" y="869">
    <properties>
+    <property name="_typeConfig_interactionMarkerOffsetX" value="-0.5"/>
+    <property name="_typeConfig_interactionMarkerOffsetY" value="-1"/>
+    <property name="_typeConfig_physicsBodySizeFactorX" value="0.3"/>
+    <property name="_typeConfig_physicsBodySizeFactorY" value="0.3"/>
+    <property name="_typeConfig_sensorRadius" value="1"/>
+    <property name="_typeConfig_texture" value="exhibit_pokeball"/>
+    <property name="_typeConfig_textureSizeFactorX" value="0.3"/>
+    <property name="_typeConfig_textureSizeFactorY" value="0.3"/>
     <property name="displayText">A compact capture device used by trainers to store and transport creatures.
 This specimen appears occupied.
 Please do not shake.     .</property>
-    <property name="displayTextHeader" value="Pokeball"/>
+    <property name="displayTextHeader" value="Creature Containment Sphere"/>
    </properties>
    <point/>
   </object>
-  <object id="408" name="object.signboard" x="80" y="880">
+  <object id="429" name="object.exhibit" x="496" y="869">
    <properties>
+    <property name="_typeConfig_interactionMarkerOffsetX" value="-0.5"/>
+    <property name="_typeConfig_interactionMarkerOffsetY" value="-1"/>
+    <property name="_typeConfig_physicsBodySizeFactorX" value="0.3"/>
+    <property name="_typeConfig_physicsBodySizeFactorY" value="0.3"/>
+    <property name="_typeConfig_sensorRadius" value="1"/>
+    <property name="_typeConfig_texture" value="exhibit_pacman"/>
+    <property name="_typeConfig_textureSizeFactorX" value="0.3"/>
+    <property name="_typeConfig_textureSizeFactorY" value="0.3"/>
     <property name="displayText">One of four relentless pursuers from a famous maze-based conflict.
 For some reason, it seems to be scared of cherries.     .</property>
-    <property name="displayTextHeader" value="PacMan Ghost"/>
+    <property name="displayTextHeader" value="Pink Maze Wraith"/>
    </properties>
    <point/>
   </object>
-  <object id="409" name="object.signboard" x="496" y="720">
+  <object id="430" name="object.exhibit" x="496" y="709">
    <properties>
+    <property name="_typeConfig_interactionMarkerOffsetX" value="-0.5"/>
+    <property name="_typeConfig_interactionMarkerOffsetY" value="-1"/>
+    <property name="_typeConfig_physicsBodySizeFactorX" value="0.3"/>
+    <property name="_typeConfig_physicsBodySizeFactorY" value="0.3"/>
+    <property name="_typeConfig_sensorRadius" value="1"/>
+    <property name="_typeConfig_texture" value="exhibit_samus_helmet"/>
+    <property name="_typeConfig_textureSizeFactorX" value="0.3"/>
+    <property name="_typeConfig_textureSizeFactorY" value="0.3"/>
     <property name="displayText">Protective headgear worn by the famed intergalactic bounty hunter.
 Designed for extreme environments, now presented here for your admiration.
 Please do not attempt to wear.     .</property>
-    <property name="displayTextHeader" value="Samus' Helmet"/>
+    <property name="displayTextHeader" value="Xeno-Combat Visor"/>
    </properties>
    <point/>
   </object>
-  <object id="410" name="object.signboard" x="80" y="720">
+  <object id="431" name="object.exhibit" x="506" y="549">
    <properties>
+    <property name="_typeConfig_interactionMarkerOffsetX" value="-0.9"/>
+    <property name="_typeConfig_interactionMarkerOffsetY" value="-1"/>
+    <property name="_typeConfig_physicsBodySizeFactorX" value="0.3"/>
+    <property name="_typeConfig_physicsBodySizeFactorY" value="0.3"/>
+    <property name="_typeConfig_sensorRadius" value="1"/>
+    <property name="_typeConfig_texture" value="exhibit_portal_gun"/>
+    <property name="_typeConfig_textureSizeFactorX" value="0.3"/>
+    <property name="_typeConfig_textureSizeFactorY" value="0.3"/>
     <property name="displayText">A revolutionary device capable of creating linked doorways between two points in space.
 Once used in advanced testing facilities.
 Sadly the cake is still a lie.     .</property>
-    <property name="displayTextHeader" value="Portal Gun"/>
+    <property name="displayTextHeader" value="Spatial Aperture Device"/>
    </properties>
    <point/>
   </object>
-  <object id="411" name="object.signboard" x="80" y="560">
+  <object id="432" name="object.exhibit" x="80" y="549">
    <properties>
+    <property name="_typeConfig_interactionMarkerOffsetX" value="-0.5"/>
+    <property name="_typeConfig_interactionMarkerOffsetY" value="-1"/>
+    <property name="_typeConfig_physicsBodySizeFactorX" value="0.3"/>
+    <property name="_typeConfig_physicsBodySizeFactorY" value="0.3"/>
+    <property name="_typeConfig_sensorRadius" value="1"/>
+    <property name="_typeConfig_texture" value="exhibit_mushroom"/>
+    <property name="_typeConfig_textureSizeFactorX" value="0.3"/>
+    <property name="_typeConfig_textureSizeFactorY" value="0.3"/>
     <property name="displayText">A curious specimen known to alter size and strength when consumed.
 Origin unknown.
 Handle with care - effects not guaranteed in this exhibit.     .</property>
-    <property name="displayTextHeader" value="Mushroom"/>
+    <property name="displayTextHeader" value="Growth Fungus"/>
    </properties>
    <point/>
   </object>
-  <object id="412" name="object.signboard" x="496" y="560">
+  <object id="433" name="object.exhibit" x="80" y="709">
    <properties>
+    <property name="_typeConfig_interactionMarkerOffsetX" value="-0.5"/>
+    <property name="_typeConfig_interactionMarkerOffsetY" value="-1"/>
+    <property name="_typeConfig_physicsBodySizeFactorX" value="0.3"/>
+    <property name="_typeConfig_physicsBodySizeFactorY" value="0.3"/>
+    <property name="_typeConfig_sensorRadius" value="1"/>
+    <property name="_typeConfig_texture" value="exhibit_master_sword"/>
+    <property name="_typeConfig_textureSizeFactorX" value="0.3"/>
+    <property name="_typeConfig_textureSizeFactorY" value="0.3"/>
     <property name="displayText">The legendary blade said to seal away evil. Once wielded by a chosen hero destined to defend the realm.
 Its power now rests, awaiting the next hand deemed worthy.     .</property>
-    <property name="displayTextHeader" value="Master Sword"/>
+    <property name="displayTextHeader" value="Blade of the Chosen"/>
    </properties>
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="8" name="physics">
+ <objectgroup id="8" name="physics" locked="1">
   <object id="358" x="544" y="256" width="32" height="1280"/>
   <object id="359" x="0" y="256" width="32" height="1280"/>
   <object id="360" x="32" y="1297.33" width="192" height="238.667"/>

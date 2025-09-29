@@ -24,6 +24,7 @@ import net.jfabricationgames.gdx.object.GameObject;
 import net.jfabricationgames.gdx.object.GameObjectMap;
 import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
+import net.jfabricationgames.gdx.util.MapUtil;
 
 public class InteractiveObject extends GameObject implements Interactive {
 	
@@ -50,8 +51,10 @@ public class InteractiveObject extends GameObject implements Interactive {
 	
 	private AnimationSpriteConfig createSpriteConfig() {
 		AnimationSpriteConfig spriteConfig = AnimationSpriteConfig.fromSprite(sprite);
-		spriteConfig.x += (sprite.getWidth() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X + typeConfig.interactionMarkerOffsetX);
-		spriteConfig.y += (sprite.getHeight() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y + typeConfig.interactionMarkerOffsetY);
+		float interactionMarkerOffsetX = MapUtil.getMapPropertyConfigValueAsFloat(mapProperties, "_typeConfig_interactionMarkerOffsetX").orElse(typeConfig.interactionMarkerOffsetX);
+		float interactionMarkerOffsetY = MapUtil.getMapPropertyConfigValueAsFloat(mapProperties, "_typeConfig_interactionMarkerOffsetY").orElse(typeConfig.interactionMarkerOffsetY);
+		spriteConfig.x += (sprite.getWidth() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X + interactionMarkerOffsetX);
+		spriteConfig.y += (sprite.getHeight() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y + interactionMarkerOffsetY);
 		return spriteConfig;
 	}
 	
