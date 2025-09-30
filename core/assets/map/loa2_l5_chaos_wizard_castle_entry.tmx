@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="18" height="49" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="434">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="18" height="49" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="436">
  <properties>
   <property name="above_player_layers" value="[3, 4]"/>
   <property name="background_layers" value="[0, 1, 2]"/>
@@ -515,6 +515,12 @@ Handle with care - effects not guaranteed in this exhibit.     .</property>
 Its power now rests, awaiting the next hand deemed worthy.     .</property>
     <property name="displayTextHeader" value="Blade of the Chosen"/>
    </properties>
+   <point/>
+  </object>
+  <object id="434" name="npc.hati" x="174" y="1107.5">
+   <point/>
+  </object>
+  <object id="435" name="npc.skalli" x="134" y="1188.5">
    <point/>
   </object>
  </objectgroup>

@@ -773,6 +773,14 @@
 //                raw_images/restricted/enemy/death/death_damage,
 //                raw_images/restricted/enemy/death/death_dissapear,
 				
+				// wolf
+				raw_images/restricted/enemy/wolf/wolf_idle,
+				raw_images/restricted/enemy/wolf/wolf_move,
+//				raw_images/restricted/enemy/wolf/wolf_attack,
+//				raw_images/restricted/enemy/wolf/wolf_damage,
+//				raw_images/restricted/enemy/wolf/wolf_death,
+//				raw_images/restricted/enemy/wolf/wolf_howl,
+				
 				//##############################################################
 				//### Animals
 				//##############################################################

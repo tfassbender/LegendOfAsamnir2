@@ -90,6 +90,12 @@
 	guardian_of_asgard: config/npc/levels/loa2/fields_of_vigrid/guardian_of_asgard.json,
 	heimdall: config/npc/levels/loa2/fields_of_vigrid/heimdall.json,
 	ratatosk_asgard: config/npc/levels/loa2/fields_of_vigrid/ratatosk.json,
+	
+	//*****************************************************************
+	//*** Legend of Asamnir 2 - Level 5 - Castle of the Chaos Wizard
+	//*****************************************************************
+	skalli: config/npc/levels/loa2/castle_of_the_chaos_wizard/skalli.json,
+	hati: config/npc/levels/loa2/castle_of_the_chaos_wizard/hati.json,
 
 //	//************************************************
 //	//*** Demo Level

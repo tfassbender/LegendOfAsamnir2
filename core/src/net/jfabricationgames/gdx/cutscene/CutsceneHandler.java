@@ -144,6 +144,10 @@ public class CutsceneHandler implements EventListener {
 			}
 		}
 		
+		if (initialAction == null) {
+			throw new IllegalStateException("A CutsceneConfig has to configure exactly one action, with the property 'startsWithCutscene' set to true. The CutsceneConfig with the id '" + cutscene.id + "' doesn't define any.");
+		}
+		
 		addExecutedAction(initialAction.value, initialAction.key);
 	}
 	

@@ -1,0 +1,19 @@
+{
+	configList: 
+	[
+		{
+			name: wolf_idle,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 2
+		},
+		{
+			name: wolf_move,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL,
+			scale: 2
+		},
+	]
+}

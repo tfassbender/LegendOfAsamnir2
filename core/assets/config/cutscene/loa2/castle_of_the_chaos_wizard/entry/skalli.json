@@ -1,0 +1,157 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__skalli_cutscene,
+	controlledActions: {
+		skalli_1: {
+			startsWithCutscene: true,
+		
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skalli",
+                colorHeader: #384c61,
+                displayText: "You must be Thorin from Svartalfheim,\n                 \nHow can I help you?    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"Who are you?",
+					"What are you doing here?",
+				],
+			},
+			choiceOptionExecutions: [
+				skalli_godbye,
+				skalli__who_are_you,
+				skalli__what_are_you_doing_here_1,
+			],
+		},
+		
+		skalli_godbye: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skalli",
+                colorHeader: #384c61,
+                displayText: "Alright, good luck on your quest then.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		skalli__who_are_you: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skalli",
+                colorHeader: #384c61,
+                displayText: "I'm Skalli, and this is my brother Hati.\n           \nWe're just some giant talking wolves... nothing to be worried about.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		skalli__what_are_you_doing_here_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skalli",
+                colorHeader: #384c61,
+                displayText: "Well if you must know ...         \nThe Chaos Wizard brought us here to guard his castle and his museum.\nWe were told to not leave any dwarves pass. Especially not a dwarf named Thorin.     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	skalli__what_are_you_doing_here_2,
+			],
+		},
+		
+		skalli__what_are_you_doing_here_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skalli",
+                colorHeader: #384c61,
+                displayText: "But our aunt Hel told us to let you pass, so we're just gonna pretend we didn't see you.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+			],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Oh, that's nice of you - and of Hel.\n             \nBut shouldn't you be chasing Sol and Mani?    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	skalli__what_are_you_doing_here_3,
+			],
+		},
+		
+		skalli__what_are_you_doing_here_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Skalli",
+                colorHeader: #384c61,
+                displayText: "We did that for thousands of years.\n        \nA little break won't hurt anyone.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+			],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "At least that explains why it's never getting dark in this place...    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

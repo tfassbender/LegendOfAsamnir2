@@ -3,27 +3,27 @@
 	//*** cutscenes - npc interaction
 	//*******************************************
 	
-//	loa2_l5_castle_entry_skali: {
-//		event: {
-//			eventType: NPC_INTERACTION,
-//			stringValue: loa2_l5_castle_entry_skali,
-//		},
-//		executionType: START_CUTSCENE,
-//		executionParameters: {
-//			cutsceneId: loa2_l5_castle_entry_skali_cutscene,
-//		}
-//	},
-//	
-//	loa2_l5_castle_entry_hati: {
-//		event: {
-//			eventType: NPC_INTERACTION,
-//			stringValue: loa2_l5_castle_entry_hati,
-//		},
-//		executionType: START_CUTSCENE,
-//		executionParameters: {
-//			cutsceneId: loa2_l5_castle_entry_hati_cutscene,
-//		}
-//	},
+	loa2_l5_castle_entry_skalli: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__skalli,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__skalli_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_entry_hati: {
+		event: {
+			eventType: NPC_INTERACTION,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__hati,
+		},
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__hati_cutscene,
+		}
+	},
 	
 	//*******************************************
 	//*** change map

@@ -1,0 +1,142 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__hati_cutscene,
+	controlledActions: {
+		hati_1: {
+			startsWithCutscene: true,
+		
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hati",
+                colorHeader: #433659,
+                displayText: "I guess you are Thorin?\n                 \nHow can I help you?    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Thorin",
+				options: [
+					"I need to continue my quest.",
+					"Who are you?",
+					"What are you doing here?",
+				],
+			},
+			choiceOptionExecutions: [
+				hati_godbye,
+				hati__who_are_you,
+				hati__what_are_you_doing_here_1,
+			],
+		},
+		
+		hati_godbye: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hati",
+                colorHeader: #433659,
+                displayText: "Alright, good luck on your quest then.   ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+           	],
+		},
+		
+		hati__who_are_you: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hati",
+                colorHeader: #433659,
+                displayText: "I'm Hati, and this is my brother Skalli.\n           \nDon't mind us, we're just some giant talking wolves. Nothing unusual here, right?      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+           	],
+		},
+		
+		hati__what_are_you_doing_here_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hati",
+                colorHeader: #433659,
+                displayText: "Well ...         \nThis Chaos Wizard Guy brought us here to guard his castle and his museum.\nAnd he told us to kill you if you ever enter this castle.     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hati__what_are_you_doing_here_2,
+			],
+		},
+		
+		hati__what_are_you_doing_here_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hati",
+                colorHeader: #433659,
+                displayText: "Don't worry, our aunt Hel told us to not get in your way.               \nSo if the Chaos Wizard asks: You found a way to get pass us without us seeing you, ok?       ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_1,
+			],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Sounds good to me. I'll just kill this Strange Chaos Wizard Guy quickly and then you can go on with chasing Sol and Mani.               \nOr whatever you want to do.      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	hati__what_are_you_doing_here_3,
+			],
+		},
+		
+		hati__what_are_you_doing_here_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Hati",
+                colorHeader: #433659,
+                displayText: "Nice!                 \nThis Chaos Wizard guy was really annoying me anyway...\n             \nGood hunting then!    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_choice,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

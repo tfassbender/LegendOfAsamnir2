@@ -1,0 +1,22 @@
+{
+	graphicsConfigFile: config/npc/graphics/wolf.json
+	
+	aiConfig: {
+		type: PRE_DEFINED_MOVEMENT_AI,
+		
+		stateNameMove: move,
+		stateNameIdle: idle,
+		
+		useRelativePositions: true,
+		
+		subAI: {
+			type: BASE_AI,
+		}
+	},
+	
+	interactionPossible: true,
+	interactionEventId: loa2_l5_castle_of_the_chaos_wizard__hati,
+	
+	sensorRadius: 2f,
+	movingSpeed: 1f,
+}

@@ -1,0 +1,14 @@
+{
+	animationsConfig: config/animation/npc/wolf.json,
+	stateConfig: config/npc/states/wolf.json,
+	initialState: idle,
+	
+	bodyWidth: 3f,
+	bodyHeight: 1.25f,
+	
+	imageOffsetX: 0f,
+	imageOffsetY: 1.3f,
+	
+	interactionMarkerOffsetX: 0.5f,
+	interactionMarkerOffsetY: -1.5f,
+}
