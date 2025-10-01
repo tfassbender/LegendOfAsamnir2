@@ -248,6 +248,13 @@
         initialStartingPointId: 10,
 		initial: true
 	},
+	{
+        name: loa2_l5_chaos_wizard_castle_labyrinth,
+        map: "map/loa2_l5_chaos_wizard_castle_labyrinth.tmx",
+		debugStartConfig: config/debug/start_config/loa2/l5_castle_of_the_chaos_wizard.json,
+        initialStartingPointId: 0,
+		//initial: true
+	},
 	
 	//****************************************
 	//*** testing

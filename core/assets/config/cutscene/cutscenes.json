@@ -239,6 +239,15 @@
 	config/cutscene/loa2/castle_of_the_chaos_wizard/entry/goto_labyrinth.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/entry/skalli.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/entry/hati.json,
+	
+	//****************************************************************
+	//*** Legend of Asamnir 2 - Castle of the Chaos Wizard - Entry
+	//****************************************************************
+	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_up.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_down.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_left.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_right.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/exit.json,
 
 //	//********************************************************
 //	//*** Demo Level

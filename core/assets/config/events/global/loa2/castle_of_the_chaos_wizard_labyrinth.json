@@ -1,0 +1,60 @@
+{
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l5_castle_of_the_chaos_wizard_labyrinth__exit: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard_labyrinth__exit,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard_labyrinth__exit_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_left: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_left,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_left_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_right: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_right,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_right_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_up: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_up,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_up_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_down: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_down,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_down_cutscene,
+		}
+	},
+}
