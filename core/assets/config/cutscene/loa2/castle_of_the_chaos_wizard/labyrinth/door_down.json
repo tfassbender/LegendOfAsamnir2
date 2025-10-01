@@ -1,12 +1,55 @@
 {
 	id: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_down_cutscene,
 	controlledActions: {
-		move_up: {
+		move: {
 		    startsWithCutscene: true,
 		    
 			type: MOVE,
 			controlledUnitId: PLAYER,
 			controlledUnitTarget: {x: 0, y: -2},
+			
+			executes: [
+                labyrinth_sequence_condition,
+			]
+		},
+		
+		labyrinth_sequence_condition: {
+            type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+				    conditionId: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_5,
+				    executedStateName: set_sequence_6,
+				}
+				{
+					// default case
+					executedStateName: reset_sequence,
+				},
+			],
+		},
+		
+		// continue sequence
+		set_sequence_6: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence, value: right_up_left_right_right_down}",
+			},
+            
+            executes: [
+                change_map,
+			]
+		},
+		
+		// wrong combination -> reset sequence
+		reset_sequence: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence, value: empty}",
+			},
 			
 			executes: [
                 change_map,

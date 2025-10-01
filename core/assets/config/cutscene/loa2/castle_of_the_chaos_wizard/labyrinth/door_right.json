@@ -1,12 +1,114 @@
 {
 	id: loa2_l5_castle_of_the_chaos_wizard_labyrinth__door_right_cutscene,
 	controlledActions: {
-		move_up: {
+		move: {
 		    startsWithCutscene: true,
 		    
 			type: MOVE,
 			controlledUnitId: PLAYER,
 			controlledUnitTarget: {x: 2, y: 0},
+			
+			executes: [
+                labyrinth_sequence_condition,
+			]
+		},
+		
+		labyrinth_sequence_condition: {
+            type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_8,
+					executedStateName: change_map_to_throne_room,
+				},
+				{
+				    conditionId: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_4,
+				    executedStateName: set_sequence_5,
+				}
+				{
+				    conditionId: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_3,
+				    executedStateName: set_sequence_4,
+				}
+				{
+				    conditionId: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_0,
+				    executedStateName: set_sequence_1,
+				}
+				{
+					// default case
+					executedStateName: reset_sequence,
+				},
+			],
+		},
+		
+		// sequence completed -> go to throne room
+		change_map_to_throne_room: {
+			executionDelayInSeconds: 1f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+                stringValue: loa2_l5_chaos_wizard_castle_throne_room,
+                intValue: 0,
+			},
+			
+			waitForEventToFinish: false,
+			cameraFollowsTarget: false,
+			
+			executes: [
+                end,
+			]
+		},
+		
+		// continue sequence
+		set_sequence_5: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence, value: right_up_left_right_right}",
+			},
+            
+            executes: [
+                change_map,
+			]
+		},
+		
+		// continue sequence
+		set_sequence_4: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence, value: right_up_left_right}",
+			},
+            
+            executes: [
+                change_map,
+			]
+		},
+		
+		// continue sequence
+		set_sequence_1: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence, value: right}",
+			},
+            
+            executes: [
+                change_map,
+			]
+		},
+		
+		// wrong combination -> reset sequence
+		reset_sequence: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence, value: empty}",
+			},
 			
 			executes: [
                 change_map,

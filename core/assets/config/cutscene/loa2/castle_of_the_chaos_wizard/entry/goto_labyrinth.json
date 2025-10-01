@@ -9,6 +9,19 @@
 			controlledUnitTarget: {x: 0, y: 3},
 			
 			executes: [
+                reset_labyrinth_sequence,
+			]
+		},
+		
+		reset_labyrinth_sequence: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence, value: empty}",
+			},
+			
+			executes: [
                 change_map,
 			]
 		},
@@ -29,7 +42,7 @@
 			executes: [
                 end,
 			]
-		}
+		},
 		
 		end: {
 			type: WAIT,

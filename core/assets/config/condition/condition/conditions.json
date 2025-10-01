@@ -11,6 +11,7 @@
 	config/condition/condition/levels/loa2/niflheim.json,
 	config/condition/condition/levels/loa2/muspelheim.json,
 	config/condition/condition/levels/loa2/helheim.json,
+	config/condition/condition/levels/loa2/castle_of_the_chaos_wizard.json,
 	
 //	config/condition/condition/levels/demo.json,
 //	config/condition/condition/levels/tutorial.json,

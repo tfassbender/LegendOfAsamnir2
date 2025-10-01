@@ -1,0 +1,79 @@
+{
+	//*******************************************
+	//*** labyrinth sequence
+	//*******************************************
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_0: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: empty,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_1: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_2: {
+		conditionType: GLOBAL_VALUE_SET,
+		parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right_up,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_3: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right_up_left,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_4: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right_up_left_right,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_5: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right_up_left_right_right,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_6: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right_up_left_right_right_down,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_7: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right_up_left_right_right_down_left,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence_8: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__labyrinth__sequence,
+            expectedValue: right_up_left_right_right_down_left_up,
+		}
+	},
+	
+	// last step is "right", but we don't need the condition because the map change will be triggered if sequence 8 is met and the right door is used
+}

@@ -31,6 +31,19 @@
 			]
 		}
 		
+		reset_labyrinth_global_value: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__labyrinth_sequence, value: null}",
+			},
+			
+			executes: [
+                show_event_layer,
+			]
+		},
+		
 		end: {
 			type: WAIT,
 			executionDelayInSeconds: 0f,
