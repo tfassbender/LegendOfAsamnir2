@@ -59,7 +59,9 @@ public class LockedObject extends InteractiveObject implements EventListener {
 	private void unlockWithoutAnimationOrSound() {
 		skipInteractionSound = true;
 		executeInteraction();
-		animation.setStateTime(animation.getAnimationDuration());
+		if (animation != null) {
+			animation.setStateTime(animation.getAnimationDuration());
+		}
 		skipInteractionSound = false;
 	}
 	
