@@ -1,0 +1,100 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__throne_room__exit_cutscene,
+	controlledActions: {
+		start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l5_castle_of_the_chaos_wizard__throne_room__chaos_wizard_defeated,
+					executedStateName: move_on,
+				},
+				{
+					// default case
+					executedStateName: thorin_comment_leave_throne_room,
+				},
+			],
+		},
+		
+		thorin_comment_leave_throne_room: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I didn't kill the Chaos Wizard yet... Maybe I should stay here   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_choice,
+			],
+		},
+		
+		thorin_choice: {
+			type: PLAYER_CHOICE,
+			
+			waitForEventToFinish: true,
+			
+			choice: {
+				header: "Leave the Throne Room?",
+				options: [
+					"I should stay here",
+					"I'll leave",
+				],
+			},
+			choiceOptionExecutions: [
+				move_back,
+				move_on,
+			],
+		},
+	
+	    move_back: {
+	    	type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: 2, y: 0},
+			
+			executes: [
+                end,
+			]
+	    },
+	    
+		move_on: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			controlledUnitTarget: {x: -3, y: 0},
+			
+			executes: [
+                change_map,
+			]
+		},
+		
+		change_map: {
+			executionDelayInSeconds: 1f,
+			type: EVENT,
+			
+			event: {
+				eventType: CHANGE_MAP,
+                stringValue: loa2_l5_chaos_wizard_castle_entry,
+                intValue: 1,
+			},
+			
+			waitForEventToFinish: false,
+			cameraFollowsTarget: false,
+			
+			executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

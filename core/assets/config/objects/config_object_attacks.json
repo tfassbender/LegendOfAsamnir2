@@ -8,4 +8,16 @@
 		damage: 0, // the bugbear is killed by this attack (see Bugbear.java)
 		pushForce: 0
 	},
+	
+	{
+		id: push_nova,
+		type: NOVA,
+		delay: 0,
+		damage: 0,
+		canBeBlocked: false,
+		distFromCenter: 0,
+		hitFixtureRadius: 5,
+		pushForce: 300,
+		pushForceAffectedByBlock: false,
+	},
 ]

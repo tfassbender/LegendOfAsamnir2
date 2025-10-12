@@ -1,0 +1,38 @@
+{
+	//*******************************************
+	//*** change map
+	//*******************************************
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__exit: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__throne_room__exit,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__exit_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__entering: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__throne_room__entering,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__entering_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__stairs_to_throne: {
+        event: {
+            eventType: EVENT_OBJECT_TOUCHED,
+            stringValue: loa2_l5_castle_of_the_chaos_wizard__throne_room__stairs_to_throne,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__stairs_to_throne_cutscene,
+		}
+	},
+}

@@ -55,9 +55,23 @@
 			cameraFollowsTarget: false,
 			
 			executes: [
+                set_global_value__throne_room_not_initialized,
+			]
+		},
+		
+		set_global_value__throne_room_not_initialized: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__throne_room__room_initialized, value: false}",
+			},
+            
+            executes: [
                 end,
 			]
 		},
+		
 		
 		// continue sequence
 		set_sequence_5: {

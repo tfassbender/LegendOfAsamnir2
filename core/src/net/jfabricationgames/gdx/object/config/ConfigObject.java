@@ -1,9 +1,14 @@
 package net.jfabricationgames.gdx.object.config;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.ContactImpulse;
+import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.Json;
 
 import net.jfabricationgames.gdx.attack.AttackHandler;
@@ -17,6 +22,7 @@ import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
+import net.jfabricationgames.gdx.physics.PhysicsWorld;
 import net.jfabricationgames.gdx.sound.SoundHandler;
 import net.jfabricationgames.gdx.sound.SoundPlayConfig;
 
@@ -24,7 +30,7 @@ import net.jfabricationgames.gdx.sound.SoundPlayConfig;
  * An object that is used in as configuration point (usually to define positions for characters in a cutscene or for conditions).
  * It does not interact with any other objects.
  */
-public class ConfigObject extends GameObject implements EventListener {
+public class ConfigObject extends GameObject implements EventListener, ContactListener {
 	
 	private static final String MAP_PROPERTY_KEY_ATTACK_ID = "attackId";
 	private static final String MAP_PROPERTY_KEY_ATTACK_DIRECTION = "attackDirection";
@@ -36,6 +42,7 @@ public class ConfigObject extends GameObject implements EventListener {
 	private static final String CONFIG_FILE_ATTACKS = "config/objects/config_object_attacks.json";
 	
 	private AttackHandler attackHandler;
+	private PhysicsCollisionType attackCollisionType = PhysicsCollisionType.PLAYER_ATTACK;
 	
 	private String attackName;
 	private Vector2 attackDirection;
@@ -52,11 +59,13 @@ public class ConfigObject extends GameObject implements EventListener {
 		
 		parseMapProperties();
 		EventHandler.getInstance().registerEventListener(this);
+		PhysicsWorld.getInstance().registerContactListener(this);
 	}
 	
 	private void parseMapProperties() {
 		attackName = mapProperties.get(MAP_PROPERTY_KEY_ATTACK_ID, String.class);
 		attackDirection = getAttackDirection();
+		attackCollisionType = getAttackCollisionType();
 		
 		configuredEvent = parseEventConfigFromMapProperties();
 		eventDelayInSeconds = Float.parseFloat(mapProperties.get(MAP_PROPERTY_KEY_EVENT_DELAY_IN_SECONDS, "0f", String.class));
@@ -85,6 +94,20 @@ public class ConfigObject extends GameObject implements EventListener {
 		return new Vector2(attackDirectionX, attackDirectionY);
 	}
 	
+	private PhysicsCollisionType getAttackCollisionType() {
+		String attackCollisionTypeString = mapProperties.get("attackCollisionType", String.class);
+		if (attackCollisionTypeString != null) {
+			try {
+				return PhysicsCollisionType.valueOf(attackCollisionTypeString);
+			}
+			catch (IllegalArgumentException e) {
+				Gdx.app.error(getClass().getSimpleName(), "The collision type '" + attackCollisionTypeString + "' defined in the map properties is not valid.", e);
+			}
+		}
+		
+		return PhysicsCollisionType.PLAYER_ATTACK; // default
+	}
+	
 	@Override
 	public void createPhysicsBody(float x, float y) {
 		PhysicsBodyProperties properties = physicsBodyProperties.setX(x).setY(y).setWidth(0.1f).setHeight(0.1f)
@@ -95,7 +118,7 @@ public class ConfigObject extends GameObject implements EventListener {
 		
 		changeBodyToSensor();
 		
-		attackHandler = new AttackHandler(CONFIG_FILE_ATTACKS, body, PhysicsCollisionType.PLAYER_ATTACK); // pretend that the player created the attack
+		attackHandler = new AttackHandler(CONFIG_FILE_ATTACKS, body, attackCollisionType); // pretend that the player created the attack
 	}
 	
 	@Override
@@ -139,5 +162,20 @@ public class ConfigObject extends GameObject implements EventListener {
 	public void removeFromMap() {
 		super.removeFromMap();
 		EventHandler.getInstance().removeEventListener(this);
+		PhysicsWorld.getInstance().removeContactListener(this);
 	}
+	
+	@Override
+	public void beginContact(Contact contact) {
+		attackHandler.handleAttackDamage(contact);
+	}
+	
+	@Override
+	public void endContact(Contact contact) {}
+	
+	@Override
+	public void preSolve(Contact contact, Manifold oldManifold) {}
+	
+	@Override
+	public void postSolve(Contact contact, ContactImpulse impulse) {}
 }

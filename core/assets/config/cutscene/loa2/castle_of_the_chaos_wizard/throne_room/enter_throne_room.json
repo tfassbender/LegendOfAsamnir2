@@ -1,0 +1,86 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__throne_room__entering_cutscene,
+	controlledActions: {
+		start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+				    // the variable is reset when the player enters the room from the labyrinth
+					conditionId: loa2_l5_castle_of_the_chaos_wizard__throne_room__room_initialized,
+                    executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: set_global_value_to_display_the_wall_on_the_right_side_of_the_room,
+				},
+			],
+		},
+		
+		set_global_value_to_display_the_wall_on_the_right_side_of_the_room: {
+		 	type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__wall_intact, value: true}",
+			},
+            
+            executes: [
+                set_global_value_boss_fight_started,
+			]
+		},
+		
+		set_global_value_boss_fight_started: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__throne_room__boss_fight_started, value: false}",
+			},
+            
+            executes: [
+                change_character_direction__chaos_wizard,
+			]
+		},
+		
+		change_character_direction__chaos_wizard: {
+            type: MOVE,
+			controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitTarget: {x: -0.1, y: 0},
+			
+			executes: [
+                change_character_direction__freydis,
+			]
+		},
+		
+		change_character_direction__freydis: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__throne_room__freydis,
+            controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executes: [
+                set_global_value__throne_room_initialized,
+			]
+		},
+		
+		set_global_value__throne_room_initialized: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__throne_room__room_initialized, value: true}",
+			},
+            
+            executes: [
+                end,
+			]
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

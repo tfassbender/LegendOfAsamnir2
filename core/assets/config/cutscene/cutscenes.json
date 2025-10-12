@@ -233,21 +233,28 @@
 	config/cutscene/loa2/asgard/goto_chaos_wizard_castle.json,
 	config/cutscene/loa2/asgard/ratatosk.json,
 	
-	//****************************************************************
+	//***************************************************************************
 	//*** Legend of Asamnir 2 - Castle of the Chaos Wizard - Entry
-	//****************************************************************
+	//***************************************************************************
 	config/cutscene/loa2/castle_of_the_chaos_wizard/entry/goto_labyrinth.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/entry/skalli.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/entry/hati.json,
 	
-	//****************************************************************
-	//*** Legend of Asamnir 2 - Castle of the Chaos Wizard - Entry
-	//****************************************************************
+	//***************************************************************************
+	//*** Legend of Asamnir 2 - Castle of the Chaos Wizard - Labyrinth
+	//***************************************************************************
 	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_up.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_down.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_left.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/door_right.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/labyrinth/exit.json,
+	
+	//***************************************************************************
+	//*** Legend of Asamnir 2 - Castle of the Chaos Wizard - Throne Room
+	//***************************************************************************
+	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/exit_throne_room.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/enter_throne_room.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/talk_to_chaos_wizard.json,
 
 //	//********************************************************
 //	//*** Demo Level

@@ -9,6 +9,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.ObjectMap;
@@ -52,6 +53,7 @@ class GameMapRenderer implements Disposable {
 	private int[] abovePlayerLayers;
 	private int[] shadowLayers;
 	private ObjectMap<String, String> effectLayers; // will be drawn if the corresponding global value is set
+	private Array<String> effectLayerKeysSorted; // the keys of the effectLayers sorted as integers
 	
 	public GameMapRenderer(GameMapImplementation gameMap, OrthographicCamera camera) {
 		this.gameMap = gameMap;
@@ -108,6 +110,8 @@ class GameMapRenderer implements Disposable {
 		
 		if (effectLayersJson != null) {
 			effectLayers = json.fromJson(ObjectMap.class, String.class, effectLayersJson);
+			effectLayerKeysSorted = new Array<>(effectLayers.keys().toArray());
+			effectLayerKeysSorted.sort((o1, o2) -> Integer.parseInt(o1) - Integer.parseInt(o2));
 		}
 		else {
 			effectLayers = new ObjectMap<>();
@@ -164,7 +168,7 @@ class GameMapRenderer implements Disposable {
 	}
 	
 	public void renderEffectLayers() {
-		for (String layer : effectLayers.keys()) {
+		for (String layer : effectLayerKeysSorted) { // iterate over the sorted list of keys, to draw the layers in the correct order
 			if (GlobalValuesDataHandler.getInstance().getAsBoolean(effectLayers.get(layer))) {
 				renderer.render(new int[] {Integer.parseInt(layer)});
 			}

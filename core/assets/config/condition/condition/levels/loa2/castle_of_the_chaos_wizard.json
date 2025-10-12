@@ -1,5 +1,33 @@
 {
 	//*******************************************
+	//*** throne room
+	//*******************************************
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__chaos_wizard_defeated: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__throne_room__chaos_wizard_defeated,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__boss_fight_started: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__throne_room__boss_fight_started,
+            expectedValue: true,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__room_initialized: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__throne_room__room_initialized,
+            expectedValue: true,
+		}
+	},
+	
+	//*******************************************
 	//*** labyrinth sequence
 	//*******************************************
 	

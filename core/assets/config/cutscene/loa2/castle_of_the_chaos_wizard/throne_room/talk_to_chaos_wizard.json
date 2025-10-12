@@ -1,0 +1,551 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__throne_room__stairs_to_throne_cutscene,
+	controlledActions: {
+		start_condition: {
+			startsWithCutscene: true,
+			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_l5_castle_of_the_chaos_wizard__throne_room__chaos_wizard_defeated,
+					executedStateName: end,
+				},
+				{
+					conditionId: loa2_l5_castle_of_the_chaos_wizard__throne_room__boss_fight_started,
+                    executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: move_thorin_to_chaos_wizard_1,
+				},
+			],
+		},
+	
+		move_thorin_to_chaos_wizard_1: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position,
+			controlledUnitTarget: {x: -1, y: -3},
+			
+			executes: [
+                move_thorin_to_chaos_wizard_2,
+                stop_background_music,
+                move_camera_till_freydis_is_visible,
+			]
+		},
+		
+		move_thorin_to_chaos_wizard_2: {
+            type: MOVE,
+            controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position,
+            controlledUnitTarget: {x: 0, y: 0},
+		},
+		
+		stop_background_music: {
+			type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+				play_chaos_wizard_music,
+			]
+		},
+		
+		play_chaos_wizard_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: chaos_wizard_intro,
+                floatValue: 1f, // delay in seconds
+			}
+			
+			executes: [
+				play_chaos_wizard_music_loop,
+			]
+		},
+		
+		play_chaos_wizard_music_loop: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE,
+                stringValue: chaos_wizard_intro_loop,
+                booleanValue: true,  // fade in
+			}
+		},
+		
+		move_camera_till_freydis_is_visible: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 2, y: 0},
+			speedFactor: 3f,
+			
+			executes: [
+//				change commented lines to "thorin_3" to skip the initial part of the dialog
+//				thorin_3,
+			    chaos_wizard__greeting,
+			    chaos_wizard_evil_laugh_1,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_1: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 6f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard__greeting: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Thorin!                   \nSo you finally found me here in my castle!\n                           \nI'm almost impressed!            \n*evil laughter*                 ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_1,
+			],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "The Strange Chaos Wizard Guy!!!\n                 \nNow I can finally silence you!           ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_2,
+                chaos_wizard_evil_laugh_2,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_2: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 5.5f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 0.5f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I'm sorry to tell you this, Thorin, but...\n                     \nYour princess is in another castle!\n                     \n*evil laughter*            ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+			],
+		},
+		
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "...                         \n...                         \nI can see Freydis behind that wall!          ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                freydis_1,
+			],
+		},
+		
+		freydis_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 0.5f,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Hey Thorin!                 \nTook you long enough to find me!         ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                wait_0,
+			],
+		},
+		
+		wait_0: {
+			type: WAIT,
+            executionDurationInSeconds: 1f,
+            
+            executes: [
+                chaos_wizard_looking_arround_1,
+			],
+		}
+		
+		chaos_wizard_looking_arround_1: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: 0.05, y: 0},
+            
+            executionDurationInSeconds: 1f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_1,
+			],
+		},
+		
+		wait_1: {
+			type: WAIT,
+            executionDurationInSeconds: 1f,
+            
+            executes: [
+                chaos_wizard_looking_arround_2,
+			],
+		}
+		
+		chaos_wizard_looking_arround_2: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: -0.05, y: 0},
+            
+            executionDurationInSeconds: 1f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_2,
+			],
+		},
+		
+		wait_2: {
+			type: WAIT,
+            executionDurationInSeconds: 1f,
+            
+            executes: [
+                chaos_wizard_looking_arround_3,
+			],
+		}
+		
+		chaos_wizard_looking_arround_3: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: 0.05, y: 0},
+            
+            executes: [
+                wait_3,
+			],
+		},
+		
+		wait_3: {
+			type: WAIT,
+            executionDurationInSeconds: 0.3f,
+            
+            executes: [
+                chaos_wizard_looking_arround_4,
+			],
+		}
+		
+		chaos_wizard_looking_arround_4: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: -0.05, y: 0},
+            
+            executes: [
+                wait_4,
+			],
+		},
+		
+		wait_4: {
+			type: WAIT,
+            executionDurationInSeconds: 0.3f,
+            
+            executes: [
+                chaos_wizard_looking_arround_5,
+			],
+		}
+		
+		chaos_wizard_looking_arround_5: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: 0.05, y: 0},
+            
+            executionDurationInSeconds: 2f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_5,
+			],
+		},
+		
+		wait_5: {
+			type: WAIT,
+            executionDurationInSeconds: 0.3f,
+            
+            executes: [
+                chaos_wizard_looking_arround_6,
+			],
+		}
+		
+		chaos_wizard_looking_arround_6: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: -0.05, y: 0},
+            
+            executionDurationInSeconds: 2f,
+            waitForEventToFinish: true,
+            
+            executes: [
+                wait_6,
+			],
+		},
+		
+		wait_6: {
+			type: WAIT,
+            executionDurationInSeconds: 2f,
+            
+            executes: [
+                chaos_wizard_3,
+			],
+		}
+		
+		chaos_wizard_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Damn 2D graphics!!!!!\n                     \n*mumbling*\nNext time I'll build a ray-caster!         ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_4,
+			],
+		},
+		
+		chaos_wizard_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I mean...\n                        \nYou passed my final test, Thorin...       \nYou are indeed a worthy opponent!",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_5,
+			],
+		},
+		
+		chaos_wizard_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "So I'll grant you the honor to fight me:\nThe Chaos Wizard!              \nThe Creator of this World!                 \nThe master of this Universe!            \nThe ...         ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_3,
+			],
+		},
+		
+		thorin_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Shut up already!!!                 \nLet's get this over with, so I don't have to listen to your annoying voice any longer!         ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_6,
+			],
+		},
+		
+		chaos_wizard_6: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "But ...                   \nI prepared my ultimate villain speech ...        \nAnd ...                      \nAh whatever ...           \nSo it begins...           ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                change_traversable_object_bodies_to_sensors,
+			],
+		},
+		
+		change_traversable_object_bodies_to_sensors: {
+            type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+			}
+            
+            executes: [
+                change_state__chaos_wizard__cast_loop,
+			]
+		},
+		
+		change_state__chaos_wizard__cast_loop: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
+            
+            executes: [
+                fire_nova_attack_to_push_thorin,
+			]
+		},
+		
+		fire_nova_attack_to_push_thorin: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 1f,
+            
+            event: {
+                eventType: CUTSCENE_CREATE_ATTACK, // makes a configObject create the attack
+                stringValue: "cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova", // the unitId of the config object that has to create the attack
+                
+                // attack name and direction are configured in the config object (in the tiled map)
+			},
+			
+			executes: [
+                change_state__chaos_wizard__idle,
+			]
+		},
+		
+		change_state__chaos_wizard__idle: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: idle,
+            
+            executes: [
+                change_traversable_object_bodies_to_solid,
+			]
+		},
+		
+		change_traversable_object_bodies_to_solid: {
+            type: EVENT,
+            
+            event: {
+                eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+			}
+            
+            executes: [
+            	move_chaos_wizard_to_second_position,
+			]
+		},
+		
+		move_chaos_wizard_to_second_position: {
+			// TODO the state config of chaos_wizard_form_1.json doesn't use a movement animation (so the "looking arround" joke works) - needs to be fixed somehow
+			
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__chaos_wizard_second_position,
+            controlledUnitTarget: {x: 0, y: 0},
+            speedFactor: 2f,
+            
+            executes: [
+                chaos_wizard_7,
+            ]
+		},
+		
+		chaos_wizard_7: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Now, Thorin...               \nLet's see how you can handle my army of magical beasts!          ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                spawn_elder_dragon,
+			],
+		},
+		
+		spawn_elder_dragon: {
+			// TODO: spawn the elder dragon, play some sound effects
+			
+            type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                set_global_value__boss_fight_started,
+			]
+		},
+		
+		set_global_value__boss_fight_started: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_GLOBAL_CONDITION_VALUE,
+                stringValue: "{key: loa2_l5_castle_of_the_chaos_wizard__throne_room__boss_fight_started, value: true}",
+			},
+            
+            executes: [
+                end,
+			]
+		}
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}
