@@ -97,7 +97,7 @@
 		chaos_wizard_evil_laugh_1: {
 			type: PLAY_SOUND,
 			
-			executionDelayInSeconds: 6f,
+			executionDelayInSeconds: 7f,
 			
             soundEffectName: evil_laugh,
 		},
@@ -110,7 +110,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "Thorin!                   \nSo you finally found me here in my castle!\n                           \nI'm almost impressed!            \n*evil laughter*                 ",
+                displayText: "Thorin...                   \nAt last, you stand before me in my fortress of dread.               \nI will admit it... I am almost impressed.       \n*evil laughter*                 ",
                 showNextPageIcon: true,
                 canBeSkipped: false,
 			}
@@ -127,7 +127,7 @@
             
             executionParameters: {
                 displayTextHeader: "Thorin",
-                displayText: "The Strange Chaos Wizard Guy!!!\n                 \nNow I can finally silence you!           ",
+                displayText: "The Strange Chaos Wizard Guy!!!\n                 \nFinally, I can shut you up!           ",
                 showNextPageIcon: true,
 			}
             
@@ -135,16 +135,7 @@
             
             executes: [
                 chaos_wizard_2,
-                chaos_wizard_evil_laugh_2,
 			],
-		},
-		
-		chaos_wizard_evil_laugh_2: {
-			type: PLAY_SOUND,
-			
-			executionDelayInSeconds: 5.5f,
-			
-            soundEffectName: evil_laugh,
 		},
 		
 		chaos_wizard_2: {
@@ -155,9 +146,8 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "I'm sorry to tell you this, Thorin, but...\n                     \nYour princess is in another castle!\n                     \n*evil laughter*            ",
+                displayText: "Ah, but before you try...          \nA tragic revelation.\n                     \nYour princess is in another castle!                ",
                 showNextPageIcon: true,
-                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -172,7 +162,7 @@
             
             executionParameters: {
                 displayTextHeader: "Thorin",
-                displayText: "...                         \n...                         \nI can see Freydis behind that wall!          ",
+                displayText: "...                         \n...                         \nI can literally see Freydis behind that wall!          ",
                 showNextPageIcon: true,
 			}
             
@@ -191,7 +181,7 @@
 			executionParameters: {
                 displayTextHeader: "Freydis",
                 colorHeader: #ff00ff,
-                displayText: "Hey Thorin!                 \nTook you long enough to find me!         ",
+                displayText: "Hey Thorin!                 \nTook you long enough to get here!         ",
                 showNextPageIcon: true,
 			}
 			
@@ -360,7 +350,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "I mean...\n                        \nYou passed my final test, Thorin...       \nYou are indeed a worthy opponent!",
+                displayText: "I mean...\n                        \nYou passed my final test, Thorin...       \nYou are indeed a worthy opponent!      ",
                 showNextPageIcon: true,
 			}
             
@@ -377,7 +367,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "So I'll grant you the honor to fight me:\nThe Chaos Wizard!              \nThe Creator of this World!                 \nThe master of this Universe!            \nThe ...         ",
+                displayText: "So I shall grant you the honor to fight me:\nThe Chaos Wizard!              \nThe Creator of this World!                 \nThe master of this Universe!            \nThe shaper of -        ",
                 showNextPageIcon: true,
 			}
             
@@ -407,10 +397,234 @@
 		chaos_wizard_6: {
             type: SHOW_ON_SCREEN_TEXT,
             
+            executionDelayInSeconds: 0.5f,
+            
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "But ...                   \nI prepared my ultimate villain speech ...        \nAnd ...                      \nAh whatever ...           \nSo it begins...           ",
+                displayText: "But ...                   \nI poured my soul into crafting this moment! Freydis helped me rehearse!         \nNow be silent and witness my ultimate villain speech!               ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                freydis_2,
+			],
+		},
+		
+		freydis_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "\"Helped\"?!           \nListening to you talk to yourself for hours was torture!!!        ",
+                showNextPageIcon: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+                chaos_wizard_7,
+			],
+		},
+		
+		chaos_wizard_7: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 0.5f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Thank you for your feedback, Freydis!\n                   \nNow...\nWhere was I...        ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_8,
+			],
+		},
+		
+		chaos_wizard_8: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "As it was written in the ancient scrolls... also known as \"The Markup Files of Eternal Doom\"... I shaped the Nine Realms from the endless ice fields of Niflheim to the melting fires of Muspelheim with only one goal: To rule them as their rightful, glorious, omnipotent overlord!\nTo become the one wizard to rule them all!\nAnd to finally crush the so-called \"Hero\"!!!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_4,
+			],
+		},
+		
+		thorin_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Actually, that were two goals.         ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_9,
+			],
+		},
+		
+		chaos_wizard_9: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Interrupt me again and I'll disable the skip button for this dialog!!!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_10,
+			],
+		},
+		
+		chaos_wizard_10: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "You really thought you stood a chance against me after you defeated one boss after another, didn’t you?\nBut you only triumphed because I allowed it!  ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_11,
+			],
+		},
+		
+		chaos_wizard_11: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Why else would I add an Easy Mode to the game?\nIt was all part of my plan to guide you to me! Every triumph. Every rune. Every side quest. All part of my genius design!",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_12,
+			],
+		},
+		
+		chaos_wizard_12: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I prepared everything perfectly. My deadliest minions. An arena worthy of our legendary battle. I even borrowed the Vorpal Laserblaster of Pittenweem from a friend! All for this moment!",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_13,
+			],
+		},
+		
+		chaos_wizard_13: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "In every other world, every other stale bedtime story, the \"Hero\" wins.\n              \nBut not here! Not in a realm forged by my hand!     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_14,
+			],
+		},
+		
+		chaos_wizard_14: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "You did a fantastic job, Thorin.\nYou believed me when I told you you were the chosen hero of this story.\nYou fought through all the side quests I made up for you.\nYou defeated every creature I created for you and found the runes that led you to me.\nOnly to be defeated now, by the almighty \"Chaos Wizard\"!!!     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_15,
+			],
+		},
+		
+		chaos_wizard_15: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I really enjoyed our little exchanges and quipping, Thorin. But you will not win because destiny demands it.\nYou will not win because the audience expects it.\nYou will not win because \"the hero always wins.\"\nAnd you will certainly not win because of the player's ability to press the attack button repeatedly!",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_16,
+			],
+		},
+		
+		chaos_wizard_16: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "The time has finally come, Thorin! For this is the climax foretold in the ancient \"Legend of Asamnir\"!   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_17,
+			],
+		},
+		
+		chaos_wizard_17: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Prepare yourself. For now you will face thy doom.\nAnd with it ... my unpaid interns!\n               \nMinions, attack!      ",
                 showNextPageIcon: true,
 			}
             
@@ -498,25 +712,8 @@
             speedFactor: 2f,
             
             executes: [
-                chaos_wizard_7,
-            ]
-		},
-		
-		chaos_wizard_7: {
-            type: SHOW_ON_SCREEN_TEXT,
-            
-            executionParameters: {
-                displayTextHeader: "Strange Chaos Wizard Guy",
-                colorHeader: #850085,
-                displayText: "Now, Thorin...               \nLet's see how you can handle my army of magical beasts!          ",
-                showNextPageIcon: true,
-			}
-            
-            waitForEventToFinish: true,
-            
-            executes: [
                 spawn_elder_dragon,
-			],
+            ]
 		},
 		
 		spawn_elder_dragon: {
