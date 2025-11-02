@@ -20,4 +20,17 @@
 		pushForce: 300,
 		pushForceAffectedByBlock: false,
 	},
+	
+	{
+		id: chaos_wizard_force_field,
+		type: FORCE_FIELD,
+		projectileType: chaos_wizard_force_field,
+		delay: 0,
+		duration: 1,
+		damage: 0,
+		distFromCenter: 0,
+		hitFixtureRadius: 0,
+		pushForce: 25,
+		pushForceAffectedByBlock: false,
+	},
 ]

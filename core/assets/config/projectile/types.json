@@ -335,6 +335,24 @@
 		radius: 3f,
 	},
 	
+	chaos_wizard_force_field: {
+		attackType: FORCE_FIELD,
+		
+		animation: force_field_bugbear,
+		textureAnimation: false,
+		textureScale: 2f,
+		
+		speed: 0,
+		damping: 0,
+		
+		timeActive: 2,
+		
+		multipleHitsPossible: true,
+		
+		pushForce: 25f,
+		radius: 3.5f,
+	},
+	
 	slingshot: {
 		attackType: SLINGSHOT,
 		

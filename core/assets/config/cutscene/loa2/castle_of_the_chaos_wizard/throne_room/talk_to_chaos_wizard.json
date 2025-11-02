@@ -13,13 +13,28 @@
 				},
 				{
 					conditionId: loa2_l5_castle_of_the_chaos_wizard__throne_room__boss_fight_started,
-                    executedStateName: end,
+                    executedStateName: activate_force_field_attack_to_push_thorin,
 				},
 				{
 					// default case
 					executedStateName: move_thorin_to_chaos_wizard_1,
 				},
 			],
+		},
+		
+		activate_force_field_attack_to_push_thorin: {
+			type: EVENT,
+			
+            event: {
+                eventType: CUTSCENE_CREATE_ATTACK, // makes a configObject create the attack
+                stringValue: "cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_force_field", // the unitId of the config object that has to create the attack
+                
+                // attack name and direction are configured in the config object (in the tiled map)
+			},
+			
+			executes: [
+                end,
+			]
 		},
 	
 		move_thorin_to_chaos_wizard_1: {
@@ -87,8 +102,8 @@
 			speedFactor: 3f,
 			
 			executes: [
-//				change commented lines to "thorin_3" to skip the initial part of the dialog
-//				thorin_3,
+//				change commented lines to "chaos_wizard_18" to skip the initial part of the dialog
+//				chaos_wizard_18,
 			    chaos_wizard__greeting,
 			    chaos_wizard_evil_laugh_1,
 			],
@@ -455,7 +470,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "As it was written in the ancient scrolls... also known as \"The Markup Files of Eternal Doom\"... I shaped the Nine Realms from the endless ice fields of Niflheim to the melting fires of Muspelheim with only one goal: To rule them as their rightful, glorious, omnipotent overlord!\nTo become the one wizard to rule them all!\nAnd to finally crush the so-called \"Hero\"!!!      ",
+                displayText: "As it was written in the ancient scrolls... also known as \"The Markup Files of Eternal Doom\"... I shaped the Nine Realms from the endless ice-shrouded abyss of Niflheim to the world-scorching flames of Muspelheim with only one goal: To rule them as their rightful, glorious, omnipotent overlord!\nTo become the one wizard to rule them all!\nAnd to finally crush the so-called \"Hero\"!!!      ",
                 showNextPageIcon: true,
 			}
             
@@ -505,7 +520,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "You really thought you stood a chance against me after you defeated one boss after another, didn’t you?\nBut you only triumphed because I allowed it!  ",
+                displayText: "You really thought you stood a chance against me after you defeated one boss after another, didn’t you?   ",
                 showNextPageIcon: true,
 			}
             
@@ -522,7 +537,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "Why else would I add an Easy Mode to the game?\nIt was all part of my plan to guide you to me! Every triumph. Every rune. Every side quest. All part of my genius design!",
+                displayText: "But you only triumphed because I allowed it!                        \nAnd now you will fail because I demand it!   ",
                 showNextPageIcon: true,
 			}
             
@@ -539,7 +554,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "I prepared everything perfectly. My deadliest minions. An arena worthy of our legendary battle. I even borrowed the Vorpal Laserblaster of Pittenweem from a friend! All for this moment!",
+                displayText: "Why else would I add an Easy Mode to the game?\nIt was all part of my plan to guide you to me! Every triumph. Every rune. Every side quest. All part of my genius design!",
                 showNextPageIcon: true,
 			}
             
@@ -556,7 +571,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "In every other world, every other stale bedtime story, the \"Hero\" wins.\n              \nBut not here! Not in a realm forged by my hand!     ",
+                displayText: "I prepared everything perfectly. My deadliest minions. An arena worthy of our legendary battle. I even borrowed the Vorpal Laserblaster of Pittenweem from a friend! All for this moment!",
                 showNextPageIcon: true,
 			}
             
@@ -573,7 +588,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "You did a fantastic job, Thorin.\nYou believed me when I told you you were the chosen hero of this story.\nYou fought through all the side quests I made up for you.\nYou defeated every creature I created for you and found the runes that led you to me.\nOnly to be defeated now, by the almighty \"Chaos Wizard\"!!!     ",
+                displayText: "In every other world, every other stale bedtime story, the \"Hero\" wins.\n              \nBut not here! Not in a realm forged by my hand!     ",
                 showNextPageIcon: true,
 			}
             
@@ -590,7 +605,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "I really enjoyed our little exchanges and quipping, Thorin. But you will not win because destiny demands it.\nYou will not win because the audience expects it.\nYou will not win because \"the hero always wins.\"\nAnd you will certainly not win because of the player's ability to press the attack button repeatedly!",
+                displayText: "You did a fantastic job, Thorin.\nYou believed me when I told you you were the chosen hero of this story.\nYou fought through all the side quests I made up for you.\nYou defeated every creature I created for you and found the runes that led you to me.\nOnly to be defeated now, by the almighty \"Chaos Wizard\"!!!     ",
                 showNextPageIcon: true,
 			}
             
@@ -607,7 +622,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "The time has finally come, Thorin! For this is the climax foretold in the ancient \"Legend of Asamnir\"!   ",
+                displayText: "I really enjoyed our little exchanges and quipping, Thorin. But you will not win because destiny demands it.\nYou will not win because the audience expects it.\nYou will not win because \"the hero always wins.\"\nAnd you will certainly not win because of the player's ability to press the attack button repeatedly!",
                 showNextPageIcon: true,
 			}
             
@@ -624,7 +639,24 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "Prepare yourself. For now you will face thy doom.\nAnd with it ... my unpaid interns!\n               \nMinions, attack!      ",
+                displayText: "The time has finally come, Thorin! For this is the climax foretold in the ancient \"Legend of Asamnir\"!   ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_18,
+			],
+		},
+		
+		chaos_wizard_18: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Prepare yourself. For now you will face thy doom.\n                                \nAnd with it ... my unpaid interns!          \nMinions, attack!      ",
                 showNextPageIcon: true,
 			}
             
@@ -632,7 +664,32 @@
             
             executes: [
                 change_traversable_object_bodies_to_sensors,
+                stop_background_music_2,
 			],
+		},
+		
+		stop_background_music_2: {
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+				play_boss_fight_music,
+			]
+		},
+		
+		play_boss_fight_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_enraged,
+                floatValue: 7f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
 		},
 		
 		change_traversable_object_bodies_to_sensors: {
@@ -698,7 +755,31 @@
 			}
             
             executes: [
-            	move_chaos_wizard_to_second_position,
+            	change_state__chaos_wizard__move_with_animation,
+            	spawn_elder_dragon,
+			]
+		},
+		
+		spawn_elder_dragon: {
+            type: EVENT,
+            
+            event: {
+            	eventType: CUSTCENE_SPAWN_UNIT,
+            }
+		},
+		
+		change_state__chaos_wizard__move_with_animation: {
+			type: CHANGE_STATE,
+			
+			executionDelayInSeconds: 1f,
+			
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: move_with_animation,
+            
+            executes: [
+                move_chaos_wizard_to_second_position,
+                start_boss_fight,
+                move_camera_to_elder_dragon,
 			]
 		},
 		
@@ -712,17 +793,36 @@
             speedFactor: 2f,
             
             executes: [
-                spawn_elder_dragon,
+                change_state__chaos_wizard__idle_2,
             ]
 		},
 		
-		spawn_elder_dragon: {
-			// TODO: spawn the elder dragon, play some sound effects
+		change_state__chaos_wizard__idle_2: {
+			type: CHANGE_STATE,
 			
-            type: WAIT,
-			executionDelayInSeconds: 0f,
+			executionDelayInSeconds: 1f,
 			
-			executes: [
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: idle,
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 2f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+		}
+		
+		move_camera_to_elder_dragon: {
+            type: MOVE_CAMERA,
+            targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__elder_dragon_camera_position,
+            updatePositionRelativeToTarget: false,
+            controlledUnitTarget: {x: 0, y: 0},
+            speedFactor: 2f,
+            
+            executes: [
                 set_global_value__boss_fight_started,
 			]
 		},
@@ -736,9 +836,31 @@
 			},
             
             executes: [
-                end,
+                play_sound_effect__elder_dragon_taunt,
 			]
 		}
+		
+		play_sound_effect__elder_dragon_taunt: {
+            type: PLAY_SOUND,
+            
+			executionDelayInSeconds: 1f,
+            
+            soundEffectName: elder_dragon_taunt,
+            
+            executes: [
+                wait_before_starting_boss_fight,
+            ]
+		},
+		
+		wait_before_starting_boss_fight: {
+            type: WAIT,
+            
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+                end,
+			],
+		},
 		
 		end: {
 			type: WAIT,

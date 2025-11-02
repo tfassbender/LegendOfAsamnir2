@@ -10,6 +10,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Bugbear;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.DwarvenGuardianConstruct;
+import net.jfabricationgames.gdx.character.enemy.implementation.ElderDragon;
 import net.jfabricationgames.gdx.character.enemy.implementation.FireTotemDummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.FrostGiant;
 import net.jfabricationgames.gdx.character.enemy.implementation.Gargoyle;
@@ -55,6 +56,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_SPIDER_QUEEN = "spider_queen";
 	private static final String ENEMY_NAME_VENGEFUL_SPIRIT = "vengeful_spirit";
 	private static final String ENEMY_NAME_LICH = "lich";
+	private static final String ENEMY_NAME_ELDER_DRAGON = "elder_dragon";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -147,6 +149,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_LICH:
 				enemy = new Lich(typeConfig, properties);
+				break;
+			case ENEMY_NAME_ELDER_DRAGON:
+				enemy = new ElderDragon(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

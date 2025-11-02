@@ -575,6 +575,10 @@
 					path: "sound/cutscene/hel_appear.mp3",
 					volume: 1f,
 				},
+				elder_dragon_taunt: {
+					path: "sound/enemy/taunt.wav",
+					volume: 1,
+				},
             }
         },
 		menu: {

@@ -1,0 +1,24 @@
+[
+	{
+		id: attack_hit,
+		type: HIT,
+		delay: 0.4,
+		duration: 0,
+		damage: 10,
+		distFromCenter: 1,
+		hitFixtureRadius: 1,
+		pushForce: 75
+	},
+	{
+		id: attack_spit,
+		type: HIT, // TODO change to a projectile attack
+		delay: 0.4,
+		duration: 0,
+		damage: 10,
+		distFromCenter: 0.5,
+		hitFixtureRadius: 0.35,
+		pushForce: 75
+	},
+	
+	// TODO add a beam attack and some magic/cast attacks
+]

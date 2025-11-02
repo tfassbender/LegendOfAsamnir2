@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, cast_loop_with_effect
+			move, move_with_animation, cast_loop_with_effect
 		]
 	},
 	{
@@ -14,7 +14,17 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle
+			idle, move_with_animation
+		]
+	},
+	
+	{
+		id: move_with_animation,
+		animation: elite_mage_move,
+		endsWithAnimation: true,
+		followingState: move_with_animation,
+		interruptingStates: [
+			move_with_animation, idle // the move state must not interrupt this one, so the movement uses this animation without getting interrupted
 		]
 	},
 	

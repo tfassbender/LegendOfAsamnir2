@@ -41,6 +41,7 @@
 	config/spawn/enemies/spider.json,
 	config/spawn/enemies/totem.json,
 	config/spawn/enemies/goblin_king.json,
+	config/spawn/enemies/elder_dragon.json,
 	
 	//******************
 	//*** common

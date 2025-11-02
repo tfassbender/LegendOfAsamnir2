@@ -545,6 +545,18 @@
 				raw_images/restricted/enemy/lich/lich_spell_projectile_hit,
 				raw_images/restricted/enemy/lich/lich_spell_projectile_move,
 				
+				// elder dragon
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_attack_beam,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_attack_spit,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_attack_hit,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_attack_spit_start,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_attack_spit_loop,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_attack_spit_end,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_damage,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_death,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_idle,
+				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_move,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

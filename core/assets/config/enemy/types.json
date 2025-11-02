@@ -1687,4 +1687,40 @@
 		isBoss: true
 		bossName: "Cultist Abomination - The devouring Husk", // first form - will be changed to "Lich - Herald of the Void" by the implementing class
 	},
+	
+	elder_dragon: {
+		typeName: elder_dragon,
+		
+		animationsConfig: config/animation/enemy/elder_dragon.json,
+		stateConfig: config/enemy/states/elder_dragon.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/elder_dragon.json,
+		
+		health: 200,
+		movingSpeed: 2f,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 2f,
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: -0.1f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 3f,
+		bodyHeight: 2f,
+		
+		addSensor: true,
+		sensorRadius: 15f,
+		
+		pushForceDamage: 10,
+		pushForceHit: 60,
+		
+		isBoss: true
+		bossName: "Fafnir - Warden of the Eternal Hoard",
+	},
+	
+	// TODO arch angel - boss name: "Dellingr - Sentinel of the Blinding Dawn"
 }

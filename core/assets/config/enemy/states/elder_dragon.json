@@ -1,0 +1,80 @@
+[
+	{
+		id: idle,
+		animation: elder_dragon_purple_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_hit, attack_spit_start, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: elder_dragon_purple_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_hit, attack_spit_start, damage, die
+		]
+	},
+	{
+		id: attack_hit,
+		animation: elder_dragon_purple_attack_hit,
+		attack: attack_hit,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_spit_start,
+		animation: elder_dragon_purple_attack_spit_start,
+		endsWithAnimation: true,
+		followingState: attack_spit_loop,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_spit_loop,
+		animation: elder_dragon_purple_attack_spit_loop,
+		attack: attack_spit,
+		endsWithAnimation: true,
+		followingState: attack_spit_loop,
+		interruptingStates: [
+			attack_spit_end, die
+		]
+	},
+	{
+		id: attack_spit_end,
+		animation: elder_dragon_purple_attack_spit_start,
+		attack: attack_stomp,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: damage,
+		animation: elder_dragon_purple_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: elder_dragon_purple_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 5f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]
