@@ -12,8 +12,10 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
 import com.badlogic.gdx.utils.Json;
 
+import net.jfabricationgames.gdx.attack.implementation.ProjectileAttack;
 import net.jfabricationgames.gdx.character.state.CharacterStateAttackHandler;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
+import net.jfabricationgames.gdx.projectile.Projectile;
 
 public class AttackHandler implements CharacterStateAttackHandler {
 	
@@ -22,12 +24,12 @@ public class AttackHandler implements CharacterStateAttackHandler {
 	private Body body;
 	private PhysicsCollisionType collisionType;
 	
-	private Array<Attack> attacks;
+	private Array<Attack> attacks = new Array<>();
+	private Array<Projectile> projectiles = new Array<>();
 	
 	public AttackHandler(String attackConfigFile, Body body, PhysicsCollisionType collisionType) {
 		this.body = body;
 		this.collisionType = collisionType;
-		attacks = new Array<>();
 		
 		loadAttackConfig(attackConfigFile);
 	}
@@ -59,6 +61,17 @@ public class AttackHandler implements CharacterStateAttackHandler {
 			
 			if (attack.isToStart()) {
 				attack.start();
+				if (attack instanceof ProjectileAttack) {
+					projectiles.add(((ProjectileAttack) attack).getProjectile());
+				}
+			}
+		}
+		
+		Iterator<Projectile> projectileIterator = projectiles.iterator();
+		while (projectileIterator.hasNext()) {
+			Projectile projectile = projectileIterator.next();
+			if (projectile.isRemoved()) {
+				projectileIterator.remove();
 			}
 		}
 	}
@@ -100,6 +113,13 @@ public class AttackHandler implements CharacterStateAttackHandler {
 			attack.abort();
 		}
 		attacks.clear();
+	}
+	
+	public void removeAllProjectiles() {
+		for (Projectile projectile : projectiles) {
+			projectile.removeFromMap();
+		}
+		projectiles.clear();
 	}
 	
 	/**

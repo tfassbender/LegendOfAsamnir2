@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_hit, attack_spit_start, damage, die
+			move, attack_hit, attack_spit_start, attack_fire_wall_start, damage, die
 		]
 	},
 	{
@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack_hit, attack_spit_start, damage, die
+			idle, attack_hit, attack_spit_start, attack_fire_wall_start, damage, die
 		]
 	},
 	{
@@ -23,6 +23,35 @@
 		attack: attack_hit,
 		endsWithAnimation: true,
 		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_fire_wall_start,
+		animation: elder_dragon_purple_idle,
+		attack: attack_nova_before_fire_wall,
+		endsWithAnimation: true,
+		followingState: attack_fire_wall,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_fire_wall,
+		animation: elder_dragon_purple_idle,
+		attack: attack_fire_wall,
+		endsWithAnimation: true,
+		followingState: attack_fire_wall_idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_fire_wall_idle,
+		animation: elder_dragon_purple_idle,
+		endsWithAnimation: true,
+		followingState: attack_fire_wall_idle,
 		interruptingStates: [
 			die
 		]
@@ -39,7 +68,7 @@
 	{
 		id: attack_spit_loop,
 		animation: elder_dragon_purple_attack_spit_loop,
-		attack: attack_spit,
+		attack: attack_homing_fire_ball,
 		endsWithAnimation: true,
 		followingState: attack_spit_loop,
 		interruptingStates: [
@@ -49,7 +78,6 @@
 	{
 		id: attack_spit_end,
 		animation: elder_dragon_purple_attack_spit_start,
-		attack: attack_stomp,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

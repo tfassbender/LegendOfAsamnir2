@@ -30,6 +30,8 @@ public class CharacterStateMachine {
 	/** The number of repetitions of the overriding state */
 	private int overridingStateRepetitions;
 	
+	private Array<CharacterStateChangeListener> changeListeners = new Array<>();
+	
 	private ArrayMap<String, CharacterState> states;
 	
 	private CharacterStateAttackHandler attackHandler;
@@ -199,6 +201,12 @@ public class CharacterStateMachine {
 		currentState = state;
 		currentState.enterState(leavingState);
 		
+		if (leavingState != null && currentState != null) {
+			for (CharacterStateChangeListener listener : changeListeners) {
+				listener.onCharacterStateChange(leavingState, currentState);
+			}
+		}
+		
 		timeSinceAnimationEnded = 0;
 	}
 	
@@ -240,5 +248,13 @@ public class CharacterStateMachine {
 	
 	public CharacterState getCurrentState() {
 		return currentState;
+	}
+	
+	public void addChangeListener(CharacterStateChangeListener listener) {
+		changeListeners.add(listener);
+	}
+	
+	public void removeChangeListener(CharacterStateChangeListener listener) {
+		changeListeners.removeValue(listener, true);
 	}
 }

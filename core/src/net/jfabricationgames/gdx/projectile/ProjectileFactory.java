@@ -102,6 +102,9 @@ public class ProjectileFactory {
 			case FORCE_FIELD:
 				projectile = new ForceField(typeConfig, attackConfig, animation, gameMap);
 				break;
+			case FIRE_WALL:
+				projectile = new FireWall(typeConfig, attackConfig, animation, gameMap);
+				break;
 			case DWARVEN_GUARDIAN_CONSTRUCT_FIST:
 				projectile = new DwarvenGuardianConstructFist(typeConfig, attackConfig, animation, gameMap);
 				break;

@@ -163,5 +163,12 @@
             playMode: LOOP,
             scale: 0.05,
 		},
+		{
+            name: fireball_drake,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: LOOP,
+            scale: 0.05,
+		},
 	]
 }

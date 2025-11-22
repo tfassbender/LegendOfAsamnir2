@@ -1696,20 +1696,20 @@
 		initialState: idle,
 		attackConfig: config/enemy/attack/elder_dragon.json,
 		
-		health: 200,
-		movingSpeed: 2f,
+		health: 150,
+		movingSpeed: 3f,
 		
 		damageModifiersByAttackType: {
 			ARROW: 0f,
 			BOMB: 2f,
-			MAGIC: 0f,
+			MAGIC: 1f,
 		},
 		
 		imageOffsetX: 0f,
-		imageOffsetY: -0.1f,
+		imageOffsetY: 0.4f,
 		
 		bodyShape: OCTAGON,
-		bodyWidth: 3f,
+		bodyWidth: 3.2f,
 		bodyHeight: 2f,
 		
 		addSensor: true,

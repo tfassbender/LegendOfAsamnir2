@@ -5,20 +5,39 @@
 		delay: 0.4,
 		duration: 0,
 		damage: 10,
-		distFromCenter: 1,
+		distFromCenter: 1.5,
 		hitFixtureRadius: 1,
 		pushForce: 75
 	},
+	
 	{
-		id: attack_spit,
-		type: HIT, // TODO change to a projectile attack
-		delay: 0.4,
-		duration: 0,
-		damage: 10,
-		distFromCenter: 0.5,
-		hitFixtureRadius: 0.35,
-		pushForce: 75
+		id: attack_homing_fire_ball,
+        type: HOMING_PROJECTILE,
+		projectileType: homing_fire_ball,
+		delay: 0,
+        damage: 3,
+		canBeBlockedCompletely: true,
+		pushForce: 10,
 	},
 	
-	// TODO add a beam attack and some magic/cast attacks
+	{
+		id: attack_nova_before_fire_wall,
+		type: NOVA,
+		delay: 0,
+		duration: 0,
+		damage: 0,
+		hitFixtureRadius: 5,
+		pushForce: 300
+	},
+	{
+		id: attack_fire_wall,
+		type: FIRE_WALL,
+		projectileType: fire_wall,
+		delay: 0,
+		damage: 2,
+		distFromCenter: 0,
+		hitFixtureRadius: 0,
+		pushForce: 10,
+		pushForceAffectedByBlock: false,
+	},
 ]

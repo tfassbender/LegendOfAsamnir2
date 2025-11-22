@@ -60,4 +60,8 @@ public class ProjectileAttack extends Attack {
 	protected boolean isRemoved() {
 		return projectile == null || projectile.isRemoved();
 	}
+	
+	public Projectile getProjectile() {
+		return projectile;
+	}
 }

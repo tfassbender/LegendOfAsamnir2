@@ -353,6 +353,22 @@
 		radius: 3.5f,
 	},
 	
+	fire_wall: {
+		attackType: FIRE_WALL,
+		
+		// made of multiple fire animations set up in a circle
+		animation: fire,
+		
+		speed: 0,
+		damping: 0,
+		
+		removeAfterAnimationFinished: false,
+		multipleHitsPossible: true,
+		
+		pushForce: 10f,
+		radius: 5f,
+	},
+	
 	slingshot: {
 		attackType: SLINGSHOT,
 		
@@ -554,6 +570,23 @@
 		
 		animation: lich_spell_projectile_move,
 		animationHit: lich_spell_projectile_hit,
+		textureInitialRotation: 0,
+		textureScale: 1,
+		removeAfterAnimationFinished: false,
+		removeAfterHit: true,
+		
+		multipleHitsPossible: false,
+		
+		speed: 5,
+		damping: 10,
+		dampingAfterObjectHit: 10,
+		timeActive: 5,
+	},
+	
+	homing_fire_ball: {
+		attackType: HOMING_MAGIC_BLAST,
+		
+		animation: fireball_drake,
 		textureInitialRotation: 0,
 		textureScale: 1,
 		removeAfterAnimationFinished: false,

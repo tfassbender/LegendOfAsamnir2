@@ -29,6 +29,7 @@ public enum AttackType {
 	WAND(MAGIC), //
 	MAGIC_WAVE(MAGIC), //
 	FORCE_FIELD(MAGIC), //
+	FIRE_WALL(FORCE_FIELD), //
 	HADOUKEN(MAGIC), //
 	SPECTRAL_SWORD(MAGIC), //
 	HOMING_PROJECTILE(PROJECTILE), // a projectile that follows the player
