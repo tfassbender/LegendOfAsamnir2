@@ -19,6 +19,7 @@ import net.jfabricationgames.gdx.object.interactive.AttackActivatedStateSwitchOb
 import net.jfabricationgames.gdx.object.interactive.InteractiveObject;
 import net.jfabricationgames.gdx.object.interactive.LockedObject;
 import net.jfabricationgames.gdx.object.interactive.MovingObject;
+import net.jfabricationgames.gdx.object.interactive.MultiStateSwitchObject;
 import net.jfabricationgames.gdx.object.interactive.RotatingPuzzle;
 import net.jfabricationgames.gdx.object.interactive.StateSwitchObject;
 import net.jfabricationgames.gdx.object.moveable.DraggableObject;
@@ -116,6 +117,10 @@ public class GameObjectFactory {
 				break;
 			case STATE_SWITCH:
 				object = new StateSwitchObject(typeConfig, sprite, properties, gameMap);
+				break;
+			case MULTI_STATE_SWITCH:
+				object = new MultiStateSwitchObject(typeConfig, sprite, properties, gameMap);
+				((MultiStateSwitchObject) object).setAdditionalTextures(loadAdditionalTextures(typeConfig.additionalTextures, x, y, typeConfig));
 				break;
 			case MOVING:
 				object = new MovingObject(typeConfig, sprite, properties, gameMap);

@@ -410,6 +410,29 @@
 		addSensor: true,
 		sensorRadius: 0.4f,
 	},
+	direction_switch: {
+		type: MULTI_STATE_SWITCH,
+		
+		texture: empty,
+		textureAfterAction: empty,
+		
+		additionalTextures: [
+			direction_switch_up,
+			direction_switch_right,
+			direction_switch_down,
+			direction_switch_left,
+		],
+		additionalTexturesOffsetX: 0f,
+		additionalTexturesOffsetY: 0f,
+		
+		multipleActionExecutionsPossible: true,
+		isSensor: true,
+		addSensor: true,
+		sensorRadius: 0.6f,
+		
+		interactionMarkerOffsetX: 0.3f,
+		interactionMarkerOffsetY: 0.4f,
+	},
 	movable_rock: {
 		type: MOVABLE,
 		

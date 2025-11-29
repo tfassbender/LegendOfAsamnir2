@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="52" nextobjectid="533">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="52" nextobjectid="538">
  <properties>
   <property name="above_player_layers" value="[33, 34]"/>
   <property name="background_layers" value="[0, 1, 21, 22]"/>
@@ -90,7 +90,7 @@
 0,0,0,0,3522,3570,3570,3570,0,0,0,0,0,0,0,0,0,0,0,0,3520,3555,1382,1382,1382,1382,1382,3557,0,5122,5770,5771,0,4912,0,0,
 0,0,0,0,3522,0,0,0,3468,0,0,0,0,0,0,3468,0,0,0,0,3520,3569,3570,3570,3570,3570,3570,3571,0,3522,0,0,0,5106,0,0,
 0,0,0,0,3522,0,0,0,3481,0,0,0,0,0,0,3481,0,0,0,0,3531,1572,1573,1574,3546,3546,3546,3546,0,3522,0,0,0,5125,0,0,
-0,0,0,0,3522,0,0,0,3481,0,0,0,0,0,0,3481,0,0,0,0,0,1604,1605,1606,0,3481,0,3520,0,3522,0,0,0,0,0,0,
+0,0,0,0,3522,0,0,0,3481,0,0,0,0,0,0,3481,0,0,0,0,0,1604,1605,1606,0,3481,263,3520,0,3522,0,0,0,0,0,0,
 0,0,0,0,3522,0,0,0,3492,3467,3467,3467,3465,3467,3467,3496,3467,3467,3466,0,0,0,0,0,0,3481,0,3520,0,3522,0,0,0,3520,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,3481,3506,3507,3481,3507,3508,3481,0,0,0,0,0,0,3481,0,3502,3547,3503,0,0,0,3520,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,3481,3520,3521,3521,3521,3522,3478,3467,3467,3467,3468,3467,3467,3493,3468,3515,0,3513,0,0,0,3520,0,0,
@@ -110,7 +110,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="19" name="effect_layer_pipes_center_on" width="36" height="25" visible="0" locked="1">
+ <layer id="19" name="effect_layer_pipes_center_on" width="36" height="25" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -386,9 +386,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,3751,3742,3742,3742,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,3770,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,3770,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,3751,3742,3742,3742,3896,3742,3742,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,3770,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,3770,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,3770,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -1067,7 +1067,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="6" name="shadows" width="36" height="25">
+ <layer id="6" name="shadows" width="36" height="25" locked="1">
   <data encoding="csv">
 4530,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 4530,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -1238,6 +1238,48 @@
   <object id="532" name="object.spawnPoint.fafnir" x="384" y="160">
    <properties>
     <property name="spawn" value="enemy__elder_dragon"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="533" name="object.spawnPoint.mana" x="848.516" y="240.563">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="534" name="object.direction_switch" x="495.938" y="269.5">
+   <properties>
+    <property name="allowedDirections" value="[UP,RIGHT,LEFT]"/>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch"/>
+    <property name="initialState" value="UP"/>
+    <property name="stateSwitchId" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_up"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="535" name="object.direction_switch" x="591.938" y="397.156">
+   <properties>
+    <property name="allowedDirections" value="[UP,RIGHT,DOWN]"/>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch"/>
+    <property name="initialState" value="RIGHT"/>
+    <property name="stateSwitchId" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_up"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="536" name="object.direction_switch" x="495.978" y="492.733">
+   <properties>
+    <property name="allowedDirections" value="[RIGHT,DOWN,LEFT]"/>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch"/>
+    <property name="initialState" value="DOWN"/>
+    <property name="stateSwitchId" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_up"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="537" name="object.direction_switch" x="400.022" y="396.933">
+   <properties>
+    <property name="allowedDirections" value="[UP,DOWN,LEFT]"/>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch"/>
+    <property name="initialState" value="LEFT"/>
+    <property name="stateSwitchId" value="loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_up"/>
    </properties>
    <point/>
   </object>

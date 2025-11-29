@@ -36,7 +36,7 @@ public class InteractiveObject extends GameObject implements Interactive {
 	@MapObjectState
 	protected boolean actionExecuted = false;
 	protected boolean changedBodyToSensor = false;
-	private TextureAnimationDirector<TextureRegion> interactionAnimation;
+	protected TextureAnimationDirector<TextureRegion> interactionAnimation;
 	
 	public InteractiveObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties properties, GameObjectMap gameMap) {
 		super(typeConfig, sprite, properties, gameMap);
@@ -108,7 +108,7 @@ public class InteractiveObject extends GameObject implements Interactive {
 		}
 	}
 	
-	private boolean showInteractionIcon() {
+	protected boolean showInteractionIcon() {
 		return canBeExecutedByConfig() //
 				&& (!interactionAnimation.isAnimationFinished() // the animation (to appear or disappear) is still playing 
 						|| interactionAnimation.getAnimation().getPlayMode() == PlayMode.NORMAL); // the interaction icon appeared and is to be shown (animation finished)
