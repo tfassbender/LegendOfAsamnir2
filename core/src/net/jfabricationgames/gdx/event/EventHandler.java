@@ -5,6 +5,8 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.ObjectMap;
 
+import net.jfabricationgames.gdx.event.coded.CodedEventHandler;
+
 public class EventHandler {
 	
 	private static final String EVENT_CONFIG_FILE = "config/events/events.json";
@@ -20,6 +22,12 @@ public class EventHandler {
 	
 	private EventHandler() {
 		listeners = new Array<>();
+		
+		// register coded event listeners
+		for (EventListener listener : CodedEventHandler.getCodedEventListeners()) {
+			registerEventListener(listener);
+		}
+		
 		loadEvents();
 	}
 	

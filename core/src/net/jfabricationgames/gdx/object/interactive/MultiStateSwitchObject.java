@@ -16,7 +16,6 @@ import net.jfabricationgames.gdx.object.GameObjectTypeConfig;
 public class MultiStateSwitchObject extends InteractiveObject implements EventListener {
 	
 	private static final String MAP_PROPERTY_KEY_ROTATING_PUZZLE_ID = "stateSwitchId";
-	private static final String MAP_PROPERTY_KEY_EVENT_PARAMETER = "eventParameter";
 	private static final String MAP_PROPERTY_KEY_INITIAL_STATE = "initialState";
 	private static final String MAP_PROPERTY_KEY_ALLOWED_DIRECTIONS = "allowedDirections";
 	
@@ -24,7 +23,6 @@ public class MultiStateSwitchObject extends InteractiveObject implements EventLi
 	private Direction currentDirection;
 	
 	private String stateSwitchId;
-	private String eventParameter;
 	private Array<Direction> allowedDirections;
 	
 	public MultiStateSwitchObject(GameObjectTypeConfig typeConfig, Sprite sprite, MapProperties properties, GameObjectMap gameMap) {
@@ -33,7 +31,6 @@ public class MultiStateSwitchObject extends InteractiveObject implements EventLi
 		EventHandler.getInstance().registerEventListener(this);
 		
 		stateSwitchId = properties.get(MAP_PROPERTY_KEY_ROTATING_PUZZLE_ID, String.class);
-		eventParameter = properties.get(MAP_PROPERTY_KEY_EVENT_PARAMETER, String.class);
 		
 		processAllowedDirectionsFromMapProperties(properties);
 		chooseInitialStateFromMapProperties(properties);
@@ -93,10 +90,10 @@ public class MultiStateSwitchObject extends InteractiveObject implements EventLi
 		
 		currentDirection = nextDirection();
 		
-		// fire an event that the rotating puzzle has been rotated
+		// fire an event that the switch state has been changed
 		EventHandler.getInstance().fireEvent(new EventConfig() //
 				.setEventType(EventType.MULTI_STATE_SWITCH_ACTION) //
-				.setStringValue(eventParameter) //
+				.setStringValue(stateSwitchId) //
 				.setIntValue(currentDirection.index));
 	}
 	

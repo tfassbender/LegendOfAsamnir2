@@ -26,7 +26,7 @@ public class GlobalEventListener implements EventListener {
 		instance = new GlobalEventListener(EventHandler.getInstance());
 	}
 	
-	private Map<String, GlobalEventConfig> events;//don't use an libGDX ObjectMap here, because an iterator that works nested is needed
+	private Map<String, GlobalEventConfig> events; // don't use a libGDX ObjectMap here, because an iterator that works nested is needed
 	
 	private GlobalEventListener(EventHandler eventHandler) {
 		eventHandler.registerEventListener(this);
