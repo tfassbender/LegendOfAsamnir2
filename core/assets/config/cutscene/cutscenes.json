@@ -255,6 +255,7 @@
 	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/exit_throne_room.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/enter_throne_room.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/talk_to_chaos_wizard.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/after_first_boss_defeated.json,
 
 //	//********************************************************
 //	//*** Demo Level

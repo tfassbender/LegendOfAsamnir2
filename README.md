@@ -338,6 +338,24 @@ Also conditions can be used inside text (like variables). These special variable
 
 An example for variables can be found in the cutscene config [elven_warrior_in_dwarven_village.json](core/assets/config/cutscene/loa2/main/elven_warrior_in_dwarven_village.json).
 
+### Functions in Configurations
+
+For complex cutscenes it is sometimes necessary (or easier) to hard code some of the decisions. In some of these cases, the values for cutscenes can be computed in a helper class, that handles an event (that is fired by the cutscene) and uses the same event as return value. This way, a cutscene can be configured with a function, that has will return a value depending on various factors. The following functions can be configured in cutscenes:
+
+- Type MOVE: **_function_call(search_query)** - will create an event with type **CUTSCENE_FUNCTION_CALL**, where the stringValue of the event is the *search_query* parameter from the function. The value that is set to the event after the event is handled will be used in place of the string "_function_call(search_query)".
+
+```javascript
+move_unit_to_function_target: {
+	type: MOVE,
+	controlledUnitId: PLAYER,
+	targetPositionRelativeToUnitId: _function_call(event_string_parameter),
+	controlledUnitTarget: {x: 0, y: 0},			
+	executes: [
+        end
+	]
+},
+```
+
 ### Activating Cutscenes
 
 Cutscenes are usually started by a [Global Event](#global-events), that's type is set to `START_CUTSCENE`. The global event has to be configured to be activated when the cutscene is meant to be started. A cutscene that is configured to be started when the player touches an event object on the map is configured in the [demo.json](core/assets/config/events/global/demo.json) config file (that is a config file for global listened events, which is referenced from the main config file [globalListenedEvents.json](core/assets/config/events/globalListenedEvents.json)):

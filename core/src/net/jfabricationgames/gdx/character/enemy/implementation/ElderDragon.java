@@ -16,6 +16,9 @@ import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.ElderDragonAttackAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventType;
 
 public class ElderDragon extends Enemy implements CharacterStateChangeListener {
 	
@@ -37,6 +40,9 @@ public class ElderDragon extends Enemy implements CharacterStateChangeListener {
 		super(typeConfig, properties);
 		
 		health -= 0.1f; // reduce the health by a small value to prevent the defense mode from being activated at the first damage
+		
+		// TODO delete after tests
+		health = 1;
 		
 		stateMachine.addChangeListener(this);
 	}
@@ -134,7 +140,10 @@ public class ElderDragon extends Enemy implements CharacterStateChangeListener {
 		
 		// no quicksave here, because the next fight will be started right away
 		
-		// TODO trigger a config object that starts the next part of the boss fight
+		playMapBackgroundMusicAfterBossDefeated();
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__elder_dragon_defeated"));
 	}
 	
 	@Override

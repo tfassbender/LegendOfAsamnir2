@@ -8,12 +8,14 @@ import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventType;
 
-public class CastleOfTheChaosWizardMagicPipesEventHandler extends CodedEventHandler {
+public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandler {
 	
 	private static final String STATE_SWITCH_ID_UP = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_up";
 	private static final String STATE_SWITCH_ID_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_right";
 	private static final String STATE_SWITCH_ID_DOWN = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_down";
 	private static final String STATE_SWITCH_ID_LEFT = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_left";
+	
+	private static final String UNIT_ID_PLAYER = "PLAYER";
 	
 	private static final String CONFIG_OBJECT_UNIT_ID_AREA_LOWER_LEFT = "cutscene_object__chaos_wizard_throne_room__area_lower_left";
 	private static final String CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_LEFT = "cutscene_object__chaos_wizard_throne_room__area_middle_left";
@@ -36,6 +38,9 @@ public class CastleOfTheChaosWizardMagicPipesEventHandler extends CodedEventHand
 	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM_RIGHT = "cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom_right";
 	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM = "cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom";
 	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_TOP_LEFT = "cutscene_object__chaos_wizard_throne_room__way_to_throne__top_left";
+	private static final String CONFIG_OBJECT_UNIT_ID_THORIN_POSITION_AFTER_FIRST_BOSS = "cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss";
+	
+	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__AFTER_FIRST_BOSS_FIGHT_THORIN_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__cutscene_after_first_boss_defeated__get_thorin_target_position";
 	
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_center_on";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on";
@@ -89,29 +94,37 @@ public class CastleOfTheChaosWizardMagicPipesEventHandler extends CodedEventHand
 		}
 		
 		if (EventType.MULTI_STATE_SWITCH_ACTION.equals(event.eventType)) {
-			boolean handled = false;
-			switch (event.stringValue) {
-				case STATE_SWITCH_ID_UP:
-					directionSwitchUp = Direction.fromIndex(event.intValue);
-					handled = true;
-					break;
-				case STATE_SWITCH_ID_RIGHT:
-					directionSwitchRight = Direction.fromIndex(event.intValue);
-					handled = true;
-					break;
-				case STATE_SWITCH_ID_DOWN:
-					directionSwitchDown = Direction.fromIndex(event.intValue);
-					handled = true;
-					break;
-				case STATE_SWITCH_ID_LEFT:
-					directionSwitchLeft = Direction.fromIndex(event.intValue);
-					handled = true;
-					break;
-			}
-			
-			if (handled && globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED)) {
-				changeMagicPipesRenderEffectLayer();
-			}
+			handleMultiStateSwitchAction(event);
+		}
+		
+		if (EventType.CUTSCENE_FUNCTION_CALL.equals(event.eventType)) {
+			handleCutsceneFunctionCall(event);
+		}
+	}
+	
+	private void handleMultiStateSwitchAction(EventConfig event) {
+		boolean handled = false;
+		switch (event.stringValue) {
+			case STATE_SWITCH_ID_UP:
+				directionSwitchUp = Direction.fromIndex(event.intValue);
+				handled = true;
+				break;
+			case STATE_SWITCH_ID_RIGHT:
+				directionSwitchRight = Direction.fromIndex(event.intValue);
+				handled = true;
+				break;
+			case STATE_SWITCH_ID_DOWN:
+				directionSwitchDown = Direction.fromIndex(event.intValue);
+				handled = true;
+				break;
+			case STATE_SWITCH_ID_LEFT:
+				directionSwitchLeft = Direction.fromIndex(event.intValue);
+				handled = true;
+				break;
+		}
+		
+		if (handled && globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED)) {
+			changeMagicPipesRenderEffectLayer();
 		}
 	}
 	
@@ -198,6 +211,23 @@ public class CastleOfTheChaosWizardMagicPipesEventHandler extends CodedEventHand
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_TOP, false);
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_RIGHT, false);
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_BOTH, false);
+	}
+	
+	private void handleCutsceneFunctionCall(EventConfig event) {
+		if (CUTSCENE_FUNCTION_CALL_PARAMETER__AFTER_FIRST_BOSS_FIGHT_THORIN_POSITION.equals(event.stringValue)) {
+			String targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_THORIN_POSITION_AFTER_FIRST_BOSS;
+			if (isUnitInArea(UNIT_ID_PLAYER, CONFIG_OBJECT_UNIT_ID_AREA_LOWER_LEFT)) {
+				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM;
+			}
+			else if (isUnitInArea(UNIT_ID_PLAYER, CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_BOTTOM)) {
+				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM_RIGHT;
+			}
+			else if (isUnitInArea(UNIT_ID_PLAYER, CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_LEFT)) {
+				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_TOP_LEFT;
+			}
+			
+			event.stringValue = targetPositionUnitId;
+		}
 	}
 	
 	private boolean isUnitInArea(String unitId, String areaConfigObjectUnitId) {

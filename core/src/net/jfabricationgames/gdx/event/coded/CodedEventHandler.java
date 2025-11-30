@@ -15,7 +15,7 @@ public abstract class CodedEventHandler implements EventListener {
 	public static List<EventListener> getCodedEventListeners() {
 		List<EventListener> codedEventListeners = new ArrayList<EventListener>();
 		
-		codedEventListeners.add(new CastleOfTheChaosWizardMagicPipesEventHandler());
+		codedEventListeners.add(new CastleOfTheChaosWizardBossFightEventHandler());
 		
 		return codedEventListeners;
 	}

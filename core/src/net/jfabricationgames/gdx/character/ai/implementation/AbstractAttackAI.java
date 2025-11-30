@@ -104,7 +104,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	}
 	
 	protected void resetTargetingPlayer() {
-		targetingPlayerLastKnownPosition = targetingPlayer.getPosition().cpy();
+		targetingPlayerLastKnownPosition = targetingPlayer != null ? targetingPlayer.getPosition().cpy() : null;
 		targetingPlayer = null;
 	}
 	

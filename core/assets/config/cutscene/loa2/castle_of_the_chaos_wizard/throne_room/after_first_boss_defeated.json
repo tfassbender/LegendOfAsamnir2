@@ -1,0 +1,86 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__throne_room__after_first_boss_defeated_cutscene,
+	controlledActions: {
+		wait_after_first_boss_defeated: {
+			startsWithCutscene: true,
+			
+            type: WAIT,
+            
+            executionDelayInSeconds: 3f,
+            
+            executes: [
+                thorin_comment,
+			],
+		},
+		
+		thorin_comment: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Pathetic dragon...\n             \nNow let's find that Strange Chaos Wizard Guy!    ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                move_thorin_to_chaos_wizard_1,
+			],
+		},
+	
+		move_thorin_to_chaos_wizard_1: {
+			type: MOVE,
+			controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__cutscene_after_first_boss_defeated__get_thorin_target_position),
+			controlledUnitTarget: {x: 0, y: 0},
+			
+			executes: [
+                move_thorin_to_chaos_wizard_2,
+			]
+		},
+		
+		move_thorin_to_chaos_wizard_2: {
+            type: MOVE,
+            controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__cutscene_after_first_boss_defeated__get_thorin_target_position),
+            controlledUnitTarget: {x: 0, y: 0},
+            
+			executes: [
+                move_thorin_to_chaos_wizard_3,
+			]
+		},
+		
+		move_thorin_to_chaos_wizard_3: {
+            type: MOVE,
+            controlledUnitId: PLAYER,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss,
+            controlledUnitTarget: {x: 0, y: 0},
+            
+			executes: [
+                move_camera_till_chaos_wizard_is_visible,
+			]
+		},
+		
+		move_camera_till_chaos_wizard_is_visible: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: 0, y: 1},
+			speedFactor: 3f,
+			
+			executes: [
+				end
+			],
+		},
+		
+		// TODO dialog with the chaos wizard and spawn the second boss
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

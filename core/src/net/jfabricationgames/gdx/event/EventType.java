@@ -92,6 +92,7 @@ public enum EventType {
 	CUTSCENE_CREATE_ATTACK, //
 	CUTSCENE_REMOVE_UNIT, //
 	CUTSCENE_SHOW_TITLE_BANNER, //
+	CUTSCENE_FUNCTION_CALL, //
 	//*******************************
 	//*** Level Setup
 	//*******************************
