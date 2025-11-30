@@ -1,0 +1,14 @@
+[
+	// TODO add the actual attacks
+	
+	{
+		id: attack_cast,
+		type: HIT,
+		delay: 0.4,
+		duration: 0,
+		damage: 10,
+		distFromCenter: 1.5,
+		hitFixtureRadius: 1,
+		pushForce: 75
+	},
+]

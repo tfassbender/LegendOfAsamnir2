@@ -1,0 +1,22 @@
+[
+	{
+		id: idle,
+		animation: angle_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			
+		]
+	},
+	{
+		id: move,
+		animation: angle_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			
+		]
+	},
+	
+	// TODO add more states here
+]

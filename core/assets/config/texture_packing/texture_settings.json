@@ -558,6 +558,30 @@
 				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_idle,
 				raw_images/restricted/enemy/elder_dragon/elder_dragon_purple/elder_dragon_purple_move,
 				
+				// arch angel
+				raw_images/restricted/enemy/archangel/archangel_appear,
+				raw_images/restricted/enemy/archangel/archangel_attack,
+				raw_images/restricted/enemy/archangel/archangel_cast,
+				raw_images/restricted/enemy/archangel/archangel_damage,
+				raw_images/restricted/enemy/archangel/archangel_death,
+				raw_images/restricted/enemy/archangel/archangel_idle,
+				raw_images/restricted/enemy/archangel/archangel_move,
+				
+				// angel
+				raw_images/restricted/enemy/angel/angel_attack,
+				raw_images/restricted/enemy/angel/angel_damage,
+				raw_images/restricted/enemy/angel/angel_death,
+				raw_images/restricted/enemy/angel/angel_idle,
+				
+				// angelic helmet
+				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_attack,
+				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_damage,
+				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_death,
+				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_fall,
+				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_idle,
+				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_projectile_hit,
+				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_projectile_move,
+				
 				//##############################################################
 				//### NPCs
 				//##############################################################

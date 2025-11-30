@@ -72,11 +72,170 @@
 			speedFactor: 3f,
 			
 			executes: [
-				end
+				chaos_wizard_1
 			],
 		},
 		
-		// TODO dialog with the chaos wizard and spawn the second boss
+		chaos_wizard_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 0.5f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "You managed to defeat Fafnir...\n              \nImpressive ... but within expectations.     ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                thorin_1,
+			],
+		},
+		
+		thorin_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "You're minions are no match for a Dwarf!\n                 \nAnd now there's nothing stopping me from ramming my axe into your skull!!!       ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_evil_laugh_1,
+                chaos_wizard_2,
+			],
+		},
+		
+		chaos_wizard_evil_laugh_1: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 0f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		chaos_wizard_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "*evil laughter*\n                                         \nYou didn't really think I have only one Minion, did you?    ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                chaos_wizard_3,
+			],
+		},
+		
+		chaos_wizard_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "This is the final chapter of our little game, Thorin!         \nAnd you thought the final boss battle had only one phase...?             \nWill you ever learn?!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                spawn_arch_angel,
+                chaos_wizard_4,
+			],
+		},
+		
+		spawn_arch_angel: {
+            type: EVENT,
+            
+            event: {
+            	eventType: CUSTCENE_SPAWN_UNIT_2,
+            }
+		},
+		
+		chaos_wizard_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Dellingr, could you please get rid of this annoying dwarf for me?      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	stop_background_music,
+                start_boss_fight,
+                move_camera_till_dellignir_is_visible,
+			],
+		},
+		
+		stop_background_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+				play_boss_fight_music,
+			]
+		},
+		
+		play_boss_fight_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_enraged,
+                floatValue: 0f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 1.5f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+		}
+		
+		move_camera_till_dellignir_is_visible: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: -3, y: 0},
+			speedFactor: 2f,
+			
+			executes: [
+				wait_before_starting_boss_fight
+			],
+		},
+		
+		wait_before_starting_boss_fight: {
+            type: WAIT,
+            
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+                end,
+			],
+		},
 		
 		end: {
 			type: WAIT,

@@ -1722,5 +1722,37 @@
 		bossName: "Fafnir - Warden of the Eternal Hoard",
 	},
 	
-	// TODO arch angel - boss name: "Dellingr - Sentinel of the Blinding Dawn"
+	archangel: {
+		typeName: arch_angel,
+		
+		animationsConfig: config/animation/enemy/archangel.json,
+		stateConfig: config/enemy/states/archangel.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/archangel.json,
+		
+		health: 150,
+		movingSpeed: 4f,
+		
+		damageModifiersByAttackType: {
+			ARROW: 1f,
+			BOMB: 1f,
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.4f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 2f,
+		bodyHeight: 2f,
+		
+		addSensor: true,
+		sensorRadius: 15f,
+		
+		pushForceDamage: 10,
+		pushForceHit: 60,
+		
+		isBoss: true
+		bossName: "Dellingr - Sentinel of the Blinding Dawn",
+	},
 }

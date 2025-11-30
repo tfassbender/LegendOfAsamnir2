@@ -7,6 +7,7 @@
 	config/spawn/maps/loa2/l2_niflheim.json,
 	config/spawn/maps/loa2/l3_muspelheim.json,
 	config/spawn/maps/loa2/l4_helheim.json,
+	config/spawn/maps/loa2/l5_castle_of_the_chaos_wizard.json,
 	
 	
 	// demo and testing
@@ -41,7 +42,6 @@
 	config/spawn/enemies/spider.json,
 	config/spawn/enemies/totem.json,
 	config/spawn/enemies/goblin_king.json,
-	config/spawn/enemies/elder_dragon.json,
 	
 	//******************
 	//*** common

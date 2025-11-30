@@ -1,0 +1,22 @@
+[
+	{
+		id: idle,
+		animation: archangel_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			
+		]
+	},
+	{
+		id: move,
+		animation: archangel_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			
+		]
+	},
+	
+	// TODO add more states here
+]

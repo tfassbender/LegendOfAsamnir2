@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="569">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="570">
  <properties>
   <property name="above_player_layers" value="[36, 37]"/>
   <property name="background_layers" value="[0, 1, 21, 22]"/>
@@ -1478,6 +1478,12 @@
   <object id="566" name="object.configObject" x="848.25" y="335">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__final"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="569" name="object.spawnPoint.dellignir" x="544" y="256">
+   <properties>
+    <property name="spawn" value="enemy__arch_angel"/>
    </properties>
    <point/>
   </object>
