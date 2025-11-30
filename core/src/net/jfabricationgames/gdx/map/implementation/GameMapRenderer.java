@@ -115,6 +115,7 @@ class GameMapRenderer implements Disposable {
 		}
 		else {
 			effectLayers = new ObjectMap<>();
+			effectLayerKeysSorted = new Array<>();
 		}
 	}
 	

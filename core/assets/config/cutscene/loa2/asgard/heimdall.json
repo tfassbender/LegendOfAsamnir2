@@ -61,11 +61,13 @@
 				options: [
 					"Thanks for the help. I'll ask Ratatosk.",
 					"Who is Ratatosk?",
+					"What are you doing here in Asgard?",
 				],
 			},
 			choiceOptionExecutions: [
 				heimdall_4,
 				heimdall_3,
+				heimdall_introduction_1,
 			]
 	    },
 	    
@@ -100,6 +102,86 @@
             	end,
            	],
 		},
+		
+		heimdall_introduction_1: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "I'm Heimdall, the all-seeing guardian of Asgard.                     \nI watch over the Bifrost, the rainbow bridge that connects Asgard to the other realms.      ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	heimdall_introduction_2,
+			],
+		},
+		
+		heimdall_introduction_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "I'm wait here for the arrival of Naglfar, the ship made from the nails of the dead.   \nThe Allfather has forseen that it will bring Loki and his army to Asgard during Ragnarok.        ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	heimdall_introduction_3,
+			],
+		},
+		
+		heimdall_introduction_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "When that time comes, I will sound the Gjallarhorn to alert the Aesir and call them to the last battle.    ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	heimdall_introduction_4,
+			],
+		},
+		
+		heimdall_introduction_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "But till then I just stay here and greet some dwarfs that stumble upon Asgard somehow.     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	heimdall_introduction_5,
+			],
+		},
+		
+		heimdall_introduction_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Heimdall",
+                colorHeader: #646f87,
+                displayText: "And sometimes I watch some strange creatures who drive their even stranger chariots over the Bifrost and throw turtles at each other. I have no idea what that's all about, but it amuses me.     ",
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	thorin_2,
+			],
+		},     
 		
 		end: {
 			type: WAIT,
