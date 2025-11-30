@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="545">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="569">
  <properties>
   <property name="above_player_layers" value="[36, 37]"/>
   <property name="background_layers" value="[0, 1, 21, 22]"/>
@@ -1369,8 +1369,120 @@
    </properties>
    <point/>
   </object>
+  <object id="546" name="object.configObject" x="128" y="448" width="319.875" height="248">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_lower_left"/>
+   </properties>
+  </object>
+  <object id="548" name="object.configObject" x="128" y="322.333" width="319.5" height="125.667">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_left"/>
+   </properties>
+  </object>
+  <object id="549" name="object.configObject" x="128" y="64" width="320.5" height="258">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_upper_left"/>
+   </properties>
+  </object>
+  <object id="550" name="object.configObject" x="448.25" y="65" width="96" height="258">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_top"/>
+   </properties>
+  </object>
+  <object id="551" name="object.configObject" x="544" y="64" width="346.5" height="256.5">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_upper_right"/>
+   </properties>
+  </object>
+  <object id="552" name="object.configObject" x="544" y="320" width="347" height="128">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_right"/>
+   </properties>
+  </object>
+  <object id="553" name="object.configObject" x="544" y="448" width="346" height="247">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_lower_right"/>
+   </properties>
+  </object>
+  <object id="554" name="object.configObject" x="448" y="416" width="95.5" height="280">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_bottom"/>
+   </properties>
+  </object>
+  <object id="555" name="object.configObject" x="720.545" y="399.455">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="556" name="object.configObject" x="720.625" y="623.625">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__bottom_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="557" name="object.configObject" x="496.5" y="623.75">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__bottom"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="558" name="object.configObject" x="272.5" y="623.625">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__bottom_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="559" name="object.configObject" x="272.375" y="399.5">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="560" name="object.configObject" x="272.375" y="175.25">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__top_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="561" name="object.configObject" x="496.375" y="175.125">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__top"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="562" name="object.configObject" x="720.667" y="282.667">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="563" name="object.configObject" x="608" y="448">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="564" name="object.configObject" x="495" y="512">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="565" name="object.configObject" x="416" y="288">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__way_to_throne__top_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="566" name="object.configObject" x="848.25" y="335">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__final"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
- <objectgroup id="8" name="physics">
+ <objectgroup id="8" name="physics" locked="1">
   <object id="471" x="0.666667" y="0" width="132" height="272.727"/>
   <object id="472" x="0.666667" y="344" width="132.969" height="456"/>
   <object id="473" x="128" y="696" width="768" height="104"/>
@@ -1410,8 +1522,11 @@
   <object id="543" x="434.75" y="369.5">
    <polygon points="0,0 7.5,-3.875 7.5,0.375"/>
   </object>
-  <object id="544" x="549.875" y="365.5">
-   <polygon points="0,0 7.125,3.875 -0.5,3.625"/>
+  <object id="567" x="556.672" y="369.234">
+   <polygon points="0,0 -7.03125,-3.35938 -6.98438,0.0625"/>
+  </object>
+  <object id="568" x="556.703" y="405.25">
+   <polygon points="0,0 -6.82813,5 -6.95313,-0.125"/>
   </object>
  </objectgroup>
  <objectgroup id="9" name="unreachable_area_physics" locked="1">

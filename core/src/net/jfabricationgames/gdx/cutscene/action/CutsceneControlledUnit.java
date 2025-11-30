@@ -10,5 +10,9 @@ public interface CutsceneControlledUnit {
 	
 	public Vector2 getPosition();
 	
+	public default Vector2 getBodySize() {
+		return Vector2.Zero;
+	}
+	
 	public void removeFromMap();
 }

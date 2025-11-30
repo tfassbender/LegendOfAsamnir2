@@ -1,5 +1,9 @@
 package net.jfabricationgames.gdx.event.coded;
 
+import com.badlogic.gdx.utils.ObjectMap;
+
+import net.jfabricationgames.gdx.condition.Condition;
+import net.jfabricationgames.gdx.condition.ConditionType;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventType;
@@ -10,6 +14,28 @@ public class CastleOfTheChaosWizardMagicPipesEventHandler extends CodedEventHand
 	private static final String STATE_SWITCH_ID_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_right";
 	private static final String STATE_SWITCH_ID_DOWN = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_down";
 	private static final String STATE_SWITCH_ID_LEFT = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_left";
+	
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_LOWER_LEFT = "cutscene_object__chaos_wizard_throne_room__area_lower_left";
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_LEFT = "cutscene_object__chaos_wizard_throne_room__area_middle_left";
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_UPPER_LEFT = "cutscene_object__chaos_wizard_throne_room__area_upper_left";
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_TOP = "cutscene_object__chaos_wizard_throne_room__area_middle_top";
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_UPPER_RIGHT = "cutscene_object__chaos_wizard_throne_room__area_upper_right";
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_RIGHT = "cutscene_object__chaos_wizard_throne_room__area_middle_right";
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_LOWER_RIGHT = "cutscene_object__chaos_wizard_throne_room__area_lower_right";
+	private static final String CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_BOTTOM = "cutscene_object__chaos_wizard_throne_room__area_middle_bottom";
+	
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_RIGHT = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__right";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_BOTTOM_RIGHT = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__bottom_right";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_BOTTOM = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__bottom";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_BOTTOM_LEFT = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__bottom_left";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_LEFT = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__left";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_TOP_LEFT = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__top_left";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_TOP = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__top";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_FINAL = "cutscene_object__chaos_wizard_throne_room__magic_pipe_position__final";
+	
+	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM_RIGHT = "cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom_right";
+	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM = "cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom";
+	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_TOP_LEFT = "cutscene_object__chaos_wizard_throne_room__way_to_throne__top_left";
 	
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_center_on";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on";
@@ -172,6 +198,15 @@ public class CastleOfTheChaosWizardMagicPipesEventHandler extends CodedEventHand
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_TOP, false);
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_RIGHT, false);
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_BOTH, false);
+	}
+	
+	private boolean isUnitInArea(String unitId, String areaConfigObjectUnitId) {
+		Condition condition = new Condition();
+		condition.parameters = new ObjectMap<>();
+		condition.parameters.put("objectId", unitId);
+		condition.parameters.put("targetAreaObjectId", areaConfigObjectUnitId);
+		
+		return ConditionType.OBJECT_IN_POSITION.check(condition);
 	}
 	
 	private enum Direction {

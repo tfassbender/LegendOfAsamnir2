@@ -12,6 +12,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.utils.Json;
 
 import net.jfabricationgames.gdx.attack.AttackHandler;
+import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
@@ -119,6 +120,13 @@ public class ConfigObject extends GameObject implements EventListener, ContactLi
 		changeBodyToSensor();
 		
 		attackHandler = new AttackHandler(CONFIG_FILE_ATTACKS, body, attackCollisionType); // pretend that the player created the attack
+	}
+	
+	@Override
+	public Vector2 getBodySize() {
+		float width = mapProperties.get("width", Float.class);
+		float height = mapProperties.get("height", Float.class);
+		return new Vector2(width * Constants.WORLD_TO_SCREEN, height * Constants.WORLD_TO_SCREEN);
 	}
 	
 	@Override

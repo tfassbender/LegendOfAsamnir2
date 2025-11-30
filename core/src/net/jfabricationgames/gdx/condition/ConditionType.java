@@ -197,6 +197,7 @@ public enum ConditionType {
 	OBJECT_IN_POSITION {
 		
 		private static final String PARAMETER_OBJECT_ID = "objectId";
+		private static final String PARAMETER_TARGET_AREA_OBJECT_ID = "targetAreaObjectId";
 		private static final String PARAMETER_TARGET_LOWER_LEFT_OBJECT_ID = "targetLowerLeftObjectId";
 		private static final String PARAMETER_TARGET_UPPER_RIGHT_OBJECT_ID = "targetUpperRightObjectId";
 		private static final String PARAMETER_OBJECT_CAN_BE_REMOVED = "objectCanBeRemoved";
@@ -204,21 +205,23 @@ public enum ConditionType {
 		@Override
 		public boolean check(Condition condition) {
 			String objectId = condition.parameters.get(PARAMETER_OBJECT_ID);
+			String targetAreaObjectId = condition.parameters.get(PARAMETER_TARGET_AREA_OBJECT_ID);
 			String targetLowerLeftObjectId = condition.parameters.get(PARAMETER_TARGET_LOWER_LEFT_OBJECT_ID);
 			String targetUpperRightObjectId = condition.parameters.get(PARAMETER_TARGET_UPPER_RIGHT_OBJECT_ID);
 			boolean objectCanBeRemoved = Boolean.parseBoolean(condition.parameters.get(PARAMETER_OBJECT_CAN_BE_REMOVED, "false"));
 			
-			if (objectId == null || targetLowerLeftObjectId == null || targetUpperRightObjectId == null) {
+			if (objectId == null || (targetAreaObjectId == null && (targetLowerLeftObjectId == null || targetUpperRightObjectId == null))) {
 				Gdx.app.error(getDeclaringClass().getSimpleName(), "The parameters for the OBJECT_IN_POSITION condition are not set correctly: " //
 						+ "objectId: " + objectId + ", targetLowerLeftObjectId: " + targetLowerLeftObjectId + ", targetUpperRightObjectId: " + targetUpperRightObjectId);
 				return false;
 			}
 			
 			CutsceneControlledUnit object = GameMapManager.getInstance().getMap().getUnitById(objectId);
-			CutsceneControlledUnit lowerLeftEventObject = GameMapManager.getInstance().getMap().getUnitById(targetLowerLeftObjectId);
-			CutsceneControlledUnit upperRightEventObject = GameMapManager.getInstance().getMap().getUnitById(targetUpperRightObjectId);
+			CutsceneControlledUnit targetAreaObject = targetAreaObjectId != null ? GameMapManager.getInstance().getMap().getUnitById(targetAreaObjectId) : null;
+			CutsceneControlledUnit lowerLeftEventObject = targetLowerLeftObjectId != null ? GameMapManager.getInstance().getMap().getUnitById(targetLowerLeftObjectId) : null;
+			CutsceneControlledUnit upperRightEventObject = targetUpperRightObjectId != null ? GameMapManager.getInstance().getMap().getUnitById(targetUpperRightObjectId) : null;
 			
-			if (lowerLeftEventObject == null || upperRightEventObject == null) {
+			if (targetAreaObject == null && (lowerLeftEventObject == null || upperRightEventObject == null)) {
 				Gdx.app.error(getDeclaringClass().getSimpleName(), "The object or the target area for the OBJECT_IN_POSITION condition cannot be found: " //
 						+ "object: " + object + ", lowerLeftObject: " + lowerLeftEventObject + ", upperRightObject: " + upperRightEventObject);
 				return false;
@@ -233,8 +236,25 @@ public enum ConditionType {
 				return false;
 			}
 			
-			Vector2 lowerLeft = lowerLeftEventObject.getPosition();
-			Vector2 upperRight = upperRightEventObject.getPosition();
+			Vector2 lowerLeft;
+			Vector2 upperRight;
+			if (targetAreaObject != null) {
+				Vector2 targetPosition = targetAreaObject.getPosition();
+				Vector2 targetSize = targetAreaObject.getBodySize();
+				
+				if (targetSize == null || targetSize.isZero()) {
+					Gdx.app.error(getDeclaringClass().getSimpleName(), "The target area object for the OBJECT_IN_POSITION condition has no size: " + targetAreaObjectId  //
+							+ ". Currently only ConfigObject has a size that can be used in conditions.");
+					return false;
+				}
+				
+				lowerLeft = new Vector2(targetPosition.x, targetPosition.y);
+				upperRight = new Vector2(targetPosition.x + targetSize.x, targetPosition.y + targetSize.y);
+			}
+			else {
+				lowerLeft = lowerLeftEventObject.getPosition();
+				upperRight = upperRightEventObject.getPosition();
+			}
 			
 			return object.getPosition().x >= lowerLeft.x && object.getPosition().x <= upperRight.x //
 					&& object.getPosition().y >= lowerLeft.y && object.getPosition().y <= upperRight.y;
