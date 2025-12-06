@@ -8,6 +8,12 @@
 			playMode: NORMAL
 		},
 		{
+            name: archangel_attack,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
 			name: archangel_cast,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

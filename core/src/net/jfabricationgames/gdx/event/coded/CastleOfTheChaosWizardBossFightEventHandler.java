@@ -70,6 +70,7 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_2 = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__energy_wall_2";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_3 = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__energy_wall_3";
 	
+	private static final String CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES = "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED = "loa2_l5_castle_of_the_chaos_wizard__magic_pipes_enabled";
 	
 	private Direction directionSwitchUp = Direction.UP;
@@ -86,8 +87,7 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 			globalValuesDataHandler = GlobalValuesDataHandler.getInstance();
 		}
 		
-		// TODO delete the first event handler after tests
-		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType) && event.stringValue.equals("loa2_l5_castle_of_the_chaos_wizard__throne_room__entering")) {
+		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType) && event.stringValue.equals(CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES)) {
 			globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED, true);
 			globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON, true);
 			changeMagicPipesRenderEffectLayer();

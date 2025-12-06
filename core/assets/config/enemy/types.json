@@ -1727,11 +1727,11 @@
 		
 		animationsConfig: config/animation/enemy/archangel.json,
 		stateConfig: config/enemy/states/archangel.json,
-		initialState: idle,
+		initialState: appear,
 		attackConfig: config/enemy/attack/archangel.json,
 		
 		health: 150,
-		movingSpeed: 4f,
+		movingSpeed: 2.5f,
 		
 		damageModifiersByAttackType: {
 			ARROW: 1f,

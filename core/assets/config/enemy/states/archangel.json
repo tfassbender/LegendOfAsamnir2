@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			
+			move, attack, cast_attack, cast_spawn_angel, cast_spawn_angelic_helmet, damage, die
 		]
 	},
 	{
@@ -14,9 +14,94 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			
+			idle, attack, cast_attack, cast_spawn_angel, cast_spawn_angelic_helmet, damage, die
 		]
 	},
+	{
+        id: appear,
+        animation: archangel_appear,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: []
+	},
+	{
+        id: attack,
+        animation: archangel_attack,
+		attack: attack_hit,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die
+        ]
+	},
+	{
+        id: damage,
+        animation: archangel_damage,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die
+        ]
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+        id: die,
+        animation: archangel_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 5f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
 	
-	// TODO add more states here
+	// the cast states don't execute attacks, but the ArchAngel class reacts to them to trigger special behavior
+	{
+        id: cast_attack,
+        // TODO use an attack like surturs fire soil
+        animation: archangel_cast,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+            die
+        ]
+	},
+	{
+        id: cast_spawn_angel,
+        animation: archangel_cast,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+            die
+        ]
+	},
+	{
+        id: cast_spawn_angelic_helmet,
+        animation: archangel_cast,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+            die
+        ]
+	},
+	
+	{
+		id: defense_mode,
+		animation: archangel_idle,
+		endsWithAnimation: true,
+		followingState: defense_mode,
+		interruptingStates: [
+			// can only be started and stopped by the ArchAngel implementation that forces the state change
+		]
+	},
+	{
+        id: defense_mode_cast,
+        animation: archangel_cast,
+        endsWithAnimation: true,
+        followingState: defense_mode,
+        interruptingStates: [
+            // can only be started and stopped by the ArchAngel implementation that forces the state change
+        ]
+	},
 ]

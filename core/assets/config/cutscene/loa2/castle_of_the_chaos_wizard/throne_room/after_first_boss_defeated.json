@@ -158,6 +158,8 @@
 		spawn_arch_angel: {
             type: EVENT,
             
+            executionDelayInSeconds: 2f,
+            
             event: {
             	eventType: CUSTCENE_SPAWN_UNIT_2,
             }
@@ -171,6 +173,7 @@
                 colorHeader: #850085,
                 displayText: "Dellingr, could you please get rid of this annoying dwarf for me?      ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -223,8 +226,23 @@
 			speedFactor: 2f,
 			
 			executes: [
-				wait_before_starting_boss_fight
+				enable_magic_pipes
 			],
+		},
+		
+		enable_magic_pipes: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 0.5f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes",
+			},
+            
+            executes: [
+                wait_before_starting_boss_fight,
+			]
 		},
 		
 		wait_before_starting_boss_fight: {
