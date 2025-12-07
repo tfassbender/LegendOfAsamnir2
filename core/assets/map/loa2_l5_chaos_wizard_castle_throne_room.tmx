@@ -1369,42 +1369,42 @@
    </properties>
    <point/>
   </object>
-  <object id="546" name="object.configObject" x="128" y="448" width="319.875" height="248">
+  <object id="546" name="object.configObject" x="128" y="514.667" width="255.208" height="181.333">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_lower_left"/>
    </properties>
   </object>
-  <object id="548" name="object.configObject" x="128" y="322.333" width="319.5" height="125.667">
+  <object id="548" name="object.configObject" x="128" y="257" width="319.5" height="257">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_left"/>
    </properties>
   </object>
-  <object id="549" name="object.configObject" x="128" y="64" width="320.5" height="258">
+  <object id="549" name="object.configObject" x="128" y="64" width="255.833" height="193.333">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_upper_left"/>
    </properties>
   </object>
-  <object id="550" name="object.configObject" x="448.25" y="65" width="96" height="258">
+  <object id="550" name="object.configObject" x="384.917" y="65" width="280.667" height="258">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_top"/>
    </properties>
   </object>
-  <object id="551" name="object.configObject" x="544" y="64" width="346.5" height="256.5">
+  <object id="551" name="object.configObject" x="665.333" y="64" width="225.167" height="193.167">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_upper_right"/>
    </properties>
   </object>
-  <object id="552" name="object.configObject" x="544" y="320" width="347" height="128">
+  <object id="552" name="object.configObject" x="544" y="257.333" width="347" height="253.333">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_right"/>
    </properties>
   </object>
-  <object id="553" name="object.configObject" x="544" y="448" width="346" height="247">
+  <object id="553" name="object.configObject" x="608" y="512" width="282" height="183">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_lower_right"/>
    </properties>
   </object>
-  <object id="554" name="object.configObject" x="448" y="416" width="95.5" height="280">
+  <object id="554" name="object.configObject" x="384" y="416" width="222.833" height="280">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__area_middle_bottom"/>
    </properties>
@@ -1451,7 +1451,7 @@
    </properties>
    <point/>
   </object>
-  <object id="562" name="object.configObject" x="720.667" y="282.667">
+  <object id="562" name="object.configObject" x="713.667" y="282.667">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss"/>
    </properties>

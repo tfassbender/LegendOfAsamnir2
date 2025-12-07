@@ -6,7 +6,7 @@
 		duration: 0,
 		damage: 10,
 		distFromCenter: 1.5,
-		hitFixtureRadius: 1.5,
+		hitFixtureRadius: 1,
 		pushForce: 75
 	},
 	{

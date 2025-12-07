@@ -10,8 +10,7 @@ public class CutsceneMoveCameraAction extends AbstractCutsceneMoveAction {
 	private CameraMovementHandler cameraMovementHandler;
 	private IsUnitMovingFunction isUnitMovingFunction;
 	
-	public CutsceneMoveCameraAction(CutsceneUnitProvider unitProvider, CutsceneControlledActionConfig actionConfig,
-			IsUnitMovingFunction isUnitMovingFunction) {
+	public CutsceneMoveCameraAction(CutsceneUnitProvider unitProvider, CutsceneControlledActionConfig actionConfig, IsUnitMovingFunction isUnitMovingFunction) {
 		super(unitProvider, actionConfig);
 		this.isUnitMovingFunction = isUnitMovingFunction;
 		cameraMovementHandler = CameraMovementHandler.getInstance();
@@ -41,7 +40,7 @@ public class CutsceneMoveCameraAction extends AbstractCutsceneMoveAction {
 	}
 	
 	private boolean followTargetFinished() {
-		return !actionConfig.cameraFollowsTarget || !isUnitMovingFunction.apply(actionConfig.targetPositionRelativeToUnitId);
+		return !actionConfig.cameraFollowsTarget || !isUnitMovingFunction.apply(resolveFunctionCall(actionConfig.targetPositionRelativeToUnitId));
 	}
 	
 	private float getDistanceToTarget() {

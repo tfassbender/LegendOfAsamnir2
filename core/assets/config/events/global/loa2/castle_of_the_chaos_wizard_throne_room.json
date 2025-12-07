@@ -14,6 +14,10 @@
 		}
 	},
 	
+	//*******************************************
+	//*** map setup
+	//*******************************************
+	
 	loa2_l5_castle_of_the_chaos_wizard__throne_room__entering: {
 		event: {
 			eventType: EVENT_OBJECT_TOUCHED,
@@ -24,6 +28,11 @@
 			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__entering_cutscene,
 		}
 	},
+	
+	//*******************************************
+	//*** cutscenes
+	//*******************************************
+	
 	
 	loa2_l5_castle_of_the_chaos_wizard__throne_room__stairs_to_throne: {
         event: {
@@ -44,6 +53,17 @@
         executionType: START_CUTSCENE,
         executionParameters: {
             cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__after_first_boss_defeated_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_defense_mode: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_start_defense_mode_cutscene,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_defense_mode_cutscene,
 		}
 	},
 }

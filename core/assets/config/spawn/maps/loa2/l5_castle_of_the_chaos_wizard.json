@@ -6,6 +6,7 @@
 	
 	enemy__arch_angel: {
 		spawnType: enemy.archangel,
+		spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__dellingr\"}",
 		events: [CUSTCENE_SPAWN_UNIT_2],
 	},
 }

@@ -118,6 +118,16 @@ public class MultiStateSwitchObject extends InteractiveObject implements EventLi
 			// check whether the expected value (the intValue of the event) equals the current direction code and set the result to the event
 			event.booleanValue = event.intValue == currentDirection.index;
 		}
+		else if (EventType.MULTI_STATE_SWITCH_SET_STATE.equals(event.eventType) && event.stringValue.equals(stateSwitchId)) {
+			// set the current direction to the intValue of the event
+			Direction newDirection = Direction.fromIndex(event.intValue);
+			if (newDirection != null && allowedDirections.contains(newDirection, false)) {
+				currentDirection = newDirection;
+			}
+			else {
+				Gdx.app.error(getClass().getSimpleName(), "Tried to set MultiStateSwitchObject to invalid direction. Map-ID: " + getMapObjectId());
+			}
+		}
 	}
 	
 	@Override

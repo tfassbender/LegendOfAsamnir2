@@ -202,7 +202,8 @@ public class CharacterStateMachine {
 		currentState.enterState(leavingState);
 		
 		if (leavingState != null && currentState != null) {
-			for (CharacterStateChangeListener listener : changeListeners) {
+			for (int i = 0; i < changeListeners.size; i++) { // do not use a for-each loop here, because the iterator won't work nested
+				CharacterStateChangeListener listener = changeListeners.get(i);
 				listener.onCharacterStateChange(leavingState, currentState);
 			}
 		}

@@ -25,11 +25,7 @@ public abstract class AbstractCutsceneMoveAction extends AbstractCutsceneAction 
 		
 		CutscenePositioningUnit unit;
 		if (actionConfig.targetPositionRelativeToUnitId != null) {
-			if (actionConfig.targetPositionRelativeToUnitId.startsWith(FUNCTION_CALL)) {
-				actionConfig.targetPositionRelativeToUnitId = resolveFunctionCall(actionConfig.targetPositionRelativeToUnitId);
-			}
-			
-			unit = getUnitAs(actionConfig.targetPositionRelativeToUnitId, CutscenePositioningUnit.class);
+			unit = getUnitAs(resolveFunctionCall(actionConfig.targetPositionRelativeToUnitId), CutscenePositioningUnit.class);
 		}
 		else {
 			unit = getControlledUnitAs(CutscenePositioningUnit.class);
@@ -38,7 +34,12 @@ public abstract class AbstractCutsceneMoveAction extends AbstractCutsceneAction 
 		target = unit.getPosition().cpy().add(actionConfig.controlledUnitTarget);
 	}
 	
-	private String resolveFunctionCall(String functionCallWithParameter) {
+	protected String resolveFunctionCall(String functionCallWithParameter) {
+		if (!actionConfig.targetPositionRelativeToUnitId.startsWith(FUNCTION_CALL)) {
+			// no function call, so no resolution is needed
+			return actionConfig.targetPositionRelativeToUnitId;
+		}
+		
 		// get the parameter from the string of the form _function_call(parameter)
 		String parameter = functionCallWithParameter.substring(FUNCTION_CALL.length(), functionCallWithParameter.lastIndexOf(')'));
 		

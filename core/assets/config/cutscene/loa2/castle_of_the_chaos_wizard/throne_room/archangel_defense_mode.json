@@ -1,0 +1,82 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_defense_mode_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+			startsWithCutscene: true,
+			
+		    type: WAIT,
+            
+            executes: [
+                move_camera_to_archangel,
+                move_archangel_to_defense_position,
+			]
+		},
+		
+		move_camera_to_archangel: {
+            type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_defense_position),
+			updatePositionRelativeToTarget: true,
+			speedFactor: 3f,
+            controlledUnitTarget: {x: 0, y: 0},
+		},
+		
+		move_archangel_to_defense_position: {
+			type: MOVE,
+			controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__dellingr,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_defense_position),
+			controlledUnitTarget: {x: 0, y: 0},
+			
+			executes: [
+                set_magig_pipes,
+			]
+		},
+		
+		set_magig_pipes: {
+            type: EVENT,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 1f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__throne_room__set_magic_pipes_to_defense_mode",
+			},
+            
+            executes: [
+                start_defense_mode,
+			]
+		},
+		
+		start_defense_mode: {
+			type: EVENT,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 0.5f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_start_defense_mode",
+			},
+            
+            executes: [
+                wait_before_continuing_boss_fight,
+			]
+		},
+		
+		wait_before_continuing_boss_fight: {
+            type: WAIT,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

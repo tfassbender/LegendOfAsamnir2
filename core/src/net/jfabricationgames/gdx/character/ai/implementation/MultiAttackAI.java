@@ -166,4 +166,15 @@ public class MultiAttackAI extends AbstractAttackAI {
 	public void setMoveToPlayerWhileAttacking(boolean moveToPlayerWhileAttacking) {
 		this.moveToPlayerWhileAttacking = moveToPlayerWhileAttacking;
 	}
+	
+	public void resetAttackTimer(String attackName) {
+		CharacterState characterState = attackStates.get(attackName);
+		AttackTimer attackTimer = attackTimers.get(characterState);
+		if (attackTimer != null) {
+			attackTimer.reset();
+		}
+		else {
+			Gdx.app.error(getClass().getSimpleName(), "resetAttackTimer(): No attack timer found for attack '" + attackName + "'.");
+		}
+	}
 }
