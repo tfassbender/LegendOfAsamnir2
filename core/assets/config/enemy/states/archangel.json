@@ -59,12 +59,11 @@
 	// the cast states don't execute attacks, but the ArchAngel class reacts to them to trigger special behavior
 	{
         id: cast_attack,
-        // TODO use an attack like surturs fire soil
         animation: archangel_cast,
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-            die
+            attack_lightning_soil, attack_fire_soil, attack_wind_soil, attack_earth_soil, die
         ]
 	},
 	{
@@ -86,6 +85,57 @@
         ]
 	},
 	
+	// the "-soil" attacks are chosen randomly by the ArchAngel class when entering the cast_attack state
+	{
+        id: attack_lightning_soil,
+        animation: archangel_cast,
+        attack: attack_lightning_soil,
+        stateEnteringSound: spark,
+		soundDelay: 0.8f,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+            die
+        ]
+	},
+	{
+		id: attack_fire_soil,
+		animation: archangel_cast,
+		stateEnteringSound: dwarven_guardian_construct_fire,
+		soundDelay: 0.8f,
+		attack: attack_fire_soil,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_wind_soil,
+		animation: archangel_cast,
+		stateEnteringSound: wind,
+		soundDelay: 0.4f,
+		attack: attack_wind_soil,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	{
+		id: attack_earth_soil,
+		animation: archangel_cast,
+		stateEnteringSound: rock_soil,
+		soundDelay: 0.6f,
+		attack: attack_earth_soil,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die
+		]
+	},
+	
+	// the defense mode states can only be entered and exited by the ArchAngel class implementation
 	{
 		id: defense_mode,
 		animation: archangel_idle,

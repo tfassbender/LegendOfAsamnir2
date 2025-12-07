@@ -514,6 +514,24 @@
 					path: "sound/enemy/attack/arcane_shower.mp3",
 					volume: 0.6,
 				}
+				// elder dragon
+				elder_dragon_taunt: {
+					path: "sound/enemy/taunt.wav",
+					volume: 1,
+				},
+				// archangel
+				spark: {
+					path: "sound/enemy/attack/spark_4.mp3"
+					volume: 0.4,
+				},
+				rock_soil: {
+					path: "sound/enemy/attack/rocks.mp3",
+					volume: 0.6,
+				},
+				wind: {
+					path: "sound/enemy/attack/wind.mp3",
+					volume: 0.7,
+				}
 			}
 		},
 		cutscene: {
@@ -578,6 +596,18 @@
 				elder_dragon_taunt: {
 					path: "sound/enemy/taunt.wav",
 					volume: 1,
+				},
+				power_up: {
+					path: "sound/cutscene/power_up.mp3",
+					volume: 0.5f,
+				},
+				power_down: {
+					path: "sound/cutscene/power_down.mp3",
+					volume: 0.5f,
+				},
+				engine_explode: {
+					path: "sound/cutscene/destruction3.mp3",
+					volume: 0.5f,
 				},
             }
         },

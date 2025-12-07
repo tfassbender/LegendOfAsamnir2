@@ -22,11 +22,18 @@ import net.jfabricationgames.gdx.event.EventType;
 
 public class ArchAngel extends Enemy implements CharacterStateChangeListener {
 	
-	private static final Vector2 DEFENSE_MODE_ATTACK_DIRECTION = new Vector2(0, 1);
+	private static final Vector2 FIXED_ATTACK_DIRECTION = new Vector2(0, 1);
 	
 	private static final String ATTACK_NAME_FORCE_FIELD = "attack_force_field";
 	private static final String STATE_NAME_DEFENSE_MODE = "defense_mode";
 	private static final String STATE_NAME_DEFENSE_MODE_CAST = "defense_mode_cast";
+	private static final String STATE_NAME_CAST_SPAWN_ANGEL = "cast_spawn_angel";
+	private static final String STATE_NAME_CAST_SPAWN_ANGELIC_HELMET = "cast_spawn_angelic_helmet";
+	private static final String STATE_NAME_CAST_ATTACK = "cast_attack";
+	private static final String STATE_NAME_ATTACK_LIGNTNING_SOIL = "attack_lightning_soil";
+	private static final String STATE_NAME_ATTACK_FIRE_SOIL = "attack_fire_soil";
+	private static final String STATE_NAME_ATTACK_WIND_SOIL = "attack_wind_soil";
+	private static final String STATE_NAME_ATTACK_EARTH_SOIL = "attack_earth_soil";
 	
 	/**
 	* Change to defense mode every time the health passes a multiple of this value.
@@ -35,11 +42,15 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener {
 	private float defenseModeForceFieldTimer = 0f;
 	private float defenseModeCastTimer = 0f;
 	private boolean defenseMode = false;
+	private CharacterState nextState = null; // used to change the state in the next act() call - see onCharacterStateChange
+	private ArchAngelAttackAI archAngelAttackAI;
 	
 	public ArchAngel(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
 		
 		health -= 0.1f; // reduce the health by a small value to prevent the defense mode from being activated at the first damage
+		
+		stateMachine.addChangeListener(this);
 	}
 	
 	@Override
@@ -87,9 +98,9 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener {
 		attackTimers.put(characterStateAttackHit, new FixedAttackTimer(1.5f));
 		attackTimers.put(characterStateCastAttack, new RandomIntervalAttackTimer(5f, 7f));
 		attackTimers.put(characterStateCaseSpawnAngel, new RandomIntervalAttackTimer(25f, 35f));
-		attackTimers.put(characterStateCaseSpawnAngelicHelmet, new RandomIntervalAttackTimer(12f, 15f));
+		attackTimers.put(characterStateCaseSpawnAngelicHelmet, new RandomIntervalAttackTimer(15f, 20f));
 		
-		ArchAngelAttackAI archAngelAttackAI = new ArchAngelAttackAI(ai, attackStates, attackDistances, attackTimers);
+		archAngelAttackAI = new ArchAngelAttackAI(ai, attackStates, attackDistances, attackTimers);
 		
 		return archAngelAttackAI;
 	}
@@ -104,13 +115,21 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener {
 			
 			if (defenseModeForceFieldTimer <= 0f) {
 				defenseModeForceFieldTimer = 1.5f; // start a new force field every 1.5 seconds
-				attackHandler.startAttack(ATTACK_NAME_FORCE_FIELD, DEFENSE_MODE_ATTACK_DIRECTION); // direction does not matter
+				attackHandler.startAttack(ATTACK_NAME_FORCE_FIELD, FIXED_ATTACK_DIRECTION); // direction does not matter
 			}
 			
 			if (defenseModeCastTimer <= 0f) {
 				defenseModeCastTimer = 5f;
 				stateMachine.setState(STATE_NAME_DEFENSE_MODE_CAST);
 				// TODO spawn a new minion 
+			}
+		}
+		else {
+			if (nextState != null) {
+				// change the state that was set in onCharacterStateChange()
+				nextState.setAttackTargetPositionSupplier(archAngelAttackAI::getTargetPlayerPosition);
+				stateMachine.setState(nextState);
+				nextState = null;
 			}
 		}
 	}
@@ -156,6 +175,36 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener {
 	
 	@Override
 	public void onCharacterStateChange(CharacterState oldState, CharacterState newState) {
-		// TODO react to state changes of cast states to spawn minions
+		if (STATE_NAME_CAST_ATTACK.equals(newState.getStateName())) {
+			// use a random "soil" attack (fire, lightning, wind, earth) by changing the state manually
+			CharacterState attackState;
+			
+			float random = (float) Math.random();
+			if (random < 0.25f) {
+				attackState = stateMachine.getState(STATE_NAME_ATTACK_FIRE_SOIL);
+			}
+			else if (random < 0.5f) {
+				attackState = stateMachine.getState(STATE_NAME_ATTACK_WIND_SOIL);
+			}
+			else if (random < 0.75f) {
+				attackState = stateMachine.getState(STATE_NAME_ATTACK_EARTH_SOIL);
+			}
+			else {
+				attackState = stateMachine.getState(STATE_NAME_ATTACK_LIGNTNING_SOIL);
+			}
+			
+			attackState.setAttackDirection(FIXED_ATTACK_DIRECTION); // the attack starts at the player's position, so the direction does not matter
+			nextState = attackState;
+			/*
+			 * The state can not be changed in this method, because that would need a nested iterator for the state change listeners Array, 
+			 * which the libGDX Array implementation does not allow. Therefore we just set the state to a variable and change it in the next act() call.
+			 */
+		}
+		else if (STATE_NAME_CAST_SPAWN_ANGEL.equals(newState.getStateName())) {
+			// TODO spawn an angel minion
+		}
+		else if (STATE_NAME_CAST_SPAWN_ANGELIC_HELMET.equals(newState.getStateName())) {
+			// TODO spawn angelic helmet minions
+		}
 	}
 }

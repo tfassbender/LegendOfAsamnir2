@@ -99,6 +99,7 @@
 		id: die,
 		animation: elder_dragon_purple_death,
 		endsWithAnimation: true,
+		stateEnteringSound: elder_dragon_taunt,
 		changeStateAfterAnimationDelay: 5f,
 		followingState: END,
 		interruptingStates: [],

@@ -617,4 +617,58 @@
 		dampingAfterObjectHit: 10,
 		timeActive: 5,
 	},
+	
+	lightning_soil: {
+        attackType: ANIMATED_HIT,
+        
+        animation: medium_lightning_effect,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+        
+        speed: 0,
+        damping: 0,
+		hitFixtureRadius: 0.5f,
+		flipAnimationToAttackDirection: true,
+		
+		sensorBody: true,
+		hitDelayInSeconds: 0.3f,
+		
+		imageOffsetY: 2f,
+	},
+	
+	wind_soil: {
+        attackType: ANIMATED_HIT,
+        
+        animation: medium_wind_effect,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+        
+        speed: 0,
+        damping: 0,
+		hitFixtureRadius: 0.8f,
+		flipAnimationToAttackDirection: true,
+		
+		sensorBody: true,
+		hitDelayInSeconds: 0.3f,
+		
+		imageOffsetY: 2f,
+	},
+	
+	earth_soil: {
+        attackType: ANIMATED_HIT,
+        
+        animation: medium_earth_effect,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+        
+        speed: 0,
+        damping: 0,
+		hitFixtureRadius: 0.5f,
+		flipAnimationToAttackDirection: true,
+		
+		sensorBody: true,
+		hitDelayInSeconds: 0.3f,
+		
+		imageOffsetY: 2f,
+	},
 }

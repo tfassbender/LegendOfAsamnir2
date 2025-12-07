@@ -170,5 +170,26 @@
             playMode: LOOP,
             scale: 0.05,
 		},
+		{
+            name: medium_lightning_effect,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL,
+            scale: 0.05,
+		},
+		{
+            name: medium_wind_effect,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL,
+            scale: 0.05,
+		},
+		{
+            name: medium_earth_effect,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL,
+            scale: 0.05,
+		},
 	]
 }
