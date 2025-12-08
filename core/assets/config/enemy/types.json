@@ -1755,4 +1755,41 @@
 		isBoss: true
 		bossName: "Dellingr - Sentinel of the Blinding Dawn",
 	},
+	
+	angelic_helmet: {
+		typeName: angelic_helmet,
+		
+		animationsConfig: config/animation/enemy/angelic_helmet.json,
+		stateConfig: config/enemy/states/angelic_helmet.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/angelic_helmet.json,
+		aiConfig: config/enemy/ai/angelic_helmet.json,
+		
+		health: 1,
+		movingSpeed: 2,
+		
+		damageModifiersByAttackType: {
+			ARROW: 1f,
+			BOMB: 1f,
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 8f,
+		
+		pushForceDamage: 50,
+		pushForceHit: 10,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.2,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true,
+	},
 }

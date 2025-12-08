@@ -1,22 +1,59 @@
 [
 	{
 		id: idle,
-		animation: anglic_helmet_idle,
+		animation: angelic_helmet_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			
+			move, attack, fall, damage, die
 		]
 	},
 	{
 		id: move,
-		animation: anglic_helmet_idle,
+		animation: angelic_helmet_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			
+			idle, attack, fall, damage, die
 		]
 	},
-	
-	// TODO add more states here
+	{
+		id: attack,
+		animation: angelic_helmet_attack,
+		attack: attack,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die,
+		]
+	},
+	{
+        id: fall,
+        animation: angelic_helmet_fall,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die,
+        ]
+	},
+	{
+		id: damage,
+		animation: angelic_helmet_damage,
+		endsWithAnimation: true,
+        followingState: idle,
+		interruptingStates: [
+			attack, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: angelic_helmet_death,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
 ]

@@ -671,4 +671,18 @@
 		
 		imageOffsetY: 2f,
 	},
+	
+	angelic_helmet_projectile: {
+		attackType: ANIMATED_PROJECTILE,
+		
+		animation: angelic_helmet_projectile_move,
+		animationHit: angelic_helmet_projectile_hit,
+		
+		removeAfterAnimationFinished: false,
+		removeAfterHit: true,
+		
+		range: 100,
+		speed: 20,
+		dampingAfterObjectHit: 5,
+	},
 }

@@ -138,6 +138,9 @@ public class ProjectileFactory {
 			case HOMING_MAGIC_BLAST:
 				projectile = new HomingProjectile(typeConfig, attackConfig, animation, gameMap);
 				break;
+			case ANIMATED_PROJECTILE:
+				projectile = new AnimatedProjectile(typeConfig, attackConfig, animation, gameMap);
+				break;
 			default:
 				throw new IllegalStateException("Unknown object type: " + type);
 		}

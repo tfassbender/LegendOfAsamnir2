@@ -191,5 +191,19 @@
             playMode: NORMAL,
             scale: 0.05,
 		},
+		{
+			name: angelic_helmet_projectile_hit,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+            scale: 0.05,
+			playMode: NORMAL
+		},
+		{
+			name: angelic_helmet_projectile_move,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+            scale: 0.05,
+			playMode: LOOP
+		},
 	]
 }
