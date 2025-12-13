@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="572">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="580">
  <properties>
   <property name="above_player_layers" value="[36, 37]"/>
   <property name="background_layers" value="[0, 1, 21, 22]"/>
@@ -1486,6 +1486,62 @@
     <property name="spawn" value="enemy__arch_angel"/>
    </properties>
    <point/>
+  </object>
+  <object id="572" name="object.configObject" x="496" y="269.5">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(0,-1)"/>
+    <property name="attackId" value="chaos_wizard_force_field"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__top"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="573" name="object.configObject" x="591.957" y="397.087">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(0,-1)"/>
+    <property name="attackId" value="chaos_wizard_force_field"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="574" name="object.configObject" x="496" y="492.75">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(0,-1)"/>
+    <property name="attackId" value="chaos_wizard_force_field"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__bottom"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="575" name="object.configObject" x="400.043" y="397">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(0,-1)"/>
+    <property name="attackId" value="chaos_wizard_force_field"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="576" name="object.eventObject" x="464" y="462" width="63.9772" height="65.1742">
+   <properties>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__botttom"/>
+   </properties>
+  </object>
+  <object id="577" name="object.eventObject" x="367.678" y="367.746" width="63.9772" height="65.1742">
+   <properties>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__left"/>
+   </properties>
+  </object>
+  <object id="578" name="object.eventObject" x="560.345" y="366.746" width="63.9772" height="65.1742">
+   <properties>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__right"/>
+   </properties>
+  </object>
+  <object id="579" name="object.eventObject" x="464.011" y="238.746" width="63.9772" height="65.1742">
+   <properties>
+    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__top"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">

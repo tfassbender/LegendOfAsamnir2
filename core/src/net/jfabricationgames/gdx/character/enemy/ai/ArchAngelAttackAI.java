@@ -12,7 +12,6 @@ public class ArchAngelAttackAI extends MultiAttackAI {
 	
 	private CharacterState attackHit;
 	private CharacterState attackCast;
-	private CharacterState attackCastSpawnAngel;
 	private CharacterState attackCastSpawnAngelicHelmet;
 	
 	public ArchAngelAttackAI(ArtificialIntelligence subAI, //
@@ -24,7 +23,6 @@ public class ArchAngelAttackAI extends MultiAttackAI {
 		
 		attackHit = attackStates.get("attack");
 		attackCast = attackStates.get("cast_attack");
-		attackCastSpawnAngel = attackStates.get("cast_spawn_angel");
 		attackCastSpawnAngelicHelmet = attackStates.get("cast_spawn_angelic_helmet");
 		
 		setMoveToPlayerWhileAttacking(false);
@@ -39,9 +37,6 @@ public class ArchAngelAttackAI extends MultiAttackAI {
 		}
 		if (isInRangeForAttack(attackCast, distanceToTarget) && attackTimers.get(attackCast).timeToAttack()) {
 			return attackCast;
-		}
-		if (attackTimers.get(attackCastSpawnAngel).timeToAttack()) {
-			return attackCastSpawnAngel;
 		}
 		if (attackTimers.get(attackCastSpawnAngelicHelmet).timeToAttack()) {
 			return attackCastSpawnAngelicHelmet;

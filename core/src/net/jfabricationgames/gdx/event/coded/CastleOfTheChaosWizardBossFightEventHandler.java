@@ -45,6 +45,16 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__AFTER_FIRST_BOSS_FIGHT_THORIN_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__cutscene_after_first_boss_defeated__get_thorin_target_position";
 	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__ARCHANGEL_DEFENSE_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_defense_position";
 	
+	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_TOP = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__top";
+	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__right";
+	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_BOTTOM = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__bottom";
+	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_LEFT = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__left";
+	
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_TOP = "config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__top";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_RIGHT = "config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__right";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_BOTTOM = "config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__bottom";
+	private static final String CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_LEFT = "config_object__castle_of_the_chaos_wizard__magic_pipe_force_field__left";
+	
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_center_on";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on";
 	
@@ -109,6 +119,10 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 		
 		if (EventType.CUTSCENE_FUNCTION_CALL.equals(event.eventType)) {
 			handleCutsceneFunctionCall(event);
+		}
+		
+		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
+			handleEventObjectTouched(event);
 		}
 	}
 	
@@ -388,6 +402,43 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 		condition.parameters.put("targetAreaObjectId", areaConfigObjectUnitId);
 		
 		return ConditionType.OBJECT_IN_POSITION.check(condition);
+	}
+	
+	private void handleEventObjectTouched(EventConfig event) {
+		if (globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED)) {
+			if (EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_TOP.equals(event.stringValue) // near magic pipe switch top
+					&& (directionSwitchLeft == Direction.UP || directionSwitchRight == Direction.UP) // magic pipes are sending energy to the top
+					&& directionSwitchUp == Direction.UP) { // top switch shows to top - needed to prevent a case where all switches are blocked
+				// activate a force field at the top switch to keep the player away from the switch
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
+						.setStringValue(CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_TOP));
+			}
+			else if (EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_RIGHT.equals(event.stringValue) // near magic pipe switch right
+					&& (directionSwitchUp == Direction.RIGHT || directionSwitchDown == Direction.RIGHT) // magic pipes are sending energy to the right
+					&& directionSwitchRight == Direction.RIGHT) { // right switch shows to right - needed to prevent a case where all switches are blocked
+				// activate a force field at the right switch to keep the player away from the switch
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
+						.setStringValue(CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_RIGHT));
+			}
+			else if (EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_BOTTOM.equals(event.stringValue) // near magic pipe switch bottom
+					&& (directionSwitchLeft == Direction.DOWN || directionSwitchRight == Direction.DOWN) // magic pipes are sending energy to the bottom
+					&& directionSwitchDown == Direction.DOWN) { // bottom switch shows to bottom - needed to prevent a case where all switches are blocked
+				// activate a force field at the bottom switch to keep the player away from the switch
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
+						.setStringValue(CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_BOTTOM));
+			}
+			else if (EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_LEFT.equals(event.stringValue) // near magic pipe switch left
+					&& (directionSwitchUp == Direction.LEFT || directionSwitchDown == Direction.LEFT) // magic pipes are sending energy to the left
+					&& directionSwitchLeft == Direction.LEFT) { // left switch shows to left - needed to prevent a case where all switches are blocked
+				// activate a force field at the left switch to keep the player away from the switch
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
+						.setStringValue(CONFIG_OBJECT_UNIT_ID_MAGIC_PIPES_SWITCH_FORCE_FIELD_LEFT));
+			}
+		}
 	}
 	
 	private enum Direction {

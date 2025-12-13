@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack, cast_attack, cast_spawn_angel, cast_spawn_angelic_helmet, damage, die
+			move, attack, cast_attack, cast_spawn_angelic_helmet, damage, die
 		]
 	},
 	{
@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack, cast_attack, cast_spawn_angel, cast_spawn_angelic_helmet, damage, die
+			idle, attack, cast_attack, cast_spawn_angelic_helmet, damage, die
 		]
 	},
 	{
@@ -49,7 +49,7 @@
         id: die,
         animation: archangel_death,
 		endsWithAnimation: true,
-		changeStateAfterAnimationDelay: 5f,
+		changeStateAfterAnimationDelay: 0f,
 		followingState: END,
 		interruptingStates: [],
 		flipAnimationToMovingDirection: false,
@@ -66,15 +66,15 @@
             attack_lightning_soil, attack_fire_soil, attack_wind_soil, attack_earth_soil, die
         ]
 	},
-	{
-        id: cast_spawn_angel,
-        animation: archangel_cast,
-        endsWithAnimation: true,
-        followingState: idle,
-        interruptingStates: [
-            die
-        ]
-	},
+//	{
+//        id: cast_spawn_angel,
+//        animation: archangel_cast,
+//        endsWithAnimation: true,
+//        followingState: idle,
+//        interruptingStates: [
+//            die
+//        ]
+//	},
 	{
         id: cast_spawn_angelic_helmet,
         animation: archangel_cast,
