@@ -1,4 +1,6 @@
 {
+	// the attacks of this enemy (and some state changes) are overwritten by the implementing class
+
 	defaultAI: angelic_helmet,
 	aiConfigurations: {
 		angelic_helmet: {

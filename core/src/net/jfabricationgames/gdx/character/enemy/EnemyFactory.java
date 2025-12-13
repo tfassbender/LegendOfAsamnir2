@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.character.enemy.implementation.AlarmClock;
+import net.jfabricationgames.gdx.character.enemy.implementation.AngelicHelmet;
 import net.jfabricationgames.gdx.character.enemy.implementation.ArchAngel;
 import net.jfabricationgames.gdx.character.enemy.implementation.Bat;
 import net.jfabricationgames.gdx.character.enemy.implementation.Bugbear;
@@ -59,6 +60,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_LICH = "lich";
 	private static final String ENEMY_NAME_ELDER_DRAGON = "elder_dragon";
 	private static final String ENEMY_NAME_ARCHANGEL = "archangel";
+	private static final String ENEMY_NAME_ANGELIC_HELMET = "angelic_helmet";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -157,6 +159,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_ARCHANGEL:
 				enemy = new ArchAngel(typeConfig, properties);
+				break;
+			case ENEMY_NAME_ANGELIC_HELMET:
+				enemy = new AngelicHelmet(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

@@ -20,7 +20,7 @@
 	{
 		id: attack,
 		animation: angelic_helmet_attack,
-		attack: attack,
+		// the attack will be executed by the implmeenting class
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

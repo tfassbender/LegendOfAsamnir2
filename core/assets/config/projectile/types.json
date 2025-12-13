@@ -682,7 +682,7 @@
 		removeAfterHit: true,
 		
 		range: 100,
-		speed: 20,
+		speed: 30,
 		dampingAfterObjectHit: 5,
 	},
 }
