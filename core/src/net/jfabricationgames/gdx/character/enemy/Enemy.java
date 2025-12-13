@@ -43,7 +43,7 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	private static final String MAP_PROPERTIES_KEY_ENEMY_DEFEATED_EVENT_TEXT = "enemyDefeatedEventText";
 	
-	private static final SoundSet SOUND_SET = SoundManager.getInstance().loadSoundSet("enemy");
+	protected static final SoundSet SOUND_SET = SoundManager.getInstance().loadSoundSet("enemy");
 	
 	protected PhysicsBodyProperties physicsBodyProperties;
 	

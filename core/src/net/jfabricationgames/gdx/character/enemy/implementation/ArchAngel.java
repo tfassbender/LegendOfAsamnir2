@@ -12,19 +12,23 @@ import net.jfabricationgames.gdx.character.ai.util.timer.AttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.FixedAttackTimer;
 import net.jfabricationgames.gdx.character.ai.util.timer.RandomIntervalAttackTimer;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
+import net.jfabricationgames.gdx.character.enemy.EnemyFactory;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.ArchAngelAttackAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
+import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
 public class ArchAngel extends Enemy implements CharacterStateChangeListener, EventListener {
 	
 	private static final Vector2 FIXED_ATTACK_DIRECTION = new Vector2(0, 1);
 	
+	private static final String ENEMY_TYPE_NAME_ANGELIC_HELMET = "angelic_helmet";
 	private static final String ATTACK_NAME_FORCE_FIELD = "attack_force_field";
 	private static final String CONFIG_EVENT_PARAMETER_START_DEFENSE_MODE = "loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_start_defense_mode";
 	private static final String CONFIG_EVENT_PARAMETER_END_DEFENSE_MODE = "loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_end_defense_mode";
@@ -47,6 +51,8 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 	private float defenseModeCastTimer = 0f;
 	private boolean defenseMode = false;
 	private ArchAngelAttackAI archAngelAttackAI;
+	
+	private float spawnAngelicHelmetsDelay = 0f;
 	
 	public ArchAngel(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
@@ -134,6 +140,13 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 				// TODO spawn a new minion 
 			}
 		}
+		
+		if (spawnAngelicHelmetsDelay > 0f) {
+			spawnAngelicHelmetsDelay -= delta;
+			if (spawnAngelicHelmetsDelay <= 0f) {
+				spawnAngelicHelmets();
+			}
+		}
 	}
 	
 	@Override
@@ -193,8 +206,32 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 			// TODO spawn an angel minion
 		}
 		else if (STATE_NAME_CAST_SPAWN_ANGELIC_HELMET.equals(newState.getStateName())) {
-			// TODO spawn angelic helmet minions
+			spawnAngelicHelmetsDelay = 0.5f; // spawn the helmets after a short delay to give the cast animation time to play
+			SOUND_SET.playSound("spawn");
 		}
+	}
+	
+	private void spawnAngelicHelmets() {
+		int numberOfHelmets = health < typeConfig.health / 2f ? 5 : 3;
+		for (int i = 0; i < numberOfHelmets; i++) {
+			// calculate the positions around the archangel (equally distributed in a circle)
+			float angle = i * (360f / numberOfHelmets);
+			float radius = 2f;
+			float xOffset = radius * (float) Math.cos(Math.toRadians(angle));
+			float yOffset = radius * (float) Math.sin(Math.toRadians(angle));
+			Vector2 spawnPosition = getPosition().add(xOffset, yOffset);
+			
+			createAndAddEnemyAfterWorldStep(ENEMY_TYPE_NAME_ANGELIC_HELMET, //
+					spawnPosition.x * Constants.SCREEN_TO_WORLD, //
+					spawnPosition.y * Constants.SCREEN_TO_WORLD, //
+					new MapProperties());
+		}
+	}
+	
+	private void createAndAddEnemyAfterWorldStep(String type, float x, float y, MapProperties mapProperties) {
+		PhysicsWorld.getInstance().runAfterWorldStep(() -> {
+			EnemyFactory.asInstance().createAndAddEnemy(type, x, y, mapProperties);
+		});
 	}
 	
 	@Override

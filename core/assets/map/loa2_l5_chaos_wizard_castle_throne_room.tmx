@@ -1487,9 +1487,6 @@
    </properties>
    <point/>
   </object>
-  <object id="571" name="enemy.angelic_helmet" x="320" y="320">
-   <point/>
-  </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">
   <object id="471" x="0.666667" y="0" width="132" height="272.727"/>

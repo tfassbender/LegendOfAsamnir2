@@ -531,7 +531,11 @@
 				wind: {
 					path: "sound/enemy/attack/wind.mp3",
 					volume: 0.7,
-				}
+				},
+				spawn: {
+					path: "sound/enemy/spawn.mp3",
+					volume: 1,
+				},
 			}
 		},
 		cutscene: {
