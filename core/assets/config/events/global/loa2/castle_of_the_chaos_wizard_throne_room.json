@@ -66,4 +66,15 @@
             cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_defense_mode_cutscene,
 		}
 	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_final_position: {
+        event: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_start_final_position_cutscene,
+		}
+        executionType: START_CUTSCENE,
+        executionParameters: {
+            cutsceneId: loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_final_position_cutscene,
+		}
+	},
 }

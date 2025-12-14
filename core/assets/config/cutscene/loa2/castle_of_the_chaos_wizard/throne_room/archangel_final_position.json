@@ -1,0 +1,177 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_final_position_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+			startsWithCutscene: true,
+			
+		    type: WAIT,
+            
+            executes: [
+                thorin_comment,
+                move_camera_to_archangel_1,
+                move_archangel_to_final_position_1,
+			]
+		},
+		
+		thorin_comment: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+			executionDelayInSeconds: 3f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Hey! Get back here you overgrown Fairy!!!\n                 \nI'm not done with you yet!!!        ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: false,
+		},
+		
+		move_camera_to_archangel_1: {
+            type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_way_to_final_position),
+			updatePositionRelativeToTarget: true,
+			speedFactor: 3f,
+            controlledUnitTarget: {x: 0, y: 0},
+		},
+		
+		move_archangel_to_final_position_1: {
+			type: MOVE,
+            cameraFollowsTarget: false,
+			controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__dellingr,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_way_to_final_position),
+			controlledUnitTarget: {x: 0, y: 0},
+			
+			executes: [
+                move_camera_to_archangel_2,
+                move_archangel_to_final_position_2,
+			]
+		},
+		
+		move_camera_to_archangel_2: {
+            type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_way_to_final_position),
+			updatePositionRelativeToTarget: true,
+			speedFactor: 3f,
+            controlledUnitTarget: {x: 0, y: 0},
+		},
+		
+		move_archangel_to_final_position_2: {
+			type: MOVE,
+            cameraFollowsTarget: false,
+			controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__dellingr,
+			targetPositionRelativeToUnitId: _function_call(loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_way_to_final_position),
+			controlledUnitTarget: {x: 0, y: 0},
+			
+			executes: [
+                move_camera_to_archangel_3,
+                move_archangel_to_final_position_3,
+			]
+		},
+		
+		move_camera_to_archangel_3: {
+            type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_throne_room__magic_pipe_position__final,
+			updatePositionRelativeToTarget: true,
+			speedFactor: 3f,
+            controlledUnitTarget: {x: -2, y: 0},
+		},
+		
+		move_archangel_to_final_position_3: {
+			type: MOVE,
+            cameraFollowsTarget: false,
+			controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__dellingr,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_throne_room__magic_pipe_position__final,
+			controlledUnitTarget: {x: 0.1, y: 0},
+			
+			executes: [
+				turn_arround_arch_angel,
+			]
+		},
+		
+		turn_arround_arch_angel: {
+			type: MOVE,
+            cameraFollowsTarget: false,
+			controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__dellingr,
+			controlledUnitTarget: {x: -0.1, y: 0},
+			
+			executes: [
+				play_sound_effect_enable_magic_pipes,
+				enable_magic_pipes_right,
+			]
+		},
+		
+		play_sound_effect_enable_magic_pipes: {
+            type: PLAY_SOUND,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 0f,
+            
+            soundEffectName: power_up,
+		},
+		
+		enable_magic_pipes_right: {
+			type: EVENT,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes__right",
+			},
+            
+            executes: [
+            	set_magig_pipes,
+			]
+		}
+		
+		set_magig_pipes: {
+            type: EVENT,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__throne_room__set_magic_pipes_to_final_position",
+			},
+            
+            executes: [
+                start_defense_mode,
+			]
+		},
+		
+		start_defense_mode: {
+			type: EVENT,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 0.5f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_start_defense_mode",
+			},
+            
+            executes: [
+                wait_before_continuing_boss_fight,
+			]
+		},
+		
+		wait_before_continuing_boss_fight: {
+            type: WAIT,
+            cameraFollowsTarget: false,
+            
+            executionDelayInSeconds: 2f,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

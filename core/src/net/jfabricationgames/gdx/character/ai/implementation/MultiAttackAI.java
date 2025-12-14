@@ -64,7 +64,7 @@ public class MultiAttackAI extends AbstractAttackAI {
 			CharacterState attack = chooseAttack();
 			if (attack != null) {
 				if (!targetInRange(attackDistances.get(attack))) {
-					Gdx.app.error(getClass().getSimpleName(), "calculateMove(): The chosen attack can't be executed, because the target is not in range.");
+					Gdx.app.error(getClass().getSimpleName(), "calculateMove(): The chosen attack '" + attack + "' can't be executed, because the target is not in range.");
 					return;
 				}
 				

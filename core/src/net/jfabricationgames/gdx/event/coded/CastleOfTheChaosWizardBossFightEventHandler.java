@@ -41,9 +41,11 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM = "cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom";
 	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_TOP_LEFT = "cutscene_object__chaos_wizard_throne_room__way_to_throne__top_left";
 	private static final String CONFIG_OBJECT_UNIT_ID_THORIN_POSITION_AFTER_FIRST_BOSS = "cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss";
+	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__WAY_TO_FINAL_POSITION_TOP = "loa2_l5_castle_of_the_chaos_wizard__throne_room__way_to_final_position__top";
 	
 	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__AFTER_FIRST_BOSS_FIGHT_THORIN_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__cutscene_after_first_boss_defeated__get_thorin_target_position";
 	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__ARCHANGEL_DEFENSE_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_defense_position";
+	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__ARCHANGEL_WAY_TO_FINAL_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_way_to_final_position";
 	
 	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_TOP = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__top";
 	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__right";
@@ -57,6 +59,7 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_center_on";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on";
+	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON_AND_FLOW_FROM_MIDDLE_TO_RIGHT = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on_and_flow_from_middle_to_right";
 	
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_top";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_LEFT = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_left";
@@ -84,7 +87,9 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_3 = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__energy_wall_3";
 	
 	private static final String CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES = "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes";
+	private static final String CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes__right";
 	private static final String CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_DEFNSE_MODE = "loa2_l5_castle_of_the_chaos_wizard__throne_room__set_magic_pipes_to_defense_mode";
+	private static final String CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_FINAL_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__set_magic_pipes_to_final_position";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED = "loa2_l5_castle_of_the_chaos_wizard__magic_pipes_enabled";
 	
 	private Direction directionSwitchUp = Direction.UP;
@@ -101,27 +106,35 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 			globalValuesDataHandler = GlobalValuesDataHandler.getInstance();
 		}
 		
-		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType) && event.stringValue.equals(CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES)) {
-			globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED, true);
-			globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON, true);
-			changeMagicPipesRenderEffectLayer();
+		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType)) {
+			if (CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES.equals(event.stringValue)) {
+				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED, true);
+				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON, true);
+				changeMagicPipesRenderEffectLayer();
+			}
+			else if (CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES_RIGHT.equals(event.stringValue)) {
+				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON, true);
+				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_1, true);
+				changeMagicPipesRenderEffectLayer();
+			}
+			else if (CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_DEFNSE_MODE.equals(event.stringValue)) {
+				setMultiStateSwitchesToArchAngelPosition();
+				changeMagicPipesRenderEffectLayer();
+			}
+			else if (CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_FINAL_POSITION.equals(event.stringValue)) {
+				setMultiStateSwitchesToFinalPosition();
+				changeMagicPipesRenderEffectLayer();
+			}
 		}
-		
-		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType) && event.stringValue.equals(CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_DEFNSE_MODE)) {
-			setMultiStateSwitchesToArchAngelPosition();
-			changeMagicPipesRenderEffectLayer();
-		}
-		
-		if (EventType.MULTI_STATE_SWITCH_ACTION.equals(event.eventType)) {
+		else if (EventType.MULTI_STATE_SWITCH_ACTION.equals(event.eventType)) {
 			handleMultiStateSwitchAction(event);
 			checkArchAngelDefenseModeEnd();
+			checkArchAngelFinalPositionOverloaded();
 		}
-		
-		if (EventType.CUTSCENE_FUNCTION_CALL.equals(event.eventType)) {
+		else if (EventType.CUTSCENE_FUNCTION_CALL.equals(event.eventType)) {
 			handleCutsceneFunctionCall(event);
 		}
-		
-		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
+		else if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
 			handleEventObjectTouched(event);
 		}
 	}
@@ -164,6 +177,14 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 			directionSwitchRight = Direction.DOWN;
 		}
 		
+		updateMultiStateSwitchDirections();
+	}
+	
+	private void setMultiStateSwitchesToFinalPosition() {
+		directionSwitchUp = Direction.UP;
+		directionSwitchRight = Direction.RIGHT;
+		directionSwitchDown = Direction.DOWN;
+		directionSwitchLeft = Direction.LEFT;
 		updateMultiStateSwitchDirections();
 	}
 	
@@ -296,9 +317,16 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_TOP, false);
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_RIGHT, false);
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_TOP_RIGHT_FROM_BOTH, false);
+		
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON_AND_FLOW_FROM_MIDDLE_TO_RIGHT, false);
 	}
 	
 	private void checkArchAngelDefenseModeEnd() {
+		if (globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON)) {
+			// it's the final stage of the boss fight - defense mode ends by overloading the pipes (see checkArchAngelFinalPositionOverloaded())
+			return;
+		}
+		
 		if (isUnitInArea(UNIT_ID_ARCHANGEL, CONFIG_OBJECT_UNIT_ID_AREA_LOWER_LEFT)) {
 			if (directionSwitchLeft != Direction.DOWN && directionSwitchDown != Direction.LEFT) {
 				endDefenseMode();
@@ -347,6 +375,20 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_end_defense_mode"));
 	}
 	
+	private void checkArchAngelFinalPositionOverloaded() {
+		if (globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON) // indicates that the final stage of the boss fight is reached
+				&& directionSwitchLeft != Direction.LEFT && directionSwitchDown == Direction.RIGHT //
+				&& directionSwitchUp == Direction.RIGHT && directionSwitchRight == Direction.UP) { // all pipes flow to the final position
+			// render the effect that the pipes to the right are overloaded
+			globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON_AND_FLOW_FROM_MIDDLE_TO_RIGHT, true);
+			
+			// start the cutscene for the overloaded final position
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+					.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_final_position_overloaded"));
+		}
+	}
+	
 	private void handleCutsceneFunctionCall(EventConfig event) {
 		if (CUTSCENE_FUNCTION_CALL_PARAMETER__AFTER_FIRST_BOSS_FIGHT_THORIN_POSITION.equals(event.stringValue)) {
 			String targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_THORIN_POSITION_AFTER_FIRST_BOSS;
@@ -393,6 +435,23 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 			// set the target position (unit id) as answer of the function call
 			event.stringValue = targetPositionUnitId;
 		}
+		else if (CUTSCENE_FUNCTION_CALL_PARAMETER__ARCHANGEL_WAY_TO_FINAL_POSITION.equals(event.stringValue)) {
+			// some of the positions for the way to the throne room are reused here
+			String targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_MAGIC_PIPE_POSITION_FINAL;
+			if (isUnitInArea(UNIT_ID_ARCHANGEL, CONFIG_OBJECT_UNIT_ID_AREA_LOWER_LEFT) //
+					|| isUnitInArea(UNIT_ID_ARCHANGEL, CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_LEFT)) {
+				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM;
+			}
+			else if (isUnitInArea(UNIT_ID_ARCHANGEL, CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_BOTTOM)) {
+				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM_RIGHT;
+			}
+			else if (isUnitInArea(UNIT_ID_ARCHANGEL, CONFIG_OBJECT_UNIT_ID_AREA_UPPER_LEFT)) {
+				targetPositionUnitId = CUTSCENE_FUNCTION_CALL_PARAMETER__WAY_TO_FINAL_POSITION_TOP;
+			}
+			
+			// set the target position (unit id) as answer of the function call
+			event.stringValue = targetPositionUnitId;
+		}
 	}
 	
 	private boolean isUnitInArea(String unitId, String areaConfigObjectUnitId) {
@@ -405,7 +464,8 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	}
 	
 	private void handleEventObjectTouched(EventConfig event) {
-		if (globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED)) {
+		if (globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED) //
+				&& !globalValuesDataHandler.getAsBoolean(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON)) { // don't use the force fields in the final stage of the boss fight
 			if (EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_TOP.equals(event.stringValue) // near magic pipe switch top
 					&& (directionSwitchLeft == Direction.UP || directionSwitchRight == Direction.UP) // magic pipes are sending energy to the top
 					&& directionSwitchUp == Direction.UP) { // top switch shows to top - needed to prevent a case where all switches are blocked

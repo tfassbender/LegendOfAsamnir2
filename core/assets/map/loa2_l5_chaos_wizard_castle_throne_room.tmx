@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="580">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="581">
  <properties>
   <property name="above_player_layers" value="[36, 37]"/>
   <property name="background_layers" value="[0, 1, 21, 22]"/>
@@ -16,7 +16,7 @@
 &quot;26&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_center_on&quot;,
 &quot;27&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_center_on&quot;,
 &quot;3&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on&quot;,
-&quot;4&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on&quot;,
+&quot;4&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on_and_flow_from_middle_to_right&quot;,
 &quot;23&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on&quot;,
 &quot;24&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on&quot;,
 &quot;30&quot;: &quot;render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__pipes_right_on&quot;,
@@ -1542,6 +1542,12 @@
    <properties>
     <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__top"/>
    </properties>
+  </object>
+  <object id="580" name="object.configObject" x="495.955" y="255.955">
+   <properties>
+    <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__way_to_final_position__top"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">

@@ -151,6 +151,8 @@
             
             executes: [
                 spawn_arch_angel,
+                turn_arround_thorin,
+                play_sound_effect_spawn_arch_angel,
                 chaos_wizard_4,
 			],
 		},
@@ -163,6 +165,23 @@
             event: {
             	eventType: CUSTCENE_SPAWN_UNIT_2,
             }
+		},
+		
+		turn_arround_thorin: {
+            type: MOVE,
+            
+            executionDelayInSeconds: 3f,
+            
+            controlledUnitId: PLAYER,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		play_sound_effect_spawn_arch_angel: {
+            type: PLAY_SOUND,
+            
+            executionDelayInSeconds: 1.5f,
+            
+            soundEffectName: spawn_2,
 		},
 		
 		chaos_wizard_4: {
@@ -179,14 +198,52 @@
             waitForEventToFinish: true,
             
             executes: [
-            	stop_background_music,
-                start_boss_fight,
                 move_camera_till_dellignir_is_visible,
 			],
 		},
 		
+		move_camera_till_dellignir_is_visible: {
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss,
+			updatePositionRelativeToTarget: true,
+			controlledUnitTarget: {x: -3, y: 0},
+			speedFactor: 2f,
+			
+			executes: [
+				play_sound_effect_enable_magic_pipes,
+				enable_magic_pipes
+			],
+		},
+		
+		play_sound_effect_enable_magic_pipes: {
+            type: PLAY_SOUND,
+            
+            executionDelayInSeconds: 0f,
+            
+            soundEffectName: power_up,
+		},
+		
+		enable_magic_pipes: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 2f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes",
+			},
+            
+            executes: [
+            	stop_background_music,
+            	start_boss_fight,
+                wait_before_starting_boss_fight,
+			]
+		},
+		
 		stop_background_music: {
             type: EVENT,
+            
+            executionDelayInSeconds: 3f,
             
             event: {
                 eventType: STOP_BACKGROUND_MUSIC,
@@ -203,7 +260,7 @@
             
             event: {
                 eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
-                stringValue: boss_enraged,
+                stringValue: boss_fight,
                 floatValue: 0f, // delay in seconds
                 booleanValue: true,  // fade in
 			}
@@ -211,44 +268,17 @@
 		
 		start_boss_fight: {
 			type: EVENT,
-			executionDelayInSeconds: 1.5f,
+			executionDelayInSeconds: 3f,
 			
 			event: {
 				eventType: BOSS_ENEMY_SHOW,
 			},
 		}
 		
-		move_camera_till_dellignir_is_visible: {
-			type: MOVE_CAMERA,
-			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss,
-			updatePositionRelativeToTarget: true,
-			controlledUnitTarget: {x: -3, y: 0},
-			speedFactor: 2f,
-			
-			executes: [
-				enable_magic_pipes
-			],
-		},
-		
-		enable_magic_pipes: {
-            type: EVENT,
-            
-            executionDelayInSeconds: 0.5f,
-            
-            event: {
-                eventType: CONFIG_GENERATED_EVENT,
-                stringValue: "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes",
-			},
-            
-            executes: [
-                wait_before_starting_boss_fight,
-			]
-		},
-		
 		wait_before_starting_boss_fight: {
             type: WAIT,
             
-            executionDelayInSeconds: 1f,
+            executionDelayInSeconds: 6f,
             
             executes: [
                 end,

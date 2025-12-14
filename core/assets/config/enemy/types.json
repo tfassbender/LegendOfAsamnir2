@@ -1747,7 +1747,7 @@
 		bodyHeight: 2f,
 		
 		addSensor: true,
-		sensorRadius: 15f,
+		sensorRadius: 100f,
 		
 		pushForceDamage: 10,
 		pushForceHit: 60,
@@ -1781,7 +1781,7 @@
 		bodyRadius: 0.4f,
 		
 		addSensor: true,
-		sensorRadius: 8f,
+		sensorRadius: 100f,
 		
 		pushForceDamage: 50,
 		pushForceHit: 10,
@@ -1791,5 +1791,10 @@
 		healthBarOffsetY: -0.2,
 		healthBarWidthFactor: 0.7,
 		healthBarAlwaysVisible: true,
+		
+		// makes all spawned enemies die when the archangel (the boss) dies
+		deathEvent: {
+            eventType: ENEMY_DIE,
+        },
 	},
 }

@@ -60,6 +60,8 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 		
 		health -= 0.1f; // reduce the health by a small value to prevent the defense mode from being activated at the first damage
 		
+		health = typeConfig.health * 0.1f; // TODO remove after tests - start the archangel with 10% health for testing
+		
 		stateMachine.addChangeListener(this);
 		EventHandler.getInstance().registerEventListener(this);
 	}
@@ -113,7 +115,6 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 	
 	private void resetTimersForRangedAttacks() {
 		archAngelAttackAI.resetAttackTimer("cast_attack");
-		archAngelAttackAI.resetAttackTimer("cast_spawn_angel");
 		archAngelAttackAI.resetAttackTimer("cast_spawn_angelic_helmet");
 	}
 	
@@ -159,9 +160,24 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 			return;
 		}
 		
+		if (damage >= health) {
+			// prevent death because the archangel will die in a cutscene
+			damage = health - 1f;
+		}
+		
 		int healthSegmentBeforeDamage = (int) (health / typeConfig.health * (100f / healthLossForDefenseModeInPercent));
 		super.takeDamage(damage, attackInfo);
 		int healthSegmentAfterDamage = (int) (health / typeConfig.health * (100f / healthLossForDefenseModeInPercent));
+		
+		if (health <= typeConfig.health * 0.01f) {
+			// start the final cutscene when the health falls below 1%
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+					.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_start_final_position_cutscene"));
+			
+			// prevent further actions (like a second cutscene from being started because of the defense mode)
+			return;
+		}
 		
 		if (healthSegmentAfterDamage < healthSegmentBeforeDamage) {
 			// start a cutscene to move to a defense position and change the magic pipes (the defense mode will be started by an event from the cutscene)
@@ -174,6 +190,10 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 	@Override
 	protected void die() {
 		super.die();
+		
+		// kill all spawned angelic helmets when the archangel is defeated
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE));
 		
 		playMapBackgroundMusicAfterBossDefeated();
 		EventHandler.getInstance().fireEvent(new EventConfig() //
@@ -229,7 +249,7 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 	}
 	
 	private void spawnAngelicHelmetInPlayerDirection() {
-		Vector2 directionToPlayer = nearPlayer.getPosition().cpy().sub(getPosition()).nor();
+		Vector2 directionToPlayer = nearPlayer != null ? nearPlayer.getPosition().cpy().sub(getPosition()).nor() : new Vector2(-1, 0);
 		float radius = 2f;
 		Vector2 spawnPosition = getPosition().add(directionToPlayer.scl(radius));
 		
@@ -260,18 +280,22 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 	}
 	
 	private void startDefenseMode() {
-		defenseMode = true;
-		defenseModeCastTimer = 5f;
-		stateMachine.forceStateChange(STATE_NAME_DEFENSE_MODE);
+		if (!defenseMode) {
+			defenseMode = true;
+			defenseModeCastTimer = 5f;
+			stateMachine.forceStateChange(STATE_NAME_DEFENSE_MODE);
+		}
 	}
 	
 	private void stopDefenseMode() {
-		defenseMode = false;
-		stateMachine.forceStateChange(STATE_NAME_IDLE);
-		resetTimersForRangedAttacks();
-		
-		// spawn some angelic helmets when the defense mode ends
-		spawnAngelicHelmetsDelay = 0.5f; // spawn the helmets after a short delay to give the cast animation time to play
-		SOUND_SET.playSound(SOUND_EFFECT_NAME_SPAWN);
+		if (defenseMode) {
+			defenseMode = false;
+			stateMachine.forceStateChange(STATE_NAME_IDLE);
+			resetTimersForRangedAttacks();
+			
+			// spawn some angelic helmets when the defense mode ends
+			spawnAngelicHelmetsDelay = 0.5f; // spawn the helmets after a short delay to give the cast animation time to play
+			SOUND_SET.playSound(SOUND_EFFECT_NAME_SPAWN);
+		}
 	}
 }

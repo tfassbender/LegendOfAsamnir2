@@ -563,6 +563,9 @@
                 spawn: {
                     path: "sound/cutscene/spawn.wav",
                 },
+                spawn_2: {
+					path: "sound/enemy/spawn.mp3",
+				},
 				scan: {
 					path: "sound/cutscene/scan.mp3",
 				},
