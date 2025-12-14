@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, sacrifice, worship, damage, die
+			move, sacrifice, worship, damage, die, die_and_stay
 		]
 	},
 	{
@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, sacrifice, worship, damage, die
+			idle, sacrifice, worship, damage, die, die_and_stay
 		]
 	},
 	{
@@ -30,7 +30,7 @@
 		endsWithAnimation: true,
 		followingState: worship, // continue to worship, till stopped by a cutscene
 		interruptingStates: [
-			idle, move, sacrifice, damage, die
+			idle, move, sacrifice, damage, die, die_and_stay
 		]
 	},
 	{
@@ -46,6 +46,13 @@
 		endsWithAnimation: true,
 		changeStateAfterAnimationDelay: 1f,
 		followingState: END,
+		interruptingStates: []
+	},
+	{
+		// won't be removed from the map after the animation
+		id: die_and_stay,
+		animation: cultist_kneel,
+		endsWithAnimation: false,
 		interruptingStates: []
 	},
 ]

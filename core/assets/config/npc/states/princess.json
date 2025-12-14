@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move
+			move, attack
 		]
 	},
 	{
@@ -14,7 +14,16 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle
+			idle, attack
+		]
+	},
+	{
+		id: attack,
+		animation: princess_attack,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move
 		]
 	},
 ]

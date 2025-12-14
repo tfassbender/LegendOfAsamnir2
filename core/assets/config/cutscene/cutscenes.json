@@ -258,6 +258,7 @@
 	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/after_first_boss_defeated.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/archangel_defense_mode.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/archangel_final_position.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/throne_room/archangel_magic_pipes_overload.json,
 
 //	//********************************************************
 //	//*** Demo Level

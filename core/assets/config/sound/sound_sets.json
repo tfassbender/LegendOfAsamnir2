@@ -612,9 +612,19 @@
 					path: "sound/cutscene/power_down.mp3",
 					volume: 0.5f,
 				},
+				overload: {
+					path: "sound/cutscene/overload.mp3",
+					volume: 1f,
+				},
 				engine_explode: {
 					path: "sound/cutscene/destruction3.mp3",
 					volume: 0.5f,
+				},
+				princess_hit: {
+					path: "sound/cutscene/throw.mp3",
+				},
+				cultist_die: {
+					path: "sound/cutscene/die.mp3",
 				},
             }
         },

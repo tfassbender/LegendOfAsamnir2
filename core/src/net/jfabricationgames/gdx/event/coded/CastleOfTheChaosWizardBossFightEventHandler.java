@@ -41,11 +41,13 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM = "cutscene_object__chaos_wizard_throne_room__way_to_throne__bottom";
 	private static final String CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_TOP_LEFT = "cutscene_object__chaos_wizard_throne_room__way_to_throne__top_left";
 	private static final String CONFIG_OBJECT_UNIT_ID_THORIN_POSITION_AFTER_FIRST_BOSS = "cutscene_object__chaos_wizard_dialog__thorin_position__after_first_boss";
-	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__WAY_TO_FINAL_POSITION_TOP = "loa2_l5_castle_of_the_chaos_wizard__throne_room__way_to_final_position__top";
+	private static final String CONFIG_OBJECT_UNIT_ID_THORIN_POSITION_SECOND_BOSS_DEFEATED_CUTSCENE = "cutscene_object__chaos_wizard_dialog__thorin_position__second_boss_defeated_cutscene";
 	
+	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__WAY_TO_FINAL_POSITION_TOP = "loa2_l5_castle_of_the_chaos_wizard__throne_room__way_to_final_position__top";
 	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__AFTER_FIRST_BOSS_FIGHT_THORIN_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__cutscene_after_first_boss_defeated__get_thorin_target_position";
 	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__ARCHANGEL_DEFENSE_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_defense_position";
 	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__ARCHANGEL_WAY_TO_FINAL_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__get_archangel_way_to_final_position";
+	private static final String CUTSCENE_FUNCTION_CALL_PARAMETER__THORIN_WAY_TO_FINAL_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__get_thorin_way_to_final_position";
 	
 	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_TOP = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__top";
 	private static final String EVENT_OBJECT_ID_NEAR_MAGIC_PIPES_SWITCH_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__throne_room__near_magic_pipe_switch__right";
@@ -86,11 +88,14 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_2 = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__energy_wall_2";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_3 = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__energy_wall_3";
 	
+	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_WALL_INTACT = "render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__wall_intact";
+	
 	private static final String CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES = "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes";
 	private static final String CONFIG_EVENT_STRING_ENABLE_MAGIC_PIPES_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__enable_magic_pipes__right";
 	private static final String CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_DEFNSE_MODE = "loa2_l5_castle_of_the_chaos_wizard__throne_room__set_magic_pipes_to_defense_mode";
 	private static final String CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_FINAL_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__set_magic_pipes_to_final_position";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED = "loa2_l5_castle_of_the_chaos_wizard__magic_pipes_enabled";
+	private static final String CONFIG_EVENT_STRING_RENDER_DESTROYED_WALL = "loa2_l5_castle_of_the_chaos_wizard__render_effect_layer__wall_destroyed";
 	
 	private Direction directionSwitchUp = Direction.UP;
 	private Direction directionSwitchRight = Direction.RIGHT;
@@ -101,6 +106,19 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	
 	@Override
 	public void handleEvent(EventConfig event) {
+		//		// TODO delete after tests
+		//		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
+		//			if ("loa2_l5_castle_of_the_chaos_wizard__throne_room__test".equals(event.stringValue)) {
+		//				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON, true);
+		//				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON_AND_FLOW_FROM_MIDDLE_TO_RIGHT, true);
+		//				
+		//				// start the cutscene for the overloaded final position
+		//				EventHandler.getInstance().fireEvent(new EventConfig() //
+		//						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+		//						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_magic_pipes_overload"));
+		//			}
+		//		}
+		
 		if (globalValuesDataHandler == null) {
 			// must be initialized lazyly - otherwise there would be a cyclic dependency at game start
 			globalValuesDataHandler = GlobalValuesDataHandler.getInstance();
@@ -124,6 +142,9 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 			else if (CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_FINAL_POSITION.equals(event.stringValue)) {
 				setMultiStateSwitchesToFinalPosition();
 				changeMagicPipesRenderEffectLayer();
+			}
+			else if (CONFIG_EVENT_STRING_RENDER_DESTROYED_WALL.equals(event.stringValue)) {
+				setEffectLayersRenderDestroyedWall();
 			}
 		}
 		else if (EventType.MULTI_STATE_SWITCH_ACTION.equals(event.eventType)) {
@@ -186,6 +207,17 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 		directionSwitchDown = Direction.DOWN;
 		directionSwitchLeft = Direction.LEFT;
 		updateMultiStateSwitchDirections();
+	}
+	
+	private void setEffectLayersRenderDestroyedWall() {
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_WALL_INTACT, false);
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_CENTER_ON, false);
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON, false);
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON_AND_FLOW_FROM_MIDDLE_TO_RIGHT, false);
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_1, false);
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_2, false);
+		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_3, false);
+		turnOffAllMagicPipeEffects();
 	}
 	
 	private void updateMultiStateSwitchDirections() {
@@ -385,7 +417,7 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 			// start the cutscene for the overloaded final position
 			EventHandler.getInstance().fireEvent(new EventConfig() //
 					.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-					.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_final_position_overloaded"));
+					.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_magic_pipes_overload"));
 		}
 	}
 	
@@ -446,6 +478,23 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM_RIGHT;
 			}
 			else if (isUnitInArea(UNIT_ID_ARCHANGEL, CONFIG_OBJECT_UNIT_ID_AREA_UPPER_LEFT)) {
+				targetPositionUnitId = CUTSCENE_FUNCTION_CALL_PARAMETER__WAY_TO_FINAL_POSITION_TOP;
+			}
+			
+			// set the target position (unit id) as answer of the function call
+			event.stringValue = targetPositionUnitId;
+		}
+		else if (CUTSCENE_FUNCTION_CALL_PARAMETER__THORIN_WAY_TO_FINAL_POSITION.equals(event.stringValue)) {
+			// some of the positions for the way to the throne room are reused here
+			String targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_THORIN_POSITION_SECOND_BOSS_DEFEATED_CUTSCENE;
+			if (isUnitInArea(UNIT_ID_PLAYER, CONFIG_OBJECT_UNIT_ID_AREA_LOWER_LEFT) //
+					|| isUnitInArea(UNIT_ID_PLAYER, CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_LEFT)) {
+				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM;
+			}
+			else if (isUnitInArea(UNIT_ID_PLAYER, CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_BOTTOM)) {
+				targetPositionUnitId = CONFIG_OBJECT_UNIT_ID_WAY_TO_THRONE_BOTTOM_RIGHT;
+			}
+			else if (isUnitInArea(UNIT_ID_PLAYER, CONFIG_OBJECT_UNIT_ID_AREA_UPPER_LEFT)) {
 				targetPositionUnitId = CUTSCENE_FUNCTION_CALL_PARAMETER__WAY_TO_FINAL_POSITION_TOP;
 			}
 			

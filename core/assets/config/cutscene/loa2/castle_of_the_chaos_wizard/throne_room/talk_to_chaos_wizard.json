@@ -765,6 +765,7 @@
             
             event: {
             	eventType: CUSTCENE_SPAWN_UNIT,
+            	stringValue: elder_dragon,
             }
 		},
 		
@@ -784,8 +785,6 @@
 		},
 		
 		move_chaos_wizard_to_second_position: {
-			// TODO the state config of chaos_wizard_form_1.json doesn't use a movement animation (so the "looking arround" joke works) - needs to be fixed somehow
-			
             type: MOVE,
             controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
 			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_dialog__chaos_wizard_second_position,

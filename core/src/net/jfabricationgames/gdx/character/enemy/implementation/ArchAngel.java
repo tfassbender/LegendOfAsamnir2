@@ -18,6 +18,7 @@ import net.jfabricationgames.gdx.character.enemy.ai.ArchAngelAttackAI;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.cutscene.CutsceneHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
@@ -33,6 +34,7 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 	private static final String ATTACK_NAME_FORCE_FIELD = "attack_force_field";
 	private static final String CONFIG_EVENT_PARAMETER_START_DEFENSE_MODE = "loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_start_defense_mode";
 	private static final String CONFIG_EVENT_PARAMETER_END_DEFENSE_MODE = "loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_end_defense_mode";
+	private static final String CONFIG_EVENT_PARAMETER_KILLED_BY_EXPLOSION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_killed_by_explosion";
 	
 	private static final String STATE_NAME_DEFENSE_MODE = "defense_mode";
 	private static final String STATE_NAME_DEFENSE_MODE_CAST = "defense_mode_cast";
@@ -124,7 +126,10 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 		
 		if (defenseMode) {
 			defenseModeForceFieldTimer -= delta;
-			defenseModeCastTimer -= delta;
+			if (!CutsceneHandler.getInstance().isCutsceneActive()) {
+				// don't spawn minions during a cutscene
+				defenseModeCastTimer -= delta;
+			}
 			
 			if (defenseModeForceFieldTimer <= 0f) {
 				defenseModeForceFieldTimer = 1f; // start a new force field every second
@@ -194,11 +199,6 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 		// kill all spawned angelic helmets when the archangel is defeated
 		EventHandler.getInstance().fireEvent(new EventConfig() //
 				.setEventType(EventType.ENEMY_DIE));
-		
-		playMapBackgroundMusicAfterBossDefeated();
-		EventHandler.getInstance().fireEvent(new EventConfig() //
-				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__arch_angel_defeated"));
 	}
 	
 	@Override
@@ -275,6 +275,14 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 			}
 			else if (CONFIG_EVENT_PARAMETER_END_DEFENSE_MODE.equals(event.stringValue)) {
 				stopDefenseMode();
+			}
+			else if (CONFIG_EVENT_PARAMETER_KILLED_BY_EXPLOSION.equals(event.stringValue)) {
+				// end defense mode without spawning helments
+				defenseMode = false;
+				stateMachine.forceStateChange(STATE_NAME_IDLE);
+				
+				health = 0;
+				die();
 			}
 		}
 	}

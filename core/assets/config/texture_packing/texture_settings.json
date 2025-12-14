@@ -648,6 +648,7 @@
 			    // princess
 			    raw_images/restricted/npc/princess/princess_idle,
 			    raw_images/restricted/npc/princess/princess_move,
+			    raw_images/restricted/npc/princess/princess_attack,
 			    
 			    // blacksmith
 			    raw_images/restricted/npc/blacksmith/blacksmith_idle,

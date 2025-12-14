@@ -163,7 +163,8 @@
             executionDelayInSeconds: 2f,
             
             event: {
-            	eventType: CUSTCENE_SPAWN_UNIT_2,
+            	eventType: CUSTCENE_SPAWN_UNIT,
+            	stringValue: archangel,
             }
 		},
 		

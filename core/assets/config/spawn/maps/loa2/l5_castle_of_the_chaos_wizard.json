@@ -1,12 +1,22 @@
 {
 	enemy__elder_dragon: {
 		spawnType: enemy.elder_dragon,
-		events: [CUSTCENE_SPAWN_UNIT],
+		complexEvents: [
+        	{
+				eventType: CUSTCENE_SPAWN_UNIT,
+		        stringValue: elder_dragon,
+			}
+        ],
 	},
 	
 	enemy__arch_angel: {
 		spawnType: enemy.archangel,
 		spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__dellingr\"}",
-		events: [CUSTCENE_SPAWN_UNIT_2],
+		complexEvents: [
+        	{
+				eventType: CUSTCENE_SPAWN_UNIT,
+		        stringValue: archangel,
+			}
+        ],
 	},
 }
