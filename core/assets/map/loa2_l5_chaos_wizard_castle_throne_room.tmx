@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="605">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="36" height="25" tilewidth="32" tileheight="32" infinite="0" nextlayerid="55" nextobjectid="608">
  <properties>
   <property name="above_player_layers" value="[36, 37]"/>
   <property name="background_layers" value="[0, 1, 21, 22]"/>
@@ -1475,7 +1475,7 @@
    </properties>
    <point/>
   </object>
-  <object id="566" name="object.configObject" x="848.25" y="335">
+  <object id="566" name="object.configObject" x="838.25" y="335">
    <properties>
     <property name="unitId" value="cutscene_object__chaos_wizard_throne_room__magic_pipe_position__final"/>
    </properties>
@@ -1689,6 +1689,12 @@
   <object id="604" name="object.configObject" x="949.455" y="352">
    <properties>
     <property name="unitId" value="cutscene_object__second_boss_defeated__position_freydis_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="607" name="object.spawnPoint.npc_asamnir" x="1019.09" y="494.818">
+   <properties>
+    <property name="spawn" value="npc__asamnir_castle_of_the_chaos_wizard"/>
    </properties>
    <point/>
   </object>

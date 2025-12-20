@@ -626,6 +626,10 @@
 				cultist_die: {
 					path: "sound/cutscene/die.mp3",
 				},
+				pickup: {
+					path: "sound/item/pickup.wav",
+					volume: 0.4
+				},
             }
         },
 		menu: {

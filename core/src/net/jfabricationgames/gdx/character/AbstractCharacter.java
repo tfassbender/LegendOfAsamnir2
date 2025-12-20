@@ -187,6 +187,10 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 		return STATE_NAME_IDLE;
 	}
 	
+	public Body getBody() {
+		return body;
+	}
+	
 	@Override
 	public Vector2 getPosition() {
 		return new Vector2(body.getPosition());

@@ -1,13 +1,21 @@
 package net.jfabricationgames.gdx.event.coded;
 
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.Joint;
+import com.badlogic.gdx.physics.box2d.joints.WeldJointDef;
 import com.badlogic.gdx.utils.ObjectMap;
 
+import net.jfabricationgames.gdx.character.npc.NonPlayableCharacter;
 import net.jfabricationgames.gdx.condition.Condition;
 import net.jfabricationgames.gdx.condition.ConditionType;
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.data.handler.GlobalValuesDataHandler;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.map.GameMapManager;
+import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
 public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandler {
 	
@@ -18,6 +26,8 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	
 	private static final String UNIT_ID_PLAYER = "PLAYER";
 	private static final String UNIT_ID_ARCHANGEL = "loa2_l5_castle_of_the_chaos_wizard__dellingr";
+	private static final String UNIT_ID_FREYDIS = "loa2_l5_castle_of_the_chaos_wizard__throne_room__freydis";
+	private static final String UNIT_ID_ASAMNIR = "loa2_l5_castle_of_the_chaos_wizard__asamnir";
 	
 	private static final String CONFIG_OBJECT_UNIT_ID_AREA_LOWER_LEFT = "cutscene_object__chaos_wizard_throne_room__area_lower_left";
 	private static final String CONFIG_OBJECT_UNIT_ID_AREA_MIDDLE_LEFT = "cutscene_object__chaos_wizard_throne_room__area_middle_left";
@@ -96,6 +106,9 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private static final String CONFIG_EVENT_STRING_SET_MAGIC_PIPES_TO_FINAL_POSITION = "loa2_l5_castle_of_the_chaos_wizard__throne_room__set_magic_pipes_to_final_position";
 	private static final String GLOBAL_VALUE_KEY_MAGIC_PIPES_ENABLED = "loa2_l5_castle_of_the_chaos_wizard__magic_pipes_enabled";
 	private static final String CONFIG_EVENT_STRING_RENDER_DESTROYED_WALL = "loa2_l5_castle_of_the_chaos_wizard__render_effect_layer__wall_destroyed";
+	private static final String CONFIG_EVENT_STRING_PREPARE_ASAMNIR_FOR_CUTSCENE = "loa2_l5_castle_of_the_chaos_wizard__throne_room__prepare_asamnir_for_cutscene";
+	private static final String CONFIG_EVENT_STRING_JOINT_ASAMNIR_TO_FREYDIS = "loa2_l5_castle_of_the_chaos_wizard__throne_room__joint_asamnir_to_freydis";
+	private static final String CONFIG_EVENT_STRING_THROW_ASAMNIR_TO_THORIN = "loa2_l5_castle_of_the_chaos_wizard__throne_room__throw_asamnir_to_thorin";
 	
 	private Direction directionSwitchUp = Direction.UP;
 	private Direction directionSwitchRight = Direction.RIGHT;
@@ -103,10 +116,11 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	private Direction directionSwitchLeft = Direction.LEFT;
 	
 	private GlobalValuesDataHandler globalValuesDataHandler;
+	private Joint asamnirFreydisJoint;
 	
 	@Override
 	public void handleEvent(EventConfig event) {
-		//		// TODO delete after tests
+		// TODO delete after tests
 		//		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
 		//			if ("loa2_l5_castle_of_the_chaos_wizard__throne_room__test".equals(event.stringValue)) {
 		//				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON, true);
@@ -145,6 +159,15 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 			}
 			else if (CONFIG_EVENT_STRING_RENDER_DESTROYED_WALL.equals(event.stringValue)) {
 				setEffectLayersRenderDestroyedWall();
+			}
+			else if (CONFIG_EVENT_STRING_PREPARE_ASAMNIR_FOR_CUTSCENE.equals(event.stringValue)) {
+				prepareAsamnirForCutscene();
+			}
+			else if (CONFIG_EVENT_STRING_JOINT_ASAMNIR_TO_FREYDIS.equals(event.stringValue)) {
+				createJointBetweenAsamnirAndFreydis();
+			}
+			else if (CONFIG_EVENT_STRING_THROW_ASAMNIR_TO_THORIN.equals(event.stringValue)) {
+				throwAsamnirToThorin();
 			}
 		}
 		else if (EventType.MULTI_STATE_SWITCH_ACTION.equals(event.eventType)) {
@@ -218,6 +241,41 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_2, false);
 		globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_ENERGY_WALL_3, false);
 		turnOffAllMagicPipeEffects();
+	}
+	
+	private void prepareAsamnirForCutscene() {
+		NonPlayableCharacter asamnir = (NonPlayableCharacter) GameMapManager.getInstance().getMap().getUnitById(UNIT_ID_ASAMNIR);
+		
+		// change the physics body of Asamnir to sensor, so it doesn't collide with Freydis during the cutscene
+		for (Fixture fixture : asamnir.getBody().getFixtureList()) {
+			fixture.setSensor(true);
+		}
+	}
+	
+	private void createJointBetweenAsamnirAndFreydis() {
+		NonPlayableCharacter asamnir = (NonPlayableCharacter) GameMapManager.getInstance().getMap().getUnitById(UNIT_ID_ASAMNIR);
+		NonPlayableCharacter freydis = (NonPlayableCharacter) GameMapManager.getInstance().getMap().getUnitById(UNIT_ID_FREYDIS);
+		
+		// connect the bodies of Asamnir and Freydis with a weld joint, so they move together during the cutscene
+		WeldJointDef jointDef = new WeldJointDef();
+		jointDef.initialize(asamnir.getBody(), freydis.getBody(), asamnir.getBody().getWorldCenter());
+		jointDef.collideConnected = false;
+		
+		asamnirFreydisJoint = PhysicsWorld.getInstance().createJoint(jointDef);
+	}
+	
+	private void throwAsamnirToThorin() {
+		// remove the joint between Asamnir and Freydis, so Asamnir can be thrown to Thorin
+		if (asamnirFreydisJoint != null) {
+			PhysicsWorld.getInstance().destroyJoint(asamnirFreydisJoint);
+			asamnirFreydisJoint = null;
+		}
+		
+		NonPlayableCharacter asamnir = (NonPlayableCharacter) GameMapManager.getInstance().getMap().getUnitById(UNIT_ID_ASAMNIR);
+		CutsceneControlledUnit thorin = GameMapManager.getInstance().getMap().getUnitById(UNIT_ID_PLAYER);
+		Vector2 throwDirection = thorin.getPosition().cpy().sub(asamnir.getBody().getPosition()).nor();
+		asamnir.getBody().setLinearDamping(1f);
+		asamnir.getBody().applyForceToCenter(throwDirection.scl(500f * asamnir.getBody().getMass()), true);
 	}
 	
 	private void updateMultiStateSwitchDirections() {
