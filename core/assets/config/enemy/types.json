@@ -1654,6 +1654,42 @@
 		}
 	},
 	
+	vengeful_spirit_no_ritual: { // start as a vengeful spirit directly, without the cultist ritual - for the jail
+		typeName: vengeful_spirit,
+		
+		animationsConfig: config/animation/enemy/vengeful_spirit.json,
+		stateConfig: config/enemy/states/vengeful_spirit.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/vengeful_spirit.json,
+		
+		health: 75,
+		movingSpeed: 0.5f,
+		
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 0f,
+			MAGIC: 2f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0.1f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.7f,
+		
+		addSensor: true,
+		sensorRadius: 8f,
+		
+		pushForceDamage: 25,
+		pushForceHit: 50,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0f,
+		healthBarOffsetY: -0.4f,
+		healthBarWidthFactor: 0.7,
+		healthBarAlwaysVisible: true, // always visible since no ritual here
+	},
+	
 	lich: {
 		typeName: lich,
 		

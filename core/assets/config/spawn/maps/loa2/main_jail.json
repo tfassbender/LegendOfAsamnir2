@@ -186,4 +186,107 @@
         spawnType: enemy.hell_critter,
         spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
 	},
+	
+	//*************************************************
+	//*** Level 4 - Helheim
+	//*************************************************
+	
+	jail__skeletal_warrior: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_1,
+			}
+		]
+        spawnType: enemy.skeletal_warrior,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__skeletal_archer: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_2,
+			}
+		]
+        spawnType: enemy.skeletal_archer,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__skeletal_mage: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_3,
+			}
+		]
+        spawnType: enemy.skeletal_mage,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__skeletal_trumpetist: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_4,
+			}
+		]
+        spawnType: enemy.skeletal_trumpetist,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__bat: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_5,
+			}
+		]
+        spawnType: enemy.bat,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__spider: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_6,
+			}
+		]
+        spawnType: enemy.spider,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__bloodsilk_spider: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_7,
+			}
+		]
+        spawnType: enemy.bloodsilk_spider,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__cultist_brute: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_8,
+			}
+		]
+        spawnType: enemy.cultist_brute,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
+	
+	jail__vengeful_spirit: {
+        complexEvents: [
+			{
+                eventType: STATE_SWITCH_ACTIVATED,
+                stringValue: loa2_main_jail__button_l4_9,
+			}
+		]
+        spawnType: enemy.vengeful_spirit_no_ritual,
+        spawnTypeMapProperties: "{drop: \"{coin: 1}\"}",
+	},
 }

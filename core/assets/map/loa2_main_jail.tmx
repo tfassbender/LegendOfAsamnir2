@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="60" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="874">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="60" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="894">
  <properties>
   <property name="above_player_layers" value="[6]"/>
   <property name="background_layers" value="[0, 5]"/>
@@ -332,7 +332,9 @@
   </object>
   <object id="826" name="object.signboard" x="1744" y="576">
    <properties>
-    <property name="displayText" value="We still need to capture some of them..."/>
+    <property name="displayText">- Skeletons
+- Spiders
+- Cultists..</property>
     <property name="displayTextHeader" value="Helheim"/>
    </properties>
    <point/>
@@ -586,6 +588,132 @@
    <point/>
   </object>
   <object id="873" name="item.triforce_svartalfheim_jail" x="64" y="544">
+   <point/>
+  </object>
+  <object id="875" name="object.spawnPoint.bat" x="1744.86" y="110.045">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:-2, y:-8}]"/>
+    <property name="spawn" value="jail__bat"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="876" name="object.spawnPoint.bloodsilk_spider" x="1775.5" y="110">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:-1, y:-10}]"/>
+    <property name="spawn" value="jail__bloodsilk_spider"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="877" name="object.spawnPoint.spider" x="1760" y="110">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:-7}]"/>
+    <property name="spawn" value="jail__spider"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="878" name="object.spawnPoint.skeletal_mage" x="1752.5" y="88.5">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:1, y:-8}]"/>
+    <property name="spawn" value="jail__skeletal_mage"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="879" name="object.spawnPoint.skeletal_trumpetist" x="1768.5" y="88.5">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:-6}]"/>
+    <property name="spawn" value="jail__skeletal_trumpetist"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="880" name="object.spawnPoint.skeletal_warrior" x="1735.75" y="88.5">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:0, y:-11}]"/>
+    <property name="spawn" value="jail__skeletal_warrior"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="881" name="object.spawnPoint.skeletal_archer" x="1784.5" y="88.5">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:2, y:-12}]"/>
+    <property name="spawn" value="jail__skeletal_archer"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="882" name="object.spawnPoint.cultist_brute" x="1752.11" y="132.045">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:2, y:-8}]"/>
+    <property name="spawn" value="jail__cultist_brute"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="884" name="object.spawnPoint.vengeful_spirit" x="1760" y="320">
+   <properties>
+    <property name="predefinedMovementPositions" value="[{x:-1, y:-6}]"/>
+    <property name="spawn" value="jail__vengeful_spirit"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="885" name="object.switch" x="1569.55" y="555.818">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_1"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_1"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="886" name="object.switch" x="1590.55" y="555.818">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_2"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_2"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="887" name="object.switch" x="1611.55" y="555.818">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_3"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_3"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="888" name="object.switch" x="1632.55" y="555.818">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_4"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_4"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="889" name="object.switch" x="1670.45" y="555.591">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_5"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_5"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="890" name="object.switch" x="1691.45" y="555.591">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_6"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_6"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="891" name="object.switch" x="1712.45" y="555.591">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_7"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_7"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="892" name="object.switch" x="1808.5" y="555">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_8"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_8"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="893" name="object.switch" x="1829.5" y="555">
+   <properties>
+    <property name="eventParameter" value="loa2_main_jail__button_l4_9"/>
+    <property name="stateSwitchId" value="loa2_main_jail__button_l4_9"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

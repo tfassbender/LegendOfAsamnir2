@@ -57,6 +57,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_SKELETON_KING = "skeleton_king";
 	private static final String ENEMY_NAME_SPIDER_QUEEN = "spider_queen";
 	private static final String ENEMY_NAME_VENGEFUL_SPIRIT = "vengeful_spirit";
+	private static final String ENEMY_NAME_VENGEFUL_SPIRIT_NO_RITUAL = "vengeful_spirit_no_ritual";
 	private static final String ENEMY_NAME_LICH = "lich";
 	private static final String ENEMY_NAME_ELDER_DRAGON = "elder_dragon";
 	private static final String ENEMY_NAME_ARCHANGEL = "archangel";
@@ -149,6 +150,7 @@ public class EnemyFactory {
 				enemy = new SpiderQueen(typeConfig, properties);
 				break;
 			case ENEMY_NAME_VENGEFUL_SPIRIT:
+			case ENEMY_NAME_VENGEFUL_SPIRIT_NO_RITUAL:
 				enemy = new VengefulSpirit(typeConfig, properties);
 				break;
 			case ENEMY_NAME_LICH:

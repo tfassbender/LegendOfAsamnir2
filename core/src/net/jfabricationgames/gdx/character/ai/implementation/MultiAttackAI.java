@@ -78,10 +78,12 @@ public class MultiAttackAI extends AbstractAttackAI {
 	}
 	
 	protected void createAttackingMove(CharacterState attack) {
-		AIAttackingMove attackMove = new AIAttackingMove(this);
-		attackMove.attack = attack;
-		attackMove.targetPosition = targetingPlayer.getPosition();
-		setMove(MoveType.ATTACK, attackMove);
+		if (targetingPlayer != null) {
+			AIAttackingMove attackMove = new AIAttackingMove(this);
+			attackMove.attack = attack;
+			attackMove.targetPosition = targetingPlayer.getPosition();
+			setMove(MoveType.ATTACK, attackMove);
+		}
 	}
 	
 	private void updateAttackTimers(float delta) {
