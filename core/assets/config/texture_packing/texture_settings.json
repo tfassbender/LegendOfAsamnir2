@@ -48,6 +48,7 @@
 				//##############################################################
 				//### projectiles - restricted graphics
 				//##############################################################
+				raw_images/restricted/projectiles/single_frame_projectiles,
 				raw_images/restricted/projectiles/dwarven_guardian_construct_fire_attack,
 				raw_images/restricted/projectiles/dwarven_guardian_construct_fist_attack,
 				raw_images/restricted/projectiles/rock_blast,
@@ -60,6 +61,10 @@
 				raw_images/restricted/enemy/spider_queen/spider_queen_web_projectile,
 				raw_images/restricted/enemy/spider_queen/spider_queen_web_hit,
 				raw_images/restricted/enemy/drake/fireball_drake,
+				raw_images/restricted/projectiles/skullflame_fireball_appear,
+				raw_images/restricted/projectiles/skullflame_fireball_move,
+				raw_images/restricted/projectiles/skullflame_fireball_hit,
+				raw_images/restricted/projectiles/laser_turret_projectile_move,
 				
 				//##############################################################
 				//### effects - restricted graphics
@@ -585,6 +590,35 @@
 				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_idle,
 				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_projectile_hit,
 				raw_images/restricted/enemy/angelic_helmet/angelic_helmet_projectile_move,
+				
+				// skullflame
+				raw_images/restricted/enemy/skullflame/skullflame_burst,
+				raw_images/restricted/enemy/skullflame/skullflame_charge,
+				raw_images/restricted/enemy/skullflame/skullflame_damage,
+				raw_images/restricted/enemy/skullflame/skullflame_death,
+				raw_images/restricted/enemy/skullflame/skullflame_idle,
+				raw_images/restricted/enemy/skullflame/skullflame_move,
+				raw_images/restricted/enemy/skullflame/skullflame_summon,
+				
+				// laser turret
+				raw_images/restricted/enemy/laser_turret/laser_turret_appear,
+				raw_images/restricted/enemy/laser_turret/laser_turret_attack,
+				raw_images/restricted/enemy/laser_turret/laser_turret_broken,
+			    raw_images/restricted/enemy/laser_turret/laser_turret_damage,
+			    raw_images/restricted/enemy/laser_turret/laser_turret_death,
+			    raw_images/restricted/enemy/laser_turret/laser_turret_disappear,
+			    raw_images/restricted/enemy/laser_turret/laser_turret_idle,
+				
+				// griffin
+//				raw_images/restricted/enemy/griffin/griffin_attack_claw,
+//				raw_images/restricted/enemy/griffin/griffin_attack_wings,
+//				raw_images/restricted/enemy/griffin/griffin_carry,
+//				raw_images/restricted/enemy/griffin/griffin_damage_high,
+//				raw_images/restricted/enemy/griffin/griffin_damage_low,
+//				raw_images/restricted/enemy/griffin/griffin_death,
+				raw_images/restricted/enemy/griffin/griffin_fly,
+				raw_images/restricted/enemy/griffin/griffin_idle,
+				raw_images/restricted/enemy/griffin/griffin_taunt,
 				
 				//##############################################################
 				//### NPCs
