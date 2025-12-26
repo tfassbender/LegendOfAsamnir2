@@ -17,7 +17,7 @@ import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
-public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandler {
+public class CastleOfTheChaosWizardBossFightStage2EventHandler extends CodedEventHandler {
 	
 	private static final String STATE_SWITCH_ID_UP = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_up";
 	private static final String STATE_SWITCH_ID_RIGHT = "loa2_l5_castle_of_the_chaos_wizard__magic_pipe_switch_right";
@@ -121,17 +121,23 @@ public class CastleOfTheChaosWizardBossFightEventHandler extends CodedEventHandl
 	@Override
 	public void handleEvent(EventConfig event) {
 		// TODO delete after tests
-		//		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
-		//			if ("loa2_l5_castle_of_the_chaos_wizard__throne_room__test".equals(event.stringValue)) {
-		//				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON, true);
-		//				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON_AND_FLOW_FROM_MIDDLE_TO_RIGHT, true);
-		//				
-		//				// start the cutscene for the overloaded final position
-		//				EventHandler.getInstance().fireEvent(new EventConfig() //
-		//						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-		//						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_magic_pipes_overload"));
-		//			}
-		//		}
+		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
+			//			if ("loa2_l5_castle_of_the_chaos_wizard__throne_room__test".equals(event.stringValue)) {
+			//				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON, true);
+			//				globalValuesDataHandler.put(GLOBAL_VALUE_KEY_MAGIC_PIPES_RENDER_EFFECT_LAYER_PIPES_RIGHT_ON_AND_FLOW_FROM_MIDDLE_TO_RIGHT, true);
+			//				
+			//				// start the cutscene for the overloaded final position
+			//				EventHandler.getInstance().fireEvent(new EventConfig() //
+			//						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+			//						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__throne_room__archangel_magic_pipes_overload"));
+			//			}
+			if ("loa2_l5_castle_of_the_chaos_wizard__throne_room__test".equals(event.stringValue)) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CHANGE_MAP) //
+						.setStringValue("loa2_l5_chaos_wizard_castle_spire") //
+						.setIntValue(1));
+			}
+		}
 		
 		if (globalValuesDataHandler == null) {
 			// must be initialized lazyly - otherwise there would be a cyclic dependency at game start

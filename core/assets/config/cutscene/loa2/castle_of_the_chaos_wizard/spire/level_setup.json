@@ -1,0 +1,112 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__spire__setup_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+			startsWithCutscene: true,
+			
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                set_camera_position,
+                turn_chaos_wizard_left,
+                cultist_5_look_left,
+                cultist_6_look_left,
+                cultist_7_look_left,
+                cultist_8_look_left,
+			],
+		},
+		
+		set_camera_position: {
+            type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			updatePositionRelativeToTarget: true,
+			directlySetPosition: true,
+            controlledUnitTarget: {x: -2, y: 0},
+		},
+		
+		turn_chaos_wizard_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		cultist_5_look_left: {
+			type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_5,
+			controlledUnitTarget: {x: -0.1, y: 0},
+			
+			executes: [
+                change_state_cultist_5_worship,
+			],
+		},
+		
+		change_state_cultist_5_worship: {
+            type: CHANGE_STATE,
+			
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_5,
+			controlledUnitState: worship,
+		},
+		
+		cultist_6_look_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_6,
+            controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executes: [
+                change_state_cultist_6_worship,
+			],
+		},
+		
+		change_state_cultist_6_worship: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_6,
+            controlledUnitState: worship,
+		},
+		
+		cultist_7_look_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_7,
+            controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executes: [
+                change_state_cultist_7_worship,
+			],
+		},
+		
+		change_state_cultist_7_worship: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_7,
+            controlledUnitState: worship,
+		},
+		
+		cultist_8_look_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_8,
+            controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executes: [
+                change_state_cultist_8_worship,
+			],
+		},
+		
+		change_state_cultist_8_worship: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_8,
+            controlledUnitState: worship,
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

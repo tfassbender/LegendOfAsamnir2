@@ -1,0 +1,17 @@
+{
+	startingPointMapping: {
+		game_loaded: start_initial_cutscene,
+		0: start_initial_cutscene,
+		1: start_initial_cutscene,
+	},
+	eventsLists: {
+		start_initial_cutscene: {
+			events: [
+				{
+					eventType: CONFIG_GENERATED_EVENT,
+					stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__setup,
+				},
+			]
+		},
+	}
+}

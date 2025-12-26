@@ -29,8 +29,10 @@ public class CutsceneMoveCameraAction extends AbstractCutsceneMoveAction {
 	
 	private void moveCameraToTarget(float delta) {
 		Vector2 movement = target.cpy().sub(cameraMovementHandler.getCameraPosition());
-		movement.nor().scl(actionConfig.speedFactor);
-		movement.scl(delta);
+		if (!actionConfig.directlySetPosition) {
+			movement.nor().scl(actionConfig.speedFactor);
+			movement.scl(delta);
+		}
 		cameraMovementHandler.moveCamera(movement.x, movement.y);
 	}
 	

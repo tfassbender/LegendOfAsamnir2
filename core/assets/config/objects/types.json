@@ -774,6 +774,29 @@
 		},
 	},
 	
+	magic_fire: {
+		// TODO change the color of the fire animation to purple - either by setting the sprite batch color or by using a different animation
+		type: TRAVERSEABLE,
+		
+        texture: empty,
+        animationSolid: fire,
+        
+        notTraversableCollisionType: MAP_OBJECT, // prevent hookshots from crossing this object (also other projectiles as a side effect)
+        initiallySolid: false,
+        
+        animationSolidOffsetX: 0f,
+        animationSolidOffsetY: 0.1f,
+        
+        intValueByMapProperty: traverseable_object_n,
+        
+		changeBodyToSensorEvent: {	
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+		},
+		changeBodyToSolidObjectEvent: {
+			eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+		},
+	},
+	
 	direction_board_up: {
 		type: BASIC,
 		

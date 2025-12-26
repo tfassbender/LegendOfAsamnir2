@@ -96,6 +96,7 @@
 	//*****************************************************************
 	skalli: config/npc/levels/loa2/castle_of_the_chaos_wizard/skalli.json,
 	hati: config/npc/levels/loa2/castle_of_the_chaos_wizard/hati.json,
+	cultist_worshiping: config/npc/levels/loa2/castle_of_the_chaos_wizard/cultist_worshiping.json,
 
 //	//************************************************
 //	//*** Demo Level

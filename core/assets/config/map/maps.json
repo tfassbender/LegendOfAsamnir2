@@ -260,14 +260,15 @@
         map: "map/loa2_l5_chaos_wizard_castle_throne_room.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l5_castle_of_the_chaos_wizard.json,
         initialStartingPointId: 1,
-		//initial: true
+		initial: true
 	},
 	{
         name: loa2_l5_chaos_wizard_castle_spire,
         map: "map/loa2_l5_chaos_wizard_castle_spire.tmx",
 		debugStartConfig: config/debug/start_config/loa2/l5_castle_of_the_chaos_wizard.json,
+		mapEnteringConfig: config/map/start_config/loa2/l5_castle_of_the_chaos_wizard/spire.json,
         initialStartingPointId: 1,
-		initial: true
+		//initial: true
 	},
 	
 	//****************************************

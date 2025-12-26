@@ -1,0 +1,16 @@
+{
+	//*******************************************
+	//*** map setup
+	//*******************************************
+	
+	loa2_l5_castle_of_the_chaos_wizard__spire__setup: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__setup,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__spire__setup_cutscene,
+		}
+	},
+}

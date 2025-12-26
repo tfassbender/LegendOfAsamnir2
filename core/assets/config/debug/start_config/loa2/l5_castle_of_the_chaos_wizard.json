@@ -1,8 +1,15 @@
 {
 	startingPointMapping: {
+		1: initial,
 		10: after_all_runes_collected,
 	},
 	eventsLists: {
+		initial: {
+			subConfigPath: config/debug/start_config/loa2/l4_helheim.json
+			subConfigName: final,
+			events: [],
+		},
+		
 		after_all_runes_collected: {
 			subConfigPath: config/debug/start_config/loa2/main.json
 			subConfigName: all_triforce_pieces_collected,

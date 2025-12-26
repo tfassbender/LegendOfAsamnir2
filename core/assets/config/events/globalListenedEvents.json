@@ -38,6 +38,7 @@
 	config/events/global/loa2/castle_of_the_chaos_wizard_entry.json,
 	config/events/global/loa2/castle_of_the_chaos_wizard_labyrinth.json,
 	config/events/global/loa2/castle_of_the_chaos_wizard_throne_room.json,
+	config/events/global/loa2/castle_of_the_chaos_wizard_spire.json,
 	
 //	config/events/global/demo.json,
 //	config/events/global/map_change_test.json,
