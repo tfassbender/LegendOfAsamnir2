@@ -8,6 +8,8 @@
 			executionDelayInSeconds: 0f,
 			
 			executes: [
+				test_magic_flames,
+				
                 set_camera_position,
                 turn_chaos_wizard_left,
                 cultist_5_look_left,
@@ -15,6 +17,16 @@
                 cultist_7_look_left,
                 cultist_8_look_left,
 			],
+		},
+		
+		// TODO remove after tests
+		test_magic_flames: {
+            type: EVENT,
+            
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+            	intValue: 1,
+            }
 		},
 		
 		set_camera_position: {

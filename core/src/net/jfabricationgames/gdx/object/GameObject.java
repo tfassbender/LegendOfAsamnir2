@@ -1,5 +1,6 @@
 package net.jfabricationgames.gdx.object;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -49,6 +50,7 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	protected GameObjectMap gameMap;
 	protected GameObjectItemDropUtil itemDropUtil;
 	protected Class<? extends InteractivePlayer> playerObjectClass;
+	protected Color textureColor;
 	
 	protected TextureAtlas textureAtlas;
 	protected GameObjectTypeConfig typeConfig;
@@ -101,6 +103,10 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		hitSound = typeConfig.hitSound;
 		
 		sprite.flip(typeConfig.flipTextureX, typeConfig.flipTextureY);
+		
+		if (typeConfig.useTextureColor) {
+			textureColor = new Color(typeConfig.textureColorR, typeConfig.textureColorG, typeConfig.textureColorB, 1f);
+		}
 	}
 	
 	public void setItemDropUtil(GameObjectItemDropUtil itemDropUtil) {
@@ -174,6 +180,11 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 			return;
 		}
 		
+		Color color = new Color(batch.getColor()); // getColor() returns a reference to the color, so it has to be copied
+		if (textureColor != null) {
+			batch.setColor(textureColor);
+		}
+		
 		if (drawAnimation()) {
 			animation.increaseStateTime(delta);
 			animation.draw(batch);
@@ -181,6 +192,8 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 		else {
 			sprite.draw(batch);
 		}
+		
+		batch.setColor(color);
 	}
 	
 	protected boolean drawAnimation() {

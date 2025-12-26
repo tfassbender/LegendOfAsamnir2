@@ -23,6 +23,12 @@ public class GameObjectTypeConfig {
 	public float textureSizeFactorX = 1f;
 	public float textureSizeFactorY = 1f;
 	
+	public boolean useTextureColor = false;
+	public float textureColorR = 1f;
+	public float textureColorG = 1f;
+	public float textureColorB = 1f;
+	public float textureColorA = 1f;
+	
 	public float physicsBodySizeFactorX = 1f;
 	public float physicsBodySizeFactorY = 1f;
 	public float physicsBodyOffsetFactorX = 0f;

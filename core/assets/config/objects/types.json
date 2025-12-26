@@ -775,11 +775,17 @@
 	},
 	
 	magic_fire: {
-		// TODO change the color of the fire animation to purple - either by setting the sprite batch color or by using a different animation
 		type: TRAVERSEABLE,
 		
         texture: empty,
-        animationSolid: fire,
+        animationSolid: fire_gray,
+        
+        // use the fire animation in grayscale but with a purple color tint
+		useTextureColor: true,
+		textureColorR: 0.8f,
+		textureColorG: 0.0f,
+		textureColorB: 1f,
+		textureColorA: 1f,
         
         notTraversableCollisionType: MAP_OBJECT, // prevent hookshots from crossing this object (also other projectiles as a side effect)
         initiallySolid: false,

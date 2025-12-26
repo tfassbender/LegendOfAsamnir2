@@ -148,6 +148,12 @@
 			playMode: LOOP,
 		},
 		{
+			name: fire_gray,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP,
+		},
+		{
 			name: smoke,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,
