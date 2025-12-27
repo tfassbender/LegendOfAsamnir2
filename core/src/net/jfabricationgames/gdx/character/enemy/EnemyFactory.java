@@ -9,6 +9,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.AngelicHelmet;
 import net.jfabricationgames.gdx.character.enemy.implementation.ArchAngel;
 import net.jfabricationgames.gdx.character.enemy.implementation.Bat;
 import net.jfabricationgames.gdx.character.enemy.implementation.Bugbear;
+import net.jfabricationgames.gdx.character.enemy.implementation.ChaosWizard;
 import net.jfabricationgames.gdx.character.enemy.implementation.Cyclops;
 import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.DwarvenGuardianConstruct;
@@ -66,6 +67,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_ARCHANGEL = "archangel";
 	private static final String ENEMY_NAME_ANGELIC_HELMET = "angelic_helmet";
 	private static final String ENEMY_NAME_LASER_BLASTER_MINION = "laser_blaster_minion";
+	private static final String ENEMY_NAME_CHAOS_WIZARD = "chaos_wizard";
 	
 	private static final String CONFIG_FILE = "config/factory/enemy_factory.json";
 	
@@ -174,6 +176,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_LASER_BLASTER_MINION:
 				enemy = new LaserBlaster(typeConfig, properties);
+				break;
+			case ENEMY_NAME_CHAOS_WIZARD:
+				enemy = new ChaosWizard(typeConfig, properties);
 				break;
 			default:
 				enemy = new Enemy(typeConfig, properties);

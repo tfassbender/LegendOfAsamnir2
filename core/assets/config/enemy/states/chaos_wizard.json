@@ -1,0 +1,31 @@
+[
+	// TODO add more states
+	
+	{
+		id: idle,
+		animation: elite_mage_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, cast_loop_with_effect
+		]
+	},
+	{
+		id: move,
+		animation: elite_mage_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, cast_loop_with_effect
+		]
+	},
+	{
+		id: cast_loop_with_effect,
+		animation: elite_mage_cast_loop_with_effect,
+		endsWithAnimation: true,
+		followingState: cast_loop_with_effect, // has to be stopped manually (in the cutscene)
+		interruptingStates: [
+			idle
+		]
+	},
+]

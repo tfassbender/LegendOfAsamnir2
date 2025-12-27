@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, move_with_animation
+			idle, move_with_animation, cast_loop_with_effect
 		]
 	},
 	
@@ -24,7 +24,7 @@
 		endsWithAnimation: true,
 		followingState: move_with_animation,
 		interruptingStates: [
-			move_with_animation, idle // the move state must not interrupt this one, so the movement uses this animation without getting interrupted
+			move_with_animation, idle, cast_loop_with_effect // the move state must not interrupt this one, so the movement uses this animation without getting interrupted
 		]
 	},
 	

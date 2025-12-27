@@ -1,0 +1,32 @@
+[
+	// TODO configure the correct attacks
+	{
+		id: attack_sword,
+		type: HIT,
+		delay: 1,
+		duration: 0,
+		damage: 20,
+		distFromCenter: 1.5,
+		hitFixtureRadius: 1,
+		pushForce: 100
+	},
+	{
+		id: attack_fire_ball,
+		type: FIREBALL,
+		projectileType: ifrit_fire_ball,
+		delay: 0.3,
+		duration: 0,
+		damage: 5,
+		pushForce: 35,
+	},
+	{
+		id: attack_fire_soil,
+		type: ANIMATED_HIT,
+		projectileType: fire_soil,
+		delay: 0.3,
+		duration: 0,
+		damage: 10,
+		pushForce: 60,
+		startAttackAtPlayerPosition: true,
+	},
+]

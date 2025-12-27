@@ -8,7 +8,7 @@
 		endsWithAnimation: true,
 		followingState: cultist_idle,
 		interruptingStates: [
-			cultist_kneel
+			cultist_kneel, cultist_kneel_and_summon_lich
 		]
 	},
 	{
@@ -19,6 +19,16 @@
 		followingState: cultist_horror_appear,
 		interruptingStates: [
 			cultist_horror_appear
+		]
+	},
+	{
+		id: cultist_kneel_and_summon_lich,
+		animation: cultist_kneel,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: rage,
+		interruptingStates: [
+			rage
 		]
 	},
 	

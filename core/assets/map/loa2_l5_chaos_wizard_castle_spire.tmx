@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="504">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="506">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -320,19 +320,19 @@
 </data>
  </layer>
  <objectgroup id="10" name="objects">
-  <object id="441" name="player.startingPosition" x="512" y="624">
+  <object id="441" name="player.startingPosition" x="512" y="658">
    <properties>
     <property name="startingPointId" value="0"/>
    </properties>
    <point/>
   </object>
-  <object id="442" name="player.startingPosition" x="480" y="624">
+  <object id="442" name="player.startingPosition" x="480" y="658">
    <properties>
     <property name="startingPointId" value="1"/>
    </properties>
    <point/>
   </object>
-  <object id="443" name="npc.chaos_wizard_form_1" x="625" y="624">
+  <object id="443" name="enemy.chaos_wizard" x="625" y="624">
    <properties>
     <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__chaos_wizard"/>
    </properties>
@@ -469,6 +469,18 @@
   <object id="503" name="enemy.laser_blaster_minion" x="657" y="624">
    <properties>
     <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="504" name="object.spawnPoint.summoning_circle" x="623.818" y="476.455">
+   <properties>
+    <property name="spawn" value="summoning_circle"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="505" name="object.spawnPoint.summoning_circle" x="623.909" y="795.182">
+   <properties>
+    <property name="spawn" value="summoning_circle"/>
    </properties>
    <point/>
   </object>

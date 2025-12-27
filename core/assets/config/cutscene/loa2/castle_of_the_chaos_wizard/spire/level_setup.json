@@ -8,7 +8,7 @@
 			executionDelayInSeconds: 0f,
 			
 			executes: [
-				test_magic_flames,
+//				test_magic_flames,
 				
                 set_camera_position,
                 turn_chaos_wizard_left,
@@ -19,6 +19,9 @@
                 cultist_6_look_left,
                 cultist_7_look_left,
                 cultist_8_look_left,
+                
+                chaos_wizard_speech,
+                play_sound_effect_evil_laughter,
 			],
 		},
 		
@@ -37,7 +40,7 @@
 			targetPositionRelativeToUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
 			updatePositionRelativeToTarget: true,
 			directlySetPosition: true,
-            controlledUnitTarget: {x: -2, y: 0},
+            controlledUnitTarget: {x: -2.5, y: -2},
 		},
 		
 		turn_chaos_wizard_left: {
@@ -45,6 +48,30 @@
             
             controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
             controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executes: [
+                change_state_chaos_wizard_cast,
+            ],
+		},
+		
+		change_state_chaos_wizard_cast: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
+			
+            executes: [
+                change_state_chaos_wizard_idle,
+            ],
+		},
+		
+		change_state_chaos_wizard_idle: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 2f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: idle,
 		},
 		
 		turn_lich_top_left: {
@@ -138,6 +165,156 @@
             
             controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_8,
             controlledUnitState: worship,
+		},
+		
+		chaos_wizard_speech: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 4f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "The spire of my castle should be a suitable battlefield for our final duel!    \nBut I guess it could still use some more minions!!!                             \n*evil laughter*           ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	change_state_chaos_wizard_cast_2,
+            ],
+		},
+		
+		play_sound_effect_evil_laughter: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 10.5f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		change_state_chaos_wizard_cast_2: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: cast_loop_with_effect,
+            
+            executes: [
+                change_state_chaos_wizard_idle_2,
+            	change_state_cultist_top_kneel,
+            	change_state_cultist_bottom_kneel,
+            	spawn_summoning_circle_effect,
+            	
+            	chaos_wizard_speech_2,
+			],
+		},
+		
+		change_state_chaos_wizard_idle_2: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 7f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: idle,
+		},
+		
+		change_state_cultist_top_kneel: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 2f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__top,
+            controlledUnitState: cultist_kneel_and_summon_lich,
+		},
+		
+		change_state_cultist_bottom_kneel: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 2f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__bottom,
+            controlledUnitState: cultist_kneel_and_summon_lich,
+		},
+		
+		spawn_summoning_circle_effect: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 4.5f,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+			},
+		},
+		
+		chaos_wizard_speech_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 11f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "          \n          \n          \nSo it begins...          ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                stop_background_music,
+                start_boss_fight,
+                wait_before_starting_boss_fight,
+            ],
+		},
+		
+		stop_background_music: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 3f,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+				play_boss_fight_music,
+			]
+		},
+		
+		play_boss_fight_music: {
+            type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_fight,
+                floatValue: 0f, // delay in seconds
+                booleanValue: true,  // fade in
+			}
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 2f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+		}
+		
+		wait_before_starting_boss_fight: {
+            type: WAIT,
+            
+            executionDelayInSeconds: 5f,
+            
+            executes: [
+                end,
+			],
 		},
 		
 		end: {

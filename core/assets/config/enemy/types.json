@@ -1883,4 +1883,39 @@
 		pushForceDamage: 10,
 		pushForceHit: 60,
 	},
+	
+	chaos_wizard: {
+		typeName: chaos_wizard,
+		
+		animationsConfig: config/animation/enemy/elite_mage.json,
+		stateConfig: config/enemy/states/chaos_wizard.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/chaos_wizard.json,
+		
+		health: 150,
+		movingSpeed: 0.5f, // shouldn't move, but a small movement is needed for the change of direction
+		
+		// can only be damaged by Asamnir
+		damageModifiersByAttackType: {
+			ARROW: 0f,
+			BOMB: 0f,
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 0.8f,
+		bodyHeight: 0.6f,
+		
+		addSensor: true,
+		sensorRadius: 25f,
+		
+		pushForceDamage: 10,
+		pushForceHit: 60,
+		
+		isBoss: true
+		bossName: "The Chaos Wizard - Architect of Reality",
+	},
 }
