@@ -1,0 +1,12 @@
+[
+	{
+		id: attack,
+		type: ANIMATED_PROJECTILE,
+		projectileType: laser_blaster_projectile,
+		delay: 0.0,
+		duration: 0,
+		damage: 2.5,
+		canBeBlockedCompletely: true,
+		pushForce: 30,
+	},
+]

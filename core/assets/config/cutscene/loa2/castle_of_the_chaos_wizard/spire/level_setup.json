@@ -12,6 +12,9 @@
 				
                 set_camera_position,
                 turn_chaos_wizard_left,
+                turn_lich_top_left,
+                turn_lich_bottom_left,
+                turn_laser_blaster_left,
                 cultist_5_look_left,
                 cultist_6_look_left,
                 cultist_7_look_left,
@@ -41,6 +44,27 @@
             type: MOVE,
             
             controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		turn_lich_top_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__top,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		turn_lich_bottom_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__bottom,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		turn_laser_blaster_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_left,
             controlledUnitTarget: {x: -0.1, y: 0},
 		},
 		

@@ -1833,4 +1833,54 @@
             eventType: ENEMY_DIE,
         },
 	},
+	
+	lich_minion: {
+		typeName: lich_minion, // a lich, but only used as support for the chaos wizard
+		
+		animationsConfig: config/animation/enemy/lich.json,
+		stateConfig: config/enemy/states/lich.json,
+		initialState: cultist_idle, // starts as a cultist that is sacrificed
+		attackConfig: config/enemy/attack/lich.json,
+		
+		health: 1, // doesn't take damage
+		movingSpeed: 0.5f, // shouldn't move, but a small movement is needed for the change of direction
+		
+		imageOffsetX: 0f,
+		imageOffsetY: -0.1f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1f,
+		bodyHeight: 1.8f,
+		
+		addSensor: true,
+		sensorRadius: 25f,
+		
+		pushForceDamage: 10,
+		pushForceHit: 60,
+	},
+	
+	laser_blaster_minion: {
+		typeName: laser_blaster_minion, // a laser blaster that is controlled by the chaos wizard
+		
+		animationsConfig: config/animation/enemy/laser_blaster.json,
+		stateConfig: config/enemy/states/laser_blaster.json,
+		initialState: disabled,
+		attackConfig: config/enemy/attack/laser_blaster.json,
+		
+		health: 1, // doesn't take damage
+		movingSpeed: 0.5f, // shouldn't move, but a small movement is needed for the change of direction
+		
+		imageOffsetX: 0f,
+		imageOffsetY: -0.2f,
+		
+		bodyShape: OCTAGON,
+		bodyWidth: 1f,
+		bodyHeight: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 25f,
+		
+		pushForceDamage: 10,
+		pushForceHit: 60,
+	},
 }

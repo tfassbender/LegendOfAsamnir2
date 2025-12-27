@@ -685,4 +685,17 @@
 		speed: 30,
 		dampingAfterObjectHit: 5,
 	},
+	
+	laser_blaster_projectile: {
+		attackType: ANIMATED_PROJECTILE,
+		
+		animation: laser_turret_projectile_move,
+		
+		removeAfterAnimationFinished: false,
+		removeAfterHit: true,
+		
+		range: 100,
+		speed: 50,
+		dampingAfterObjectHit: 5,
+	},
 }

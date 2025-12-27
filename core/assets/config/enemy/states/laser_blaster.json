@@ -1,0 +1,76 @@
+[
+	{
+		id: disabled,
+		animation: laser_turret_appear, // draw method is overwritten to only show the first frame in this state
+		endsWithAnimation: false,
+		followingState: disabled,
+		interruptingStates: [
+			appear
+		]
+	},
+	{
+		id: idle,
+		animation: laser_turret_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			disappear, attack
+		]
+	},
+	{
+		id: appear,
+		animation: laser_turret_appear,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: disappear,
+		animation: laser_turret_disappear,
+		endsWithAnimation: true,
+		followingState: disabled,
+		interruptingStates: []
+	},
+	{
+		id: attack,
+		animation: laser_turret_attack,
+		attack: attack
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	
+	// should not be used, but the state machine needs it (makes it easier to just add them)
+	{
+		id: move,
+		animation: laser_turret_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, disappear
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: damage,
+		animation: laser_turret_damage,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack, disappear
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: laser_turret_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 3f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]
