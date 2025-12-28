@@ -13,4 +13,30 @@
 			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__spire__setup_cutscene,
 		}
 	},
+	
+	//*******************************************
+	//*** event objects touched
+	//*******************************************
+	
+	loa2_l5_castle_of_the_chaos_wizard__spire__left_side: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__left_side,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__spire__change_side_left_cutscene,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__spire__right_side: {
+		event: {
+			eventType: EVENT_OBJECT_TOUCHED,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__right_side,
+		}
+		executionType: START_CUTSCENE,
+		executionParameters: {
+			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__spire__change_side_right_cutscene,
+		}
+	},
 }

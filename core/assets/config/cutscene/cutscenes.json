@@ -264,6 +264,8 @@
 	//*** Legend of Asamnir 2 - Castle of the Chaos Wizard - Spire
 	//***************************************************************************
 	config/cutscene/loa2/castle_of_the_chaos_wizard/spire/level_setup.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/spire/change_side_left.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/spire/change_side_right.json,
 
 //	//********************************************************
 //	//*** Demo Level

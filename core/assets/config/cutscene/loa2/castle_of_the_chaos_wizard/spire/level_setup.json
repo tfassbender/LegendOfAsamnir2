@@ -31,7 +31,7 @@
             
             event: {
             	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
-            	intValue: 1,
+            	intValue: 4,
             }
 		},
 		
@@ -208,6 +208,7 @@
             	change_state_cultist_top_kneel,
             	change_state_cultist_bottom_kneel,
             	spawn_summoning_circle_effect,
+            	spawn_magic_flame_circle,
             	
             	chaos_wizard_speech_2,
 			],
@@ -216,7 +217,7 @@
 		change_state_chaos_wizard_idle_2: {
             type: CHANGE_STATE,
             
-            executionDelayInSeconds: 7f,
+            executionDelayInSeconds: 8f,
             
             controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
             controlledUnitState: idle,
@@ -248,6 +249,17 @@
             event: {
                 eventType: CUSTCENE_SPAWN_UNIT,
 			},
+		},
+		
+		spawn_magic_flame_circle: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 7f,
+            
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+            	intValue: 3,
+            }
 		},
 		
 		chaos_wizard_speech_2: {

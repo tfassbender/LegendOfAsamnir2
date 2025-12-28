@@ -1,0 +1,82 @@
+{
+	// the attacks of this enemy (and some state changes) are overwritten by the implementing class
+
+	defaultAI: flameskull,
+	aiConfigurations: {
+		flameskull: {
+			type: FAST_ATTACK_FIGHT_AI,
+			
+			stateNameAttack: attack_charge,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 5f,
+			},
+			attackDistance: 2f,
+			attackSpeedFactor: 5f,
+			attackSpeedDelay: 0.1f,
+			
+			subAI: {
+				type: FIGHT_AI,
+				
+				stateNameAttack: attack_fireball,
+				
+				attackTimerConfig: {
+					type: FIXED,
+					fixedTime: 1.5f,
+				},
+				attackDistance: 10f,
+				minDistanceToTargetPlayer: 5f,
+				
+				subAI: {
+					type: FIGHT_AI,
+				
+					stateNameAttack: attack_burst,
+					
+					attackTimerConfig: {
+						type: RANDOM_INTERVAL,
+						minTimeBetweenAttacks: 5f,
+						maxTimeBetweenAttacks: 8f,
+					},
+					
+					attackDistance: 10f,
+					minDistanceToTargetPlayer: 5f,
+					
+					subAI: {
+						type: RUN_AWAY_AI,
+						
+						stateNameMove: move,
+						stateNameIdle: idle,
+						
+						distanceToKeepFromPlayer: 4.5f,
+						distanceToStopRunning: 0f,
+						
+						subAI: {
+							type: FOLLOW_AI,
+							
+							stateNameMove: move,
+							stateNameIdle: idle,
+							
+							minDistanceToTargetPlayer: 5f,
+							
+							subAI: {
+								type: PRE_DEFINED_MOVEMENT_AI,
+								
+								stateNameMove: move,
+								stateNameIdle: idle,
+								
+								distanceToKeepFromPlayer: 4.5f,
+								
+								useRelativePositions: true,
+								
+								subAI: {
+									type: BASE_AI,
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

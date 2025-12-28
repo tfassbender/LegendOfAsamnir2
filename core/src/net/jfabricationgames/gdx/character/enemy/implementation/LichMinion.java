@@ -5,6 +5,8 @@ import com.badlogic.gdx.maps.MapProperties;
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.character.ai.BaseAI;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
+import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 
 /**
  * A Lich that is used as a minion in the battle with the Chaos Wizard. Has no AI, but is controlled by the Chaos Wizard's AI.
@@ -13,6 +15,13 @@ public class LichMinion extends Lich {
 	
 	public LichMinion(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
+	}
+	
+	@Override
+	protected PhysicsBodyProperties definePhysicsBodyProperties() {
+		PhysicsBodyProperties properties = super.definePhysicsBodyProperties();
+		properties.setDensity(Constants.DENSITY_IMMOVABLE);
+		return properties;
 	}
 	
 	@Override

@@ -698,4 +698,19 @@
 		speed: 50,
 		dampingAfterObjectHit: 5,
 	},
+	
+	flameskull_fireball: {
+		attackType: ANIMATED_PROJECTILE,
+		
+		animation: skullflame_fireball_move,
+		animationHit: skullflame_fireball_hit,
+		
+		rotateTextureToMovementDirection: true,
+		removeAfterAnimationFinished: false,
+		removeAfterHit: true,
+		
+		range: 100,
+		speed: 40,
+		dampingAfterObjectHit: 5,
+	},
 }

@@ -1,0 +1,70 @@
+[
+	{
+		id: idle,
+		animation: skullflame_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, attack_fireball, attack_burst, attack_charge, damage, die
+		]
+	},
+	{
+		id: move,
+		animation: skullflame_move,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, attack_fireball, attack_burst, attack_charge, damage, die
+		]
+	},
+	{
+		id: attack_fireball,
+		animation: skullflame_summon,
+		// the attack will be executed by the implmeenting class
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die,
+		]
+	},
+	{
+		id: attack_burst,
+		animation: skullflame_burst,
+		// the attack will be executed by the implmeenting class
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die,
+		]
+	},
+	{
+		id: attack_charge,
+		animation: skullflame_charge,
+		attack: attack_charge,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die,
+		]
+	},
+	{
+		id: damage,
+		animation: skullflame_damage,
+		endsWithAnimation: true,
+        followingState: idle,
+		interruptingStates: [
+			attack_fireball, attack_burst, attack_charge, die
+		],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	{
+		id: die,
+		animation: skullflame_death,
+		changeStateAfterAnimationDelay: 1f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+]

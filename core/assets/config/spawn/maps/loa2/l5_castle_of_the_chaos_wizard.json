@@ -19,4 +19,24 @@
 			}
         ],
 	},
+	
+	enemy__flameskull__spire_left: {
+		spawnType: enemy.flameskulll,
+		complexEvents: [
+        	{
+				eventType: CUSTCENE_SPAWN_UNIT,
+		        stringValue: flameskull_spire_left,
+			}
+        ],
+	},
+	
+	enemy__flameskull__spire_right: {
+        spawnType: enemy.flameskulll,
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: flameskull_spire_right,
+			}
+		],
+	},
 }

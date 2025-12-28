@@ -1,0 +1,54 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__spire__change_side_left_cutscene,
+	controlledActions: {
+		start_multiplexer: {
+			startsWithCutscene: true,
+			
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+			
+			executes: [
+                turn_chaos_wizard_left,
+                turn_lich_top_left,
+                turn_lich_bottom_left,
+			],
+		},
+		
+		turn_chaos_wizard_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executes: [
+                change_state_chaos_wizard_idle,
+            ],
+		},
+		
+		change_state_chaos_wizard_idle: { // prevents movement animation when the wizard turns around
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: idle,
+		},
+		
+		turn_lich_top_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__top,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		turn_lich_bottom_left: {
+            type: MOVE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__bottom,
+            controlledUnitTarget: {x: -0.1, y: 0},
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

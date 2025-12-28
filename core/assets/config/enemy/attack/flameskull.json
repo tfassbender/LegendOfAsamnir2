@@ -1,0 +1,22 @@
+[
+	{
+		id: attack,
+		type: ANIMATED_PROJECTILE,
+		projectileType: flameskull_fireball,
+		delay: 0.3,
+		duration: 0,
+		damage: 2.5,
+		canBeBlockedCompletely: true,
+		pushForce: 20,
+	},
+	{
+		id: attack_charge,
+		type: HIT,
+		delay: 0.3,
+		duration: 0,
+		damage: 10,
+		distFromCenter: 0.5,
+		hitFixtureRadius: 0.35,
+		pushForce: 75
+	},
+]

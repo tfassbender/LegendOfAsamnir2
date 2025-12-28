@@ -206,6 +206,20 @@
 			playMode: LOOP
 		},
 		{
+			name: skullflame_fireball_hit,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+            scale: 0.05,
+			playMode: NORMAL
+		},
+		{
+			name: skullflame_fireball_move,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+            scale: 0.05,
+			playMode: LOOP
+		},
+		{
 			name: laser_turret_projectile_move,
 			atlas: packed/demo/demo.atlas,
 			frameDuration: 0.1,

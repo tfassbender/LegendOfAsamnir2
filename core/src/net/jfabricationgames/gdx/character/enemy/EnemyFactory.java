@@ -15,6 +15,7 @@ import net.jfabricationgames.gdx.character.enemy.implementation.Dummy;
 import net.jfabricationgames.gdx.character.enemy.implementation.DwarvenGuardianConstruct;
 import net.jfabricationgames.gdx.character.enemy.implementation.ElderDragon;
 import net.jfabricationgames.gdx.character.enemy.implementation.FireTotemDummy;
+import net.jfabricationgames.gdx.character.enemy.implementation.Flameskull;
 import net.jfabricationgames.gdx.character.enemy.implementation.FrostGiant;
 import net.jfabricationgames.gdx.character.enemy.implementation.Gargoyle;
 import net.jfabricationgames.gdx.character.enemy.implementation.GiantGolem;
@@ -66,6 +67,7 @@ public class EnemyFactory {
 	private static final String ENEMY_NAME_ELDER_DRAGON = "elder_dragon";
 	private static final String ENEMY_NAME_ARCHANGEL = "archangel";
 	private static final String ENEMY_NAME_ANGELIC_HELMET = "angelic_helmet";
+	private static final String ENEMY_NAME_FLAMESKULL = "flameskull";
 	private static final String ENEMY_NAME_LASER_BLASTER_MINION = "laser_blaster_minion";
 	private static final String ENEMY_NAME_CHAOS_WIZARD = "chaos_wizard";
 	
@@ -173,6 +175,9 @@ public class EnemyFactory {
 				break;
 			case ENEMY_NAME_ANGELIC_HELMET:
 				enemy = new AngelicHelmet(typeConfig, properties);
+				break;
+			case ENEMY_NAME_FLAMESKULL:
+				enemy = new Flameskull(typeConfig, properties);
 				break;
 			case ENEMY_NAME_LASER_BLASTER_MINION:
 				enemy = new LaserBlaster(typeConfig, properties);

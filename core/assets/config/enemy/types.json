@@ -1857,6 +1857,11 @@
 		
 		pushForceDamage: 10,
 		pushForceHit: 60,
+		
+		// makes all spawned enemies die when the chaos wizard (the boss) dies
+		deathEvent: {
+            eventType: ENEMY_DIE,
+        },
 	},
 	
 	laser_blaster_minion: {
@@ -1882,6 +1887,48 @@
 		
 		pushForceDamage: 10,
 		pushForceHit: 60,
+	},
+	
+	flameskull: {
+		typeName: flameskull,
+		
+		animationsConfig: config/animation/enemy/flameskull.json,
+		stateConfig: config/enemy/states/flameskull.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/flameskull.json,
+		aiConfig: config/enemy/ai/flameskull.json,
+		
+		health: 1,
+		movingSpeed: 2,
+		
+		damageModifiersByAttackType: {
+			ARROW: 1f,
+			BOMB: 1f,
+			MAGIC: 0f,
+		},
+		
+		imageOffsetX: 0f,
+		imageOffsetY: 0f,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.4f,
+		
+		addSensor: true,
+		sensorRadius: 25f,
+		
+		pushForceDamage: 50,
+		pushForceHit: 10,
+		
+		usesHealthBar: true,
+		healthBarOffsetX: 0,
+		healthBarOffsetY: -0.8,
+		healthBarWidthFactor: 0.3,
+		healthBarAlwaysVisible: true,
+		
+		// makes all spawned enemies die when the chaos wizard (the boss) dies
+		deathEvent: {
+            eventType: ENEMY_DIE,
+        },
 	},
 	
 	chaos_wizard: {
