@@ -278,16 +278,171 @@
             waitForEventToFinish: true,
             
             executes: [
-                stop_background_music,
                 start_boss_fight,
-                wait_before_starting_boss_fight,
             ],
+		},
+		
+		start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 2f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+			
+			executes: [
+				chaos_wizard_speech_3,
+			],
+		},
+		
+		chaos_wizard_speech_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 5f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Hey wait!\nMy title doesn't fit the boss fight banner!\n                          \nGive me just a moment. I'll fix this in no time!          ",
+                showNextPageIcon: true,
+            }
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                change_state_chaos_wizard_cast_3,
+                chaos_wizard_keyboard_typing,
+                change_chaos_wizard_name_in_boss_banner,
+            ],
+		},
+		
+		change_state_chaos_wizard_cast_3: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 0.5f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
+			
+            executes: [
+                change_state_chaos_wizard_idle_3,
+            ],
+		},
+		
+		chaos_wizard_keyboard_typing: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 1f,
+			
+            soundEffectName: keyboard_typing,
+		},
+		
+		change_chaos_wizard_name_in_boss_banner: {
+			type: EVENT,
+			executionDelayInSeconds: 4f,
+			
+			event: {
+				eventType: CONFIG_GENERATED_EVENT,
+				stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__change_chaos_wizard_name,
+				intValue: 2, // second name option
+			},
+		},
+		
+		change_state_chaos_wizard_idle_3: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 2.5f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: idle,
+            
+            executes: [
+                chaos_wizard_speech_4,
+            ],
+		},
+		
+		chaos_wizard_speech_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 5f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Damn!\nThe title is still too awesome for this stupid banner!                   \nNext time I'll use a higher screen resolution!          ",
+                showNextPageIcon: true,
+            }
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+                change_state_chaos_wizard_cast_4,
+                chaos_wizard_keyboard_typing,
+                change_chaos_wizard_name_in_boss_banner_2,
+            ],
+		},
+		
+		change_state_chaos_wizard_cast_4: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 0.5f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
+			
+            executes: [
+                change_state_chaos_wizard_idle_4,
+            ],
+		},
+		
+		change_chaos_wizard_name_in_boss_banner_2: {
+			type: EVENT,
+			executionDelayInSeconds: 4f,
+			
+			event: {
+				eventType: CONFIG_GENERATED_EVENT,
+				stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__change_chaos_wizard_name,
+				intValue: 3, // third name option
+			},
+		},
+		
+		change_state_chaos_wizard_idle_4: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 2.5f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: idle,
+            
+            executes: [
+                chaos_wizard_speech_5,
+            ],
+		},
+		
+		chaos_wizard_speech_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 5f,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "This should do!\n                      \nNow let's get this over with!          ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	stop_background_music,
+                wait_before_starting_boss_fight,
+			],
 		},
 		
 		stop_background_music: {
             type: EVENT,
             
-            executionDelayInSeconds: 3f,
+            executionDelayInSeconds: 1f,
             
             event: {
                 eventType: STOP_BACKGROUND_MUSIC,
@@ -309,15 +464,6 @@
                 booleanValue: true,  // fade in
 			}
 		},
-		
-		start_boss_fight: {
-			type: EVENT,
-			executionDelayInSeconds: 2f,
-			
-			event: {
-				eventType: BOSS_ENEMY_SHOW,
-			},
-		}
 		
 		wait_before_starting_boss_fight: {
             type: WAIT,
