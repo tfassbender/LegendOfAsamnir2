@@ -1040,4 +1040,40 @@
 		multipleActionExecutionsPossible: true,
 		interactiveAction: FIRE_EVENT,
 	},
+	
+	magic_obelisk: {
+		type: DESTROYABLE,
+		
+		texture: magic_obelisk,
+		animationBreak: magic_obelisk_break,
+		animationRestore: magic_obelisk_break_reversed,
+		textureAfterBreak: magic_obelisk_broken,
+		removeAfterBreak: false,
+		
+		hitSound: rock_hit,
+		destroySound: rock_break,
+		
+		restoreEvent: {
+            eventType: CONFIG_GENERATED_EVENT,
+            stringValue: "restore_magic_obelisks",
+		},
+		revertBreakAnimationOnRestore: true,
+		
+		textureSizeFactorX: 0.25f,
+		textureSizeFactorY: 0.25f,
+		
+		physicsBodySizeFactorX: 0.15f,
+		physicsBodySizeFactorY: 0.18f,
+		physicsBodyOffsetFactorX: 0f,
+		physicsBodyOffsetFactorY: 0.02f,
+		
+		changeBodySizeAfterDestroyed: true,
+		physicsBodySizeFactorXAfterDestroyed: 0.15f,
+		physicsBodySizeFactorYAfterDestroyed: 0.07f,
+		physicsBodyOffsetFactorXAfterDestroyed: 0f,
+		physicsBodyOffsetFactorYAfterDestroyed: -0.055f,
+		
+		health: 1,
+		requiredAttackType: BOMB,
+	},
 }

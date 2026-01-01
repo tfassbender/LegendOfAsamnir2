@@ -171,6 +171,21 @@
 			frameDuration: 0.1,
 			playMode: REVERSED,
 		},
+		{
+			name: magic_obelisk_break,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL,
+            scale: 0.25,
+		},
+		{
+			alias: magic_obelisk_break_reversed,
+			name: magic_obelisk_break,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: REVERSED,
+            scale: 0.25,
+		},
 		
 		// a dummy animation that is used in character states if the character should not be visible
 		{

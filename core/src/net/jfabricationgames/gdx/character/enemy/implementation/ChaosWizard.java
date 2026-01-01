@@ -14,8 +14,8 @@ import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyPropertie
 
 public class ChaosWizard extends Enemy implements EventListener {
 	
-	private static final String CHAOS_WIZARD_NAME_1 = "The Allmighty Chaos Wizard - Mega Supreme Godlike Overlord of Existence";
-	private static final String CHAOS_WIZARD_NAME_2 = "The Mighty Chaos Wizard - Supreme Author of the Nine Realms";
+	private static final String CHAOS_WIZARD_NAME_1 = "The Allmighty Chaos Wizard - Mega\n Supreme Godlike Overlord of Existence";
+	private static final String CHAOS_WIZARD_NAME_2 = "The Mighty Chaos Wizard - Supreme\n Author of the Nine Realms";
 	private static final String CHAOS_WIZARD_NAME_FINAL = "The Chaos Wizard - Sovereign of Reality";
 	
 	public ChaosWizard(EnemyTypeConfig typeConfig, MapProperties properties) {

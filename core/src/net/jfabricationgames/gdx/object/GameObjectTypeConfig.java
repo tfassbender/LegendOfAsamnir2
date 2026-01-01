@@ -61,9 +61,20 @@ public class GameObjectTypeConfig {
 	//****************************************
 	
 	public String animationBreak;
+	public String animationRestore;
+	public String textureAfterBreak;
+	public boolean removeAfterBreak = true;
 	public String destroySound;
 	public float health = 0f;
 	public AttackType requiredAttackType = AttackType.ATTACK;
+	public boolean revertBreakAnimationOnRestore = false;
+	public EventConfig restoreEvent;
+	
+	public boolean changeBodySizeAfterDestroyed = false; // only applies if removeAfterBreak is set to false
+	public float physicsBodySizeFactorXAfterDestroyed = 1f;
+	public float physicsBodySizeFactorYAfterDestroyed = 1f;
+	public float physicsBodyOffsetFactorXAfterDestroyed = 0f;
+	public float physicsBodyOffsetFactorYAfterDestroyed = 0f;
 	
 	//****************************************
 	//*** Interactive Objects
