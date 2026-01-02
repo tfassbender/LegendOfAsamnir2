@@ -48,6 +48,7 @@ class TiledMapLoader implements GameMapLoader {
 		Gdx.app.debug(getClass().getSimpleName(), "--- Loading map objects --------------------------------------------------------------");
 		Array<Item> items = new Array<>();
 		Array<GameObject> objects = new Array<>();
+		Array<GameObject> objectsAbovePlayer = new Array<>();
 		Array<Enemy> enemies = new Array<>();
 		Array<NonPlayableCharacter> npcs = new Array<>();
 		Array<Animal> animals = new Array<>();
@@ -94,7 +95,12 @@ class TiledMapLoader implements GameMapLoader {
 					break;
 				case Constants.OBJECT_NAME_OBJECT:
 					GameObject gameObject = GameObjectFactory.createObject(parts[1], rectangle.x, rectangle.y, properties);
-					objects.add(gameObject);
+					if (gameObject.isRenderedAbovePlayer()) {
+						objectsAbovePlayer.add(gameObject);
+					}
+					else {
+						objects.add(gameObject);
+					}
 					gameObject.postAddToGameMap();
 					break;
 				case Constants.OBJECT_NAME_ENEMY:
@@ -113,6 +119,7 @@ class TiledMapLoader implements GameMapLoader {
 		
 		gameMap.items = items;
 		gameMap.objects = objects;
+		gameMap.objectsAbovePlayer = objectsAbovePlayer;
 		gameMap.enemies = enemies;
 		gameMap.nonPlayableCharacters = npcs;
 		gameMap.animals = animals;

@@ -80,6 +80,7 @@ public class GameMapImplementation implements GameMap {
 	protected Array<Item> items;
 	protected Array<Item> itemsAboveGameObjects;
 	protected Array<GameObject> objects;
+	protected Array<GameObject> objectsAbovePlayer;
 	protected Array<Enemy> enemies;
 	protected Array<NonPlayableCharacter> nonPlayableCharacters;
 	protected Array<Animal> animals;
@@ -180,6 +181,7 @@ public class GameMapImplementation implements GameMap {
 		return items != null // 
 				&& itemsAboveGameObjects != null // 
 				&& objects != null //
+				&& objectsAbovePlayer != null //
 				&& enemies != null //
 				&& nonPlayableCharacters != null //
 				&& animals != null && projectiles != null; //
@@ -193,6 +195,7 @@ public class GameMapImplementation implements GameMap {
 		Array<Item> itemsCopy = new Array<>(items);
 		Array<Item> itemsAboveGameObjectsCopy = new Array<>(itemsAboveGameObjects);
 		Array<GameObject> objectsCopy = new Array<>(objects);
+		Array<GameObject> objectsAbovePlayerCopy = new Array<>(objectsAbovePlayer);
 		Array<Enemy> enemiesCopy = new Array<>(enemies);
 		Array<NonPlayableCharacter> nonPlayableCharactersCopy = new Array<>(nonPlayableCharacters);
 		Array<Animal> animalsCopy = new Array<>(animals);
@@ -205,6 +208,9 @@ public class GameMapImplementation implements GameMap {
 			item.removeFromMap();
 		}
 		for (GameObject object : objectsCopy) {
+			object.removeFromMap();
+		}
+		for (GameObject object : objectsAbovePlayerCopy) {
 			object.removeFromMap();
 		}
 		for (Enemy enemy : enemiesCopy) {
@@ -231,6 +237,7 @@ public class GameMapImplementation implements GameMap {
 		items.clear();
 		itemsAboveGameObjects.clear();
 		objects.clear();
+		objectsAbovePlayer.clear();
 		enemies.clear();
 		nonPlayableCharacters.clear();
 		animals.clear();
@@ -295,6 +302,7 @@ public class GameMapImplementation implements GameMap {
 		executeAnnotatedMethods(annotation, items);
 		executeAnnotatedMethods(annotation, itemsAboveGameObjects);
 		executeAnnotatedMethods(annotation, objects);
+		executeAnnotatedMethods(annotation, objectsAbovePlayer);
 		executeAnnotatedMethods(annotation, enemies);
 		executeAnnotatedMethods(annotation, nonPlayableCharacters);
 		executeAnnotatedMethods(annotation, animals);
@@ -367,6 +375,7 @@ public class GameMapImplementation implements GameMap {
 		
 		renderer.beginShapeRenderer();
 		renderer.renderPlayer(delta);
+		renderer.renderObjectsAbovePlayer(delta);
 		renderer.endBatch();
 		
 		renderer.renderEnemyHealthBars();
@@ -415,7 +424,12 @@ public class GameMapImplementation implements GameMap {
 	@Override
 	public void addObject(GameObject object) {
 		logAddObject(object, objects.size);
-		objects.add(object);
+		if (object.isRenderedAbovePlayer()) {
+			objectsAbovePlayer.add(object);
+		}
+		else {
+			objects.add(object);
+		}
 		object.postAddToGameMap();
 		
 		for (Function<Array<GameObject>, Array<GameObject>> postAddObjectProcessingFunction : postAddObjectProcessingFunctions) {
@@ -439,6 +453,7 @@ public class GameMapImplementation implements GameMap {
 	public void removeObject(GameObject gameObject, Body body) {
 		logRemoveObject(gameObject, objects.size);
 		objects.removeValue(gameObject, false);
+		objectsAbovePlayer.removeValue(gameObject, false);
 		removePhysicsBody(body);
 	}
 	
@@ -553,6 +568,12 @@ public class GameMapImplementation implements GameMap {
 			}
 		}
 		
+		for (GameObject object : objectsAbovePlayer) {
+			if (unitId.equals(object.getUnitId())) {
+				return object;
+			}
+		}
+		
 		for (Item item : items) {
 			if (unitId.equals(item.getUnitId())) {
 				return item;
@@ -596,6 +617,7 @@ public class GameMapImplementation implements GameMap {
 		MapObjectDataHandler dataHandler = MapObjectDataHandler.getInstance();
 		
 		applyStatesToMapObjects(dataHandler, objects);
+		applyStatesToMapObjects(dataHandler, objectsAbovePlayer);
 		applyStatesToMapObjects(dataHandler, items);
 		applyStatesToMapObjects(dataHandler, enemies);
 		

@@ -258,6 +258,12 @@ class GameMapRenderer implements Disposable {
 		gameMap.player.render(delta, batch, shapeRenderer);
 	}
 	
+	public void renderObjectsAbovePlayer(float delta) {
+		for (GameObject object : gameMap.objectsAbovePlayer) {
+			object.draw(delta, batch);
+		}
+	}
+	
 	public void beginShapeRenderer() {
 		shapeRenderer.setProjectionMatrix(camera.combined);
 		shapeRenderer.begin(ShapeType.Filled);
