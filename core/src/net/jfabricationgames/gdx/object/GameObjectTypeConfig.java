@@ -56,6 +56,8 @@ public class GameObjectTypeConfig {
 	
 	public String renderingCondition; // references a configurable condition (e.g. common__rune_raidho_collected) - if null, the object is always rendered
 	
+	public boolean renderedAbovePlayer = false;
+	
 	//****************************************
 	//*** Destroyable Objects
 	//****************************************

@@ -18,6 +18,7 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 	}
 	
 	protected float stateTime;
+	protected float rotationInDegrees;
 	protected AnimationSpriteConfig spriteConfig;
 	protected AnimationConfig animationConfig;
 	
@@ -42,7 +43,8 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 			batch.draw(keyFrame, x + getXOffset(), y + getYOffset(), //
 					spriteConfig.width * 0.5f, spriteConfig.height * 0.5f, //
 					keyFrame.getRegionWidth() * animationConfig.scale, keyFrame.getRegionHeight() * animationConfig.scale, //
-					Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN, 0f);
+					Constants.WORLD_TO_SCREEN, Constants.WORLD_TO_SCREEN, //
+					rotationInDegrees);
 		}
 		catch (IndexOutOfBoundsException e) {
 			Gdx.app.error(getClass().getSimpleName(), "key frame for animation wasn't found for animation '" + animationConfig.name + //
@@ -52,6 +54,10 @@ public abstract class AnimationDirector<T extends TextureRegion> {
 	
 	public void scaleSprite(Sprite sprite) {
 		sprite.setScale(animationConfig.scale);
+	}
+	
+	public void setRotation(float rotationInDegrees) {
+		this.rotationInDegrees = rotationInDegrees;
 	}
 	
 	/**

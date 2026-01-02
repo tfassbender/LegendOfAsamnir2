@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="546">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="550">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -606,15 +606,31 @@
    <point/>
   </object>
   <object id="536" name="object.magic_obelisk" x="529" y="532">
+   <properties>
+    <property name="destroyedEventText" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_top_left"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_top_left"/>
+   </properties>
    <point/>
   </object>
   <object id="537" name="object.magic_obelisk" x="719" y="532">
+   <properties>
+    <property name="destroyedEventText" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_top_right"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_top_right"/>
+   </properties>
    <point/>
   </object>
   <object id="538" name="object.magic_obelisk" x="719" y="723">
+   <properties>
+    <property name="destroyedEventText" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_bottom_right"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_bottom_right"/>
+   </properties>
    <point/>
   </object>
   <object id="539" name="object.magic_obelisk" x="529" y="723">
+   <properties>
+    <property name="destroyedEventText" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_bottom_left"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_bottom_left"/>
+   </properties>
    <point/>
   </object>
   <object id="540" name="object.spawnPoint.bomb" x="336.437" y="784.518">
@@ -645,6 +661,34 @@
    <properties>
     <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__spire__test"/>
    </properties>
+  </object>
+  <object id="546" name="object.magic_energy_line" x="581" y="692">
+   <properties>
+    <property name="rotation" value="35"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="547" name="object.magic_energy_line" x="771.667" y="676.833">
+   <properties>
+    <property name="rotation" value="-215"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="548" name="object.magic_energy_line_2" x="581.5" y="494.5">
+   <properties>
+    <property name="rotation" value="-50"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="549" name="object.magic_energy_line_2" x="776.708" y="481.292">
+   <properties>
+    <property name="rotation" value="230"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">

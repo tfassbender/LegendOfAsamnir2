@@ -8,8 +8,6 @@
 			executionDelayInSeconds: 0f,
 			
 			executes: [
-//				test_magic_flames,
-				
                 set_camera_position,
                 turn_chaos_wizard_left,
                 turn_lich_top_left,
@@ -20,19 +18,9 @@
                 cultist_7_look_left,
                 cultist_8_look_left,
                 
-//                chaos_wizard_speech,
-//                play_sound_effect_evil_laughter,
+                chaos_wizard_speech,
+                play_sound_effect_evil_laughter,
 			],
-		},
-		
-		// TODO remove after tests
-		test_magic_flames: {
-            type: EVENT,
-            
-            event: {
-            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
-            	intValue: 4,
-            }
 		},
 		
 		set_camera_position: {
@@ -209,6 +197,10 @@
             	change_state_cultist_bottom_kneel,
             	spawn_summoning_circle_effect,
             	spawn_magic_flame_circle,
+            	spawn_magic_energy_line_bottom_left,
+            	spawn_magic_energy_line_bottom_right,
+            	spawn_magic_energy_line_top_left,
+            	spawn_magic_energy_line_top_right,
             	
             	chaos_wizard_speech_2,
 			],
@@ -217,7 +209,7 @@
 		change_state_chaos_wizard_idle_2: {
             type: CHANGE_STATE,
             
-            executionDelayInSeconds: 8f,
+            executionDelayInSeconds: 9f,
             
             controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
             controlledUnitState: idle,
@@ -254,7 +246,7 @@
 		spawn_magic_flame_circle: {
 			type: EVENT,
 			
-			executionDelayInSeconds: 7f,
+			executionDelayInSeconds: 8f,
             
             event: {
             	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
@@ -262,10 +254,58 @@
             }
 		},
 		
+		spawn_magic_energy_line_bottom_left: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 8f,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_bottom_right: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 8f,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_top_left: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 8f,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_top_right: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 8f,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
 		chaos_wizard_speech_2: {
             type: SHOW_ON_SCREEN_TEXT,
             
-            executionDelayInSeconds: 11f,
+            executionDelayInSeconds: 13f,
             
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",

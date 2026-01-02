@@ -336,4 +336,8 @@ public class GameObject implements Hittable, StatefulMapObject, CutsceneControll
 	public boolean isHookshotConnectable() {
 		return typeConfig.hookshotConnectable;
 	}
+	
+	public boolean isRenderedAbovePlayer() {
+		return typeConfig.renderedAbovePlayer;
+	}
 }

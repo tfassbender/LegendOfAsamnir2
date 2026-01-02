@@ -186,6 +186,22 @@
             playMode: REVERSED,
             scale: 0.25,
 		},
+		{
+			name: magic_energy_line,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP,
+			scale: 0.3,
+		},
+		{
+			// uses a bigger scale because the distance between the two points is larger
+			alias: magic_energy_line_2,
+			name: magic_energy_line,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: LOOP,
+			scale: 0.4,
+		},
 		
 		// a dummy animation that is used in character states if the character should not be visible
 		{

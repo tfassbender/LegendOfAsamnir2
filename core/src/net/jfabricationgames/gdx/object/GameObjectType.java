@@ -13,6 +13,7 @@ public enum GameObjectType {
 	MOVABLE, //
 	DRAGGABLE, //
 	ANIMATION, //
+	PERSISTENT_ANIMATION, //
 	CONFIG_OBJECT, //
 	FORCE, //
 	TRAVERSEABLE, //

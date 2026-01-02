@@ -1076,4 +1076,22 @@
 		health: 1,
 		requiredAttackType: BOMB,
 	},
+	
+	magic_energy_line: {
+		type: PERSISTENT_ANIMATION,
+		
+		texture: empty,
+		animation: magic_energy_line,
+		isSensor: true,
+		renderedAbovePlayer: true,
+	},
+	
+	magic_energy_line_2: {
+		type: PERSISTENT_ANIMATION,
+		
+		texture: empty,
+		animation: magic_energy_line_2,
+		isSensor: true,
+		renderedAbovePlayer: true,
+	},
 }
