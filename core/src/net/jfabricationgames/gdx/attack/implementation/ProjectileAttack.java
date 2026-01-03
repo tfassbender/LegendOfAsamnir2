@@ -40,6 +40,10 @@ public class ProjectileAttack extends Attack {
 			Vector2 targetPosition = targetPositionSupplier.get();
 			if (targetPosition != null) {
 				startingPosition = targetPosition;
+				
+				// move the start position near the attacker if configured (default is 0f)
+				Vector2 directionToTarget = targetPosition.cpy().sub(body.getPosition().cpy()).nor();
+				startingPosition.add(directionToTarget.scl(-config.startAttackNearAttackerOffset));
 			}
 		}
 		

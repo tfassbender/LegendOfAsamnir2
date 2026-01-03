@@ -41,9 +41,6 @@ public class ElderDragon extends Enemy implements CharacterStateChangeListener {
 		
 		health -= 0.1f; // reduce the health by a small value to prevent the defense mode from being activated at the first damage
 		
-		// TODO delete after tests
-		health = 1;
-		
 		stateMachine.addChangeListener(this);
 	}
 	

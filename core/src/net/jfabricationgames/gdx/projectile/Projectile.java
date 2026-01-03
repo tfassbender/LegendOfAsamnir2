@@ -1,5 +1,6 @@
 package net.jfabricationgames.gdx.projectile;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -67,6 +68,7 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 	
 	protected AnimationDirector<TextureRegion> animation;
 	protected Sprite sprite;
+	protected Color textureColor;
 	
 	protected String unitId;
 	
@@ -93,6 +95,10 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		sprite = new Sprite(animation.getKeyFrame());
 		if (!typeConfig.textureScaleGrowing) {
 			scaleSprite();
+		}
+		
+		if (typeConfig.useTextureColor) {
+			textureColor = new Color(typeConfig.textureColorR, typeConfig.textureColorG, typeConfig.textureColorB, 1f);
 		}
 		
 		initialize();
@@ -324,9 +330,17 @@ public abstract class Projectile implements ContactListener, Hittable, Positione
 		if (typeConfig.textureScaleGrowing) {
 			scaleSprite();
 		}
+		
+		Color color = new Color(sprite.getColor()); // getColor() returns a reference to the color, so it has to be copied
+		if (textureColor != null) {
+			sprite.setColor(textureColor);
+		}
+		
 		sprite.setPosition(body.getPosition().x - sprite.getOriginX() + imageOffsetX + typeConfig.imageOffsetX, //
 				body.getPosition().y - sprite.getOriginY() + imageOffsetY + typeConfig.imageOffsetY);
 		sprite.draw(batch);
+		
+		sprite.setColor(color);
 	}
 	
 	protected void setImageOffset(float x, float y) {

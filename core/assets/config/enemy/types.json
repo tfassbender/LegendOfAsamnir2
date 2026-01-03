@@ -1939,7 +1939,7 @@
 		initialState: idle,
 		attackConfig: config/enemy/attack/chaos_wizard.json,
 		
-		health: 150,
+		health: 100, // the chaos wizard needs to be attacked a fixed number of times by Asamnir to be defeated - health of 100 for easy calculation
 		movingSpeed: 0.5f, // shouldn't move, but a small movement is needed for the change of direction
 		
 		// can only be damaged by Asamnir
@@ -1959,8 +1959,8 @@
 		addSensor: true,
 		sensorRadius: 25f,
 		
-		pushForceDamage: 10,
-		pushForceHit: 60,
+		pushForceDamage: 0,
+		pushForceHit: 50,
 		
 		isBoss: true
 		bossName: "The Allmighty Chaos Wizard - Mega Supreme Godlike Overlord of Existence",

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="550">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="554">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -546,12 +546,12 @@
   </object>
   <object id="520" name="object.magic_fire" x="590.091" y="597.602" width="18" height="30.25">
    <properties>
-    <property name="traverseable_object_n" value="4"/>
+    <property name="traverseable_object_n" value="5"/>
    </properties>
   </object>
   <object id="524" name="object.magic_fire" x="640.455" y="597.239" width="18" height="30.25">
    <properties>
-    <property name="traverseable_object_n" value="4"/>
+    <property name="traverseable_object_n" value="6"/>
    </properties>
   </object>
   <object id="525" name="object.magic_fire" x="617.545" y="576.148" width="18" height="30.25">
@@ -687,6 +687,42 @@
    <properties>
     <property name="rotation" value="230"/>
     <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="550" name="object.configObject" x="624.455" y="657.121">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(1,0)"/>
+    <property name="attackId" value="push_nova"/>
+    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="551" name="object.configObject" x="624.455" y="593.121">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(1,0)"/>
+    <property name="attackId" value="push_nova"/>
+    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="552" name="object.configObject" x="624.455" y="689.121">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(1,0)"/>
+    <property name="attackId" value="push_nova"/>
+    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="553" name="object.configObject" x="624.455" y="561.121">
+   <properties>
+    <property name="attackCollisionType" value="ENEMY_ATTACK"/>
+    <property name="attackDirection" value="(1,0)"/>
+    <property name="attackId" value="push_nova"/>
+    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
    </properties>
    <point/>
   </object>

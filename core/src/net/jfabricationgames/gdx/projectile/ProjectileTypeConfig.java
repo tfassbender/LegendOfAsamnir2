@@ -18,6 +18,12 @@ public class ProjectileTypeConfig {
 	public boolean rotateTextureToMovementDirection = false;
 	public boolean changeBodyToSensorAfterHit = false;
 	
+	public boolean useTextureColor = false;
+	public float textureColorR = 1f;
+	public float textureColorG = 1f;
+	public float textureColorB = 1f;
+	public float textureColorA = 1f;
+	
 	public String sound;
 	
 	public float range = 0f;

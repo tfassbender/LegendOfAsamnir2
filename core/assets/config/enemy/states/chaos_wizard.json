@@ -1,13 +1,11 @@
 [
-	// TODO add more states
-	
 	{
 		id: idle,
 		animation: elite_mage_idle,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, cast_loop_with_effect
+			move, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, damage, die, cast_loop_with_effect
 		]
 	},
 	{
@@ -16,16 +14,62 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, cast_loop_with_effect
+			idle, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, damage, die, cast_loop_with_effect
 		]
 	},
+	{
+		id: attackMagicFireBall,
+		animation: elite_mage_cast_with_effect,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move, attackMagicFireSoil, blast_with_effect, damage, die
+		]
+	},
+	{
+		id: attackMagicFireSoil,
+		animation: elite_mage_cast_loop_with_effect,
+		attack: attack_magic_fire_soil,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move, blast_with_effect, damage, die
+		]
+	},
+	{
+		id: damage,
+        animation: elite_mage_damage,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+            idle, move, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, die
+		]
+	},
+	{
+		id: die,
+		animation: elite_mage_death,
+		endsWithAnimation: false,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
+	
+	// for cutscenes
 	{
 		id: cast_loop_with_effect,
 		animation: elite_mage_cast_loop_with_effect,
 		endsWithAnimation: true,
 		followingState: cast_loop_with_effect, // has to be stopped manually (in the cutscene)
 		interruptingStates: [
-			idle
+			idle, damage, die
 		]
+	},
+	{
+		id: blast_with_effect, // used for push nova effect
+		animation: elite_mage_blast_with_effect,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
 	},
 ]

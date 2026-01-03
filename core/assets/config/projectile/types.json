@@ -713,4 +713,29 @@
 		speed: 40,
 		dampingAfterObjectHit: 5,
 	},
+	
+	magic_fire_soil: {
+        attackType: ANIMATED_HIT,
+        
+        animation: medium_fire_effect_gray,
+		removeAfterAnimationFinished: true,
+		multipleHitsPossible: false,
+		
+        // use the fire soil animation in grayscale but with a purple color tint
+		useTextureColor: true,
+		textureColorR: 0.8f,
+		textureColorG: 0.0f,
+		textureColorB: 1f,
+		textureColorA: 1f,
+        
+        speed: 0,
+        damping: 0,
+		hitFixtureRadius: 0.8f,
+		flipAnimationToAttackDirection: true,
+		
+		sensorBody: true,
+		hitDelayInSeconds: 0.5,
+		
+		imageOffsetY: 2f,
+	},
 }

@@ -62,8 +62,6 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 		
 		health -= 0.1f; // reduce the health by a small value to prevent the defense mode from being activated at the first damage
 		
-		health = typeConfig.health * 0.1f; // TODO remove after tests - start the archangel with 10% health for testing
-		
 		stateMachine.addChangeListener(this);
 		EventHandler.getInstance().registerEventListener(this);
 	}

@@ -24,5 +24,6 @@ public class AttackConfig {
 	public AttackWeaponType weaponType; // used to adapt attacks to skill levels
 	public float projectileStartOffsetY;
 	public boolean startAttackAtPlayerPosition;
+	public float startAttackNearAttackerOffset; // only works if startAttackAtPlayerPosition is true - will move the start position near the attacker (for positive values)
 	public ObjectMap<String, String> properties = new ObjectMap<>(); // additional properties that will be added and can be read by the target that gets hit by the attack
 }

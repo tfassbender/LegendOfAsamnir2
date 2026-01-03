@@ -61,4 +61,17 @@
 		canBeBlockedCompletely: false,
 		pushForce: 50,
 	},
+	
+	// minion of the chaos wizard
+	
+	{
+		id: attack_magic_fire_ball,
+		type: ANIMATED_PROJECTILE,
+		projectileType: flameskull_fireball,
+		delay: 0,
+		duration: 0,
+		damage: 2.5,
+		canBeBlockedCompletely: true,
+		pushForce: 20,
+	},
 ]
