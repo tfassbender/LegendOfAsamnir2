@@ -787,7 +787,6 @@
 		textureColorB: 1f,
 		textureColorA: 1f,
         
-        notTraversableCollisionType: MAP_OBJECT, // prevent hookshots from crossing this object (also other projectiles as a side effect)
         initiallySolid: false,
         
         animationSolidOffsetX: 0f,
