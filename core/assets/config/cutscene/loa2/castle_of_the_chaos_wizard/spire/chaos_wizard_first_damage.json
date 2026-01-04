@@ -1,0 +1,115 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_first_damage_cutscene,
+	controlledActions: {
+		
+		chaos_wizard_comment: {
+			startsWithCutscene: true,
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Uff... These legendary weapons really hurt!\n                  \nBut you only got lucky this time.      \nThat won't happen again!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	restore_obelisks,
+            	spawn_magic_energy_lines_and_flames_multiplexer,
+            ],
+		},
+		
+		restore_obelisks: {
+            type: EVENT,
+            
+            event: {
+            	eventType: CONFIG_GENERATED_EVENT,
+            	stringValue: "restore_magic_obelisks",
+			}
+		},
+		
+		spawn_magic_energy_lines_and_flames_multiplexer: {
+			type: WAIT,
+			
+			executionDelayInSeconds: 1.5f,
+			
+			executes: [
+                spawn_magic_flame_circle,
+                spawn_magic_energy_line_bottom_left,
+                spawn_magic_energy_line_bottom_right,
+                spawn_magic_energy_line_top_left,
+                spawn_magic_energy_line_top_right,
+                
+            	wait_before_continuing_boss_fight,
+			],
+		}
+		
+		spawn_magic_flame_circle: {
+			type: EVENT,
+			
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+            	intValue: 3,
+            }
+		},
+		
+		spawn_magic_energy_line_bottom_left: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_bottom_right: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_top_left: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_top_right: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		wait_before_continuing_boss_fight: {
+            type: WAIT,
+            
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

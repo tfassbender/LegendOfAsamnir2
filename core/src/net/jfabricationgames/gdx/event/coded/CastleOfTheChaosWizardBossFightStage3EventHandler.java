@@ -58,5 +58,13 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 						.setIntValue(3));
 			}
 		}
+		else if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType)) {
+			if ("restore_magic_obelisks".equals(event.stringValue)) {
+				obeliskDestroyedTopLeft = false;
+				obeliskDestroyedTopRight = false;
+				obeliskDestroyedBottomLeft = false;
+				obeliskDestroyedBottomRight = false;
+			}
+		}
 	}
 }

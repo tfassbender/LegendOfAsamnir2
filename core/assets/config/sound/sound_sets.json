@@ -546,6 +546,14 @@
 					volume: 0.3,
 					delay: 0.2
 				},
+				// chaos wizard
+				chaos_wizard_hurt: {
+					path: "sound/enemy/die.mp3",
+					volume: 0.6,
+				},
+				chaos_wizard_death: {
+					path: "sound/enemy/die.mp3",
+				},
 			}
 		},
 		cutscene: {

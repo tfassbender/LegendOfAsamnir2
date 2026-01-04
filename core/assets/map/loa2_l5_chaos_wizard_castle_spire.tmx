@@ -694,8 +694,8 @@
    <properties>
     <property name="attackCollisionType" value="ENEMY_ATTACK"/>
     <property name="attackDirection" value="(1,0)"/>
-    <property name="attackId" value="push_nova"/>
-    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
+    <property name="attackId" value="push_nova_small"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"/>
    </properties>
    <point/>
   </object>
@@ -703,8 +703,8 @@
    <properties>
     <property name="attackCollisionType" value="ENEMY_ATTACK"/>
     <property name="attackDirection" value="(1,0)"/>
-    <property name="attackId" value="push_nova"/>
-    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
+    <property name="attackId" value="push_nova_small"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"/>
    </properties>
    <point/>
   </object>
@@ -712,8 +712,8 @@
    <properties>
     <property name="attackCollisionType" value="ENEMY_ATTACK"/>
     <property name="attackDirection" value="(1,0)"/>
-    <property name="attackId" value="push_nova"/>
-    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
+    <property name="attackId" value="push_nova_small"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"/>
    </properties>
    <point/>
   </object>
@@ -721,8 +721,8 @@
    <properties>
     <property name="attackCollisionType" value="ENEMY_ATTACK"/>
     <property name="attackDirection" value="(1,0)"/>
-    <property name="attackId" value="push_nova"/>
-    <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
+    <property name="attackId" value="push_nova_small"/>
+    <property name="unitId" value="config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"/>
    </properties>
    <point/>
   </object>

@@ -41,6 +41,7 @@
 	{
 		id: damage,
         animation: elite_mage_damage,
+        stateEnteringSound: chaos_wizard_hurt,
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
@@ -50,6 +51,7 @@
 	{
 		id: die,
 		animation: elite_mage_death,
+		stateEnteringSound: chaos_wizard_death,
 		endsWithAnimation: false,
 		followingState: END,
 		interruptingStates: [],
@@ -70,6 +72,7 @@
 	{
 		id: blast_with_effect, // used for push nova effect
 		animation: elite_mage_blast_with_effect,
+		attack: attack_push_nova,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: []

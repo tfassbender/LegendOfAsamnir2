@@ -31,6 +31,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private static final String STATE_NAME_ATTACK_MAGIC_FIRE_BALL = "attackMagicFireBall";
 	private static final String STATE_NAME_ATTACK_MAGIC_FIRE_SOIL = "attackMagicFireSoil";
+	private static final String STATE_NAME_BLAST_WITH_EFFECT = "blast_with_effect";
 	
 	private static final float lastStageHealthFactor = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int stages = 7; // the number of stages - in each stage the boss has to be attacked once
@@ -39,6 +40,9 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	private int fireballsToShoot = 0;
 	private float fireballShotTimer = 0f;
 	private final float fireballShotInterval = 0.3f;
+	
+	private float pushNovaDelayTimer = 0f;
+	private float startFirstCutsceneDelayTimer = 0f;
 	
 	private ChaosWizardAttackAI chaosWizardAttackAI;
 	
@@ -110,6 +114,9 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				fireballsToShoot = 7;
 			}
 		}
+		else if (STATE_NAME_BLAST_WITH_EFFECT.equals(newState.getStateName())) {
+			pushNovaDelayTimer = 0.2f; // delay the push nova a bit to align with the animation
+		}
 	}
 	
 	@Override
@@ -131,6 +138,31 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				}
 			}
 		}
+		
+		// handle the push nova after being hit
+		if (pushNovaDelayTimer > 0f) {
+			pushNovaDelayTimer -= delta;
+			if (pushNovaDelayTimer <= 0f) {
+				// start the push nova attack (by sending an event that is handled by config objects on the map)
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
+						.setStringValue("config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"));
+				
+				if (currentStage == 2) {
+					startFirstCutsceneDelayTimer = 0.5f;
+				}
+			}
+		}
+		
+		// start the first cutscene after the first hit
+		if (startFirstCutsceneDelayTimer > 0f) {
+			startFirstCutsceneDelayTimer -= delta;
+			if (startFirstCutsceneDelayTimer <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.START_CUTSCENE) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_first_damage_cutscene"));
+			}
+		}
 	}
 	
 	@Override
@@ -150,6 +182,14 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		}
 		
 		super.takeDamage(damage, attackInfo);
+		
+		pushBackPlayer();
+	}
+	
+	private void pushBackPlayer() {
+		CharacterState pushNova = stateMachine.getState(STATE_NAME_BLAST_WITH_EFFECT);
+		stateMachine.setOverridingFollowingState(pushNova, 1); // use the push nova after the damage animation finishes
+		// the events that spawn the push attacks are started when the push nova state is entered
 	}
 	
 	@Override
