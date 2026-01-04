@@ -60,6 +60,10 @@ public class DestroyableObject extends GameObject implements EventListener {
 	
 	@Override
 	public void takeDamage(float damage, AttackInfo attackInfo) {
+		if (destroyed) {
+			return;
+		}
+		
 		AttackType attackType = attackInfo.getAttackType();
 		if (attackType.isSubTypeOf(typeConfig.requiredAttackType)) {
 			health -= damage;

@@ -165,7 +165,7 @@
                 colorHeader: #850085,
                 displayText: "The spire of my castle should be a suitable battlefield for our final duel!    \nBut I guess it could still use some more minions!!!                             \n*evil laughter*           ",
                 showNextPageIcon: true,
-                canBeSkipped: false,
+//                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
