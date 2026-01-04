@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="554">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="557">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -725,6 +725,21 @@
     <property name="unitId" value="cutscene_object__castle_of_the_chaos_wizard__chaos_wizard_push_nova"/>
    </properties>
    <point/>
+  </object>
+  <object id="554" name="object.configObject" x="320" y="736" width="607.833" height="223.333">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__area_bottom"/>
+   </properties>
+  </object>
+  <object id="555" name="object.configObject" x="320" y="311" width="607.833" height="201">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__area_top"/>
+   </properties>
+  </object>
+  <object id="556" name="object.configObject" x="320" y="512" width="607.833" height="224.333">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__area_middle"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">

@@ -26,7 +26,7 @@
 		projectileType: magic_fire_soil,
 		delay: 0,
 		duration: 0,
-		damage: 10,
+		damage: 15,
 		pushForce: 60,
 		startAttackAtPlayerPosition: true,
 		startAttackNearAttackerOffset: 1f,

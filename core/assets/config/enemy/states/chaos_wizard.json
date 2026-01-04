@@ -30,6 +30,8 @@
 		id: attackMagicFireSoil,
 		animation: elite_mage_cast_loop_with_effect,
 		attack: attack_magic_fire_soil,
+		stateEnteringSound: dwarven_guardian_construct_fire,
+		soundDelay: 0.3f,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

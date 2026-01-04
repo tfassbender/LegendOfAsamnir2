@@ -38,7 +38,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private int fireballsToShoot = 0;
 	private float fireballShotTimer = 0f;
-	private final float fireballShotInterval = 0.5f;
+	private final float fireballShotInterval = 0.3f;
 	
 	private ChaosWizardAttackAI chaosWizardAttackAI;
 	
@@ -116,6 +116,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	public void act(float delta) {
 		super.act(delta);
 		
+		// handle the fireball shooting (attacks are not executed by the state machine)
 		if (fireballsToShoot > 0) {
 			fireballShotTimer += delta;
 			if (fireballShotTimer >= fireballShotInterval) {
@@ -126,11 +127,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				if (nearPlayer != null) {
 					Vector2 targetDirection = nearPlayer.getPosition().sub(getPosition());
 					attackHandler.startAttack("attack_magic_fire_ball", targetDirection);
-				}
-				
-				if (fireballsToShoot == 0) {
-					// change the state back to idle after the last fireball was shot
-					stateMachine.setState("idle");
+					SOUND_SET.playSound("magic_fire_ball");
 				}
 			}
 		}
@@ -153,6 +150,15 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		}
 		
 		super.takeDamage(damage, attackInfo);
+	}
+	
+	@Override
+	protected void die() {
+		super.die();
+		
+		// kill all spawned flameskulls and the lich minions when the chaos wizard is defeated
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE));
 	}
 	
 	@Override

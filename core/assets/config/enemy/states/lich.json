@@ -115,7 +115,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-        	move, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
+        	move, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
         ]
 	},
 	{
@@ -124,7 +124,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-            idle, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
+            idle, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
         ]
 	},
 	
@@ -134,7 +134,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			die, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast
+			die, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
@@ -187,6 +187,17 @@
         followingState: idle,
         interruptingStates: [
         	die
+        ]
+	},
+	// (unaimed) projectile attack
+	{
+        id: attack_magic_fire_ball,
+        animation: lich_cast,
+        // the attack will be started by the implementing class LichMinion
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die, attack_arcane_shower, attack_charge_magic_blast
         ]
 	},
 	

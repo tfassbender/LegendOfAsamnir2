@@ -21,6 +21,7 @@
 		id: attack_fireball,
 		animation: skullflame_summon,
 		// the attack will be executed by the implmeenting class
+		stateEnteringSound: magic_fire_ball,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -31,6 +32,7 @@
 		id: attack_burst,
 		animation: skullflame_burst,
 		// the attack will be executed by the implmeenting class
+		stateEnteringSound: magic_fire_ball,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
@@ -41,6 +43,7 @@
 		id: attack_charge,
 		animation: skullflame_charge,
 		attack: attack_charge,
+		stateEnteringSound: flameskull_charge_attack,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [

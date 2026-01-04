@@ -1914,7 +1914,7 @@
 		bodyRadius: 0.4f,
 		
 		addSensor: true,
-		sensorRadius: 25f,
+		sensorRadius: 10f,
 		
 		pushForceDamage: 50,
 		pushForceHit: 10,

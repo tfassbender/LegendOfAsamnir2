@@ -536,6 +536,16 @@
 					path: "sound/enemy/spawn.mp3",
 					volume: 1,
 				},
+				// flameskull
+				magic_fire_ball: {
+					path: "sound/enemy/attack/fireball.mp3",
+					volume: 0.15,
+				},
+				flameskull_charge_attack: {
+					path: "sound/enemy/attack/hit_2.wav",
+					volume: 0.3,
+					delay: 0.2
+				},
 			}
 		},
 		cutscene: {
