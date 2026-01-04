@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, damage, die, cast_loop_with_effect
+			move, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, damage, die, cast_loop_with_effect, cast_loop_with_effect_single
 		]
 	},
 	{
@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, damage, die, cast_loop_with_effect
+			idle, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, damage, die, cast_loop_with_effect, cast_loop_with_effect_single
 		]
 	},
 	{
@@ -23,7 +23,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, move, attackMagicFireSoil, blast_with_effect, damage, die
+			idle, move, attackMagicFireSoil, blast_with_effect, damage, die, cast_loop_with_effect_single
 		]
 	},
 	{
@@ -35,7 +35,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, move, blast_with_effect, damage, die
+			idle, move, blast_with_effect, damage, die, cast_loop_with_effect_single
 		]
 	},
 	{
@@ -45,7 +45,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-            idle, move, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, die
+            idle, move, attackMagicFireBall, attackMagicFireSoil, blast_with_effect, die, cast_loop_with_effect_single
 		]
 	},
 	{
@@ -65,6 +65,15 @@
 		animation: elite_mage_cast_loop_with_effect,
 		endsWithAnimation: true,
 		followingState: cast_loop_with_effect, // has to be stopped manually (in the cutscene)
+		interruptingStates: [
+			idle, damage, die
+		]
+	},
+	{
+		id: cast_loop_with_effect_single,
+		animation: elite_mage_cast_loop_with_effect,
+		endsWithAnimation: true,
+		followingState: idle,
 		interruptingStates: [
 			idle, damage, die
 		]

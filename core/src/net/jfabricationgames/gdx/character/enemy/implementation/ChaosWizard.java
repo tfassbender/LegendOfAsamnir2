@@ -14,6 +14,7 @@ import net.jfabricationgames.gdx.character.ai.util.timer.RandomIntervalAttackTim
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.ChaosWizardAttackAI;
+import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
 import net.jfabricationgames.gdx.constants.Constants;
@@ -32,6 +33,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	private static final String STATE_NAME_ATTACK_MAGIC_FIRE_BALL = "attackMagicFireBall";
 	private static final String STATE_NAME_ATTACK_MAGIC_FIRE_SOIL = "attackMagicFireSoil";
 	private static final String STATE_NAME_BLAST_WITH_EFFECT = "blast_with_effect";
+	private static final String STATE_NAME_CAST = "cast_loop_with_effect_single";
 	
 	private static final float lastStageHealthFactor = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int stages = 7; // the number of stages - in each stage the boss has to be attacked once
@@ -43,6 +45,11 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private float pushNovaDelayTimer = 0f;
 	private float startFirstCutsceneDelayTimer = 0f;
+	
+	private float immortalityTimer = 0f;
+	
+	private boolean restoreObelisksWhenEnteringCastStage = false;
+	private float restoreObelisksDelayTimer = 0f;
 	
 	private ChaosWizardAttackAI chaosWizardAttackAI;
 	
@@ -66,6 +73,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	protected void createAI() {
 		ai = new BaseAI();
 		ai = createFightAI(ai);
+		ai.setCharacter(this);
 	}
 	
 	private ArtificialIntelligence createFightAI(ArtificialIntelligence ai) {
@@ -83,13 +91,21 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
 		attackDistances.put(characterStateAttackMagicFireBall, 100f); // no range restriction
-		attackDistances.put(characterStateAttackMagicFireSoil, 4f); // range is restricted in the first stages
+		float fireSoilAttackDistance = 0f;
+		if (currentStage >= 3 && currentStage < 7) {
+			fireSoilAttackDistance = 4f;
+		}
+		else if (currentStage >= 7) {
+			fireSoilAttackDistance = 100f; // no range restriction in the last stage
+		}
+		attackDistances.put(characterStateAttackMagicFireSoil, fireSoilAttackDistance); // range is restricted in the first stages
 		
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
 		attackTimers.put(characterStateAttackMagicFireBall, new RandomIntervalAttackTimer(4f, 7f));
 		attackTimers.put(characterStateAttackMagicFireSoil, new FixedAttackTimer(5f));
 		
 		chaosWizardAttackAI = new ChaosWizardAttackAI(ai, attackStates, attackDistances, attackTimers);
+		chaosWizardAttackAI.setTargetingPlayer(Player.getInstance()); // the player might already be in range, so set the target immediately
 		resetTimersForRangedAttacks();
 		
 		return chaosWizardAttackAI;
@@ -117,11 +133,21 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		else if (STATE_NAME_BLAST_WITH_EFFECT.equals(newState.getStateName())) {
 			pushNovaDelayTimer = 0.2f; // delay the push nova a bit to align with the animation
 		}
+		else if (STATE_NAME_CAST.equals(newState.getStateName())) {
+			if (restoreObelisksWhenEnteringCastStage) {
+				restoreObelisksWhenEnteringCastStage = false;
+				restoreObelisksDelayTimer = 0.3f; // delay the restoration a bit to align with the casting animation
+			}
+		}
 	}
 	
 	@Override
 	public void act(float delta) {
 		super.act(delta);
+		
+		if (immortalityTimer > 0f) {
+			immortalityTimer -= delta;
+		}
 		
 		// handle the fireball shooting (attacks are not executed by the state machine)
 		if (fireballsToShoot > 0) {
@@ -148,8 +174,13 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
 						.setStringValue("config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"));
 				
-				if (currentStage == 2) {
-					startFirstCutsceneDelayTimer = 0.5f;
+				switch (currentStage) {
+					case 2:
+						startFirstCutsceneDelayTimer = 0.5f;
+						break;
+					case 3:
+						changeToCastStateToRestoreObelisks();
+						break;
 				}
 			}
 		}
@@ -163,11 +194,56 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_first_damage_cutscene"));
 			}
 		}
+		
+		// restore the obelisks after some time
+		if (restoreObelisksDelayTimer > 0f) {
+			restoreObelisksDelayTimer -= delta;
+			if (restoreObelisksDelayTimer <= 0f) {
+				restoreObelisks();
+			}
+		}
+	}
+	
+	private void changeToCastStateToRestoreObelisks() {
+		// change to the cast stage as visual indication that the obelisks get restored by the chaos wizard
+		restoreObelisksWhenEnteringCastStage = true;
+		CharacterState castState = stateMachine.getState(STATE_NAME_CAST);
+		stateMachine.setOverridingFollowingState(castState, 3); // use the cast state three times after the current state finishes
+	}
+	
+	private void restoreObelisks() {
+		// start the obelisk restoration
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+				.setStringValue("restore_magic_obelisks"));
+		
+		// restore the magic shield around the chaos wizard
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+				.setIntValue(3));
+		
+		// turn on the magic energy lines
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.DISPLAY_ANIMATION_GAME_OBJECT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_left") //
+				.setBooleanValue(true)); // visible
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.DISPLAY_ANIMATION_GAME_OBJECT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_right") //
+				.setBooleanValue(true)); // visible
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.DISPLAY_ANIMATION_GAME_OBJECT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_left") //
+				.setBooleanValue(true)); // visible
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.DISPLAY_ANIMATION_GAME_OBJECT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right") //
+				.setBooleanValue(true)); // visible
 	}
 	
 	@Override
 	public void takeDamage(float damage, AttackInfo attackInfo) {
-		if (attackInfo.getAttackType() != AttackType.HIT || damage <= 0f) {
+		if (attackInfo.getAttackType() != AttackType.HIT || damage <= 0f || immortalityTimer > 0f) {
 			// only the legendary axe "Asamnir" is able to damage the Chaos Wizard
 			return;
 		}
@@ -176,14 +252,19 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		damage = typeConfig.health * ((1f - lastStageHealthFactor) / (stages - 1));
 		currentStage++;
 		
-		if (currentStage == 7) {
-			// final stage reached -> make the fire soil attack usable from any distance
-			chaosWizardAttackAI.removeRangeRestrictionFromFireSoilAttack();
-		}
-		
 		super.takeDamage(damage, attackInfo);
 		
+		immortalityTimer = 3f; // short immortality after being hit to prevent multiple stage changes because of multiple hits in a short time
 		pushBackPlayer();
+		sendStageChangeEvent();
+		createAI(); // recreate the AI to adjust attack distances and timers
+	}
+	
+	private void sendStageChangeEvent() {
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__change_battle_stage"). //
+				setIntValue(currentStage));
 	}
 	
 	private void pushBackPlayer() {

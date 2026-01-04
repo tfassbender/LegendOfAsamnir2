@@ -38,8 +38,4 @@ public class ChaosWizardAttackAI extends MultiAttackAI {
 		
 		return null;
 	}
-	
-	public void removeRangeRestrictionFromFireSoilAttack() {
-		attackDistances.put(attackMagicFireSoil, 100f);
-	}
 }

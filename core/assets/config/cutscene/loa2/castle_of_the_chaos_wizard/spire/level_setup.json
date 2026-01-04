@@ -18,8 +18,10 @@
                 cultist_7_look_left,
                 cultist_8_look_left,
                 
-                chaos_wizard_speech,
-                play_sound_effect_evil_laughter,
+//                chaos_wizard_speech,
+//                play_sound_effect_evil_laughter,
+                
+                fast_setup,
 			],
 		},
 		
@@ -165,7 +167,7 @@
                 colorHeader: #850085,
                 displayText: "The spire of my castle should be a suitable battlefield for our final duel!    \nBut I guess it could still use some more minions!!!                             \n*evil laughter*           ",
                 showNextPageIcon: true,
-//                canBeSkipped: false,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -519,5 +521,108 @@
 			type: WAIT,
 			executionDelayInSeconds: 0f,
 		}
+		
+		//********************************
+		//*** faster setup for debuggin
+		//********************************
+		
+		fast_setup: {
+            type: WAIT,
+            
+            executes: [
+            	__debug_change_state_cultist_top_kneel,
+            	__debug_change_state_cultist_bottom_kneel,
+            	__debug_spawn_magic_flame_circle,
+            	__debug_spawn_magic_energy_line_bottom_left,
+            	__debug_spawn_magic_energy_line_bottom_right,
+            	__debug_spawn_magic_energy_line_top_left,
+            	__debug_spawn_magic_energy_line_top_right,
+            	__debug_start_boss_fight,
+            	__debug_change_chaos_wizard_name_in_boss_banner_2,
+            ],
+		},
+		
+		__debug_change_state_cultist_top_kneel: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__top,
+            controlledUnitState: cultist_kneel_and_summon_lich,
+		},
+		
+		__debug_change_state_cultist_bottom_kneel: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__lich__bottom,
+            controlledUnitState: cultist_kneel_and_summon_lich,
+		},
+		
+		__debug_spawn_magic_flame_circle: {
+			type: EVENT,
+			
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT,
+            	intValue: 3,
+            }
+		},
+		
+		__debug_spawn_magic_energy_line_bottom_left: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		__debug_spawn_magic_energy_line_bottom_right: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		__debug_spawn_magic_energy_line_top_left: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		__debug_spawn_magic_energy_line_top_right: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		__debug_start_boss_fight: {
+			type: EVENT,
+			executionDelayInSeconds: 1f,
+			
+			event: {
+				eventType: BOSS_ENEMY_SHOW,
+			},
+		},
+		
+		__debug_change_chaos_wizard_name_in_boss_banner_2: {
+			type: EVENT,
+			executionDelayInSeconds: 2f,
+			
+			event: {
+				eventType: CONFIG_GENERATED_EVENT,
+				stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__change_chaos_wizard_name,
+				intValue: 3, // third name option
+			},
+		},
 	}
 }
