@@ -2,7 +2,9 @@ package net.jfabricationgames.gdx.character.enemy.implementation;
 
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ArrayMap;
+import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
@@ -17,11 +19,15 @@ import net.jfabricationgames.gdx.character.enemy.ai.ChaosWizardAttackAI;
 import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
+import net.jfabricationgames.gdx.condition.Condition;
+import net.jfabricationgames.gdx.condition.ConditionType;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
+import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 
 public class ChaosWizard extends Enemy implements EventListener, CharacterStateChangeListener {
@@ -50,6 +56,8 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private boolean restoreObelisksWhenEnteringCastStage = false;
 	private float restoreObelisksDelayTimer = 0f;
+	private boolean spawnFlameskullsWhenEnteringCastStage = false;
+	private float spawnFlameskullsDelayTimer = 0f;
 	
 	private ChaosWizardAttackAI chaosWizardAttackAI;
 	
@@ -138,6 +146,10 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				restoreObelisksWhenEnteringCastStage = false;
 				restoreObelisksDelayTimer = 0.3f; // delay the restoration a bit to align with the casting animation
 			}
+			if (spawnFlameskullsWhenEnteringCastStage) {
+				spawnFlameskullsWhenEnteringCastStage = false;
+				spawnFlameskullsDelayTimer = 1.3f; // delay the spawning a bit to align with the casting animation
+			}
 		}
 	}
 	
@@ -181,6 +193,10 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 					case 3:
 						changeToCastStateToRestoreObelisks();
 						break;
+					case 4:
+						changeToCastStateToRestoreObelisks();
+						spawnFlameskullsWhenEnteringCastStage = true;
+						break;
 				}
 			}
 		}
@@ -200,6 +216,14 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 			restoreObelisksDelayTimer -= delta;
 			if (restoreObelisksDelayTimer <= 0f) {
 				restoreObelisks();
+			}
+		}
+		
+		// spawn flameskulls after some time
+		if (spawnFlameskullsDelayTimer > 0f) {
+			spawnFlameskullsDelayTimer -= delta;
+			if (spawnFlameskullsDelayTimer <= 0f) {
+				spawnFlameskullsOnPlayerSide(3);
 			}
 		}
 	}
@@ -239,6 +263,60 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				.setEventType(EventType.DISPLAY_ANIMATION_GAME_OBJECT) //
 				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right") //
 				.setBooleanValue(true)); // visible
+	}
+	
+	private void spawnFlameskullsOnPlayerSide(int maxFlameskullsPerSide) {
+		if (isPlayerOnLeftSide()) {
+			if (countFlameskullsOnLeftSide() < maxFlameskullsPerSide) {
+				String spawnType = "flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__left";
+				if (currentStage == 7) {
+					// allow charge attacks in the final stage of the battle
+					spawnType = "flameskull__castle_of_the_chaos_wizard_spire__left";
+				}
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+						.setStringValue(spawnType));
+			}
+		}
+		else {
+			// the map is divided in left and right - the sides take up the whole reachable area -> the player has to be on the right side
+			if (countFlameskullsOnRightSide() < maxFlameskullsPerSide) {
+				String spawnType = "flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__right";
+				if (currentStage == 7) {
+					// allow charge attacks in the final stage of the battle
+					spawnType = "flameskull__castle_of_the_chaos_wizard_spire__right";
+				}
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+						.setStringValue(spawnType));
+			}
+		}
+	}
+	
+	private boolean isPlayerOnLeftSide() {
+		return isPlayerInArea("config_object__chaos_wizard_spire__area_left");
+	}
+	
+	private boolean isPlayerInArea(String areaConfigObjectUnitId) {
+		Condition condition = new Condition();
+		condition.parameters = new ObjectMap<>();
+		condition.parameters.put("objectId", "PLAYER");
+		condition.parameters.put("targetAreaObjectId", areaConfigObjectUnitId);
+		
+		return ConditionType.OBJECT_IN_POSITION.check(condition);
+	}
+	
+	private int countFlameskullsOnLeftSide() {
+		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left");
+	}
+	
+	private int countFlameskullsOnRightSide() {
+		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_right");
+	}
+	
+	private int countUnitsOnMap(String unitId) {
+		Array<CutsceneControlledUnit> allUnitsWithId = GameMapManager.getInstance().getMap().getAllUnitsWithId(unitId);
+		return allUnitsWithId.size;
 	}
 	
 	@Override

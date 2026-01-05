@@ -539,48 +539,60 @@ public class GameMapImplementation implements GameMap {
 	
 	@Override
 	public CutsceneControlledUnit getUnitById(String unitId) {
+		Array<CutsceneControlledUnit> allUnitsWithId = getAllUnitsWithId(unitId);
+		
+		if (allUnitsWithId.isEmpty()) {
+			return null;
+		}
+		return allUnitsWithId.first();
+	}
+	
+	@Override
+	public Array<CutsceneControlledUnit> getAllUnitsWithId(String unitId) {
+		Array<CutsceneControlledUnit> units = new Array<>();
+		
 		if (CutsceneHandler.CONTROLLED_UNIT_ID_PLAYER.equals(unitId)) {
-			return player;
+			units.add(player);
 		}
 		
 		Array<Enemy> copyOfEnemies = new Array<>(enemies); // a copy is needed to avoid a nested iteration (when an enemy tries to find a unit by id)
 		for (Enemy enemy : copyOfEnemies) {
 			if (unitId.equals(enemy.getUnitId())) {
-				return enemy;
+				units.add(enemy);
 			}
 		}
 		
 		for (NonPlayableCharacter npc : nonPlayableCharacters) {
 			if (unitId.equals(npc.getUnitId())) {
-				return npc;
+				units.add(npc);
 			}
 		}
 		
 		for (Animal animal : animals) {
 			if (unitId.equals(animal.getUnitId())) {
-				return animal;
+				units.add(animal);
 			}
 		}
 		
 		for (GameObject object : objects) {
 			if (unitId.equals(object.getUnitId())) {
-				return object;
+				units.add(object);
 			}
 		}
 		
 		for (GameObject object : objectsAbovePlayer) {
 			if (unitId.equals(object.getUnitId())) {
-				return object;
+				units.add(object);
 			}
 		}
 		
 		for (Item item : items) {
 			if (unitId.equals(item.getUnitId())) {
-				return item;
+				units.add(item);
 			}
 		}
 		
-		return null;
+		return units;
 	}
 	
 	@Override

@@ -23,7 +23,97 @@
 				
 				attackTimerConfig: {
 					type: FIXED,
-					fixedTime: 1.5f,
+					fixedTime: 2f,
+				},
+				attackDistance: 10f,
+				minDistanceToTargetPlayer: 5f,
+				
+				subAI: {
+					type: FIGHT_AI,
+				
+					stateNameAttack: attack_fireball_multiple,
+					
+					attackTimerConfig: {
+						type: RANDOM_INTERVAL,
+						minTimeBetweenAttacks: 8f,
+						maxTimeBetweenAttacks: 10f,
+					},
+					attackDistance: 10f,
+					minDistanceToTargetPlayer: 5f,
+					
+					subAI: {
+						type: FIGHT_AI,
+					
+						stateNameAttack: attack_burst,
+						
+						attackTimerConfig: {
+							type: RANDOM_INTERVAL,
+							minTimeBetweenAttacks: 12f,
+							maxTimeBetweenAttacks: 15f,
+						},
+						
+						attackDistance: 10f,
+						minDistanceToTargetPlayer: 5f,
+						
+						subAI: {
+							type: RUN_AWAY_AI,
+							
+							stateNameMove: move,
+							stateNameIdle: idle,
+							
+							distanceToKeepFromPlayer: 4.5f,
+							distanceToStopRunning: 0f,
+							
+							subAI: {
+								type: FOLLOW_AI,
+								
+								stateNameMove: move,
+								stateNameIdle: idle,
+								
+								minDistanceToTargetPlayer: 5f,
+								
+								subAI: {
+									type: PRE_DEFINED_MOVEMENT_AI,
+									
+									stateNameMove: move,
+									stateNameIdle: idle,
+									
+									distanceToKeepFromPlayer: 4.5f,
+									
+									useRelativePositions: true,
+									
+									subAI: {
+										type: BASE_AI,
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		
+		flameskull_no_charge_attack: {
+			type: FIGHT_AI,
+			
+			stateNameAttack: attack_fireball,
+			
+			attackTimerConfig: {
+				type: FIXED,
+				fixedTime: 2f,
+			},
+			attackDistance: 10f,
+			minDistanceToTargetPlayer: 5f,
+			
+			subAI: {
+				type: FIGHT_AI,
+			
+				stateNameAttack: attack_fireball_multiple,
+				
+				attackTimerConfig: {
+					type: RANDOM_INTERVAL,
+					minTimeBetweenAttacks: 8f,
+					maxTimeBetweenAttacks: 10f,
 				},
 				attackDistance: 10f,
 				minDistanceToTargetPlayer: 5f,
@@ -35,8 +125,8 @@
 					
 					attackTimerConfig: {
 						type: RANDOM_INTERVAL,
-						minTimeBetweenAttacks: 5f,
-						maxTimeBetweenAttacks: 8f,
+						minTimeBetweenAttacks: 12f,
+						maxTimeBetweenAttacks: 15f,
 					},
 					
 					attackDistance: 10f,

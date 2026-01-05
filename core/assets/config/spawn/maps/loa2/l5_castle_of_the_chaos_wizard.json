@@ -21,21 +21,45 @@
 	},
 	
 	enemy__flameskull__spire_left: {
-		spawnType: enemy.flameskulll,
+		spawnType: enemy.flameskull,
+        spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left\"}",
 		complexEvents: [
         	{
 				eventType: CUSTCENE_SPAWN_UNIT,
-		        stringValue: flameskull_spire_left,
+		        stringValue: flameskull__castle_of_the_chaos_wizard_spire__left,
 			}
         ],
 	},
 	
 	enemy__flameskull__spire_right: {
-        spawnType: enemy.flameskulll,
+        spawnType: enemy.flameskull,
+        spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_right\"}",
         complexEvents: [
 			{
                 eventType: CUSTCENE_SPAWN_UNIT,
-                stringValue: flameskull_spire_right,
+                stringValue: flameskull__castle_of_the_chaos_wizard_spire__right,
+			}
+		],
+	},
+	
+	enemy__flameskull__no_charge_attack__spire_left: {
+		spawnType: enemy.flameskull,
+        spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left\", aiType: \"flameskull_no_charge_attack\"}",
+		complexEvents: [
+        	{
+				eventType: CUSTCENE_SPAWN_UNIT,
+		        stringValue: flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__left,
+			}
+        ],
+	},
+	
+	enemy__flameskull__no_charge_attack__spire_right: {
+        spawnType: enemy.flameskull,
+        spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_right\", aiType: \"flameskull_no_charge_attack\"}",
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__right,
 			}
 		],
 	},

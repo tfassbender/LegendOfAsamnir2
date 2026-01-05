@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="557">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="569">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -726,11 +726,6 @@
    </properties>
    <point/>
   </object>
-  <object id="554" name="object.configObject" x="320" y="736" width="607.833" height="223.333">
-   <properties>
-    <property name="unitId" value="config_object__chaos_wizard_spire__area_bottom"/>
-   </properties>
-  </object>
   <object id="555" name="object.configObject" x="320" y="311" width="607.833" height="201">
    <properties>
     <property name="unitId" value="config_object__chaos_wizard_spire__area_top"/>
@@ -740,6 +735,57 @@
    <properties>
     <property name="unitId" value="config_object__chaos_wizard_spire__area_middle"/>
    </properties>
+  </object>
+  <object id="557" name="object.configObject" x="320" y="310" width="303.166" height="649.667">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__area_left"/>
+   </properties>
+  </object>
+  <object id="558" name="object.configObject" x="625.084" y="309.833" width="303.166" height="649.667">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__area_right"/>
+   </properties>
+  </object>
+  <object id="559" name="object.configObject" x="386.083" y="706.333" width="607.833" height="223.333">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__area_bottom"/>
+   </properties>
+  </object>
+  <object id="561" name="object.spawnPoint.flameskull" x="512" y="544">
+   <properties>
+    <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="562" name="object.spawnPoint.flameskull" x="544" y="624">
+   <properties>
+    <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="563" name="object.spawnPoint.flameskull" x="512" y="704">
+   <properties>
+    <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="564" name="object.spawnPoint.flameskull" x="736" y="544">
+   <properties>
+    <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="567" name="object.spawnPoint.flameskull" x="736" y="704">
+   <properties>
+    <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="568" name="object.spawnPoint.flameskull" x="704" y="625">
+   <properties>
+    <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_right"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">

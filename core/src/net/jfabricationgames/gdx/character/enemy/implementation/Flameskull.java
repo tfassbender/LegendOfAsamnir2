@@ -23,6 +23,12 @@ public class Flameskull extends Enemy implements CharacterStateChangeListener {
 	@Override
 	public void onCharacterStateChange(CharacterState oldState, CharacterState newState) {
 		if ("attack_fireball".equals(newState.getStateName())) {
+			Vector2 targetDirection = getTargetDirection(1, 1);
+			if (targetDirection != null) {
+				attackHandler.startAttack("attack", targetDirection);
+			}
+		}
+		else if ("attack_fireball_multiple".equals(newState.getStateName())) {
 			int projectiles = 3;
 			for (int i = 0; i < projectiles; i++) {
 				Vector2 targetDirection = getTargetDirection(i, projectiles);

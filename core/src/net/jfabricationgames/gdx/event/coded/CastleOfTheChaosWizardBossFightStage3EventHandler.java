@@ -16,11 +16,21 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 		// TODO delete after tests
 		//		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
 		//			if ("loa2_l5_castle_of_the_chaos_wizard__spire__test".equals(event.stringValue)) {
-		//				// turn off the magic energy line
-		//				EventHandler.getInstance().fireEvent(new EventConfig() //
-		//						.setEventType(EventType.DISPLAY_ANIMATION_GAME_OBJECT) //
-		//						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_left") //
-		//						.setBooleanValue(true));
+		//				if (isPlayerOnLeftSide()) {
+		//					if (countFlameskullsOnLeftSide() < 3) {
+		//						EventHandler.getInstance().fireEvent(new EventConfig() //
+		//								.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+		//								.setStringValue("flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__left"));
+		//					}
+		//				}
+		//				else {
+		//					// the map is divided in left and right - the sides take up the whole reachable area -> the player has to be on the right side
+		//					if (countFlameskullsOnRightSide() < 3) {
+		//						EventHandler.getInstance().fireEvent(new EventConfig() //
+		//								.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+		//								.setStringValue("flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__right"));
+		//					}
+		//				}
 		//			}
 		//		}
 		
@@ -67,4 +77,34 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 			}
 		}
 	}
+	
+	//************************************************
+	//*** TODO test methods - to be deleted later
+	//************************************************
+	
+	//	private boolean isPlayerOnLeftSide() {
+	//		return isPlayerInArea("config_object__chaos_wizard_spire__area_left");
+	//	}
+	//	
+	//	private boolean isPlayerInArea(String areaConfigObjectUnitId) {
+	//		Condition condition = new Condition();
+	//		condition.parameters = new ObjectMap<>();
+	//		condition.parameters.put("objectId", "PLAYER");
+	//		condition.parameters.put("targetAreaObjectId", areaConfigObjectUnitId);
+	//		
+	//		return ConditionType.OBJECT_IN_POSITION.check(condition);
+	//	}
+	//	
+	//	private int countFlameskullsOnLeftSide() {
+	//		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left");
+	//	}
+	//	
+	//	private int countFlameskullsOnRightSide() {
+	//		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_right");
+	//	}
+	//	
+	//	private int countUnitsOnMap(String unitId) {
+	//		Array<CutsceneControlledUnit> allUnitsWithId = GameMapManager.getInstance().getMap().getAllUnitsWithId(unitId);
+	//		return allUnitsWithId.size;
+	//	}
 }

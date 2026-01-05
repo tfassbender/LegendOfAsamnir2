@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			move, attack_fireball, attack_burst, attack_charge, damage, die
+			move, attack_fireball, attack_fireball_multiple, attack_burst, attack_charge, damage, die
 		]
 	},
 	{
@@ -14,11 +14,22 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack_fireball, attack_burst, attack_charge, damage, die
+			idle, attack_fireball, attack_fireball_multiple, attack_burst, attack_charge, damage, die
 		]
 	},
 	{
 		id: attack_fireball,
+		animation: skullflame_summon,
+		// the attack will be executed by the implmeenting class
+		stateEnteringSound: magic_fire_ball,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			die,
+		]
+	},
+	{
+		id: attack_fireball_multiple,
 		animation: skullflame_summon,
 		// the attack will be executed by the implmeenting class
 		stateEnteringSound: magic_fire_ball,
@@ -56,7 +67,7 @@
 		endsWithAnimation: true,
         followingState: idle,
 		interruptingStates: [
-			attack_fireball, attack_burst, attack_charge, die
+			attack_fireball, attack_fireball_multiple, attack_burst, attack_charge, die
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
