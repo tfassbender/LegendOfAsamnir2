@@ -1,0 +1,21 @@
+[
+	// the default enemy implementation needs the states idle and move
+	{
+		id: idle,
+		animation: empty,
+		endsWithAnimation: false,
+		followingState: idle,
+		interruptingStates: [
+			move
+		]
+	},
+	{
+		id: move,
+		animation: empty,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle
+		]
+	},
+]

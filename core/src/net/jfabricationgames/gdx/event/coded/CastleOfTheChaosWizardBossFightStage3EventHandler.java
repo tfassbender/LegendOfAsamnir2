@@ -16,21 +16,10 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 		// TODO delete after tests
 		//		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
 		//			if ("loa2_l5_castle_of_the_chaos_wizard__spire__test".equals(event.stringValue)) {
-		//				if (isPlayerOnLeftSide()) {
-		//					if (countFlameskullsOnLeftSide() < 3) {
-		//						EventHandler.getInstance().fireEvent(new EventConfig() //
-		//								.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
-		//								.setStringValue("flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__left"));
-		//					}
-		//				}
-		//				else {
-		//					// the map is divided in left and right - the sides take up the whole reachable area -> the player has to be on the right side
-		//					if (countFlameskullsOnRightSide() < 3) {
-		//						EventHandler.getInstance().fireEvent(new EventConfig() //
-		//								.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
-		//								.setStringValue("flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__right"));
-		//					}
-		//				}
+		//				EventHandler.getInstance().fireEvent(new EventConfig() //
+		//						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+		//						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__bomb_repelling_dummy__active") //
+		//						.setBooleanValue(true));
 		//			}
 		//		}
 		

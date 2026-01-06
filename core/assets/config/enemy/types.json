@@ -1931,6 +1931,27 @@
         },
 	},
 	
+	bomb_repelling_dummy: {
+		// not a real enemy - but there is an AI that repels bombs, so this is the easiest way to implement it
+		typeName: bomb_repelling_dummy,
+		
+		animationsConfig: config/animation/empty.json,
+		stateConfig: config/enemy/states/bomb_repelling_dummy.json,
+		initialState: idle,
+		attackConfig: config/enemy/attack/bomb_repelling_dummy.json,
+		
+		health: 1, // cannot be attacked
+		movingSpeed: 0,
+		
+		bodyShape: CIRCLE,
+		bodyRadius: 0.1f, // should not collide with the player
+		
+		addSensor: true,
+		sensorRadius: 3f,
+		
+		usesHealthBar: false,
+	},
+	
 	chaos_wizard: {
 		typeName: chaos_wizard,
 		

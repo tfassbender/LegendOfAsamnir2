@@ -43,7 +43,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private static final float lastStageHealthFactor = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int stages = 7; // the number of stages - in each stage the boss has to be attacked once
-	private int currentStage = 1;
+	private int currentStage = 3; // TODO set to 1 after tests
 	
 	private int fireballsToShoot = 0;
 	private float fireballShotTimer = 0f;
@@ -186,16 +186,22 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
 						.setStringValue("config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"));
 				
+				// currentStage is the stage after the hit -> trigger events depending on the new stage
 				switch (currentStage) {
 					case 2:
 						startFirstCutsceneDelayTimer = 0.5f;
 						break;
 					case 3:
 						changeToCastStateToRestoreObelisks();
+						spawnFlameskullsWhenEnteringCastStage = true;
 						break;
 					case 4:
 						changeToCastStateToRestoreObelisks();
-						spawnFlameskullsWhenEnteringCastStage = true;
+						setObelisksRepellBombs(true);
+						break;
+					case 5:
+						// no obelisks in this stage
+						// TODO cutscene: vorpal laserblaster of pittenweem
 						break;
 				}
 			}
@@ -233,6 +239,13 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		restoreObelisksWhenEnteringCastStage = true;
 		CharacterState castState = stateMachine.getState(STATE_NAME_CAST);
 		stateMachine.setOverridingFollowingState(castState, 3); // use the cast state three times after the current state finishes
+	}
+	
+	private void setObelisksRepellBombs(boolean active) {
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__bomb_repelling_dummy__active") //
+				.setBooleanValue(active));
 	}
 	
 	private void restoreObelisks() {

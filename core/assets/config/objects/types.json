@@ -214,7 +214,7 @@
 		
 		destroySound: rock_break,
 		health: 5,
-		requiredAttackType: BOMB,
+		requiredAttackTypes: [BOMB],
 	},
 	spawnPoint: {
 		type: SPAWN_POINT,
@@ -1073,7 +1073,7 @@
 		physicsBodyOffsetFactorYAfterDestroyed: -0.055f,
 		
 		health: 1,
-		requiredAttackType: BOMB,
+		requiredAttackTypes: [BOMB, HOMING_MAGIC_BLAST],
 	},
 	
 	magic_energy_line: {

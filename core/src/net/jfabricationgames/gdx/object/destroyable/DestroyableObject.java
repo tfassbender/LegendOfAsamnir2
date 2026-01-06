@@ -65,7 +65,7 @@ public class DestroyableObject extends GameObject implements EventListener {
 		}
 		
 		AttackType attackType = attackInfo.getAttackType();
-		if (attackType.isSubTypeOf(typeConfig.requiredAttackType)) {
+		if (isRequiredAttackType(attackType)) {
 			health -= damage;
 			
 			if (health <= 0) {
@@ -76,6 +76,19 @@ public class DestroyableObject extends GameObject implements EventListener {
 		
 		animation = getHitAnimation();
 		playHitSound();
+	}
+	
+	private boolean isRequiredAttackType(AttackType attackType) {
+		if (typeConfig.requiredAttackTypes == null || typeConfig.requiredAttackTypes.isEmpty()) {
+			return attackType.isSubTypeOf(AttackType.ATTACK);
+		}
+		
+		for (AttackType requiredType : typeConfig.requiredAttackTypes) {
+			if (attackType.isSubTypeOf(requiredType)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	@Override

@@ -1,8 +1,10 @@
 package net.jfabricationgames.gdx.character.ai.implementation;
 
 import java.util.Objects;
+import java.util.function.Supplier;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
@@ -17,6 +19,7 @@ public class MultiAttackAI extends AbstractAttackAI {
 	protected ArrayMap<String, CharacterState> attackStates;
 	protected ArrayMap<CharacterState, Float> attackDistances;
 	protected ArrayMap<CharacterState, AttackTimer> attackTimers; // if used it overrules the inherited attackTimer for the specific attack
+	protected ArrayMap<CharacterState, Supplier<Vector2>> attackDirectionSuppliers = new ArrayMap<>();
 	
 	private boolean moveToPlayerWhileAttacking = true;
 	
@@ -158,6 +161,19 @@ public class MultiAttackAI extends AbstractAttackAI {
 		}
 		
 		return stateApplied;
+	}
+	
+	@Override
+	protected Vector2 getAttackDirection() {
+		if (attackDirectionSuppliers.containsKey(attackState)) {
+			return attackDirectionSuppliers.get(attackState).get();
+		}
+		
+		return super.getAttackDirection();
+	}
+	
+	public void setAttackDirectionSupplier(CharacterState attackState, Supplier<Vector2> attackDirectionSupplier) {
+		attackDirectionSuppliers.put(attackState, attackDirectionSupplier);
 	}
 	
 	protected boolean isInRangeForAttack(CharacterState attack, float distanceToTarget) {

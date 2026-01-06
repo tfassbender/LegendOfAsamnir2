@@ -1,8 +1,11 @@
 package net.jfabricationgames.gdx.character.enemy.implementation;
 
+import java.util.function.Supplier;
+
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
+import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
@@ -14,6 +17,8 @@ import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
+import net.jfabricationgames.gdx.condition.Condition;
+import net.jfabricationgames.gdx.condition.ConditionType;
 import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventListener;
@@ -55,30 +60,65 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 	
 	private ArtificialIntelligence createLichAttackAI(ArtificialIntelligence ai) {
 		String stateNameAttackArcaneShower = "attack_arcane_shower";
+		String stateNameAttackMagicBlast = "attack_charge_magic_blast";
 		
 		CharacterState characterStateAttackMagicFireBall = stateMachine.getState(STATE_NAME_ATTACK_MAGIC_FIRE_BALL);
 		CharacterState characterStateAttackArcaneShower = stateMachine.getState(stateNameAttackArcaneShower);
+		CharacterState characterStateAttackMagicBlast = stateMachine.getState(stateNameAttackMagicBlast);
 		
 		ArrayMap<String, CharacterState> attackStates = new ArrayMap<>();
 		attackStates.put(STATE_NAME_ATTACK_MAGIC_FIRE_BALL, characterStateAttackMagicFireBall);
 		attackStates.put(stateNameAttackArcaneShower, characterStateAttackArcaneShower);
+		attackStates.put(stateNameAttackMagicBlast, characterStateAttackMagicBlast);
 		
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
 		attackDistances.put(characterStateAttackMagicFireBall, 10f);
 		float arcaneShowerDistance = battleStage < 2 ? 0f : 10f; // don't use the arcane shower in the first battle stage (range restricted to 0)
 		attackDistances.put(characterStateAttackArcaneShower, arcaneShowerDistance);
+		float magicBlastDistance = battleStage < 4 ? 0f : 10f; // use the magic blast from battle stage 4 on (range restricted to 0 before that)
+		attackDistances.put(characterStateAttackMagicBlast, magicBlastDistance);
 		
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
 		attackTimers.put(characterStateAttackMagicFireBall, new RandomIntervalAttackTimer(4f, 6f));
 		attackTimers.put(characterStateAttackArcaneShower, new RandomIntervalAttackTimer(8f, 10f));
+		attackTimers.put(characterStateAttackMagicBlast, new RandomIntervalAttackTimer(10f, 12f));
 		
 		MultiAttackAI attackAI = new MultiAttackAI(ai, attackStates, attackDistances, attackTimers);
 		attackAI.setMoveToPlayerWhileAttacking(false);
 		attackAI.setTargetingPlayer(Player.getInstance()); // the player might already be inside the sensor range, so set the target immediately
-		attackAI.resetAttackTimer(stateNameAttackArcaneShower);
 		attackAI.resetAttackTimer(STATE_NAME_ATTACK_MAGIC_FIRE_BALL);
+		attackAI.resetAttackTimer(stateNameAttackArcaneShower);
+		attackAI.resetAttackTimer(stateNameAttackMagicBlast);
+		
+		// make the magic blast (aiming projectiles) aim to the side, but not directly at the player - this way it's harder to lead them to the obelisks
+		Supplier<Vector2> magicBlastAttackDirectionSupplier = this::directionToPlayerSide;
+		attackAI.setAttackDirectionSupplier(characterStateAttackMagicBlast, magicBlastAttackDirectionSupplier);
+		
+		// TODO the magic blast (aiming projectile) has to behave like an inherit mass for the direction supplier to be effective
 		
 		return attackAI;
+	}
+	
+	private Vector2 directionToPlayerSide() {
+		if (isPlayerOnLeftSide()) {
+			return new Vector2(-1, 0); // aim to the left side
+		}
+		else {
+			return new Vector2(1, 0); // aim to the right side
+		}
+	}
+	
+	private boolean isPlayerOnLeftSide() {
+		return isPlayerInArea("config_object__chaos_wizard_spire__area_left");
+	}
+	
+	private boolean isPlayerInArea(String areaConfigObjectUnitId) {
+		Condition condition = new Condition();
+		condition.parameters = new ObjectMap<>();
+		condition.parameters.put("objectId", "PLAYER");
+		condition.parameters.put("targetAreaObjectId", areaConfigObjectUnitId);
+		
+		return ConditionType.OBJECT_IN_POSITION.check(condition);
 	}
 	
 	@Override

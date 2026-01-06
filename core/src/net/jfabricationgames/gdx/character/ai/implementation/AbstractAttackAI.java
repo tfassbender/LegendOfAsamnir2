@@ -1,5 +1,7 @@
 package net.jfabricationgames.gdx.character.ai.implementation;
 
+import java.util.function.Supplier;
+
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Contact;
 
@@ -15,6 +17,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	protected PlayableCharacter targetingPlayer;
 	protected Vector2 targetingPlayerLastKnownPosition;
 	protected AttackTimer attackTimer;
+	protected Supplier<Vector2> attackDirectionSupplier = this::directionToTarget;
 	
 	/** The distance till which the enemy follows the player (to not push him if to near) */
 	protected float minDistanceToTargetPlayer = 1f;
@@ -29,7 +32,7 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	
 	protected boolean changeToAttackState() {
 		if (attackTimer.timeToAttack() && targetAlive()) {
-			attackState.setAttackDirection(directionToTarget());
+			attackState.setAttackDirection(getAttackDirection());
 			attackState.setAttackTargetPositionSupplier(this::getTargetPlayerPosition);
 			boolean changedState = stateMachine.setState(attackState);
 			if (changedState) {
@@ -43,6 +46,10 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	
 	private boolean targetAlive() {
 		return targetingPlayer != null && targetingPlayer.isAlive();
+	}
+	
+	protected Vector2 getAttackDirection() {
+		return attackDirectionSupplier.get();
 	}
 	
 	protected boolean inAttackState() {
@@ -110,5 +117,9 @@ public abstract class AbstractAttackAI extends AbstractArtificialIntelligence {
 	
 	public void setMinDistanceToTargetPlayer(float minDistanceToTargetPlayer) {
 		this.minDistanceToTargetPlayer = minDistanceToTargetPlayer;
+	}
+	
+	public void setAttackDirectionSupplier(Supplier<Vector2> attackDirectionSupplier) {
+		this.attackDirectionSupplier = attackDirectionSupplier;
 	}
 }

@@ -68,7 +68,7 @@ public class GameObjectTypeConfig {
 	public boolean removeAfterBreak = true;
 	public String destroySound;
 	public float health = 0f;
-	public AttackType requiredAttackType = AttackType.ATTACK;
+	public Array<AttackType> requiredAttackTypes = new Array<>();
 	public boolean revertBreakAnimationOnRestore = false;
 	public EventConfig restoreEvent;
 	

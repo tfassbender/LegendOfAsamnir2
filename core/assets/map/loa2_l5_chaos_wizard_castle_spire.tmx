@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="569">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="577">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -155,7 +155,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,3709,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3709,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,3709,0,0,263,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,263,0,0,3709,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -174,7 +174,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1740,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1772,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,3709,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3709,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,3709,0,0,263,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,263,0,0,3709,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,1740,0,0,0,1740,0,0,0,0,0,0,0,1740,0,0,0,1740,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,1772,0,0,0,1772,0,0,0,0,0,0,0,1772,0,0,0,1772,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -746,7 +746,7 @@
     <property name="unitId" value="config_object__chaos_wizard_spire__area_right"/>
    </properties>
   </object>
-  <object id="559" name="object.configObject" x="386.083" y="706.333" width="607.833" height="223.333">
+  <object id="559" name="object.configObject" x="319.083" y="736.333" width="607.833" height="223.333">
    <properties>
     <property name="unitId" value="config_object__chaos_wizard_spire__area_bottom"/>
    </properties>
@@ -784,6 +784,42 @@
   <object id="568" name="object.spawnPoint.flameskull" x="704" y="625">
    <properties>
     <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_right"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="569" name="enemy.bomb_repelling_dummy" x="536.667" y="723.394">
+   <point/>
+  </object>
+  <object id="570" name="enemy.bomb_repelling_dummy" x="536.485" y="532.212">
+   <point/>
+  </object>
+  <object id="571" name="enemy.bomb_repelling_dummy" x="711.333" y="532.424">
+   <point/>
+  </object>
+  <object id="572" name="enemy.bomb_repelling_dummy" x="711" y="723.455">
+   <point/>
+  </object>
+  <object id="573" name="object.spawnPoint.mana" x="336.484" y="336.594">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="574" name="object.spawnPoint.mana" x="336.519" y="944.568">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="575" name="object.spawnPoint.mana" x="912.478" y="944.565">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="576" name="object.spawnPoint.mana" x="912.531" y="336.469">
+   <properties>
+    <property name="spawn" value="playerManaNotFull"/>
    </properties>
    <point/>
   </object>

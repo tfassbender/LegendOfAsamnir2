@@ -1,5 +1,17 @@
 {
 	//*******************************************
+	//*** spire
+	//*******************************************
+	
+	loa2_l5_castle_of_the_chaos_wizard__spire__repell_bombs_from_obelisks: {
+        conditionType: GLOBAL_VALUE_SET,
+        parameters: {
+            key: loa2_l5_castle_of_the_chaos_wizard__spire__repell_bombs_from_obelisks,
+            expectedValue: true,
+		}
+	},
+
+	//*******************************************
 	//*** throne room
 	//*******************************************
 	

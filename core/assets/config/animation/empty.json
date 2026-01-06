@@ -1,0 +1,9 @@
+{
+	configList: 
+	[
+		{
+			name: empty,
+			atlas: packed/demo/demo.atlas,
+		},
+	]
+}
