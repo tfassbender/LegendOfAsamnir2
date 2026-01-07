@@ -1073,7 +1073,7 @@
 		physicsBodyOffsetFactorYAfterDestroyed: -0.055f,
 		
 		health: 1,
-		requiredAttackTypes: [BOMB, HOMING_MAGIC_BLAST],
+		requiredAttackTypes: [BOMB, LICH_MINION_MAGIC_BLAST],
 	},
 	
 	magic_energy_line: {

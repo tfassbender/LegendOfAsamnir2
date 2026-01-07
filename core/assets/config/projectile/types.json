@@ -601,6 +601,24 @@
 		timeActive: 5,
 	},
 	
+	homing_magic_blast_inertial_mass: {
+		attackType: LICH_MINION_MAGIC_BLAST,
+		
+		animation: lich_spell_projectile_move,
+		animationHit: lich_spell_projectile_hit,
+		textureInitialRotation: 0,
+		textureScale: 1,
+		removeAfterAnimationFinished: false,
+		removeAfterHit: true,
+		
+		multipleHitsPossible: false,
+		
+		speed: 15,
+		damping: 0.5,
+		dampingAfterObjectHit: 10,
+		timeActive: 10,
+	},
+	
 	homing_fire_ball: {
 		attackType: HOMING_MAGIC_BLAST,
 		

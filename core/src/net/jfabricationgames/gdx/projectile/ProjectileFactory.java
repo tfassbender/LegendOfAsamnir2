@@ -138,6 +138,13 @@ public class ProjectileFactory {
 			case HOMING_MAGIC_BLAST:
 				projectile = new HomingProjectile(typeConfig, attackConfig, animation, gameMap);
 				break;
+			case HOMING_MAGIC_BLAST_INERTIAL_MASS:
+				projectile = new HomingInertialMassProjectile(typeConfig, attackConfig, animation, gameMap);
+				break;
+			case LICH_MINION_MAGIC_BLAST:
+				projectile = new LichMinionMagicBlastProjectile(typeConfig, attackConfig, animation, gameMap);
+				((LichMinionMagicBlastProjectile) projectile).setInitialDirection(direction);
+				break;
 			case ANIMATED_PROJECTILE:
 				projectile = new AnimatedProjectile(typeConfig, attackConfig, animation, gameMap);
 				break;

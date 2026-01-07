@@ -1,7 +1,5 @@
 package net.jfabricationgames.gdx.character.enemy.implementation;
 
-import java.util.function.Supplier;
-
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
@@ -60,7 +58,7 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 	
 	private ArtificialIntelligence createLichAttackAI(ArtificialIntelligence ai) {
 		String stateNameAttackArcaneShower = "attack_arcane_shower";
-		String stateNameAttackMagicBlast = "attack_charge_magic_blast";
+		String stateNameAttackMagicBlast = "attack_charge_magic_blast_inertial_mass_projectile";
 		
 		CharacterState characterStateAttackMagicFireBall = stateMachine.getState(STATE_NAME_ATTACK_MAGIC_FIRE_BALL);
 		CharacterState characterStateAttackArcaneShower = stateMachine.getState(stateNameAttackArcaneShower);
@@ -91,10 +89,9 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 		attackAI.resetAttackTimer(stateNameAttackMagicBlast);
 		
 		// make the magic blast (aiming projectiles) aim to the side, but not directly at the player - this way it's harder to lead them to the obelisks
-		Supplier<Vector2> magicBlastAttackDirectionSupplier = this::directionToPlayerSide;
-		attackAI.setAttackDirectionSupplier(characterStateAttackMagicBlast, magicBlastAttackDirectionSupplier);
-		
-		// TODO the magic blast (aiming projectile) has to behave like an inherit mass for the direction supplier to be effective
+		attackAI.setAttackDirectionSupplier(characterStateAttackMagicBlast, this::directionToPlayerSide);
+		// set the target direction supplier to the state that creates the attack (the other state is just the initial animation)
+		stateMachine.getState("attack_cast_magic_blast_inertial_mass_projectile").setTargetDirectionSupplier(this::directionToPlayerSide);
 		
 		return attackAI;
 	}

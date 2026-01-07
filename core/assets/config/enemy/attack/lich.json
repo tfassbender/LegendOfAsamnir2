@@ -61,6 +61,15 @@
 		canBeBlockedCompletely: false,
 		pushForce: 50,
 	},
+	{
+		id: attack_homing_magic_blast_inertial_mass_projectile,
+        type: LICH_MINION_MAGIC_BLAST,
+		projectileType: homing_magic_blast_inertial_mass,
+		delay: 0.1,
+        damage: 10,
+		canBeBlockedCompletely: false,
+		pushForce: 50,
+	},
 	
 	// minion of the chaos wizard
 	

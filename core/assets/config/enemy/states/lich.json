@@ -115,7 +115,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-        	move, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
+        	move, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, attack_charge_magic_blast_inertial_mass_projectile, damage, die
         ]
 	},
 	{
@@ -124,7 +124,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-            idle, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, damage, die
+            idle, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, attack_charge_magic_blast_inertial_mass_projectile, damage, die
         ]
 	},
 	
@@ -134,7 +134,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			die, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast
+			die, attack_magic_fire_ball, attack_charge, attack_rage_nova, attack_arcane_shower, attack_charge_magic_blast, attack_charge_magic_blast_inertial_mass_projectile
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
@@ -197,7 +197,7 @@
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
-        	die, attack_arcane_shower, attack_charge_magic_blast
+        	die, attack_arcane_shower, attack_charge_magic_blast, attack_charge_magic_blast_inertial_mass_projectile
         ]
 	},
 	
@@ -257,6 +257,28 @@
         id: attack_cast_magic_blast,
         animation: lich_cast,
 		attack: attack_homing_magic_blast,
+        endsWithAnimation: true,
+        followingState: idle,
+        interruptingStates: [
+        	die
+        ]
+	},
+	
+	// prepare the magic blast attack with an inertial mass projectile
+	{
+        id: attack_charge_magic_blast_inertial_mass_projectile, 
+        animation: lich_charge,
+        endsWithAnimation: true,
+        followingState: attack_cast_magic_blast_inertial_mass_projectile,
+        interruptingStates: [
+        	die
+        ]
+	},
+	// magic blast attack that follows the player
+	{
+        id: attack_cast_magic_blast_inertial_mass_projectile,
+        animation: lich_cast,
+		attack: attack_homing_magic_blast_inertial_mass_projectile,
         endsWithAnimation: true,
         followingState: idle,
         interruptingStates: [
