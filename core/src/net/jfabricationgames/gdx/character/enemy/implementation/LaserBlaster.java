@@ -14,6 +14,8 @@ import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
 
 public class LaserBlaster extends Enemy implements CharacterStateChangeListener {
@@ -22,6 +24,8 @@ public class LaserBlaster extends Enemy implements CharacterStateChangeListener 
 	
 	public LaserBlaster(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
+		
+		stateMachine.addChangeListener(this);
 	}
 	
 	@Override
@@ -80,5 +84,28 @@ public class LaserBlaster extends Enemy implements CharacterStateChangeListener 
 	@Override
 	public void takeDamage(float damage, AttackInfo attackInfo) {
 		// the laser blaster is immune to damage
+	}
+	
+	@Override
+	public void handleEvent(EventConfig event) {
+		super.handleEvent(event);
+		
+		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType) //
+				&& "loa2_l5_castle_of_the_chaos_wizard_spire__activate_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue) //
+				&& getUnitId().equals(event.parameterObject)) { // use the parameter object as second string parameter
+			stateMachine.setState("appear");
+		}
+		else if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType) //
+				&& "loa2_l5_castle_of_the_chaos_wizard_spire__deactivate_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue) //
+				&& getUnitId().equals(event.parameterObject)) { // use the parameter object as second string parameter
+			stateMachine.setState("disappear");
+		}
+	}
+	
+	@Override
+	public void removeFromMap() {
+		super.removeFromMap();
+		
+		stateMachine.removeChangeListener(this);
 	}
 }

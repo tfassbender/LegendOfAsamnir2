@@ -163,4 +163,11 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 			createAI(); // recreate the AI to adjust the attacks that are used
 		}
 	}
+	
+	@Override
+	public void removeFromMap() {
+		super.removeFromMap();
+		
+		stateMachine.removeChangeListener(this);
+	}
 }

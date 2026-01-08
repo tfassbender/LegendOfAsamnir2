@@ -1,5 +1,9 @@
 package net.jfabricationgames.gdx.event.coded;
 
+import com.badlogic.gdx.utils.ObjectMap;
+
+import net.jfabricationgames.gdx.condition.Condition;
+import net.jfabricationgames.gdx.condition.ConditionType;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -64,25 +68,52 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 				obeliskDestroyedBottomLeft = false;
 				obeliskDestroyedBottomRight = false;
 			}
+			else if ("activate_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue)) {
+				if (isPlayerOnLeftSide()) {
+					EventHandler.getInstance().fireEvent(new EventConfig() //
+							.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+							.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__activate_vorpal_laser_blaster_of_pittenweem") //
+							.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_left"));
+				}
+				else {
+					EventHandler.getInstance().fireEvent(new EventConfig() //
+							.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+							.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__activate_vorpal_laser_blaster_of_pittenweem") //
+							.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_right"));
+				}
+			}
+			else if ("spawn_magic_flames_near_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue)) {
+				if (isPlayerOnLeftSide()) {
+					EventHandler.getInstance().fireEvent(new EventConfig() //
+							.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+							.setIntValue(1));
+				}
+				else {
+					EventHandler.getInstance().fireEvent(new EventConfig() //
+							.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+							.setIntValue(2));
+				}
+			}
 		}
+	}
+	
+	private boolean isPlayerOnLeftSide() {
+		return isPlayerInArea("config_object__chaos_wizard_spire__area_left");
+	}
+	
+	private boolean isPlayerInArea(String areaConfigObjectUnitId) {
+		Condition condition = new Condition();
+		condition.parameters = new ObjectMap<>();
+		condition.parameters.put("objectId", "PLAYER");
+		condition.parameters.put("targetAreaObjectId", areaConfigObjectUnitId);
+		
+		return ConditionType.OBJECT_IN_POSITION.check(condition);
 	}
 	
 	//************************************************
 	//*** TODO test methods - to be deleted later
 	//************************************************
 	
-	//	private boolean isPlayerOnLeftSide() {
-	//		return isPlayerInArea("config_object__chaos_wizard_spire__area_left");
-	//	}
-	//	
-	//	private boolean isPlayerInArea(String areaConfigObjectUnitId) {
-	//		Condition condition = new Condition();
-	//		condition.parameters = new ObjectMap<>();
-	//		condition.parameters.put("objectId", "PLAYER");
-	//		condition.parameters.put("targetAreaObjectId", areaConfigObjectUnitId);
-	//		
-	//		return ConditionType.OBJECT_IN_POSITION.check(condition);
-	//	}
 	//	
 	//	private int countFlameskullsOnLeftSide() {
 	//		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left");

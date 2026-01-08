@@ -43,7 +43,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private static final float lastStageHealthFactor = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int stages = 7; // the number of stages - in each stage the boss has to be attacked once
-	private int currentStage = 3; // TODO set to 1 after tests
+	private int currentStage = 4; // TODO set to 1 after tests
 	
 	private int fireballsToShoot = 0;
 	private float fireballShotTimer = 0f;
@@ -51,6 +51,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private float pushNovaDelayTimer = 0f;
 	private float startFirstCutsceneDelayTimer = 0f;
+	private float startSecondCutsceneDelayTimer = 0f;
 	
 	private float immortalityTimer = 0f;
 	
@@ -200,8 +201,8 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 						setObelisksRepellBombs(true);
 						break;
 					case 5:
-						// no obelisks in this stage
-						// TODO cutscene: vorpal laserblaster of pittenweem
+						// no obelisks in this stage - only the vorpal laser blaster of pittenweem
+						startSecondCutsceneDelayTimer = 0.5f;
 						break;
 				}
 			}
@@ -214,6 +215,16 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				EventHandler.getInstance().fireEvent(new EventConfig() //
 						.setEventType(EventType.START_CUTSCENE) //
 						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_first_damage_cutscene"));
+			}
+		}
+		
+		// start the second cutscene before the fifth phase
+		if (startSecondCutsceneDelayTimer > 0f) {
+			startSecondCutsceneDelayTimer -= delta;
+			if (startSecondCutsceneDelayTimer <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.START_CUTSCENE) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard__vorpal_laser_blaster_of_pittenweem_cutscene"));
 			}
 		}
 		
