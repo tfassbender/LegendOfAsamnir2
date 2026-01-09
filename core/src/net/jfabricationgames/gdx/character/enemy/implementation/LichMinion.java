@@ -157,10 +157,17 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 	public void handleEvent(EventConfig event) {
 		super.handleEvent(event);
 		
-		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType) //
-				&& "loa2_l5_castle_of_the_chaos_wizard__spire__change_battle_stage".equals(event.stringValue)) {
-			battleStage = event.intValue;
-			createAI(); // recreate the AI to adjust the attacks that are used
+		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType)) {
+			if ("loa2_l5_castle_of_the_chaos_wizard__spire__change_battle_stage".equals(event.stringValue)) {
+				battleStage = event.intValue;
+				createAI(); // recreate the AI to adjust the attacks that are used
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__abort_all_minion_attacks".equals(event.stringValue)) {
+				fireballsToShoot = 0;
+				fireballShotTimer = 0f;
+				attackHandler.abortAllAttacks();
+				stateMachine.forceStateChange(idleState);
+			}
 		}
 	}
 	

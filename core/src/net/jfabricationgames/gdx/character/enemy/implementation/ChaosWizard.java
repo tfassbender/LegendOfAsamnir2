@@ -373,6 +373,13 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		CharacterState pushNova = stateMachine.getState(STATE_NAME_BLAST_WITH_EFFECT);
 		stateMachine.setOverridingFollowingState(pushNova, 1); // use the push nova after the damage animation finishes
 		// the events that spawn the push attacks are started when the push nova state is entered
+		
+		fireballsToShoot = 0; // stop any fireball shooting that is in progress (because the player has no chance of avoiding them)
+		attackHandler.abortAllAttacks(); // will not abort the nova attack that was not started yet
+		// let all minions abort their attacks as well
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__abort_all_minion_attacks"));
 	}
 	
 	@Override
