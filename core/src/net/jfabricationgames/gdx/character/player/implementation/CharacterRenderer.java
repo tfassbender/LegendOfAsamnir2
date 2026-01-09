@@ -169,7 +169,7 @@ class CharacterRenderer {
 	}
 	
 	private boolean drawingDirectionEqualsTextureDirection(TextureRegion frame) {
-		return player.movementHandler.isDrawDirectionRight() != frame.isFlipX();
+		return player.inputProcessor.isDrawDirectionRight() != frame.isFlipX();
 	}
 	
 	private void draw(SpriteBatch batch, TextureRegion frame, float offsetX, float offsetY, float width, float height) {
@@ -202,7 +202,7 @@ class CharacterRenderer {
 	}
 	
 	private float getDrawingDirectionOffset() {
-		if (player.movementHandler.isDrawDirectionRight()) {
+		if (player.inputProcessor.isDrawDirectionRight()) {
 			return DRAWING_DIRECTION_OFFSET;
 		}
 		else {
@@ -213,7 +213,7 @@ class CharacterRenderer {
 	public void drawAimMarker(SpriteBatch batch) {
 		final float aimMarkerDistanceFactor = 0.5f;
 		final float aimMarkerOffsetY = -0.1f;
-		Vector2 aimMarkerOffset = player.movementHandler.getMovingDirection().getNormalizedDirectionVector().scl(aimMarkerDistanceFactor).add(0, aimMarkerOffsetY);
+		Vector2 aimMarkerOffset = player.inputProcessor.getMovingDirection().getNormalizedDirectionVector().scl(aimMarkerDistanceFactor).add(0, aimMarkerOffsetY);
 		final float aimMarkerSize = 5f;
 		draw(batch, aimMarkerSprite, aimMarkerOffset, aimMarkerSize, aimMarkerSize);
 	}

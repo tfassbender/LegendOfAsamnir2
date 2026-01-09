@@ -38,7 +38,7 @@ public class Hookshot extends Boomerang {
 		}
 	}
 	
-	private boolean attachedToTarget() {
+	public boolean attachedToTarget() {
 		return targetJoint != null;
 	}
 	
@@ -47,7 +47,7 @@ public class Hookshot extends Boomerang {
 		super.startProjectile(direction);
 		
 		// connect to the player by sending him an event that he can subscribe to (playerBody is not yet set)
-		EventConfig event = new EventConfig().setEventType(EventType.HOOKSHOT_ATTACK_STARTED);
+		EventConfig event = new EventConfig().setEventType(EventType.HOOKSHOT_ATTACK_STARTED).setParameterObject(this);
 		EventHandler.getInstance().fireEvent(event);
 		connectToPlayer(event.parameterObject);
 		
@@ -103,7 +103,7 @@ public class Hookshot extends Boomerang {
 	}
 	
 	@Override
-	protected void removeAfterMovedBackToPlayer() {
+	public void removeAfterMovedBackToPlayer() {
 		// resolve the joints to the player and to the target
 		PhysicsWorld.getInstance().destroyJoint(playerJoint);
 		if (targetJoint != null) {

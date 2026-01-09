@@ -36,6 +36,7 @@ import net.jfabricationgames.gdx.object.moveable.DraggableObject;
 import net.jfabricationgames.gdx.physics.BeforeWorldStep;
 import net.jfabricationgames.gdx.physics.PhysicsCollisionType;
 import net.jfabricationgames.gdx.physics.PhysicsWorld;
+import net.jfabricationgames.gdx.projectile.Hookshot;
 import net.jfabricationgames.gdx.projectile.MagicWave;
 import net.jfabricationgames.gdx.projectile.Projectile;
 import net.jfabricationgames.gdx.projectile.ProjectileReflector;
@@ -86,7 +87,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	protected SpecialAction activeSpecialAction;
 	private SoundHandler actionSound;
 	
-	protected CharacterInputProcessor movementHandler;
+	protected CharacterInputProcessor inputProcessor;
 	
 	protected CharacterPropertiesDataHandler propertiesDataHandler;
 	protected CharacterItemDataHandler itemDataHandler;
@@ -102,6 +103,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private float heatDamageTimer; // if > 0 the player is damaged by heat (from the map) so the character turns red
 	private float invertedControlsTimer; // if > 0 the player has inverted controls (from a spell attack)
 	private boolean hookshotActive = false; // the player can't move while the hookshot is active
+	private Hookshot activeHookshot;
 	
 	public Dwarf() {
 		propertiesDataHandler = CharacterPropertiesDataHandler.getInstance();
@@ -120,7 +122,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		difficulty = Difficulty.loadDifficultyConfig();
 		
 		attackHandler = new PlayerAttackHandler(ATTACK_CONFIG_FILE_NAME, bodyHandler.body, PhysicsCollisionType.PLAYER_ATTACK, weaponSkill, difficulty);
-		movementHandler = new CharacterInputProcessor(this);
+		inputProcessor = new CharacterInputProcessor(this);
 		
 		EventHandler.getInstance().registerEventListener(this);
 	}
@@ -176,7 +178,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			}
 			
 			if (action.isAttack()) {
-				attackHandler.startAttack(action.getAttack(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
+				attackHandler.startAttack(action.getAttack(), inputProcessor.getMovingDirection().getNormalizedDirectionVector());
 			}
 			
 			return true;
@@ -212,7 +214,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 								itemDataHandler.decreaseAmmo(ammoType.toDataType());
 								checkAmmoBelowHalf(ammoType, ammoBelowHalfBeforeShot);
 								propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
-								attackHandler.startAttack(ammoType.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
+								attackHandler.startAttack(ammoType.name().toLowerCase(), inputProcessor.getMovingDirection().getNormalizedDirectionVector());
 								
 								if (!itemDataHandler.hasAmmo(ammoType.toDataType())) {
 									fireOutOfAmmoEvent(ammoType);
@@ -229,16 +231,22 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				case BOOMERANG:
 				case WAND:
 				case HOOKSHOT:
+					if (hookshotActive && activeHookshot != null && !activeHookshot.attachedToTarget() && activeSpecialAction == SpecialAction.HOOKSHOT) {
+						// let the active hookshot return to the player if the hookshot action is executed again
+						activeHookshot.removeAfterMovedBackToPlayer(); // remove the hookshot directly
+						return true;
+					}
+					
 					if (hasEnoughMana(activeSpecialAction) //
 							&& propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost) // 
 							&& attackHandler.allAttacksExecuted()) {
 						useMana(activeSpecialAction);
 						propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);
-						attackHandler.startAttack(activeSpecialAction.name().toLowerCase(), movementHandler.getMovingDirection().getNormalizedDirectionVector());
+						attackHandler.startAttack(activeSpecialAction.name().toLowerCase(), inputProcessor.getMovingDirection().getNormalizedDirectionVector());
 						
 						if (activeSpecialAction == SpecialAction.HOOKSHOT) {
-							hookshotActive = true;
-							// deactivated by an event, that is fired from the hookshot
+							hookshotActive = true; // will be deactivated by an event, that is fired from the hookshot
+							inputProcessor.setActionCooldownInPercent(70f); // the action cooldown is shorter for the hookshot, so it can be aborted faster
 						}
 						
 						return true;
@@ -260,7 +268,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					if (draggableObject != null) {
 						soundHandler.playSound(SOUND_ROPE);
 						draggableObject.toggleDrag(bodyHandler.body);
-						movementHandler.setActionCooldownInPercent(50f); // the rope needs a faster cooldown to be used to change directions on ice
+						inputProcessor.setActionCooldownInPercent(50f); // the rope needs a faster cooldown to be used to change directions on ice
 						return true;
 					}
 					break;
@@ -350,7 +358,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	private void delayAttacks() {
-		attackHandler.startAttack(ATTACK_NAME_WAIT, movementHandler.getMovingDirection().getNormalizedDirectionVector());
+		attackHandler.startAttack(ATTACK_NAME_WAIT, inputProcessor.getMovingDirection().getNormalizedDirectionVector());
 	}
 	
 	protected boolean isAnimationFinished() {
@@ -412,8 +420,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		propertiesDataHandler.updateStats(delta, action);
 		attackHandler.handleAttacks(delta);
 		
-		movementHandler.handleInputs(delta);
-		movementHandler.move(delta);
+		inputProcessor.handleInputs(delta);
+		inputProcessor.move(delta);
 		
 		renderer.processDarknessFadingAnimation(delta);
 		
@@ -472,7 +480,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 		direction.nor().scl(MOVING_SPEED_CUTSCENE * speedFactor);
 		
 		move(direction.x, direction.y);
-		movementHandler.setMovingDirection(direction);
+		inputProcessor.setMovingDirection(direction);
 	}
 	
 	protected void move(float deltaX, float deltaY) {
@@ -525,12 +533,12 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public boolean isActionInCooldown() {
-		return movementHandler.isActionInCooldown();
+		return inputProcessor.isActionInCooldown();
 	}
 	
 	@Override
 	public float getActionCooldownTimerInPercent() {
-		return movementHandler.getActionCooldownTimerInPercent();
+		return inputProcessor.getActionCooldownTimerInPercent();
 	}
 	
 	@Override
@@ -899,11 +907,13 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				AnnotationUtil.executeAnnotatedMethods(BeforePersistState.class, this);
 				break;
 			case HOOKSHOT_ATTACK_STARTED:
+				activeHookshot = (Hookshot) event.parameterObject;
 				// connect to the hookshot by subscribing to its events
 				event.parameterObject = bodyHandler.body;
 				break;
 			case HOOKSHOT_ATTACK_FINISHED:
 				hookshotActive = false;
+				activeHookshot = null;
 				break;
 			case SET_TOKENS_RELATIVE:
 				int tokens = Math.max(0, propertiesDataHandler.getTokens(event.stringValue) + event.intValue);
