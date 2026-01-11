@@ -60,6 +60,9 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	private boolean spawnFlameskullsWhenEnteringCastStage = false;
 	private float spawnFlameskullsDelayTimer = 0f;
 	
+	private float activateLaserBlasterDelayTimer = 0f;
+	private float deactivateLaserBlasterDelayTimer = 0f;
+	
 	private ChaosWizardAttackAI chaosWizardAttackAI;
 	
 	public ChaosWizard(EnemyTypeConfig typeConfig, MapProperties properties) {
@@ -99,7 +102,15 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		attackStates.put(stateNameAttackMagicFireSoil, characterStateAttackMagicFireSoil);
 		
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
-		attackDistances.put(characterStateAttackMagicFireBall, 100f); // no range restriction
+		float fireBallAttackDistance;
+		if (currentStage >= 5) {
+			fireBallAttackDistance = 0f; // use the vorpal laser blaster of pittenweem instead
+		}
+		else {
+			fireBallAttackDistance = 100f; // no range restriction
+		}
+		attackDistances.put(characterStateAttackMagicFireBall, fireBallAttackDistance);
+		
 		float fireSoilAttackDistance = 0f;
 		if (currentStage >= 3 && currentStage < 7) {
 			fireSoilAttackDistance = 4f;
@@ -241,6 +252,30 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 			spawnFlameskullsDelayTimer -= delta;
 			if (spawnFlameskullsDelayTimer <= 0f) {
 				spawnFlameskullsOnPlayerSide(3);
+			}
+		}
+		
+		// handle the vorpal laser blaster of pittenweem activation/deactivation delays
+		if (activateLaserBlasterDelayTimer > 0f) {
+			activateLaserBlasterDelayTimer -= delta;
+			if (activateLaserBlasterDelayTimer <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__fire_vorpal_laser_blaster_of_pittenweem") //
+						.setParameterObject(this)); // use the chaos wizard as parameter object
+			}
+		}
+		if (deactivateLaserBlasterDelayTimer > 0f) {
+			deactivateLaserBlasterDelayTimer -= delta;
+			if (deactivateLaserBlasterDelayTimer <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__pause_vorpal_laser_blaster_of_pittenweem") //
+						.setParameterObject(this)); // use the chaos wizard as parameter object
+				
+				// reactivate the laser blaster after some time
+				activateLaserBlasterDelayTimer = 3f;
+				deactivateLaserBlasterDelayTimer = 8f;
 			}
 		}
 	}
@@ -395,19 +430,25 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	public void handleEvent(EventConfig event) {
 		super.handleEvent(event);
 		
-		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType) && //
-				"loa2_l5_castle_of_the_chaos_wizard__spire__change_chaos_wizard_name".equals(event.stringValue)) {
-			if (event.intValue == 2) {
-				typeConfig.bossName = CHAOS_WIZARD_NAME_2;
+		if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType)) {
+			if ("loa2_l5_castle_of_the_chaos_wizard__spire__change_chaos_wizard_name".equals(event.stringValue)) {
+				if (event.intValue == 2) {
+					typeConfig.bossName = CHAOS_WIZARD_NAME_2;
+				}
+				else if (event.intValue == 3) {
+					typeConfig.bossName = CHAOS_WIZARD_NAME_FINAL;
+				}
+				
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.BOSS_ENEMY_APPEARED) //
+						.setParameterObject(this) //
+						.setStringValue(typeConfig.bossName));
 			}
-			else if (event.intValue == 3) {
-				typeConfig.bossName = CHAOS_WIZARD_NAME_FINAL;
+			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard__vorpal_laser_blaster_of_pittenweem_cutscene_end".equals(event.stringValue)) {
+				// wait for a short time before activating the vorpal laser blaster of pittenweem
+				activateLaserBlasterDelayTimer = 1f;
+				deactivateLaserBlasterDelayTimer = 6f;
 			}
-			
-			EventHandler.getInstance().fireEvent(new EventConfig() //
-					.setEventType(EventType.BOSS_ENEMY_APPEARED) //
-					.setParameterObject(this) //
-					.setStringValue(typeConfig.bossName));
 		}
 	}
 }

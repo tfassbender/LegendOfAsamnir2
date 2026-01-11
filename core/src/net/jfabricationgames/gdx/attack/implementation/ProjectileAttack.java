@@ -34,7 +34,7 @@ public class ProjectileAttack extends Attack {
 	}
 	
 	private Vector2 calculateStartingPosition() {
-		Vector2 startingPosition = body.getPosition().cpy().add(0, config.projectileStartOffsetY);
+		Vector2 startingPosition = body.getPosition().cpy().add(config.projectileStartOffsetXFacingDirection * Math.signum(direction.x), config.projectileStartOffsetY);
 		
 		if (config.startAttackAtPlayerPosition) {
 			Vector2 targetPosition = targetPositionSupplier.get();

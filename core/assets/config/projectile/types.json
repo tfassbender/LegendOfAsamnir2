@@ -698,6 +698,7 @@
 		
 		removeAfterAnimationFinished: false,
 		removeAfterHit: true,
+		radius: 0.2f,
 		
 		range: 100,
 		speed: 30,
@@ -709,11 +710,12 @@
 		
 		animation: laser_turret_projectile_move,
 		
+		rotateTextureToMovementDirection: true,
 		removeAfterAnimationFinished: false,
 		removeAfterHit: true,
 		
 		range: 100,
-		speed: 50,
+		speed: 300,
 		dampingAfterObjectHit: 5,
 	},
 	
@@ -726,6 +728,7 @@
 		rotateTextureToMovementDirection: true,
 		removeAfterAnimationFinished: false,
 		removeAfterHit: true,
+		radius: 0.2f,
 		
 		range: 100,
 		speed: 40,

@@ -3,10 +3,30 @@
 		id: attack,
 		type: ANIMATED_PROJECTILE,
 		projectileType: laser_blaster_projectile,
-		delay: 0.0,
+		projectileStartOffsetXFacingDirection: 0.3f,
+		delay: 0.3,
 		duration: 0,
 		damage: 2.5,
-		canBeBlockedCompletely: true,
+		canBeBlockedCompletely: false,
 		pushForce: 30,
+	},
+	{
+		id: attack_delayed,
+		type: ANIMATED_PROJECTILE,
+		projectileType: laser_blaster_projectile,
+		projectileStartOffsetXFacingDirection: 0.3f,
+		delay: 0.7,
+		duration: 0,
+		damage: 2.5,
+		canBeBlockedCompletely: false,
+		pushForce: 30,
+	},
+	
+	{
+		id: attack_beam,
+		type: LASER_BLASTER_BEAM,
+		delay: 0.7,
+		damage: 20, // damage is calculated in the class (depends on delta time, so this is damage per second)
+		duration: 5,
 	},
 ]

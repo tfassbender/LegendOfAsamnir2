@@ -145,7 +145,11 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	
 	@Override
 	protected PhysicsBodyProperties definePhysicsBodyProperties() {
-		return physicsBodyProperties.setRadius(typeConfig.bodyRadius).setWidth(typeConfig.bodyWidth).setHeight(typeConfig.bodyHeight).setPhysicsBodyShape(typeConfig.bodyShape);
+		return physicsBodyProperties.setRadius(typeConfig.bodyRadius) //
+				.setWidth(typeConfig.bodyWidth) //
+				.setHeight(typeConfig.bodyHeight) //
+				.setPhysicsBodyShape(typeConfig.bodyShape) //
+				.setSensor(typeConfig.bodyIsSensor);
 	}
 	
 	@Override
@@ -234,6 +238,9 @@ public class Enemy extends AbstractCharacter implements Hittable, StatefulMapObj
 	}
 	
 	public void drawStatsBar(ShapeRenderer shapeRenderer) {
+		// draw the attacks that use a shape renderer here, because we need a shape renderer context, that is otherwise a bit difficult to provide
+		attackHandler.renderAttacks(shapeRenderer);
+		
 		if (drawStatsBar()) {
 			AnimationSpriteConfig spriteConfig = getAnimation().getSpriteConfig();
 			float width = spriteConfig.width * typeConfig.healthBarWidthFactor;

@@ -14,7 +14,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			disappear, attack
+			disappear, attack, attack_beam
 		]
 	},
 	{
@@ -34,10 +34,33 @@
 	{
 		id: attack,
 		animation: laser_turret_attack,
-		attack: attack
+		attack: attack_delayed,
 		endsWithAnimation: true,
+		followingState: attack_loop,
+		interruptingStates: [
+			idle
+		]
+	},
+	{
+		id: attack_loop,
+		animation: laser_turret_attack_repeated,
+		attack: attack,
+		endsWithAnimation: true,
+		followingState: attack_loop,
+		interruptingStates: [
+			idle
+		]
+	},
+	
+	{
+		id: attack_beam,
+		animation: laser_turret_attack_without_laser,
+		attack: attack_beam,
+		endsWithAnimation: false,
 		followingState: idle,
-		interruptingStates: []
+		interruptingStates: [
+			idle
+		]
 	},
 	
 	// should not be used, but the state machine needs it (makes it easier to just add them)
@@ -47,7 +70,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack, disappear
+			idle, attack, attack_beam, disappear
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
@@ -58,7 +81,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, attack, disappear
+			idle, attack, attack_beam, disappear
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true

@@ -55,11 +55,7 @@ public class PhysicsBodyCreator {
 	
 	public static Fixture addOctagonFixture(PhysicsBodyProperties properties) {
 		PolygonShape shape = new PolygonShape();
-		shape.set(new Vector2[] {new Vector2(-0.5f * properties.width, -0.4f * properties.height),
-				new Vector2(-0.5f * properties.width, 0.4f * properties.height), new Vector2(-0.4f * properties.width, 0.5f * properties.height),
-				new Vector2(0.4f * properties.width, 0.5f * properties.height), new Vector2(0.5f * properties.width, 0.4f * properties.height),
-				new Vector2(0.5f * properties.width, -0.4f * properties.height), new Vector2(0.4f * properties.width, -0.5f * properties.height),
-				new Vector2(-0.4f * properties.width, -0.5f * properties.height)});
+		shape.set(new Vector2[] {new Vector2(-0.5f * properties.width, -0.4f * properties.height), new Vector2(-0.5f * properties.width, 0.4f * properties.height), new Vector2(-0.4f * properties.width, 0.5f * properties.height), new Vector2(0.4f * properties.width, 0.5f * properties.height), new Vector2(0.5f * properties.width, 0.4f * properties.height), new Vector2(0.5f * properties.width, -0.4f * properties.height), new Vector2(0.4f * properties.width, -0.5f * properties.height), new Vector2(-0.4f * properties.width, -0.5f * properties.height)});
 		
 		FixtureDef fixtureDef = createFixtureDef(shape, properties);
 		Fixture fixture = properties.body.createFixture(fixtureDef);
@@ -102,11 +98,20 @@ public class PhysicsBodyCreator {
 	
 	public static Fixture addRectangularFixture(PhysicsBodyProperties properties) {
 		PolygonShape shape = new PolygonShape();
+		
+		float angle = properties.angle; // radians
+		
 		if (properties.fixturePosition != null) {
-			shape.setAsBox(properties.width * 0.5f, properties.height * 0.5f, properties.fixturePosition, 0f);
+			shape.setAsBox(properties.width * 0.5f, //
+					properties.height * 0.5f, //
+					properties.fixturePosition, //
+					angle);
 		}
 		else {
-			shape.setAsBox(properties.width * 0.5f, properties.height * 0.5f);
+			shape.setAsBox(properties.width * 0.5f, //
+					properties.height * 0.5f, //
+					Vector2.Zero, //
+					angle);
 		}
 		
 		FixtureDef fixtureDef = createFixtureDef(shape, properties);
@@ -120,7 +125,7 @@ public class PhysicsBodyCreator {
 		BodyDef bodyDef = new BodyDef();
 		bodyDef.type = properties.type;
 		bodyDef.position.set(properties.x, properties.y);
-		bodyDef.angle = 0;
+		bodyDef.angle = properties.angle;
 		bodyDef.fixedRotation = true;
 		bodyDef.linearDamping = properties.linearDamping;
 		
@@ -159,6 +164,7 @@ public class PhysicsBodyCreator {
 		public float width;
 		public float height;
 		public float radius;
+		public float angle;
 		
 		public Vector2 fixturePosition = new Vector2(0f, 0f);
 		
@@ -247,6 +253,11 @@ public class PhysicsBodyCreator {
 		
 		public PhysicsBodyProperties setCollisionType(PhysicsCollisionType collisionType) {
 			this.collisionType = collisionType;
+			return this;
+		}
+		
+		public PhysicsBodyProperties setAngle(float angle) {
+			this.angle = angle;
 			return this;
 		}
 	}

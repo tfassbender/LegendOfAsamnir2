@@ -14,6 +14,18 @@
             playMode: NORMAL
 		},
 		{
+            name: laser_turret_attack_repeated,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
+            name: laser_turret_attack_without_laser,
+            atlas: packed/demo/demo.atlas,
+            frameDuration: 0.1,
+            playMode: NORMAL
+		},
+		{
             name: laser_turret_broken,
             atlas: packed/demo/demo.atlas,
             frameDuration: 0.1,
@@ -42,6 +54,13 @@
             atlas: packed/demo/demo.atlas,
             frameDuration: 0.1,
             playMode: NORMAL
+		},
+		
+		{
+			name: cyclops_beam,
+			atlas: packed/demo/demo.atlas,
+			frameDuration: 0.1,
+			playMode: NORMAL
 		},
 	]
 }

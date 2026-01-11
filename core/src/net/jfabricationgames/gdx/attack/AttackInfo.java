@@ -50,6 +50,7 @@ public class AttackInfo {
 		return canBeBlocked //
 				// some attacks cannot be blocked because of their type
 				&& !attackType.isSubTypeOf(AttackType.BEAM) //
+				&& !attackType.isSubTypeOf(AttackType.LASER_BLASTER_BEAM) //
 				&& !attackType.isSubTypeOf(AttackType.MAGIC) //
 				&& !attackType.isSubTypeOf(AttackType.CONTINUOUS_MAP_DAMAGE);
 	}

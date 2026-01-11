@@ -22,6 +22,7 @@ public class AttackConfig {
 	public float explosionPushForce;
 	public boolean explosionPushForceAffectedByBlock = false;
 	public AttackWeaponType weaponType; // used to adapt attacks to skill levels
+	public float projectileStartOffsetXFacingDirection;
 	public float projectileStartOffsetY;
 	public boolean startAttackAtPlayerPosition;
 	public float startAttackNearAttackerOffset; // only works if startAttackAtPlayerPosition is true - will move the start position near the attacker (for positive values)

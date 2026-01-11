@@ -79,6 +79,10 @@
             	eventType: CONFIG_GENERATED_EVENT,
             	stringValue: "spawn_magic_flames_near_vorpal_laser_blaster_of_pittenweem",
 			}
+			
+			executes: [
+                wait_before_continuing_boss_fight,
+			],
 		},
 		
 		wait_before_continuing_boss_fight: {
@@ -87,6 +91,19 @@
             executionDelayInSeconds: 1f,
             
             executes: [
+                inform_chaos_wizard_about_end_of_cutscene,
+			],
+		},
+		
+		inform_chaos_wizard_about_end_of_cutscene: {
+			type: EVENT,
+			
+            event: {
+            	eventType: CONFIG_GENERATED_EVENT,
+            	stringValue: "loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard__vorpal_laser_blaster_of_pittenweem_cutscene_end",
+			}
+			
+			executes: [
                 end,
 			],
 		},

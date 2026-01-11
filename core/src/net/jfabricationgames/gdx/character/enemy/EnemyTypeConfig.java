@@ -39,6 +39,7 @@ public class EnemyTypeConfig extends CharacterTypeConfig {
 	
 	public boolean addSensor = true;
 	public float sensorRadius;
+	public boolean bodyIsSensor = false;
 	public boolean useSensorAsForceField = false; // the sensor is used so that the player can't get too close to the enemy
 	public boolean ignoreForceFieldWhenBlocking = false; // the player can ignore the force field when blocking (using his shield)
 	

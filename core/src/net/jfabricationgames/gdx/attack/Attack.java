@@ -3,6 +3,7 @@ package net.jfabricationgames.gdx.attack;
 import java.util.function.Supplier;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
@@ -61,6 +62,8 @@ public abstract class Attack implements CharacterStateAttack {
 	}
 	
 	protected void render(float delta, SpriteBatch batch) {}
+	
+	protected void render(ShapeRenderer shapeRenderer) {}
 	
 	protected abstract void start();
 	

@@ -5,6 +5,7 @@ import java.util.Iterator;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
@@ -79,6 +80,12 @@ public class AttackHandler implements CharacterStateAttackHandler {
 	public void renderAttacks(float delta, SpriteBatch batch) {
 		for (Attack attack : attacks) {
 			attack.render(delta, batch);
+		}
+	}
+	
+	public void renderAttacks(ShapeRenderer shapeRenderer) {
+		for (Attack attack : attacks) {
+			attack.render(shapeRenderer);
 		}
 	}
 	

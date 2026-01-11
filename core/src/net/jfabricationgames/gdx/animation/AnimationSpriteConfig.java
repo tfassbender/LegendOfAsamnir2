@@ -27,6 +27,7 @@ public class AnimationSpriteConfig {
 	public float y;
 	public float width;
 	public float height;
+	public float rotation;
 	
 	public AnimationSpriteConfig setX(float x) {
 		this.x = x;
@@ -45,6 +46,11 @@ public class AnimationSpriteConfig {
 	
 	public AnimationSpriteConfig setHeight(float height) {
 		this.height = height;
+		return this;
+	}
+	
+	public AnimationSpriteConfig setRotation(float rotation) {
+		this.rotation = rotation;
 		return this;
 	}
 }

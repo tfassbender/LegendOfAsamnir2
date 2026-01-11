@@ -1855,7 +1855,7 @@
 		addSensor: true,
 		sensorRadius: 25f,
 		
-		pushForceDamage: 10,
+		pushForceDamage: 0,
 		pushForceHit: 60,
 		
 		// makes all spawned enemies die when the chaos wizard (the boss) dies
@@ -1885,7 +1885,7 @@
 		addSensor: true,
 		sensorRadius: 25f,
 		
-		pushForceDamage: 10,
+		pushForceDamage: 0,
 		pushForceHit: 60,
 	},
 	
@@ -1948,6 +1948,7 @@
 		
 		addSensor: true,
 		sensorRadius: 3f,
+		bodyIsSensor: true,
 		
 		usesHealthBar: false,
 	},
