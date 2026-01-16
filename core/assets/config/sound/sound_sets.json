@@ -546,6 +546,12 @@
 					volume: 0.3,
 					delay: 0.2
 				},
+				// laser blaster
+				laser_blaster: {
+					path: "sound/enemy/attack/laser.mp3",
+					volume: 0.6,
+					delay: 0.6,
+				},
 				// chaos wizard
 				chaos_wizard_hurt: {
 					path: "sound/enemy/die.mp3",

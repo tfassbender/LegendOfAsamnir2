@@ -37,6 +37,7 @@ import net.jfabricationgames.gdx.item.Item;
 import net.jfabricationgames.gdx.item.ItemFactory;
 import net.jfabricationgames.gdx.map.GameMap;
 import net.jfabricationgames.gdx.map.GameMapManager;
+import net.jfabricationgames.gdx.map.GameMapProcessable;
 import net.jfabricationgames.gdx.map.ground.GameMapGroundType;
 import net.jfabricationgames.gdx.map.ground.MapObjectType;
 import net.jfabricationgames.gdx.music.BackgroundMusicManager;
@@ -75,6 +76,8 @@ public class GameMapImplementation implements GameMap {
 	
 	protected TiledMap map;
 	protected ObjectMap<Integer, Vector2> playerStartingPositions = new ObjectMap<>();
+	
+	protected Array<GameMapProcessable> processableObjects = new Array<>();
 	
 	//the lists are initialized in the factories
 	protected Array<Item> items;
@@ -341,6 +344,7 @@ public class GameMapImplementation implements GameMap {
 		renderer.renderBackground(delta);
 		renderer.renderEffectLayers();
 		processAndRenderGameObject(delta);
+		processGameMapProcessables(delta);
 		renderer.renderAbovePlayer();
 		renderer.renderShadows();
 		renderer.renderDarknessArroundPlayer();
@@ -380,6 +384,12 @@ public class GameMapImplementation implements GameMap {
 		
 		renderer.renderEnemyHealthBars();
 		renderer.endShapeRenderer();
+	}
+	
+	private void processGameMapProcessables(float delta) {
+		for (GameMapProcessable processable : processableObjects) {
+			processable.process(delta);
+		}
 	}
 	
 	@Override
@@ -712,5 +722,15 @@ public class GameMapImplementation implements GameMap {
 	public void dispose() {
 		renderer.dispose();
 		map.dispose();
+	}
+	
+	@Override
+	public void registerGameMapProcessable(GameMapProcessable processable) {
+		processableObjects.add(processable);
+	}
+	
+	@Override
+	public void unregisterGameMapProcessable(GameMapProcessable processable) {
+		processableObjects.removeValue(processable, true);
 	}
 }

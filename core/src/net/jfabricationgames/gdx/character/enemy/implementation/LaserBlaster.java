@@ -22,11 +22,14 @@ import net.jfabricationgames.gdx.constants.Constants;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
+import net.jfabricationgames.gdx.sound.SoundHandler;
 
 public class LaserBlaster extends Enemy implements CharacterStateChangeListener {
 	
 	private boolean inDisabledState = true; // starts disabled
 	private final boolean leftBlaster;
+	
+	private SoundHandler sound;
 	
 	public LaserBlaster(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
@@ -75,6 +78,7 @@ public class LaserBlaster extends Enemy implements CharacterStateChangeListener 
 			}
 		}
 	}
+	
 	private boolean isPlayerOnLeftSide() {
 		return isPlayerInArea("config_object__chaos_wizard_spire__area_left");
 	}
@@ -139,17 +143,24 @@ public class LaserBlaster extends Enemy implements CharacterStateChangeListener 
 			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__deactivate_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue)) {
 				if (getUnitId().equals(event.parameterObject)) { // use the parameter object as second string parameter
 					stateMachine.setState("disappear");
+					if (sound != null) {
+						sound.stop();
+					}
 				}
 			}
 			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__fire_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue)) {
 				if (stateMachine.getCurrentState().getStateName().equals("idle") //
 						&& (leftBlaster == isPlayerOnLeftSide())) { // only activate the attack if the player is in the blaster's target area
 					stateMachine.setState("attack_beam");
+					sound = SOUND_SET.playSound("laser_blaster");
 				}
 			}
 			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__pause_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue)) {
 				if (stateMachine.getCurrentState().getStateName().equals("attack_beam")) {
 					stateMachine.setState("idle");
+					if (sound != null) {
+						sound.stop();
+					}
 				}
 			}
 		}

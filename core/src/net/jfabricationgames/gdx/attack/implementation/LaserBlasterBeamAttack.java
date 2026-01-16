@@ -85,25 +85,37 @@ public class LaserBlasterBeamAttack extends Attack {
 	
 	private float performRaycast(Vector2 start, Vector2 dir) {
 		Vector2 end = start.cpy().add(dir.cpy().scl(LASER_MAX_RANGE));
-		final float[] hitDistance = {LASER_MAX_RANGE}; // array to allow modification inside inner class
+		final float[] hitDistance = {LASER_MAX_RANGE};
 		
-		PhysicsWorld.getInstance().rayCast((new RayCastCallback() {
+		PhysicsWorld.getInstance().rayCast(new RayCastCallback() {
 			
 			@Override
 			public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
-				if (!fixture.isSensor()) {
-					if (fixture.getUserData() instanceof PlayableCharacter) {
-						// let the ray be drawn a bit further to make sure the player is fully hit (the animation has some transparency at the edges)
-						hitDistance[0] = LASER_MAX_RANGE * fraction + 0.2f;
-					}
-					else {
-						hitDistance[0] = LASER_MAX_RANGE * fraction;
-					}
+				// Ignore sensors completely
+				if (fixture.isSensor()) {
+					return 1f;
+				}
+				
+				// Identify collision type via filter
+				PhysicsCollisionType type = PhysicsCollisionType.getByFilter(fixture.getFilterData());
+				
+				// Ignore unreachable areas and let the ray continue
+				if (type == PhysicsCollisionType.MAP_UNREACHABLE_AREA) {
+					return 1f;
+				}
+				
+				// Player hit -> extend slightly for visual clarity
+				if (fixture.getUserData() instanceof PlayableCharacter) {
+					hitDistance[0] = LASER_MAX_RANGE * fraction + 0.2f;
 					return fraction;
 				}
-				return -1;
+				
+				// Any other solid object stops the ray
+				hitDistance[0] = LASER_MAX_RANGE * fraction;
+				return fraction;
 			}
-		}), start, end);
+			
+		}, start, end);
 		
 		return hitDistance[0];
 	}

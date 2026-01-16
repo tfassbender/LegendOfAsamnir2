@@ -174,7 +174,7 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 	}
 	
 	public boolean isAlive() {
-		return properties.health > 0;
+		return properties.health + properties.increaseHealth > 0;
 	}
 	
 	public void increaseHealth(float amount) {

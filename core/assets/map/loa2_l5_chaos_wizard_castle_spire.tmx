@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="577">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="595">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -822,6 +822,46 @@
     <property name="spawn" value="playerManaNotFull"/>
    </properties>
    <point/>
+  </object>
+  <object id="587" name="object.magic_fire" x="620.909" y="575.966" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="588" name="object.magic_fire" x="637.909" y="543.966" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="589" name="object.magic_fire" x="621" y="640.239" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="590" name="object.magic_fire" x="637.909" y="672.148" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="1"/>
+   </properties>
+  </object>
+  <object id="591" name="object.magic_fire" x="610.182" y="640.33" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="592" name="object.magic_fire" x="593.182" y="671.966" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="593" name="object.magic_fire" x="610.182" y="575.966" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="594" name="object.magic_fire" x="593.182" y="544.148" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="2"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">

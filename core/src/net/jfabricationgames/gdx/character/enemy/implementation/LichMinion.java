@@ -35,9 +35,12 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 	private int fireballsToShoot = 0;
 	private float fireballShotTimer = 0f;
 	private final float fireballShotInterval = 0.3f;
+	private final boolean topMinion; // true for the minion in the top area of the map, false for the bottom one
 	
 	public LichMinion(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
+		
+		topMinion = "loa2_l5_castle_of_the_chaos_wizard_spire__lich__top".equals(getUnitId());
 		
 		stateMachine.addChangeListener(this);
 	}
@@ -168,7 +171,22 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 				attackHandler.abortAllAttacks();
 				stateMachine.forceStateChange(idleState);
 			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__lich_minion_fire_targeting_projectile__top".equals(event.stringValue)) {
+				if (topMinion) {
+					shootTargetingProjectile();
+				}
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__lich_minion_fire_targeting_projectile__bottom".equals(event.stringValue)) {
+				if (!topMinion) {
+					shootTargetingProjectile();
+				}
+			}
 		}
+	}
+	
+	private void shootTargetingProjectile() {
+		stateMachine.forceStateChange("attack_charge_magic_blast_inertial_mass_projectile");
+		((MultiAttackAI) ai).resetAttackTimer("attack_charge_magic_blast_inertial_mass_projectile");
 	}
 	
 	@Override

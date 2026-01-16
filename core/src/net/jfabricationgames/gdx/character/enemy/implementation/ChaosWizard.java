@@ -44,6 +44,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	private static final float lastStageHealthFactor = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int stages = 7; // the number of stages - in each stage the boss has to be attacked once
 	private int currentStage = 4; // TODO set to 1 after tests
+	private boolean battleStateChanged = false;
 	
 	private int fireballsToShoot = 0;
 	private float fireballShotTimer = 0f;
@@ -198,23 +199,26 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 						.setEventType(EventType.CUTSCENE_CREATE_ATTACK) //
 						.setStringValue("config_object__castle_of_the_chaos_wizard__spire__chaos_wizard_push_nova"));
 				
-				// currentStage is the stage after the hit -> trigger events depending on the new stage
-				switch (currentStage) {
-					case 2:
-						startFirstCutsceneDelayTimer = 0.5f;
-						break;
-					case 3:
-						changeToCastStateToRestoreObelisks();
-						spawnFlameskullsWhenEnteringCastStage = true;
-						break;
-					case 4:
-						changeToCastStateToRestoreObelisks();
-						setObelisksRepellBombs(true);
-						break;
-					case 5:
-						// no obelisks in this stage - only the vorpal laser blaster of pittenweem
-						startSecondCutsceneDelayTimer = 0.5f;
-						break;
+				if (battleStateChanged) {
+					battleStateChanged = false;
+					// currentStage is the stage after the hit -> trigger events depending on the new stage
+					switch (currentStage) {
+						case 2:
+							startFirstCutsceneDelayTimer = 0.5f;
+							break;
+						case 3:
+							changeToCastStateToRestoreObelisks();
+							spawnFlameskullsWhenEnteringCastStage = true;
+							break;
+						case 4:
+							changeToCastStateToRestoreObelisks();
+							setObelisksRepellBombs(true);
+							break;
+						case 5:
+							// no obelisks in this stage - only the vorpal laser blaster of pittenweem
+							startSecondCutsceneDelayTimer = 0.5f;
+							break;
+					}
 				}
 			}
 		}
@@ -392,7 +396,8 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		super.takeDamage(damage, attackInfo);
 		
 		immortalityTimer = 3f; // short immortality after being hit to prevent multiple stage changes because of multiple hits in a short time
-		pushBackPlayer();
+		battleStateChanged = true; // the battle state increases because the chaos wizard was hit
+		pushBackPlayer(true);
 		sendStageChangeEvent();
 		createAI(); // recreate the AI to adjust attack distances and timers
 	}
@@ -404,17 +409,19 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				setIntValue(currentStage));
 	}
 	
-	private void pushBackPlayer() {
+	private void pushBackPlayer(boolean abortMinionAttacks) {
 		CharacterState pushNova = stateMachine.getState(STATE_NAME_BLAST_WITH_EFFECT);
 		stateMachine.setOverridingFollowingState(pushNova, 1); // use the push nova after the damage animation finishes
 		// the events that spawn the push attacks are started when the push nova state is entered
 		
 		fireballsToShoot = 0; // stop any fireball shooting that is in progress (because the player has no chance of avoiding them)
 		attackHandler.abortAllAttacks(); // will not abort the nova attack that was not started yet
-		// let all minions abort their attacks as well
-		EventHandler.getInstance().fireEvent(new EventConfig() //
-				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__abort_all_minion_attacks"));
+		
+		if (abortMinionAttacks) {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+					.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__abort_all_minion_attacks"));
+		}
 	}
 	
 	@Override
@@ -446,8 +453,11 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 			}
 			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard__vorpal_laser_blaster_of_pittenweem_cutscene_end".equals(event.stringValue)) {
 				// wait for a short time before activating the vorpal laser blaster of pittenweem
-				activateLaserBlasterDelayTimer = 1f;
-				deactivateLaserBlasterDelayTimer = 6f;
+				activateLaserBlasterDelayTimer = 2f;
+				deactivateLaserBlasterDelayTimer = 7f;
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__chaos_wizard__fire_push_nova_attack".equals(event.stringValue)) {
+				pushBackPlayer(false);
 			}
 		}
 	}

@@ -27,6 +27,7 @@ public enum EventType {
 	//*******************************
 	//*** Player Events
 	//*******************************
+	PLAYER_DIED, //
 	PLAYER_RESPAWNED, //
 	OUT_OF_AMMO, //
 	PLAYER_STATS_BELOW_THRESHOLD, //

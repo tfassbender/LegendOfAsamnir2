@@ -662,6 +662,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				die();
 			}
 			else {
+				if (attackType == AttackType.LASER_BLASTER_BEAM) {
+					return; // the laser blaster beam deals continuous damage and should not trigger a hit animation every time
+				}
+				
 				if (isBlocking() && attackInfo.canBeBlocked()) {
 					changeAction(CharacterAction.SHIELD_HIT);
 				}
@@ -737,6 +741,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			changeAction(CharacterAction.DIE);
 			stopBackgroundMusic();
 			GameUtil.runDelayed(() -> GameStateManager.getInstance().setGameOver(true), TIME_TILL_GAME_OVER_MENU);
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.PLAYER_DIED));
 		}
 	}
 	

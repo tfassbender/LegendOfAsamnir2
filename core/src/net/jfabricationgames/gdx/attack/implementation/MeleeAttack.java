@@ -67,7 +67,7 @@ public class MeleeAttack extends Attack {
 			Object attackUserData = CollisionUtil.getCollisionTypeUserData(collisionType, fixtureA, fixtureB);
 			Object attackedObjectUserData = CollisionUtil.getOtherTypeUserData(collisionType, fixtureA, fixtureB);
 			
-			if (attackedObjectUserData != null && attackUserData == hitFixtureProperties.body.getUserData() && attackedObjectUserData instanceof Hittable) {
+			if (hitFixture != null && attackedObjectUserData != null && attackUserData == hitFixtureProperties.body.getUserData() && attackedObjectUserData instanceof Hittable) {
 				Hittable attackedObject = ((Hittable) attackedObjectUserData);
 				attackedObject.pushByHit(hitFixture.getBody().getPosition(), config.pushForce, config.pushForceWhenBlocked, config.pushForceAffectedByBlock);
 				attackedObject.takeDamage(config.damage, AttackInfo.from(config));
