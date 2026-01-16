@@ -267,7 +267,7 @@ public class CastleOfTheChaosWizardBossFightStage2EventHandler extends CodedEven
 		jointDef.initialize(asamnir.getBody(), freydis.getBody(), asamnir.getBody().getWorldCenter());
 		jointDef.collideConnected = false;
 		
-		asamnirFreydisJoint = PhysicsWorld.getInstance().createJoint(jointDef);
+		PhysicsWorld.getInstance().createJoint(jointDef, joint -> asamnirFreydisJoint = joint);
 	}
 	
 	private void throwAsamnirToThorin() {

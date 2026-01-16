@@ -54,7 +54,7 @@ public class DraggableObject extends MovableObject implements ContactListener, E
 		jointDef.maxLength = Math.max(typeConfig.maxDistanceToPlayer, currentDistance);
 		jointDef.collideConnected = true;
 		
-		joint = PhysicsWorld.getInstance().createJoint(jointDef);
+		PhysicsWorld.getInstance().createJoint(jointDef, joint -> this.joint = joint);
 	}
 	
 	private void dissolveJoint() {

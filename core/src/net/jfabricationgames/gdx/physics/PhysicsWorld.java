@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.physics;
 
 import java.util.Iterator;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 import com.badlogic.gdx.Gdx;
@@ -51,6 +52,8 @@ public class PhysicsWorld implements ContactListener, Disposable {
 	private Array<ContactListener> contactListeners = new Array<>();
 	private Array<Body> bodiesToRemove = new Array<>();
 	private ArrayMap<Body, Array<Fixture>> fixturesToRemove = new ArrayMap<>();
+	private Array<Joint> jointsToDestroy = new Array<>();
+	private Array<QueuedJoint> jointsToCreate = new Array<>();
 	private Array<Runnable> runAfterWorldStep = new Array<>();
 	
 	public void createWorld() {
@@ -66,6 +69,12 @@ public class PhysicsWorld implements ContactListener, Disposable {
 	
 	public void removeBodiesFromWorld() {
 		Gdx.app.debug(getClass().getSimpleName(), "Removing bodies from world");
+		
+		if (world == null || world.isLocked()) {
+			Gdx.app.error(getClass().getSimpleName(), "Cannot remove bodies from world because the world is locked. This would cause a Box2D memory leak.");
+			return;
+		}
+		
 		Array<Body> bodies = new Array<Body>();
 		world.getBodies(bodies);
 		EventHandler.getInstance();
@@ -87,11 +96,33 @@ public class PhysicsWorld implements ContactListener, Disposable {
 		return world.createBody(bodyDef);
 	}
 	
-	public Joint createJoint(JointDef jointDef) {
-		return world.createJoint(jointDef);
+	public void createJoint(JointDef jointDef, Consumer<Joint> onCreated) {
+		if (world.isLocked()) {
+			QueuedJoint q = new QueuedJoint();
+			q.def = jointDef;
+			q.callback = onCreated;
+			jointsToCreate.add(q);
+			return;
+		}
+		
+		Joint joint = world.createJoint(jointDef);
+		if (onCreated != null) {
+			onCreated.accept(joint);
+		}
 	}
 	
 	public void destroyJoint(Joint joint) {
+		if (joint == null) {
+			return;
+		}
+		
+		if (world.isLocked()) {
+			if (!jointsToDestroy.contains(joint, true)) {
+				jointsToDestroy.add(joint);
+			}
+			return;
+		}
+		
 		world.destroyJoint(joint);
 	}
 	
@@ -108,12 +139,30 @@ public class PhysicsWorld implements ContactListener, Disposable {
 	}
 	
 	private void afterWorldStep() {
+		processJoints();
 		removeBodiesAndFixtures();
 		executeRunnables();
 	}
 	
 	public void renderDebugGraphics(Matrix4 combinedCameraMatrix) {
 		debugRenderer.render(world, combinedCameraMatrix);
+	}
+	
+	private void processJoints() {
+		for (QueuedJoint q : jointsToCreate) {
+			Joint joint = world.createJoint(q.def);
+			if (q.callback != null) {
+				q.callback.accept(joint);
+			}
+		}
+		jointsToCreate.clear();
+		
+		for (Joint joint : jointsToDestroy) {
+			if (joint.getBodyA().getWorld() != null) {
+				world.destroyJoint(joint);
+			}
+		}
+		jointsToDestroy.clear();
 	}
 	
 	public boolean isInWorldStepExecution() {
@@ -137,10 +186,14 @@ public class PhysicsWorld implements ContactListener, Disposable {
 	 */
 	private void removeBodiesAndFixtures() {
 		for (Body body : fixturesToRemove.keys()) {
-			Array<Fixture> bodiesFixtures = body.getFixtureList();
-			//iterate over all fixtures of the body and check if they are to be deleted because it just wont work any other way
-			for (Fixture fixture : bodiesFixtures) {
-				if (fixturesToRemove.get(body).contains(fixture, true)) {
+			if (body.getWorld() == null) {
+				Gdx.app.error(getClass().getSimpleName(), "Cannot remove fixtures from body because it is already destroyed: " + body);
+				continue; // the body is already destroyed - removing it again would lead to an error because of Box2D memory allocation
+			}
+			
+			Array<Fixture> toRemove = fixturesToRemove.get(body);
+			for (Fixture fixture : toRemove) {
+				if (fixture.getBody() == body) {
 					body.destroyFixture(fixture);
 				}
 			}
@@ -171,6 +224,10 @@ public class PhysicsWorld implements ContactListener, Disposable {
 	}
 	
 	public void rayCast(RayCastCallback rayCastCallback, Vector2 startPoint, Vector2 endPoint) {
+		if (world.isLocked()) {
+			Gdx.app.error(getClass().getSimpleName(), "Cannot perform rayCast because the world is locked.");
+			return;
+		}
 		world.rayCast(rayCastCallback, startPoint, endPoint);
 	}
 	
@@ -209,10 +266,17 @@ public class PhysicsWorld implements ContactListener, Disposable {
 		if (body != null) {
 			if (isInWorldStepExecution()) {
 				Gdx.app.debug(getClass().getSimpleName(), "Marking body to be destroyed after world step: " + body);
-				bodiesToRemove.add(body);
+				if (!bodiesToRemove.contains(body, true)) {
+					bodiesToRemove.add(body);
+				}
+				fixturesToRemove.removeKey(body);
 			}
 			else {
 				Gdx.app.debug(getClass().getSimpleName(), "Destroying body from world: " + body);
+				if (body.getWorld() == null) {
+					Gdx.app.error(getClass().getSimpleName(), "Cannot destroy body because it is already destroyed: " + body);
+					return;
+				}
 				world.destroyBody(body);
 				body.setUserData(null);
 			}
@@ -239,5 +303,11 @@ public class PhysicsWorld implements ContactListener, Disposable {
 		Gdx.app.log(getClass().getSimpleName(), "Disposing physics world");
 		removeBodiesFromWorld();
 		disposeWorld();
+	}
+	
+	private static class QueuedJoint {
+		
+		private JointDef def;
+		private Consumer<Joint> callback;
 	}
 }

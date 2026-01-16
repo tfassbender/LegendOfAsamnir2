@@ -278,8 +278,8 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 						.setParameterObject(this)); // use the chaos wizard as parameter object
 				
 				// reactivate the laser blaster after some time
-				activateLaserBlasterDelayTimer = 3f;
-				deactivateLaserBlasterDelayTimer = 8f;
+				activateLaserBlasterDelayTimer = 5f;
+				deactivateLaserBlasterDelayTimer = 10f;
 			}
 		}
 	}

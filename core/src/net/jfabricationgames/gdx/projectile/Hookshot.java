@@ -9,6 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.Joint;
+import com.badlogic.gdx.physics.box2d.WorldManifold;
 import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 
 import net.jfabricationgames.gdx.attack.AttackConfig;
@@ -26,6 +27,8 @@ public class Hookshot extends Boomerang {
 	private Joint targetJoint;
 	
 	private float dragTimer = 0f;
+	
+	private Vector2 contactPoint;
 	
 	public Hookshot(ProjectileTypeConfig typeConfig, AttackConfig attackConfig, Sprite sprite, ProjectileMap gameMap) {
 		super(typeConfig, attackConfig, sprite, gameMap);
@@ -76,7 +79,7 @@ public class Hookshot extends Boomerang {
 		jointDef.maxLength = 15f; // greater than the max reach of the hookshot
 		jointDef.collideConnected = false;
 		
-		playerJoint = PhysicsWorld.getInstance().createJoint(jointDef);
+		PhysicsWorld.getInstance().createJoint(jointDef, joint -> this.playerJoint = joint);
 	}
 	
 	@Override
@@ -120,6 +123,43 @@ public class Hookshot extends Boomerang {
 	}
 	
 	@Override
+	public void beginContact(Contact contact) {
+		contactPoint = null;
+		
+		WorldManifold manifold = contact.getWorldManifold();
+		Vector2[] points = manifold.getPoints();
+		if (points != null && points.length > 0) {
+			/*
+			 * IMPORTANT BOX2D NOTE:
+			 *
+			 * The contact point MUST be copied immediately at the very beginning of
+			 * beginContact().
+			 *
+			 * Box2D Contact objects (including WorldManifold and its points array)
+			 * become INVALID as soon as the physics world is modified in any way.
+			 * This can happen indirectly during contact processing, e.g. by:
+			 *  - dealing damage
+			 *  - destroying bodies or fixtures
+			 *  - changing collision filters
+			 *  - creating or destroying joints
+			 *
+			 * Even if all of this happens inside the same beginContact callback,
+			 * Box2D is allowed to invalidate the contact internally. Accessing
+			 * contact.getWorldManifold() after that can lead to native crashes
+			 * (EXCEPTION_ACCESS_VIOLATION in gdx-box2d).
+			 *
+			 * Therefore:
+			 *  - read the contact data first
+			 *  - copy it (Vector2.cpy())
+			 *  - never access the Contact object again afterward
+			 */
+			contactPoint = points[0].cpy();
+		}
+		
+		super.beginContact(contact);
+	}
+	
+	@Override
 	protected void processContact(Object contactUserData, Contact contact) {
 		super.processContact(contactUserData, contact);
 		
@@ -134,8 +174,11 @@ public class Hookshot extends Boomerang {
 		jointDef.bodyA = body;
 		jointDef.bodyB = hitGameObject.getBody();
 		
-		// get the contact point to connect the hookshot to the target
-		Vector2 contactPoint = contact.getWorldManifold().getPoints()[0];
+		// we already got the contact point to connect the hookshot to the target in beginContact
+		if (contactPoint == null) {
+			Gdx.app.error(getClass().getSimpleName(), "Cannot create hookshot target joint because the contact point is null.");
+			return;
+		}
 		Vector2 localAnchor = hitGameObject.getBody().getLocalPoint(contactPoint);
 		
 		jointDef.localAnchorA.set(0, 0);
@@ -144,7 +187,7 @@ public class Hookshot extends Boomerang {
 		jointDef.maxLength = 0f;
 		jointDef.collideConnected = false;
 		
-		targetJoint = PhysicsWorld.getInstance().createJoint(jointDef);
+		PhysicsWorld.getInstance().createJoint(jointDef, joint -> this.targetJoint = joint);
 	}
 	
 	@Override
