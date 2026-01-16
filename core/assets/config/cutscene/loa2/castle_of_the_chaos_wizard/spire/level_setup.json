@@ -242,6 +242,7 @@
             
             event: {
                 eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: summoning_circle
 			},
 		},
 		

@@ -218,6 +218,9 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 							// no obelisks in this stage - only the vorpal laser blaster of pittenweem
 							startSecondCutsceneDelayTimer = 0.5f;
 							break;
+						case 7:
+							// TODO last cutscene before the end of the battle
+							break;
 					}
 				}
 			}

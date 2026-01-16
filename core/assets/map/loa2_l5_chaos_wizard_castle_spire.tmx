@@ -474,13 +474,13 @@
   </object>
   <object id="504" name="object.spawnPoint.summoning_circle" x="623.818" y="476.455">
    <properties>
-    <property name="spawn" value="summoning_circle"/>
+    <property name="spawn" value="summoning_circle_complex_event"/>
    </properties>
    <point/>
   </object>
   <object id="505" name="object.spawnPoint.summoning_circle" x="623.909" y="795.182">
    <properties>
-    <property name="spawn" value="summoning_circle"/>
+    <property name="spawn" value="summoning_circle_complex_event"/>
    </properties>
    <point/>
   </object>

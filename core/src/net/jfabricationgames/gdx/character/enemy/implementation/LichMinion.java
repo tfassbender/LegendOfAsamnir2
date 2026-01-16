@@ -29,6 +29,9 @@ import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyPropertie
 public class LichMinion extends Lich implements CharacterStateChangeListener, EventListener {
 	
 	private static final String STATE_NAME_ATTACK_MAGIC_FIRE_BALL = "attack_magic_fire_ball";
+	private static final String STATE_NAME_ATTACK_ARCANE_SHOWER = "attack_arcane_shower";
+	private static final String STATE_NAME_ATTACK_CHARGE_MAGIC_BLAST = "attack_charge_magic_blast_inertial_mass_projectile";
+	private static final String STATE_NAME_ATTACK_RAGE_SPELL_INVERT_CONTROLS = "attack_rage_spell_invert_controls";
 	
 	private int battleStage = 1;
 	
@@ -60,8 +63,8 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 	}
 	
 	private ArtificialIntelligence createLichAttackAI(ArtificialIntelligence ai) {
-		String stateNameAttackArcaneShower = "attack_arcane_shower";
-		String stateNameAttackMagicBlast = "attack_charge_magic_blast_inertial_mass_projectile";
+		String stateNameAttackArcaneShower = STATE_NAME_ATTACK_ARCANE_SHOWER;
+		String stateNameAttackMagicBlast = STATE_NAME_ATTACK_CHARGE_MAGIC_BLAST;
 		
 		CharacterState characterStateAttackMagicFireBall = stateMachine.getState(STATE_NAME_ATTACK_MAGIC_FIRE_BALL);
 		CharacterState characterStateAttackArcaneShower = stateMachine.getState(stateNameAttackArcaneShower);
@@ -135,7 +138,7 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 				// shoot a fireball
 				if (nearPlayer != null) {
 					Vector2 targetDirection = nearPlayer.getPosition().sub(getPosition());
-					attackHandler.startAttack("attack_magic_fire_ball", targetDirection);
+					attackHandler.startAttack(STATE_NAME_ATTACK_MAGIC_FIRE_BALL, targetDirection);
 					SOUND_SET.playSound("magic_fire_ball");
 				}
 			}
@@ -181,12 +184,33 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 					shootTargetingProjectile();
 				}
 			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__lich_minion_invert_player_controls__top".equals(event.stringValue)) {
+				if (topMinion) {
+					invertPlayerControls();
+				}
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__lich_minion_invert_player_controls__bottom".equals(event.stringValue)) {
+				if (!topMinion) {
+					invertPlayerControls();
+				}
+			}
 		}
 	}
 	
 	private void shootTargetingProjectile() {
-		stateMachine.forceStateChange("attack_charge_magic_blast_inertial_mass_projectile");
-		((MultiAttackAI) ai).resetAttackTimer("attack_charge_magic_blast_inertial_mass_projectile");
+		stateMachine.forceStateChange(STATE_NAME_ATTACK_CHARGE_MAGIC_BLAST);
+		((MultiAttackAI) ai).resetAttackTimer(STATE_NAME_ATTACK_CHARGE_MAGIC_BLAST);
+	}
+	
+	private void invertPlayerControls() {
+		CharacterState invertControllsState = stateMachine.getState(STATE_NAME_ATTACK_RAGE_SPELL_INVERT_CONTROLS);
+		invertControllsState.setAttackDirection(new Vector2(1, 0)); // the direction doesn't matter, but must be set
+		stateMachine.forceStateChange(invertControllsState);
+		
+		// reset the attack timers to avoid immediate attacks after the invert controls spell
+		((MultiAttackAI) ai).resetAttackTimer(STATE_NAME_ATTACK_MAGIC_FIRE_BALL);
+		((MultiAttackAI) ai).resetAttackTimer(STATE_NAME_ATTACK_ARCANE_SHOWER);
+		((MultiAttackAI) ai).resetAttackTimer(STATE_NAME_ATTACK_CHARGE_MAGIC_BLAST);
 	}
 	
 	@Override

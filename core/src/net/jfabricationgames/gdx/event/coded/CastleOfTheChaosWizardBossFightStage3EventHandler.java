@@ -1,9 +1,11 @@
 package net.jfabricationgames.gdx.event.coded;
 
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.condition.Condition;
 import net.jfabricationgames.gdx.condition.ConditionType;
+import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
@@ -194,13 +196,27 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 			boolean playerChangedToLeftSide = "loa2_l5_castle_of_the_chaos_wizard__spire__left_side".equals(event.stringValue);
 			boolean playerChangedToRightSide = "loa2_l5_castle_of_the_chaos_wizard__spire__right_side".equals(event.stringValue);
 			if (battleStage >= 5 && (playerChangedToLeftSide || playerChangedToRightSide)) {
-				// from battle stage 5 on, the nearest lich minion fires a targeting projectile when a player changes the side
+				// from battle stage 5 on, the lich minions fire a targeting projectile when a player changes the side
 				String eventString = "loa2_l5_castle_of_the_chaos_wizard_spire__lich_minion_fire_targeting_projectile__";
 				if (isPlayerInBottomArea()) {
-					eventString += "bottom";
+					if (battleStage == 5) {
+						// in battle stage 5 the near lich fires the targeting projectile
+						eventString += "bottom";
+					}
+					else {
+						// in battle stage 6 and 7 the far lich fires the targeting projectile
+						eventString += "top";
+					}
 				}
 				else if (isPlayerInTopArea()) {
-					eventString += "top";
+					if (battleStage == 5) {
+						// in battle stage 5, the far lich fires the targeting projectile
+						eventString += "top";
+					}
+					else {
+						// in battle stage 6 and 7, the near lich fires the targeting projectile
+						eventString += "bottom";
+					}
 				}
 				else {
 					// the player should not be able to move through the center in this stage - just in case, do nothing
@@ -211,6 +227,25 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 				EventHandler.getInstance().fireEvent(new EventConfig() //
 						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
 						.setStringValue(eventString));
+				
+				if (battleStage >= 6) {
+					// in battle stage 6 and 7, the near lich also casts a spell to invert the player's controls
+					String eventStringInvertControls = "loa2_l5_castle_of_the_chaos_wizard_spire__lich_minion_invert_player_controls__";
+					if (isPlayerInBottomArea()) {
+						eventStringInvertControls += "bottom";
+					}
+					else if (isPlayerInTopArea()) {
+						eventStringInvertControls += "top";
+					}
+					
+					EventHandler.getInstance().fireEvent(new EventConfig() //
+							.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+							.setStringValue(eventStringInvertControls));
+				}
+				
+				if (battleStage == 7) {
+					spawnFlameskullsOnPlayerSide(3);
+				}
 				
 				if (playerChangedToLeftSide) {
 					timeTillChaosWizardPushNova = 9.5f; // push the player away before the laser blaster changes side
@@ -251,21 +286,36 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 		return ConditionType.OBJECT_IN_POSITION.check(condition);
 	}
 	
-	//************************************************
-	//*** TODO test methods - to be deleted later
-	//************************************************
+	private void spawnFlameskullsOnPlayerSide(int maxFlameskullsPerSide) {
+		if (isPlayerOnLeftSide()) {
+			if (countFlameskullsOnLeftSide() < maxFlameskullsPerSide) {
+				String spawnType = "flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__left";
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+						.setStringValue(spawnType));
+			}
+		}
+		else {
+			// the map is divided in left and right - the sides take up the whole reachable area -> the player has to be on the right side
+			if (countFlameskullsOnRightSide() < maxFlameskullsPerSide) {
+				String spawnType = "flameskull__castle_of_the_chaos_wizard_spire__no_charge_attack__right";
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CUSTCENE_SPAWN_UNIT) //
+						.setStringValue(spawnType));
+			}
+		}
+	}
 	
-	//	
-	//	private int countFlameskullsOnLeftSide() {
-	//		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left");
-	//	}
-	//	
-	//	private int countFlameskullsOnRightSide() {
-	//		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_right");
-	//	}
-	//	
-	//	private int countUnitsOnMap(String unitId) {
-	//		Array<CutsceneControlledUnit> allUnitsWithId = GameMapManager.getInstance().getMap().getAllUnitsWithId(unitId);
-	//		return allUnitsWithId.size;
-	//	}
+	private int countFlameskullsOnLeftSide() {
+		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left");
+	}
+	
+	private int countFlameskullsOnRightSide() {
+		return countUnitsOnMap("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_right");
+	}
+	
+	private int countUnitsOnMap(String unitId) {
+		Array<CutsceneControlledUnit> allUnitsWithId = GameMapManager.getInstance().getMap().getAllUnitsWithId(unitId);
+		return allUnitsWithId.size;
+	}
 }

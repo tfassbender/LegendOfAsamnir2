@@ -1901,12 +1901,6 @@
 		health: 1,
 		movingSpeed: 2,
 		
-		damageModifiersByAttackType: {
-			ARROW: 1f,
-			BOMB: 1f,
-			MAGIC: 0f,
-		},
-		
 		imageOffsetX: 0f,
 		imageOffsetY: 0f,
 		

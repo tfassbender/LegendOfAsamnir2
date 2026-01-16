@@ -9,6 +9,16 @@
         events: [CUSTCENE_SPAWN_UNIT],
 	},
 	
+	summoning_circle_complex_event: {
+        spawnType: object.summoning_circle,
+        complexEvents: [
+        	{
+				eventType: CUSTCENE_SPAWN_UNIT,
+		        stringValue: summoning_circle,
+			}
+        ],
+	},
+	
 	explosion_1: {
 		spawnType: object.explosion,
         complexEvents: [
