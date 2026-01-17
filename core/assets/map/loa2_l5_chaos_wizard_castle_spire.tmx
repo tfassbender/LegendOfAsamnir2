@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="595">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="616">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -544,31 +544,6 @@
     <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__spire__right_side"/>
    </properties>
   </object>
-  <object id="520" name="object.magic_fire" x="590.091" y="597.602" width="18" height="30.25">
-   <properties>
-    <property name="traverseable_object_n" value="5"/>
-   </properties>
-  </object>
-  <object id="524" name="object.magic_fire" x="640.455" y="597.239" width="18" height="30.25">
-   <properties>
-    <property name="traverseable_object_n" value="6"/>
-   </properties>
-  </object>
-  <object id="525" name="object.magic_fire" x="617.545" y="576.148" width="18" height="30.25">
-   <properties>
-    <property name="traverseable_object_n" value="4"/>
-   </properties>
-  </object>
-  <object id="527" name="object.magic_fire" x="600.182" y="629.966" width="18" height="30.25">
-   <properties>
-    <property name="traverseable_object_n" value="4"/>
-   </properties>
-  </object>
-  <object id="528" name="object.magic_fire" x="630.182" y="629.602" width="18" height="30.25">
-   <properties>
-    <property name="traverseable_object_n" value="4"/>
-   </properties>
-  </object>
   <object id="529" name="object.spawnPoint.flameskull" x="512" y="544">
    <properties>
     <property name="spawn" value="enemy__flameskull__spire_left"/>
@@ -581,7 +556,7 @@
    </properties>
    <point/>
   </object>
-  <object id="532" name="object.spawnPoint.flameskull" x="544" y="624">
+  <object id="532" name="object.spawnPoint.flameskull" x="539" y="624">
    <properties>
     <property name="spawn" value="enemy__flameskull__spire_left"/>
    </properties>
@@ -599,7 +574,7 @@
    </properties>
    <point/>
   </object>
-  <object id="535" name="object.spawnPoint.flameskull" x="704" y="625">
+  <object id="535" name="object.spawnPoint.flameskull" x="709" y="625">
    <properties>
     <property name="spawn" value="enemy__flameskull__spire_right"/>
    </properties>
@@ -656,11 +631,6 @@
     <property name="spawn" value="playerAmmoArrowBelowHalf"/>
    </properties>
    <point/>
-  </object>
-  <object id="545" name="object.eventObject" x="320.17" y="831.733" width="223.659" height="32.534">
-   <properties>
-    <property name="eventParameter" value="loa2_l5_castle_of_the_chaos_wizard__spire__test"/>
-   </properties>
   </object>
   <object id="546" name="object.magic_energy_line" x="581" y="692">
    <properties>
@@ -757,7 +727,7 @@
    </properties>
    <point/>
   </object>
-  <object id="562" name="object.spawnPoint.flameskull" x="544" y="624">
+  <object id="562" name="object.spawnPoint.flameskull" x="539" y="624">
    <properties>
     <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_left"/>
    </properties>
@@ -781,7 +751,7 @@
    </properties>
    <point/>
   </object>
-  <object id="568" name="object.spawnPoint.flameskull" x="704" y="625">
+  <object id="568" name="object.spawnPoint.flameskull" x="709" y="625">
    <properties>
     <property name="spawn" value="enemy__flameskull__no_charge_attack__spire_right"/>
    </properties>
@@ -861,6 +831,58 @@
   <object id="594" name="object.magic_fire" x="593.182" y="544.148" width="18" height="30.25">
    <properties>
     <property name="traverseable_object_n" value="2"/>
+   </properties>
+  </object>
+  <object id="597" name="object.magic_fire" x="555.25" y="626.875" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="598" name="object.magic_fire" x="554.625" y="582.75" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="603" name="object.enemy_path_blocker" x="682.396" y="532.182" width="7.54167" height="171.302"/>
+  <object id="604" name="object.enemy_path_blocker" x="560.562" y="531.849" width="7.54167" height="171.968"/>
+  <object id="607" name="object.magic_fire" x="554.5" y="666.875" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="608" name="object.magic_fire" x="554.75" y="546.625" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="610" name="object.magic_fire" x="677.466" y="626.636" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="611" name="object.magic_fire" x="676.841" y="582.511" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="612" name="object.magic_fire" x="676.716" y="666.636" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="613" name="object.magic_fire" x="676.966" y="546.386" width="18" height="30.25">
+   <properties>
+    <property name="traverseable_object_n" value="4"/>
+   </properties>
+  </object>
+  <object id="614" name="object.configObject" x="320.083" y="555.833" width="69.6663" height="99.1663">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__save_area_left"/>
+   </properties>
+  </object>
+  <object id="615" name="object.configObject" x="855.917" y="559.917" width="72.1663" height="88.1663">
+   <properties>
+    <property name="unitId" value="config_object__chaos_wizard_spire__save_area_right"/>
    </properties>
   </object>
  </objectgroup>

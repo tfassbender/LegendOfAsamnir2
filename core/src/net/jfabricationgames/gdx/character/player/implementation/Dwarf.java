@@ -622,6 +622,8 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public void takeDamage(float damage, AttackInfo attackInfo) {
+		damage = 0; // TODO remove after tests
+		
 		AttackType attackType = attackInfo.getAttackType();
 		damage *= difficulty.getDifficultyConfig().damageFactor; // apply a factor for the game difficulty to the damage
 		

@@ -1,0 +1,261 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_final_damage_cutscene,
+	controlledActions: {
+		chaos_wizard_comment: {
+			startsWithCutscene: true,
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 1f,
+			
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "Damnit!           \nHow is it possible that you are still alive?!\n                  \nYou should have never gotten this far!!!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_comment_2,
+            ],
+		},
+		
+		chaos_wizard_comment_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "I am allmighty!           \nI cannot be defeated by a mortal!!!\n                   \nIt seems I have no other choice but to unleash my full power...          ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	chaos_wizard_comment_3,
+            ],
+		},
+		
+		chaos_wizard_comment_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Strange Chaos Wizard Guy",
+                colorHeader: #850085,
+                displayText: "This is the end of our little game, Thorin!\n                  \nIt was really fun toying with you up to this point, but now it's time to finish you off for good!          \nPrepare to die!!!      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	change_state_chaos_wizard_cast,
+            	
+            	restore_obelisks,
+            	remove_magic_flames,
+            	spawn_magic_energy_lines_and_flames_multiplexer,
+            	spawn_flameskulls_on_player_side,
+            	
+            	stop_normal_boss_music,
+            ],
+		},
+		
+		change_state_chaos_wizard_cast: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
+		},
+		
+		restore_obelisks: {
+            type: EVENT,
+            
+            executionDelayInSeconds: 1f,
+            
+            event: {
+            	eventType: CONFIG_GENERATED_EVENT,
+            	stringValue: "restore_magic_obelisks",
+			}
+		},
+		
+		remove_magic_flames: {
+			type: WAIT,
+			
+			executes: [
+                remove_magic_flames_1,
+                remove_magic_flames_2,
+                remove_magic_flames_3,
+                remove_magic_flames_4,
+			],
+		},
+		
+		remove_magic_flames_1: {
+			type: EVENT,
+            
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 1,
+			}
+		},
+		
+		remove_magic_flames_2: {
+			type: EVENT,
+            
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 2,
+			}
+		},
+		
+		remove_magic_flames_3: {
+			type: EVENT,
+            
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 3,
+			}
+		},
+		
+		remove_magic_flames_4: {
+			type: EVENT,
+            
+            event: {
+            	eventType: TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR,
+                intValue: 4,
+			}
+		},
+		
+		spawn_magic_energy_lines_and_flames_multiplexer: {
+			type: WAIT,
+			
+			executionDelayInSeconds: 2.5f,
+			
+			executes: [
+                spawn_magic_flame_circle,
+                spawn_magic_energy_line_bottom_left,
+                spawn_magic_energy_line_bottom_right,
+                spawn_magic_energy_line_top_left,
+                spawn_magic_energy_line_top_right,
+			],
+		}
+		
+		spawn_magic_flame_circle: {
+			type: EVENT,
+			
+            event: {
+            	eventType: CONFIG_GENERATED_EVENT,
+            	stringValue: "loa2_l5_castle_of_the_chaos_wizard__spire__spawn_magic_flame_circle__final_stage",
+            }
+		},
+		
+		spawn_magic_energy_line_bottom_left: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_bottom_right: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_bottom_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_top_left: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_left,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_magic_energy_line_top_right: {
+            type: EVENT,
+            
+            event: {
+            	eventType: DISPLAY_ANIMATION_GAME_OBJECT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right,
+            	booleanValue: true, // visible
+			}
+		},
+		
+		spawn_flameskulls_on_player_side: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 4f,
+            
+            event: {
+            	eventType: CONFIG_GENERATED_EVENT,
+            	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__spawn_flameskulls_on_player_side,
+			}
+            
+			executes: [
+                change_state_chaos_wizard_idle,
+			],
+		},
+		
+		change_state_chaos_wizard_idle: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 2f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: idle,
+            
+			executes: [
+                wait_before_continuing_boss_fight,
+			],
+		},
+		
+		stop_normal_boss_music: {
+			type: EVENT,
+            
+            executionDelayInSeconds: 5f,
+            
+            event: {
+                eventType: STOP_BACKGROUND_MUSIC,
+                booleanValue: true, // fade out
+			}
+			
+			executes: [
+                play_boss_enraged_music,
+            ],
+		},
+		
+		play_boss_enraged_music: {
+			type: EVENT,
+            
+            event: {
+                eventType: ADD_BACKGROUND_MUSIC_TO_QUEUE, // add to queue is needed because of the fade out of the previous music
+                stringValue: boss_enraged,
+                booleanValue: true, // fade in
+			}
+		},
+		
+		wait_before_continuing_boss_fight: {
+            type: WAIT,
+            
+            executionDelayInSeconds: 3f,
+            
+            executes: [
+                end,
+			],
+		},
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

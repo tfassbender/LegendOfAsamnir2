@@ -16,6 +16,7 @@ import net.jfabricationgames.gdx.character.ai.util.timer.RandomIntervalAttackTim
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.ChaosWizardAttackAI;
+import net.jfabricationgames.gdx.character.player.PlayableCharacter;
 import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.character.state.CharacterStateChangeListener;
@@ -41,9 +42,9 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	private static final String STATE_NAME_BLAST_WITH_EFFECT = "blast_with_effect";
 	private static final String STATE_NAME_CAST = "cast_loop_with_effect_single";
 	
-	private static final float lastStageHealthFactor = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
-	private static final int stages = 7; // the number of stages - in each stage the boss has to be attacked once
-	private int currentStage = 4; // TODO set to 1 after tests
+	private static final float LAST_STAGE_HEALTH_FACTOR = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
+	private static final int NUM_BATTLE_STAGES = 7; // in each stage the boss has to be attacked once
+	private int currentStage = 1;
 	private boolean battleStateChanged = false;
 	
 	private int fireballsToShoot = 0;
@@ -53,6 +54,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	private float pushNovaDelayTimer = 0f;
 	private float startFirstCutsceneDelayTimer = 0f;
 	private float startSecondCutsceneDelayTimer = 0f;
+	private float startThirdCutsceneDelayTimer = 0f;
 	
 	private float immortalityTimer = 0f;
 	
@@ -65,6 +67,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	private float deactivateLaserBlasterDelayTimer = 0f;
 	
 	private ChaosWizardAttackAI chaosWizardAttackAI;
+	private PlayableCharacter player;
 	
 	public ChaosWizard(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
@@ -91,16 +94,14 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private ArtificialIntelligence createFightAI(ArtificialIntelligence ai) {
 		// the push nova is only used after the chaos wizard was hit, so it's not part of the attack AI
-		String stateNameAttackMagicFireBall = STATE_NAME_ATTACK_MAGIC_FIRE_BALL;
-		String stateNameAttackMagicFireSoil = STATE_NAME_ATTACK_MAGIC_FIRE_SOIL;
 		// other attacks (like the lichs and the laser blaster) are not controlled by this AI but are triggered by events
 		
-		CharacterState characterStateAttackMagicFireBall = stateMachine.getState(stateNameAttackMagicFireBall);
-		CharacterState characterStateAttackMagicFireSoil = stateMachine.getState(stateNameAttackMagicFireSoil);
+		CharacterState characterStateAttackMagicFireBall = stateMachine.getState(STATE_NAME_ATTACK_MAGIC_FIRE_BALL);
+		CharacterState characterStateAttackMagicFireSoil = stateMachine.getState(STATE_NAME_ATTACK_MAGIC_FIRE_SOIL);
 		
 		ArrayMap<String, CharacterState> attackStates = new ArrayMap<>();
-		attackStates.put(stateNameAttackMagicFireBall, characterStateAttackMagicFireBall);
-		attackStates.put(stateNameAttackMagicFireSoil, characterStateAttackMagicFireSoil);
+		attackStates.put(STATE_NAME_ATTACK_MAGIC_FIRE_BALL, characterStateAttackMagicFireBall);
+		attackStates.put(STATE_NAME_ATTACK_MAGIC_FIRE_SOIL, characterStateAttackMagicFireSoil);
 		
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
 		float fireBallAttackDistance;
@@ -151,6 +152,11 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				fireballsToShoot = 7;
 			}
 		}
+		else if (STATE_NAME_ATTACK_MAGIC_FIRE_SOIL.equals(newState.getStateName())) {
+			// the fire soil attack starts at the player's position or a bit nearer to the chaos wizard if the player is near,
+			// because we assume that the player is moving to wards the chaos wizard for an attack
+			newState.setAttackTargetPositionSupplier(this::getMagicFireSoilAttackPosition);
+		}
 		else if (STATE_NAME_BLAST_WITH_EFFECT.equals(newState.getStateName())) {
 			pushNovaDelayTimer = 0.2f; // delay the push nova a bit to align with the animation
 		}
@@ -164,6 +170,22 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				spawnFlameskullsDelayTimer = 1.3f; // delay the spawning a bit to align with the casting animation
 			}
 		}
+	}
+	
+	private Vector2 getMagicFireSoilAttackPosition() {
+		if (player == null) {
+			player = Player.getInstance();
+		}
+		
+		Vector2 playerPosition = player.getPosition().cpy();
+		if (playerPosition.dst2(getPosition()) < 4f * 4f) {
+			// move the target position a bit nearer to the chaos wizard (because the player is probably running towards him)
+			Vector2 directionToChaosWizard = getPosition().cpy().sub(playerPosition).nor();
+			return playerPosition.add(directionToChaosWizard.scl(1f));
+		}
+		
+		// if the player is not near, target the player's current position directly
+		return playerPosition;
 	}
 	
 	@Override
@@ -218,8 +240,11 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 							// no obelisks in this stage - only the vorpal laser blaster of pittenweem
 							startSecondCutsceneDelayTimer = 0.5f;
 							break;
+						// no special events in stage 6 - only the attacks are changed, because a lich uses an "invert controls" attack
 						case 7:
-							// TODO last cutscene before the end of the battle
+							startThirdCutsceneDelayTimer = 0.5f;
+							// obelisks are restored and the first flameskulls are spawned in the cutscene
+							setObelisksRepellBombs(false);
 							break;
 					}
 				}
@@ -243,6 +268,16 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 				EventHandler.getInstance().fireEvent(new EventConfig() //
 						.setEventType(EventType.START_CUTSCENE) //
 						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard__vorpal_laser_blaster_of_pittenweem_cutscene"));
+			}
+		}
+		
+		// start the third cutscene before the final phase
+		if (startThirdCutsceneDelayTimer > 0f) {
+			startThirdCutsceneDelayTimer -= delta;
+			if (startThirdCutsceneDelayTimer <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.START_CUTSCENE) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_final_damage_cutscene"));
 			}
 		}
 		
@@ -393,16 +428,26 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		}
 		
 		// distribute the damage equally over the stages (except for the last stage, in which the battle ends if the chaos wizard takes damage)
-		damage = typeConfig.health * ((1f - lastStageHealthFactor) / (stages - 1));
+		damage = typeConfig.health * ((1f - LAST_STAGE_HEALTH_FACTOR) / (NUM_BATTLE_STAGES - 1));
 		currentStage++;
 		
 		super.takeDamage(damage, attackInfo);
 		
-		immortalityTimer = 3f; // short immortality after being hit to prevent multiple stage changes because of multiple hits in a short time
+		immortalityTimer = 5f; // short immortality after being hit to prevent multiple stage changes because of multiple hits in a short time
 		battleStateChanged = true; // the battle state increases because the chaos wizard was hit
 		pushBackPlayer(true);
+		if (currentStage >= 6) {
+			// the laser blaster was already introduced in stage 5, so now it's directly moved to the player's side after the chaos wizard was hit
+			sendMoveLaserBlasterEvent();
+		}
 		sendStageChangeEvent();
 		createAI(); // recreate the AI to adjust attack distances and timers
+	}
+	
+	private void sendMoveLaserBlasterEvent() {
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__move_laser_blaster_to_player_side"));
 	}
 	
 	private void sendStageChangeEvent() {

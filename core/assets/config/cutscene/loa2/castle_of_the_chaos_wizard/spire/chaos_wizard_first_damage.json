@@ -18,13 +18,23 @@
             waitForEventToFinish: true,
             
             executes: [
+            	change_state_chaos_wizard_cast,
             	restore_obelisks,
             	spawn_magic_energy_lines_and_flames_multiplexer,
             ],
 		},
 		
+		change_state_chaos_wizard_cast: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			controlledUnitState: cast_loop_with_effect,
+		},
+		
 		restore_obelisks: {
             type: EVENT,
+            
+            executionDelayInSeconds: 1f,
             
             event: {
             	eventType: CONFIG_GENERATED_EVENT,
@@ -35,7 +45,7 @@
 		spawn_magic_energy_lines_and_flames_multiplexer: {
 			type: WAIT,
 			
-			executionDelayInSeconds: 1.5f,
+			executionDelayInSeconds: 2.5f,
 			
 			executes: [
                 spawn_magic_flame_circle,
@@ -44,7 +54,7 @@
                 spawn_magic_energy_line_top_left,
                 spawn_magic_energy_line_top_right,
                 
-            	wait_before_continuing_boss_fight,
+            	change_state_chaos_wizard_idle,
 			],
 		}
 		
@@ -95,6 +105,19 @@
             	stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_right,
             	booleanValue: true, // visible
 			}
+		},
+		
+		change_state_chaos_wizard_idle: {
+            type: CHANGE_STATE,
+            
+            executionDelayInSeconds: 1f,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: idle,
+            
+			executes: [
+                wait_before_continuing_boss_fight,
+			],
 		},
 		
 		wait_before_continuing_boss_fight: {

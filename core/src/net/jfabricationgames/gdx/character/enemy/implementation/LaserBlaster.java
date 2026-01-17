@@ -75,6 +75,7 @@ public class LaserBlaster extends Enemy implements CharacterStateChangeListener 
 			if (leftBlaster != isPlayerOnLeftSide()) {
 				// stop the attack state if the player is not in the blaster's target area
 				stateMachine.setState("idle");
+				attackHandler.abortAllAttacks();
 			}
 		}
 	}

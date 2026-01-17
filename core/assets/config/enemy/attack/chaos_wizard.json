@@ -29,6 +29,6 @@
 		damage: 15,
 		pushForce: 60,
 		startAttackAtPlayerPosition: true,
-		startAttackNearAttackerOffset: 1f,
+		startAttackNearAttackerOffset: 0f, // only used when the player is near - therefore implemented in the ChaosWizard class
 	},
 ]

@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 import net.jfabricationgames.gdx.condition.Condition;
 import net.jfabricationgames.gdx.condition.ConditionType;
+import net.jfabricationgames.gdx.cutscene.CutsceneHandler;
 import net.jfabricationgames.gdx.cutscene.action.CutsceneControlledUnit;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -31,90 +32,15 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 	private float timeTillLaserBlasterChangedToRightSide = 0f;
 	
 	@Override
-	public void process(float delta) {
-		// chaos wizard push nova (before the laser blaster appears on the other side)
-		if (timeTillChaosWizardPushNova > 0f) {
-			timeTillChaosWizardPushNova -= delta;
-			if (timeTillChaosWizardPushNova <= 0f) {
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__chaos_wizard__fire_push_nova_attack"));
-			}
-		}
-		
-		// laser blaster disappears on one side
-		
-		if (timeTillLaserBlasterDisappearesOnTheLeftSide > 0f) {
-			timeTillLaserBlasterDisappearesOnTheLeftSide -= delta;
-			if (timeTillLaserBlasterDisappearesOnTheLeftSide <= 0f) {
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__deactivate_vorpal_laser_blaster_of_pittenweem") //
-						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_left"));
-			}
-		}
-		
-		if (timeTillLaserBlasterDisappearesOnTheRightSide > 0f) {
-			timeTillLaserBlasterDisappearesOnTheRightSide -= delta;
-			if (timeTillLaserBlasterDisappearesOnTheRightSide <= 0f) {
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__deactivate_vorpal_laser_blaster_of_pittenweem") //
-						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_right"));
-			}
-		}
-		
-		// laser blaster appears on the other side
-		
-		if (timeTillLaserBlasterChangedToLeftSide > 0f) {
-			timeTillLaserBlasterChangedToLeftSide -= delta;
-			if (timeTillLaserBlasterChangedToLeftSide <= 0f) {
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__activate_vorpal_laser_blaster_of_pittenweem") //
-						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_left"));
-				
-				// change the active magic fires to block the path of the player
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
-						.setIntValue(2));
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
-						.setIntValue(1));
-			}
-		}
-		
-		if (timeTillLaserBlasterChangedToRightSide > 0f) {
-			timeTillLaserBlasterChangedToRightSide -= delta;
-			if (timeTillLaserBlasterChangedToRightSide <= 0f) {
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__activate_vorpal_laser_blaster_of_pittenweem") //
-						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_right"));
-				
-				// change the active magic fires to block the path of the player
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
-						.setIntValue(1));
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
-						.setIntValue(2));
-			}
-		}
-	}
-	
-	@Override
 	public void handleEvent(EventConfig event) {
-		// TODO delete after tests
-		//		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
-		//			if ("loa2_l5_castle_of_the_chaos_wizard__spire__test".equals(event.stringValue)) {
-		//				EventHandler.getInstance().fireEvent(new EventConfig() //
-		//						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
-		//						.setStringValue("loa2_l5_castle_of_the_chaos_wizard__bomb_repelling_dummy__active") //
-		//						.setBooleanValue(true));
-		//			}
-		//		}
-		
+		if (EventType.PLAYER_RESPAWNED.equals(event.eventType)) {
+			// reset the obelisk states after the game is restarted
+			obeliskDestroyedTopLeft = false;
+			obeliskDestroyedTopRight = false;
+			obeliskDestroyedBottomLeft = false;
+			obeliskDestroyedBottomRight = false;
+			battleStage = 1;
+		}
 		if (EventType.DESTROYABLE_OBJECT_DESTROYED.equals(event.eventType)) {
 			String animationObjectIdToTurnOff = null;
 			if ("loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_top_left".equals(event.stringValue)) {
@@ -147,6 +73,11 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 				EventHandler.getInstance().fireEvent(new EventConfig() //
 						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
 						.setIntValue(3));
+				
+				// also remove the magic shield that is behind the chaos wizard in the final stage
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+						.setIntValue(4));
 			}
 		}
 		else if (EventType.CONFIG_GENERATED_EVENT.equals(event.eventType)) {
@@ -171,22 +102,33 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 				}
 			}
 			else if ("spawn_magic_flames_near_vorpal_laser_blaster_of_pittenweem".equals(event.stringValue)) {
-				if (isPlayerOnLeftSide()) {
-					EventHandler.getInstance().fireEvent(new EventConfig() //
-							.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
-							.setIntValue(1));
-				}
-				else {
-					EventHandler.getInstance().fireEvent(new EventConfig() //
-							.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
-							.setIntValue(2));
-				}
+				spawnMagicFlamesForLaserBlaster();
 			}
 			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__setup".equals(event.stringValue)) {
 				GameMapManager.getInstance().getMap().registerGameMapProcessable(this); // unregistered when player dies
 			}
 			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__change_battle_stage".equals(event.stringValue)) {
 				battleStage = event.intValue;
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__spawn_magic_flame_circle__final_stage".equals(event.stringValue)) {
+				spawnMagicFlamesForLaserBlaster();
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__move_laser_blaster_to_player_side".equals(event.stringValue)) {
+				if (isPlayerOnLeftSide()) {
+					timeTillLaserBlasterDisappearesOnTheRightSide = 0.1f; // make the laser blaster disappear on one side first 
+					timeTillLaserBlasterDisappearesOnTheLeftSide = 0f; // reset the other timer
+					timeTillLaserBlasterChangedToLeftSide = 2.5f; // let the laser blaster appear shortly after it disappeared on the other side
+					timeTillLaserBlasterChangedToRightSide = 0f; // reset the other timer
+				}
+				else {
+					timeTillLaserBlasterDisappearesOnTheLeftSide = 0.1f; // make the laser blaster disappear on one side first 
+					timeTillLaserBlasterDisappearesOnTheRightSide = 0f; // reset the other timer
+					timeTillLaserBlasterChangedToRightSide = 2.5f; // let the laser blaster appear shortly after it disappeared on the other side
+					timeTillLaserBlasterChangedToLeftSide = 0f; // reset the other timer
+				}
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__spawn_flameskulls_on_player_side".equals(event.stringValue)) {
+				spawnFlameskullsOnPlayerSide(3);
 			}
 		}
 		else if (EventType.PLAYER_DIED.equals(event.eventType)) {
@@ -265,6 +207,26 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 		}
 	}
 	
+	private void spawnMagicFlamesForLaserBlaster() {
+		if (isPlayerOnLeftSide()) {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+					.setIntValue(1));
+		}
+		else {
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+					.setIntValue(2));
+		}
+		
+		if (battleStage == 7) {
+			// in the final stage: also spawn some flames behind the chaos wizard, that will stay active till the obelisks are destroyed
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+					.setIntValue(4));
+		}
+	}
+	
 	private boolean isPlayerOnLeftSide() {
 		return isPlayerInArea("config_object__chaos_wizard_spire__area_left");
 	}
@@ -317,5 +279,82 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 	private int countUnitsOnMap(String unitId) {
 		Array<CutsceneControlledUnit> allUnitsWithId = GameMapManager.getInstance().getMap().getAllUnitsWithId(unitId);
 		return allUnitsWithId.size;
+	}
+	
+	@Override
+	public void process(float delta) {
+		if (CutsceneHandler.getInstance().isCutsceneActive()) {
+			return; // do not process during cutscenes
+		}
+		
+		// chaos wizard push nova (before the laser blaster appears on the other side)
+		if (timeTillChaosWizardPushNova > 0f) {
+			timeTillChaosWizardPushNova -= delta;
+			if (timeTillChaosWizardPushNova <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__chaos_wizard__fire_push_nova_attack"));
+			}
+		}
+		
+		// laser blaster disappears on one side
+		
+		if (timeTillLaserBlasterDisappearesOnTheLeftSide > 0f) {
+			timeTillLaserBlasterDisappearesOnTheLeftSide -= delta;
+			if (timeTillLaserBlasterDisappearesOnTheLeftSide <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__deactivate_vorpal_laser_blaster_of_pittenweem") //
+						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_left"));
+			}
+		}
+		
+		if (timeTillLaserBlasterDisappearesOnTheRightSide > 0f) {
+			timeTillLaserBlasterDisappearesOnTheRightSide -= delta;
+			if (timeTillLaserBlasterDisappearesOnTheRightSide <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__deactivate_vorpal_laser_blaster_of_pittenweem") //
+						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_right"));
+			}
+		}
+		
+		// laser blaster appears on the other side
+		
+		if (timeTillLaserBlasterChangedToLeftSide > 0f) {
+			timeTillLaserBlasterChangedToLeftSide -= delta;
+			if (timeTillLaserBlasterChangedToLeftSide <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__activate_vorpal_laser_blaster_of_pittenweem") //
+						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_left"));
+				
+				// change the active magic fires to block the path of the player
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+						.setIntValue(2));
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+						.setIntValue(1));
+			}
+		}
+		
+		if (timeTillLaserBlasterChangedToRightSide > 0f) {
+			timeTillLaserBlasterChangedToRightSide -= delta;
+			if (timeTillLaserBlasterChangedToRightSide <= 0f) {
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.CONFIG_GENERATED_EVENT) //
+						.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__activate_vorpal_laser_blaster_of_pittenweem") //
+						.setParameterObject("loa2_l5_castle_of_the_chaos_wizard_spire__laser_blaster_right"));
+				
+				// change the active magic fires to block the path of the player
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+						.setIntValue(1));
+				EventHandler.getInstance().fireEvent(new EventConfig() //
+						.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SOLID_OBJECT) //
+						.setIntValue(2));
+			}
+		}
 	}
 }

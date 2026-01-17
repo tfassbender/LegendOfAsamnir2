@@ -100,7 +100,7 @@ public class LaserBlasterBeamAttack extends Attack {
 				PhysicsCollisionType type = PhysicsCollisionType.getByFilter(fixture.getFilterData());
 				
 				// Ignore unreachable areas and let the ray continue
-				if (type == PhysicsCollisionType.MAP_UNREACHABLE_AREA) {
+				if (type == PhysicsCollisionType.MAP_UNREACHABLE_AREA || type == PhysicsCollisionType.OBSTACLE_ENEMY) {
 					return 1f;
 				}
 				
@@ -122,7 +122,7 @@ public class LaserBlasterBeamAttack extends Attack {
 	
 	@Override
 	protected void render(float delta, SpriteBatch batch) {
-		if (timer < config.delay) {
+		if (aborted || timer < config.delay) {
 			return;
 		}
 		
@@ -132,7 +132,7 @@ public class LaserBlasterBeamAttack extends Attack {
 	
 	@Override
 	protected void render(ShapeRenderer shapeRenderer) {
-		if (hitFixtureProperties == null || hitFixtureProperties.body == null || timer < config.delay) {
+		if (aborted || hitFixtureProperties == null || hitFixtureProperties.body == null || timer < config.delay) {
 			return;
 		}
 		

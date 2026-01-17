@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 
 import net.jfabricationgames.gdx.attack.AttackInfo;
+import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.state.CharacterState;
@@ -66,5 +67,14 @@ public class Flameskull extends Enemy implements CharacterStateChangeListener {
 		// spread the shots evenly in a circle
 		float angle = 360f / (float) totalShots * (float) shotIndex;
 		return DIRECTION_UP.cpy().rotateDeg(angle);
+	}
+	
+	@Override
+	public void takeDamage(float damage, AttackInfo attackInfo) {
+		if (attackInfo.getAttackType() != null && attackInfo.getAttackType().isSubTypeOf(AttackType.MAGIC)) {
+			damage = health; // instant kill from magic attacks
+		}
+		
+		super.takeDamage(damage, attackInfo);
 	}
 }
