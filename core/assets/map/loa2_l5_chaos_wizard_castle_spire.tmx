@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="616">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="617">
  <properties>
   <property name="above_player_layers" value="[5]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -884,6 +884,18 @@
    <properties>
     <property name="unitId" value="config_object__chaos_wizard_spire__save_area_right"/>
    </properties>
+  </object>
+  <object id="616" name="object.configObject" x="256" y="640">
+   <properties>
+    <property name="eventDelayInSeconds" value="0"/>
+    <property name="eventToFire">{
+    eventType: CONFIG_GENERATED_EVENT,
+    stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__start_setup_cutscene_after_delay,
+}</property>
+    <property name="playClockTickingSoundForDelay" value="false"/>
+    <property name="unitId" value="loa2_l5_castle_of_the_chaos_wizard__spire__config_object__start_setup_cutscene_after_delay"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup id="8" name="physics" locked="1">

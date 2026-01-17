@@ -207,8 +207,9 @@ class GameMapRenderer implements Disposable {
 	}
 	
 	public void renderObjects(float delta) {
-		for (GameObject object : gameMap.objects) {
-			object.draw(delta, batch);
+		for (int i = 0; i < gameMap.objects.size; i++) {
+			// normal for-loop to avoid nested iterators (which won't work with LibGDX arrays)
+			gameMap.objects.get(i).draw(delta, batch);
 		}
 	}
 	

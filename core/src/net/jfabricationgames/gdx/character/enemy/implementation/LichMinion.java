@@ -44,6 +44,7 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 		super(typeConfig, properties);
 		
 		topMinion = "loa2_l5_castle_of_the_chaos_wizard_spire__lich__top".equals(getUnitId());
+		firstForm = false; // set to second form directly - otherwise the lich cannot die in the final cutscene
 		
 		stateMachine.addChangeListener(this);
 	}
@@ -172,7 +173,9 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 				fireballsToShoot = 0;
 				fireballShotTimer = 0f;
 				attackHandler.abortAllAttacks();
-				stateMachine.forceStateChange(idleState);
+				if (health > 0) {
+					stateMachine.forceStateChange(idleState);
+				}
 			}
 			else if ("loa2_l5_castle_of_the_chaos_wizard_spire__lich_minion_fire_targeting_projectile__top".equals(event.stringValue)) {
 				if (topMinion) {
@@ -211,6 +214,18 @@ public class LichMinion extends Lich implements CharacterStateChangeListener, Ev
 		((MultiAttackAI) ai).resetAttackTimer(STATE_NAME_ATTACK_MAGIC_FIRE_BALL);
 		((MultiAttackAI) ai).resetAttackTimer(STATE_NAME_ATTACK_ARCANE_SHOWER);
 		((MultiAttackAI) ai).resetAttackTimer(STATE_NAME_ATTACK_CHARGE_MAGIC_BLAST);
+	}
+	
+	@Override
+	protected void die() {
+		stateMachine.forceStateChange("die_withoud_sound");
+		
+		super.die();
+	}
+	
+	@Override
+	protected void afterLichDefeated() {
+		// prevent the usual cutscene after the lich is defeated, because this is only the minion version
 	}
 	
 	@Override

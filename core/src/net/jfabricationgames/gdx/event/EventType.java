@@ -45,6 +45,7 @@ public enum EventType {
 	KILL_PLAYER, //
 	HOOKSHOT_ATTACK_STARTED, //
 	HOOKSHOT_ATTACK_FINISHED, //
+	MAKE_PLAYER_INVINCIBLE_FOR_DURATION, //
 	//*******************************
 	//*** Game Objects
 	//*******************************

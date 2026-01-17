@@ -44,7 +44,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private static final float LAST_STAGE_HEALTH_FACTOR = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int NUM_BATTLE_STAGES = 7; // in each stage the boss has to be attacked once
-	private int currentStage = 1;
+	private int currentStage = 6;
 	private boolean battleStateChanged = false;
 	
 	private int fireballsToShoot = 0;
@@ -74,6 +74,8 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		
 		// needs to be reset if the game is restarted
 		typeConfig.bossName = CHAOS_WIZARD_NAME_1;
+		
+		health = 1f; // TODO remove after tests
 		
 		stateMachine.addChangeListener(this);
 	}
@@ -433,15 +435,17 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		
 		super.takeDamage(damage, attackInfo);
 		
-		immortalityTimer = 5f; // short immortality after being hit to prevent multiple stage changes because of multiple hits in a short time
-		battleStateChanged = true; // the battle state increases because the chaos wizard was hit
-		pushBackPlayer(true);
-		if (currentStage >= 6) {
-			// the laser blaster was already introduced in stage 5, so now it's directly moved to the player's side after the chaos wizard was hit
-			sendMoveLaserBlasterEvent();
+		if (health > 0) {
+			immortalityTimer = 5f; // short immortality after being hit to prevent multiple stage changes because of multiple hits in a short time
+			battleStateChanged = true; // the battle state increases because the chaos wizard was hit
+			pushBackPlayer(true);
+			if (currentStage >= 6) {
+				// the laser blaster was already introduced in stage 5, so now it's directly moved to the player's side after the chaos wizard was hit
+				sendMoveLaserBlasterEvent();
+			}
+			sendStageChangeEvent();
+			createAI(); // recreate the AI to adjust attack distances and timers
 		}
-		sendStageChangeEvent();
-		createAI(); // recreate the AI to adjust attack distances and timers
 	}
 	
 	private void sendMoveLaserBlasterEvent() {
@@ -476,9 +480,29 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	protected void die() {
 		super.die();
 		
-		// kill all spawned flameskulls and the lich minions when the chaos wizard is defeated
+		// kill all spawned flameskulls and the lich minions when the chaos wizard is defeated (units with ids need to be named explicitly)
 		EventHandler.getInstance().fireEvent(new EventConfig() //
-				.setEventType(EventType.ENEMY_DIE));
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__lich__top"));
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard_spire__lich__bottom"));
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_left"));
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__flameskull_spawned_right"));
+		
+		// make the player invincible for a short time to prevent deaths during the ending cutscene (because e.g. the projectiles cannot be stopped)
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.MAKE_PLAYER_INVINCIBLE_FOR_DURATION) //
+				.setFloatValue(30f)); // 30 seconds of invincibility
+		
+		// start the ending cutscene
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.START_CUTSCENE) //
+				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_defeated_cutscene"));
 	}
 	
 	@Override

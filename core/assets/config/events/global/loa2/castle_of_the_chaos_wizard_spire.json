@@ -3,10 +3,23 @@
 	//*** map setup
 	//*******************************************
 	
-	loa2_l5_castle_of_the_chaos_wizard__spire__setup: {
+	// uses a config object to start the setup cutscene after a delay (because the last cutscene, that changed the map is still active)
+	loa2_l5_castle_of_the_chaos_wizard__spire__setup_delay: {
 		event: {
 			eventType: CONFIG_GENERATED_EVENT,
 			stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__setup,
+		}
+		executionType: FIRE_EVENT,
+		executionParameters: {
+			eventType: CONFIG_GAME_OBJECT_ACTION,
+            stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__config_object__start_setup_cutscene_after_delay,
+		}
+	},
+	
+	loa2_l5_castle_of_the_chaos_wizard__spire__setup: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__start_setup_cutscene_after_delay,
 		}
 		executionType: START_CUTSCENE,
 		executionParameters: {

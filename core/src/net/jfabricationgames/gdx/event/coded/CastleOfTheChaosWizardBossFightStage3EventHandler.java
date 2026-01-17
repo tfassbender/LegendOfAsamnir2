@@ -41,7 +41,28 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 			obeliskDestroyedBottomRight = false;
 			battleStage = 1;
 		}
-		if (EventType.DESTROYABLE_OBJECT_DESTROYED.equals(event.eventType)) {
+		else if (EventType.ENEMY_DIE.equals(event.eventType)) {
+			// the chaos wizard was defeated -> reset all timers, turn off the magic flames and remove the laser blaster
+			timeTillChaosWizardPushNova = 0f;
+			timeTillLaserBlasterDisappearesOnTheRightSide = 0.1f;
+			timeTillLaserBlasterDisappearesOnTheLeftSide = 0.1f;
+			timeTillLaserBlasterChangedToLeftSide = 0f;
+			timeTillLaserBlasterChangedToRightSide = 0f;
+			
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+					.setIntValue(1));
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+					.setIntValue(2));
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+					.setIntValue(3));
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.TRAVERSABLE_OBJECT_CHANGE_BODY_TO_SENSOR) //
+					.setIntValue(4));
+		}
+		else if (EventType.DESTROYABLE_OBJECT_DESTROYED.equals(event.eventType)) {
 			String animationObjectIdToTurnOff = null;
 			if ("loa2_l5_castle_of_the_chaos_wizard__spire__magic_obelisk_top_left".equals(event.stringValue)) {
 				animationObjectIdToTurnOff = "loa2_l5_castle_of_the_chaos_wizard__spire__magic_energy_line_top_left";

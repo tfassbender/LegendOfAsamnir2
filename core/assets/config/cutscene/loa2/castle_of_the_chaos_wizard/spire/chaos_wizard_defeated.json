@@ -1,0 +1,30 @@
+{
+	id: loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_defeated_cutscene,
+	controlledActions: {
+		thorin_comment: {
+			startsWithCutscene: true,
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 5f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "...                 \n...                 \nWas that it?                \nAre you finally defeated, Strange Chaos Wizard Guy?      ",
+                showNextPageIcon: true,
+			}
+            
+            waitForEventToFinish: true,
+            
+            executes: [
+            	end,
+            ],
+		},
+		
+		// TODO add more dialog here
+		
+		end: {
+			type: WAIT,
+			executionDelayInSeconds: 0f,
+		}
+	}
+}

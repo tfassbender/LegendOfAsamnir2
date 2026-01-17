@@ -18,6 +18,9 @@
                 cultist_7_look_left,
                 cultist_8_look_left,
                 
+                restore_player_health,
+                forge_resurection_rune,
+                
 //                chaos_wizard_speech,
 //                play_sound_effect_evil_laughter,
                 
@@ -155,6 +158,24 @@
             
             controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_8,
             controlledUnitState: worship,
+		},
+		
+		restore_player_health: {
+            type: EVENT,
+            
+            event: {
+                eventType: SET_HEALTH,
+                floatValue: 100f,
+			}
+		},
+		
+		forge_resurection_rune: {
+            type: EVENT,
+            
+            event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: rune_forged__kenaz, value: true}",
+			},
 		},
 		
 		chaos_wizard_speech: {

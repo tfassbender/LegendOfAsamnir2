@@ -269,6 +269,7 @@
 	config/cutscene/loa2/castle_of_the_chaos_wizard/spire/chaos_wizard_first_damage.json
 	config/cutscene/loa2/castle_of_the_chaos_wizard/spire/vorpal_laser_blaster_of_pittenweem.json,
 	config/cutscene/loa2/castle_of_the_chaos_wizard/spire/chaos_wizard_final_damage.json,
+	config/cutscene/loa2/castle_of_the_chaos_wizard/spire/chaos_wizard_defeated.json,
 
 //	//********************************************************
 //	//*** Demo Level

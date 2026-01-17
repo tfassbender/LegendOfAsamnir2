@@ -33,7 +33,7 @@ public class Lich extends Enemy {
 	
 	private static final float FIRST_FORM_CRITICAL_HEALTH_PERCENTAGE = 0.05f; // change to second form if only 5% health left in first form
 	
-	private boolean firstForm = true; // form 1: cultist abomination - form 2: lich
+	protected boolean firstForm = true; // form 1: cultist abomination - form 2: lich
 	private boolean increaseHealthTillFull = false; // increase the health when the second form is summoned (so the health bar fills slowly)
 	private float healthLossForInverseControlSpellInPercent = 30f; // fire a spell that inverts the controls when the health is reduced by multiples this percentage 
 	
@@ -234,13 +234,17 @@ public class Lich extends Enemy {
 		if (!firstForm) {
 			super.die();
 			
-			// start the final cutscene after the boss is defeated
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE) //
-					.setStringValue("loa2_l4_helheim_cultist_dungeon__lich_defeated_cutscene"));
-			playMapBackgroundMusicAfterBossDefeated();
-			
-			GameStateManager.fireQuickSaveEvent();
+			afterLichDefeated();
 		}
+	}
+	
+	protected void afterLichDefeated() {
+		// start the final cutscene after the boss is defeated
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE) //
+				.setStringValue("loa2_l4_helheim_cultist_dungeon__lich_defeated_cutscene"));
+		playMapBackgroundMusicAfterBossDefeated();
+		
+		GameStateManager.fireQuickSaveEvent();
 	}
 	
 	@Override

@@ -150,6 +150,16 @@
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
 	},
+	{
+		id: die_withoud_sound,
+		animation: lich_death,
+		endsWithAnimation: true,
+		changeStateAfterAnimationDelay: 5f,
+		followingState: END,
+		interruptingStates: [],
+		flipAnimationToMovingDirection: false,
+		flipAnimationOnEnteringOnly: true
+	},
 	
 	//*****************************************************
 	//*** Lich - form 2 - attack states

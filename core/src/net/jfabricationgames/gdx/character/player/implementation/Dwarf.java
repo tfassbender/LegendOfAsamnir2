@@ -102,6 +102,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	private float freezingTimer; // if > 0 the player is frozen and movement is slowed down
 	private float heatDamageTimer; // if > 0 the player is damaged by heat (from the map) so the character turns red
 	private float invertedControlsTimer; // if > 0 the player has inverted controls (from a spell attack)
+	private float invincibilityTimer = 0f; // if > 0 the player is invincible and does not take damage (used for cutscenes)
 	private boolean hookshotActive = false; // the player can't move while the hookshot is active
 	private Hookshot activeHookshot;
 	
@@ -416,6 +417,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public void process(float delta) {
+		if (invincibilityTimer > 0f) {
+			invincibilityTimer -= delta;
+		}
+		
 		updateAction(delta);
 		propertiesDataHandler.updateStats(delta, action);
 		attackHandler.handleAttacks(delta);
@@ -623,6 +628,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	@Override
 	public void takeDamage(float damage, AttackInfo attackInfo) {
 		damage = 0; // TODO remove after tests
+		
+		if (invincibilityTimer > 0f) {
+			damage = 0; // only reduce the damage - the damage state and animation can still be triggered
+		}
 		
 		AttackType attackType = attackInfo.getAttackType();
 		damage *= difficulty.getDifficultyConfig().damageFactor; // apply a factor for the game difficulty to the damage
@@ -925,6 +934,10 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			case SET_TOKENS_RELATIVE:
 				int tokens = Math.max(0, propertiesDataHandler.getTokens(event.stringValue) + event.intValue);
 				propertiesDataHandler.setTokens(event.stringValue, tokens);
+				break;
+			case MAKE_PLAYER_INVINCIBLE_FOR_DURATION:
+				invincibilityTimer = event.floatValue;
+				invertedControlsTimer = 0f; // remove inverted controls when the player is invincible
 				break;
 			default:
 				// do nothing, because this event type is not handled here

@@ -103,9 +103,9 @@
 			
 			executes: [
 //				change commented lines to "chaos_wizard_18" to skip the initial part of the dialog
-				chaos_wizard_18,
-//			    chaos_wizard__greeting,
-//			    chaos_wizard_evil_laugh_1,
+//				chaos_wizard_18,
+			    chaos_wizard__greeting,
+			    chaos_wizard_evil_laugh_1,
 			],
 		},
 		
