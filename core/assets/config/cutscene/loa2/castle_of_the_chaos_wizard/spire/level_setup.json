@@ -21,10 +21,10 @@
                 restore_player_health,
                 forge_resurection_rune,
                 
-//                chaos_wizard_speech,
-//                play_sound_effect_evil_laughter,
+                chaos_wizard_speech,
+                play_sound_effect_evil_laughter,
                 
-                fast_setup,
+//                fast_setup,
 			],
 		},
 		
@@ -334,7 +334,7 @@
             executionParameters: {
                 displayTextHeader: "Strange Chaos Wizard Guy",
                 colorHeader: #850085,
-                displayText: "          \n          \n          \nSo it begins...          ",
+                displayText: "               \n               \nSo it begins...          ",
                 showNextPageIcon: true,
                 canBeSkipped: false,
 			}

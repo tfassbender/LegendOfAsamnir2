@@ -120,16 +120,6 @@ public class CastleOfTheChaosWizardBossFightStage2EventHandler extends CodedEven
 	
 	@Override
 	public void handleEvent(EventConfig event) {
-		// TODO delete after tests
-		if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
-			if ("loa2_l5_castle_of_the_chaos_wizard__throne_room__test".equals(event.stringValue)) {
-				EventHandler.getInstance().fireEvent(new EventConfig() //
-						.setEventType(EventType.CHANGE_MAP) //
-						.setStringValue("loa2_l5_chaos_wizard_castle_spire") //
-						.setIntValue(1));
-			}
-		}
-		
 		if (globalValuesDataHandler == null) {
 			// must be initialized lazyly - otherwise there would be a cyclic dependency at game start
 			globalValuesDataHandler = GlobalValuesDataHandler.getInstance();

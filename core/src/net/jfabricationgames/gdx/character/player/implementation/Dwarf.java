@@ -627,8 +627,6 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	
 	@Override
 	public void takeDamage(float damage, AttackInfo attackInfo) {
-		damage = 0; // TODO remove after tests
-		
 		if (invincibilityTimer > 0f) {
 			damage = 0; // only reduce the damage - the damage state and animation can still be triggered
 		}

@@ -9,6 +9,7 @@ public class NonPlayableCharacterGraphicsConfig {
 	
 	public float bodyWidth = 0.7f;
 	public float bodyHeight = 0.8f;
+	public boolean useSensorForBody = false;
 	
 	public float interactionMarkerOffsetX;
 	public float interactionMarkerOffsetY;

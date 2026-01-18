@@ -1,6 +1,4 @@
 [
-	// TODO some attacks and sounds still need to be configured
-	
 	{
 		id: idle,
 		animation: elite_mage_idle,

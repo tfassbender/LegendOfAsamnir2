@@ -54,7 +54,9 @@
 		stateEnteringSound: chaos_wizard_death,
 		endsWithAnimation: false,
 		followingState: END,
-		interruptingStates: [],
+		interruptingStates: [
+			revive_with_effect
+		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true
 	},
@@ -82,6 +84,13 @@
 		id: blast_with_effect, // used for push nova effect
 		animation: elite_mage_blast_with_effect,
 		attack: attack_push_nova,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: []
+	},
+	{
+		id: revive_with_effect, 
+		animation: elite_mage_blast_with_effect,
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: []

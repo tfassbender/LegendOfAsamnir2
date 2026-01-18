@@ -1,0 +1,29 @@
+[
+	{
+		id: idle,
+		animation: griffin_idle,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			move, taunt
+		]
+	},
+	{
+		id: move,
+		animation: griffin_fly,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, taunt
+		]
+	},
+	{
+		id: taunt,
+		animation: griffin_taunt,
+		endsWithAnimation: true,
+		followingState: idle,
+		interruptingStates: [
+			idle, move
+		]
+	},
+]

@@ -1,8 +1,127 @@
 {
 	id: loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_defeated_cutscene,
 	controlledActions: {
-		thorin_comment: {
+		move_camera_to_chaos_wizard: {
 			startsWithCutscene: true,
+			
+			type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+			updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 0, y: -1},
+            speedFactor: 3f,
+            
+            executes: [
+            	set_global_value_chaos_wizard_defeated,
+            	spawn_freydis,
+            	spawn_griffin,
+            	show_effect_layer__stairs,
+            	
+            	change_state_cultist_1_dead,
+            	change_state_cultist_2_dead,
+            	change_state_cultist_3_dead,
+            	change_state_cultist_4_dead,
+            	change_state_cultist_5_dead,
+            	change_state_cultist_6_dead,
+            	change_state_cultist_7_dead,
+            	change_state_cultist_8_dead,
+            	
+                thorin_comment,
+			],
+		},
+		
+		set_global_value_chaos_wizard_defeated: {
+            type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_chaos_wizard_defeated, value: true}",
+			},
+		},
+		
+		spawn_freydis: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__freydis,
+			},
+		},
+		
+		spawn_griffin: {
+			type: EVENT,
+            
+            event: {
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__griffin,
+			},
+		},
+		
+		show_effect_layer__stairs: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: render_effect_layer__loa2_l5_castle_of_the_chaos_wizard__spire__stairs, value: true}",
+			},
+		},
+		
+		change_state_cultist_1_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_1,
+            controlledUnitState: die_and_stay,
+		},
+		
+		change_state_cultist_2_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_2,
+            controlledUnitState: die_and_stay,
+		},
+		
+		change_state_cultist_3_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_3,
+            controlledUnitState: die_and_stay,
+		},
+		
+		change_state_cultist_4_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_4,
+            controlledUnitState: die_and_stay,
+		},
+		
+		change_state_cultist_5_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_5,
+            controlledUnitState: die_and_stay,
+		},
+		
+		change_state_cultist_6_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_6,
+            controlledUnitState: die_and_stay,
+		},
+		
+		change_state_cultist_7_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_7,
+            controlledUnitState: die_and_stay,
+		},
+		
+		change_state_cultist_8_dead: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard_spire__cultist_worshiping_8,
+            controlledUnitState: die_and_stay,
+		},
+		
+		thorin_comment: {
             type: SHOW_ON_SCREEN_TEXT,
             
             executionDelayInSeconds: 5f,
@@ -11,16 +130,625 @@
                 displayTextHeader: "Thorin",
                 displayText: "...                 \n...                 \nWas that it?                \nAre you finally defeated, Strange Chaos Wizard Guy?      ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
+            cameraFollowsTarget: false,
             
             executes: [
-            	end,
+            	thorin_2,
             ],
 		},
 		
-		// TODO add more dialog here
+		thorin_2: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 3f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "No stupid jokes this time?     \n                           \nYou won't stand up again and tell me that you were just kidding?     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_3,
+            ],
+		},
+		
+		thorin_3: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionDelayInSeconds: 3f,
+			
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Maybe I'm just getting paranoid...     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_4,
+            ],
+		},
+		
+		thorin_4: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Whatever...             \nI've got Asamnir back!!!\n               \nI really missed you my beloved battle axe!    ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_5,
+            ],
+		},
+		
+		thorin_5: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "We should probably go and find Freydis now. Otherwise she'll get mad again...    ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	meet_freydis_multiplexer,
+            ],
+		},
+		
+		meet_freydis_multiplexer: {
+			type: WAIT,
+			
+			executionDelayInSeconds: 1f,
+            cameraFollowsTarget: false,
+			
+            executes: [
+            	move_camera_to_freydis,
+            	move_freydis_to_thorin,
+            	move_thorin_to_freydis,
+            	freydis,
+            ],
+		}
+		
+		move_camera_to_freydis: {
+			executionDelayInSeconds: 2f,
+			
+            type: MOVE_CAMERA,
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_castle_spire__thorin_and_freydis_meeting_point,
+			updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 0, y: -1},
+            speedFactor: 3f,
+		},
+		
+		move_freydis_to_thorin: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__spire__freydis,
+            controlledUnitTarget: {x: -2, y: 0.5},
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_castle_spire__thorin_and_freydis_meeting_point,
+            speedFactor: 2f,
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		move_thorin_to_freydis: {
+            type: MOVE,
+            controlledUnitId: PLAYER,
+            controlledUnitTarget: {x: 1, y: 1},
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_castle_spire__thorin_and_freydis_meeting_point,
+            
+            executionDelayInSeconds: 3f,
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		freydis: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Don't worry Thorin, I already saved myself, while you were busy playing with this stupid chaos wizard guy...         ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+			
+            executes: [
+            	freydis_2,
+			],
+		},
+		
+		freydis_2: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Did you finally kill this annoying idiot?        ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_6,
+            	move_camera_till_chaos_wizard_is_visible,
+            ],
+		},
+		
+		move_camera_till_chaos_wizard_is_visible: {
+            type: MOVE_CAMERA,
+            targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_castle_spire__thorin_and_freydis_meeting_point,
+            updatePositionRelativeToTarget: true,
+            controlledUnitTarget: {x: 5, y: 1},
+            speedFactor: 3f,
+            
+            executionDelayInSeconds: 2f,
+		},
+		
+		thorin_6: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Hey Freydis!         \nYes, I think I finally killed him!          \nAt least he's silent for now ... I don't think he could stay silent for this long if he was still alive.      ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_7,
+            ],
+		},
+		
+		thorin_7: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "By the way: How did you get up here?      ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	freydis_3,
+            ],
+		},
+		
+		freydis_3: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "There were some stairs that appeared just a few moments ago...\n                    \nI guess that happened when you defeated that chaos wizard guy...        ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_8,
+            ],
+		},
+		
+		thorin_8: {
+            type: SHOW_ON_SCREEN_TEXT,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "That should come in handy for our way down.\n                    \nShould we get out of here then?     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	freydis_4,
+            ],
+		},
+		
+		freydis_4: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Yeah, I stayed here far too long! Let's go!\n                            \nAnd ...                 \nI think I kinda owe you one for saving me so ...     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	freydis_5,
+            ],
+		},
+		
+		freydis_5: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Let's go back to Svartalfheim.\n    \nFirst round of Mead is on me!     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_9,
+            ],
+		},
+		
+		thorin_9: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "I should save you more often then!         ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	turn_chaos_wizard_towards_thorin,
+            	chaos_wizard_change_state_revive_with_effect,
+            	play_sound_effect_chaos_wizard_revived,
+            	move_griffin_to_chaos_wizard,
+            ],
+		},
+		
+		move_griffin_to_chaos_wizard: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__spire__griffin,
+            controlledUnitTarget: {x: -0.8, y: 1},
+            targetPositionRelativeToUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            
+            executionDelayInSeconds: 4f,
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	link_chaos_wizard_to_griffin,
+            	move_griffin_out_of_scene,
+            	
+            	thorin_10,
+			],
+		},
+		
+		turn_chaos_wizard_towards_thorin: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitTarget: {x: -0.1, y: 0},
+            
+            executionDelayInSeconds: 1f,
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		chaos_wizard_change_state_revive_with_effect: {
+            type: CHANGE_STATE,
+            
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__chaos_wizard,
+            controlledUnitState: revive_with_effect,
+            
+            executionDelayInSeconds: 1f,
+            
+            executes: [
+            	chaos_wizard_1,
+            	play_sound_effect_evil_laughter,
+            	turn_arround_thorin,
+            ],
+		},
+		
+		play_sound_effect_chaos_wizard_revived: {
+            type: PLAY_SOUND,
+            
+			executionDelayInSeconds: 0.8f,
+            
+            soundEffectName: asamnir_stolen,
+		},
+		
+		turn_arround_thorin: {
+			type: MOVE,
+            controlledUnitId: PLAYER,
+            controlledUnitTarget: {x: 0.1, y: 0},
+            
+            executionDelayInSeconds: 1.5f,
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		chaos_wizard_1: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "The Immortal Chaos Wizard",
+                colorHeader: #850085,
+                displayText: "That sounds like a wonderful idea, Thorin!\n           \nI'll see the both of you in the Sequel!!!\n               \n*evil laughter*           ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		play_sound_effect_evil_laughter: {
+			type: PLAY_SOUND,
+			
+			executionDelayInSeconds: 5.5f,
+			
+            soundEffectName: evil_laugh,
+		},
+		
+		link_chaos_wizard_to_griffin: {
+			// will by executed by the hard coded event handler for this map
+			type: EVENT,
+			
+			executionDelayInSeconds: 1.5f,
+            
+            event: {
+                eventType: CONFIG_GENERATED_EVENT,
+                stringValue: "loa2_l5_castle_of_the_chaos_wizard__spire__link_chaos_wizard_to_griffin",
+			},
+		},
+		
+		move_griffin_out_of_scene: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__spire__griffin,
+            controlledUnitTarget: {x: 0, y: 0},
+            targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_castle_spire__griffin_exit_point,
+            
+            executionDelayInSeconds: 2.5f,
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		thorin_10: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 10f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Oh how I hate this guy...         ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	freydis_6,
+            ],
+		},
+		
+		freydis_6: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Yeah...\n                   \nBut I gotta admit...             \nThe way he flew away on that griffin was kinda cool!     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	thorin_11,
+            ],
+		},
+		
+		thorin_11: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+            
+            executionParameters: {
+                displayTextHeader: "Thorin",
+                displayText: "Let's get out of here now.            \nIt will take him some time to come up with another stupid plan, so we should have some pice and quiet. At least for a while...          ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	freydis_7,
+            ],
+		},
+		
+		freydis_7: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 1f,
+			
+			executionParameters: {
+                displayTextHeader: "Freydis",
+                colorHeader: #ff00ff,
+                displayText: "Sounds good to me!\n                \nLet's go home then!     ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+			
+			waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	move_freydis_to_stairs,
+            	move_thorin_to_stairs,
+            	chaos_wizard_final_comment,
+            ],
+		},
+		
+		move_freydis_to_stairs: {
+            type: MOVE,
+            controlledUnitId: loa2_l5_castle_of_the_chaos_wizard__spire__freydis,
+            controlledUnitTarget: {x: -1, y: 0},
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_castle_spire__stairs,
+            speedFactor: 2f,
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		move_thorin_to_stairs: {
+            type: MOVE,
+            controlledUnitId: PLAYER,
+            controlledUnitTarget: {x: 1, y: 0},
+			targetPositionRelativeToUnitId: cutscene_object__chaos_wizard_castle_spire__stairs,
+            speedFactor: 0.65f,
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+		},
+		
+		chaos_wizard_final_comment: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			executionDelayInSeconds: 8f,
+            
+            executionParameters: {
+                displayTextHeader: "The Immortal Chaos Wizard",
+                colorHeader: #850085,
+                displayText: "And so our hero Thorin and his companion Freydis enjoy their victory...         \n... until the almighty, immortal, omnipotent, handsome, and incredibly charming Chaos Wizard returns to ...         ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	freydis_and_thorin_final_commment,
+			],
+		},
+		
+		freydis_and_thorin_final_commment: {
+            type: SHOW_ON_SCREEN_TEXT,
+			
+            executionParameters: {
+                displayTextHeader: "Freydis and Thorin",
+                displayText: "Shut up already!!!!!!!!!  ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+			}
+            
+            waitForEventToFinish: true,
+            cameraFollowsTarget: false,
+            
+            executes: [
+            	fade_out,
+            ],
+		},
+		
+		fade_out: {
+			type: COLOR_TRANSITION,
+			fadeIntoColor: true,
+			colorTransitionDelayInSeconds: 0f,
+			colorTransitionDurationInSeconds: 3f,
+			delayAfterColorTransitionInSeconds: 2f,
+			
+			cameraFollowsTarget: false,
+	
+			waitForEventToFinish: true,
+			
+			executes: [
+				show_end_text,
+			],
+		},
+		
+		show_end_text: {
+			type: SHOW_ON_SCREEN_TEXT,
+			
+			cameraFollowsTarget: false,
+			
+			executionParameters: {
+				displayTextHeader: "The Immortal Chaos Wizard",
+                colorHeader: #850085,
+                displayText: "The End...\n            \n             \n               \n... for now ...      ",
+                showNextPageIcon: true,
+                canBeSkipped: false,
+				showOnBlackScreen: true,
+			}
+			
+			waitForEventToFinish: true,
+			
+			executes: [
+				back_to_main_menu,
+			]
+		},
+		
+		back_to_main_menu: {
+			type: EVENT,
+			
+			event: {
+				eventType: BACK_TO_MAIN_MENU,
+				booleanValue: true // shows the credits screen
+			},
+		}
 		
 		end: {
 			type: WAIT,

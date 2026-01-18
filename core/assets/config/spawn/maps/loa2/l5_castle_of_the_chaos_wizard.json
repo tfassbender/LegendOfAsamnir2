@@ -63,4 +63,32 @@
 			}
 		],
 	},
+	
+	//***************************************
+	//*** NPCs
+	//***************************************
+
+	npc__freydis__chaos_wizard_castle_spire: {
+		spawnType: npc.dwarven_princess,
+		complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__freydis,
+			}
+		],
+		
+		spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__spire__freydis\"}",
+	},
+	
+	npc__griffin__chaos_wizard_castle_spire: {
+        spawnType: npc.griffin,
+        complexEvents: [
+			{
+                eventType: CUSTCENE_SPAWN_UNIT,
+                stringValue: loa2_l5_castle_of_the_chaos_wizard__spire__griffin,
+			}
+		],
+        
+        spawnTypeMapProperties: "{unitId: \"loa2_l5_castle_of_the_chaos_wizard__spire__griffin\"}",
+	},
 }

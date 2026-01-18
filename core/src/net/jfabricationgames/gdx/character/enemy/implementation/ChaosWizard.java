@@ -30,6 +30,7 @@ import net.jfabricationgames.gdx.event.EventListener;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.physics.PhysicsBodyCreator.PhysicsBodyProperties;
+import net.jfabricationgames.gdx.state.GameStateManager;
 
 public class ChaosWizard extends Enemy implements EventListener, CharacterStateChangeListener {
 	
@@ -44,7 +45,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private static final float LAST_STAGE_HEALTH_FACTOR = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int NUM_BATTLE_STAGES = 7; // in each stage the boss has to be attacked once
-	private int currentStage = 6;
+	private int currentStage = 7;
 	private boolean battleStateChanged = false;
 	
 	private int fireballsToShoot = 0;
@@ -74,8 +75,6 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		
 		// needs to be reset if the game is restarted
 		typeConfig.bossName = CHAOS_WIZARD_NAME_1;
-		
-		health = 1f; // TODO remove after tests
 		
 		stateMachine.addChangeListener(this);
 	}
@@ -480,6 +479,10 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	protected void die() {
 		super.die();
 		
+		attackHandler.abortAllAttacks();
+		playMapBackgroundMusicAfterBossDefeated();
+		GameStateManager.fireQuickSaveEvent();
+		
 		// kill all spawned flameskulls and the lich minions when the chaos wizard is defeated (units with ids need to be named explicitly)
 		EventHandler.getInstance().fireEvent(new EventConfig() //
 				.setEventType(EventType.ENEMY_DIE) //
@@ -503,6 +506,26 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 		EventHandler.getInstance().fireEvent(new EventConfig() //
 				.setEventType(EventType.START_CUTSCENE) //
 				.setStringValue("loa2_l5_castle_of_the_chaos_wizard__spire__chaos_wizard_defeated_cutscene"));
+	}
+	
+	@Override
+	public void playMapBackgroundMusicAfterBossDefeated() {
+		// stop the boss music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.STOP_BACKGROUND_MUSIC) //
+				.setBooleanValue(true)); // fade out
+		
+		// clear the queue (though it should be empty) because the "fade out" parameter of the 
+		// last event will otherwise start the next music in the queue
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.CLEAR_BACKGROUND_MUSIC_QUEUE));
+		
+		// add to queue is needed because of the fade out of the previous music
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ADD_BACKGROUND_MUSIC_TO_QUEUE) //
+				.setStringValue("village") // use the village music instead of the dungeon music, because it's the end of the game
+				.setFloatValue(3f) // delay in seconds
+				.setBooleanValue(true)); // fade in
 	}
 	
 	@Override

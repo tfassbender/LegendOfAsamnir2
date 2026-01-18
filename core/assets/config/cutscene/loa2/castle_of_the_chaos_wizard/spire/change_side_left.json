@@ -1,9 +1,24 @@
 {
 	id: loa2_l5_castle_of_the_chaos_wizard__spire__change_side_left_cutscene,
 	controlledActions: {
-		start_multiplexer: {
+		start_condition: {
 			startsWithCutscene: true,
 			
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: loa2_chaos_wizard_defeated,
+                    executedStateName: end,
+				},
+				{
+					// default case
+					executedStateName: start_multiplexer,
+				},
+			],
+		},
+		
+		start_multiplexer: {
 			type: WAIT,
 			executionDelayInSeconds: 0f,
 			

@@ -72,8 +72,10 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 		AnimationDirector<TextureRegion> animation = getAnimation();
 		if (animation != null) {
 			AnimationSpriteConfig spriteConfig = animation.getSpriteConfigCopy();
-			spriteConfig.x += (animation.getKeyFrame().getRegionWidth() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X + typeConfig.graphicsConfig.interactionMarkerOffsetX);
-			spriteConfig.y += (animation.getKeyFrame().getRegionHeight() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y + typeConfig.graphicsConfig.interactionMarkerOffsetY);
+			spriteConfig.x += (animation.getKeyFrame().getRegionWidth() * Constants.WORLD_TO_SCREEN //
+					* InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X + typeConfig.graphicsConfig.interactionMarkerOffsetX);
+			spriteConfig.y += (animation.getKeyFrame().getRegionHeight() * Constants.WORLD_TO_SCREEN //
+					* InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y + typeConfig.graphicsConfig.interactionMarkerOffsetY);
 			
 			return spriteConfig;
 		}
@@ -95,8 +97,12 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 		AnimationSpriteConfig interactionSpriteConfig = interactionAnimation.getSpriteConfig();
 		AnimationSpriteConfig animationSpriteConfig = animation.getSpriteConfig();
 		
-		interactionSpriteConfig.x = animationSpriteConfig.x + (animation.getKeyFrame().getRegionWidth() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X + typeConfig.graphicsConfig.interactionMarkerOffsetX);
-		interactionSpriteConfig.y = animationSpriteConfig.y + (animation.getKeyFrame().getRegionHeight() * Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y + typeConfig.graphicsConfig.interactionMarkerOffsetY);
+		interactionSpriteConfig.x = animationSpriteConfig.x + (animation.getKeyFrame().getRegionWidth() //
+				* Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_X //
+				+ typeConfig.graphicsConfig.interactionMarkerOffsetX);
+		interactionSpriteConfig.y = animationSpriteConfig.y + (animation.getKeyFrame().getRegionHeight() //
+				* Constants.WORLD_TO_SCREEN * InteractionManager.INTERACTION_MARK_DEFAULT_OFFSET_FACTOR_Y //
+				+ typeConfig.graphicsConfig.interactionMarkerOffsetY);
 	}
 	
 	public void setGameMap(NpcCharacterMap gameMap) {
@@ -105,8 +111,15 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 	
 	@Override
 	protected PhysicsBodyProperties definePhysicsBodyProperties() {
-		return new PhysicsBodyProperties().setType(BodyType.DynamicBody).setSensor(false).setCollisionType(PhysicsCollisionType.OBSTACLE).setDensity(Constants.DENSITY_IMMOVABLE) // use a very high density, so the NPC can (almost) not be moved by the player or other forces
-				.setLinearDamping(10f).setPhysicsBodyShape(PhysicsBodyShape.OCTAGON).setWidth(typeConfig.graphicsConfig.bodyWidth).setHeight(typeConfig.graphicsConfig.bodyHeight);
+		return new PhysicsBodyProperties() //
+				.setType(BodyType.DynamicBody) //
+				.setSensor(typeConfig.graphicsConfig.useSensorForBody) //
+				.setCollisionType(PhysicsCollisionType.OBSTACLE) //
+				.setDensity(Constants.DENSITY_IMMOVABLE) // use a very high density, so the NPC can (almost) not be moved by the player or other forces
+				.setLinearDamping(10f) //
+				.setPhysicsBodyShape(PhysicsBodyShape.OCTAGON) //
+				.setWidth(typeConfig.graphicsConfig.bodyWidth) //
+				.setHeight(typeConfig.graphicsConfig.bodyHeight);
 	}
 	
 	@Override
@@ -254,7 +267,9 @@ public class NonPlayableCharacter extends AbstractCharacter implements Interacti
 	
 	@Override
 	public void interact() {
-		EventConfig event = new EventConfig().setEventType(EventType.NPC_INTERACTION).setStringValue(typeConfig.interactionEventId).setParameterObject(this);
+		EventConfig event = new EventConfig().setEventType(EventType.NPC_INTERACTION) //
+				.setStringValue(typeConfig.interactionEventId) //
+				.setParameterObject(this);
 		EventHandler.getInstance().fireEvent(event);
 	}
 	

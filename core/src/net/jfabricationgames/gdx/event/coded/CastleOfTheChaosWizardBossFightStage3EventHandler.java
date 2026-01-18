@@ -1,8 +1,11 @@
 package net.jfabricationgames.gdx.event.coded;
 
+import com.badlogic.gdx.physics.box2d.joints.WeldJointDef;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 
+import net.jfabricationgames.gdx.character.enemy.Enemy;
+import net.jfabricationgames.gdx.character.npc.NonPlayableCharacter;
 import net.jfabricationgames.gdx.condition.Condition;
 import net.jfabricationgames.gdx.condition.ConditionType;
 import net.jfabricationgames.gdx.cutscene.CutsceneHandler;
@@ -12,6 +15,7 @@ import net.jfabricationgames.gdx.event.EventHandler;
 import net.jfabricationgames.gdx.event.EventType;
 import net.jfabricationgames.gdx.map.GameMapManager;
 import net.jfabricationgames.gdx.map.GameMapProcessable;
+import net.jfabricationgames.gdx.physics.PhysicsWorld;
 
 public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEventHandler implements GameMapProcessable {
 	
@@ -150,6 +154,18 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 			}
 			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__spawn_flameskulls_on_player_side".equals(event.stringValue)) {
 				spawnFlameskullsOnPlayerSide(3);
+			}
+			else if ("loa2_l5_castle_of_the_chaos_wizard__spire__link_chaos_wizard_to_griffin".equals(event.stringValue)) {
+				// link the chaos wizard to the griffin with a joint
+				Enemy chaosWizard = (Enemy) GameMapManager.getInstance().getMap().getUnitById("loa2_l5_castle_of_the_chaos_wizard__chaos_wizard");
+				NonPlayableCharacter griffin = (NonPlayableCharacter) GameMapManager.getInstance().getMap().getUnitById("loa2_l5_castle_of_the_chaos_wizard__spire__griffin");
+				
+				// connect the bodies of the chaos wizard and the griffin with a weld joint, so they move together during the cutscene
+				WeldJointDef jointDef = new WeldJointDef();
+				jointDef.initialize(griffin.getBody(), chaosWizard.getBody(), griffin.getBody().getWorldCenter());
+				jointDef.collideConnected = false;
+				
+				PhysicsWorld.getInstance().createJoint(jointDef, null);
 			}
 		}
 		else if (EventType.PLAYER_DIED.equals(event.eventType)) {

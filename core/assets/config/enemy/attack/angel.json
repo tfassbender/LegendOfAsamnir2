@@ -1,6 +1,4 @@
 [
-	// TODO add the actual attacks
-	
 	{
 		id: attack_hit,
 		type: HIT,
