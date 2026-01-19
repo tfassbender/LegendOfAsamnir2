@@ -82,6 +82,10 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 	}
 	
 	protected void changeBodyToSensor() {
+		if (body == null) {
+			return;
+		}
+		
 		for (Fixture fixture : body.getFixtureList()) {
 			fixture.setSensor(true);
 		}
@@ -193,6 +197,9 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 	
 	@Override
 	public Vector2 getPosition() {
+		if (body == null) {
+			return null;
+		}
 		return new Vector2(body.getPosition());
 	}
 	
@@ -208,6 +215,10 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 	
 	@Override
 	public void moveTo(Vector2 pos, float speedFactor) {
+		if (body == null) {
+			return;
+		}
+		
 		Vector2 direction = pos.cpy().sub(getPosition());
 		direction.nor().scl(movingSpeed * speedFactor);
 		

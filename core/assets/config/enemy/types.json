@@ -1742,7 +1742,7 @@
 		
 		damageModifiersByAttackType: {
 			ARROW: 0f,
-			BOMB: 2f,
+			BOMB: 1f,
 			MAGIC: 1f,
 		},
 		
@@ -1775,8 +1775,8 @@
 		movingSpeed: 2.5f,
 		
 		damageModifiersByAttackType: {
-			ARROW: 1f,
-			BOMB: 1f,
+			ARROW: 0.5f,
+			BOMB: 0f,
 			MAGIC: 0f,
 		},
 		

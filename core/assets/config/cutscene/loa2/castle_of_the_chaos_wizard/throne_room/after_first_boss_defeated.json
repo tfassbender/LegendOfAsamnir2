@@ -100,7 +100,7 @@
             
             executionParameters: {
                 displayTextHeader: "Thorin",
-                displayText: "You're minions are no match for a Dwarf!\n                 \nAnd now there's nothing stopping me from ramming my axe into your skull!!!       ",
+                displayText: "Your minions are no match for a Dwarf!\n                 \nAnd now there's nothing stopping me from ramming my axe into your skull!!!       ",
                 showNextPageIcon: true,
 			}
             

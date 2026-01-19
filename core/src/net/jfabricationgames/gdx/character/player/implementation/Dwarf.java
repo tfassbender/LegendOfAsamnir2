@@ -838,6 +838,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 				if (RuneType.KENAZ.isCollected()) {
 					GlobalValuesDataHandler.getInstance().put(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED, true);
 				}
+				invertedControlsTimer = 0f; // remove inverted controls on respawn
 				break;
 			case EVENT_OBJECT_TOUCHED:
 				if (event.stringValue.equals(EventObject.EVENT_KEY_RESPAWN_CHECKPOINT)) {
