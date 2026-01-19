@@ -674,6 +674,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		if (gameDataService.isGameDataSlotExisting(slot)) {
 			// show a confirm dialog to ask if the user really wants to overwrite the save slot
 			onConfirm = () -> {
+				confirmDialog.setVisible(false);
 				gameDataService.storeGameDataToSaveSlot(slot);
 				backToGame();
 			};
