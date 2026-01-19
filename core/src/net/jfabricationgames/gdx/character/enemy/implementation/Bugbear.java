@@ -113,6 +113,9 @@ public class Bugbear extends Enemy {
 	@Override
 	protected void die() {
 		super.die();
+		EventHandler.getInstance().fireEvent(new EventConfig() //
+				.setEventType(EventType.ENEMY_DIE) //
+				.setStringValue("loa2_l2_niflheim_bandit_camp__bandit_necromancer"));
 		GameStateManager.fireQuickSaveEvent();
 	}
 }

@@ -944,6 +944,11 @@
 		addSensor: false, // no sensor - this enemy type is only used in a cutscene
 		
 		usesHealthBar: false
+		
+		// killed by this event (which is fired by the boss after they die)
+		deathEvent: {
+            eventType: ENEMY_DIE,
+		},
 	},
 	
 	bugbear: {
