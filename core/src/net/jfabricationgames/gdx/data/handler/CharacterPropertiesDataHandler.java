@@ -86,17 +86,17 @@ public class CharacterPropertiesDataHandler implements DataHandler {
 	}
 	
 	public void increaseStatsToMinimumAfterRespawn() {
-		if (properties.health + properties.increaseHealth < properties.maxHealth * 0.5f) {
+		if (properties.health + properties.increaseHealth < properties.maxHealth) {
 			properties.increaseHealth = 0;
-			increaseHealthTo(properties.maxHealth * 0.5f);
+			increaseHealthTo(properties.maxHealth);
 		}
-		if (properties.armor + properties.increaseArmor < properties.maxArmor * 0.25f) {
+		if (properties.armor + properties.increaseArmor < properties.maxArmor * 0.5f) {
 			properties.increaseArmor = 0;
-			increaseArmorTo(properties.maxArmor * 0.25f);
+			increaseArmorTo(properties.maxArmor * 0.5f);
 		}
-		if (properties.mana + properties.increaseMana < properties.maxMana * 0.5f) {
+		if (properties.mana + properties.increaseMana < properties.maxMana) {
 			properties.increaseMana = 0;
-			increaseManaTo(properties.maxMana * 0.5f);
+			increaseManaTo(properties.maxMana);
 		}
 	}
 	

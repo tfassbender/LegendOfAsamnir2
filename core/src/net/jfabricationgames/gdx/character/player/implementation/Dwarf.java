@@ -768,8 +768,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 	}
 	
 	private boolean resurectionRuneCollectedAndForged() {
-		GlobalValuesDataHandler globalValues = GlobalValuesDataHandler.getInstance();
-		return RuneType.KENAZ.isCollected() && globalValues.getAsBoolean(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED);
+		return RuneType.KENAZ.isCollected() && GlobalValuesDataHandler.getInstance().getAsBoolean(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED);
 	}
 	
 	@Override
@@ -836,6 +835,9 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 			case PLAYER_RESPAWNED:
 				// increase the health, armor and mana to minimum values if they are below the minimum values
 				propertiesDataHandler.increaseStatsToMinimumAfterRespawn();
+				if (RuneType.KENAZ.isCollected()) {
+					GlobalValuesDataHandler.getInstance().put(RuneType.GLOBAL_VALUE_KEY_RUNE_KENAZ_FORGED, true);
+				}
 				break;
 			case EVENT_OBJECT_TOUCHED:
 				if (event.stringValue.equals(EventObject.EVENT_KEY_RESPAWN_CHECKPOINT)) {
