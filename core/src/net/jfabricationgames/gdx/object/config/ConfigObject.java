@@ -169,6 +169,10 @@ public class ConfigObject extends GameObject implements EventListener, ContactLi
 	@Override
 	public void removeFromMap() {
 		super.removeFromMap();
+		
+		if (clockTickingSoundHandler != null) {
+			clockTickingSoundHandler.stop();
+		}
 		EventHandler.getInstance().removeEventListener(this);
 		PhysicsWorld.getInstance().removeContactListener(this);
 	}
