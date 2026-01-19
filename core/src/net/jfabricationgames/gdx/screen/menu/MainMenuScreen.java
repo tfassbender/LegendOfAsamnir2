@@ -291,43 +291,25 @@ public class MainMenuScreen extends MenuScreen<MainMenuScreen> {
 	
 	public void loadFromQuickSaveSlot() {
 		loadGameDialog.loadFromQuickSaveSlot();
-		createGameScreen(() -> {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
-		});
 	}
 	
 	public void loadFromSlot1() {
 		loadGameDialog.loadFromSlot(1);
-		createGameScreen(() -> {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
-		});
 	}
 	
 	public void loadFromSlot2() {
 		loadGameDialog.loadFromSlot(2);
-		createGameScreen(() -> {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
-		});
 	}
 	
 	public void loadFromSlot3() {
 		loadGameDialog.loadFromSlot(3);
-		createGameScreen(() -> {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
-		});
 	}
 	
 	public void loadFromSlot4() {
 		loadGameDialog.loadFromSlot(4);
-		createGameScreen(() -> {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
-		});
 	}
 	
 	public void loadFromSlot5() {
 		loadGameDialog.loadFromSlot(5);
-		createGameScreen(() -> {
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.GAME_LOADED));
-		});
 	}
 }
