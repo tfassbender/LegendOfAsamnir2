@@ -5,7 +5,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle_2, move, charge, attack_1, attack_2, damage, death
+			idle_2, move, charge, charge_2, attack_1, attack_2, damage, death
 		]
 	},
 	{
@@ -23,7 +23,18 @@
 		id: charge,
 		animation: ogre_charge,
 		endsWithAnimation: true,
-		followingState: idle,
+		followingState: attack_1,
+		stateEnteringSound: ogre_charge,
+		abortSoundWhenStateInterrupted: true,
+		interruptingStates: [
+			death
+		]
+	},
+	{
+		id: charge_2,
+		animation: ogre_charge,
+		endsWithAnimation: true,
+		followingState: attack_2,
 		stateEnteringSound: ogre_charge,
 		abortSoundWhenStateInterrupted: true,
 		interruptingStates: [
@@ -36,7 +47,7 @@
 		endsWithAnimation: true,
 		followingState: idle,
 		interruptingStates: [
-			idle, idle_2, charge, attack_1, attack_2, damage, death
+			idle, idle_2, charge, charge_2, attack_1, attack_2, damage, death
 		]
 	},
 	{
@@ -47,7 +58,7 @@
 		followingState: idle,
 		stateEnteringSound: hit_3,
 		interruptingStates: [
-			damage, death
+			 death
 		]
 	},
 	{
@@ -58,7 +69,7 @@
 		followingState: idle,
 		stateEnteringSound: hit_4,
 		interruptingStates: [
-			damage, death
+			death
 		]
 	},
 	{
@@ -68,7 +79,7 @@
 		stateEnteringSound: flesh_hit_2,
 		followingState: idle,
 		interruptingStates: [
-			death
+			charge, charge_2, death
 		],
 		flipAnimationToMovingDirection: false,
 		flipAnimationOnEnteringOnly: true

@@ -1,6 +1,7 @@
 package net.jfabricationgames.gdx.character.enemy.implementation;
 
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
 
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
@@ -11,6 +12,7 @@ import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.enemy.ai.ActionAI;
 import net.jfabricationgames.gdx.character.enemy.ai.OgreAttackAI;
+import net.jfabricationgames.gdx.character.player.Player;
 import net.jfabricationgames.gdx.character.state.CharacterState;
 import net.jfabricationgames.gdx.state.GameStateManager;
 
@@ -41,28 +43,39 @@ public class Ogre extends Enemy {
 	}
 	
 	private ArtificialIntelligence createOgreAttackAI(ArtificialIntelligence ai) {
-		String chargeName = "charge";
-		String attackName1 = "attack_1";
-		String attackName2 = "attack_2";
+		// the charge states are followed by the attack states
+		String stateNameCharge = "charge";
+		String stateNameCharge2 = "charge_2";
+		String stateNameAttack1 = "attack_1";
+		String stateNameAttack2 = "attack_2";
 		
-		CharacterState chargeState = stateMachine.getState(chargeName);
-		CharacterState attackState1 = stateMachine.getState(attackName1);
-		CharacterState attackState2 = stateMachine.getState(attackName2);
+		CharacterState chargeState = stateMachine.getState(stateNameCharge);
+		CharacterState chargeState2 = stateMachine.getState(stateNameCharge2);
+		
+		CharacterState attackState1 = stateMachine.getState(stateNameAttack1);
+		CharacterState attackState2 = stateMachine.getState(stateNameAttack2);
+		attackState1.setTargetDirectionSupplier(this::directionToTarget);
+		attackState2.setTargetDirectionSupplier(this::directionToTarget);
 		
 		ArrayMap<String, CharacterState> attackStates = new ArrayMap<>();
-		attackStates.put(chargeName, chargeState);
-		attackStates.put(attackName1, attackState1);
-		attackStates.put(attackName2, attackState2);
+		attackStates.put(stateNameCharge, chargeState);
+		attackStates.put(stateNameCharge2, chargeState2);
 		
 		ArrayMap<CharacterState, Float> attackDistances = new ArrayMap<>();
 		attackDistances.put(chargeState, 2.5f);
-		attackDistances.put(attackState1, 2.5f);
-		attackDistances.put(attackState2, 2.5f);
+		attackDistances.put(chargeState2, 2.5f);
 		
 		float minTimeBetweenAttacks = 2f;
-		float maxTimeBetweenAttacks = 4f;
+		float maxTimeBetweenAttacks = 3f;
 		
-		return new OgreAttackAI(ai, attackStates, attackDistances, new RandomIntervalAttackTimer(minTimeBetweenAttacks, maxTimeBetweenAttacks));
+		OgreAttackAI attackAI = new OgreAttackAI(ai, attackStates, attackDistances, new RandomIntervalAttackTimer(minTimeBetweenAttacks, maxTimeBetweenAttacks));
+		attackAI.setMoveToPlayerWhileAttacking(false);
+		
+		return attackAI;
+	}
+	
+	protected Vector2 directionToTarget() {
+		return Player.getInstance().getPosition().cpy().sub(getPosition());
 	}
 	
 	private ArtificialIntelligence createActionAI(ArtificialIntelligence ai) {
