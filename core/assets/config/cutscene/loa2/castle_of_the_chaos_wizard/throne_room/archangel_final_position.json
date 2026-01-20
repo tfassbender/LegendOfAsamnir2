@@ -7,10 +7,20 @@
 		    type: WAIT,
             
             executes: [
+            	make_player_invincible_cutscene_duration,
                 thorin_comment,
                 move_camera_to_archangel_1,
                 move_archangel_to_final_position_1,
 			]
+		},
+		
+		make_player_invincible_cutscene_duration: {
+            type: EVENT,
+            
+            event: {
+                eventType: MAKE_PLAYER_INVINCIBLE_FOR_DURATION,
+                floatValue: 10f, // duration in seconds
+			},
 		},
 		
 		thorin_comment: {

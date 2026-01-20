@@ -45,7 +45,7 @@ public class ChaosWizard extends Enemy implements EventListener, CharacterStateC
 	
 	private static final float LAST_STAGE_HEALTH_FACTOR = 0.05f; // 5% health in the last stage (the rest is distributed evenly)
 	private static final int NUM_BATTLE_STAGES = 7; // in each stage the boss has to be attacked once
-	private int currentStage = 7;
+	private int currentStage = 1;
 	private boolean battleStateChanged = false;
 	
 	private int fireballsToShoot = 0;

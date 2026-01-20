@@ -119,7 +119,9 @@ public abstract class AbstractCharacter implements ContactListener, CutsceneCont
 		if (animation != null) {
 			animation.increaseStateTime(delta);
 			TextureRegion region = animation.getKeyFrame();
-			animation.getSpriteConfig().setX((body.getPosition().x - region.getRegionWidth() * 0.5f + imageOffsetX)).setY((body.getPosition().y - region.getRegionHeight() * 0.5f + imageOffsetY));
+			animation.getSpriteConfig() //
+					.setX((body.getPosition().x - region.getRegionWidth() * 0.5f + imageOffsetX)) //
+					.setY((body.getPosition().y - region.getRegionHeight() * 0.5f + imageOffsetY));
 			updateTextureDirection(animation);
 			animation.draw(batch);
 		}

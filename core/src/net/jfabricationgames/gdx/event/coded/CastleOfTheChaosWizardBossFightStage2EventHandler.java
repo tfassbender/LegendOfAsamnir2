@@ -168,6 +168,15 @@ public class CastleOfTheChaosWizardBossFightStage2EventHandler extends CodedEven
 		else if (EventType.EVENT_OBJECT_TOUCHED.equals(event.eventType)) {
 			handleEventObjectTouched(event);
 		}
+		else if (EventType.PLAYER_RESPAWNED.equals(event.eventType)) {
+			// reset the magic pipes after the player respawned
+			directionSwitchUp = Direction.UP;
+			directionSwitchDown = Direction.DOWN;
+			directionSwitchLeft = Direction.LEFT;
+			directionSwitchRight = Direction.RIGHT;
+			changeMagicPipesRenderEffectLayer();
+			turnOffAllMagicPipeEffects();
+		}
 	}
 	
 	private void setMultiStateSwitchesToArchAngelPosition() {

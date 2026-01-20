@@ -4,6 +4,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ArrayMap;
 
+import net.jfabricationgames.gdx.animation.AnimationDirector;
 import net.jfabricationgames.gdx.attack.AttackInfo;
 import net.jfabricationgames.gdx.attack.AttackType;
 import net.jfabricationgames.gdx.character.ai.ArtificialIntelligence;
@@ -42,6 +43,13 @@ public class ElderDragon extends Enemy implements CharacterStateChangeListener {
 		health -= 0.1f; // reduce the health by a small value to prevent the defense mode from being activated at the first damage
 		
 		stateMachine.addChangeListener(this);
+		
+		// set the target direction supplier, so the projectile is started with the correct offset (only left or right is important)
+		CharacterState characterStateAttackSpit = stateMachine.getState("attack_spit_loop");
+		characterStateAttackSpit.setTargetDirectionSupplier(() -> {
+			boolean facingRight = AnimationDirector.isTextureRight(true, getAnimation());
+			return facingRight ? new Vector2(1, 0) : new Vector2(-1, 0);
+		});
 	}
 	
 	@Override

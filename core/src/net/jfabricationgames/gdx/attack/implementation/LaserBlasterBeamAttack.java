@@ -160,7 +160,7 @@ public class LaserBlasterBeamAttack extends Attack {
 		// Colors
 		// -------------------------
 		// White-hot edges (pulse-controlled)
-		Color edge = new Color(1f, edgeBrightness, 1f, 1f);
+		Color edge = new Color(1f, edgeBrightness, 1f, 0.1f);
 		// Purple core
 		Color core = new Color(0.6f, 0f, 0.9f + 0.1f * pulse, 1f);
 		

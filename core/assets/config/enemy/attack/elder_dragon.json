@@ -18,6 +18,9 @@
         damage: 3,
 		canBeBlockedCompletely: true,
 		pushForce: 10,
+		
+		projectileStartOffsetXFacingDirection: 1.3f,
+		projectileStartOffsetY: 0.2f,
 	},
 	
 	{

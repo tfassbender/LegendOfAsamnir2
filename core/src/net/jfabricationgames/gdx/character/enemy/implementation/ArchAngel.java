@@ -105,7 +105,7 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 		ArrayMap<CharacterState, AttackTimer> attackTimers = new ArrayMap<>();
 		attackTimers.put(characterStateAttackHit, new FixedAttackTimer(1.5f));
 		attackTimers.put(characterStateCastAttack, new RandomIntervalAttackTimer(5f, 7f));
-		attackTimers.put(characterStateCaseSpawnAngelicHelmet, new RandomIntervalAttackTimer(15f, 20f));
+		attackTimers.put(characterStateCaseSpawnAngelicHelmet, new RandomIntervalAttackTimer(20f, 25f));
 		
 		archAngelAttackAI = new ArchAngelAttackAI(ai, attackStates, attackDistances, attackTimers);
 		resetTimersForRangedAttacks();
@@ -135,7 +135,7 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 			}
 			
 			if (defenseModeCastTimer <= 0f) {
-				defenseModeCastTimer = 5f;
+				defenseModeCastTimer = 8f;
 				stateMachine.setState(STATE_NAME_DEFENSE_MODE_CAST);
 				spawnAngelicHelmetInDefenseModeDelay = 0.5f; // spawn the helmet after a short delay to give the cast animation time to play
 				SOUND_SET.playSound(SOUND_EFFECT_NAME_SPAWN);
@@ -288,7 +288,7 @@ public class ArchAngel extends Enemy implements CharacterStateChangeListener, Ev
 	private void startDefenseMode() {
 		if (!defenseMode) {
 			defenseMode = true;
-			defenseModeCastTimer = 5f;
+			defenseModeCastTimer = 8f;
 			stateMachine.forceStateChange(STATE_NAME_DEFENSE_MODE);
 		}
 	}
