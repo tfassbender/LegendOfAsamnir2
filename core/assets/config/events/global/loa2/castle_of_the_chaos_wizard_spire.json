@@ -24,6 +24,7 @@
 		executionType: START_CUTSCENE,
 		executionParameters: {
 			cutsceneId: loa2_l5_castle_of_the_chaos_wizard__spire__setup_cutscene,
+			replaceActiveCutscene: true,
 		}
 	},
 	

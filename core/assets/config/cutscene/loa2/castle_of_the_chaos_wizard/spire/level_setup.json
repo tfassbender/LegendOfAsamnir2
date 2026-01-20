@@ -9,6 +9,7 @@
 			
 			executes: [
                 set_camera_position,
+                turn_thorin_right,
                 turn_chaos_wizard_left,
                 turn_lich_top_left,
                 turn_lich_bottom_left,
@@ -34,6 +35,13 @@
 			updatePositionRelativeToTarget: true,
 			directlySetPosition: true,
             controlledUnitTarget: {x: -2.5, y: -2},
+		},
+		
+		turn_thorin_right: {
+            type: MOVE,
+            
+            controlledUnitId: PLAYER,
+            controlledUnitTarget: {x: 0.1, y: 0},
 		},
 		
 		turn_chaos_wizard_left: {

@@ -605,6 +605,7 @@
                 colorHeader: #ff00ff,
                 displayText: "How difficult can it be to save a princess from this stupid Chaos Wizard Guy anyway?      ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
 			
 			waitForEventToFinish: false,
@@ -621,6 +622,7 @@
                 colorHeader: #ff00ff,
                 displayText: "But nooo... instead of being rescued by a handsome prince, I have to break out of the cell myself, kill the guard and find Thorin's axe, so he can finally kill this Strange Chaos Wizard Guy...         ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
 			
 			waitForEventToFinish: false,
@@ -799,6 +801,7 @@
                 colorHeader: #ff00ff,
                 displayText: "Thorin! Catch!!!     ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
 			
 			waitForEventToFinish: false,
@@ -840,6 +843,7 @@
                 displayTextHeader: "Thorin",
                 displayText: "Thanks, Freydis!\n                               \n                            \nSo where were we, Strange Chaos Wizard Guy?           ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,
@@ -860,6 +864,7 @@
                 colorHeader: #850085,
                 displayText: "Well... now it might be an interesting fight after all...\n                          \nSo let me take us to an arena worthy of our final battle!!!         ",
                 showNextPageIcon: true,
+                canBeSkipped: false,
 			}
             
             waitForEventToFinish: true,

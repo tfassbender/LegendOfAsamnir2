@@ -68,11 +68,16 @@ public enum GlobalEventExecutionType {
 	START_CUTSCENE {
 		
 		private static final String MAP_KEY_CUTSCENE_ID = "cutsceneId";
+		private static final String MAP_KEY_REPLACE_ACTIVE_CUTSCENE = "replaceActiveCutscene";
 		
 		@Override
 		public void execute(GlobalEventConfig eventConfig) {
 			String cutsceneId = eventConfig.executionParameters.get(MAP_KEY_CUTSCENE_ID);
-			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.START_CUTSCENE).setStringValue(cutsceneId));
+			boolean replaceActiveCutscene = Boolean.parseBoolean(eventConfig.executionParameters.get(MAP_KEY_REPLACE_ACTIVE_CUTSCENE, "false"));
+			EventHandler.getInstance().fireEvent(new EventConfig() //
+					.setEventType(EventType.START_CUTSCENE) //
+					.setStringValue(cutsceneId) //
+					.setBooleanValue(replaceActiveCutscene));
 		}
 	},
 	CHANGE_MAP {

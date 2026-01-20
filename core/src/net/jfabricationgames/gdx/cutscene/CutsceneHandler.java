@@ -105,23 +105,24 @@ public class CutsceneHandler implements EventListener {
 	public void handleEvent(EventConfig event) {
 		if (event.eventType == EventType.START_CUTSCENE) {
 			String cutsceneId = event.stringValue;
+			boolean replaceActiveCutscene = event.booleanValue;
 			CutsceneConfig cutscene = cutscenes.get(cutsceneId);
 			
 			if (cutscene == null) {
 				throw new IllegalStateException("The cutscene '" + cutsceneId + "' is unknown. It has to be added into a file, that is referenced by the cutscene config file '" + CONFIG_PATH + "'");
 			}
-			playCutscene(cutscene);
+			playCutscene(cutscene, replaceActiveCutscene);
 		}
 	}
 	
-	private void playCutscene(CutsceneConfig cutscene) {
+	private void playCutscene(CutsceneConfig cutscene, boolean replaceActiveCutscene) {
 		if (!isGameInitialized()) {
 			Gdx.app.debug(getClass().getSimpleName(), "The game is not fully initialized yet, therefore the cutscene can't be played yet. This can be caused by a debug configuration and is usually not a problem.");
 			return;
 		}
 		
 		Gdx.app.debug(getClass().getSimpleName(), "playing cutscene: " + cutscene.id);
-		if (isCutsceneActive()) {
+		if (isCutsceneActive() && !replaceActiveCutscene) {
 			Gdx.app.error(getClass().getSimpleName(), "A cutscene is already in action. Can't start a second cutscene.");
 			return;
 		}
