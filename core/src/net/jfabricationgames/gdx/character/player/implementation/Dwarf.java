@@ -211,7 +211,7 @@ public class Dwarf implements PlayableCharacter, Disposable, ContactListener, Ev
 					if (attackHandler.allAttacksExecuted()) {
 						if (itemDataHandler.hasAmmo(ammoType.toDataType())) {
 							if (propertiesDataHandler.hasEnoughEndurance(activeSpecialAction.enduranceCost)) {
-								boolean ammoBelowHalfBeforeShot = itemDataHandler.getAmmo(DataItemAmmoType.getByItemAmmoType(ammoType)) < 0.5f * itemDataHandler.getMaxAmmo(DataItemAmmoType.getByItemAmmoType(ammoType));
+								boolean ammoBelowHalfBeforeShot = itemDataHandler.getAmmo(DataItemAmmoType.getByItemAmmoType(ammoType)) < (int) (0.5f * itemDataHandler.getMaxAmmo(DataItemAmmoType.getByItemAmmoType(ammoType)));
 								itemDataHandler.decreaseAmmo(ammoType.toDataType());
 								checkAmmoBelowHalf(ammoType, ammoBelowHalfBeforeShot);
 								propertiesDataHandler.reduceEndurance(activeSpecialAction.enduranceCost);

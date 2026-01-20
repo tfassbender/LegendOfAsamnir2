@@ -88,7 +88,11 @@
             	eventType: PLAYER_STATS_BELOW_THRESHOLD,
                 stringValue: ARROW,
                 floatValue: 0.5f,
-			}
+			},
+			{
+				eventType: OUT_OF_AMMO,
+				stringValue: ARROW
+			},
 		],
 	},
 	
@@ -103,7 +107,11 @@
             	eventType: PLAYER_STATS_BELOW_THRESHOLD,
                 stringValue: BOMB,
                 floatValue: 0.5f,
-            }
+            },
+			{
+				eventType: OUT_OF_AMMO,
+				stringValue: BOMB
+			},
         ],
 	},
 }
