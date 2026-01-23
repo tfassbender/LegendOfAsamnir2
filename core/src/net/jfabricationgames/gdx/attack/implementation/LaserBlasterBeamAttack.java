@@ -33,6 +33,7 @@ public class LaserBlasterBeamAttack extends Attack {
 	private float beamLength;
 	private float beamAngleRad;
 	private float lastDeltaTime;
+	private boolean leftSideLaser;
 	private Vector2 laserBeginOffset; // there are two lasers on the map - each needs to have its own offset because of the direction they're facing
 	
 	public LaserBlasterBeamAttack(AttackConfig config, Body body, PhysicsCollisionType collisionType) {
@@ -46,7 +47,7 @@ public class LaserBlasterBeamAttack extends Attack {
 		// determine if this is the left or right laser by checking on which side of the chaos wizard it is located
 		CutsceneControlledUnit chaosWizard = GameMapManager.getInstance().getMap().getUnitById("loa2_l5_castle_of_the_chaos_wizard__chaos_wizard");
 		if (chaosWizard != null) {
-			boolean leftSideLaser = body.getPosition().x < chaosWizard.getPosition().x;
+			leftSideLaser = body.getPosition().x < chaosWizard.getPosition().x;
 			laserBeginOffset = leftSideLaser ? new Vector2(-0.4f, -0.1f) : new Vector2(0.4f, -0.1f);
 		}
 	}
@@ -65,6 +66,12 @@ public class LaserBlasterBeamAttack extends Attack {
 		Vector2 targetPos = targetPositionSupplier.get();
 		beamDirection = targetPos.cpy().sub(beamStart).nor();
 		beamAngleRad = beamDirection.angleRad();
+		
+		if (beamDirection.x < 0 && !leftSideLaser || beamDirection.x > 0 && leftSideLaser) {
+			// the laser would fire to the wrong side - abort the attack
+			aborted = true;
+			return;
+		}
 		
 		beamLength = performRaycast(beamStart, beamDirection);
 		
