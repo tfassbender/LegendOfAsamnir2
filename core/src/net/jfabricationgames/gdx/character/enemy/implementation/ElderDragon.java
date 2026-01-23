@@ -106,6 +106,10 @@ public class ElderDragon extends Enemy implements CharacterStateChangeListener {
 		if (defenseMode) {
 			// slowly regain health in defense mode (5% of max health per second)
 			health = Math.min(health + typeConfig.health * 0.05f * delta, typeConfig.health);
+			
+			if (health >= typeConfig.health - 0.1f) { // a small tolerance to prevent rounding errors
+				stopDefenseMode();// stop the defense mode when health is full again
+			}
 		}
 	}
 	
