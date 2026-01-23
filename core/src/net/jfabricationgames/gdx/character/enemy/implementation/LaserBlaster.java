@@ -165,6 +165,13 @@ public class LaserBlaster extends Enemy implements CharacterStateChangeListener 
 				}
 			}
 		}
+		else if (EventType.ENEMY_DIE.equals(event.eventType)) {
+			// remove the laser blaster when the chaos wizard is defeated
+			stateMachine.setState("disappear");
+			if (sound != null) {
+				sound.stop();
+			}
+		}
 	}
 	
 	@Override
