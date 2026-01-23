@@ -43,6 +43,11 @@ public class CastleOfTheChaosWizardBossFightStage3EventHandler extends CodedEven
 			obeliskDestroyedTopRight = false;
 			obeliskDestroyedBottomLeft = false;
 			obeliskDestroyedBottomRight = false;
+			timeTillChaosWizardPushNova = 0f;
+			timeTillLaserBlasterDisappearesOnTheRightSide = 0.1f; // removes the laser blaster - should not be needed but just in case
+			timeTillLaserBlasterDisappearesOnTheLeftSide = 0.1f; // removes the laser blaster - should not be needed but just in case
+			timeTillLaserBlasterChangedToLeftSide = 0f;
+			timeTillLaserBlasterChangedToRightSide = 0f;
 			battleStage = 1;
 		}
 		else if (EventType.ENEMY_DIE.equals(event.eventType)) {
