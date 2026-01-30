@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2405">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="53" height="37" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="2407">
  <properties>
   <property name="above_player_layers" value="[5, 6, 7]"/>
   <property name="background_layers" value="[0, 1, 2, 3, 4]"/>
@@ -500,6 +500,7 @@
   <object id="2404" name="object.barrel" x="1217" y="1000.5">
    <point/>
   </object>
+  <object id="2405" name="object.enemy_path_blocker" x="881.843" y="766.03" width="60.7992" height="20.0303"/>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
   <object id="2006" x="192.01" y="886">

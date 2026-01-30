@@ -941,6 +941,12 @@
 		bodyShape: CIRCLE,
 		bodyRadius: 0.3f,
 		
+		damageModifiersByAttackType: { // the necromancer can not be attacked but is killed in the cutscene
+			ARROW: 0f,
+			BOMB: 0f,
+			MAGIC: 0f,
+		},
+		
 		addSensor: false, // no sensor - this enemy type is only used in a cutscene
 		
 		usesHealthBar: false
