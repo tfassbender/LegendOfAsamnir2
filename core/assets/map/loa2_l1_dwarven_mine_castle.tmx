@@ -125,7 +125,7 @@
   <object id="343" name="object.key_wall" x="848" y="2367.67">
    <properties>
     <property name="lockId" value="loa2_l1_castle__gate_1"/>
-    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="physicsBodySizeFactorY" value="2f"/>
     <property name="unlockedByEvent" value="true"/>
    </properties>
    <point/>
