@@ -10,6 +10,7 @@ import net.jfabricationgames.gdx.animation.AnimationManager;
 import net.jfabricationgames.gdx.animation.AnimationSpriteConfig;
 import net.jfabricationgames.gdx.animation.TextureAnimationDirector;
 import net.jfabricationgames.gdx.constants.Constants;
+import net.jfabricationgames.gdx.cutscene.CutsceneHandler;
 import net.jfabricationgames.gdx.data.GameDataService;
 import net.jfabricationgames.gdx.event.EventConfig;
 import net.jfabricationgames.gdx.event.EventHandler;
@@ -31,6 +32,7 @@ import net.jfabricationgames.gdx.screen.menu.dialog.GameMapDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.ItemSettingsDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.LoadGameDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.SaveGameDialog;
+import net.jfabricationgames.gdx.screen.menu.dialog.SaveGameErrorDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.SettingsDialog;
 import net.jfabricationgames.gdx.screen.menu.dialog.SoundSettingsDialog;
 import net.jfabricationgames.gdx.skill.Difficulty;
@@ -64,6 +66,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	private SaveGameDialog saveGameDialog;
 	private LoadGameDialog loadGameDialog;
 	private ConfirmDialog confirmDialog;
+	private SaveGameErrorDialog saveGameErrorDialog;
 	
 	private Runnable onConfirm;
 	private Runnable onCancel;
@@ -189,6 +192,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		saveGameDialog = new SaveGameDialog(camera, this::backToGame, this::playMenuSound);
 		loadGameDialog = new LoadGameDialog(camera, this::backToGame, this::playMenuSound);
 		confirmDialog = new ConfirmDialog(camera);
+		saveGameErrorDialog = new SaveGameErrorDialog(camera);
 	}
 	
 	private void initializeStateMachine() {
@@ -217,6 +221,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 			}
 			else if (confirmDialog.isVisible()) {
 				confirmDialogCancel();
+			}
+			else if (saveGameErrorDialog.isVisible()) {
+				saveGameErrorDialogOk();
 			}
 			else if (saveGameDialog.isVisible()) {
 				closeSaveGameDialog();
@@ -291,6 +298,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		saveGameDialog.draw();
 		loadGameDialog.draw();
 		confirmDialog.draw();
+		saveGameErrorDialog.draw();
 	}
 	
 	private void drawBackground() {
@@ -411,6 +419,9 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		else if (stateName.startsWith("confirm_dialog")) {
 			confirmDialog.setFocusTo(stateName);
 		}
+		else if (stateName.startsWith("save_game_error_dialog")) {
+			saveGameErrorDialog.setFocusTo(stateName);
+		}
 		else if (stateName.startsWith(STATE_PREFIX_BUTTON)) {
 			String buttonId = stateName.substring(STATE_PREFIX_BUTTON.length());
 			FocusButton button = null;
@@ -475,6 +486,7 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 		saveGameDialog.dispose();
 		loadGameDialog.dispose();
 		confirmDialog.dispose();
+		saveGameErrorDialog.dispose();
 	}
 	
 	//****************************************************************
@@ -507,8 +519,18 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	
 	public void saveGame() {
 		Gdx.app.debug(getClass().getSimpleName(), "'Save Game' selected");
-		saveGameDialog.setVisible(true);
-		stateMachine.changeState("saveDialog_button_saveGameDialogBack");
+		if (gameCanBeSavedInCurrentState()) {
+			saveGameDialog.setVisible(true);
+			stateMachine.changeState("saveDialog_button_saveGameDialogBack");
+		}
+		else {
+			saveGameErrorDialog.setVisible(true);
+			stateMachine.changeState("save_game_error_dialog_button_ok");
+		}
+	}
+	
+	private boolean gameCanBeSavedInCurrentState() {
+		return !CutsceneHandler.getInstance().isCutsceneActive() && !gameScreen.isBossFightActive();
 	}
 	
 	public void loadGame() {
@@ -520,8 +542,10 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	public void backToMainMenu() {
 		Gdx.app.debug(getClass().getSimpleName(), "'Main Menu' selected");
 		
-		//save the game before navigating back to the main menu
-		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.QUICKSAVE));
+		if (gameCanBeSavedInCurrentState()) {
+			//save the game before navigating back to the main menu
+			EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.QUICKSAVE));
+		}
 		removeInputListener();
 		gameScreen.dispose();
 		
@@ -701,6 +725,15 @@ public class PauseMenuScreen extends InGameMenuScreen<PauseMenuScreen> {
 	
 	public void confirmDialogCancel() {
 		onCancel.run();
+	}
+	
+	//********************************************************************************
+	//*** State machine methods for save game error dialog (called via reflection)
+	//********************************************************************************
+	
+	public void saveGameErrorDialogOk() {
+		saveGameErrorDialog.setVisible(false);
+		stateMachine.changeState("button_saveGame");
 	}
 	
 	//*********************************************************************

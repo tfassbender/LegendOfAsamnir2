@@ -404,6 +404,11 @@ public class GameScreen extends ScreenAdapter implements InputActionListener, Ev
 	}
 	
 	@Override
+	public boolean isBossFightActive() {
+		return hud.isBossFightActive();
+	}
+	
+	@Override
 	public float getMapWidth() {
 		return map.getMapWidth();
 	}

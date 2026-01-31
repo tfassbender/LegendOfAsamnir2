@@ -120,5 +120,7 @@ public abstract class InGameMenuScreen<T extends ControlledMenu<T>> extends Menu
 		
 		public Vector2 getPlayersPositionOnMap();
 		public Array<FastTravelPointProperties> getFastTravelPositions();
+		
+		public boolean isBossFightActive();
 	}
 }

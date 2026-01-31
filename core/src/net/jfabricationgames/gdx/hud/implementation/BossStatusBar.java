@@ -93,12 +93,6 @@ public class BossStatusBar implements Disposable, EventListener {
 		EventHandler.getInstance().registerEventListener(this);
 	}
 	
-	public void setBoss(Enemy boss) {
-		this.boss = boss;
-		timeSinceBossWasDefeated = 0f;
-		bossSoundPlayed = false;
-	}
-	
 	public void render(float delta) {
 		if (boss != null) {
 			queryStats();
@@ -183,9 +177,16 @@ public class BossStatusBar implements Disposable, EventListener {
 		if (event.eventType == EventType.BOSS_ENEMY_APPEARED) {
 			boss = (Enemy) event.parameterObject;
 			bossName = event.stringValue;
+			
+			timeSinceBossWasDefeated = 0f;
+			bossSoundPlayed = false;
 		}
 		else if (event.eventType == EventType.HIDE_BOSS_STATUS_BAR) {
 			boss = null;
 		}
+	}
+	
+	public boolean isBossFightActive() {
+		return boss != null;
 	}
 }

@@ -40,4 +40,8 @@ public class HeadsUpDisplay implements Disposable {
 		onScreenText.dispose();
 		worldEdge.dispose();
 	}
+	
+	public boolean isBossFightActive() {
+		return bossStatusBar.isBossFightActive();
+	}
 }
