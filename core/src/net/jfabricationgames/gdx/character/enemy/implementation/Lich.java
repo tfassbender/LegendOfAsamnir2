@@ -42,8 +42,11 @@ public class Lich extends Enemy {
 	public Lich(EnemyTypeConfig typeConfig, MapProperties properties) {
 		super(typeConfig, properties);
 		
-		// update the boss name (in case the player was killed by the lich)
+		// reset the boss state (in case the player was killed by the lich)
 		typeConfig.bossName = "Cultist Abomination - The devouring Husk";
+		typeConfig.health = 75f;
+		health = typeConfig.health;
+		firstForm = true;
 		
 		spellAnimation = AnimationManager.getInstance().getTextureAnimationDirectorCopy("lich_soul_storm_effect");
 	}
