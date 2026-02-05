@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3809">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3810">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -1402,6 +1402,11 @@
   </object>
   <object id="3808" name="enemy.mimic_barrel" x="920" y="975.333">
    <point/>
+  </object>
+  <object id="3809" name="object.eventObject" x="1648.83" y="434.114" width="8.34882" height="70.2727">
+   <properties>
+    <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_1"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
