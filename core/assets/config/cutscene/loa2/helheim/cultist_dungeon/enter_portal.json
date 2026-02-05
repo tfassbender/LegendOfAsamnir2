@@ -102,9 +102,57 @@
 			cameraFollowsTarget: false,
 			
 			executes: [
-                end,
+                workarround_add_key_parts,
 			]
 		}
+		
+		//*******************************************************************************************************************
+		//*** Workarround for a bug: 
+		//*** If the player has the compass at this point, we assume that he already as placed the first two key parts.
+		//*** In some cases (that could not be reproduced) the first pieces were gone, so we just set the global values
+		//*** here in the cutscene to "fix" this.
+		//*******************************************************************************************************************
+		
+		workarround_add_key_parts: {
+			type: SWITCH_CONDITION,
+			
+			switchConditions: [
+				{
+					conditionId: common__player_has_compass,
+					executedStateName: add_key_piece__red,
+				},
+				{
+					// default case - compass not yet collected
+					executedStateName: end,
+				},
+			],
+		},
+		
+		add_key_piece__red: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_returned__red, value: true}",
+			},
+			
+			executes: [
+                add_key_piece__green,
+			],
+		},
+		
+		add_key_piece__green: {
+			type: EVENT,
+			
+			event: {
+				eventType: SET_GLOBAL_CONDITION_VALUE,
+				stringValue: "{key: loa2_l4_helheim__key_piece_returned__green, value: true}",
+			},
+			
+			executes: [
+                end,
+			],
+		},
 		
 		end: {
 			type: WAIT,
