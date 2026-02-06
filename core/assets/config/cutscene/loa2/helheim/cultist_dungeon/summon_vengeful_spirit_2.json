@@ -137,7 +137,7 @@
             executionDelayInSeconds: 1f,
             
             controlledUnitId: loa2_l4_helheim__cultist_summoner_2,
-            controlledUnitTarget: {x: -2, y: -2},
+            controlledUnitTarget: {x: -2, y: -1.5},
             
             executes: [
                 sacrifice__summoner_cultist_leave_2,
@@ -228,8 +228,23 @@
 			},
 			
 			executes: [
-                end,
+                close_gate_behind_player,
 			],
+		},
+		
+		close_gate_behind_player: {
+			type: EVENT,
+			
+			executionDelayInSeconds: 1.5f
+			
+			event: {
+				eventType: CLOSE_LOCK,
+				stringValue: loa2_l4_helheim_cultist_dungeon__gate_after_second_vengefull_spirit,
+			},
+			
+			executes: [
+				end
+			]
 		},
 		
 		end: {

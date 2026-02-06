@@ -70,6 +70,34 @@
 	},
 	
 	//*******************************************
+	//*** gates
+	//*******************************************
+	
+	loa2_l4_helheim_cultist_dungeon__open_gate_after_first_vengefull_spirit_died: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: vengefull_spirit_died__loa2_l4_helheim__cultist_sacrifice_1
+		}
+		
+		executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l4_helheim_cultist_dungeon__gate_after_first_vengefull_spirit,
+		}
+	},
+	
+	loa2_l4_helheim_cultist_dungeon__open_gate_after_second_vengefull_spirit_died: {
+		event: {
+			eventType: CONFIG_GENERATED_EVENT,
+			stringValue: vengefull_spirit_died__loa2_l4_helheim__cultist_sacrifice_2
+		}
+		
+		executionType: OPEN_LOCK,
+        executionParameters: {
+            lockId: loa2_l4_helheim_cultist_dungeon__gate_after_second_vengefull_spirit,
+		}
+	},
+	
+	//*******************************************
 	//*** tokens
 	//*******************************************
 	

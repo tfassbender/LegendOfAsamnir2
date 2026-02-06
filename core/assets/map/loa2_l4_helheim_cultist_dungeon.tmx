@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3810">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="78" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="16" nextobjectid="3814">
  <properties>
   <property name="above_player_layers" value="[4]"/>
   <property name="background_layers" value="[0, 1, 2, 3]"/>
@@ -39,7 +39,7 @@
  </layer>
  <layer id="5" name="terrain" width="78" height="34" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztmklOwzAYhbuhEv8OIbZIlRgOwHAAhjVwAbgAt4A1aw6AxBIhQVctAgErQLBm2jLfoQ9FFg7UdkKcunHfJz059i858XOS+ndaq8XBkLiPi7CFfrY99dUvjGjjGfM8tlVJ+nyCnqFdSdqInQ14tAd9Ql/QviRtxMwB/KlLUn5ziPJlOOw1EUIIITHSbV2dta1X7DS6t4/imia4prLmSZOoT2mapl+ZmIVPc5rmS/Qt5LPlG5dvaqz/HXOWfOC1gjnDIvxY0rQc0T1RFgv0qBK0ME9t6ITzlYsr+HUN3dC3XNzDrwfokb7l4g1+vUMfkfvWiHx8pH9YkXQZG0faen5z/KdUHKPeFHPcxLqkS3WOMpgJMDfn2jnr2rHKXS7QdinpOL+F/OUU3pxZ5s8VV1QxZyzCLTy5s/jiig8qaw5PXPFBR+Xsvv+nUATT/nIofv8+5q2TNLb5DfXej2Vfvsj3I9t6zhTr5b58THB/2S8dGC47GQ==
+   eJztmktOwzAURTuhEm+GENNKlfgsgM8C+IyBDcAG2AWMGXcBSB1WSMAIEAgYAYIxvyn/PXCryMKB2o6bpG7de6QrJ36SE1+n6XtuK5U4GBH3cR62Mc5OQWP1C2PafCYKntuaJGM+Qy9QQ5I+YmcTHu1BX9A31JSkj5hpwZ+qJG2bfbSvo2HviRBCCImRTnl11r5esVvv3D+Oe5pkTmWtk6ZwPq1phn5lYg4+zWtaKNG3kJ+tonH5puba7Zyz1ANvA1gzLMGPZU0rET0TZbHo4RHryHAcY51OoFM+015cw68b6Ja+efEAvx6hJ/rmxTv8+oA+I/etHvn8SP+wKuk2Ng60fH6r9tsqDnF+JOa4iQ1Jt+oaZTAbYG0utGtWtWNVu1yi70rSceaw/zmDN+eW9XPFFYNYM+bhDp7cW3xxxYeVdYcnrviwo2r2ov+nkAfT/nIo/n4/+p6TNLb1DfXej2VfPs/vR7Z8zhTr5b58THB/2Uw3efUPNRc8+Q==
   </data>
  </layer>
  <layer id="16" name="terrain_2" width="78" height="34" locked="1">
@@ -49,7 +49,7 @@
  </layer>
  <layer id="10" name="background_above_player" width="78" height="34" locked="1">
   <data encoding="base64" compression="zlib">
-   eJztyTkNACAABMFrwTlBAbowBBp4uplkq00AAAAAACCZ5U0AAADcaTUZu17PPgB/LNcPEw8=
+   eJzt2LEJwDAMBEC11uYmE2QuL5R4goAccCB38JWab75RBAAAAAD812i7G8B3zD28EQAAANb0jDjvHFm7A/Cs8se6ADGZFMc=
   </data>
  </layer>
  <layer id="3" name="shadows" width="78" height="34" locked="1">
@@ -1408,6 +1408,23 @@
     <property name="eventParameter" value="loa2_l4_helheim_cultist_dungeon__find_vengeful_spirit_1"/>
    </properties>
   </object>
+  <object id="3810" name="object.key_wall" x="1744" y="463">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_cultist_dungeon__gate_after_first_vengefull_spirit"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3812" name="object.key_wall" x="2096.67" y="1041.33">
+   <properties>
+    <property name="lockId" value="loa2_l4_helheim_cultist_dungeon__gate_after_second_vengefull_spirit"/>
+    <property name="physicsBodySizeFactorY" value="1.3f"/>
+    <property name="unlockedByEvent" value="true"/>
+    <property name="unlockedInitially" value="true"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="physics" locked="1">
   <object id="3586" x="0" y="160" width="454" height="176"/>
@@ -1503,6 +1520,12 @@
   </object>
   <object id="3666" x="1103.45" y="906.182">
    <polygon points="0,0 -9.25,7.75 9.25,5.25"/>
+  </object>
+  <object id="3811" x="1743.73" y="482.864">
+   <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
+  </object>
+  <object id="3813" x="2095.91" y="1059.27">
+   <polygon points="0,0 -14.6667,13.3333 13.6667,13"/>
   </object>
  </objectgroup>
  <objectgroup id="6" name="ground_physics" locked="1"/>

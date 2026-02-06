@@ -19,6 +19,9 @@ import net.jfabricationgames.gdx.character.ai.util.timer.RandomIntervalAttackTim
 import net.jfabricationgames.gdx.character.enemy.Enemy;
 import net.jfabricationgames.gdx.character.enemy.EnemyTypeConfig;
 import net.jfabricationgames.gdx.character.state.CharacterState;
+import net.jfabricationgames.gdx.event.EventConfig;
+import net.jfabricationgames.gdx.event.EventHandler;
+import net.jfabricationgames.gdx.event.EventType;
 
 public class VengefulSpirit extends Enemy {
 	
@@ -134,6 +137,14 @@ public class VengefulSpirit extends Enemy {
 			spectralShieldAnimation = SpectralShieldState.APPEAR.animation;
 			spectralShieldAnimation.resetStateTime();
 		}
+	}
+	
+	@Override
+	protected void die() {
+		super.die();
+		
+		EventHandler.getInstance().fireEvent(new EventConfig().setEventType(EventType.CONFIG_GENERATED_EVENT) //
+				.setStringValue("vengefull_spirit_died__" + getUnitId()));
 	}
 	
 	private enum SpectralShieldState {
